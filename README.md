@@ -4,9 +4,7 @@
 
 This repository contains the TradingView Charting Library package. If you use Git in your project, please feel free to use this repo as a submodule in yours.
 
-The `master` branch contains the current stable version. 
-
-The `unstable` branch contains the most recent features and fixes, but it can be less stable (actually, it's the beta, which is already thoroughly tested).
+The `master` branch contains the most recent features and fixes.
 
 Please read [wiki][wiki-url] (at least the [Overview][wiki-url] and the [Best Practices][best-practices-url]) before using the Library.
 
