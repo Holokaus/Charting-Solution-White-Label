@@ -385,6 +385,11 @@ export declare type ChartActionId = "chartProperties" | "compareOrAdd" | "scales
 export declare type ContextMenuItemsProcessor = (items: readonly IActionVariant[], actionsFactory: ActionsFactory) => Promise<readonly IActionVariant[]>;
 export declare type ContextMenuRendererFactory = (items: readonly IActionVariant[], params: CreateContextMenuParams, onDestroy: () => void) => Promise<IContextMenuRenderer>;
 export declare type CreateButtonOptions = CreateHTMLButtonOptions | CreateTradingViewStyledButtonOptions;
+export declare type CustomStudyFormatter = Omit<INumberFormatter, "parse">;
+/**
+ * Factory function that can be implemented to create custom study formatters.
+ */
+export declare type CustomStudyFormatterFactory = (format: CustomStudyFormatterFormat, symbolInfo: LibrarySymbolInfo | null) => CustomStudyFormatter | null;
 export declare type CustomTranslateFunction = (key: string, options?: TranslateOptions) => string | null;
 export declare type DateFormat = keyof typeof dateFormatFunctions;
 export declare type Direction = "buy" | "sell";
@@ -1115,11 +1120,15 @@ export interface CustomFormatter {
 	format(date: Date): string;
 	formatLocal(date: Date): string;
 }
+/**
+ * Formatters used to adjust the displayed format of the date and time values.
+ */
 export interface CustomFormatters {
 	timeFormatter: CustomFormatter;
 	dateFormatter: CustomFormatter;
 	tickMarkFormatter?: (date: Date, tickMarkType: TickMarkType) => string;
 	priceFormatterFactory?: SeriesFormatterFactory;
+	studyFormatterFactory?: CustomStudyFormatterFactory;
 }
 export interface CustomIndicator {
 	readonly name: string;
@@ -1134,6 +1143,19 @@ export interface CustomInputFieldMetaInfo extends CustomFieldMetaInfoBase {
 }
 export interface CustomInputFieldsValues {
 	[fieldId: string]: TextWithCheckboxValue | boolean | string | any;
+}
+/**
+ * Study format description used in custom study formatters.
+ */
+export interface CustomStudyFormatterFormat {
+	/**
+	 * The format of the plot.
+	 */
+	type: "price" | "volume" | "percent";
+	/**
+	 * The format precision.
+	 */
+	precision?: number;
 }
 export interface DOMData {
 	snapshot: boolean;
