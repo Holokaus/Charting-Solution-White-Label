@@ -4,6 +4,7 @@ export declare type DomeCallback = (data: DOMData) => void;
 export declare type ErrorCallback = (reason: string) => void;
 export declare type GetMarksCallback<T> = (marks: T[]) => void;
 export declare type HistoryCallback = (bars: Bar[], meta?: HistoryMetadata) => void;
+export declare type LibrarySessionId = "regular" | "extended" | "premarket" | "postmarket";
 export declare type MarkConstColors = "red" | "green" | "blue" | "yellow";
 /**
  * This is the generic type useful for declaring a nominal type,
@@ -122,6 +123,26 @@ export interface IDatafeedQuotesApi {
 export interface IExternalDatafeed {
 	onReady(callback: OnReadyCallback): void;
 }
+export interface LibrarySubsessionInfo {
+	/**
+	 * Description of the subsession.
+	 *
+	 * @example "Regular Trading Hours"
+	 */
+	description: string;
+	/**
+	 * Subsession ID.
+	 */
+	id: LibrarySessionId;
+	/**
+	 * Session string. See {@link LibrarySymbolInfo.session}.
+	 */
+	session: string;
+	/**
+	 * Session corrections string. See {@link LibrarySymbolInfo.corrections}.
+	 */
+	"session-correction"?: string;
+}
 export interface LibrarySymbolInfo {
 	/**
 	 * Symbol Name
@@ -228,6 +249,14 @@ export interface LibrarySymbolInfo {
 	unit_id?: string;
 	original_unit_id?: string;
 	unit_conversion_types?: string[];
+	/**
+	 * Subsession ID. Must match the `id` property of one of the subsessions.
+	 */
+	subsession_id?: string;
+	/**
+	 * Subsessions definitions.
+	 */
+	subsessions?: LibrarySubsessionInfo[];
 }
 export interface Mark {
 	id: string | number;
@@ -269,6 +298,7 @@ export interface SearchSymbolResultItem {
 export interface SymbolResolveExtension {
 	currencyCode?: string;
 	unitId?: string;
+	session?: string;
 }
 export interface TimescaleMark {
 	id: string | number;
