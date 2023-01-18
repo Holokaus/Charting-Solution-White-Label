@@ -2485,6 +2485,10 @@ export interface IPaneApi {
 	setHeight(height: number): void;
 	moveTo(paneIndex: number): void;
 	paneIndex(): number;
+	/** Collapse the current pane */
+	collapse(): void;
+	/** Restore the size of a previously collapsed pane */
+	restore(): void;
 }
 export interface IPositionLineAdapter {
 	remove(): void;
