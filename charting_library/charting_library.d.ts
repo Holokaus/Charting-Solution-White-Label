@@ -15,6 +15,10 @@ declare const dateFormatFunctions: {
 	readonly "MM/dd/yy": (date: Date, local: boolean) => string;
 	readonly "MM/dd/yyyy": (date: Date, local: boolean) => string;
 };
+declare enum ColorType {
+	Solid = "solid",
+	Gradient = "gradient"
+}
 declare enum HHistDirection {
 	LeftToRight = "left_to_right",
 	RightToLeft = "right_to_left"
@@ -59,6 +63,10 @@ declare enum PlotSymbolSize {
 	Normal = "normal",
 	Large = "large",
 	Huge = "huge"
+}
+declare enum PriceAxisLastValueMode {
+	LastPriceAndPercentageValue = 0,
+	LastValueAccordingToScale = 1
 }
 declare enum StopType {
 	StopLoss = 0,
@@ -442,6 +450,7 @@ export declare type Order = PlacedOrder | BracketOrder;
 export declare type PageName = "watchlist_details_news" | "data_window" | "object_tree";
 export declare type PineJS = any;
 export declare type PlotShapeId = "shape_arrow_down" | "shape_arrow_up" | "shape_circle" | "shape_cross" | "shape_xcross" | "shape_diamond" | "shape_flag" | "shape_square" | "shape_label_down" | "shape_label_up" | "shape_triangle_down" | "shape_triangle_up";
+export declare type PriceSource = "open" | "high" | "low" | "close";
 export declare type QuoteData = QuoteOkData | QuoteErrorData;
 export declare type QuotesCallback = (data: QuoteData[]) => void;
 export declare type ResolutionString = Nominal<string, "ResolutionString">;
@@ -452,6 +461,7 @@ export declare type SeriesEventType = "price_scale_changed";
 export declare type SeriesFormat = "price" | "volume";
 export declare type SeriesFormatterFactory = (symbolInfo: LibrarySymbolInfo | null, minTick: string) => ISymbolValueFormatter | null;
 export declare type SeriesPriceScale = "new-left" | "new-right" | "no-scale" | EntityId;
+export declare type SeriesStatusViewSymbolTextSource = "ticker" | "description" | "ticker-and-description";
 export declare type ServerTimeCallback = (serverTime: number) => void;
 /**
  * A time range to set. The end `to` value is optional.
@@ -836,6 +846,1073 @@ export interface ChartMetaInfo {
 	symbol: string;
 	resolution: ResolutionString;
 	timestamp: number;
+}
+/**
+ * Property overrides that can be used with {@link IChartingLibraryWidget.applyOverrides}.
+ */
+export interface ChartPropertiesOverrides extends StudyOverrides {
+	/**
+	 * A timezone ID. The default value depends on the locale.
+	 */
+	"timezone": TimezoneId;
+	/**
+	 * A price scale selection strategy. Determines where price scales should be placed: on the left, on the right, or spread evenly (auto).
+	 *
+	 * @default 'auto'
+	 */
+	"priceScaleSelectionStrategyName": "left" | "right" | "auto";
+	/**
+	 * Pane background type.
+	 *
+	 * @default 'solid'
+	 */
+	"paneProperties.backgroundType": ColorType;
+	/**
+	 * Pane background color.
+	 *
+	 * @default '#ffffff'
+	 */
+	"paneProperties.background": string;
+	/**
+	 * Pane background gradient start color.
+	 *
+	 * @default '#ffffff'
+	 */
+	"paneProperties.backgroundGradientStartColor": string;
+	/**
+	 * Pane background gradient end color.
+	 *
+	 * @default '#ffffff'
+	 */
+	"paneProperties.backgroundGradientEndColor": string;
+	/**
+	 * Pane vertical grid color.
+	 *
+	 * @default 'rgba(42, 46, 57, 0.06)'
+	 */
+	"paneProperties.vertGridProperties.color": string;
+	/**
+	 * Pane vertical grid line style.
+	 *
+	 * @default LineStyle.Solid
+	 */
+	"paneProperties.vertGridProperties.style": LineStyle;
+	/**
+	 * Pane horizontal grid color.
+	 *
+	 * @default 'rgba(42, 46, 57, 0.06)'
+	 */
+	"paneProperties.horzGridProperties.color": string;
+	/**
+	 * Pane horizontal grid line style.
+	 *
+	 * @default LineStyle.Solid
+	 */
+	"paneProperties.horzGridProperties.style": LineStyle;
+	/**
+	 * Crosshair color.
+	 *
+	 * @default '#9598A1'
+	 */
+	"crossHairProperties.color": string;
+	/**
+	 * Crosshair style.
+	 *
+	 * @default LineStyle.Dashed
+	 */
+	"crossHairProperties.style": LineStyle;
+	/**
+	 * Crosshair transparency.
+	 *
+	 * @default 0
+	 */
+	"crossHairProperties.transparency": number;
+	/**
+	 * Crosshair width.
+	 *
+	 * @default 1
+	 */
+	"crossHairProperties.width": number;
+	/**
+	 * Pane auto scaling top margin percentage.
+	 *
+	 * @default 10
+	 */
+	"paneProperties.topMargin": number;
+	/**
+	 * Pane auto scaling bottom margin percentage.
+	 *
+	 * @default 8
+	 */
+	"paneProperties.bottomMargin": number;
+	/**
+	 * Study legend input values visiblity.
+	 *
+	 * @default true
+	 */
+	"paneProperties.legendProperties.showStudyArguments": boolean;
+	/**
+	 * Study legend title visibility.
+	 *
+	 * @default true
+	 */
+	"paneProperties.legendProperties.showStudyTitles": boolean;
+	/**
+	 * Study legend value visibility.
+	 *
+	 * @default true
+	 */
+	"paneProperties.legendProperties.showStudyValues": boolean;
+	/**
+	 * Series legend title visibility.
+	 *
+	 * @default true
+	 */
+	"paneProperties.legendProperties.showSeriesTitle": boolean;
+	/**
+	 * Study legend OHLC values visibility.
+	 *
+	 * @default true
+	 */
+	"paneProperties.legendProperties.showSeriesOHLC": boolean;
+	/**
+	 * Series legend change value visibility.
+	 *
+	 * @default true
+	 */
+	"paneProperties.legendProperties.showBarChange": boolean;
+	/**
+	 * Series legend volume value visibility.
+	 *
+	 * @default false
+	 */
+	"paneProperties.legendProperties.showVolume": boolean;
+	/**
+	 * Legend background visibility.
+	 *
+	 * @default true
+	 */
+	"paneProperties.legendProperties.showBackground": boolean;
+	/**
+	 * Legend background transparency percentage.
+	 *
+	 * @default 50
+	 */
+	"paneProperties.legendProperties.backgroundTransparency": number;
+	/**
+	 * Legend separator color.
+	 *
+	 * @default '#E0E3EB'
+	 */
+	"paneProperties.paneProperties.separatorColor": string;
+	/**
+	 * Scales (axis) border line color.
+	 *
+	 * @default 'rgba(42, 46, 57, 0)'
+	 */
+	"scalesProperties.lineColor": string;
+	/**
+	 * Scales (axis) text color.
+	 *
+	 * @default '#131722'
+	 */
+	"scalesProperties.textColor": string;
+	/**
+	 * Scales (axis) font size.
+	 *
+	 * @default 12
+	 */
+	"scalesProperties.fontSize": number;
+	/**
+	 * Series last value label visibility.
+	 *
+	 * @default true
+	 */
+	"scalesProperties.showSeriesLastValue": boolean;
+	/**
+	 * Series last value label display mode.
+	 *
+	 * @default PriceAxisLastValueMode.LastValueAccordingToScale
+	 */
+	"scalesProperties.seriesLastValueMode": PriceAxisLastValueMode;
+	/**
+	 * Study label value label visibility.
+	 *
+	 * @default true
+	 */
+	"scalesProperties.showStudyLastValue": boolean;
+	/**
+	 * Symbol name label visibility.
+	 *
+	 * @default false
+	 */
+	"scalesProperties.showSymbolLabels": boolean;
+	/**
+	 * Study plot labels visibility.
+	 *
+	 * @default false
+	 */
+	"scalesProperties.showStudyPlotLabels": boolean;
+	/**
+	 * Bid/ask labels visibility.
+	 *
+	 * @default false
+	 */
+	"scalesProperties.showBidAskLabels": boolean;
+	/**
+	 * Pre/post market price labels visibility.
+	 *
+	 * @default true
+	 */
+	"scalesProperties.showPrePostMarketPriceLabel": boolean;
+	/**
+	 * Scales (axis) highlight color.
+	 *
+	 * @default 'rgba(41, 98, 255, 0.25)'
+	 */
+	"scalesProperties.axisHighlightColor": string;
+	/**
+	 * Scales (axis) highlight label background color.
+	 *
+	 * @default '#2962FF'
+	 */
+	"scalesProperties.axisLineToolLabelBackgroundColorCommon": string;
+	/**
+	 * Scales (axis) background label active background color.
+	 *
+	 * @default '#143EB3'
+	 */
+	"scalesProperties.axisLineToolLabelBackgroundColorActive": string;
+	/**
+	 * Price scale crosshair label visibility.
+	 *
+	 * @default true
+	 */
+	"scalesProperties.showPriceScaleCrosshairLabel": boolean;
+	/**
+	 * Time scale crosshair label visibility.
+	 *
+	 * @default true
+	 */
+	"scalesProperties.showTimeScaleCrosshairLabel": boolean;
+	/**
+	 * Crosshair label light theme background color.
+	 *
+	 * @default '#131722'
+	 */
+	"scalesProperties.crosshairLabelBgColorLight": string;
+	/**
+	 * Crosshair label dark theme background color.
+	 *
+	 * @default '#363A45'
+	 */
+	"scalesProperties.crosshairLabelBgColorDark": string;
+	/**
+	 * Main series chart style.
+	 *
+	 * @default ChartStyle.Candle
+	 */
+	"mainSeriesProperties.style": ChartStyle;
+	/**
+	 * Main series bar countdown visibility.
+	 *
+	 * @default false
+	 */
+	"mainSeriesProperties.showCountdown": boolean;
+	/**
+	 * High/low price lines visibility.
+	 *
+	 * @default false
+	 */
+	"mainSeriesProperties.highLowAvgPrice.highLowPriceLinesVisible": boolean;
+	/**
+	 * High/low price lines label visibility.
+	 *
+	 * @default false
+	 */
+	"mainSeriesProperties.highLowAvgPrice.highLowPriceLabelsVisible": boolean;
+	/**
+	 * Average close price lines visibility.
+	 *
+	 * @default false
+	 */
+	"mainSeriesProperties.highLowAvgPrice.averageClosePriceLineVisible": boolean;
+	/**
+	 * Average close price lines label visibility.
+	 *
+	 * @default false
+	 */
+	"mainSeriesProperties.highLowAvgPrice.averageClosePriceLabelVisible": boolean;
+	/**
+	 * High/low price lines color.
+	 *
+	 * @default ""
+	 */
+	"mainSeriesProperties.highLowAvgPrice.highLowPriceLinesColor": string;
+	/**
+	 *
+	 * High/low price lines width.
+	 *
+	 * @default 1
+	 */
+	"mainSeriesProperties.highLowAvgPrice.highLowPriceLinesWidth": number;
+	/**
+	 *
+	 * Average close price lines color.
+	 *
+	 * @default ""
+	 */
+	"mainSeriesProperties.highLowAvgPrice.averagePriceLineColor": string;
+	/**
+	 *
+	 * Average close price lines width.
+	 *
+	 * @default 1
+	 */
+	"mainSeriesProperties.highLowAvgPrice.averagePriceLineWidth": number;
+	/**
+	 * Main series visibility.
+	 *
+	 * @default true
+	 */
+	"mainSeriesProperties.visible": boolean;
+	/**
+	 * Main series price line visibility.
+	 *
+	 * @default true
+	 */
+	"mainSeriesProperties.showPriceLine": boolean;
+	/**
+	 *
+	 * Main series price line width.
+	 *
+	 * @default 1
+	 */
+	"mainSeriesProperties.priceLineWidth": number;
+	/**
+	 * Main series price line color.
+	 *
+	 * @default ""
+	 */
+	"mainSeriesProperties.priceLineColor": string;
+	/**
+	 * Main series base line color.
+	 *
+	 * @default "#B2B5BE"
+	 */
+	"mainSeriesProperties.baseLineColor": string;
+	/**
+	 * Main series previous close price line visibility.
+	 *
+	 * @default false
+	 */
+	"mainSeriesProperties.showPrevClosePriceLine": boolean;
+	/**
+	 * Main series previous close price line width.
+	 *
+	 * @default 1
+	 */
+	"mainSeriesProperties.prevClosePriceLineWidth": number;
+	/**
+	 * Main series previous close price line color.
+	 *
+	 * @default "#555555"
+	 */
+	"mainSeriesProperties.prevClosePriceLineColor": string;
+	/**
+	 * Main series minimum tick behaviour.
+	 *
+	 * @default "default"
+	 *
+	 * @example
+	 *
+	 * ```javascript
+	 * // reset minTick to default
+	 * tvWidget.applyOverrides({ 'mainSeriesProperties.minTick': 'default' });
+	 *
+	 * // Set main series minTick to { priceScale: 10000, minMove: 1, frac: false }
+	 * tvWidget.applyOverrides({ 'mainSeriesProperties.minTick': '10000,1,false' });
+	 *
+	 * // Set default minTick for overlay studies to { priceScale: 10000, minMove: 1, frac: false }
+	 * tvWidget.applyStudiesOverrides({ 'overlay.minTick': '10000,1,false' });
+	 * ```
+	 */
+	"mainSeriesProperties.minTick": string;
+	/**
+	 * Main series legend font size.
+	 *
+	 * @default 16
+	 */
+	"mainSeriesProperties.statusViewStyle.fontSize": number;
+	/**
+	 * Main series legend exchange visibility.
+	 *
+	 * @default true
+	 */
+	"mainSeriesProperties.statusViewStyle.showExchange": boolean;
+	/**
+	 * Main series legend interval visibility.
+	 *
+	 * @default true
+	 */
+	"mainSeriesProperties.statusViewStyle.showInterval": boolean;
+	/**
+	 * Main series legend text style.
+	 *
+	 * @default "description"
+	 */
+	"mainSeriesProperties.statusViewStyle.symbolTextSource": SeriesStatusViewSymbolTextSource;
+	/**
+	 * Main series candle style up color.
+	 *
+	 * @default "#089981"
+	 */
+	"mainSeriesProperties.candleStyle.upColor": string;
+	/**
+	 * Main series candle style down color.
+	 *
+	 * @default "#F23645"
+	 */
+	"mainSeriesProperties.candleStyle.downColor": string;
+	/**
+	 * Main series candle style wick visibility.
+	 *
+	 * @default true
+	 */
+	"mainSeriesProperties.candleStyle.drawWick": boolean;
+	/**
+	 * Main series candle style border visibility.
+	 *
+	 * @default true
+	 */
+	"mainSeriesProperties.candleStyle.drawBorder": boolean;
+	/**
+	 *
+	 * Main series candle style border color.
+	 *
+	 * @default "#378658"
+	 */
+	"mainSeriesProperties.candleStyle.borderColor": string;
+	/**
+	 *
+	 * Main series candle style border up color.
+	 *
+	 * @default "#089981"
+	 */
+	"mainSeriesProperties.candleStyle.borderUpColor": string;
+	/**
+	 * Main series candle style border down color.
+	 *
+	 * @default "#F23645"
+	 */
+	"mainSeriesProperties.candleStyle.borderDownColor": string;
+	/**
+	 * Main series candle style wick color.
+	 *
+	 * @default "#737375"
+	 */
+	"mainSeriesProperties.candleStyle.wickColor": string;
+	/**
+	 * Main series candle style wick up color.
+	 *
+	 * @default "#089981"
+	 */
+	"mainSeriesProperties.candleStyle.wickUpColor": string;
+	/**
+	 * Main series candle style wick down color.
+	 *
+	 * @default "#F23645"
+	 */
+	"mainSeriesProperties.candleStyle.wickDownColor": string;
+	/**
+	 *
+	 * Main series candle style color on previous close behaviour.
+	 *
+	 * @default false
+	 */
+	"mainSeriesProperties.candleStyle.barColorsOnPrevClose": boolean;
+	/**
+	 * Main series candle style body visibility.
+	 *
+	 * @default true
+	 */
+	"mainSeriesProperties.candleStyle.drawBody": boolean;
+	/**
+	 * Main series hollow candle style up color.
+	 *
+	 * @default "#089981"
+	 */
+	"mainSeriesProperties.hollowCandleStyle.upColor": string;
+	/**
+	 * Main series hollow candle style down color.
+	 *
+	 * @default "#F23645"
+	 */
+	"mainSeriesProperties.hollowCandleStyle.downColor": string;
+	/**
+	 * Main series hollow candle style wick visibility.
+	 *
+	 * @default true
+	 */
+	"mainSeriesProperties.hollowCandleStyle.drawWick": boolean;
+	/**
+	 * Main series hollow candle style border visibility.
+	 *
+	 * @default true
+	 */
+	"mainSeriesProperties.hollowCandleStyle.drawBorder": boolean;
+	/**
+	 * Main series hollow candle style border color.
+	 *
+	 * @default "#378658"
+	 */
+	"mainSeriesProperties.hollowCandleStyle.borderColor": string;
+	/**
+	 * Main series hollow candle style border up color.
+	 *
+	 * @default "#089981"
+	 */
+	"mainSeriesProperties.hollowCandleStyle.borderUpColor": string;
+	/**
+	 * Main series hollow candle style down color.
+	 *
+	 * @default "#F23645"
+	 */
+	"mainSeriesProperties.hollowCandleStyle.borderDownColor": string;
+	/**
+	 * Main series hollow candle style wick color.
+	 *
+	 * @default "#737375"
+	 */
+	"mainSeriesProperties.hollowCandleStyle.wickColor": string;
+	/**
+	 * Main series hollow candle style wick up color.
+	 *
+	 * @default "#089981"
+	 */
+	"mainSeriesProperties.hollowCandleStyle.wickUpColor": string;
+	/**
+	 * Main series hollow candle style wick down color.
+	 *
+	 * @default "#F23645"
+	 */
+	"mainSeriesProperties.hollowCandleStyle.wickDownColor": string;
+	/**
+	 * Main series hollow candle style body visibility.
+	 *
+	 * @default true
+	 */
+	"mainSeriesProperties.hollowCandleStyle.drawBody": boolean;
+	/**
+	 * Main series Heikin Ashi style up color.
+	 *
+	 * @default "#089981"
+	 */
+	"mainSeriesProperties.haStyle.upColor": string;
+	/**
+	 * Main series Heikin Ashi style down color.
+	 *
+	 * @default "#F23645"
+	 */
+	"mainSeriesProperties.haStyle.downColor": string;
+	/**
+	 * Main series Heikin Ashi style wick visibility.
+	 *
+	 * @default true
+	 */
+	"mainSeriesProperties.haStyle.drawWick": boolean;
+	/**
+	 * Main series Heikin Ashi style border visibility.
+	 *
+	 * @default true
+	 */
+	"mainSeriesProperties.haStyle.drawBorder": boolean;
+	/**
+	 * Main series Heikin Ashi style border color.
+	 *
+	 * @default "#378658"
+	 */
+	"mainSeriesProperties.haStyle.borderColor": string;
+	/**
+	 * Main series Heikin Ashi style border up color.
+	 *
+	 * @default "#089981"
+	 */
+	"mainSeriesProperties.haStyle.borderUpColor": string;
+	/**
+	 * Main series Heikin Ashi style border down color.
+	 *
+	 * @default "#F23645"
+	 */
+	"mainSeriesProperties.haStyle.borderDownColor": string;
+	/**
+	 * Main series Heikin Ashi style wick color.
+	 *
+	 * @default "#737375"
+	 */
+	"mainSeriesProperties.haStyle.wickColor": string;
+	/**
+	 * Main series Heikin Ashi style wick up color.
+	 *
+	 * @default "#089981"
+	 */
+	"mainSeriesProperties.haStyle.wickUpColor": string;
+	/**
+	 * Main series Heikin Ashi style wick down color.
+	 *
+	 * @default "#F23645"
+	 */
+	"mainSeriesProperties.haStyle.wickDownColor": string;
+	/**
+	 * Main series Heikin Ashi style color on previous close behaviour.
+	 *
+	 * @default false
+	 */
+	"mainSeriesProperties.haStyle.barColorsOnPrevClose": boolean;
+	/**
+	 * Main series Heikin Ashi style body visibility.
+	 *
+	 * @default true
+	 */
+	"mainSeriesProperties.haStyle.drawBody": boolean;
+	/**
+	 * Main series bar style up color.
+	 *
+	 * @default "#089981"
+	 */
+	"mainSeriesProperties.barStyle.upColor": string;
+	/**
+	 * Main series bar style down color.
+	 *
+	 * @default "#F23645"
+	 */
+	"mainSeriesProperties.barStyle.downColor": string;
+	/**
+	 * Main series bar style color on previous close behaviour.
+	 *
+	 * @default false
+	 */
+	"mainSeriesProperties.barStyle.barColorsOnPrevClose": boolean;
+	/**
+	 * Main series bar style don't draw open behaviour.
+	 *
+	 * @default false
+	 */
+	"mainSeriesProperties.barStyle.dontDrawOpen": boolean;
+	/**
+	 * Main series bar style thin bars behaviour.
+	 *
+	 * @default true
+	 */
+	"mainSeriesProperties.barStyle.thinBars": boolean;
+	/**
+	 * Main series High-low style color.
+	 *
+	 * @default "#2962FF"
+	 */
+	"mainSeriesProperties.hiloStyle.color": string;
+	/**
+	 * Main series High-low style border visibility.
+	 *
+	 * @default true
+	 */
+	"mainSeriesProperties.hiloStyle.showBorders": boolean;
+	/**
+	 * Main series High-low style border color.
+	 *
+	 * @default "#2962FF"
+	 */
+	"mainSeriesProperties.hiloStyle.borderColor": string;
+	/**
+	 * Main series High-low style label visibility.
+	 *
+	 * @default true
+	 */
+	"mainSeriesProperties.hiloStyle.showLabels": boolean;
+	/**
+	 * Main series High-low style label color.
+	 *
+	 * @default "#2962FF"
+	 */
+	"mainSeriesProperties.hiloStyle.labelColor": string;
+	/**
+	 * Main series column style up color.
+	 *
+	 * @default "rgba(8, 153, 129, 0.5)"
+	 */
+	"mainSeriesProperties.columnStyle.upColor": string;
+	/**
+	 * Main series column style down color.
+	 *
+	 * @default "rgba(242, 54, 69, 0.5)"
+	 */
+	"mainSeriesProperties.columnStyle.downColor": string;
+	/**
+	 * Main series column style color on previous close behaviour.
+	 *
+	 * @default true
+	 */
+	"mainSeriesProperties.columnStyle.barColorsOnPrevClose": boolean;
+	/**
+	 * Main series column style price source.
+	 *
+	 * @default "close"
+	 */
+	"mainSeriesProperties.columnStyle.priceSource": PriceSource;
+	/**
+	 * Main series line style color.
+	 *
+	 * @default "#2962FF"
+	 */
+	"mainSeriesProperties.lineStyle.color": string;
+	/**
+	 * Main series line style line style.
+	 *
+	 * @default LineStyle.Solid
+	 */
+	"mainSeriesProperties.lineStyle.linestyle": LineStyle;
+	/**
+	 * Main series line style line width.
+	 *
+	 * @default 2
+	 */
+	"mainSeriesProperties.lineStyle.linewidth": number;
+	/**
+	 * Main series line style price source.
+	 *
+	 * @default "close"
+	 */
+	"mainSeriesProperties.lineStyle.priceSource": PriceSource;
+	/**
+	 * Main series area style color1.
+	 *
+	 * @default "rgba(41, 98, 255, 0.28)"
+	 */
+	"mainSeriesProperties.areaStyle.color1": string;
+	/**
+	 * Main series area style color2.
+	 *
+	 * @default "#2962FF"
+	 */
+	"mainSeriesProperties.areaStyle.color2": string;
+	/**
+	 * Main series area style line color.
+	 *
+	 * @default "#2962FF"
+	 */
+	"mainSeriesProperties.areaStyle.linecolor": string;
+	/**
+	 * Main series area style line style.
+	 *
+	 * @default LineStyle.Solid
+	 */
+	"mainSeriesProperties.areaStyle.linestyle": LineStyle;
+	/**
+	 * Main series area style line width.
+	 *
+	 * @default 2
+	 */
+	"mainSeriesProperties.areaStyle.linewidth": number;
+	/**
+	 * Main series area style price source.
+	 *
+	 * @default "close"
+	 */
+	"mainSeriesProperties.areaStyle.priceSource": PriceSource;
+	/**
+	 * Main series area style transparency.
+	 *
+	 * @default 100
+	 */
+	"mainSeriesProperties.areaStyle.transparency": number;
+	/**
+	 * Main series price axis percentage mode.
+	 *
+	 * @default false
+	 */
+	"mainSeriesProperties.priceAxisProperties.percentage": boolean;
+	/**
+	 * Main series price axis indexed to 100 mode.
+	 *
+	 * @default false
+	 */
+	"mainSeriesProperties.priceAxisProperties.indexedTo100": boolean;
+	/**
+	 * Main series price axis log mode.
+	 *
+	 * @default false
+	 */
+	"mainSeriesProperties.priceAxisProperties.log": boolean;
+	/**
+	 * Main series price axis inverted mode.
+	 *
+	 * @default false
+	 */
+	"mainSeriesProperties.priceAxisProperties.isInverted": boolean;
+	/**
+	 * Main series price axis label alignment behaviour.
+	 *
+	 * @default true
+	 */
+	"mainSeriesProperties.priceAxisProperties.alignLabels": boolean;
+	/**
+	 * Main series Renko style up color.
+	 *
+	 * @default "#089981"
+	 */
+	"mainSeriesProperties.renkoStyle.upColor": string;
+	/**
+	 * Main series Renko style down color.
+	 *
+	 * @default "#F23645"
+	 */
+	"mainSeriesProperties.renkoStyle.downColor": string;
+	/**
+	 * Main series Renko style border up color.
+	 *
+	 * @default "#089981"
+	 */
+	"mainSeriesProperties.renkoStyle.borderUpColor": string;
+	/**
+	 * Main series Renko style border down color.
+	 *
+	 * @default "#F23645"
+	 */
+	"mainSeriesProperties.renkoStyle.borderDownColor": string;
+	/**
+	 * Main series Renko style up projection color.
+	 *
+	 * @default "#a9dcc3"
+	 */
+	"mainSeriesProperties.renkoStyle.upColorProjection": string;
+	/**
+	 * Main series Renko style down projection color.
+	 *
+	 * @default "#f5a6ae"
+	 */
+	"mainSeriesProperties.renkoStyle.downColorProjection": string;
+	/**
+	 * Main series Renko style up projection border color.
+	 *
+	 * @default "#a9dcc3"
+	 */
+	"mainSeriesProperties.renkoStyle.borderUpColorProjection": string;
+	/**
+	 * Main series Renko style down projection border color.
+	 *
+	 * @default "#f5a6ae"
+	 */
+	"mainSeriesProperties.renkoStyle.borderDownColorProjection": string;
+	/**
+	 * Main series Renko style wick up color.
+	 *
+	 * @default "#089981"
+	 */
+	"mainSeriesProperties.renkoStyle.wickUpColor": string;
+	/**
+	 * Main series Renko style wick down color.
+	 *
+	 * @default "#F23645"
+	 */
+	"mainSeriesProperties.renkoStyle.wickDownColor": string;
+	/**
+	 * Main series Line Break style up color.
+	 *
+	 * @default "#089981"
+	 */
+	"mainSeriesProperties.pbStyle.upColor": string;
+	/**
+	 * Main series Line Break style down color.
+	 *
+	 * @default "#F23645"
+	 */
+	"mainSeriesProperties.pbStyle.downColor": string;
+	/**
+	 * Main series Line Break style border up color.
+	 *
+	 * @default "#089981"
+	 */
+	"mainSeriesProperties.pbStyle.borderUpColor": string;
+	/**
+	 * Main series Line Break style border down color.
+	 *
+	 * @default "#F23645"
+	 */
+	"mainSeriesProperties.pbStyle.borderDownColor": string;
+	/**
+	 * Main series Line Break style up projection color.
+	 *
+	 * @default "#a9dcc3"
+	 */
+	"mainSeriesProperties.pbStyle.upColorProjection": string;
+	/**
+	 * Main series Line Break style down projection color.
+	 *
+	 * @default "#f5a6ae"
+	 */
+	"mainSeriesProperties.pbStyle.downColorProjection": string;
+	/**
+	 * Main series Line Break style up projection color.
+	 *
+	 * @default "#a9dcc3"
+	 */
+	"mainSeriesProperties.pbStyle.borderUpColorProjection": string;
+	/**
+	 * Main series Line Break style down projection color.
+	 *
+	 * @default "#f5a6ae"
+	 */
+	"mainSeriesProperties.pbStyle.borderDownColorProjection": string;
+	/**
+	 * Main series Kagi style up color.
+	 *
+	 * @default "#089981"
+	 */
+	"mainSeriesProperties.kagiStyle.upColor": string;
+	/**
+	 * Main series Kagi style down color.
+	 *
+	 * @default "#F23645"
+	 */
+	"mainSeriesProperties.kagiStyle.downColor": string;
+	/**
+	 * Main series Kagi style up projection color.
+	 *
+	 * @default "#a9dcc3"
+	 */
+	"mainSeriesProperties.kagiStyle.upColorProjection": string;
+	/**
+	 * Main series Kagi style down projection color.
+	 *
+	 * @default "#f5a6ae"
+	 */
+	"mainSeriesProperties.kagiStyle.downColorProjection": string;
+	/**
+	 * Main series Point & Figure style up color.
+	 *
+	 * @default "#089981"
+	 */
+	"mainSeriesProperties.pnfStyle.upColor": string;
+	/**
+	 * Main series Point & Figure style down color.
+	 *
+	 * @default "#F23645"
+	 */
+	"mainSeriesProperties.pnfStyle.downColor": string;
+	/**
+	 * Main series Point & Figure style up projection color.
+	 *
+	 * @default "#a9dcc3"
+	 */
+	"mainSeriesProperties.pnfStyle.upColorProjection": string;
+	/**
+	 * Main series Point & Figure style down projection color.
+	 *
+	 * @default "#f5a6ae"
+	 */
+	"mainSeriesProperties.pnfStyle.downColorProjection": string;
+	/**
+	 * Main series Baseline style baseline color.
+	 *
+	 * @default "#758696"
+	 */
+	"mainSeriesProperties.baselineStyle.baselineColor": string;
+	/**
+	 * Main series Baseline style top fill color1.
+	 *
+	 * @default "rgba(8, 153, 129, 0.28)"
+	 */
+	"mainSeriesProperties.baselineStyle.topFillColor1": string;
+	/**
+	 * Main series Baseline style top fill color2.
+	 *
+	 * @default "rgba(8, 153, 129, 0.05)"
+	 */
+	"mainSeriesProperties.baselineStyle.topFillColor2": string;
+	/**
+	 * Main series Baseline style bottom fill color1.
+	 *
+	 * @default "rgba(242, 54, 69, 0.05)"
+	 */
+	"mainSeriesProperties.baselineStyle.bottomFillColor1": string;
+	/**
+	 * Main series Baseline style bottom fill color2.
+	 *
+	 * @default "rgba(242, 54, 69, 0.28)"
+	 */
+	"mainSeriesProperties.baselineStyle.bottomFillColor2": string;
+	/**
+	 * Main series Baseline style top line color.
+	 *
+	 * @default "#089981"
+	 */
+	"mainSeriesProperties.baselineStyle.topLineColor": string;
+	/**
+	 * Main series Baseline style bottom line color.
+	 *
+	 * @default "#F23645"
+	 */
+	"mainSeriesProperties.baselineStyle.bottomLineColor": string;
+	/**
+	 * Main series Baseline style top line width.
+	 *
+	 * @default 2
+	 */
+	"mainSeriesProperties.baselineStyle.topLineWidth": number;
+	/**
+	 * Main series Baseline style bottom line width.
+	 *
+	 * @default 2
+	 */
+	"mainSeriesProperties.baselineStyle.bottomLineWidth": number;
+	/**
+	 * Main series Baseline style price source.
+	 *
+	 * @default "close"
+	 */
+	"mainSeriesProperties.baselineStyle.priceSource": PriceSource;
+	/**
+	 * Main series Baseline style transparency.
+	 *
+	 * @default 50
+	 */
+	"mainSeriesProperties.baselineStyle.transparency": number;
+	/**
+	 * Main series Baseline style base level percentage.
+	 *
+	 * @default 50
+	 */
+	"mainSeriesProperties.baselineStyle.baseLevelPercentage": number;
+	/**
+	 * Main series range style up color.
+	 *
+	 * @default "#089981"
+	 */
+	"mainSeriesProperties.rangeStyle.upColor": string;
+	/**
+	 * Main series range style down color.
+	 *
+	 * @default "#F23645"
+	 */
+	"mainSeriesProperties.rangeStyle.downColor": string;
+	/**
+	 * Main series range style thin bars behaviour.
+	 *
+	 * @default true
+	 */
+	"mainSeriesProperties.rangeStyle.thinBars": boolean;
+	/**
+	 * Main series range style up projection color.
+	 *
+	 * @default "#a9dcc3"
+	 */
+	"mainSeriesProperties.rangeStyle.upColorProjection": string;
+	/**
+	 * Main series range style down projection color.
+	 *
+	 * @default "#f5a6ae"
+	 */
+	"mainSeriesProperties.rangeStyle.downColorProjection": string;
 }
 export interface ChartingLibraryWidgetConstructor {
 	new (options: ChartingLibraryWidgetOptions | TradingTerminalWidgetOptions): IChartingLibraryWidget;
@@ -2113,7 +3190,7 @@ export interface IChartingLibraryWidget {
 	 *
 	 * @param overrides An object of overrides to apply to the chart.
 	 */
-	applyOverrides<TOverrides extends StudyOverrides>(overrides: TOverrides): void;
+	applyOverrides<TOverrides extends Partial<ChartPropertiesOverrides>>(overrides: TOverrides): void;
 	/**
 	 * Apply overrides to study styles and inputs without reloading. See also {@link ChartingLibraryWidgetOptions.studies_overrides}.
 	 *
