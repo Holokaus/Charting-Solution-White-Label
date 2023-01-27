@@ -403,6 +403,16 @@ export declare type CustomTranslateFunction = (key: string, options?: TranslateO
 export declare type DateFormat = keyof typeof dateFormatFunctions;
 export declare type Direction = "buy" | "sell";
 export declare type DomeCallback = (data: DOMData) => void;
+/**
+ * A event related to a drawing.
+ *
+ * - Note that the `properties_changed` event can be emitted before `create` event, and that the
+ * event isn't debounced (for example dragging a slider for a property will result in this event
+ * firing for each movement on the slider), you may want to debounce this within your code.
+ * - The `move` event is emitted when a drawing is moved as a whole, whilst the `points_changed`
+ * event is emitted when a single point of the drawing is moved. `points_changed` will always fire
+ * when `move` fires but not vice-versa.
+ */
 export declare type DrawingEventType = "click" | "move" | "remove" | "hide" | "show" | "create" | "properties_changed" | "points_changed";
 export declare type DropdownUpdateParams = Partial<Omit<DropdownParams, "align">>;
 export declare type EditObjectDialogObjectType = "mainSeries" | "drawing" | "study" | "other";
@@ -473,7 +483,8 @@ export declare type SetVisibleTimeRange = Omit<VisibleTimeRange, "to"> & Partial
 export declare type ShapePoint = StickedPoint | PricedPoint | TimePoint;
 export declare type ShapesGroupId = Nominal<string, "ShapesGroupId">;
 export declare type SingleChartLayoutType = "s";
-export declare type StudyEventType = "remove" | "price_scale_changed";
+/** An event related to a study. */
+export declare type StudyEventType = "remove" | "price_scale_changed" | "paste_study";
 export declare type StudyInputId = Nominal<string, "StudyInputId">;
 export declare type StudyInputValue = string | number | boolean;
 export declare type StudyOhlcPlotPreferences = StudyOhlcPlotBarsStylePreferences | StudyOhlcPlotCandlesStylePreferences;
