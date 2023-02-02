@@ -480,6 +480,7 @@ export declare type ServerTimeCallback = (serverTime: number) => void;
  * fallback to the timestamp of the latest bar on the chart.
  */
 export declare type SetVisibleTimeRange = Omit<VisibleTimeRange, "to"> & Partial<Pick<VisibleTimeRange, "to">>;
+/** Shape point */
 export declare type ShapePoint = StickedPoint | PricedPoint | TimePoint;
 export declare type ShapesGroupId = Nominal<string, "ShapesGroupId">;
 export declare type SingleChartLayoutType = "s";
@@ -2048,6 +2049,15 @@ export interface ContextMenuPosition {
 	 */
 	boxHeight?: number;
 }
+/**
+ * Options for creating an anchored shape.
+ */
+export interface CreateAnchoredShapeOptions<TOverrides extends object> extends CreateShapeOptionsBase<TOverrides> {
+	/**
+	 * A shape to create;
+	 */
+	shape: "anchored_text" | "anchored_note";
+}
 export interface CreateContextMenuParams {
 	menuName: string;
 	detail?: {
@@ -2084,7 +2094,7 @@ export interface CreateShapeOptions<TOverrides extends object> extends CreateSha
 	/**
 	 * A shape to create.
 	 */
-	shape?: "arrow_up" | "arrow_down" | "flag" | "vertical_line" | "horizontal_line" | "long_position" | "short_position" | "icon";
+	shape?: "arrow_up" | "arrow_down" | "flag" | "vertical_line" | "horizontal_line" | "long_position" | "short_position" | "icon" | "anchored_text" | "anchored_note";
 	/**
 	 * An optional study ID of the owner study.
 	 */
@@ -2784,7 +2794,7 @@ export interface IChartWidgetApi {
 	 * Create a new single point shape.
 	 *
 	 * @param point A point. The location of the new shape.
-	 * @param options A options object for the new shape.
+	 * @param options An options object for the new shape.
 	 * @returns The ID of the new shape if it was created successfully, or null otherwise.
 	 */
 	createShape<TOverrides extends object>(point: ShapePoint, options: CreateShapeOptions<TOverrides>): EntityId | null;
@@ -2796,6 +2806,13 @@ export interface IChartWidgetApi {
 	 * @returns The ID of the new shape if it was created successfully, or null otherwise.
 	 */
 	createMultipointShape<TOverrides extends object>(points: ShapePoint[], options: CreateMultipointShapeOptions<TOverrides>): EntityId | null;
+	/**
+	 * Create a new anchored shape. Anchored shapes maintain their position when the chart's visible range changes.
+	 *
+	 * @param position Percent-based x and y position of the new shape, relative to the top left of the chart.
+	 * @param options An options object for the new shape.
+	 */
+	createAnchoredShape<TOverrides extends object>(position: PositionPercents, options: CreateAnchoredShapeOptions<TOverrides>): EntityId | null;
 	/**
 	 * Get a shape by ID.
 	 *
@@ -3487,7 +3504,25 @@ export interface ILineDataSourceApi {
 	getProperties(): Record<string, any>;
 	setProperties(newProperties: object): void;
 	getPoints(): PricedPoint[];
+	/**
+	 * Set the new points of the shape. All points must be provided: for example if the shape is defined by 5 points then all 5 must be provided.
+	 *
+	 * @param  points - The new points.
+	 *
+	 */
 	setPoints(points: ShapePoint[]): void;
+	/**
+	 * Get the position percents of a fixed shape.
+	 */
+	getAnchoredPosition(): PositionPercents | undefined;
+	/**
+	 * Set the position percents for a fixed shape.
+	 * For example `setPoints([{ x: 0.1, y: 0.1 }])` would set a fixed shape defined by
+	 * a single point to be 10% top the left edge of the chart and 10% from the top edge.
+	 *
+	 * @param positionPercents The new position percents.
+	 */
+	setAnchoredPosition(positionPercents: PositionPercents): void;
 }
 export interface IMenuItem {
 	readonly type: MenuItemType;
@@ -4322,6 +4357,20 @@ export interface Position {
 	[key: string]: any;
 }
 export interface PositionDialogOptions extends TradingDialogOptions {
+}
+/**
+ * Anchored (fixed) shape point position as a percentage from the top left of a chart.
+ * For example `{ x: 0.5, y: 0.5 }` for the centre of the chart.
+ */
+export interface PositionPercents {
+	/**
+	 * Position as a percentage from the left edge of the chart.
+	 */
+	x: number;
+	/**
+	 * Position as a percentage from the top edge of the chart.
+	 */
+	y: number;
 }
 export interface PositiveBaseInputFieldValidatorResult extends BaseInputFieldValidatorResult {
 	valid: true;

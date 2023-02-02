@@ -1,0 +1,1 @@
+(self.webpackChunktradingview=self.webpackChunktradingview||[]).push([[988],{35957:()=>{},70494:(i,e,n)=>{"use strict";n.r(e),n.d(e,{usePrismHighlightAllUnder:()=>r});var h=n(12331),l=n.n(h);n(35957);function r(i){l().highlightAllUnder(i)}}}]);
