@@ -3970,6 +3970,14 @@ export interface IWidgetbarApi extends IDestroyable {
 	showPage(pageName: PageName): void;
 	hidePage(pageName: PageName): void;
 	isPageVisible(pageName: PageName): boolean;
+	/**
+	 * Open order panel widget
+	 */
+	openOrderPanel(): void;
+	/**
+	 * Close order panel widget
+	 */
+	closeOrderPanel(): void;
 }
 export interface IconOptions {
 	icon: number;
