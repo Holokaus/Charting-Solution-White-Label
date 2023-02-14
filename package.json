@@ -14,6 +14,6 @@
     "url": "https://github.com/tradingview/charting_library/issues"
   },
   "name": "charting_library",
-  "version": "23.047",
+  "version": "24.000",
   "types": "charting_library.d.ts"
 }

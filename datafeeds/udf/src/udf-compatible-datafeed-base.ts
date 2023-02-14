@@ -31,6 +31,7 @@ import {
 import {
 	GetBarsResult,
 	HistoryProvider,
+	type LimitedResponseConfiguration,
 	PeriodParamsWithOptionalCountback,
 } from './history-provider';
 
@@ -121,10 +122,20 @@ export class UDFCompatibleDatafeedBase implements IExternalDatafeed, IDatafeedQu
 
 	private readonly _requester: Requester;
 
-	protected constructor(datafeedURL: string, quotesProvider: IQuotesProvider, requester: Requester, updateFrequency: number = 10 * 1000) {
+	protected constructor(
+		datafeedURL: string,
+		quotesProvider: IQuotesProvider,
+		requester: Requester,
+		updateFrequency: number = 10 * 1000,
+		limitedServerResponse?: LimitedResponseConfiguration
+	) {
 		this._datafeedURL = datafeedURL;
 		this._requester = requester;
-		this._historyProvider = new HistoryProvider(datafeedURL, this._requester);
+		this._historyProvider = new HistoryProvider(
+			datafeedURL,
+			this._requester,
+			limitedServerResponse
+		);
 		this._quotesProvider = quotesProvider;
 
 		this._dataPulseProvider = new DataPulseProvider(this._historyProvider, updateFrequency);
@@ -331,7 +342,7 @@ export class UDFCompatibleDatafeedBase implements IExternalDatafeed, IDatafeedQu
 							original_unit_id: response.original_unit_id ?? response['original-unit-id'],
 							unit_conversion_types: response.unit_conversion_types ?? response['unit-conversion-types'],
 							has_intraday: response.has_intraday ?? response['has-intraday'] ?? false,
-							// tslint:disable-next-line: no-deprecation
+							// eslint-disable-next-line deprecation/deprecation
 							has_no_volume: response.has_no_volume ?? response['has-no-volume'],
 							visible_plots_set: response.visible_plots_set ?? response['visible-plots-set'],
 							minmov: response.minmovement ?? response.minmov ?? 0,

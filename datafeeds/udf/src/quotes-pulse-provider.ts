@@ -85,7 +85,8 @@ export class QuotesPulseProvider {
 			return;
 		}
 
-		for (const listenerGuid in this._subscribers) { // tslint:disable-line:forin
+		// eslint-disable-next-line guard-for-in
+		for (const listenerGuid in this._subscribers) {
 			this._requestsPending++;
 
 			const subscriptionRecord = this._subscribers[listenerGuid];
