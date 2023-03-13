@@ -1,8 +1,8 @@
 # UDF Compatible Datafeed
 
-This folder contains [UDF](https://github.com/tradingview/charting_library/wiki/UDF) datafeed adapter. It implements [JS API](https://github.com/tradingview/charting_library/wiki/JS%20API) and makes HTTP requests using [UDF](https://github.com/tradingview/charting_library/wiki/UDF) protocol.
+This folder contains [UDF](https://www.tradingview.com/charting_library_docs/docs/connecting_data/UDF) datafeed adapter. It implements [Datafeed API](https://www.tradingview.com/charting_library_docs/docs/connecting_data/Datafeed-API) and makes HTTP requests using [UDF](https://www.tradingview.com/charting_library_docs/docs/connecting_data/UDF) protocol.
 
-You can use this datafeed adapter to plug your data if you implement [UDF](https://github.com/tradingview/charting_library/wiki/UDF) on your server. You can also scrutinize how it works before writing your own adapter.
+You can use this datafeed adapter to plug your data if you implement [UDF](https://www.tradingview.com/charting_library_docs/docs/connecting_data/UDF) on your server. You can also scrutinize how it works before writing your own adapter.
 
 This datafeed is implemented in [TypeScript](https://github.com/Microsoft/TypeScript/).
 

@@ -105,7 +105,7 @@ function extractField<T, TField extends keyof T>(data: T, field: TField, arrayIn
 
 /**
  * This class implements interaction with UDF-compatible datafeed.
- * See UDF protocol reference at https://github.com/tradingview/charting_library/wiki/UDF
+ * See [UDF protocol reference](@docs/connecting_data/UDF)
  */
 export class UDFCompatibleDatafeedBase implements IExternalDatafeed, IDatafeedQuotesApi, IDatafeedChartApi {
 	protected _configuration: UdfCompatibleConfiguration = defaultConfiguration();

@@ -2438,7 +2438,7 @@ export interface ChartingLibraryWidgetOptions {
 	 */
 	container: HTMLElement | string;
 	/**
-	 * JavaScript object that implements the datafeed interface ({@link IBasicDataFeed}) to supply the chart with data. See [Connecting Data](https://github.com/tradingview/charting_library/wiki/Connecting-Data) for more information on the JS API.
+	 * JavaScript object that implements the datafeed interface ({@link IBasicDataFeed}) to supply the chart with data. See [Connecting Data](https://www.tradingview.com/charting-library-docs/latest/connecting_data/) for more information on the JS API.
 	 *
 	 * ```javascript
 	 * datafeed: new Datafeeds.UDFCompatibleDatafeed("https://demo_feed.tradingview.com")
@@ -2490,7 +2490,7 @@ export interface ChartingLibraryWidgetOptions {
 	 */
 	debug?: boolean;
 	/**
-	 * The array containing names of features that should be disabled by default. `Feature` means part of the functionality of the chart (part of the UI/UX). Supported features are listed [here](https://github.com/tradingview/charting_library/wiki/Featuresets).
+	 * The array containing names of features that should be disabled by default. `Feature` means part of the functionality of the chart (part of the UI/UX). Supported features are listed [here](https://www.tradingview.com/charting-library-docs/latest/customization/Featuresets).
 	 *
 	 * Example:
 	 * ```javascript
@@ -2521,7 +2521,7 @@ export interface ChartingLibraryWidgetOptions {
 	 */
 	drawings_access?: AccessList;
 	/**
-	 * The array containing names of features that should be enabled by default. `Feature` means part of the functionality of the chart (part of the UI/UX). Supported features are listed [here](https://github.com/tradingview/charting_library/wiki/Featuresets).
+	 * The array containing names of features that should be enabled by default. `Feature` means part of the functionality of the chart (part of the UI/UX). Supported features are listed [here](https://www.tradingview.com/charting-library-docs/latest/customization/Featuresets).
 	 *
 	 * Example:
 	 * ```javascript
@@ -2545,11 +2545,11 @@ export interface ChartingLibraryWidgetOptions {
 	 * library_path: "charting_library/",
 	 * ```
 	 *
-	 * * If you would like to host the library on a separate origin to the page containing the chart then please view the following guide: [Hosting the library on a separate origin](https://github.com/tradingview/charting_library/wiki/Hosting-Library-Cross-Origin).
+	 * * If you would like to host the library on a separate origin to the page containing the chart then please view the following guide: [Hosting the library on a separate origin](https://www.tradingview.com/charting-library-docs/latest/getting_started/Hosting-Library-Cross-Origin).
 	 */
 	library_path?: string;
 	/**
-	 * Locale to be used by Charting Library. See [Localization](https://github.com/tradingview/charting_library/wiki/Localization) section for details.
+	 * Locale to be used by Charting Library. See [Localization](https://www.tradingview.com/charting-library-docs/latest/core_concepts/Localization) section for details.
 	 *
 	 * ```javascript
 	 * locale: 'en',
@@ -2631,7 +2631,7 @@ export interface ChartingLibraryWidgetOptions {
 	timeframe?: TimeframeOption;
 	/**
 	 * Default timezone of the chart. The time on the timescale is displayed according to this timezone.
-	 * See the [list of supported timezones](https://github.com/tradingview/charting_library/wiki/Symbology#timezone) for available values. Set it to `exchange` to use the exchange timezone. Use the {@link ChartingLibraryWidgetOptions.overrides} section if you wish to override the default value.
+	 * See the [list of supported timezones](https://www.tradingview.com/charting-library-docs/latest/connecting_data/Symbology#timezone) for available values. Set it to `exchange` to use the exchange timezone. Use the {@link ChartingLibraryWidgetOptions.overrides} section if you wish to override the default value.
 	 *
 	 * ```javascript
 	 * timezone: "America/New_York",
@@ -2668,7 +2668,7 @@ export interface ChartingLibraryWidgetOptions {
 	height?: number;
 	/**
 	 * Set the storage url endpoint for use with the high-level saving / loading charts API.
-	 * See more details [here](https://github.com/tradingview/charting_library/wiki/Saving-and-Loading-Charts.
+	 * See more details [here](https://www.tradingview.com/charting-library-docs/latest/saving_loading/).
 	 *
 	 * ```javascript
 	 * charts_storage_url: 'http://storage.yourserver.com',
@@ -2685,7 +2685,7 @@ export interface ChartingLibraryWidgetOptions {
 	charts_storage_api_version?: AvailableSaveloadVersions;
 	/**
 	 * Set the client ID for the high-level saving / loading charts API.
-	 * See more details [here](https://github.com/tradingview/charting_library/wiki/Saving-and-Loading-Charts).
+	 * See more details [here](https://www.tradingview.com/charting-library-docs/latest/saving_loading/).
 	 *
 	 * ```javascript
 	 * client_id: 'yourserver.com',
@@ -2694,7 +2694,7 @@ export interface ChartingLibraryWidgetOptions {
 	client_id?: string;
 	/**
 	 * Set the user ID for the high-level saving / loading charts API.
-	 * See more details [here](https://github.com/tradingview/charting_library/wiki/Saving-and-Loading-Charts).
+	 * See more details [here](https://www.tradingview.com/charting-library-docs/latest/saving_loading/).
 	 *
 	 * ```javascript
 	 * user_id: 'public_user_id',
@@ -2702,7 +2702,7 @@ export interface ChartingLibraryWidgetOptions {
 	 */
 	user_id?: string;
 	/**
-	 * Set this parameter to `true` if you want the library to load the last saved chart for a user (you should implement [save/load](https://github.com/tradingview/charting_library/wiki/Saving-and-Loading-Charts) first to make it work).
+	 * Set this parameter to `true` if you want the library to load the last saved chart for a user (you should implement [save/load](https://www.tradingview.com/charting-library-docs/latest/saving_loading/) first to make it work).
 	 *
 	 * ```javascript
 	 * load_last_chart: true,
@@ -2712,7 +2712,7 @@ export interface ChartingLibraryWidgetOptions {
 	/**
 	 * Use this option to customize the style or inputs of the indicators.
 	 * You can also customize the styles and inputs of the `Compare` series using this argument.
-	 * See more details [here](https://github.com/tradingview/charting_library/wiki/Studies-Overrides)
+	 * See more details [here](https://www.tradingview.com/charting-library-docs/latest/customization/overrides/Studies-Overrides)
 	 *
 	 * ```javascript
 	 * studies_overrides: {
@@ -2816,8 +2816,8 @@ export interface ChartingLibraryWidgetOptions {
 	 * }
 	 * ```
 	 * This code will change the default series style to "line".
-	 * All customizable properties are listed in [separate article](https://github.com/tradingview/charting_library/wiki/Overrides).
-	 * You can use [Drawings-Overrides](https://github.com/tradingview/charting_library/wiki/Drawings-Overrides).
+	 * All customizable properties are listed in [separate article](https://www.tradingview.com/charting-library-docs/latest/customization/overrides/).
+	 * You can use [Drawings-Overrides](https://www.tradingview.com/charting-library-docs/latest/customization/overrides/Drawings-Overrides).
 	 */
 	overrides?: Overrides;
 	/**
@@ -2832,7 +2832,7 @@ export interface ChartingLibraryWidgetOptions {
 	 */
 	snapshot_url?: string;
 	/**
-	 * List of visible timeframes that can be selected at the bottom of the chart. See [this topic](https://github.com/tradingview/charting_library/wiki/Time-Frames) to learn more about timeframes. Timeframe is an object containing following properties:
+	 * List of visible timeframes that can be selected at the bottom of the chart. See [this topic](https://www.tradingview.com/charting-library-docs/latest/core_concepts/Time-Frames) to learn more about timeframes. Timeframe is an object containing following properties:
 	 *
 	 * Example:
 	 *
@@ -2873,7 +2873,7 @@ export interface ChartingLibraryWidgetOptions {
 	 */
 	custom_font_family?: string;
 	/**
-	 * Items that should be marked as favorite by default. This option requires that the usage of localstorage is disabled (see [featuresets](https://github.com/tradingview/charting_library/wiki/Featuresets) to know more). The `favorites` property is supposed to be an object. The following properties are supported:
+	 * Items that should be marked as favorite by default. This option requires that the usage of localstorage is disabled (see [featuresets](https://www.tradingview.com/charting-library-docs/latest/customization/Featuresets) to know more). The `favorites` property is supposed to be an object. The following properties are supported:
 	 *
 	 * ```javascript
 	 * favorites: {
@@ -2886,7 +2886,7 @@ export interface ChartingLibraryWidgetOptions {
 	/**
 	 * An object containing the save/load functions.
 	 * It is used to implement a custom save/load algorithm.
-	 * Please see details and an example on [Saving and Loading Charts page](https://github.com/tradingview/charting_library/wiki/Saving-and-Loading-Charts#api-handlers).
+	 * Please see details and an example on [Saving and Loading Charts page](https://www.tradingview.com/charting-library-docs/latest/saving_loading/#api-handlers).
 	 */
 	save_load_adapter?: IExternalSaveLoadAdapter;
 	/**
@@ -2941,7 +2941,7 @@ export interface ChartingLibraryWidgetOptions {
 	 *
 	 * `PineJS` variable will be passed as the first argument of this function and can be used inside your indicators to access internal helper functions.
 	 *
-	 * See more details [here](https://github.com/tradingview/charting_library/wiki/Creating-Custom-Studies).
+	 * See more details [here](https://www.tradingview.com/charting-library-docs/latest/custom_studies/).
 	 *
 	 * ```javascript
 	 * custom_indicators_getter: function(PineJS) {
@@ -2955,7 +2955,7 @@ export interface ChartingLibraryWidgetOptions {
 	/**
 	 * An optional field containing an array of custom symbol info fields to be shown in the Symbol Info dialog.
 	 *
-	 * See [Symbology](https://github.com/tradingview/charting_library/wiki/Symbology) for more information about symbol info.
+	 * See [Symbology](https://www.tradingview.com/charting-library-docs/latest/connecting_data/Symbology) for more information about symbol info.
 	 *
 	 * ```javascript
 	 * additional_symbol_info_fields: [
@@ -3414,7 +3414,7 @@ export interface CustomIndicator {
 	/**
 	 * The metainfo field is designed to contain the main info about the custom study.
 	 *
-	 * See [Custom Studies Metainfo](https://github.com/tradingview/charting_library/wiki/Custom-Studies-Metainfo) for more information
+	 * See [Custom Studies Metainfo](https://www.tradingview.com/charting-library-docs/latest/custom_studies/metainfo/) for more information
 	 */
 	readonly metainfo: StudyMetaInfo;
 	/**
@@ -3423,7 +3423,7 @@ export interface CustomIndicator {
 	 * The library expects the constructor to create an instance of the study with one mandatory method - `main()` and one optional method - `init()`.
 	 * Once the study is created the library calls init (if exists) and main sequentially with empty context to collect information about all vars.
 	 *
-	 * See [Custom Studies Constructor](https://github.com/tradingview/charting_library/wiki/Custom-Studies-Constructor) for more information.
+	 * See [Custom Studies Constructor](https://www.tradingview.com/charting-library-docs/latest/custom_studies/Custom-Studies-Constructor) for more information.
 	 */
 	readonly constructor: LibraryPineStudyConstructor<IPineStudyResult> | ((this: LibraryPineStudy<IPineStudyResult>) => void);
 }
@@ -3997,7 +3997,7 @@ export interface IBrokerCommon {
 	getPositionDialogOptions?(): PositionDialogOptions | undefined;
 }
 export interface IBrokerConnectionAdapterFactory {
-	/** Creates a [Delegate](https://github.com/tradingview/charting_library/wiki/Delegate) object */
+	/** Creates a Delegate object */
 	createDelegate<T extends Function>(): IDelegate<T>;
 	/** Creates a WatchedValue object */
 	createWatchedValue<T>(value?: T): IWatchedValue<T>;
@@ -4017,7 +4017,7 @@ export interface IBrokerConnectionAdapterFactory {
 	 * - for `price = 13`: `minmov = 2, pricescale = 100, minmove2 = 0`.
 	 * - for `price = 27`: `minmov = 5, pricescale = 100, minmove2 = 0`.
 	 *
-	 * For more information on fractional prices, see this [article](https://github.com/tradingview/charting_library/wiki/Symbology#minmov-pricescale-minmove2-fractional)
+	 * For more information on fractional prices, see this [article](https://www.tradingview.com/charting-library-docs/latest/connecting_data/Symbology#price-format)
 	 */
 	createPriceFormatter(priceScale?: number, minMove?: number, fractional?: boolean, minMove2?: number, variableMinTick?: string): IPriceFormatter;
 }
@@ -5307,11 +5307,30 @@ export interface IChartingLibraryWidget {
 	 */
 	timeHoursFormat(): IWatchedValue<TimeHoursFormat>;
 	/**
+	 * Get a watched value that can be used to read/write/subscribe to the state of the currency and unit
+	 * visibility setting on the price scale.
+	 *
+	 * @returns A watched value of the state of the currency and unit visibility option.
+	 */
+	currencyAndUnitVisibility(): IWatchedValue<VisibilityType>;
+	/**
 	 * Enable or disable debug mode.
 	 *
 	 * @param enabled A boolean flag. `true` to enable debug mode, `false` to disable.
 	 */
 	setDebugMode(enabled: boolean): void;
+	/**
+	 * Clears the undo & redo history.
+	 *
+	 * **Warning:** this should only be used in very specific cases where you have considered
+	 * the UX implications. It is generally unexpected for the user that the undo
+	 * history has been cleared.
+	 *
+	 * An example of an acceptable use-case would be reusing a chart when switching
+	 * pages / tabs on a Single Page Application, and presenting it to the user as a
+	 * new chart.
+	 */
+	clearUndoHistory(): void;
 	/**
 	 * This method returns a readonly WatchedValue ({@link IWatchedValueReadonly})
 	 * object that can be used to read/watch the current supported chart types
@@ -5319,7 +5338,7 @@ export interface IChartingLibraryWidget {
 	 *
 	 * The chart type is returned as a number.
 	 * You can see which number corresponds to which chart type in the
-	 * [Overrides](https://github.com/tradingview/charting_library/wiki/Overrides)
+	 * [Overrides](https://www.tradingview.com/charting-library-docs/latest/customization/overrides/)
 	 * documentation for `mainSeriesProperties.style`.
 	 */
 	supportedChartTypes(): IWatchedValueReadonly<ChartStyle[]>;
@@ -6919,7 +6938,7 @@ export interface IStudyApi {
 	sendToBack(): void;
 	/**
 	 * Override one or more of the study's properties.
-	 * See [Studies Overrides](https://github.com/tradingview/charting_library/wiki/Studies-Overrides) for a list of available overrides.
+	 * See [Studies Overrides](https://www.tradingview.com/charting-library-docs/latest/customization/overrides/Studies-Overrides) for a list of available overrides.
 	 *
 	 * @param overrides Property values to override.
 	 */
@@ -7113,6 +7132,17 @@ export interface ITimeScaleApi {
 	width(): number;
 	/** Object that can be used to read/set/watch the default right offset (margin)  */
 	defaultRightOffset(): IWatchedValue<number>;
+	/** Object that can be used to read/set/watch the default right offset (in percent) (margin)  */
+	defaultRightOffsetPercentage(): IWatchedValue<number>;
+	/**
+	 * Object that can be used to read/set/watch whether to use `defaultRightOffset` or `defaultRightOffsetPercentage`
+	 * option for the right offset (margin).
+	 * - `false`: use `defaultRightOffset`
+	 * - `true`: use `defaultRightOffsetPercentage`
+	 *
+	 * Default: `false`
+	 */
+	usePercentageRightOffset(): IWatchedValue<boolean>;
 }
 export interface ITimezoneApi {
 	/** Array of supported TimezoneInfo */
@@ -7514,7 +7544,7 @@ export interface LibrarySymbolInfo {
 	 */
 	name: string;
 	/**
-	 * the full name of the symbol (contains name and exchange)
+	 * The full name of the symbol (contains name and exchange)
 	 * Example: `BTCE:BTCUSD`
 	 */
 	full_name: string;
@@ -7542,7 +7572,7 @@ export interface LibrarySymbolInfo {
 	 */
 	type: string;
 	/**
-	 * Trading hours for this symbol. See the [Trading Sessions article](https://github.com/tradingview/charting_library/wiki/Trading-Sessions) to learn more details.
+	 * Trading hours for this symbol. See the [Trading Sessions article](https://www.tradingview.com/charting-library-docs/latest/connecting_data/Trading-Sessions) to learn more details.
 	 * @example "1700-0200"
 	 */
 	session: string;
@@ -7562,7 +7592,7 @@ export interface LibrarySymbolInfo {
 	 * List of corrections for this symbol. Corrections are days with specific trading sessions. They can be applied to holidays as well.
 	 *
 	 * It's a string in the following format: `SESSION:YYYYMMDD[,YYYYMMDD][;SESSION:YYYYMMDD[,YYYYMMDD]]`
-	 * Where SESSION has the same format as [Trading Sessions](https://github.com/tradingview/charting_library/wiki/Trading-Sessions).
+	 * Where SESSION has the same format as [Trading Sessions](https://www.tradingview.com/charting-library-docs/latest/connecting_data/Trading-Sessions).
 	 *
 	 * @example "1900F4-2350F4,1000-1845:20181113;1000-1400:20181114"
 	 */
@@ -7583,13 +7613,13 @@ export interface LibrarySymbolInfo {
 	listed_exchange: string;
 	/**
 	 * Timezone of the exchange for this symbol. We expect to get the name of the time zone in `olsondb` format.
-	 * See [Timezones](https://github.com/tradingview/charting_library/wiki/Symbology#timezone) for a full list of supported timezones
+	 * See [Timezones](https://www.tradingview.com/charting-library-docs/latest/connecting_data/Symbology#timezone) for a full list of supported timezones
 	 */
 	timezone: Timezone;
 	/**
 	 * Format of displaying labels on the price scale:
 	 *
-	 * `price` - formats decimal or fractional numbers based on `minmov`, `pricescale`, `minmove2`, `fractional` and `variableMinTick` values. See [Price Formatting](https://github.com/tradingview/charting_library/wiki/Symbology#minmov-pricescale-minmove2-fractional) for more details
+	 * `price` - formats decimal or fractional numbers based on `minmov`, `pricescale`, `minmove2`, `fractional` and `variableMinTick` values. See [Price Formatting](https://www.tradingview.com/charting-library-docs/latest/connecting_data/Symbology#price-format) for more details
 	 * `volume` - formats decimal numbers in thousands, millions, billions or trillions
 	 */
 	format: SeriesFormat;
@@ -7709,7 +7739,7 @@ export interface LibrarySymbolInfo {
 	 */
 	has_daily?: boolean;
 	/**
-	 * Array (of strings) containing the [resolutions](https://github.com/tradingview/charting_library/wiki/Resolution#Days) (in days - without the suffix) supported by the data feed. {@link ResolutionString}
+	 * Array (of strings) containing the [resolutions](https://www.tradingview.com/charting-library-docs/latest/core_concepts/Resolution#days) (in days - without the suffix) supported by the data feed. {@link ResolutionString}
 	 *
 	 * For example it could be something like
 	 *
@@ -7729,7 +7759,7 @@ export interface LibrarySymbolInfo {
 	 */
 	has_weekly_and_monthly?: boolean;
 	/**
-	 * Array (of strings) containing the [resolutions](https://github.com/tradingview/charting_library/wiki/Resolution#Weeks) (in weeks - without the suffix) supported by the data feed. {@link ResolutionString}
+	 * Array (of strings) containing the [resolutions](https://www.tradingview.com/charting-library-docs/latest/core_concepts/Resolution#weeks) (in weeks - without the suffix) supported by the data feed. {@link ResolutionString}
 	 *
 	 * For example it could be something like
 	 *
@@ -7740,7 +7770,7 @@ export interface LibrarySymbolInfo {
 	 */
 	weekly_multipliers?: string[];
 	/**
-	 * Array (of strings) containing the [resolutions](https://github.com/tradingview/charting_library/wiki/Resolution#Months) (in months - without the suffix) supported by the data feed. {@link ResolutionString}
+	 * Array (of strings) containing the [resolutions](https://www.tradingview.com/charting-library-docs/latest/core_concepts/Resolution#months) (in months - without the suffix) supported by the data feed. {@link ResolutionString}
 	 *
 	 * For example it could be something like
 	 *
@@ -8500,6 +8530,7 @@ export interface SavedStateMetaInfo {
  * 	exchange: 'NasdaqNM',
  * 	full_name: 'NasdaqNM:AAPL',
  * 	symbol: 'AAPL',
+ *  ticker: 'AAPL',
  * 	type: 'stock',
  * }
  * ```
@@ -9847,7 +9878,7 @@ export interface SymbolResolveExtension {
 	/**
 	 * Indicates the currency for conversions if `currency_codes` configuration field is set,
 	 * and `currency_code` is provided in the original symbol information ({@link LibrarySymbolInfo}).
-	 * Read more about [currency conversion](https://github.com/tradingview/charting_library/wiki/Price-Scale#currency-conversion).
+	 * Read more about [currency conversion](https://www.tradingview.com/charting-library-docs/latest/ui_elements/Price-Scale#currency-conversion).
 	 */
 	currencyCode?: string;
 	/**
@@ -9856,6 +9887,19 @@ export interface SymbolResolveExtension {
 	 */
 	unitId?: string;
 	session?: string;
+}
+/**
+ * Symbol override data. Passed to and returned from the symbol search override funciton.
+ */
+export interface SymbolSearchCompleteData {
+	/**
+	 * The symbol (or ticker).
+	 */
+	symbol: string;
+	/**
+	 * The human friendly symbol name to display to users.
+	 */
+	name: string;
 }
 export interface TableFormatterInputs<T extends TableFormatterInputValues = TableFormatterInputValues> {
 	/** Array of values to be formatted. Values are obtained by extracting dependent properties from the data object. */
@@ -9969,6 +10013,8 @@ export interface TimescaleMark {
 	label: string;
 	/** Tooltip content */
 	tooltip: string[];
+	/** Shape of the timescale mark */
+	shape?: TimeScaleMarkShape;
 }
 /**
  * Supported timezone identifier are {@link LibrarySymbolInfo.timezones} and {@link LibrarySymbolInfo.exchange}.
@@ -10124,7 +10170,7 @@ export interface TradingTerminalWidgetOptions extends Omit<ChartingLibraryWidget
 	 *
 	 * **NOTE 3:** If both `news_provider` and `rss_news_feed` are available then the `rss_news_feed` will be ignored.
 	 *
-	 * See [News API examples](https://github.com/tradingview/charting_library/wiki/News-Api-Examples) for usage examples.
+	 * See [News API examples](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/news/News-Api-Examples) for usage examples.
 	 */
 	news_provider?: GetNewsFunction;
 	/** Override customizations for trading */
@@ -10174,6 +10220,10 @@ export interface UndoRedoState {
 	readonly enableRedo: boolean;
 	/** Redo text */
 	readonly redoText: string | undefined;
+	/** Original text for undo action - without being translated */
+	readonly originalUndoText: string | undefined;
+	/** Original text for redo action - without being translated */
+	readonly originalRedoText: string | undefined;
 }
 export interface Unit {
 	/** Unique ID */
@@ -10540,7 +10590,17 @@ export type ChartingLibraryFeatureset =
 /** Show a literal "n/a" for not available values instead of "∅" @default false */
 "use_na_string_for_not_available_values" | 
 /** Enable pre and post market session support @default false */
-"pre_post_market_sessions";
+"pre_post_market_sessions" | 
+/** Show the option to specify the default right margin in percentage within chart settings dialog @default false */
+"show_percent_option_for_right_margin" | 
+/**
+ * Alternative loading mode for the library, which can be used to support
+ * older browsers and a few non-standard browsers.
+ * @default false
+ */
+"iframe_loading_compatibility_mode" | 
+/** Use the last (rightmost) visible bar value in the legend  @default false */
+"use_last_visible_bar_value_in_legend";
 /**
  * Context menu items processor signature
  * @param  {readonlyIActionVariant[]} items - an array of items the library wants to display
@@ -10828,9 +10888,9 @@ export type SubscribeBarsCallback = (bar: Bar) => void;
 export type SupportedLineTools = "text" | "anchored_text" | "note" | "anchored_note" | "signpost" | "double_curve" | "arc" | "icon" | "emoji" | "arrow_up" | "arrow_down" | "arrow_left" | "arrow_right" | "price_label" | "price_note" | "arrow_marker" | "flag" | "vertical_line" | "horizontal_line" | "cross_line" | "horizontal_ray" | "trend_line" | "info_line" | "trend_angle" | "arrow" | "ray" | "extended" | "parallel_channel" | "disjoint_angle" | "flat_bottom" | "pitchfork" | "schiff_pitchfork_modified" | "schiff_pitchfork" | "balloon" | "comment" | "inside_pitchfork" | "pitchfan" | "gannbox" | "gannbox_square" | "gannbox_fixed" | "gannbox_fan" | "fib_retracement" | "fib_trend_ext" | "fib_speed_resist_fan" | "fib_timezone" | "fib_trend_time" | "fib_circles" | "fib_spiral" | "fib_speed_resist_arcs" | "fib_channel" | "xabcd_pattern" | "cypher_pattern" | "abcd_pattern" | "callout" | "triangle_pattern" | "3divers_pattern" | "head_and_shoulders" | "fib_wedge" | "elliott_impulse_wave" | "elliott_triangle_wave" | "elliott_triple_combo" | "elliott_correction" | "elliott_double_combo" | "cyclic_lines" | "time_cycles" | "sine_line" | "long_position" | "short_position" | "forecast" | "date_range" | "price_range" | "date_and_price_range" | "bars_pattern" | "ghost_feed" | "projection" | "rectangle" | "rotated_rectangle" | "circle" | "ellipse" | "triangle" | "polyline" | "path" | "curve" | "cursor" | "dot" | "arrow_cursor" | "eraser" | "measure" | "zoom" | "brush" | "highlighter" | "regression_trend" | "fixed_range_volume_profile";
 /**
  * function to override the symbol input from symbol search dialogs
- * @param  {string} symbol - input from the symbol search
+ * @param  {SymbolSearchCompleteData} symbol - input from the symbol search
  */
-export type SymbolSearchCompleteOverrideFunction = (symbol: string) => Promise<string>;
+export type SymbolSearchCompleteOverrideFunction = (symbol: string, searchResultItem?: SearchSymbolResultItem) => Promise<SymbolSearchCompleteData>;
 export type SymbolSource = SymbolInputSymbolSource;
 export type SymbolType = "stock" | "index" | "forex" | "futures" | "bitcoin" | "crypto" | "undefined" | "expression" | "spread" | "cfd" | "economic" | "equity" | "dr" | "bond" | "right" | "warrant" | "fund" | "structured";
 /**
@@ -10875,6 +10935,7 @@ export type TickMarkType =
  *     * `from`, `to`: UNIX timestamps, UTC.
  */
 export type TimeFrameValue = TimeFramePeriodBack | TimeFrameTimeRange;
+export type TimeScaleMarkShape = "circle" | "earningUp" | "earningDown" | "earning";
 export type TimeframeOption = string | {
 	/** From date timestamp */
 	from: number;

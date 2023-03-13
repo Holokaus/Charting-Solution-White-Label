@@ -378,7 +378,7 @@ export interface LibrarySymbolInfo {
 	 */
 	name: string;
 	/**
-	 * the full name of the symbol (contains name and exchange)
+	 * The full name of the symbol (contains name and exchange)
 	 * Example: `BTCE:BTCUSD`
 	 */
 	full_name: string;
@@ -406,7 +406,7 @@ export interface LibrarySymbolInfo {
 	 */
 	type: string;
 	/**
-	 * Trading hours for this symbol. See the [Trading Sessions article](https://github.com/tradingview/charting_library/wiki/Trading-Sessions) to learn more details.
+	 * Trading hours for this symbol. See the [Trading Sessions article](https://www.tradingview.com/charting-library-docs/latest/connecting_data/Trading-Sessions) to learn more details.
 	 * @example "1700-0200"
 	 */
 	session: string;
@@ -426,7 +426,7 @@ export interface LibrarySymbolInfo {
 	 * List of corrections for this symbol. Corrections are days with specific trading sessions. They can be applied to holidays as well.
 	 *
 	 * It's a string in the following format: `SESSION:YYYYMMDD[,YYYYMMDD][;SESSION:YYYYMMDD[,YYYYMMDD]]`
-	 * Where SESSION has the same format as [Trading Sessions](https://github.com/tradingview/charting_library/wiki/Trading-Sessions).
+	 * Where SESSION has the same format as [Trading Sessions](https://www.tradingview.com/charting-library-docs/latest/connecting_data/Trading-Sessions).
 	 *
 	 * @example "1900F4-2350F4,1000-1845:20181113;1000-1400:20181114"
 	 */
@@ -447,13 +447,13 @@ export interface LibrarySymbolInfo {
 	listed_exchange: string;
 	/**
 	 * Timezone of the exchange for this symbol. We expect to get the name of the time zone in `olsondb` format.
-	 * See [Timezones](https://github.com/tradingview/charting_library/wiki/Symbology#timezone) for a full list of supported timezones
+	 * See [Timezones](https://www.tradingview.com/charting-library-docs/latest/connecting_data/Symbology#timezone) for a full list of supported timezones
 	 */
 	timezone: Timezone;
 	/**
 	 * Format of displaying labels on the price scale:
 	 *
-	 * `price` - formats decimal or fractional numbers based on `minmov`, `pricescale`, `minmove2`, `fractional` and `variableMinTick` values. See [Price Formatting](https://github.com/tradingview/charting_library/wiki/Symbology#minmov-pricescale-minmove2-fractional) for more details
+	 * `price` - formats decimal or fractional numbers based on `minmov`, `pricescale`, `minmove2`, `fractional` and `variableMinTick` values. See [Price Formatting](https://www.tradingview.com/charting-library-docs/latest/connecting_data/Symbology#price-format) for more details
 	 * `volume` - formats decimal numbers in thousands, millions, billions or trillions
 	 */
 	format: SeriesFormat;
@@ -573,7 +573,7 @@ export interface LibrarySymbolInfo {
 	 */
 	has_daily?: boolean;
 	/**
-	 * Array (of strings) containing the [resolutions](https://github.com/tradingview/charting_library/wiki/Resolution#Days) (in days - without the suffix) supported by the data feed. {@link ResolutionString}
+	 * Array (of strings) containing the [resolutions](https://www.tradingview.com/charting-library-docs/latest/core_concepts/Resolution#days) (in days - without the suffix) supported by the data feed. {@link ResolutionString}
 	 *
 	 * For example it could be something like
 	 *
@@ -593,7 +593,7 @@ export interface LibrarySymbolInfo {
 	 */
 	has_weekly_and_monthly?: boolean;
 	/**
-	 * Array (of strings) containing the [resolutions](https://github.com/tradingview/charting_library/wiki/Resolution#Weeks) (in weeks - without the suffix) supported by the data feed. {@link ResolutionString}
+	 * Array (of strings) containing the [resolutions](https://www.tradingview.com/charting-library-docs/latest/core_concepts/Resolution#weeks) (in weeks - without the suffix) supported by the data feed. {@link ResolutionString}
 	 *
 	 * For example it could be something like
 	 *
@@ -604,7 +604,7 @@ export interface LibrarySymbolInfo {
 	 */
 	weekly_multipliers?: string[];
 	/**
-	 * Array (of strings) containing the [resolutions](https://github.com/tradingview/charting_library/wiki/Resolution#Months) (in months - without the suffix) supported by the data feed. {@link ResolutionString}
+	 * Array (of strings) containing the [resolutions](https://www.tradingview.com/charting-library-docs/latest/core_concepts/Resolution#months) (in months - without the suffix) supported by the data feed. {@link ResolutionString}
 	 *
 	 * For example it could be something like
 	 *
@@ -769,6 +769,7 @@ export interface QuoteOkData extends QuoteDataResponse {
  * 	exchange: 'NasdaqNM',
  * 	full_name: 'NasdaqNM:AAPL',
  * 	symbol: 'AAPL',
+ *  ticker: 'AAPL',
  * 	type: 'stock',
  * }
  * ```
@@ -796,7 +797,7 @@ export interface SymbolResolveExtension {
 	/**
 	 * Indicates the currency for conversions if `currency_codes` configuration field is set,
 	 * and `currency_code` is provided in the original symbol information ({@link LibrarySymbolInfo}).
-	 * Read more about [currency conversion](https://github.com/tradingview/charting_library/wiki/Price-Scale#currency-conversion).
+	 * Read more about [currency conversion](https://www.tradingview.com/charting-library-docs/latest/ui_elements/Price-Scale#currency-conversion).
 	 */
 	currencyCode?: string;
 	/**
@@ -820,6 +821,8 @@ export interface TimescaleMark {
 	label: string;
 	/** Tooltip content */
 	tooltip: string[];
+	/** Shape of the timescale mark */
+	shape?: TimeScaleMarkShape;
 }
 export interface Unit {
 	/** Unique ID */
@@ -903,6 +906,7 @@ export type SearchSymbolsCallback = (items: SearchSymbolResultItem[]) => void;
 export type SeriesFormat = "price" | "volume";
 export type ServerTimeCallback = (serverTime: number) => void;
 export type SubscribeBarsCallback = (bar: Bar) => void;
+export type TimeScaleMarkShape = "circle" | "earningUp" | "earningDown" | "earning";
 export type Timezone = "Etc/UTC" | CustomTimezones;
 export type VisiblePlotsSet = "ohlcv" | "ohlc" | "c";
 
