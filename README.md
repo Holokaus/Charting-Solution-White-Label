@@ -6,7 +6,7 @@ This repository contains the TradingView Charting Library package. If you use Gi
 
 The `master` branch contains the most recent features and fixes.
 
-Please read the [documentation][doc-url] and the [Best Practices][best-practices-url]) before using the Library.
+Please read the [documentation][doc-url] and the [Best Practices][best-practices-url] before using the Library.
 
 ### Issues Tracking
 We use GitHub's [Issues tracker][issues-url] for our project. Feel free to create bug reports and features requests. Make sure to read the documentation before asking questions - this will avoid repeated questions, leaving us more time for developing the library.
