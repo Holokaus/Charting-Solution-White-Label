@@ -211,7 +211,8 @@ export interface IDatafeedChartApi {
 	 * The Library calls this function to get marks for visible bars range.
 	 * The Library assumes that you will call `onDataCallback` only once per `getMarks` call.
 	 *
-	 * A few marks per bar are allowed (for now, the maximum is 10). Marks outside of the bars are not allowed.
+	 * A few marks per bar are allowed (for now, the maximum is 10). The time of each mark must match the time of a bar. For example, if the bar times are `2023-01-01`, `2023-01-08`, and `2023-01-15`, then a mark cannot have the time `2023-01-05`.
+	 *
 	 * **Remark:** This function will be called only if you confirmed that your back-end is supporting marks ({@link DatafeedConfiguration.supports_marks}).
 	 *
 	 * @param symbolInfo A SymbolInfo object
@@ -225,7 +226,6 @@ export interface IDatafeedChartApi {
 	 * The Library calls this function to get timescale marks for visible bars range.
 	 * The Library assumes that you will call `onDataCallback` only once per `getTimescaleMarks` call.
 	 *
-	 * Only one mark per bar is allowed. Marks outside of the bars are not allowed.
 	 * **Remark:** This function will be called only if you confirmed that your back-end is supporting marks ({@link DatafeedConfiguration.supports_timescale_marks}).
 	 *
 	 * @param symbolInfo A SymbolInfo object
@@ -817,12 +817,37 @@ export interface TimescaleMark {
 	time: number;
 	/** Color for the timescale mark */
 	color: MarkConstColors | string;
+	/**
+	 * Color for the timescale mark text label.
+	 * If undefined then the value provided for `color` will be used.
+	 */
+	labelFontColor?: MarkConstColors | string;
 	/** Label for the timescale mark */
 	label: string;
 	/** Tooltip content */
 	tooltip: string[];
 	/** Shape of the timescale mark */
 	shape?: TimeScaleMarkShape;
+	/**
+	 * Optional URL for an image to be displayed within the timescale mark.
+	 *
+	 * The image should ideally be square in dimension. You can use any image type which
+	 * the browser supports natively.
+	 *
+	 * Examples:
+	 * - `https://s3-symbol-logo.tradingview.com/crypto/XTVCBTC.svg`
+	 * - `/images/myImage.png`
+	 * - `data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3...`
+	 * - `data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABIAAD/4...`
+	 */
+	imageUrl?: string;
+	/**
+	 * Continue to show text label even when an image has
+	 * been loaded for the timescale mark.
+	 *
+	 * Defaults to `false` if undefined.
+	 */
+	showLabelWhenImageLoaded?: boolean;
 }
 export interface Unit {
 	/** Unique ID */
@@ -832,7 +857,7 @@ export interface Unit {
 	/** Description */
 	description: string;
 }
-export type CustomTimezones = "Africa/Cairo" | "Africa/Johannesburg" | "Africa/Lagos" | "Africa/Nairobi" | "Africa/Tunis" | "America/Argentina/Buenos_Aires" | "America/Bogota" | "America/Caracas" | "America/Chicago" | "America/El_Salvador" | "America/Juneau" | "America/Lima" | "America/Los_Angeles" | "America/Mexico_City" | "America/New_York" | "America/Phoenix" | "America/Santiago" | "America/Sao_Paulo" | "America/Toronto" | "America/Vancouver" | "Asia/Almaty" | "Asia/Ashkhabad" | "Asia/Bahrain" | "Asia/Bangkok" | "Asia/Chongqing" | "Asia/Colombo" | "Asia/Dubai" | "Asia/Ho_Chi_Minh" | "Asia/Hong_Kong" | "Asia/Jakarta" | "Asia/Jerusalem" | "Asia/Karachi" | "Asia/Kathmandu" | "Asia/Kolkata" | "Asia/Kuwait" | "Asia/Manila" | "Asia/Muscat" | "Asia/Nicosia" | "Asia/Qatar" | "Asia/Riyadh" | "Asia/Seoul" | "Asia/Shanghai" | "Asia/Singapore" | "Asia/Taipei" | "Asia/Tehran" | "Asia/Tokyo" | "Asia/Yangon" | "Atlantic/Reykjavik" | "Australia/ACT" | "Australia/Adelaide" | "Australia/Brisbane" | "Australia/Perth" | "Australia/Sydney" | "Europe/Amsterdam" | "Europe/Athens" | "Europe/Belgrade" | "Europe/Berlin" | "Europe/Bratislava" | "Europe/Brussels" | "Europe/Bucharest" | "Europe/Budapest" | "Europe/Copenhagen" | "Europe/Dublin" | "Europe/Helsinki" | "Europe/Istanbul" | "Europe/Lisbon" | "Europe/London" | "Europe/Luxembourg" | "Europe/Madrid" | "Europe/Malta" | "Europe/Moscow" | "Europe/Oslo" | "Europe/Paris" | "Europe/Riga" | "Europe/Rome" | "Europe/Stockholm" | "Europe/Tallinn" | "Europe/Vilnius" | "Europe/Warsaw" | "Europe/Zurich" | "Pacific/Auckland" | "Pacific/Chatham" | "Pacific/Fakaofo" | "Pacific/Honolulu" | "Pacific/Norfolk" | "US/Mountain";
+export type CustomTimezones = "Africa/Cairo" | "Africa/Johannesburg" | "Africa/Lagos" | "Africa/Nairobi" | "Africa/Tunis" | "America/Argentina/Buenos_Aires" | "America/Bogota" | "America/Caracas" | "America/Chicago" | "America/El_Salvador" | "America/Juneau" | "America/Lima" | "America/Los_Angeles" | "America/Mexico_City" | "America/New_York" | "America/Phoenix" | "America/Santiago" | "America/Sao_Paulo" | "America/Toronto" | "America/Vancouver" | "Asia/Almaty" | "Asia/Ashkhabad" | "Asia/Bahrain" | "Asia/Bangkok" | "Asia/Chongqing" | "Asia/Colombo" | "Asia/Dubai" | "Asia/Ho_Chi_Minh" | "Asia/Hong_Kong" | "Asia/Jakarta" | "Asia/Jerusalem" | "Asia/Karachi" | "Asia/Kathmandu" | "Asia/Kolkata" | "Asia/Kuwait" | "Asia/Manila" | "Asia/Muscat" | "Asia/Nicosia" | "Asia/Qatar" | "Asia/Riyadh" | "Asia/Seoul" | "Asia/Shanghai" | "Asia/Singapore" | "Asia/Taipei" | "Asia/Tehran" | "Asia/Tokyo" | "Asia/Yangon" | "Atlantic/Reykjavik" | "Australia/Adelaide" | "Australia/Brisbane" | "Australia/Perth" | "Australia/Sydney" | "Europe/Amsterdam" | "Europe/Athens" | "Europe/Belgrade" | "Europe/Berlin" | "Europe/Bratislava" | "Europe/Brussels" | "Europe/Bucharest" | "Europe/Budapest" | "Europe/Copenhagen" | "Europe/Dublin" | "Europe/Helsinki" | "Europe/Istanbul" | "Europe/Lisbon" | "Europe/London" | "Europe/Luxembourg" | "Europe/Madrid" | "Europe/Malta" | "Europe/Moscow" | "Europe/Oslo" | "Europe/Paris" | "Europe/Riga" | "Europe/Rome" | "Europe/Stockholm" | "Europe/Tallinn" | "Europe/Vilnius" | "Europe/Warsaw" | "Europe/Zurich" | "Pacific/Auckland" | "Pacific/Chatham" | "Pacific/Fakaofo" | "Pacific/Honolulu" | "Pacific/Norfolk" | "US/Mountain";
 export type DomeCallback = (data: DOMData) => void;
 export type ErrorCallback = (reason: string) => void;
 export type GetMarksCallback<T> = (marks: T[]) => void;
@@ -852,53 +877,20 @@ export type QuotesCallback = (data: QuoteData[]) => void;
  */
 export type QuotesErrorCallback = (reason: string) => void;
 /**
- * Resolution or time interval is a time period of one bar. The Charting Library supports intraday resolutions (seconds, minutes, hours) and DWM resolutions (daily, weekly, monthly).
+ * Resolution or time interval is a time period of one bar. Charting Library supports tick, intraday (seconds, minutes, hours), and DWM (daily, weekly, monthly) resolutions. The table below describes how to specify different types of resolutions:
  *
- * ## Intraday
+ * Resolution | Format | Example
+ * ---------|----------|---------
+ * Ticks | `xT` | `1T` — one tick
+ * Seconds | `xS` | `1S` — one second
+ * Minutes | `x` | `1` — one minute
+ * Hours | `x` minutes | `60` — one hour
+ * Days | `xD` | `1D` — one day
+ * Weeks | `xW` | `1W` — one week
+ * Months | `xM` | `1M` — one month
+ * Years | `xM` months | `12M` — one year
  *
- * ### Seconds
- *
- * Format: `xS`, where `x` is a number of seconds.
- *
- * Example: `1S` - one second, `2S` - two seconds, `100S` - one hundred seconds.
- *
- * ### Minutes
- *
- * Format: `x`, where `x` is a number of minutes.
- *
- * Example: `1` - one minute, `2` - two minutes, `100` - one hundred minutes.
- *
- * ### Hours
- *
- * **Important:** while user interface allows a user to enter a number of hours as `xh` or `xH`, it is never passed to the API. Hours are always set using minutes in the Charting Library API.
- *
- * Example: `60` - one hour, `120` - two hours, `240` - four hours.
- *
- * ## DWM
- *
- * ### Days
- *
- * Format: `xD`, where `x` is a number of days.
- *
- * Example: `1D` - one day, `2D` - two days, `100D` - one hundred days.
- *
- * ### Weeks
- *
- * Format: `xW`, where `x` is a number of weeks.
- *
- * Example: `1W` - one week, `2W` - two weeks, `100W` - one hundred weeks.
- *
- * ### Months
- *
- * Format: `xM`, where `x` is a number of months.
- *
- * Example: `1M` - one month, `2M` - two months, `100M` - one hundred months.
- *
- * ### Years
- *
- * Years are set using months.
- *
- * Example: `12M` - one year, `24M` - two year, `48M` - four years.
+ * Refer to [Resolution](https://www.tradingview.com/charting-library-docs/latest/core_concepts/Resolution) for more information.
  */
 export type ResolutionString = Nominal<string, "ResolutionString">;
 export type ResolveCallback = (symbolInfo: LibrarySymbolInfo) => void;

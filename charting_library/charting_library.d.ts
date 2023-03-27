@@ -23,10 +23,6 @@ declare const dateFormatFunctions: {
 	readonly "MM/dd/yyyy": (date: Date, local: boolean) => string;
 };
 /* eslint-enable jsdoc/require-jsdoc */
-declare enum ColorType {
-	Solid = "solid",
-	Gradient = "gradient"
-}
 declare enum HHistDirection {
 	LeftToRight = "left_to_right",
 	RightToLeft = "right_to_left"
@@ -1146,10 +1142,15 @@ export interface BrokerConfigFlags {
 	 */
 	supportModifyOrderPreview?: boolean;
 	/**
-	 * Broker supports leverage. If the flag is set to `true`, a leverage input field will appear in the Order Widget. Click on the input field will activate a dedicated Leverage Dialog.
+	 * Broker supports leverage. If the flag is set to `true`, broker will calculate leverage using `leverageInfo` ({@link IBrokerWithoutRealtime.leverageinfo}) method.
 	 * @default false
 	 */
 	supportLeverage?: boolean;
+	/**
+	 * Broker supports leverage button. If the flag is set to `true`, a leverage input field will appear in the Order Widget. Click on the input field will activate a dedicated Leverage Dialog.
+	 * @default true
+	 */
+	supportLeverageButton?: boolean;
 	/**
 	 * Broker supports orders history. If it is set to `true`, there will be an additional tab in the Account Manager - Orders History.
 	 * The `ordersHistory` method should be implemented. It should return a list of orders with the `filled`, `cancelled` and `rejected` statuses from previous trade sessions.
@@ -1321,7 +1322,7 @@ export interface ChangeThemeOptions {
  */
 export interface ChartData {
 	/** unique ID of the chart (may be `undefined` if it wasn't saved before) */
-	id: string;
+	id: string | undefined;
 	/** name of the chart */
 	name: string;
 	/** symbol of the chart */
@@ -1365,7 +1366,7 @@ export interface ChartPropertiesOverrides extends StudyOverrides {
 	 *
 	 * @default 'solid'
 	 */
-	"paneProperties.backgroundType": ColorType;
+	"paneProperties.backgroundType": ColorTypes;
 	/**
 	 * Pane background color.
 	 *
@@ -1618,6 +1619,36 @@ export interface ChartPropertiesOverrides extends StudyOverrides {
 	 * @default false
 	 */
 	"mainSeriesProperties.showCountdown": boolean;
+	/**
+	 * Main series bid & ask visibility
+	 *
+	 * @default false
+	 */
+	"mainSeriesProperties.bidAsk.visible": boolean;
+	/**
+	 * Style of the line for bid & ask
+	 *
+	 * @default LineStyle.Dotted
+	 */
+	"mainSeriesProperties.bidAsk.lineStyle": LineStyle;
+	/**
+	 * Width of the line for bid & ask
+	 *
+	 * @default 1
+	 */
+	"mainSeriesProperties.bidAsk.lineWidth": number;
+	/**
+	 * Color line for the bid
+	 *
+	 * @default '#2962FF'
+	 */
+	"mainSeriesProperties.bidAsk.bidLineColor": string;
+	/**
+	 * Color line for the ask
+	 *
+	 * @default '#F7525F'
+	 */
+	"mainSeriesProperties.bidAsk.askLineColor": string;
 	/**
 	 * High/low price lines visibility.
 	 *
@@ -3044,6 +3075,12 @@ export interface ChartingLibraryWidgetOptions {
 	 * ```
 	 */
 	settings_overrides?: Overrides;
+	/**
+	 * List of custom timezones.
+	 *
+	 * Please see the [timezones](https://www.tradingview.com/charting-library-docs/latest/ui_elements/timezones) documentation for more details.
+	 */
+	custom_timezones?: CustomAliasedTimezone[];
 }
 export interface CheckboxFieldMetaInfo extends CustomFieldMetaInfoBase {
 	/** @inheritDoc */
@@ -3145,11 +3182,11 @@ export interface ContextMenuPosition {
 	boxHeight?: number;
 }
 /**
- * Options for creating an anchored shape.
+ * Options for creating an anchored drawing.
  */
 export interface CreateAnchoredShapeOptions<TOverrides extends object> extends CreateShapeOptionsBase<TOverrides> {
 	/**
-	 * A shape to create;
+	 * A drawing to create;
 	 */
 	shape: "anchored_text" | "anchored_note";
 }
@@ -3194,20 +3231,20 @@ export interface CreateHTMLButtonOptions {
 	useTradingViewStyle: false;
 }
 /**
- * Options for creating a multipoint shape.
+ * Options for creating a multipoint drawing.
  */
 export interface CreateMultipointShapeOptions<TOverrides extends object> extends CreateShapeOptionsBase<TOverrides> {
 	/**
-	 * A shape to create.
+	 * A drawing to create.
 	 */
 	shape?: Exclude<SupportedLineTools, "cursor" | "dot" | "arrow_cursor" | "eraser" | "measure" | "zoom">;
 }
 /**
- * Options for creating a shape.
+ * Options for creating a drawing.
  */
 export interface CreateShapeOptions<TOverrides extends object> extends CreateShapeOptionsBase<TOverrides> {
 	/**
-	 * A shape to create.
+	 * A drawing to create.
 	 */
 	shape?: "arrow_up" | "arrow_down" | "flag" | "vertical_line" | "horizontal_line" | "long_position" | "short_position" | "icon" | "anchored_text" | "anchored_note";
 	/**
@@ -3216,45 +3253,49 @@ export interface CreateShapeOptions<TOverrides extends object> extends CreateSha
 	ownerStudyId?: EntityId;
 }
 /**
- * Options for creating a shape.
+ * Options for creating a drawing.
  */
 export interface CreateShapeOptionsBase<TOverrides extends object> {
-	/** Text for shape */
+	/** Text for drawing */
 	text?: string;
-	/** Should shape be locked */
+	/** Should drawing be locked */
 	lock?: boolean;
 	/**
-	 * Disable/enable selecting the shape.
+	 * Disable/enable selecting the drawing.
 	 */
 	disableSelection?: boolean;
 	/**
-	 * Disable/enable saving the shape.
+	 * Disable/enable saving the drawing.
 	 */
 	disableSave?: boolean;
 	/**
-	 * Disable/enable undoing the creation of the shape.
+	 * Disable/enable undoing the creation of the drawing.
 	 */
 	disableUndo?: boolean;
 	/**
-	 * Shape properties overrides.
+	 * Drawing properties overrides.
 	 */
 	overrides?: TOverrides;
 	/**
-	 * Create the shape in front of all other shapes, or behind all other shapes.
+	 * Create the drawing in front of all other drawings, or behind all other drawings.
 	 */
 	zOrder?: "top" | "bottom";
 	/**
-	 * Enable/disable showing the shape in the objects tree.
+	 * Enable/disable showing the drawing in the objects tree.
 	 */
 	showInObjectsTree?: boolean;
 	/**
-	 * An entity ID that can be used to associate the shape with a study.
+	 * An entity ID that can be used to associate the drawing with a study.
 	 */
 	ownerStudyId?: EntityId;
 	/**
-	 * Enable/disable filling the shape with color (if the shape supports filling).
+	 * Enable/disable filling the drawing with color (if the drawing supports filling).
 	 */
 	filled?: boolean;
+	/**
+	 * Specify an icon to render - Only icons listed [here](https://www.tradingview.com/charting-library-docs/latest/customization/overrides/Shapes-and-Overrides) are supported
+	 */
+	icon?: number;
 }
 /**
  * Options for creating a study.
@@ -3349,6 +3390,12 @@ export interface CurrencyItem {
 	logoUrl?: string;
 	/** Description for the currency */
 	description?: string;
+}
+export interface CustomAliasedTimezone extends CustomTimezoneInfo {
+	/**
+	 * Id for the custom timezone.
+	 */
+	id: CustomTimezoneId;
 }
 export interface CustomComboBoxItem {
 	/** Combo box item text */
@@ -3463,6 +3510,25 @@ export interface CustomTableElementFormatter<T extends TableFormatterInputValues
 	formatElement?: CustomTableFormatElementFunction<T>;
 	/** Formatter to generate text. Return an empty string if you don't need to display this */
 	formatText: TableFormatTextFunction<T>;
+}
+export interface CustomTimezoneInfo {
+	/**
+	 * Timezone identifier ({@link TimezoneId}) to which this custom
+	 * timezone should be mapped to. This must be a timezone supported
+	 * by library.
+	 *
+	 * Additionally, you can specify a `Etc/GMT` timezone id.
+	 * In order to conform with the POSIX style, those zone names
+	 * beginning with "Etc/GMT" have their sign reversed from the
+	 * standard ISO 8601 convention. In the "Etc" area, zones west
+	 * of GMT have a positive sign and those east have a negative
+	 * sign in their name (e.g "Etc/GMT-14" is 14 hours ahead of GMT).
+	 */
+	alias: TimezoneId | GmtTimezoneId;
+	/**
+	 * Display name for the timezone
+	 */
+	title: string;
 }
 /**
  * Depth of Market (Order Book) Data
@@ -3714,6 +3780,10 @@ export interface ExportDataOptions {
 	 * If true then each exported data item will include a value for the specified studies.
 	 */
 	includedStudies: readonly string[] | "all";
+	/**
+	 * Include study data that has a positive offset from the main series data. That is study data that is "to the right of" the last main series data point.
+	 */
+	includeOffsetStudyValues?: boolean;
 }
 /**
  * Export data from the chart
@@ -4532,15 +4602,15 @@ export interface IChartWidgetApi {
 	 */
 	clearMarks(): void;
 	/**
-	 * Get an array of IDs and name for all shapes on the chart.
+	 * Get an array of IDs and name for all drawings on the chart.
 	 *
-	 * @returns An array of shape information.
+	 * @returns An array of drawing information.
 	 */
 	getAllShapes(): EntityInfo[];
 	/**
 	 * Get an array of IDs and names for all studies on the chart.
 	 *
-	 * @returns An array of shape information.
+	 * @returns An array of study information.
 	 */
 	getAllStudies(): EntityInfo[];
 	/**
@@ -4628,7 +4698,7 @@ export interface IChartWidgetApi {
 	 */
 	sendBackward(sources: readonly EntityId[]): void;
 	/**
-	 * @deprecated Use shape/study API instead.
+	 * @deprecated Use drawing/study API instead.
 	 * @see {@link getStudyById}
 	 * @see {@link getShapeById}
 	 */
@@ -4662,43 +4732,43 @@ export interface IChartWidgetApi {
 	 */
 	getSeries(): ISeriesApi;
 	/**
-	 * Create a new single point shape.
+	 * Create a new single point drawing.
 	 *
-	 * @param point A point. The location of the new shape.
-	 * @param options An options object for the new shape.
-	 * @returns The ID of the new shape if it was created successfully, or null otherwise.
+	 * @param point A point. The location of the new drawing.
+	 * @param options An options object for the new drawing.
+	 * @returns The ID of the new drawing if it was created successfully, or null otherwise.
 	 */
 	createShape<TOverrides extends object>(point: ShapePoint, options: CreateShapeOptions<TOverrides>): EntityId | null;
 	/**
-	 * Create a new multi point shape.
+	 * Create a new multi point drawing.
 	 *
-	 * @param points An array of points that define the shape.
-	 * @param options An options object for the new shape.
-	 * @returns The ID of the new shape if it was created successfully, or null otherwise.
+	 * @param points An array of points that define the drawing.
+	 * @param options An options object for the new drawing.
+	 * @returns The ID of the new drawing if it was created successfully, or null otherwise.
 	 */
 	createMultipointShape<TOverrides extends object>(points: ShapePoint[], options: CreateMultipointShapeOptions<TOverrides>): EntityId | null;
 	/**
-	 * Create a new anchored shape. Anchored shapes maintain their position when the chart's visible range changes.
+	 * Create a new anchored drawing. Anchored drawings maintain their position when the chart's visible range changes.
 	 *
-	 * @param position Percent-based x and y position of the new shape, relative to the top left of the chart.
-	 * @param options An options object for the new shape.
+	 * @param position Percent-based x and y position of the new drawing, relative to the top left of the chart.
+	 * @param options An options object for the new drawing.
 	 */
 	createAnchoredShape<TOverrides extends object>(position: PositionPercents, options: CreateAnchoredShapeOptions<TOverrides>): EntityId | null;
 	/**
-	 * Get a shape by ID.
+	 * Get a drawing by ID.
 	 *
-	 * @param entityId A shape ID.
-	 * @returns An API object for interacting with the shape.
+	 * @param entityId A drawing ID.
+	 * @returns An API object for interacting with the drawing.
 	 */
 	getShapeById(entityId: EntityId): ILineDataSourceApi;
 	/**
-	 * Remove an entity (e.g. shape or study) from the chart.
+	 * Remove an entity (e.g. drawing or study) from the chart.
 	 * @param entityId The ID of the entity.
 	 * @param options Optional undo options.
 	 */
 	removeEntity(entityId: EntityId, options?: UndoOptions): void;
 	/**
-	 * Remove all shapes from the chart.
+	 * Remove all drawings from the chart.
 	 */
 	removeAllShapes(): void;
 	/**
@@ -4710,9 +4780,9 @@ export interface IChartWidgetApi {
 	 */
 	selection(): ISelectionApi;
 	/**
-	 * Show the properties dialog for a study or shape.
+	 * Show the properties dialog for a study or drawing.
 	 *
-	 * @param studyId An ID of the study or shape.
+	 * @param studyId An ID of the study or drawing.
 	 */
 	showPropertiesDialog(studyId: EntityId): void;
 	/**
@@ -4841,7 +4911,7 @@ export interface IChartWidgetApi {
 	 */
 	setScrollEnabled(enabled: boolean): void;
 	/**
-	 * Get an API object for interacting with groups of shapes.
+	 * Get an API object for interacting with groups of drawings.
 	 */
 	shapesGroupController(): IShapesGroupControllerApi;
 	/**
@@ -4901,9 +4971,9 @@ export interface IChartingLibraryWidget {
 	 */
 	onChartReady(callback: EmptyCallback): void;
 	/**
-	 * The library will call `callback` when a greyed-out line tool or study is clicked.
+	 * The library will call `callback` when a greyed-out drawing tool or study is clicked.
 	 *
-	 * @param callback A function that will be called when a greyed-out line tool or study is clicked.
+	 * @param callback A function that will be called when a greyed-out drawing tool or study is clicked.
 	 */
 	onGrayedObjectClicked(callback: (obj: GrayedObject) => void): void;
 	/**
@@ -5402,7 +5472,8 @@ export interface IDatafeedChartApi {
 	 * The Library calls this function to get marks for visible bars range.
 	 * The Library assumes that you will call `onDataCallback` only once per `getMarks` call.
 	 *
-	 * A few marks per bar are allowed (for now, the maximum is 10). Marks outside of the bars are not allowed.
+	 * A few marks per bar are allowed (for now, the maximum is 10). The time of each mark must match the time of a bar. For example, if the bar times are `2023-01-01`, `2023-01-08`, and `2023-01-15`, then a mark cannot have the time `2023-01-05`.
+	 *
 	 * **Remark:** This function will be called only if you confirmed that your back-end is supporting marks ({@link DatafeedConfiguration.supports_marks}).
 	 *
 	 * @param symbolInfo A SymbolInfo object
@@ -5416,7 +5487,6 @@ export interface IDatafeedChartApi {
 	 * The Library calls this function to get timescale marks for visible bars range.
 	 * The Library assumes that you will call `onDataCallback` only once per `getTimescaleMarks` call.
 	 *
-	 * Only one mark per bar is allowed. Marks outside of the bars are not allowed.
 	 * **Remark:** This function will be called only if you confirmed that your back-end is supporting marks ({@link DatafeedConfiguration.supports_timescale_marks}).
 	 *
 	 * @param symbolInfo A SymbolInfo object
@@ -5762,87 +5832,87 @@ export interface IFormatter<T> {
 	parse?(value: string): ErrorFormatterParseResult | SuccessFormatterParseResult<T>;
 }
 /**
- * Shape API
+ * Drawing API
  *
  * You can retrieve this interface by using the {@link IChartWidgetApi.getShapeById} method.
  */
 export interface ILineDataSourceApi {
 	/**
-	 * Is the shape selectable by the user.
-	 * @returns `true` when the shape can be selected
+	 * Is the drawing selectable by the user.
+	 * @returns `true` when the drawing can be selected
 	 */
 	isSelectionEnabled(): boolean;
 	/**
-	 * Set whether the shape can be selected by the user or not.
-	 * @param  {boolean} enable - if `true` then the user can select the shape. (see `disableSelection` option of `createMultipointShape`)
+	 * Set whether the drawing can be selected by the user or not.
+	 * @param  {boolean} enable - if `true` then the user can select the drawing (see `disableSelection` option of `createMultipointShape`)
 	 */
 	setSelectionEnabled(enable: boolean): void;
 	/**
-	 * Can the shape be saved in the chart layout
-	 * @returns `true` when the shape can be saved
+	 * Can the drawing be saved in the chart layout
+	 * @returns `true` when the drawing can be saved
 	 */
 	isSavingEnabled(): boolean;
 	/**
-	 * Enables or disables saving of the shape in the chart layout (see `disableSave` option of `createMultipointShape`).
-	 * @param  {boolean} enable - if `true` the shape can be saved to the chart
+	 * Enables or disables saving of the drawing in the chart layout (see `disableSave` option of `createMultipointShape`).
+	 * @param  {boolean} enable - if `true`, the drawing can be saved to the chart
 	 */
 	setSavingEnabled(enable: boolean): void;
 	/**
-	 * Is the shape shown in the Object Tree Panel
-	 * @returns `true` when the shape is visible in the tree.
+	 * Is the drawing shown in the Object Tree Panel
+	 * @returns `true` when the drawing is visible in the tree.
 	 */
 	isShowInObjectsTreeEnabled(): boolean;
 	/**
-	 * Enables or disables the visibility of the shape in the Object Tree Panel
-	 * @param  {boolean} enabled - if `true` then the shape will be visible
+	 * Enables or disables the visibility of the drawing in the Object Tree panel
+	 * @param  {boolean} enabled - if `true` then the drawing will be visible
 	 */
 	setShowInObjectsTreeEnabled(enabled: boolean): void;
 	/**
-	 * Is the shape editable by the user.
-	 * @returns `true` when the shape is editable
+	 * Is the drawing editable by the user.
+	 * @returns `true` when the drawing is editable
 	 */
 	isUserEditEnabled(): boolean;
 	/**
-	 * Enables or disables whether the shape is editable
-	 * @param  {boolean} enabled - if `true` then the shape will be editable
+	 * Enables or disables whether the drawing is editable
+	 * @param  {boolean} enabled - if `true`, then the drawing will be editable
 	 */
 	setUserEditEnabled(enabled: boolean): void;
 	/**
-	 * Places the shape on top of all other chart objects.
+	 * Places the drawing on top of all other chart objects.
 	 */
 	bringToFront(): void;
 	/**
-	 * Places the shape behind all other chart objects.
+	 * Places the drawing behind all other chart objects.
 	 */
 	sendToBack(): void;
 	/**
-	 * Get all the properties of the shape.
-	 * @returns properties of the shape
+	 * Get all the properties of the drawing.
+	 * @returns properties of the drawing
 	 */
 	getProperties(): Record<string, any>;
 	/**
-	 * Sets the properties of the shape.
-	 * @param  {object} newProperties - Shape properties to be set on the shape. It should have the same structure as an object from {@link ILineDataSourceApi.getProperties}. It can only include the properties that you want to override.
+	 * Sets the properties of the drawing.
+	 * @param  {object} newProperties - Drawing properties to be set on the drawing. It should have the same structure as an object from {@link ILineDataSourceApi.getProperties}. It can only include the properties that you want to override.
 	 */
 	setProperties(newProperties: object): void;
 	/**
-	 * Returns the points of the shape.
+	 * Returns the points of the drawing.
 	 */
 	getPoints(): PricedPoint[];
 	/**
-	 * Set the new points of the shape. All points must be provided: for example if the shape is defined by 5 points then all 5 must be provided.
+	 * Set the new points of the drawing. All points must be provided: for example if the drawing is defined by 5 points then all 5 must be provided.
 	 *
 	 * @param  points - The new points.
 	 *
 	 */
 	setPoints(points: ShapePoint[]): void;
 	/**
-	 * Get the position percents of a fixed shape.
+	 * Get the position percents of a fixed drawing.
 	 */
 	getAnchoredPosition(): PositionPercents | undefined;
 	/**
-	 * Set the position percents for a fixed shape.
-	 * For example `setPoints([{ x: 0.1, y: 0.1 }])` would set a fixed shape defined by
+	 * Set the position percents for a fixed drawing.
+	 * For example `setPoints([{ x: 0.1, y: 0.1 }])` would set a fixed drawing defined by
 	 * a single point to be 10% top the left edge of the chart and 10% from the top edge.
 	 *
 	 * @param positionPercents The new position percents.
@@ -6716,47 +6786,47 @@ export interface ISettingsAdapter {
 	removeValue(key: string): void;
 }
 /**
- * Shape group API.
+ * Drawing Groups API.
  */
 export interface IShapesGroupControllerApi {
 	/**
-	 * Create a group of shapes from the selection.
+	 * Create a group of drawings from the selection.
 	 *
-	 * @throws If selection is empty, or selection contains non-shapes, or selection contains shapes from more than one pane.
+	 * @throws If selection is empty, or selection contains non-drawings, or selection contains drawings from more than one pane.
 	 * @return The ID of the created group.
 	 */
 	createGroupFromSelection(): ShapesGroupId;
 	/**
-	 * Remove a group of shapes.
+	 * Remove a group of drawings.
 	 *
 	 * @param groupId A group ID.
 	 */
 	removeGroup(groupId: ShapesGroupId): void;
 	/**
-	 * Get an array of all shape groups.
+	 * Get an array of all drawing groups.
 	 *
 	 * @returns An array of group IDs.
 	 */
 	groups(): readonly ShapesGroupId[];
 	/**
-	 * Get an array of IDs for each shape in a group.
+	 * Get an array of IDs for each drawing in a group.
 	 *
 	 * @param groupId A group ID.
-	 * @returns An array of shape IDs.
+	 * @returns An array of drawing IDs.
 	 */
 	shapesInGroup(groupId: ShapesGroupId): readonly EntityId[];
 	/**
-	 * Remove a shape from a group. If the shape is the only shape in the group then the group is also removed.
+	 * Remove a drawing from a group. If the drawing is the only drawing in the group then the group is also removed.
 	 *
 	 * @param groupId A group ID.
-	 * @param shapeId A shape ID.
+	 * @param shapeId A drawing ID.
 	 */
 	excludeShapeFromGroup(groupId: ShapesGroupId, shapeId: EntityId): void;
 	/**
-	 * Add a shape to a group.
+	 * Add a drawing to a group.
 	 *
 	 * @param groupId A group ID.
-	 * @param shapeId A shape ID.
+	 * @param shapeId A drawing ID.
 	 */
 	addShapeToGroup(groupId: ShapesGroupId, shapeId: EntityId): void;
 	/**
@@ -6805,7 +6875,7 @@ export interface IShapesGroupControllerApi {
 	 */
 	insertBefore(groupId: ShapesGroupId, target: ShapesGroupId | EntityId): void;
 	/**
-	 * Show or hide all shapes in a group.
+	 * Show or hide all drawings in a group.
 	 *
 	 * @param groupId A group ID.
 	 * @param value A boolean flag. `true` to show, `false` to hide.
@@ -6847,10 +6917,10 @@ export interface IShapesGroupControllerApi {
 	 */
 	setGroupName(groupId: ShapesGroupId, name: string): void;
 	/**
-	 * Check if some shapes can be grouped.
+	 * Check if some drawings can be grouped.
 	 *
-	 * @param shapes An array of shape IDs.
-	 * @return `true` if the shapes can be groupd, `false` otherwise.
+	 * @param shapes An array of drawing IDs.
+	 * @return `true` if the drawings can be grouped, `false` otherwise.
 	 */
 	canBeGroupped(shapes: readonly EntityId[]): boolean;
 }
@@ -7150,7 +7220,7 @@ export interface ITimezoneApi {
 	/** Returns the current TimezoneInfo */
 	getTimezone(): TimezoneInfo;
 	/** Sets the current timezone */
-	setTimezone(timezone: TimezoneId, options?: UndoOptions): void;
+	setTimezone(timezone: TimezoneId | CustomTimezoneId, options?: UndoOptions): void;
 	/**
 	 * To be notified when the timezone is changed
 	 *
@@ -7348,7 +7418,10 @@ export interface InstrumentInfo {
 	domVolumePrecision?: number;
 	/** Leverage */
 	leverage?: string;
-	/** The margin requirement for the instrument. A 3% margin rate should be represented as 0.03. */
+	/**
+	 * The margin requirement for the instrument. A 3% margin rate should be represented as 0.03.
+	 * @deprecated
+	 */
 	marginRate?: number;
 	/** Minimal price change for limit price field of the Limit and Stop Limit order. If set it will override the `minTick` value. */
 	limitPriceStep?: number;
@@ -8338,7 +8411,7 @@ export interface PositionBase {
 export interface PositionDialogOptions extends TradingDialogOptions {
 }
 /**
- * Anchored (fixed) shape point position as a percentage from the top left of a chart.
+ * Anchored (fixed) drawing point position as a percentage from the top left of a chart.
  * For example `{ x: 0.5, y: 0.5 }` for the centre of the chart.
  */
 export interface PositionPercents {
@@ -9772,7 +9845,7 @@ export interface SubscribeEventsMap {
 	 * @param  {TimescaleMark['id']} markId - ID of the clicked timescale mark
 	 */
 	onTimescaleMarkClick: (markId: TimescaleMark["id"]) => void;
-	/** Selected line tool has changed */
+	/** Selected drawing tool has changed */
 	onSelectedLineToolChanged: EmptyCallback;
 	/**
 	 * Amount or placement of the charts is about to be changed.
@@ -10009,12 +10082,37 @@ export interface TimescaleMark {
 	time: number;
 	/** Color for the timescale mark */
 	color: MarkConstColors | string;
+	/**
+	 * Color for the timescale mark text label.
+	 * If undefined then the value provided for `color` will be used.
+	 */
+	labelFontColor?: MarkConstColors | string;
 	/** Label for the timescale mark */
 	label: string;
 	/** Tooltip content */
 	tooltip: string[];
 	/** Shape of the timescale mark */
 	shape?: TimeScaleMarkShape;
+	/**
+	 * Optional URL for an image to be displayed within the timescale mark.
+	 *
+	 * The image should ideally be square in dimension. You can use any image type which
+	 * the browser supports natively.
+	 *
+	 * Examples:
+	 * - `https://s3-symbol-logo.tradingview.com/crypto/XTVCBTC.svg`
+	 * - `/images/myImage.png`
+	 * - `data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3...`
+	 * - `data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABIAAD/4...`
+	 */
+	imageUrl?: string;
+	/**
+	 * Continue to show text label even when an image has
+	 * been loaded for the timescale mark.
+	 *
+	 * Defaults to `false` if undefined.
+	 */
+	showLabelWhenImageLoaded?: boolean;
 }
 /**
  * Supported timezone identifier are {@link LibrarySymbolInfo.timezones} and {@link LibrarySymbolInfo.exchange}.
@@ -10023,11 +10121,15 @@ export interface TimescaleMark {
  */
 export interface TimezoneInfo {
 	/** Timezone identifier {@link TimezoneId} */
-	id: TimezoneId;
+	id: TimezoneId | CustomTimezoneId;
 	/** Name of the timezone */
 	title: string;
 	/** Optional number to indicate an offset */
 	offset?: number;
+	/**
+	 * Id of supported default timezone to use for the actual timezone calculations, see {@link TimezoneId}
+	 */
+	alias?: TimezoneId | GmtTimezoneId;
 }
 export interface Trade extends TradeBase, CustomFields {
 }
@@ -10601,6 +10703,8 @@ export type ChartingLibraryFeatureset =
 "iframe_loading_compatibility_mode" | 
 /** Use the last (rightmost) visible bar value in the legend  @default false */
 "use_last_visible_bar_value_in_legend";
+/** These are defining the types for a background */
+export type ColorTypes = "solid" | "gradient";
 /**
  * Context menu items processor signature
  * @param  {readonlyIActionVariant[]} items - an array of items the library wants to display
@@ -10623,7 +10727,11 @@ export type CustomStudyFormatterFactory = (format: CustomStudyFormatterFormat, s
  * A function that takes an {@link TableFormatterInputs} object and returns a `string` or an `HTMLElement`.
  */
 export type CustomTableFormatElementFunction<T extends TableFormatterInputValues = TableFormatterInputValues> = (inputs: TableFormatterInputs<T>) => undefined | string | HTMLElement;
-export type CustomTimezones = "Africa/Cairo" | "Africa/Johannesburg" | "Africa/Lagos" | "Africa/Nairobi" | "Africa/Tunis" | "America/Argentina/Buenos_Aires" | "America/Bogota" | "America/Caracas" | "America/Chicago" | "America/El_Salvador" | "America/Juneau" | "America/Lima" | "America/Los_Angeles" | "America/Mexico_City" | "America/New_York" | "America/Phoenix" | "America/Santiago" | "America/Sao_Paulo" | "America/Toronto" | "America/Vancouver" | "Asia/Almaty" | "Asia/Ashkhabad" | "Asia/Bahrain" | "Asia/Bangkok" | "Asia/Chongqing" | "Asia/Colombo" | "Asia/Dubai" | "Asia/Ho_Chi_Minh" | "Asia/Hong_Kong" | "Asia/Jakarta" | "Asia/Jerusalem" | "Asia/Karachi" | "Asia/Kathmandu" | "Asia/Kolkata" | "Asia/Kuwait" | "Asia/Manila" | "Asia/Muscat" | "Asia/Nicosia" | "Asia/Qatar" | "Asia/Riyadh" | "Asia/Seoul" | "Asia/Shanghai" | "Asia/Singapore" | "Asia/Taipei" | "Asia/Tehran" | "Asia/Tokyo" | "Asia/Yangon" | "Atlantic/Reykjavik" | "Australia/ACT" | "Australia/Adelaide" | "Australia/Brisbane" | "Australia/Perth" | "Australia/Sydney" | "Europe/Amsterdam" | "Europe/Athens" | "Europe/Belgrade" | "Europe/Berlin" | "Europe/Bratislava" | "Europe/Brussels" | "Europe/Bucharest" | "Europe/Budapest" | "Europe/Copenhagen" | "Europe/Dublin" | "Europe/Helsinki" | "Europe/Istanbul" | "Europe/Lisbon" | "Europe/London" | "Europe/Luxembourg" | "Europe/Madrid" | "Europe/Malta" | "Europe/Moscow" | "Europe/Oslo" | "Europe/Paris" | "Europe/Riga" | "Europe/Rome" | "Europe/Stockholm" | "Europe/Tallinn" | "Europe/Vilnius" | "Europe/Warsaw" | "Europe/Zurich" | "Pacific/Auckland" | "Pacific/Chatham" | "Pacific/Fakaofo" | "Pacific/Honolulu" | "Pacific/Norfolk" | "US/Mountain";
+/**
+ * Identifier for a custom timezone (string).
+ */
+export type CustomTimezoneId = Nominal<"CustomTimezoneId", string>;
+export type CustomTimezones = "Africa/Cairo" | "Africa/Johannesburg" | "Africa/Lagos" | "Africa/Nairobi" | "Africa/Tunis" | "America/Argentina/Buenos_Aires" | "America/Bogota" | "America/Caracas" | "America/Chicago" | "America/El_Salvador" | "America/Juneau" | "America/Lima" | "America/Los_Angeles" | "America/Mexico_City" | "America/New_York" | "America/Phoenix" | "America/Santiago" | "America/Sao_Paulo" | "America/Toronto" | "America/Vancouver" | "Asia/Almaty" | "Asia/Ashkhabad" | "Asia/Bahrain" | "Asia/Bangkok" | "Asia/Chongqing" | "Asia/Colombo" | "Asia/Dubai" | "Asia/Ho_Chi_Minh" | "Asia/Hong_Kong" | "Asia/Jakarta" | "Asia/Jerusalem" | "Asia/Karachi" | "Asia/Kathmandu" | "Asia/Kolkata" | "Asia/Kuwait" | "Asia/Manila" | "Asia/Muscat" | "Asia/Nicosia" | "Asia/Qatar" | "Asia/Riyadh" | "Asia/Seoul" | "Asia/Shanghai" | "Asia/Singapore" | "Asia/Taipei" | "Asia/Tehran" | "Asia/Tokyo" | "Asia/Yangon" | "Atlantic/Reykjavik" | "Australia/Adelaide" | "Australia/Brisbane" | "Australia/Perth" | "Australia/Sydney" | "Europe/Amsterdam" | "Europe/Athens" | "Europe/Belgrade" | "Europe/Berlin" | "Europe/Bratislava" | "Europe/Brussels" | "Europe/Bucharest" | "Europe/Budapest" | "Europe/Copenhagen" | "Europe/Dublin" | "Europe/Helsinki" | "Europe/Istanbul" | "Europe/Lisbon" | "Europe/London" | "Europe/Luxembourg" | "Europe/Madrid" | "Europe/Malta" | "Europe/Moscow" | "Europe/Oslo" | "Europe/Paris" | "Europe/Riga" | "Europe/Rome" | "Europe/Stockholm" | "Europe/Tallinn" | "Europe/Vilnius" | "Europe/Warsaw" | "Europe/Zurich" | "Pacific/Auckland" | "Pacific/Chatham" | "Pacific/Fakaofo" | "Pacific/Honolulu" | "Pacific/Norfolk" | "US/Mountain";
 /**
  * Custom translation function
  * @param  {string} key - key for string to be translated
@@ -10664,6 +10772,16 @@ export type FinancialPeriod = "FY" | "FQ" | "FH" | "TTM";
 export type FormatterName = Nominal<string, "FormatterName">;
 export type GetMarksCallback<T> = (marks: T[]) => void;
 export type GetNewsFunction = (symbol: string, callback: (response: GetNewsResponse) => void) => void;
+/**
+ * GMT timezone ID.
+ *
+ * In order to conform with the POSIX style, those zone names
+ * beginning with "Etc/GMT" have their sign reversed from the
+ * standard ISO 8601 convention. In the "Etc" area, zones west
+ * of GMT have a positive sign and those east have a negative
+ * sign in their name (e.g "Etc/GMT-14" is 14 hours ahead of GMT).
+ */
+export type GmtTimezoneId = `Etc/GMT${"+" | "-"}${number}${`:${number}` | ""}`;
 export type GroupLockState = "Locked" | "Unlocked" | "Partial";
 export type GroupVisibilityState = "Visible" | "Invisible" | "Partial";
 /**
@@ -10771,53 +10889,20 @@ export type RawStudyMetaInformation = Omit<RawStudyMetaInfo, "defaults" | "plots
 	readonly defaults?: Readonly<DeepPartial<StudyDefaults>>;
 };
 /**
- * Resolution or time interval is a time period of one bar. The Charting Library supports intraday resolutions (seconds, minutes, hours) and DWM resolutions (daily, weekly, monthly).
+ * Resolution or time interval is a time period of one bar. Charting Library supports tick, intraday (seconds, minutes, hours), and DWM (daily, weekly, monthly) resolutions. The table below describes how to specify different types of resolutions:
  *
- * ## Intraday
+ * Resolution | Format | Example
+ * ---------|----------|---------
+ * Ticks | `xT` | `1T` — one tick
+ * Seconds | `xS` | `1S` — one second
+ * Minutes | `x` | `1` — one minute
+ * Hours | `x` minutes | `60` — one hour
+ * Days | `xD` | `1D` — one day
+ * Weeks | `xW` | `1W` — one week
+ * Months | `xM` | `1M` — one month
+ * Years | `xM` months | `12M` — one year
  *
- * ### Seconds
- *
- * Format: `xS`, where `x` is a number of seconds.
- *
- * Example: `1S` - one second, `2S` - two seconds, `100S` - one hundred seconds.
- *
- * ### Minutes
- *
- * Format: `x`, where `x` is a number of minutes.
- *
- * Example: `1` - one minute, `2` - two minutes, `100` - one hundred minutes.
- *
- * ### Hours
- *
- * **Important:** while user interface allows a user to enter a number of hours as `xh` or `xH`, it is never passed to the API. Hours are always set using minutes in the Charting Library API.
- *
- * Example: `60` - one hour, `120` - two hours, `240` - four hours.
- *
- * ## DWM
- *
- * ### Days
- *
- * Format: `xD`, where `x` is a number of days.
- *
- * Example: `1D` - one day, `2D` - two days, `100D` - one hundred days.
- *
- * ### Weeks
- *
- * Format: `xW`, where `x` is a number of weeks.
- *
- * Example: `1W` - one week, `2W` - two weeks, `100W` - one hundred weeks.
- *
- * ### Months
- *
- * Format: `xM`, where `x` is a number of months.
- *
- * Example: `1M` - one month, `2M` - two months, `100M` - one hundred months.
- *
- * ### Years
- *
- * Years are set using months.
- *
- * Example: `12M` - one year, `24M` - two year, `48M` - four years.
+ * Refer to [Resolution](https://www.tradingview.com/charting-library-docs/latest/core_concepts/Resolution) for more information.
  */
 export type ResolutionString = Nominal<string, "ResolutionString">;
 export type ResolveCallback = (symbolInfo: LibrarySymbolInfo) => void;
@@ -10842,7 +10927,7 @@ export type ServerTimeCallback = (serverTime: number) => void;
  * fallback to the timestamp of the latest bar on the chart.
  */
 export type SetVisibleTimeRange = Omit<VisibleTimeRange, "to"> & Partial<Pick<VisibleTimeRange, "to">>;
-/** Shape point */
+/** Drawing point */
 export type ShapePoint = StickedPoint | PricedPoint | TimePoint;
 export type ShapesGroupId = Nominal<string, "ShapesGroupId">;
 export type SingleChartLayoutType = "s";
