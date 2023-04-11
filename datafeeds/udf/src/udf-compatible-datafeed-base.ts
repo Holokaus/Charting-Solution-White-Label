@@ -194,6 +194,10 @@ export class UDFCompatibleDatafeedBase implements IExternalDatafeed, IDatafeedQu
 							label: extractField(response, 'label', i),
 							labelFontColor: extractField(response, 'labelFontColor', i),
 							minSize: extractField(response, 'minSize', i),
+							borderWidth: extractField(response, 'borderWidth', i),
+							hoveredBorderWidth: extractField(response, 'hoveredBorderWidth', i),
+							imageUrl: extractField(response, 'imageUrl', i),
+							showLabelWhenImageLoaded: extractField(response, 'showLabelWhenImageLoaded', i),
 						});
 					}
 
@@ -231,6 +235,8 @@ export class UDFCompatibleDatafeedBase implements IExternalDatafeed, IDatafeedQu
 							color: extractField(response, 'color', i),
 							label: extractField(response, 'label', i),
 							tooltip: extractField(response, 'tooltip', i),
+							imageUrl: extractField(response, 'imageUrl', i),
+							showLabelWhenImageLoaded: extractField(response, 'showLabelWhenImageLoaded', i),
 						});
 					}
 
@@ -381,7 +387,7 @@ export class UDFCompatibleDatafeedBase implements IExternalDatafeed, IDatafeedQu
 			.catch(onError);
 	}
 
-	public subscribeBars(symbolInfo: LibrarySymbolInfo, resolution: ResolutionString, onTick: SubscribeBarsCallback, listenerGuid: string, onResetCacheNeededCallback: () => void): void {
+	public subscribeBars(symbolInfo: LibrarySymbolInfo, resolution: ResolutionString, onTick: SubscribeBarsCallback, listenerGuid: string, _onResetCacheNeededCallback: () => void): void {
 		this._dataPulseProvider.subscribeBars(symbolInfo, resolution, onTick, listenerGuid);
 	}
 

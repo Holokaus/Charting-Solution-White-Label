@@ -66,6 +66,10 @@ export class UDFCompatibleDatafeedBase {
                         label: extractField(response, 'label', i),
                         labelFontColor: extractField(response, 'labelFontColor', i),
                         minSize: extractField(response, 'minSize', i),
+                        borderWidth: extractField(response, 'borderWidth', i),
+                        hoveredBorderWidth: extractField(response, 'hoveredBorderWidth', i),
+                        imageUrl: extractField(response, 'imageUrl', i),
+                        showLabelWhenImageLoaded: extractField(response, 'showLabelWhenImageLoaded', i),
                     });
                 }
                 response = result;
@@ -98,6 +102,8 @@ export class UDFCompatibleDatafeedBase {
                         color: extractField(response, 'color', i),
                         label: extractField(response, 'label', i),
                         tooltip: extractField(response, 'tooltip', i),
+                        imageUrl: extractField(response, 'imageUrl', i),
+                        showLabelWhenImageLoaded: extractField(response, 'showLabelWhenImageLoaded', i),
                     });
                 }
                 response = result;
@@ -235,7 +241,7 @@ export class UDFCompatibleDatafeedBase {
         })
             .catch(onError);
     }
-    subscribeBars(symbolInfo, resolution, onTick, listenerGuid, onResetCacheNeededCallback) {
+    subscribeBars(symbolInfo, resolution, onTick, listenerGuid, _onResetCacheNeededCallback) {
         this._dataPulseProvider.subscribeBars(symbolInfo, resolution, onTick, listenerGuid);
     }
     unsubscribeBars(listenerGuid) {

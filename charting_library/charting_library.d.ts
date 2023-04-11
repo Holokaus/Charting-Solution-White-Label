@@ -145,6 +145,7 @@ export declare const enum ActionId {
 	ChartFavoriteDrawingToolsToolbarHide = "Chart.FavoriteDrawingToolsToolbar.Hide",
 	ChartIndicatorShowSettingsDialog = "Chart.Indicator.ShowSettingsDialog",
 	ChartLegendToggleBarChangeValuesVisibility = "Chart.Legend.ToggleBarChangeValuesVisibility",
+	ChartLegendTogglePriceSourceVisibility = "Chart.Legend.TogglePriceSourceVisibility",
 	ChartLegendToggleIndicatorArgumentsVisibility = "Chart.Legend.ToggleIndicatorArgumentsVisibility",
 	ChartLegendToggleIndicatorTitlesVisibility = "Chart.Legend.ToggleIndicatorTitlesVisibility",
 	ChartLegendToggleIndicatorValuesVisibility = "Chart.Legend.ToggleIndicatorValuesVisibility",
@@ -271,7 +272,10 @@ export declare const enum ActionId {
 	TradingReversePosition = "Trading.ReversePosition",
 	TradingSellBuyButtonsToggleVisibility = "Trading.SellBuyButtonsToggleVisibility",
 	TradingTradeFromChart = "Trading.TradeFromChart",
-	TradingNoOverlapMode = "Trading.NoOverlapMode"
+	TradingNoOverlapMode = "Trading.NoOverlapMode",
+	WatchlistAddSymbol = "Watchlist.AddSymbol",
+	WatchlistAddSymbolToCompare = "Watchlist.AddSymbolToCompare",
+	WatchlistAddSelectedSymbolsToCompare = "Watchlist.AddSelectedSymbolsToCompare "
 }
 export declare const enum ChartStyle {
 	Bar = 0,
@@ -2909,7 +2913,8 @@ export interface ChartingLibraryWidgetOptions {
 	 * ```javascript
 	 * favorites: {
 	 *     intervals: ["1D", "3D", "3W", "W", "M"],
-	 *     chartTypes: ["Area", "Line"]
+	 *     chartTypes: ["Area", "Line"],
+	 *     drawingTools: ['LineToolBrush', 'LineToolCallout', 'LineToolCircle']
 	 * },
 	 * ```
 	 */
@@ -3047,16 +3052,20 @@ export interface ChartingLibraryWidgetOptions {
 	 *
 	 * For example for you may want to get additional input from the user before deciding which symbol should be resolved.
 	 *
-	 * The function should take one parameter: a `string` of input from the symbol search and should return a `Promise` that resolves with the new symbol string.
+	 * The function should take two parameters: a `string` of input from the symbol search and a optional search result item. It should return a `Promise` that resolves with a symbol ticker and a human friendly symbol name.
 	 *
 	 * **NOTE:** This override is not called when adding a symbol to the watchlist.
 	 *
-	 * ```javascript
-	 * symbol_search_complete: (symbol) => {
-	 *     return new Promise((resolve) => {
-	 *         let newSymbol = getNewSymbol(symbol);
-	 *         resolve(newSymbol);
-	 *     });
+	 * ```typescript
+	 * {
+	 *     // `SearchSymbolResultItem` is the same interface as for items returned to the Datafeed's searchSymbols result callback.
+	 *     symbol_search_complete: (symbol: string, searchResultItem?: SearchSymbolResultItem) => {
+	 *         return new Promise((resolve) => {
+	 *             let symbol = getNewSymbol(symbol, searchResultItem);
+	 *             let name = getHumanFriendlyName(symbol, searchResultItem)
+	 *             resolve({ symbol: symbol, name: name });
+	 *         });
+	 *     }
 	 * }
 	 * ```
 	 */
@@ -3620,6 +3629,12 @@ export interface DatafeedConfiguration {
 	 * It will be applied to the instruments with futures and stock as a type.
 	 */
 	symbols_grouping?: Record<string, string>;
+	/**
+	 * Supported price sources for the symbol.
+	 *
+	 * @example ['Bid', 'Ask', 'Spot Price']
+	 */
+	price_sources?: SymbolInfoPriceSource[];
 }
 /** Symbol Quote Data Value */
 export interface DatafeedQuoteValues {
@@ -3802,14 +3817,21 @@ export interface Favorites {
 	 *
 	 * Example: `["D", "2D"]`
 	 */
-	intervals: ResolutionString[];
+	intervals?: ResolutionString[];
 	/**
 	 * An array of chart types that are marked as favorite.
 	 * The names of chart types are identical to chart's UI in the English version.
 	 *
 	 * Example: `["Area", "Candles"]`.
 	 */
-	chartTypes: string[];
+	chartTypes?: string[];
+	/**
+	 * An array of drawing tool identifiers that should be marked as favorite. These will only
+	 * be applied if there aren't existing favorites.
+	 *
+	 * Example: ['LineToolBrush', 'LineToolCallout', 'LineToolCircle']
+	 */
+	drawingTools?: DrawingToolIdentifier[];
 }
 export interface FormatterParseResult {
 	/** Returns if the formatter support parsing */
@@ -6684,6 +6706,29 @@ export interface IProjectionStudyResult {
 	/** reversal amount is displayed in the legend */
 	reversalAmount?: number;
 }
+/**
+ * Allows you to select entities ([drawings](https://www.tradingview.com/charting-library-docs/latest/ui_elements/Drawings) and [indicators](https://www.tradingview.com/charting-library-docs/latest/ui_elements/indicators/)) on the chart. Consider the following example:
+ *
+ * ```js
+ * var chart = tvWidget.activeChart();
+ * // Prints all selection changes to the console
+ * chart.selection().onChanged().subscribe(null, s => console.log(chart.selection().allSources()));
+ * // Creates an indicator and saves its ID
+ * var studyId = chart.createStudy("Moving Average", false, false, { length: 10 });
+ * // Adds the indicator to the selection ([<id>] is printed to the console)
+ * chart.selection().add(studyId);
+ * // Clears the selection ([] is printed to the console)
+ * chart.selection().clear();
+ * ```
+ *
+ * #### Multiple Selection
+ *
+ * Multiple selection has the following specifics:
+ *
+ * - Either indicators or drawings can be selected at the same time.
+ * - If you add an indicator to the selection, other entities are removed from it.
+ * - Adding an array of objects to the selection works the same as adding these objects one by one.
+ */
 export interface ISelectionApi {
 	/**
 	 * Add entity / entities to selection
@@ -7640,6 +7685,12 @@ export interface LibrarySymbolInfo {
 	 */
 	description: string;
 	/**
+	 * Symbol Long description
+	 *
+	 * Optional long(er) description for the symbol.
+	 */
+	long_description?: string;
+	/**
 	 * Type of the instrument.
 	 * Possible values: {@link SymbolType}
 	 */
@@ -7929,6 +7980,14 @@ export interface LibrarySymbolInfo {
 	 * Subsessions definitions.
 	 */
 	subsessions?: LibrarySubsessionInfo[];
+	/**
+	 * Optional field name describing what the bar values of this symbol represent.
+	 *
+	 * For example 'Spot Price', 'Ask', 'Bid', etc.
+	 *
+	 * @example 'Spot Price'
+	 */
+	price_source_id?: string;
 }
 export interface LineBreakStylePreferences {
 	/** Up bar color */
@@ -7991,10 +8050,36 @@ export interface Mark {
 	labelFontColor: string;
 	/** Minimum size for the mark */
 	minSize: number;
+	/** Border Width */
+	borderWidth?: number;
+	/** Border Width when hovering over bar mark */
+	hoveredBorderWidth?: number;
+	/**
+	 * Optional URL for an image to be displayed within the timescale mark.
+	 *
+	 * The image should ideally be square in dimension. You can use any image type which
+	 * the browser supports natively.
+	 *
+	 * Examples:
+	 * - `https://s3-symbol-logo.tradingview.com/crypto/XTVCBTC.svg`
+	 * - `/images/myImage.png`
+	 * - `data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3...`
+	 * - `data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABIAAD/4...`
+	 */
+	imageUrl?: string;
+	/**
+	 * Continue to show text label even when an image has
+	 * been loaded for the timescale mark.
+	 *
+	 * Defaults to `false` if undefined.
+	 */
+	showLabelWhenImageLoaded?: boolean;
 }
 export interface MarkCustomColor {
-	/** Foreground color */
-	color: string;
+	/** @deprecated Foreground color */
+	color?: string;
+	/** Border color */
+	border: string;
 	/** Background color */
 	background: string;
 }
@@ -9933,6 +10018,12 @@ export interface SymbolExt {
 	 */
 	type: string;
 }
+export interface SymbolInfoPriceSource {
+	/** Unique ID */
+	id: string;
+	/** Short name */
+	name: string;
+}
 export interface SymbolInputSymbolSource {
 	type: "symbolInputSymbolSource";
 	inputId: string;
@@ -10702,7 +10793,11 @@ export type ChartingLibraryFeatureset =
  */
 "iframe_loading_compatibility_mode" | 
 /** Use the last (rightmost) visible bar value in the legend  @default false */
-"use_last_visible_bar_value_in_legend";
+"use_last_visible_bar_value_in_legend" | 
+/** Enable long symbol descriptions to be shown in the main series and compare studies legends, if provided in the symbol info data. */
+"symbol_info_long_description" | 
+/** Enable symbol price source to be shown in the main series and compare studies legends, if provided in the symbol info data. */
+"symbol_info_price_source";
 /** These are defining the types for a background */
 export type ColorTypes = "solid" | "gradient";
 /**
@@ -10758,6 +10853,7 @@ export type DomeCallback = (data: DOMData) => void;
  * when `move` fires but not vice-versa.
  */
 export type DrawingEventType = "click" | "move" | "remove" | "hide" | "show" | "create" | "properties_changed" | "points_changed";
+export type DrawingToolIdentifier = "arrow" | "cursor" | "dot" | "eraser" | "LineTool5PointsPattern" | "LineToolABCD" | "LineToolArc" | "LineToolArrow" | "LineToolArrowMarkDown" | "LineToolArrowMarker" | "LineToolArrowMarkLeft" | "LineToolArrowMarkRight" | "LineToolArrowMarkUp" | "LineToolBarsPattern" | "LineToolBezierCubic" | "LineToolBezierQuadro" | "LineToolBrush" | "LineToolCallout" | "LineToolCircle" | "LineToolCircleLines" | "LineToolComment" | "LineToolCrossLine" | "LineToolCypherPattern" | "LineToolDateAndPriceRange" | "LineToolDateRange" | "LineToolDisjointAngle" | "LineToolElliottCorrection" | "LineToolElliottDoubleCombo" | "LineToolElliottImpulse" | "LineToolElliottTriangle" | "LineToolElliottTripleCombo" | "LineToolEllipse" | "LineToolExtended" | "LineToolFibChannel" | "LineToolFibCircles" | "LineToolFibRetracement" | "LineToolFibSpeedResistanceArcs" | "LineToolFibSpeedResistanceFan" | "LineToolFibSpiral" | "LineToolFibTimeZone" | "LineToolFibWedge" | "LineToolFixedRangeVolumeProfile" | "LineToolFlagMark" | "LineToolFlatBottom" | "LineToolGannComplex" | "LineToolGannFan" | "LineToolGannFixed" | "LineToolGannSquare" | "LineToolGhostFeed" | "LineToolHeadAndShoulders" | "LineToolHighlighter" | "LineToolHorzLine" | "LineToolHorzRay" | "LineToolInfoLine" | "LineToolInsidePitchfork" | "LineToolNote" | "LineToolNoteAbsolute" | "LineToolParallelChannel" | "LineToolPath" | "LineToolPitchfan" | "LineToolPitchfork" | "LineToolPolyline" | "LineToolPrediction" | "LineToolPriceLabel" | "LineToolPriceNote" | "LineToolPriceRange" | "LineToolProjection" | "LineToolRay" | "LineToolRectangle" | "LineToolRegressionTrend" | "LineToolRiskRewardLong" | "LineToolRiskRewardShort" | "LineToolRotatedRectangle" | "LineToolSchiffPitchfork" | "LineToolSchiffPitchfork2" | "LineToolSignpost" | "LineToolSineLine" | "LineToolText" | "LineToolTextAbsolute" | "LineToolThreeDrivers" | "LineToolTimeCycles" | "LineToolTrendAngle" | "LineToolTrendBasedFibExtension" | "LineToolTrendBasedFibTime" | "LineToolTrendLine" | "LineToolTriangle" | "LineToolTrianglePattern" | "LineToolVertLine";
 /** Dropdown options which can be adjusted on an existing menu. */
 export type DropdownUpdateParams = Partial<Omit<DropdownParams, "align">>;
 export type EditObjectDialogObjectType = "mainSeries" | "drawing" | "study" | "other";
@@ -10918,7 +11014,7 @@ export type SeriesFormatterFactory = (symbolInfo: LibrarySymbolInfo | null, minT
  * Options are either to the `left`, `right`, next to an already existing price axis using a reference or `no scale` if there are no other scales on the main pane.
  */
 export type SeriesPriceScale = "new-left" | "new-right" | "no-scale" | EntityId;
-export type SeriesStatusViewSymbolTextSource = "ticker" | "description" | "ticker-and-description";
+export type SeriesStatusViewSymbolTextSource = "ticker" | "description" | "ticker-and-description" | "long-description";
 export type ServerTimeCallback = (serverTime: number) => void;
 /**
  * A time range to set. The end `to` value is optional.
@@ -11089,7 +11185,9 @@ export type TradingTerminalFeatureset = ChartingLibraryFeatureset |
 /** Show only the last price and change values in the main series legend @default false */
 "show_last_price_and_change_only_in_series_legend" | 
 /** Show a context menu on clicking the crosshair menu even when there's only 1 item to show @default false */
-"show_context_menu_in_crosshair_if_only_one_item";
+"show_context_menu_in_crosshair_if_only_one_item" | 
+/** Enable context menu support in the watchlist. */
+"watchlist_context_menu ";
 export type VisiblePlotsSet = "ohlcv" | "ohlc" | "c";
 export type WatchListSymbolListAddedCallback = (listId: string, symbols: string[]) => void;
 export type WatchListSymbolListChangedCallback = (listId: string) => void;

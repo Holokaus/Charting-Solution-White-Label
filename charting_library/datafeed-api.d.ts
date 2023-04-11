@@ -142,6 +142,12 @@ export interface DatafeedConfiguration {
 	 * It will be applied to the instruments with futures and stock as a type.
 	 */
 	symbols_grouping?: Record<string, string>;
+	/**
+	 * Supported price sources for the symbol.
+	 *
+	 * @example ['Bid', 'Ask', 'Spot Price']
+	 */
+	price_sources?: SymbolInfoPriceSource[];
 }
 /** Symbol Quote Data Value */
 export interface DatafeedQuoteValues {
@@ -400,6 +406,12 @@ export interface LibrarySymbolInfo {
 	 * Will be displayed in the chart legend for this symbol.
 	 */
 	description: string;
+	/**
+	 * Symbol Long description
+	 *
+	 * Optional long(er) description for the symbol.
+	 */
+	long_description?: string;
 	/**
 	 * Type of the instrument.
 	 * Possible values: {@link SymbolType}
@@ -690,6 +702,14 @@ export interface LibrarySymbolInfo {
 	 * Subsessions definitions.
 	 */
 	subsessions?: LibrarySubsessionInfo[];
+	/**
+	 * Optional field name describing what the bar values of this symbol represent.
+	 *
+	 * For example 'Spot Price', 'Ask', 'Bid', etc.
+	 *
+	 * @example 'Spot Price'
+	 */
+	price_source_id?: string;
 }
 export interface Mark {
 	/** ID of the mark */
@@ -709,10 +729,36 @@ export interface Mark {
 	labelFontColor: string;
 	/** Minimum size for the mark */
 	minSize: number;
+	/** Border Width */
+	borderWidth?: number;
+	/** Border Width when hovering over bar mark */
+	hoveredBorderWidth?: number;
+	/**
+	 * Optional URL for an image to be displayed within the timescale mark.
+	 *
+	 * The image should ideally be square in dimension. You can use any image type which
+	 * the browser supports natively.
+	 *
+	 * Examples:
+	 * - `https://s3-symbol-logo.tradingview.com/crypto/XTVCBTC.svg`
+	 * - `/images/myImage.png`
+	 * - `data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3...`
+	 * - `data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABIAAD/4...`
+	 */
+	imageUrl?: string;
+	/**
+	 * Continue to show text label even when an image has
+	 * been loaded for the timescale mark.
+	 *
+	 * Defaults to `false` if undefined.
+	 */
+	showLabelWhenImageLoaded?: boolean;
 }
 export interface MarkCustomColor {
-	/** Foreground color */
-	color: string;
+	/** @deprecated Foreground color */
+	color?: string;
+	/** Border color */
+	border: string;
 	/** Background color */
 	background: string;
 }
@@ -791,6 +837,12 @@ export interface SearchSymbolResultItem {
 	 * 'stock' | 'futures' | 'forex' | 'index'
 	 */
 	type: string;
+}
+export interface SymbolInfoPriceSource {
+	/** Unique ID */
+	id: string;
+	/** Short name */
+	name: string;
 }
 /** Additional information about the Symbol's currency or unit */
 export interface SymbolResolveExtension {
