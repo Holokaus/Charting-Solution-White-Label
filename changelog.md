@@ -5,6 +5,48 @@
 <!-- markdownlint-disable no-inline-html -->
 <!-- markdownlint-disable code-block-style -->
 
+## Version 24.004
+
+*Date: Mon Apr 24 2023*
+
+**New Features**
+
+- **Indicators can now be favorited.** Indicators can now be favorited by tapping on the star icon to the left of the
+indicator name. Favorited indicators will appear at the top of the indicator
+list.
+  - The `items_favoriting` featureset should be enabled. [more info](https://www.tradingview.com/charting-library-docs/latest/customization/Featuresets)
+- **Adding two featuresets to hide the right_toolbar or its tabs.** There are 2 new featuresets `hide_right_toolbar` & `hide_right_toolbar_tabs` plus an additional WidgetBar API [changeWidgetBarVisibility](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IWidgetbarApi#changeWidgetBarVisibility) to control the right toolbar.
+  - `hide_right_toolbar` allows you to instantiate the toolbar without showing it in the UI.
+  - `hide_right_toolbar_tabs` will do the same with the exception of not showing tabs when displaying the right toolbar.
+
+**Improvements**
+
+- **Added a middle band for the RSI indicator.** Unlike on tradingview.com RSI was not presenting the option to plot a middle limit.
+- **Indicators favorites can now be defined within widget constructor.** Indicators can now be defined as favorites using the [`favorites`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.ChartingLibraryWidgetOptions#favorites) property of the widget constructor options. See [Favorites.indicators](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.Favorites#indicators) for more information.
+- **Add a way to independently clear bar marks/timescale marks.** [`clearMarks`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IChartWidgetApi#clearmarks) method has been enhanced to pass in an option to choose which marks should be cleared on the chart.
+  - By default behaviour will remain similar and both bar & TimeScale marks will be removed.
+  - Passing `ClearMarksMode.BarMarks` will only remove bar marks.
+  - Passing `ClearMarksMode.TimeScaleMarks` will only remove TimeScale marks.
+- **`BREAKING CHANGE` Discrepancy in chart style/type methods.** Only TypeScript breaking change as an interface has been renamed to better reflect its purpose.
+`SeriesStyle` is now [SeriesType](api/enums/Charting_Library.SeriesType).
+
+**Bug Fixes**
+
+- **load_study_template event is not emitted.** load_study_template event was not emitted when applying a template on the chart.
+- **Fixed autosize bug occurring on Chrome iOS when rotating the device.** Workaround fix for a browser bug until Chrome resolves the issue on their side.
+- **Fixed the type definitions for a few of the PineJS Std library functions.** [PineJSStd documentation](@api/interfaces/Charting_Library.PineJSStd).
+
+**Documentation**
+
+- **New Key Features article.** We have added the [Key Features](https://www.tradingview.com/charting-library-docs/latest/getting_started/Key-Features) article that lists features supported/unsupported in Charting Library and Trading Terminal.
+- **How to connect data via Datafeed API.** We have added a new [tutorial on connecting data via Datafeed API](https://www.tradingview.com/charting-library-docs/latest/tutorials/implement_datafeed_tutorial/).
+It will help you implement datafeed and real-time data streaming to Charting Library step-by-step.
+
+**Other**
+
+- **Incorrect watermark property key.** Deprecated `symbolWatermarkProperties` property has now been removed.
+Please use [settings_adapter](Widget-Constructor#settings_adapter) with `symbolWatermark` key instead or `applyOverrides` to change values.
+
 ## Version 24.003
 
 *Date: Tue Apr 11 2023*

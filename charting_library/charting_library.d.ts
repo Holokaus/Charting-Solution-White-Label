@@ -292,6 +292,17 @@ export declare const enum ChartStyle {
 	HiLo = 12,
 	Column = 13
 }
+/**
+ * Mode to clear the marks on the chart.
+ */
+export declare const enum ClearMarksMode {
+	/** Will clear both bar marks AND timescale marks - default value */
+	All = 0,
+	/** Will only clear bar marks */
+	BarMarks = 1,
+	/** Will only clear timescale marks */
+	TimeScaleMarks = 2
+}
 export declare const enum ConnectionStatus {
 	Connected = 1,
 	Connecting = 2,
@@ -367,7 +378,7 @@ export declare const enum PriceScaleMode {
 	/** Indexed to 100 mode of the price scale */
 	IndexedTo100 = 3
 }
-export declare const enum SeriesStyle {
+export declare const enum SeriesType {
 	Bars = 0,
 	Candles = 1,
 	Line = 2,
@@ -979,7 +990,7 @@ export interface BrokerConfigFlags {
 	 */
 	supportDisplayBrokerNameInSymbolSearch?: boolean;
 	/**
-	 * This flag can be used to change "Amount" to "Quantity" in the Order Dialog.
+	 * This flag can be used to change "Amount" to "Quantity" in Order Ticket.
 	 * @default false
 	 */
 	showQuantityInsteadOfAmount?: boolean;
@@ -990,7 +1001,7 @@ export interface BrokerConfigFlags {
 	supportOrderBrackets?: boolean;
 	/**
 	 * Broker supports trailing stop orders.
-	 * If this flag is set to `true`, then the chart displays trailing stop orders and a user can place a trailing stop order using the Order Dialog.
+	 * If this flag is set to `true`, then the chart displays trailing stop orders and a user can place a trailing stop order using Order Ticket.
 	 * @default false
 	 */
 	supportTrailingStop?: boolean;
@@ -1041,7 +1052,7 @@ export interface BrokerConfigFlags {
 	supportEditAmount?: boolean;
 	/**
 	 * Using this flag you can disable existing order's brackets modification. If you set it to `false`,
-	 * additional fields will be disabled in the Order Dialog on the chart,
+	 * additional fields will be disabled in Order Ticket on the chart,
 	 * and 'Modify' button will be hidden from the chart and in the Account Manager.
 	 * @default true
 	 */
@@ -1080,22 +1091,22 @@ export interface BrokerConfigFlags {
 	 */
 	supportNativeReversePosition?: boolean;
 	/**
-	 * This flag adds market orders type to the Order Dialog.
+	 * This flag adds market orders type to Order Ticket.
 	 * @default true
 	 */
 	supportMarketOrders?: boolean;
 	/**
-	 * This flag adds limit orders type to the Order Dialog.
+	 * This flag adds limit orders type to Order Ticket.
 	 * @default true
 	 */
 	supportLimitOrders?: boolean;
 	/**
-	 * This flag adds stop orders type to the Order Dialog.
+	 * This flag adds stop orders type to Order Ticket.
 	 * @default true
 	 */
 	supportStopOrders?: boolean;
 	/**
-	 * This flag adds stop-limit orders type to the Order Dialog.
+	 * This flag adds stop-limit orders type to Order Ticket.
 	 * @default false
 	 */
 	supportStopLimitOrders?: boolean;
@@ -1151,7 +1162,7 @@ export interface BrokerConfigFlags {
 	 */
 	supportLeverage?: boolean;
 	/**
-	 * Broker supports leverage button. If the flag is set to `true`, a leverage input field will appear in the Order Widget. Click on the input field will activate a dedicated Leverage Dialog.
+	 * Broker supports leverage button. If the flag is set to `true`, a leverage input field will appear in Order Ticket. Click on the input field will activate a dedicated Leverage Dialog.
 	 * @default true
 	 */
 	supportLeverageButton?: boolean;
@@ -1183,7 +1194,7 @@ export interface BrokerConfigFlags {
 	supportOnlyPairPositionBrackets?: boolean;
 	/**
 	 * Whether the account is used to exchange(trade) crypto currencies.
-	 * This flag switches the Order Dialog to the Crypto Exchange mode. It adds second currency quantity control, currency labels etc.
+	 * This flag switches Order Ticket to the Crypto Exchange mode. It adds second currency quantity control, currency labels etc.
 	 * @default false
 	 */
 	supportCryptoExchangeOrderTicket?: boolean;
@@ -1224,12 +1235,12 @@ export interface BrokerConfigFlags {
 	showNotificationsLog?: boolean;
 	/**
 	 * Whether stop orders should behave like Market-if-touched in both directions.
-	 * Enabling this flag prevents the check of stop price direction from the stop limit order dialog.
+	 * Enabling this flag prevents the check of stop price direction from the stop limit Order Ticket.
 	 * @default false
 	 */
 	supportStopOrdersInBothDirections?: boolean;
 	/**
-	 * Enabling this flag prevents the check of stop price direction from the stop limit order dialog.
+	 * Enabling this flag prevents the check of stop price direction from the stop limit Order Ticket.
 	 */
 	supportStopLimitOrdersInBothDirections?: boolean;
 	/**
@@ -1260,7 +1271,7 @@ export interface BrokerConfigFlags {
 }
 export interface BrokerCustomUI {
 	/**
-	 * Shows standard Order Dialog to create or modify an order and executes handler if Buy/Sell/Modify is pressed.
+	 * Shows standard Order Ticket to create or modify an order and executes handler if Buy/Sell/Modify is pressed.
 	 * @param  {OrderTemplate|Order} order - order to be placed or modified
 	 * @param  {OrderTicketFocusControl} focus? - Control to focus on when dialog is opened
 	 */
@@ -1710,6 +1721,12 @@ export interface ChartPropertiesOverrides extends StudyOverrides {
 	 * @default true
 	 */
 	"mainSeriesProperties.visible": boolean;
+	/**
+	 * Sessions to display on the chart. Use `'extended'` to include pre- and post-market subsessions. See the [Extended Sessions](https://www.tradingview.com/charting-library-docs/latest/connecting_data/Extended-Sessions) guide for more info.
+	 *
+	 * @default 'regular'
+	 */
+	"mainSeriesProperties.sessionId": "regular" | "extended";
 	/**
 	 * Main series price line visibility.
 	 *
@@ -2913,7 +2930,7 @@ export interface ChartingLibraryWidgetOptions {
 	 * ```javascript
 	 * favorites: {
 	 *     intervals: ["1D", "3D", "3W", "W", "M"],
-	 *     chartTypes: ["Area", "Line"],
+	 *     indicators: ["Awesome Oscillator", "Bollinger Bands"],
 	 *     drawingTools: ['LineToolBrush', 'LineToolCallout', 'LineToolCircle']
 	 * },
 	 * ```
@@ -3819,6 +3836,14 @@ export interface Favorites {
 	 */
 	intervals?: ResolutionString[];
 	/**
+	 * An array of indicator titles that are marked as favorite.
+	 * The names of indicators are identical to the `title` property of the indicator. For built-in indicators
+	 * this will match the chart UI in the English version.
+	 *
+	 * Example: `["Awesome Oscillator", "Bollinger Bands"]`.
+	 */
+	indicators?: string[];
+	/**
 	 * An array of chart types that are marked as favorite.
 	 * The names of chart types are identical to chart's UI in the English version.
 	 *
@@ -4555,7 +4580,7 @@ export interface IChartWidgetApi {
 	 *
 	 * @returns A subscription object for the chart type changing.
 	 */
-	onChartTypeChanged(): ISubscription<(chartType: SeriesStyle) => void>;
+	onChartTypeChanged(): ISubscription<(chartType: SeriesType) => void>;
 	/**
 	 * Provide a callback function that will be called when chart data is loaded.
 	 * If chart data is already loaded when this method is called then the callback is called immediately.
@@ -4587,17 +4612,17 @@ export interface IChartWidgetApi {
 	/**
 	 * Change the chart's interval (resolution).
 	 *
-	 * @param symbol A resolution.
+	 * @param resolution A resolution.
 	 * @param callback An optional callback function. Called when the data for the new resolution has loaded.
 	 */
 	setResolution(resolution: ResolutionString, callback?: () => void): void;
 	/**
 	 * Change the chart's type.
 	 *
-	 * @param symbol A chart type.
+	 * @param type A chart type.
 	 * @param callback An optional callback function. Called when the chart type has changed and data has loaded.
 	 */
-	setChartType(type: SeriesStyle, callback?: () => void): void;
+	setChartType(type: SeriesType, callback?: () => void): void;
 	/**
 	 * Force the chart to re-request data.
 	 * Before calling this function the `onResetCacheNeededCallback` callback from {@link IDatafeedChartApi.subscribeBars} should be called.
@@ -4620,9 +4645,11 @@ export interface IChartWidgetApi {
 	 */
 	refreshMarks(): void;
 	/**
-	 * Remove all visible marks.
+	 * Remove marks from the chart.
+	 *
+	 * @param marksToClear type of marks to clear. If nothing is specified both bar & timescale marks will be removed.
 	 */
-	clearMarks(): void;
+	clearMarks(marksToClear?: ClearMarksMode): void;
 	/**
 	 * Get an array of IDs and name for all drawings on the chart.
 	 *
@@ -4884,7 +4911,7 @@ export interface IChartWidgetApi {
 	 * console.log(widget.activeChart().chartType());
 	 * ```
 	 */
-	chartType(): SeriesStyle;
+	chartType(): SeriesType;
 	/**
 	 * @deprecated Use Timezone API instead
 	 * @see {@link getTimezoneApi}
@@ -5426,7 +5453,7 @@ export interface IChartingLibraryWidget {
 	/**
 	 * This method returns a readonly WatchedValue ({@link IWatchedValueReadonly})
 	 * object that can be used to read/watch the current supported chart types
-	 * ({@link SeriesStyle}) for an active chart.
+	 * ({@link SeriesType}) for an active chart.
 	 *
 	 * The chart type is returned as a number.
 	 * You can see which number corresponds to which chart type in the
@@ -7431,6 +7458,11 @@ export interface IWidgetbarApi extends IDestroyable {
 	 * Close order panel widget
 	 */
 	closeOrderPanel(): void;
+	/**
+	 * Change the visibility of the right toolbar
+	 * @param {boolean} visible - true to display the toolbar, false to hide
+	 */
+	changeWidgetBarVisibility(visible: boolean): void;
 }
 export interface IconOptions {
 	/** Icon number */
@@ -7451,7 +7483,7 @@ export interface InstrumentInfo {
 	minTick: number;
 	/** Lot size */
 	lotSize?: number;
-	/** Instrument type. `forex` enables negative pips. You can check that in the Order dialog. */
+	/** Instrument type. `forex` enables negative pips. You can check that in Order Ticket. */
 	type?: SymbolType;
 	/** Units of quantity or amount. Displayed instead of the Units label in the Quantity/Amount field. */
 	units?: string;
@@ -7472,7 +7504,7 @@ export interface InstrumentInfo {
 	limitPriceStep?: number;
 	/** Minimal price change for stop price field of the Stop and Stop Limit order. If set it will override the `minTick` value. */
 	stopPriceStep?: number;
-	/** Array of strings with valid duration values. You can check that in the Order dialog. */
+	/** Array of strings with valid duration values. You can check that in Order Ticket. */
 	allowedDurations?: string[];
 	/**
 	 * Dynamic minimum price movement.
@@ -7481,7 +7513,7 @@ export interface InstrumentInfo {
 	 * For example: `0.01 10 0.02 25 0.05`, where `minTick` is `0.01` for a price less than `10`, `minTick` is `0.02` for a price less than `25`, `minTick` is `0.05` for a price more and equal than `25`.
 	 */
 	variableMinTick?: string;
-	/** Instrument currency that is displayed in the Order dialog */
+	/** Instrument currency that is displayed in Order Ticket */
 	currency?: string;
 	/** The first currency quoted in a currency pair. Used for crypto currencies only. */
 	baseCurrency?: string;
@@ -7499,7 +7531,7 @@ export interface IsTradableResult {
 	 */
 	tradable: boolean;
 	/**
-	 * Reason is displayed in the Order dialog
+	 * Reason is displayed in Order Ticket
 	 */
 	reason?: string;
 	/** Solution available to user to resolve the issue */
@@ -8150,21 +8182,21 @@ export interface OrderDuration {
  * Expiration options for orders
  */
 export interface OrderDurationMetaInfo {
-	/** If it is set to `true`, then the Display date control in the Order Dialog for this duration type will be displayed. */
+	/** If it is set to `true`, then the Display date control in Order Ticket for this duration type will be displayed. */
 	hasDatePicker?: boolean;
-	/** If it is set to `true`, then the Display time control in the Order Dialog for this duration type will be displayed. */
+	/** If it is set to `true`, then the Display time control in Order Ticket for this duration type will be displayed. */
 	hasTimePicker?: boolean;
 	/**
 	 * Default duration.
 	 * Only one duration object in the durations array can have a `true` value for this field.
-	 * The default duration will be used when the user places orders in the silent mode and it will be the selected one when the user opens the Order Dialog for the first time.
+	 * The default duration will be used when the user places orders in the silent mode and it will be the selected one when the user opens Order Ticket for the first time.
 	 */
 	default?: boolean;
-	/** Localized title of the duration. The title will be displayed in the Duration control of the Order Dialog. */
+	/** Localized title of the duration. The title will be displayed in the Duration control of Order Ticket. */
 	name: string;
 	/** Duration identifier */
 	value: string;
-	/** A list of order types for which this duration type will be displayed in the Duration control of the Order Dialog. Default value is `[OrderType.Limit, OrderType.Stop, OrderType.StopLimit]`. */
+	/** A list of order types for which this duration type will be displayed in the Duration control of Order Ticket. Default value is `[OrderType.Limit, OrderType.Stop, OrderType.StopLimit]`. */
 	supportedOrderTypes?: OrderType[];
 }
 export interface OrderOrPositionMessage {
@@ -8266,85 +8298,665 @@ export interface PeriodParams {
 export interface PineJS {
 	Std: PineJSStd;
 }
+/**
+ * An interface representing the standard library functions for PineJS.
+ */
 export interface PineJSStd {
+	/**
+	 * Epsilon (machine precision)
+	 *
+	 * @returns Epsilon (machine precision). Upper bound on the relative approximation error due to rounding in floating point arithmetic.
+	 */
 	eps(): number;
+	/**
+	 * High Price
+	 *
+	 * @param context - PineJS execution context.
+	 * @returns Current high price.
+	 */
 	high(context: IContext): number;
+	/**
+	 * Low Price
+	 *
+	 * @param context - PineJS execution context.
+	 * @returns Current low price.
+	 */
 	low(context: IContext): number;
+	/**
+	 * Open Price
+	 *
+	 * @param context - PineJS execution context.
+	 * @returns Current open price.
+	 */
 	open(context: IContext): number;
+	/**
+	 * Close Price
+	 *
+	 * @param context - PineJS execution context.
+	 * @returns Current close price.
+	 */
 	close(context: IContext): number;
+	/**
+	 * Is a shortcut for (open + high + low + close)/4
+	 *
+	 * @param context - PineJS execution context.
+	 * @returns Calculated average of the current OHLC values
+	 */
 	ohlc4(context: IContext): number;
+	/**
+	 * Current bar volume
+	 *
+	 * @param context - PineJS execution context.
+	 * @returns Current bar volume
+	 */
 	volume(context: IContext): number;
+	/**
+	 * Current bar time
+	 *
+	 * @param context - PineJS execution context.
+	 * @returns UNIX time of current bar
+	 */
 	time(context: IContext): number;
+	/**
+	 * Current bar time
+	 *
+	 * @param context - PineJS execution context.
+	 * @param period - Period
+	 * @param spec
+	 * @returns UNIX time of current bar
+	 */
 	time(context: IContext, period: string, spec: unknown): number;
+	/**
+	 * Is a shortcut for (high + low)/2
+	 *
+	 * @param context - PineJS execution context.
+	 * @returns Calculated average of the current HL values
+	 */
 	hl2(context: IContext): number;
+	/**
+	 * Is a shortcut for (high + low + close)/3
+	 *
+	 * @param context - PineJS execution context.
+	 * @returns Calculated average of the current HLC values
+	 */
 	hlc3(context: IContext): number;
+	/**
+	 * Resolution string, e.g. 60 - 60 minutes, D - daily, W - weekly, M - monthly, 5D - 5 days, 12M - one year, 3M - one quarter
+	 *
+	 * @param context - PineJS execution context.
+	 * @returns The resolution string for the current context
+	 */
 	period(context: IContext): string;
+	/**
+	 * Ticker ID
+	 *
+	 * @param context - PineJS execution context.
+	 * @returns Ticker ID for the current symbol
+	 */
 	tickerid(context: IContext): string;
+	/**
+	 * Current bar year in exchange timezone.
+	 *
+	 * @param context - PineJS execution context.
+	 * @returns Current bar year in exchange timezone.
+	 */
 	year(context: IContext): number;
+	/**
+	 * Current month year in exchange timezone.
+	 *
+	 * @param context - PineJS execution context.
+	 * @returns Current month year in exchange timezone.
+	 */
 	month(context: IContext): number;
-	weakofyear(context: IContext): number;
+	/**
+	 * Week number of current bar in exchange timezone.
+	 *
+	 * @param context - PineJS execution context.
+	 * @returns Week number of current bar in exchange timezone.
+	 */
+	weekofyear(context: IContext): number;
+	/**
+	 * Day of month for current bar time in exchange timezone.
+	 *
+	 * @param context - PineJS execution context.
+	 * @returns Day of month for current bar time in exchange timezone.
+	 */
 	dayofmonth(context: IContext): number;
+	/**
+	 * Day of week for current bar time in exchange timezone.
+	 *
+	 * @param context - PineJS execution context.
+	 * @returns Day of week for current bar time in exchange timezone.
+	 */
 	dayofweek(context: IContext): number;
+	/**
+	 * Current bar hour in exchange timezone.
+	 *
+	 * @param context - PineJS execution context.
+	 * @returns Current bar hour in exchange timezone.
+	 */
 	hour(context: IContext): number;
+	/**
+	 * Current bar minute in exchange timezone.
+	 *
+	 * @param context - PineJS execution context.
+	 * @returns Current bar minute in exchange timezone.
+	 */
 	minute(context: IContext): number;
+	/**
+	 * Current bar second in exchange timezone.
+	 *
+	 * @param context - PineJS execution context.
+	 * @returns Current bar second in exchange timezone.
+	 */
 	second(context: IContext): number;
+	/**
+	 * Checks if `n1` is greater than or equal to `n2`
+	 *
+	 * @param n1
+	 * @param n2
+	 * @param eps - Epsilon (Optional).
+	 * @returns True if `n1` is greater than or equal to `n2`.
+	 */
 	greaterOrEqual(n1: number, n2: number, eps?: number): boolean;
+	/**
+	 * Checks if `n1` is less than or equal to `n2`
+	 *
+	 * @param n1
+	 * @param n2
+	 * @param eps - Epsilon (Optional).
+	 * @returns True if `n1` is less than or equal to `n2`.
+	 */
 	lessOrEqual(n1: number, n2: number, eps?: number): boolean;
+	/**
+	 * Checks if `n1` is equal to `n2` (within the accuracy of epsilon).
+	 *
+	 * @param n1
+	 * @param n2
+	 * @param eps - Epsilon (Optional).
+	 * @returns True if `n1` is equal to `n2`.
+	 */
 	equal(n1: number, n2: number, eps?: number): boolean;
+	/**
+	 * Checks if `n1` is greater than `n2`
+	 *
+	 * @param n1
+	 * @param n2
+	 * @param eps - Epsilon (Optional).
+	 * @returns True if `n1` is greater than `n2`.
+	 */
 	greater(n1: number, n2: number, eps?: number): boolean;
+	/**
+	 * Checks if `n1` is less than `n2`
+	 *
+	 * @param n1
+	 * @param n2
+	 * @param eps - Epsilon (Optional).
+	 * @returns True if `n1` is less than `n2`.
+	 */
 	less(n1: number, n2: number, eps?: number): boolean;
+	/**
+	 * Compare the values of `n1` and `n2`
+	 *
+	 * @param n1
+	 * @param n2
+	 * @param eps - Epsilon (Optional).
+	 * @returns `0` if values are equal. `1` if x1 is greater than x2. `-1` if x1 is less than x2
+	 */
 	compare(n1: number, n2: number, eps?: number): -1 | 0 | 1;
+	/**
+	 * Checks if `n1` is greater than or equal to `n2`
+	 *
+	 * @param n1
+	 * @param n2
+	 * @returns True if `n1` is greater than or equal to `n2`.
+	 */
 	ge(n1: number, n2: number): boolean;
+	/**
+	 * Checks if `n1` is less than or equal to `n2`
+	 *
+	 * @param n1
+	 * @param n2
+	 * @returns True if `n1` is greater than or equal to `n2`.
+	 */
 	le(n1: number, n2: number): boolean;
+	/**
+	 * Checks if `n1` is equal to `n2`.
+	 *
+	 * @param n1
+	 * @param n2
+	 * @returns True if `n1` is equal to `n2`.
+	 */
 	eq(n1: number, n2: number): boolean;
+	/**
+	 * Checks if `n1` is not equal to `n2`.
+	 *
+	 * @param n1
+	 * @param n2
+	 * @returns True if `n1` is not equal to `n2`.
+	 */
 	neq(n1: number, n2: number): boolean;
+	/**
+	 * Checks if `n1` is greater than `n2`
+	 *
+	 * @param n1
+	 * @param n2
+	 * @returns True if `n1` is greater than `n2`.
+	 */
 	gt(n1: number, n2: number): boolean;
+	/**
+	 * Checks if `n1` is less than `n2`
+	 *
+	 * @param n1
+	 * @param n2
+	 * @returns True if `n1` is less than `n2`.
+	 */
 	lt(n1: number, n2: number): boolean;
+	/**
+	 * If ... then ... else ...
+	 * `iff` does exactly the same thing as ternary conditional operator `?:` but in a functional style. Also `iff` is slightly less efficient than operator `?:`
+	 *
+	 * @param condition - condition to check
+	 * @param thenValue - value to use if condition is true
+	 * @param elseValue - value to use if condition is false
+	 * @returns either thenValue or elseValue
+	 */
 	iff<T, V>(condition: boolean, thenValue: T, elseValue: V): T | V;
+	/**
+	 * True Range
+	 *
+	 * @param handleNan - How NaN values are handled. If `true`, and previous day's close is `NaN` then tr would be calculated as current day `high-low`. Otherwise (if `false`) tr would return `NaN` in such cases. Also note, that `atr` uses `tr(true)`.
+	 * @param context - PineJS execution context.
+	 * @returns True range. It is `max(high - low, abs(high - close[1]), abs(low - close[1]))`
+	 */
 	tr(handleNan: boolean, context: IContext): number;
+	/**
+	 * Function atr (average true range) returns the RMA of true range. True range is `max(high - low, abs(high - close[1]), abs(low - close[1]))`
+	 *
+	 * @param length - Length (number of bars back).
+	 * @param context - PineJS execution context.
+	 * @returns Average true range.
+	 */
 	atr(length: number, context: IContext): number;
+	/**
+	 * Determines whether the current resolution is a daily, weekly, or monthly resolution.
+	 *
+	 * @param context - PineJS execution context.
+	 * @returns true if current resolution is a daily or weekly or monthly resolution
+	 */
 	isdwm(context: IContext): boolean;
+	/**
+	 * Determines whether the current resolution is an intraday (minutes or seconds) resolution.
+	 *
+	 * @param context - PineJS execution context.
+	 * @returns true if current resolution is an intraday (minutes or seconds) resolution
+	 */
 	isintraday(context: IContext): boolean;
+	/**
+	 * Determines whether the current resolution is a daily resolution.
+	 *
+	 * @param context - PineJS execution context.
+	 * @returns true if current resolution is a daily resolution
+	 */
 	isdaily(context: IContext): boolean;
+	/**
+	 * Determines whether the current resolution is a weekly resolution.
+	 *
+	 * @param context - PineJS execution context.
+	 * @returns true if current resolution is a weekly resolution
+	 */
 	isweekly(context: IContext): boolean;
+	/**
+	 * Determines whether the current resolution is a monthly resolution.
+	 *
+	 * @param context - PineJS execution context.
+	 * @returns true if current resolution is a monthly resolution
+	 */
 	ismonthly(context: IContext): boolean;
+	/**
+	 * select session breaks for intraday resolutions only
+	 *
+	 * @param context - PineJS execution context.
+	 * @param times - An array of numbers representing the times to select session breaks from.
+	 * @returns session breaks for intraday resolutions only.
+	 */
 	selectSessionBreaks(context: IContext, times: number[]): number[];
+	/**
+	 * checks whether a new session can be created
+	 *
+	 * @param context - PineJS execution context.
+	 * @returns checks whether a new session can be created
+	 */
 	createNewSessionCheck(context: IContext): (time: number) => boolean;
+	/**
+	 * Display an error message.
+	 *
+	 * @param message - message to display for error
+	 */
 	error(message: string): never;
+	/**
+	 * Zig-zag pivot points
+	 *
+	 * @param deviation - deviation
+	 * @param depth - depth (integer)
+	 * @param context - PineJS execution context.
+	 * @returns the zig-zag pivot points
+	 */
 	zigzag(deviation: number, depth: number, context: IContext): number[];
+	/**
+	 * Zig-zag pivot points
+	 *
+	 * @param deviation - deviation
+	 * @param depth - depth (integer)
+	 * @param context - PineJS execution context.
+	 * @returns the zig-zag pivot points (for bars)
+	 */
 	zigzagbars(deviation: number, depth: number, context: IContext): number[];
+	/**
+	 * Time of the current update
+	 *
+	 * @param context - PineJS execution context.
+	 * @returns symbol update time
+	 */
 	updatetime(context: IContext): string;
+	/**
+	 * Ticker ID for the current symbol
+	 *
+	 * @param context - PineJS execution context.
+	 * @returns Ticker ID for the current symbol
+	 */
+	ticker(context: IContext): string;
+	/**
+	 * Current interval for the symbol
+	 * @param context - PineJS execution context.
+	 * @returns interval string
+	 */
+	interval(context: IContext): string;
+	/**
+	 * Percent rank is the percentage of how many previous values were less than or equal to the current value of given series.
+	 *
+	 * @param source - Series of values to process.
+	 * @param length - Number of bars (length).
+	 * @returns Percent rank of `source` for `length` bars back.
+	 */
 	percentrank(source: IPineSeries, length: number): number;
+	/**
+	 * Test if the series is now rising for length bars long.
+	 *
+	 * @param series - Series of values to process.
+	 * @param length - Number of bars (length).
+	 * @returns `true` if current `x` is greater than any previous `x` for length bars back, `false` otherwise.
+	 */
 	rising(series: IPineSeries, length: number): boolean;
+	/**
+	 * Test if the series is now falling for length bars long.
+	 *
+	 * @param series - Series of values to process.
+	 * @param length - Number of bars (length).
+	 * @returns `true` if current `x` is less than any previous `x` for length bars back, `false` otherwise.
+	 */
 	falling(series: IPineSeries, length: number): boolean;
+	/**
+	 * Relative strength index. It is calculated based on rma's of upward and downward change of x.
+	 *
+	 * @param upper - upward change
+	 * @param lower - downward change
+	 * @returns Relative strength index.
+	 */
 	rsi(upper: number, lower: number): number;
+	/**
+	 * The sum function returns the sliding sum of last y values of x.
+	 *
+	 * @param source - Series of values to process.
+	 * @param length - Number of bars (length).
+	 * @param context - PineJS execution context.
+	 * @returns Sum of x for y bars back.
+	 */
 	sum(source: IPineSeries, length: number, context: IContext): number;
-	sma(source: IPineSeries, length: number, context: IContext): IPineSeries;
-	rma(source: IPineSeries, length: number, context: IContext): IPineSeries;
-	ema(source: IPineSeries, length: number, context: IContext): IPineSeries;
-	wma(source: IPineSeries, length: number, context: IContext): IPineSeries;
-	vwma(source: IPineSeries, length: number, context: IContext): IPineSeries;
-	swma(source: IPineSeries, length: number, context: IContext): IPineSeries;
+	/**
+	 * The sma function returns the moving average, that is the sum of last `length` values of `source`, divided by `length`.
+	 *
+	 * @param source - Series of values to process.
+	 * @param length - Number of bars (length).
+	 * @param context - PineJS execution context.
+	 * @returns Simple moving average of x for y bars back.
+	 */
+	sma(source: IPineSeries, length: number, context: IContext): number;
+	/**
+	 * Moving average used in RSI. It is the exponentially weighted moving average with `alpha = 1 / length`.
+	 *
+	 * @param source - Series of values to process.
+	 * @param length - Number of bars (length).
+	 * @param context - PineJS execution context.
+	 * @returns Exponential moving average of `x` with `alpha = 1 / y`.
+	 */
+	rma(source: IPineSeries, length: number, context: IContext): number;
+	/**
+	 * The ema function returns the exponentially weighted moving average. In ema weighting factors decrease exponentially. It calculates by using a formula: `EMA = alpha * x + (1 - alpha) * EMA[1]`, where `alpha = 2 / (y + 1)`
+	 *
+	 * @param source - Series of values to process.
+	 * @param length - Number of bars (length).
+	 * @param context - PineJS execution context.
+	 * @returns Exponential moving average of `x` with `alpha = 2 / (y + 1)`
+	 */
+	ema(source: IPineSeries, length: number, context: IContext): number;
+	/**
+	 * The wma function returns weighted moving average of `source` for `length` bars back. In wma weighting factors decrease in arithmetical progression.
+	 *
+	 * @param source - Series of values to process.
+	 * @param length - Number of bars (length).
+	 * @param context - PineJS execution context.
+	 * @returns Weighted moving average of `series` for `length` bars back.
+	 */
+	wma(source: IPineSeries, length: number, context: IContext): number;
+	/**
+	 * The vwma function returns volume-weighted moving average of `source` for `length` bars back. It is the same as: `sma(x * volume, y) / sma(volume, y)`
+	 *
+	 * @param source - Series of values to process.
+	 * @param length - Number of bars (length).
+	 * @param context - PineJS execution context.
+	 * @returns Volume-weighted moving average of `source` for `length` bars back.
+	 */
+	vwma(source: IPineSeries, length: number, context: IContext): number;
+	/**
+	 * Symmetrically weighted moving average with fixed length: 4. Weights: `[1/6, 2/6, 2/6, 1/6]`.
+	 *
+	 * @param source - Series of values to process.
+	 * @param context - PineJS execution context.
+	 * @returns Symmetrically weighted moving average
+	 */
+	swma(source: IPineSeries, context: IContext): number;
+	/**
+	 * For a given series replaces NaN values with previous nearest non-NaN value.
+	 *
+	 * @param current - Series of values to process.
+	 * @param context - PineJS execution context.
+	 * @returns Series without na gaps.
+	 */
 	fixnan(current: IPineSeries, context: IContext): IPineSeries;
+	/**
+	 * Lowest value offset for a given number of bars back.
+	 *
+	 * @param source - Series of values to process.
+	 * @param length - Number of bars (length).
+	 * @param context - PineJS execution context.
+	 * @returns Offset to the lowest bar.
+	 */
 	lowestbars(source: IPineSeries, length: number, context: IContext): number;
+	/**
+	 * Lowest value for a given number of bars back.
+	 *
+	 * @param source - Series of values to process.
+	 * @param length - Number of bars (length).
+	 * @param context - PineJS execution context.
+	 * @returns Lowest value.
+	 */
 	lowest(source: IPineSeries, length: number, context: IContext): number;
+	/**
+	 * Highest value offset for a given number of bars back.
+	 *
+	 * @param source - Series of values to process.
+	 * @param length - Number of bars (length).
+	 * @param context - PineJS execution context.
+	 * @returns Offset to the highest bar.
+	 */
 	highestbars(source: IPineSeries, length: number, context: IContext): number;
+	/**
+	 * Highest value for a given number of bars back.
+	 *
+	 * @param source - Series of values to process.
+	 * @param length - Number of bars (length).
+	 * @param context - PineJS execution context.
+	 * @returns Highest value.
+	 */
 	highest(source: IPineSeries, length: number, context: IContext): number;
+	/**
+	 * Cumulative (total) sum of `x`. In other words it's a sum of all elements of `x`.
+	 *
+	 * @param x - Series of values to process.
+	 * @param context - PineJS execution context.
+	 * @returns Total sum series.
+	 */
 	cum(x: IPineSeries, context: IContext): number;
+	/**
+	 * Accumulation/distribution index.
+	 *
+	 * @param context - PineJS execution context.
+	 * @returns Accumulation/distribution index.
+	 */
 	accdist(context: IContext): number;
+	/**
+	 * Correlation coefficient. Describes the degree to which two series tend to deviate from their `sma` values.
+	 *
+	 * @param sourceA - Source series.
+	 * @param sourceB - Target series.
+	 * @param length - Length (number of bars back).
+	 * @param context - PineJS execution context.
+	 * @returns Correlation coefficient.
+	 */
 	correlation(sourceA: IPineSeries, sourceB: IPineSeries, length: number, context: IContext): number;
+	/**
+	 * Stochastic. It is calculated by a formula: `100 * (close - lowest(low, length)) / (highest(high, length) - lowest(low, length))`
+	 *
+	 * @param source - Source series.
+	 * @param high - Series of high.
+	 * @param low - Series of low.
+	 * @param length - Length (number of bars back).
+	 * @param context - PineJS execution context.
+	 * @returns Stochastic value.
+	 */
 	stoch(source: IPineSeries, high: IPineSeries, low: IPineSeries, length: number, context: IContext): number;
+	/**
+	 * True strength index. It uses moving averages of the underlying momentum of a financial instrument.
+	 *
+	 * @param source - Source series.
+	 * @param shortLength - Length (number of bars back).
+	 * @param longLength - Length (number of bars back).
+	 * @param context - PineJS execution context.
+	 * @returns True strength index. A value in range `[-1, 1]`
+	 */
 	tsi(source: IPineSeries, shortLength: number, longLength: number, context: IContext): number;
+	/**
+	 * Crossing of series
+	 *
+	 * @param x - First series.
+	 * @param y - Second series.
+	 * @param context - PineJS execution context.
+	 * @returns `true` if two series have crossed each other, otherwise `false`.
+	 */
 	cross(x: IPineSeries, y: IPineSeries, context: IContext): boolean;
-	linreg(source: IPineSeries, length: number, offset: number): IPineSeries;
-	sar(start: IPineSeries, inc: number, max: number, context: IContext): IPineSeries;
-	alma(series: IPineSeries, length: number, offset: number, sigma: number): IPineSeries;
-	change(source: IPineSeries): IPineSeries;
-	roc(source: IPineSeries, length: number): IPineSeries;
-	dev(source: IPineSeries, length: number, context: IContext): IPineSeries;
-	stdev(source: IPineSeries, length: number, context: IContext): IPineSeries;
-	variance(source: IPineSeries, length: number, context: IContext): IPineSeries;
+	/**
+	 * Linear regression curve. A line that best fits the prices specified over a user-defined time period.
+	 * It is calculated using the least squares method. The result of this function is calculated using the formula:
+	 * `linreg = intercept + slope * (length - 1 - offset)`, where intercept and slope are the values calculated with
+	 * the least squares method on source series (x argument).
+	 *
+	 * @param source - Source series.
+	 * @param length - Length (number of bars back).
+	 * @param offset - Offset (number of bars)
+	 * @returns Linear regression curve point.
+	 */
+	linreg(source: IPineSeries, length: number, offset: number): number;
+	/**
+	 * Parabolic SAR (parabolic stop and reverse) is a method devised by J. Welles Wilder, Jr., to find potential reversals in the market price direction of traded goods.
+	 *
+	 * @param start - Start.
+	 * @param inc - Increment
+	 * @param max - Maximum
+	 * @param context - PineJS execution context.
+	 * @returns Parabolic SAR.
+	 */
+	sar(start: IPineSeries, inc: number, max: number, context: IContext): number;
+	/**
+	 * Arnaud Legoux Moving Average. It uses Gaussian distribution as weights for moving average.
+	 *
+	 * @param series - Series of values to process.
+	 * @param length - Number of bars (length).
+	 * @param offset - Controls tradeoff between smoothness (closer to 1) and responsiveness (closer to 0).
+	 * @param sigma - Changes the smoothness of ALMA. The larger sigma the smoother ALMA.
+	 */
+	alma(series: IPineSeries, length: number, offset: number, sigma: number): number;
+	/**
+	 * Difference between current value and previous, `x - x[1]`.
+	 *
+	 * @param source - Series to process.
+	 * @returns The result of subtraction.
+	 */
+	change(source: IPineSeries): number;
+	/**
+	 * Rate of Change.
+	 *
+	 * Function roc (rate of change) showing the difference between current value of `source` and the value of `source` that was `length` days ago. It is calculated by the formula: `100 * change(src, length) / src[length]`.
+	 *
+	 * @param source - Series of values to process.
+	 * @param length - Number of bars (length).
+	 * @returns The rate of change of `source` for `length` bars back.
+	 */
+	roc(source: IPineSeries, length: number): number;
+	/**
+	 * Measure of difference between the series and its sma.
+	 *
+	 * @param source - Series of values to process.
+	 * @param length - Number of bars (length).
+	 * @param context - PineJS execution context.
+	 * @returns Deviation of source for length bars back.
+	 */
+	dev(source: IPineSeries, length: number, context: IContext): number;
+	/**
+	 * Standard deviation. Note: This is a biased estimation of standard deviation.
+	 *
+	 * @param source - Series of values to process.
+	 * @param length - Number of bars (length).
+	 * @param context - PineJS execution context.
+	 * @returns Standard deviation.
+	 */
+	stdev(source: IPineSeries, length: number, context: IContext): number;
+	/**
+	 * Variance is the expectation of the squared deviation of a series from its mean `sma`, and it informally measures how far a set of numbers are spread out from their mean. Note: This is a biased estimation of sample variance.
+	 *
+	 * @param source - Series of values to process.
+	 * @param length - Number of bars (length).
+	 * @param context - PineJS execution context.
+	 * @returns Variance of `source` for `length` bars back.
+	 */
+	variance(source: IPineSeries, length: number, context: IContext): number;
+	/**
+	 * Get time in `daysCount` number of days while taking Daylight savings time into account.
+	 *
+	 * @param timezone - Timezone
+	 * @param utcTime - Date (JS built-in)
+	 * @param daysCount - Number of days
+	 * @returns The time is `daysCount` number of days, taking into account Daylight savings time.
+	 */
 	add_days_considering_dst(timezone: string, utcTime: Date, daysCount: number): Date;
+	/**
+	 * Calculates the directional movement values +DI, -DI, DX, ADX, and ADXR.
+	 *
+	 * @param diLength - Number of bars (length) used when calculating the +DI and -DI values.
+	 * @param adxSmoothingLength - Number of bars (length) used when calculating the ADX value.
+	 * @param context - PineJS execution context.
+	 * @returns An array of the +DI, -DI, DX, ADX, and ADXR values with diLength smoothing for the (+/-)DI values and adxSmoothingLength for the ADX value.
+	 */
 	dmi(diLength: number, adxSmoothingLength: number, context: IContext): [
 		number,
 		number,
@@ -8352,30 +8964,167 @@ export interface PineJSStd {
 		number,
 		number
 	];
+	/**
+	 * Test value if it's a NaN.
+	 *
+	 * @param n - value to test
+	 * @returns `true` if `x` is not a valid number (`x` is `NaN`), otherwise `false`.
+	 */
 	na(n: number): boolean;
+	/**
+	 * Replaces NaN values with zeros (or given value) in a series.
+	 *
+	 * @param x - value to test (and potentially replace)
+	 * @param y - fallback value
+	 * @returns `x` if it's a valid (not NaN) number, otherwise `y`
+	 */
 	nz(x: number, y: number): number;
+	/**
+	 * Logical AND. Applicable to boolean expressions.
+	 *
+	 * @returns Boolean value
+	 */
 	and(expr1: boolean, expr2: boolean): boolean;
+	/**
+	 * Logical OR. Applicable to boolean expressions.
+	 *
+	 * @returns Boolean value
+	 */
 	or(expr1: boolean, expr2: boolean): boolean;
+	/**
+	 * Logical negation (NOT). Applicable to boolean expressions.
+	 *
+	 * @returns Boolean value
+	 */
 	not(expr1: boolean): boolean;
+	/**
+	 * Maximum number in the array
+	 *
+	 * @returns The greatest of multiple given values
+	 */
 	max<T>(...values: T[]): T;
+	/**
+	 * Minimum number in the array
+	 *
+	 * @returns The smallest of multiple given values
+	 */
 	min<T>(...values: T[]): T;
-	pow(base: number, exponent: number): number;
+	/**
+	 * Mathematical power function.
+	 *
+	 * @param base - Specify the base to use.
+	 * @param exponent - Specifies the exponent.
+	 * @returns `x` raised to the power of `y`. If `x` is a series, it is calculated elementwise.
+	 */
+	pow<T extends number | IPineSeries>(base: T, exponent: number): T;
+	/**
+	 * Absolute value of x is x if x >= 0, or -x otherwise.
+	 *
+	 * @returns The absolute value of `x`
+	 */
 	abs(x: number): number;
+	/**
+	 * Natural logarithm of any `x > 0` is the unique `y` such that `e^y = x`
+	 *
+	 * @returns The natural logarithm of `x`.
+	 */
 	log(x: number): number;
+	/**
+	 * Base 10 logarithm of any `x > 0` is the unique `y` such that `10^y = x`
+	 *
+	 * @returns The base 10 logarithm of `x`.
+	 */
 	log10(x: number): number;
+	/**
+	 * Square root of any `x >= 0` is the unique `y >= 0` such that `y^2 = x`
+	 *
+	 * @returns The square root of `x`
+	 */
 	sqrt(x: number): number;
+	/**
+	 * Sign (signum) of `x` is `0` if the x is zero, `1.0` if the `x` is greater than zero, `-1.0` if the `x` is less than zero.
+	 *
+	 * @returns The sign of `x`
+	 */
 	sign(x: number): number;
+	/**
+	 * The exp function of `x` is `e^x`, where `x` is the argument and `e` is Euler's number.
+	 *
+	 * @returns A number representing `e^x`.
+	 */
 	exp(x: number): number;
+	/**
+	 * The sin function returns the trigonometric sine of an angle.
+	 *
+	 * @param x - Angle, in radians.
+	 * @returns The trigonometric sine of an angle.
+	 */
 	sin(x: number): number;
+	/**
+	 * The cos function returns the trigonometric cosine of an angle.
+	 *
+	 * @param x - Angle, in radians.
+	 * @returns The trigonometric cosine of an angle.
+	 */
 	cos(x: number): number;
+	/**
+	 * The tan function returns the trigonometric tangent of an angle.
+	 *
+	 * @param x - Angle, in radians.
+	 * @returns The trigonometric tangent of an angle.
+	 */
 	tan(x: number): number;
+	/**
+	 * The asin function returns the arcsine (in radians) of number such that `sin(asin(y)) = y` for `y` in range `[-1, 1]`.
+	 *
+	 * @param x - Angle, in radians.
+	 * @returns The arcsine of a value; the returned angle is in the range `[-Pi/2, Pi/2]`, or na if y is outside of range `[-1, 1]`.
+	 */
 	asin(x: number): number;
+	/**
+	 * The acos function returns the arccosine (in radians) of number such that `cos(acos(y)) = y` for `y` in range `[-1, 1]`.
+	 *
+	 * @param x - Angle, in radians.
+	 * @returns The arc cosine of a value; the returned angle is in the range `[0, Pi]`, or na if y is outside of range `[-1, 1]`.
+	 */
 	acos(x: number): number;
+	/**
+	 * The atan function returns the arctangent (in radians) of number such that `tan(atan(y)) = y` for any `y`.
+	 *
+	 * @param x - Angle, in radians.
+	 * @returns The arc tangent of a value; the returned angle is in the range `[-Pi/2, Pi/2]`.
+	 */
 	atan(x: number): number;
+	/**
+	 * Round the number down to the closest integer
+	 *
+	 * @returns The largest integer less than or equal to the given number.
+	 */
 	floor(x: number): number;
+	/**
+	 * The ceil function returns the smallest (closest to negative infinity) integer that is greater than or equal to the argument.
+	 *
+	 * @returns The smallest integer greater than or equal to the given number.
+	 */
 	ceil(x: number): number;
+	/**
+	 * Round the number to the nearest integer
+	 *
+	 * @returns The value of `x` rounded to the nearest integer, with ties rounding up. If the precision parameter is used, returns a float value rounded to that number of decimal places.
+	 */
 	round(x: number): number;
+	/**
+	 * Calculates average of all given series (elementwise).
+	 *
+	 * @returns the average of the values
+	 */
 	avg<T>(...values: T[]): T;
+	/**
+	 * Current bar index
+	 *
+	 * @param context - PineJS execution context.
+	 * @returns Current bar index. Numbering is zero-based, index of the first historical bar is 0.
+	 */
 	n(context: IContext): number;
 	[key: string]: (...params: any[]) => any;
 }
@@ -8789,7 +9538,7 @@ export interface SingleBrokerMetaInfo {
 	 */
 	customNotificationFields?: string[];
 	/**
-	 * List of expiration options of orders. It is optional. Do not set it if you don't want the durations to be displayed in the Order Dialog.
+	 * List of expiration options of orders. It is optional. Do not set it if you don't want the durations to be displayed in Order Ticket.
 	 *
 	 * The objects have the following keys: `{ name, value, hasDatePicker?, hasTimePicker?, default?, supportedOrderTypes? }`.
 	 */
@@ -8801,7 +9550,7 @@ export interface SingleBrokerMetaInfo {
 	 */
 	orderRules?: OrderRule[];
 	/**
-	 * This optional field can be used to replace the standard Order dialogs and the Add Protection dialogs with your own.
+	 * This optional field can be used to replace the standard Order Ticket and the Add Protection dialogs with your own.
 	 * Values of the following two fields are functions that are called by the Trading Terminal to show the dialogs. Each function shows a dialog and returns a `Promise` object that should be resolved when the operation is finished or cancelled.
 	 *
 	 * **NOTE:** The returned `Promise` object should be resolved with either `true` or `false` value.
@@ -9899,7 +10648,7 @@ export interface SubscribeEventsMap {
 	/**
 	 * A study template has been loaded
 	 */
-	"load_study template": EmptyCallback;
+	load_study_template: EmptyCallback;
 	/**
 	 * Last bar has been updated
 	 * @param  {Bar} tick - data for last bar
@@ -11187,7 +11936,11 @@ export type TradingTerminalFeatureset = ChartingLibraryFeatureset |
 /** Show a context menu on clicking the crosshair menu even when there's only 1 item to show @default false */
 "show_context_menu_in_crosshair_if_only_one_item" | 
 /** Enable context menu support in the watchlist. */
-"watchlist_context_menu ";
+"watchlist_context_menu " | 
+/** Hide the right_toolbar when initialising the chart. Can be expanded using the widgetBar API {@link IWidgetbarApi}  @default false */
+"hide_right_toolbar" | 
+/** Hide the tabs within the right toolbar @default false */
+"hide_right_toolbar_tabs";
 export type VisiblePlotsSet = "ohlcv" | "ohlc" | "c";
 export type WatchListSymbolListAddedCallback = (listId: string, symbols: string[]) => void;
 export type WatchListSymbolListChangedCallback = (listId: string) => void;
