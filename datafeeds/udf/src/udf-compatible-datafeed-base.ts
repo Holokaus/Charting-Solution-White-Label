@@ -31,7 +31,7 @@ import {
 import {
 	GetBarsResult,
 	HistoryProvider,
-	type LimitedResponseConfiguration,
+	LimitedResponseConfiguration,
 	PeriodParamsWithOptionalCountback,
 } from './history-provider';
 

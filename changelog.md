@@ -5,6 +5,62 @@
 <!-- markdownlint-disable no-inline-html -->
 <!-- markdownlint-disable code-block-style -->
 
+## Version 25
+
+*Date: Mon May 22 2023*
+
+**Breaking Changes**
+
+- **Save and Load Chart Templates.** Add methods to the [save/load adapter](https://www.tradingview.com/charting-library-docs/latest/saving_loading) to support chart templates.
+- **Renew design for send order and buy sell buttons.** Renew design for send order and buy sell buttons:
+  - Buttons are now rounded
+  - Selected item and underline are now black
+- **New TV logo.** What is changing:
+  - Changing the size, boldness of the text
+  - Indentation of the logo from the borders of the chart
+- **One row for grid lines settings.** The grid lines settings have been combined into one row.
+- **Remove magnet icon near cursor - Reverting feature.** Following reviews this piece of work was reverted.
+- **Update Charting Library branding.** Branding font and position is slightly changed.
+- **Do not load Euclid font for the branding logo on chart.** The Euclid font will not load if there is an animated logo on the chart.
+- **When the chart data is reset, the new request for data will only be for the visible range.** The previous behavior was that when [resetData](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IChartWidgetApi#resetdata) was evoked, that the datafeed would be requested to provide data for the entire range of data already loaded for that symbol. The new behavior is that the request is now only for the current visible range. This more closely matches the behavior of the first load. If you require the old behavior then you can disable the `request_only_visible_range_on_reset` featureset.
+- **Remove timezone & session breaks section from scale gear menu.** Time zone and Session breaks section has been removed from gear menu.
+- **Update chart types icons.** Changed icons for Line, Area and Baseline chart types.
+- **Move Session breaks from Appearance to Events tab.** Session breaks setting is moved to events tab.
+- **Changed the gear icon.** Changed the icon for price scale settings button ('gear' in bottom-right corner). See [#1234](https://github.com/tradingview/charting_library/issues/1234)
+
+**New Features**
+
+- **Handle variable-tick-size.** Added support for variable tick size.
+- **Add new stats position for info line drawing "auto".** Option of automatic positioning of information block for infoline drawings was added "auto" (in addition to existing left, center, right).
+- **Add new checkboxes for price range in Info Line drawing box.** Added 2 settings in linetools context menu:
+  - Percent change
+  - Change in pips
+- **Add ability to move anchors continuously - not by bars.** Smooth resizing of icons, stickers and emojis was implemented.
+- **Correct Chart settings text Price scale labels.** "LABELS" group in "Scales" tab of Chart settings has been renamed to "LABELS ON PRICE SCALE".
+- **Show + button on cursor by hotkey.** Added hotkeys Alt+Ctrl (win) or Opt+Command (mac) for the appearance of the plus button under the cursor.
+- **Add Data window item to context/legend three dots menu.** Added new item to context/legend three dots menu - "Data window..." with a shortcut. Opens Data Window in the right panel.
+- **Add Volume profile indicators on the top of chart series.** Changed the default z-order for Volume Profile indicators and VP drawings. They are now located above the main series.
+- **Added new time zone Anchorage Alaska.** Added new time zone Anchorage Alaska (UTC-9).
+- **Separate chart types Line with markers and Stepline.** Step line and Line with markers types are added to the top toolbar chart types menu.
+- **Added new time zone Casablanca.** Timezone Casablanca (UTC) has been added.
+- **Try to load line tools code dynamically.** Fixed floating toolbar for Price Note to show color and text settings like for other drawings.
+- **Add sticker drawing tool.** Add the ability to use stickers with `createMultipointShape` or `selectLineTool`.
+- **Add Accelerator Oscillator indicator.**
+
+**Improvements**
+
+- **Theming support for pop-up menus.** Additional CSS custom properties have been added for styling pop-up menus. Pop-up (as known as 'pop-over') menus include toolbar menus, and context menus. See the full list of CSS custom properties in the [CSS Color Themes](https://www.tradingview.com/charting-library-docs/latest/customization/styles/CSS-Color-Themes) article.
+- **Add date and time input UI for custom studies.** [Custom studies](https://www.tradingview.com/charting-library-docs/latest/custom_studies) now support defining inputs of the `'time'` type and having a GUI element (date and time pickers) in the indicators settings dialog window.
+- **setActiveChart added to the Widget API.** The currently active chart in a multi-chart layout (available on Trading Terminal only) can now be changed using the `setActiveChart` method. [more info](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IChartingLibraryWidget#setactivechart)
+
+**Bug Fixes**
+
+- **Include missing PriceAxisLastValueMode and LineStyle enums in type documentation.**
+
+**Documentation**
+
+- **The Overrides article update.** We have updated the [Overrides](https://www.tradingview.com/charting-library-docs/latest/customization/overrides) article. Now it contains general information about the Overrides API. For information on how to customize elements on the chart, refer to a new [Chart Overrides](https://www.tradingview.com/charting-library-docs/latest/customization/overrides/chart-overrides) article.
+
 ## Version 24.004
 
 *Date: Mon Apr 24 2023*
@@ -28,13 +84,13 @@ list.
   - Passing `ClearMarksMode.BarMarks` will only remove bar marks.
   - Passing `ClearMarksMode.TimeScaleMarks` will only remove TimeScale marks.
 - **`BREAKING CHANGE` Discrepancy in chart style/type methods.** Only TypeScript breaking change as an interface has been renamed to better reflect its purpose.
-`SeriesStyle` is now [SeriesType](api/enums/Charting_Library.SeriesType).
+`SeriesStyle` is now [SeriesType](https://www.tradingview.com/charting-library-docs/latest/api/enums/Charting_Library.SeriesType).
 
 **Bug Fixes**
 
 - **load_study_template event is not emitted.** load_study_template event was not emitted when applying a template on the chart.
 - **Fixed autosize bug occurring on Chrome iOS when rotating the device.** Workaround fix for a browser bug until Chrome resolves the issue on their side.
-- **Fixed the type definitions for a few of the PineJS Std library functions.** [PineJSStd documentation](@api/interfaces/Charting_Library.PineJSStd).
+- **Fixed the type definitions for a few of the PineJS Std library functions.** [PineJSStd documentation](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.PineJSStd).
 
 **Documentation**
 
@@ -45,7 +101,7 @@ It will help you implement datafeed and real-time data streaming to Charting Lib
 **Other**
 
 - **Incorrect watermark property key.** Deprecated `symbolWatermarkProperties` property has now been removed.
-Please use [settings_adapter](Widget-Constructor#settings_adapter) with `symbolWatermark` key instead or `applyOverrides` to change values.
+Please use [settings_adapter](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.ChartingLibraryWidgetOptions#settings_adapter) with `symbolWatermark` key instead or `applyOverrides` to change values.
 
 ## Version 24.003
 
