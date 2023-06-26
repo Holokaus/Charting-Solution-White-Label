@@ -13,7 +13,7 @@ import {
 	UdfResponse,
 } from './helpers';
 
-import { Requester } from './requester';
+import { IRequester } from './irequester';
 // tslint:disable: no-any
 interface HistoryPartialDataResponse extends UdfOkResponse {
 	t: any;
@@ -66,12 +66,12 @@ export interface LimitedResponseConfiguration {
 
 export class HistoryProvider {
 	private _datafeedUrl: string;
-	private readonly _requester: Requester;
+	private readonly _requester: IRequester;
 	private readonly _limitedServerResponse?: LimitedResponseConfiguration;
 
 	public constructor(
 		datafeedUrl: string,
-		requester: Requester,
+		requester: IRequester,
 		limitedServerResponse?: LimitedResponseConfiguration
 	) {
 		this._datafeedUrl = datafeedUrl;

@@ -322,6 +322,16 @@ export declare const enum FilledAreaType {
 	 */
 	TypeHlines = "hline_hline"
 }
+/**
+ * Market status for the symbol.
+ */
+export declare const enum MarketStatus {
+	Open = "market",
+	Pre = "pre_market",
+	Post = "post_market",
+	Close = "out_of_session",
+	Holiday = "holiday"
+}
 export declare const enum MenuItemType {
 	Separator = "separator",
 	Action = "action"
@@ -1126,7 +1136,7 @@ export interface BalloonLineToolOverrides {
 export interface Bar {
 	/** Bar time.
 	 * Amount of **milliseconds** since Unix epoch start in **UTC** timezone.
-	 * `time` for daily bars is expected to be a trading day (not session start day) at 00:00 UTC.
+	 * `time` for daily, weekly, and monthly bars is expected to be a trading day (not session start day) at 00:00 UTC.
 	 * Charting Library adjusts time according to `session` from {@link LibrarySymbolInfo}.
 	 */
 	time: number;
@@ -1792,6 +1802,12 @@ export interface ChartPropertiesOverrides extends StudyOverrides {
 	 */
 	"paneProperties.bottomMargin": number;
 	/**
+	 * Pane separator color.
+	 *
+	 * @default '#E0E3EB'
+	 */
+	"paneProperties.separatorColor": string;
+	/**
 	 * Study legend input values visiblity.
 	 *
 	 * @default true
@@ -1845,12 +1861,6 @@ export interface ChartPropertiesOverrides extends StudyOverrides {
 	 * @default 50
 	 */
 	"paneProperties.legendProperties.backgroundTransparency": number;
-	/**
-	 * Legend separator color.
-	 *
-	 * @default '#E0E3EB'
-	 */
-	"paneProperties.paneProperties.separatorColor": string;
 	/**
 	 * Scales (axis) border line color.
 	 *
@@ -2078,12 +2088,6 @@ export interface ChartPropertiesOverrides extends StudyOverrides {
 	 */
 	"mainSeriesProperties.priceLineColor": string;
 	/**
-	 * Main series base line color.
-	 *
-	 * @default "#B2B5BE"
-	 */
-	"mainSeriesProperties.baseLineColor": string;
-	/**
 	 * Main series previous close price line visibility.
 	 *
 	 * @default false
@@ -2120,12 +2124,6 @@ export interface ChartPropertiesOverrides extends StudyOverrides {
 	 * ```
 	 */
 	"mainSeriesProperties.minTick": string;
-	/**
-	 * Main series legend font size.
-	 *
-	 * @default 16
-	 */
-	"mainSeriesProperties.statusViewStyle.fontSize": number;
 	/**
 	 * Main series legend exchange visibility.
 	 *
@@ -2508,6 +2506,72 @@ export interface ChartPropertiesOverrides extends StudyOverrides {
 	 */
 	"mainSeriesProperties.areaStyle.transparency": number;
 	/**
+	 * Main series hlc area style close line color.
+	 *
+	 * @default "#868993"
+	 */
+	"mainSeriesProperties.hlcAreaStyle.closeLineColor": string;
+	/**
+	 * Main series hlc area style close line style.
+	 *
+	 * @default LineStyle.Solid
+	 */
+	"mainSeriesProperties.hlcAreaStyle.closeLineStyle": OverrideLineStyle;
+	/**
+	 * Main series hlc area style close line width.
+	 *
+	 * @default 2
+	 */
+	"mainSeriesProperties.hlcAreaStyle.closeLineWidth": number;
+	/**
+	 * Main series hlc area style close low fill color.
+	 *
+	 * @default "rgba(242, 54, 69, 0.2)"
+	 */
+	"mainSeriesProperties.hlcAreaStyle.closeLowFillColor": string;
+	/**
+	 * Main series hlc area style high close fill color.
+	 *
+	 * @default "rgba(8, 153, 129, 0.2)"
+	 */
+	"mainSeriesProperties.hlcAreaStyle.highCloseFillColor": string;
+	/**
+	 * Main series hlc area style high line color.
+	 *
+	 * @default "#089981"
+	 */
+	"mainSeriesProperties.hlcAreaStyle.highLineColor": string;
+	/**
+	 * Main series hlc area style high line style.
+	 *
+	 * @default LineStyle.Solid
+	 */
+	"mainSeriesProperties.hlcAreaStyle.highLineStyle": OverrideLineStyle;
+	/**
+	 * Main series hlc area style high line width.
+	 *
+	 * @default 2
+	 */
+	"mainSeriesProperties.hlcAreaStyle.highLineWidth": number;
+	/**
+	 * Main series hlc area style low line color.
+	 *
+	 * @default "#F23645"
+	 */
+	"mainSeriesProperties.hlcAreaStyle.lowLineColor": string;
+	/**
+	 * Main series hlc area style low line style.
+	 *
+	 * @default LineStyle.Solid
+	 */
+	"mainSeriesProperties.hlcAreaStyle.lowLineStyle": OverrideLineStyle;
+	/**
+	 * Main series hlc area style low line width.
+	 *
+	 * @default 2
+	 */
+	"mainSeriesProperties.hlcAreaStyle.lowLineWidth": number;
+	/**
 	 * Main series price axis percentage mode.
 	 *
 	 * @default false
@@ -2765,36 +2829,6 @@ export interface ChartPropertiesOverrides extends StudyOverrides {
 	 * @default 50
 	 */
 	"mainSeriesProperties.baselineStyle.baseLevelPercentage": number;
-	/**
-	 * Main series range style up color.
-	 *
-	 * @default "#089981"
-	 */
-	"mainSeriesProperties.rangeStyle.upColor": string;
-	/**
-	 * Main series range style down color.
-	 *
-	 * @default "#F23645"
-	 */
-	"mainSeriesProperties.rangeStyle.downColor": string;
-	/**
-	 * Main series range style thin bars behaviour.
-	 *
-	 * @default true
-	 */
-	"mainSeriesProperties.rangeStyle.thinBars": boolean;
-	/**
-	 * Main series range style up projection color.
-	 *
-	 * @default "#a9dcc3"
-	 */
-	"mainSeriesProperties.rangeStyle.upColorProjection": string;
-	/**
-	 * Main series range style down projection color.
-	 *
-	 * @default "#f5a6ae"
-	 */
-	"mainSeriesProperties.rangeStyle.downColorProjection": string;
 }
 /**
  * A chart template.
@@ -2857,7 +2891,7 @@ export interface ChartingLibraryWidgetOptions {
 	 */
 	container: HTMLElement | string;
 	/**
-	 * JavaScript object that implements the datafeed interface ({@link IBasicDataFeed}) to supply the chart with data. See [Connecting Data](https://www.tradingview.com/charting-library-docs/latest/connecting_data/) for more information on the JS API.
+	 * JavaScript object that implements the datafeed interface ({@link IBasicDataFeed}) to supply the chart with data. See [Connecting Data](https://www.tradingview.com/charting-library-docs/latest/connecting_data/connecting_data.md) for more information on the JS API.
 	 *
 	 * ```javascript
 	 * datafeed: new Datafeeds.UDFCompatibleDatafeed("https://demo_feed.tradingview.com")
@@ -2909,7 +2943,7 @@ export interface ChartingLibraryWidgetOptions {
 	 */
 	debug?: boolean;
 	/**
-	 * The array containing names of features that should be disabled by default. `Feature` means part of the functionality of the chart (part of the UI/UX). Supported features are listed [here](https://www.tradingview.com/charting-library-docs/latest/customization/Featuresets).
+	 * The array containing names of features that should be disabled by default. `Feature` means part of the functionality of the chart (part of the UI/UX). Supported features are listed [here](https://www.tradingview.com/charting-library-docs/latest/customization/Featuresets.md).
 	 *
 	 * Example:
 	 * ```javascript
@@ -2940,7 +2974,7 @@ export interface ChartingLibraryWidgetOptions {
 	 */
 	drawings_access?: AccessList;
 	/**
-	 * The array containing names of features that should be enabled by default. `Feature` means part of the functionality of the chart (part of the UI/UX). Supported features are listed [here](https://www.tradingview.com/charting-library-docs/latest/customization/Featuresets).
+	 * The array containing names of features that should be enabled by default. `Feature` means part of the functionality of the chart (part of the UI/UX). Supported features are listed [here](https://www.tradingview.com/charting-library-docs/latest/customization/Featuresets.md).
 	 *
 	 * Example:
 	 * ```javascript
@@ -2964,11 +2998,11 @@ export interface ChartingLibraryWidgetOptions {
 	 * library_path: "charting_library/",
 	 * ```
 	 *
-	 * * If you would like to host the library on a separate origin to the page containing the chart then please view the following guide: [Hosting the library on a separate origin](https://www.tradingview.com/charting-library-docs/latest/getting_started/Hosting-Library-Cross-Origin).
+	 * * If you would like to host the library on a separate origin to the page containing the chart then please view the following guide: [Hosting the library on a separate origin](https://www.tradingview.com/charting-library-docs/latest/getting_started/Hosting-Library-Cross-Origin.md).
 	 */
 	library_path?: string;
 	/**
-	 * Locale to be used by Charting Library. See [Localization](https://www.tradingview.com/charting-library-docs/latest/core_concepts/Localization) section for details.
+	 * Locale to be used by Charting Library. See [Localization](https://www.tradingview.com/charting-library-docs/latest/core_concepts/Localization.md) section for details.
 	 *
 	 * ```javascript
 	 * locale: 'en',
@@ -3235,7 +3269,7 @@ export interface ChartingLibraryWidgetOptions {
 	 * }
 	 * ```
 	 * This code will change the default series style to "line".
-	 * All customizable properties are listed in [separate article](https://www.tradingview.com/charting-library-docs/latest/customization/overrides/).
+	 * All customizable properties are listed in [separate article](https://www.tradingview.com/charting-library-docs/latest/customization/overrides/Overrides.md).
 	 */
 	overrides?: Partial<WidgetOverrides>;
 	/**
@@ -3250,7 +3284,7 @@ export interface ChartingLibraryWidgetOptions {
 	 */
 	snapshot_url?: string;
 	/**
-	 * List of visible timeframes that can be selected at the bottom of the chart. See [this topic](https://www.tradingview.com/charting-library-docs/latest/core_concepts/Time-Frames) to learn more about timeframes. Timeframe is an object containing following properties:
+	 * List of visible timeframes that can be selected at the bottom of the chart. See [this topic](https://www.tradingview.com/charting-library-docs/latest/core_concepts/Time-Frames.md) to learn more about timeframes. Timeframe is an object containing following properties:
 	 *
 	 * Example:
 	 *
@@ -3274,20 +3308,24 @@ export interface ChartingLibraryWidgetOptions {
 	 */
 	custom_css_url?: string;
 	/**
-	 * Change the font family used on the chart. The value should be in the same format as the `font-family` property in CSS.
-	 * If you want to use a font that is not available by default on your system, you need to first load the font in your [custom CSS](#custom_css_url).
+	 * Changes the font family used on the chart including the [time scale](https://www.tradingview.com/charting-library-docs/latest/ui_elements/Time-Scale.md), [price scale](https://www.tradingview.com/charting-library-docs/latest/ui_elements/Price-Scale.md), and chart's pane.
+	 * If you want to customize fonts outside the chart, for example, within [Watchlist](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/Watch-List.md) or another widget,
+	 * you should use the {@link ChartingLibraryWidgetOptions.custom_css_url} property to provide custom CSS styles.
 	 *
-	 * E.g. importing a google font in your custom CSS:
+	 * Specify `custom_font_family` in [Widget Constructor](https://www.tradingview.com/charting-library-docs/latest/core_concepts/Widget-Constructor.md) as follows:
+	 *
+	 * ```javascript
+	 * custom_font_family: "'Inconsolata', monospace",
+	 * ```
+	 *
+	 * The `custom_font_family` value should have the same format as the `font-family` property in CSS.
+	 * To use a font that is not available by default on your system, you should first add this font to your [custom CSS](#custom_css_url).
+	 * For example, the code sample below imports a Google font into your custom CSS:
 	 *
 	 * ```css
 	 * @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&display=swap');
 	 * ```
 	 *
-	 * Add `custom_font_family` to your widget options:
-	 *
-	 * ```javascript
-	 * custom_font_family: "'Inconsolata', monospace",
-	 * ```
 	 */
 	custom_font_family?: string;
 	/**
@@ -3336,10 +3374,10 @@ export interface ChartingLibraryWidgetOptions {
 	 */
 	settings_adapter?: ISettingsAdapter;
 	/**
-	 * Set predefined custom theme color for the chart. Supported values are: `"Light"` | `"Dark"`.
+	 * Set predefined custom theme color for the chart. Supported values are: `"light"` | `"dark"`.
 	 *
 	 * ```javascript
-	 * theme: "Light",
+	 * theme: "light",
 	 * ```
 	 */
 	theme?: ThemeName;
@@ -3944,7 +3982,7 @@ export interface CustomIndicator {
 	/**
 	 * The metainfo field is designed to contain the main info about the custom study.
 	 *
-	 * See [Custom Studies Metainfo](https://www.tradingview.com/charting-library-docs/latest/custom_studies/metainfo/) for more information
+	 * See [Custom Studies Metainfo](https://www.tradingview.com/charting-library-docs/latest/custom_studies/metainfo/metainfo.md) for more information
 	 */
 	readonly metainfo: StudyMetaInfo;
 	/**
@@ -3953,7 +3991,7 @@ export interface CustomIndicator {
 	 * The library expects the constructor to create an instance of the study with one mandatory method - `main()` and one optional method - `init()`.
 	 * Once the study is created the library calls init (if exists) and main sequentially with empty context to collect information about all vars.
 	 *
-	 * See [Custom Studies Constructor](https://www.tradingview.com/charting-library-docs/latest/custom_studies/Custom-Studies-Constructor) for more information.
+	 * See [Custom Studies Constructor](https://www.tradingview.com/charting-library-docs/latest/custom_studies/Custom-Studies-Constructor.md) for more information.
 	 */
 	readonly constructor: LibraryPineStudyConstructor<IPineStudyResult> | ((this: LibraryPineStudy<IPineStudyResult>) => void);
 }
@@ -3972,6 +4010,66 @@ export interface CustomInputFieldMetaInfo extends CustomFieldMetaInfoBase {
  */
 export interface CustomInputFieldsValues {
 	[fieldId: string]: TextWithCheckboxValue | boolean | string | any;
+}
+/**
+ * Action link to be displayed at the end of the section for the
+ * status item in the pop-up tooltip.
+ */
+export interface CustomStatusDropDownAction {
+	/**
+	 * Text to be displayed as the link
+	 */
+	text: string;
+	/**
+	 * Tooltip text to be displayed when the user hovers over
+	 * the action link.
+	 */
+	tooltip?: string;
+	/**
+	 * Callback function to be executed when the user clicks
+	 * on the action.
+	 */
+	onClick: () => void;
+}
+/**
+ * Specifies the content to be displayed within a section of
+ * the pop-up tooltip which is displayed when a user clicks on
+ * the symbol status items.
+ *
+ * The pop-up tooltip should be used to display additional
+ * information related to the status item.
+ */
+export interface CustomStatusDropDownContent {
+	/**
+	 * Title to be displayed next to the icon for this section
+	 * of the pop-up tooltip.
+	 */
+	title: string;
+	/**
+	 * Color to be used for the icon and title. If unspecified
+	 * then the color from the status item will be used.
+	 */
+	color?: string;
+	/**
+	 * Icon to be displayed next to the title for this section
+	 * of the pop-up tooltip. If unspecified then the icon from
+	 * the status item will be used.
+	 */
+	icon?: string;
+	/**
+	 * Content to the displayed within this section of the
+	 * pop-up tooltip.
+	 *
+	 * **It is essential to protect the content you provide
+	 * against cross-site scripting (XSS) attacks, as these
+	 * strings will be interpreted as HTML markup.**
+	 */
+	content: string[];
+	/**
+	 * Optional action link to be displayed at the bottom of
+	 * the status section.
+	 */
+	action?: CustomStatusDropDownAction;
 }
 /**
  * Study format description used in custom study formatters.
@@ -4128,12 +4226,6 @@ export interface DatafeedConfiguration {
 	 * It will be applied to the instruments with futures and stock as a type.
 	 */
 	symbols_grouping?: Record<string, string>;
-	/**
-	 * Supported price sources for the symbol.
-	 *
-	 * @example ['Bid', 'Ask', 'Spot Price']
-	 */
-	price_sources?: SymbolInfoPriceSource[];
 }
 /** Symbol Quote Data Value */
 export interface DatafeedQuoteValues {
@@ -7328,17 +7420,23 @@ export interface IChartWidgetApi {
 	/**
 	 * Change the chart's symbol.
 	 *
+	 * Note: if you are attempting to change multiple charts (multi-chart layouts) at the same time with
+	 * multiple setSymbol calls then you should set `doNotActivateChart` option to `true`.
+	 *
 	 * @param symbol A symbol.
-	 * @param callback An optional callback function. Called when the data for the new symbol has loaded.
+	 * @param options Optional object of options for the new symbol or optional callback that is called when the data for the new symbol has loaded.
 	 */
-	setSymbol(symbol: string, callback?: () => void): void;
+	setSymbol(symbol: string, options?: SetSymbolOptions | (() => void)): void;
 	/**
 	 * Change the chart's interval (resolution).
 	 *
+	 * Note: if you are attempting to change multiple charts (multi-chart layouts) at the same time with
+	 * multiple setResolution calls then you should set `doNotActivateChart` option to `true`.
+	 *
 	 * @param resolution A resolution.
-	 * @param callback An optional callback function. Called when the data for the new resolution has loaded.
+	 * @param options Optional object of options for the new resolution or optional callback that is called when the data for the new resolution has loaded.
 	 */
-	setResolution(resolution: ResolutionString, callback?: () => void): void;
+	setResolution(resolution: ResolutionString, options?: SetResolutionOptions | (() => void)): void;
 	/**
 	 * Change the chart's type.
 	 *
@@ -7430,6 +7528,12 @@ export interface IChartWidgetApi {
 	 * ```
 	 */
 	maximizeChart(): void;
+	/**
+	 * Check if the chart is maximized or not.
+	 *
+	 * @returns `true` if maximized, `false` otherwise.
+	 */
+	isMaximized(): boolean;
 	/**
 	 * Restore to its initial size currently selected chart.
 	 *
@@ -7722,6 +7826,27 @@ export interface IChartWidgetApi {
 	 * @param templateName The name of the template to load.
 	 */
 	loadChartTemplate(templateName: string): Promise<void>;
+	/**
+	 * Get a readonly watched value that can be used to read/subscribe to the state of the chart's market status.
+	 */
+	marketStatus(): IWatchedValueReadonly<MarketStatus | null>;
+	/**
+	 * Set the time frame for this chart.
+	 *
+	 * **Note:** This action will set this chart as active in a multi-chart layout.
+	 *
+	 * **Example**
+	 * To apply the '1Y' timeframe:
+	 * ```js
+	 * tvWidget.setTimeFrame({
+	 *   val: { type: 'period-back', value: '12M' },
+	 *   res: '1W',
+	 * });
+	 * ```
+	 *
+	 * @param timeFrame Object specifying the range and resolution to be applied
+	 */
+	setTimeFrame(timeFrame: RangeOptions): void;
 }
 /**
  * The main interface for interacting with the library.
@@ -8030,6 +8155,12 @@ export interface IChartingLibraryWidget {
 	 */
 	activeChart(): IChartWidgetApi;
 	/**
+	 * Get the index of the active chart in the layout.
+	 *
+	 * @returns number.
+	 */
+	activeChartIndex(): number;
+	/**
 	 * Set which chart is currently active.
 	 * It is recommended that this method is only used when linked to a user action
 	 * which should change the active chart.
@@ -8215,6 +8346,22 @@ export interface IChartingLibraryWidget {
 	 * documentation for `mainSeriesProperties.style`.
 	 */
 	supportedChartTypes(): IWatchedValueReadonly<ChartStyle[]>;
+	/**
+	 * Get an API object for adjusting the watermarks present on the charts.
+	 * This can only be accessed when the chart is ready to be used. ({@link onChartReady})
+	 *
+	 * @returns An API object for adjusting the watermark settings.
+	 */
+	watermark(): IWatermarkApi;
+	/**
+	 * Get an API object for creating, and adjusting, custom status items to
+	 * be displayed within the legend for the main series of each chart.
+	 *
+	 * This can only be accessed when the chart has been created. ({@link headerReady})
+	 *
+	 * @returns An API object for controlling additional custom status items within the legend area.
+	 */
+	customSymbolStatus(): ICustomSymbolStatusApi;
 }
 export interface IContext {
 	/**
@@ -8269,6 +8416,162 @@ export interface IContextMenuRenderer {
 	 * @returns `true` when the menu is currently displayed.
 	 */
 	isShown(): boolean;
+}
+/**
+ * Adapter API for reading and setting the state of a
+ * custom symbol status item.
+ *
+ * The 'set' methods return the same adapter so that you can
+ * chain multiple set functions together.
+ *
+ * **Example**
+ * ```js
+ * const adapter = widget.customSymbolStatus().symbol('ABC');
+ * adapter.setVisible(true).setColor('#336699').setTooltip('Custom Status')
+ * ```
+ */
+export interface ICustomSymbolStatusAdapter {
+	/**
+	 * Get the current visibility of the status item.
+	 * @returns the current visibility
+	 */
+	getVisible(): boolean;
+	/**
+	 * Set the visibility for the status item. @default false
+	 *
+	 * @param visible - visibility for the status item, where
+	 * `true` makes the item visible.
+	 * @returns the current symbol status adapter so you can
+	 * chain 'set' functions together.
+	 */
+	setVisible(visible: boolean): ICustomSymbolStatusAdapter;
+	/**
+	 * Get the current icon for the status item.
+	 * @returns the current icon SVG string
+	 */
+	getIcon(): string | null;
+	/**
+	 * Set the icon for the status item. @default blank
+	 * The icon should be provided as an svg markup. It is
+	 * recommended that the icon works well at small sizes.
+	 *
+	 * **Example**
+	 * ```svg
+	 * <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+	 *   <!-- Icon source: https://heroicons.com -->
+	 *   <path fill-rule="evenodd" d="M13.5 4.938a7 7 0 11-9.006 1.737c.202-.257.59-.218.793.039.278.352.594.672.943.954.332.269.786-.049.773-.476a5.977 5.977 0 01.572-2.759 6.026 6.026 0 012.486-2.665c.247-.14.55-.016.677.238A6.967 6.967 0 0013.5 4.938zM14 12a4 4 0 01-4 4c-1.913 0-3.52-1.398-3.91-3.182-.093-.429.44-.643.814-.413a4.043 4.043 0 001.601.564c.303.038.531-.24.51-.544a5.975 5.975 0 011.315-4.192.447.447 0 01.431-.16A4.001 4.001 0 0114 12z" clip-rule="evenodd" />
+	 * </svg>
+	 * ```
+	 *
+	 * @param icon - svg markup string to be used as the icon, or `null` to display no icon
+	 * @returns the current symbol status adapter so you can
+	 * chain 'set' functions together.
+	 */
+	setIcon(icon: string | null): ICustomSymbolStatusAdapter;
+	/**
+	 * Get the current color of the status item.
+	 * @returns the current color
+	 */
+	getColor(): string;
+	/**
+	 * Set the color for the status item. @default '#9598a1'
+	 *
+	 * @param color - color to be used for the status item.
+	 * It is recommended that you test that the color works well
+	 * for both light and dark themes.
+	 * @returns the current symbol status adapter so you can
+	 * chain 'set' functions together.
+	 */
+	setColor(color: string): ICustomSymbolStatusAdapter;
+	/**
+	 * Get the current tooltip text for the status item.
+	 * @returns the current tooltip text
+	 */
+	getTooltip(): string | null;
+	/**
+	 * Set the text to be displayed within the tooltip displayed
+	 * when hovering over the statuses for the symbol.
+	 * @default ''
+	 *
+	 * @param tooltip - text to be displayed within the tooltip.
+	 * @returns the current symbol status adapter so you can
+	 * chain 'set' functions together.
+	 */
+	setTooltip(tooltip: string | null): ICustomSymbolStatusAdapter;
+	/**
+	 * Get the current content of the status item displayed within
+	 * the pop-up tooltip.
+	 * @returns the current pop-up content
+	 */
+	getDropDownContent(): CustomStatusDropDownContent[] | null;
+	/**
+	 * Set the content to be displayed within the pop-up which appears
+	 * when the user clicks on the symbol statuses.
+	 * @default null
+	 *
+	 * @param content - content to be displayed, set to `null` to display
+	 * nothing. More than one section can be specified.
+	 * @returns the current symbol status adapter so you can
+	 * chain 'set' functions together.
+	 */
+	setDropDownContent(content: CustomStatusDropDownContent[] | null): ICustomSymbolStatusAdapter;
+}
+/**
+ * The custom symbol status API provides the ability to create (and adjust)
+ * additional status items to be displayed within the symbol status section
+ * of the main series legend. This section is typically used to show the
+ * market status (such as open or closed) but can additionally be used to
+ * display warnings related to the current symbol.
+ *
+ * This API allows custom status items to be added (which are tied to a
+ * specific symbol). You can customise the icon, color, tooltip, and content
+ * within the dropdown tooltip menu displayed when the user clicks on the
+ * icon.
+ *
+ * **Example**
+ * ```js
+ * widget
+ *  .customSymbolStatus()
+ *  .symbol('NASDAQNM:AAPL') // select the symbol
+ *  .setVisible(true) // make the status visible
+ *  .setColor('rgb(255, 40, 60)') // set the colour
+ *  .setIcon(myCustomIconSvgString) // string for an svg icon, i.e. '<svg> ... </svg>'
+ *  .setTooltip('Tooltip') // text to be displayed within the hover tooltip
+ *  .setDropDownContent([ // content to be displayed within the large pop-up tooltip
+ *    {
+ *      title: 'Title', // title to be displayed within the pop-up
+ *      color: 'rgb(255, 60, 70)', // optional, if you want it to be different to above
+ *      content: [
+ *        'Explanation of status',
+ *        '<br/><br/>',
+ *        'More details...',
+ *      ],
+ *      action: { // Optional action to be displayed
+ *        text: 'Read more here',
+ *        tooltip: 'opens in a new window',
+ *        onClick: () => {
+ *          window.open('https://www.tradingview.com/', '_blank');
+ *        },
+ *      },
+ *    },
+ * ]);
+ * ```
+ */
+export interface ICustomSymbolStatusApi {
+	/**
+	 * Get the custom symbol status adapter for a specific symbolId. The
+	 * symbolId should exactly match the resolved symbolId. This id can
+	 * be retrieved for a chart via the {@link IChartWidgetApi.symbol} method.
+	 *
+	 * @param symbolId - symbol id for which you would like to create / adjust
+	 * the custom status
+	 */
+	symbol(symbolId: string): ICustomSymbolStatusAdapter;
+	/**
+	 * Hide all the custom status items. This is equivalent to using
+	 * `setVisible(false)` on all of the current custom symbol status items.
+	 */
+	hideAll(): void;
 }
 export interface IDatafeedChartApi {
 	/**
@@ -9122,7 +9425,9 @@ export interface IPaneApi {
 	/** Restore the size of a previously collapsed pane */
 	restore(): void;
 }
+// tslint:disable:tv-variable-name
 export interface IPineSeries {
+	hist?: number[] | null;
 	/**
 	 * Get the value at a specific index.
 	 *
@@ -9145,6 +9450,10 @@ export interface IPineSeries {
 	 * @param  {number} time - timestamp
 	 */
 	indexOf(time: number): number;
+	/**
+	 * Create an history to the series it's attached to.
+	 */
+	add_hist?(): void;
 }
 /**
  * An API object used to control position lines.
@@ -10228,6 +10537,25 @@ export interface IWatchedValueReadonly<T> extends IObservableValueReadOnly<T> {
 	when(callback: WatchedValueCallback<T>): void;
 }
 /**
+ * An API object used to change the settings of the watermark.
+ */
+export interface IWatermarkApi {
+	/**
+	 * Object that can be used to read/set/watch the color of the watermark text.
+	 */
+	color(): IWatchedValue<string>;
+	/**
+	 * Object that can be used to read/set/watch the visibility of the watermark.
+	 */
+	visibility(): IWatchedValue<boolean>;
+	/**
+	 * Set a custom content provider for the watermark content.
+	 *
+	 * @param provider - Custom watermark content provider, use `null` if you would like to revert back to the default content for the watermark.
+	 */
+	setContentProvider(provider: WatermarkContentProvider | null): void;
+}
+/**
  * Widget Bar API
  */
 export interface IWidgetbarApi extends IDestroyable {
@@ -11012,13 +11340,42 @@ export interface LibrarySymbolInfo {
 	 */
 	subsessions?: LibrarySubsessionInfo[];
 	/**
-	 * Optional field name describing what the bar values of this symbol represent.
+	 * Optional ID of a price source for this symbol. Should match one of the price sources from the {@link price_sources} array.
+	 */
+	price_source_id?: string;
+	/**
+	 * Supported price sources for the symbol. The source of the values that this symbol's bars represent.
 	 *
 	 * For example 'Spot Price', 'Ask', 'Bid', etc.
 	 *
-	 * @example 'Spot Price'
+	 * Mostly useful when viewing non-OHLC series types. The price source will be shown in the series legend.
+	 *
+	 * @example [{ id: '1', name: 'Spot Price' }, { id: '321', name: 'Bid' }]
 	 */
-	price_source_id?: string;
+	price_sources?: SymbolInfoPriceSource[];
+	/**
+	 * URL of image/s to be displayed as the logo/s for the symbol. The `show_symbol_logos` featureset needs to be enabled for this to be visible in the UI.
+	 *
+	 * - If a single url is returned then that url will solely be used to display the symbol logo.
+	 * - If two urls are provided then the images will be displayed as two partially overlapping
+	 * circles with the first url appearing on top. This is typically used for FOREX where you would
+	 * like to display two country flags are the symbol logo.
+	 *
+	 * The image/s should ideally be square in dimension. You can use any image type which
+	 * the browser supports natively.
+	 *
+	 * Examples:
+	 * - `https://s3-symbol-logo.tradingview.com/apple.svg`
+	 * - `/images/myImage.png`
+	 * - `data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3...`
+	 * - `data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABIAAD/4...`
+	 */
+	logo_urls?: [
+		string
+	] | [
+		string,
+		string
+	];
 }
 export interface LineBreakStylePreferences {
 	/** Up bar color */
@@ -11087,7 +11444,7 @@ export interface Mark {
 	 * the browser supports natively.
 	 *
 	 * Examples:
-	 * - `https://s3-symbol-logo.tradingview.com/crypto/XTVCBTC.svg`
+	 * - `https://yourserver.com/adobe.svg`
 	 * - `/images/myImage.png`
 	 * - `data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3...`
 	 * - `data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABIAAD/4...`
@@ -12952,6 +13309,19 @@ export interface QuoteOkData extends QuoteDataResponse {
 	/** @inheritDoc */
 	v: DatafeedQuoteValues;
 }
+/**
+ * Options for specifying a Range which includes a resolution, and a time frame.
+ */
+export interface RangeOptions {
+	/**
+	 * Time frame for the range.
+	 */
+	val: TimeFrameValue;
+	/**
+	 * Resolution for the range.
+	 */
+	res: ResolutionString;
+}
 export interface RawStudyMetaInfo extends RawStudyMetaInfoBase {
 	/** Identifier for Study */
 	readonly id: RawStudyMetaInfoId;
@@ -13587,6 +13957,42 @@ export interface SearchSymbolResultItem {
 	 * 'stock' | 'futures' | 'forex' | 'index'
 	 */
 	type: string;
+	/**
+	 * URL of image/s to be displayed as the logo/s for the symbol. The `show_symbol_logos` featureset needs to be enabled for this to be visible in the UI.
+	 *
+	 * - If a single url is returned then that url will solely be used to display the symbol logo.
+	 * - If two urls are provided then the images will be displayed as two partially overlapping
+	 * circles with the first url appearing on top. This is typically used for FOREX where you would
+	 * like to display two country flags as the symbol logo.
+	 *
+	 * The image/s should ideally be square in dimension. You can use any image type which
+	 * the browser supports natively. Simple SVG images are recommended.
+	 *
+	 * Examples:
+	 * - `https://yourserver.com/symbolName.svg`
+	 * - `/images/myImage.png`
+	 * - `data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3...`
+	 * - `data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABIAAD/4...`
+	 */
+	logo_urls?: [
+		string
+	] | [
+		string,
+		string
+	];
+	/**
+	 * URL of image to be displayed as the logo for the exchange. The `show_exchange_logos` featureset needs to be enabled for this to be visible in the UI.
+	 *
+	 * The image should ideally be square in dimension. You can use any image type which
+	 * the browser supports natively. Simple SVG images are recommended.
+	 *
+	 * Examples:
+	 * - `https://yourserver.com/exchangeLogo.svg`
+	 * - `/images/myImage.png`
+	 * - `data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3...`
+	 * - `data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABIAAD/4...`
+	 */
+	exchange_logo?: string;
 }
 /**
  * Description of a series field.
@@ -13638,6 +14044,32 @@ export interface SeriesPreferencesMap {
 	[ChartStyle.HiLo]: HiLoStylePreferences;
 	/** Columns Style Preferences */
 	[ChartStyle.Column]: ColumnStylePreferences;
+}
+/**
+ * Options for setting a chart's resolution.
+ */
+export interface SetResolutionOptions {
+	/**
+	 * An optional callback function. Called when the data for the new resolution has loaded.
+	 */
+	dataReady?: () => void;
+	/**
+	 * A boolean flag. Allows to disable making the current chart active in the layout.
+	 */
+	doNotActivateChart?: boolean;
+}
+/**
+ * Options for setting a chart's symbol.
+ */
+export interface SetSymbolOptions {
+	/**
+	 * An optional callback function. Called when the data for the new symbol has loaded.
+	 */
+	dataReady?: () => void;
+	/**
+	 * A boolean flag. Allows to disable making the current chart active in the layout.
+	 */
+	doNotActivateChart?: boolean;
 }
 /**
  * Options for setting the visible range.
@@ -15207,7 +15639,7 @@ export interface TimeFrameItem {
 export interface TimeFramePeriodBack {
 	/** Time frame period is `period-back` */
 	type: TimeFrameType.PeriodBack;
-	/** A UNIX timestamp */
+	/** Time frame string. For example `'1D'` or `'6M'`. */
 	value: string;
 }
 /** Defines a time frame between 2 dates */
@@ -16084,6 +16516,44 @@ export interface WatchedValueSubscribeOptions {
 	/** if it is set to true then the callback will be executed with the previous value (if available) */
 	callWithLast?: boolean;
 }
+/**
+ * Data provided to the {@link WatermarkContentProvider}.
+ */
+export interface WatermarkContentData {
+	/**
+	 * Symbol Information.
+	 */
+	symbolInfo: LibrarySymbolInfo;
+	/**
+	 * Current interval string.
+	 */
+	interval: string;
+}
+/**
+ * Defines the text and font properties for a line of the watermark.
+ *
+ * The default values for sizing and placement are as follows:
+ * - 1st line: \{ fontSize: 96, lineHeight: 117, vertOffset: 0, \}
+ * - 2nd line: \{ fontSize: 48, lineHeight: 58, vertOffset: 5, \}
+ */
+export interface WatermarkLine {
+	/**
+	 * Text to be displayed.
+	 */
+	text: string;
+	/**
+	 * Font size to be used (defined in pixels).
+	 */
+	fontSize: number;
+	/**
+	 * Line height (defined in pixels).
+	 */
+	lineHeight: number;
+	/**
+	 * Vertical offset distance (defined in pixels).
+	 */
+	vertOffset: number;
+}
 export interface WidgetBarParams {
 	/**
 	 * Enables details widget in the widget panel on the right.
@@ -16395,7 +16865,21 @@ export type ChartingLibraryFeatureset =
  * When chart data is reset, then re-request data for just the visible range (instead of the entire range of the existing data loaded).
  * @default true
  */
-"request_only_visible_range_on_reset";
+"request_only_visible_range_on_reset" | 
+/** Clear pane price scales when the main series has an error or has no bars. @default true */
+"clear_price_scale_on_error_or_empty_bars" | 
+/**
+ * Display logos for the symbols within the symbol search dialog, and the watchlist widget. The datafeed should provide the image url within the search result item, and the SymbolInfo. {@link LibrarySymbolInfo.logo_urls}, {@link SearchSymbolResultItem.logo_urls}
+ * @default false
+ */
+"show_symbol_logos" | 
+/**
+ * Display logos for the exchanges within the symbol search dialog. The datafeed should provide the image url within the search result item. {@link SearchSymbolResultItem.exchange_logo}
+ * @default false
+ */
+"show_exchange_logos" | 
+/** Enable studies to extend the time scale, if enabled in the study metainfo */
+"studies_extend_time_scale";
 /** These are defining the types for a background */
 export type ColorTypes = "solid" | "gradient";
 /**
@@ -16701,7 +17185,7 @@ export type StudyPlotValueFormat = StudyPlotValueInheritFormat | StudyPlotValueP
 export type StudyPriceScale = "new-left" | "new-right" | "no-scale" | "as-series";
 export type StudyPrimitiveResult = (number | StudyResultValueWithOffset)[];
 export type SubscribeBarsCallback = (bar: Bar) => void;
-export type SupportedLineTools = "text" | "anchored_text" | "note" | "anchored_note" | "signpost" | "double_curve" | "arc" | "icon" | "emoji" | "sticker" | "arrow_up" | "arrow_down" | "arrow_left" | "arrow_right" | "price_label" | "price_note" | "arrow_marker" | "flag" | "vertical_line" | "horizontal_line" | "cross_line" | "horizontal_ray" | "trend_line" | "info_line" | "trend_angle" | "arrow" | "ray" | "extended" | "parallel_channel" | "disjoint_angle" | "flat_bottom" | "pitchfork" | "schiff_pitchfork_modified" | "schiff_pitchfork" | "balloon" | "comment" | "inside_pitchfork" | "pitchfan" | "gannbox" | "gannbox_square" | "gannbox_fixed" | "gannbox_fan" | "fib_retracement" | "fib_trend_ext" | "fib_speed_resist_fan" | "fib_timezone" | "fib_trend_time" | "fib_circles" | "fib_spiral" | "fib_speed_resist_arcs" | "fib_channel" | "xabcd_pattern" | "cypher_pattern" | "abcd_pattern" | "callout" | "triangle_pattern" | "3divers_pattern" | "head_and_shoulders" | "fib_wedge" | "elliott_impulse_wave" | "elliott_triangle_wave" | "elliott_triple_combo" | "elliott_correction" | "elliott_double_combo" | "cyclic_lines" | "time_cycles" | "sine_line" | "long_position" | "short_position" | "forecast" | "date_range" | "price_range" | "date_and_price_range" | "bars_pattern" | "ghost_feed" | "projection" | "rectangle" | "rotated_rectangle" | "circle" | "ellipse" | "triangle" | "polyline" | "path" | "curve" | "cursor" | "dot" | "arrow_cursor" | "eraser" | "measure" | "zoom" | "brush" | "highlighter" | "regression_trend" | "fixed_range_volume_profile";
+export type SupportedLineTools = "text" | "anchored_text" | "note" | "anchored_note" | "signpost" | "double_curve" | "arc" | "icon" | "emoji" | "sticker" | "arrow_up" | "arrow_down" | "arrow_left" | "arrow_right" | "price_label" | "price_note" | "arrow_marker" | "flag" | "vertical_line" | "horizontal_line" | "cross_line" | "horizontal_ray" | "trend_line" | "info_line" | "trend_angle" | "arrow" | "ray" | "extended" | "parallel_channel" | "disjoint_angle" | "flat_bottom" | "anchored_vwap" | "pitchfork" | "schiff_pitchfork_modified" | "schiff_pitchfork" | "balloon" | "comment" | "inside_pitchfork" | "pitchfan" | "gannbox" | "gannbox_square" | "gannbox_fixed" | "gannbox_fan" | "fib_retracement" | "fib_trend_ext" | "fib_speed_resist_fan" | "fib_timezone" | "fib_trend_time" | "fib_circles" | "fib_spiral" | "fib_speed_resist_arcs" | "fib_channel" | "xabcd_pattern" | "cypher_pattern" | "abcd_pattern" | "callout" | "triangle_pattern" | "3divers_pattern" | "head_and_shoulders" | "fib_wedge" | "elliott_impulse_wave" | "elliott_triangle_wave" | "elliott_triple_combo" | "elliott_correction" | "elliott_double_combo" | "cyclic_lines" | "time_cycles" | "sine_line" | "long_position" | "short_position" | "forecast" | "date_range" | "price_range" | "date_and_price_range" | "bars_pattern" | "ghost_feed" | "projection" | "rectangle" | "rotated_rectangle" | "circle" | "ellipse" | "triangle" | "polyline" | "path" | "curve" | "cursor" | "dot" | "arrow_cursor" | "eraser" | "measure" | "zoom" | "brush" | "highlighter" | "regression_trend" | "fixed_range_volume_profile";
 /**
  * function to override the symbol input from symbol search dialogs
  * @param  {SymbolSearchCompleteData} symbol - input from the symbol search
@@ -16716,7 +17200,7 @@ export type TableFormatTextFunction<T extends TableFormatterInputValues = TableF
 export type TableFormatterInputValue = any;
 export type TableFormatterInputValues = TableFormatterInputValue[];
 export type TextInputFieldValidator = (value: string) => InputFieldValidatorResult;
-export type ThemeName = "Light" | "Dark";
+export type ThemeName = "light" | "dark";
 export type TickMarkType = 
 /**
  * The start of the year (e.g. it's the first tick mark in a year).
@@ -16840,6 +17324,11 @@ export type WatchListSymbolListChangedCallback = (listId: string) => void;
 export type WatchListSymbolListRemovedCallback = (listId: string) => void;
 export type WatchListSymbolListRenamedCallback = (listId: string, oldName: string, newName: string) => void;
 export type WatchedValueCallback<T> = (value: T) => void;
+/**
+ * Custom watermark content provider which should return an array of watermark lines to be displayed.
+ * Return `null` if you would like to use the default content.
+ */
+export type WatermarkContentProvider = (data: WatermarkContentData) => WatermarkLine[] | null;
 export type WidgetOverrides = DrawingOverrides & {
 	[key: string]: string | number | boolean;
 };

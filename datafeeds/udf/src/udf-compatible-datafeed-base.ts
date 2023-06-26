@@ -39,7 +39,7 @@ import { IQuotesProvider } from './iquotes-provider';
 import { DataPulseProvider } from './data-pulse-provider';
 import { QuotesPulseProvider } from './quotes-pulse-provider';
 import { SymbolsStorage } from './symbols-storage';
-import { Requester } from './requester';
+import { IRequester } from './irequester';
 
 export interface UdfCompatibleConfiguration extends DatafeedConfiguration {
 	// tslint:disable:tv-variable-name
@@ -120,12 +120,12 @@ export class UDFCompatibleDatafeedBase implements IExternalDatafeed, IDatafeedQu
 	private readonly _quotesProvider: IQuotesProvider;
 	private readonly _quotesPulseProvider: QuotesPulseProvider;
 
-	private readonly _requester: Requester;
+	private readonly _requester: IRequester;
 
 	protected constructor(
 		datafeedURL: string,
 		quotesProvider: IQuotesProvider,
-		requester: Requester,
+		requester: IRequester,
 		updateFrequency: number = 10 * 1000,
 		limitedServerResponse?: LimitedResponseConfiguration
 	) {

@@ -27,7 +27,7 @@ export declare type Nominal<T, Name extends string> = T & { /* eslint-disable-ne
 export interface Bar {
 	/** Bar time.
 	 * Amount of **milliseconds** since Unix epoch start in **UTC** timezone.
-	 * `time` for daily bars is expected to be a trading day (not session start day) at 00:00 UTC.
+	 * `time` for daily, weekly, and monthly bars is expected to be a trading day (not session start day) at 00:00 UTC.
 	 * Charting Library adjusts time according to `session` from {@link LibrarySymbolInfo}.
 	 */
 	time: number;
@@ -142,12 +142,6 @@ export interface DatafeedConfiguration {
 	 * It will be applied to the instruments with futures and stock as a type.
 	 */
 	symbols_grouping?: Record<string, string>;
-	/**
-	 * Supported price sources for the symbol.
-	 *
-	 * @example ['Bid', 'Ask', 'Spot Price']
-	 */
-	price_sources?: SymbolInfoPriceSource[];
 }
 /** Symbol Quote Data Value */
 export interface DatafeedQuoteValues {
@@ -713,13 +707,42 @@ export interface LibrarySymbolInfo {
 	 */
 	subsessions?: LibrarySubsessionInfo[];
 	/**
-	 * Optional field name describing what the bar values of this symbol represent.
+	 * Optional ID of a price source for this symbol. Should match one of the price sources from the {@link price_sources} array.
+	 */
+	price_source_id?: string;
+	/**
+	 * Supported price sources for the symbol. The source of the values that this symbol's bars represent.
 	 *
 	 * For example 'Spot Price', 'Ask', 'Bid', etc.
 	 *
-	 * @example 'Spot Price'
+	 * Mostly useful when viewing non-OHLC series types. The price source will be shown in the series legend.
+	 *
+	 * @example [{ id: '1', name: 'Spot Price' }, { id: '321', name: 'Bid' }]
 	 */
-	price_source_id?: string;
+	price_sources?: SymbolInfoPriceSource[];
+	/**
+	 * URL of image/s to be displayed as the logo/s for the symbol. The `show_symbol_logos` featureset needs to be enabled for this to be visible in the UI.
+	 *
+	 * - If a single url is returned then that url will solely be used to display the symbol logo.
+	 * - If two urls are provided then the images will be displayed as two partially overlapping
+	 * circles with the first url appearing on top. This is typically used for FOREX where you would
+	 * like to display two country flags are the symbol logo.
+	 *
+	 * The image/s should ideally be square in dimension. You can use any image type which
+	 * the browser supports natively.
+	 *
+	 * Examples:
+	 * - `https://s3-symbol-logo.tradingview.com/apple.svg`
+	 * - `/images/myImage.png`
+	 * - `data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3...`
+	 * - `data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABIAAD/4...`
+	 */
+	logo_urls?: [
+		string
+	] | [
+		string,
+		string
+	];
 }
 export interface Mark {
 	/** ID of the mark */
@@ -750,7 +773,7 @@ export interface Mark {
 	 * the browser supports natively.
 	 *
 	 * Examples:
-	 * - `https://s3-symbol-logo.tradingview.com/crypto/XTVCBTC.svg`
+	 * - `https://yourserver.com/adobe.svg`
 	 * - `/images/myImage.png`
 	 * - `data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3...`
 	 * - `data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABIAAD/4...`
@@ -847,6 +870,42 @@ export interface SearchSymbolResultItem {
 	 * 'stock' | 'futures' | 'forex' | 'index'
 	 */
 	type: string;
+	/**
+	 * URL of image/s to be displayed as the logo/s for the symbol. The `show_symbol_logos` featureset needs to be enabled for this to be visible in the UI.
+	 *
+	 * - If a single url is returned then that url will solely be used to display the symbol logo.
+	 * - If two urls are provided then the images will be displayed as two partially overlapping
+	 * circles with the first url appearing on top. This is typically used for FOREX where you would
+	 * like to display two country flags as the symbol logo.
+	 *
+	 * The image/s should ideally be square in dimension. You can use any image type which
+	 * the browser supports natively. Simple SVG images are recommended.
+	 *
+	 * Examples:
+	 * - `https://yourserver.com/symbolName.svg`
+	 * - `/images/myImage.png`
+	 * - `data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3...`
+	 * - `data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABIAAD/4...`
+	 */
+	logo_urls?: [
+		string
+	] | [
+		string,
+		string
+	];
+	/**
+	 * URL of image to be displayed as the logo for the exchange. The `show_exchange_logos` featureset needs to be enabled for this to be visible in the UI.
+	 *
+	 * The image should ideally be square in dimension. You can use any image type which
+	 * the browser supports natively. Simple SVG images are recommended.
+	 *
+	 * Examples:
+	 * - `https://yourserver.com/exchangeLogo.svg`
+	 * - `/images/myImage.png`
+	 * - `data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3...`
+	 * - `data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABIAAD/4...`
+	 */
+	exchange_logo?: string;
 }
 export interface SymbolInfoPriceSource {
 	/** Unique ID */
