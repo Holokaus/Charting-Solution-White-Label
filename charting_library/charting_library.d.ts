@@ -1,5 +1,5 @@
 /**
- * TradingView Charting Library
+ * TradingView Advanced Charts
  * @packageDocumentation
  * @module Charting Library
  */
@@ -272,7 +272,10 @@ export declare const enum ActionId {
 	TradingNoOverlapMode = "Trading.NoOverlapMode",
 	WatchlistAddSymbol = "Watchlist.AddSymbol",
 	WatchlistAddSymbolToCompare = "Watchlist.AddSymbolToCompare",
-	WatchlistAddSelectedSymbolsToCompare = "Watchlist.AddSelectedSymbolsToCompare "
+	WatchlistAddSelectedSymbolsToCompare = "Watchlist.AddSelectedSymbolsToCompare ",
+	WatchlistRenameSection = "Watchlist.RenameSection",
+	WatchlistRemoveSection = "Watchlist.RemoveSection",
+	WatchlistAddSymbolToSection = "Watchlist.AddSymbolToSection"
 }
 export declare const enum ChartStyle {
 	Bar = 0,
@@ -1137,7 +1140,7 @@ export interface Bar {
 	/** Bar time.
 	 * Amount of **milliseconds** since Unix epoch start in **UTC** timezone.
 	 * `time` for daily, weekly, and monthly bars is expected to be a trading day (not session start day) at 00:00 UTC.
-	 * Charting Library adjusts time according to `session` from {@link LibrarySymbolInfo}.
+	 * The library adjusts time according to `session` from {@link LibrarySymbolInfo}.
 	 */
 	time: number;
 	/** Opening price */
@@ -1808,7 +1811,7 @@ export interface ChartPropertiesOverrides extends StudyOverrides {
 	 */
 	"paneProperties.separatorColor": string;
 	/**
-	 * Study legend input values visiblity.
+	 * Study legend input values visibility.
 	 *
 	 * @default true
 	 */
@@ -1820,7 +1823,7 @@ export interface ChartPropertiesOverrides extends StudyOverrides {
 	 */
 	"paneProperties.legendProperties.showStudyTitles": boolean;
 	/**
-	 * Study legend value visibility.
+	 * Toggle the visibility for all studies legend values.
 	 *
 	 * @default true
 	 */
@@ -2868,7 +2871,7 @@ export interface ChartTemplateContent {
 }
 export interface ChartingLibraryWidgetConstructor {
 	/**
-	 * Constructor for the Charting Library Widget
+	 * Constructor for the Advanced Charts Widget
 	 * @param  {ChartingLibraryWidgetOptions|TradingTerminalWidgetOptions} options - Constructor options
 	 */
 	new (options: ChartingLibraryWidgetOptions | TradingTerminalWidgetOptions): IChartingLibraryWidget;
@@ -3002,7 +3005,7 @@ export interface ChartingLibraryWidgetOptions {
 	 */
 	library_path?: string;
 	/**
-	 * Locale to be used by Charting Library. See [Localization](https://www.tradingview.com/charting-library-docs/latest/core_concepts/Localization.md) section for details.
+	 * Locale to be used by the library. See [Localization](https://www.tradingview.com/charting-library-docs/latest/core_concepts/Localization.md) section for details.
 	 *
 	 * ```javascript
 	 * locale: 'en',
@@ -3257,7 +3260,7 @@ export interface ChartingLibraryWidgetOptions {
 	custom_formatters?: CustomFormatters;
 	/**
 	 * Override values for the default widget properties
-	 * You can override most of the Charting Library properties (which also may be edited by user through UI)
+	 * You can override most of the properties (which also may be edited by user through UI)
 	 * using `overrides` parameter of Widget constructor. `overrides` is supposed to be an object.
 	 * The keys of this object are the names of overridden properties.
 	 * The values of these keys are the new values of the properties.
@@ -3754,7 +3757,9 @@ export interface CreateShapeOptions<TOverrides extends object> extends CreateSha
 	 */
 	shape?: "arrow_up" | "arrow_down" | "flag" | "vertical_line" | "horizontal_line" | "long_position" | "short_position" | "icon" | "emoji" | "sticker" | "anchored_text" | "anchored_note";
 	/**
-	 * An optional study ID of the owner study.
+	 * An optional study ID to be attached to the owner study.
+	 * It does not mean that both the owner and all possible associated IDs will behave in tandem.
+	 * Their behavior will be independent.
 	 */
 	ownerStudyId?: EntityId;
 }
@@ -3977,7 +3982,7 @@ export interface CustomFormatters {
 	studyFormatterFactory?: CustomStudyFormatterFactory;
 }
 export interface CustomIndicator {
-	/** Your study name, it will be used internally by the Charting Library */
+	/** Your study name, it will be used internally by the library */
 	readonly name: string;
 	/**
 	 * The metainfo field is designed to contain the main info about the custom study.
@@ -8040,7 +8045,7 @@ export interface IChartingLibraryWidget {
 	/**
 	 * Create a button in the top toolbar. This should be called after {@link headerReady} has resolved.
 	 * @param options A optional object of options for the button.
-	 * @returns A `HTMLElement` you can customise.
+	 * @returns A `HTMLElement` you can customize.
 	 */
 	createButton(options?: CreateHTMLButtonOptions): HTMLElement;
 	/**
@@ -8095,7 +8100,7 @@ export interface IChartingLibraryWidget {
 	 */
 	getIntervals(): string[];
 	/**
-	 * Get an array of the names of all supported studies. These names can be used when calling {@link createStudy}.
+	 * Get an array of the names of all supported studies. These names can be used when calling {@link IChartWidgetApi.createStudy}.
 	 *
 	 * @returns An array of supported study names. E.g. `['Accumulation/Distribution', 'Accumulative Swing Index', 'Advance/Decline', ...]`.
 	 */
@@ -8132,6 +8137,15 @@ export interface IChartingLibraryWidget {
 	applyStudiesOverrides(overrides: object): void;
 	/**
 	 * Trading Terminal only. Get a promise that resolves with an API object for interacting with the widgetbar (right sidebar) watchlist.
+	 *
+	 * **Example**
+	 * ```js
+	 * const watchlistApi = await widget.watchList();
+	 * const activeListId = watchlistApi.getActiveListId();
+	 * const currentListItems = watchlistApi.getList(activeListId);
+	 * // append new section and item to the current watchlist
+	 * watchlistApi.updateList(activeListId, [...currentListItems, '###NEW SECTION', 'AMZN']);
+	 * ```
 	 *
 	 * @returns An API object for interacting with the widgetbar (right sidebar) watchlist.
 	 */
@@ -8216,9 +8230,9 @@ export interface IChartingLibraryWidget {
 	 */
 	takeScreenshot(): void;
 	/**
-	 * Create a shapshot of the chart and return it as a canvas.
+	 * Create a snapshot of the chart and return it as a canvas.
 	 *
-	 * @param options An optional object that customises the returned snapshot.
+	 * @param options An optional object that customizes the returned snapshot.
 	 * @returns A promise containing a `HTMLCanvasElement` of the snapshot.
 	 */
 	takeClientScreenshot(options?: Partial<ClientSnapshotOptions>): Promise<HTMLCanvasElement>;
@@ -8363,6 +8377,9 @@ export interface IChartingLibraryWidget {
 	 */
 	customSymbolStatus(): ICustomSymbolStatusApi;
 }
+/**
+ * PineJS execution context.
+ */
 export interface IContext {
 	/**
 	 * Symbol Instrument
@@ -8575,8 +8592,8 @@ export interface ICustomSymbolStatusApi {
 }
 export interface IDatafeedChartApi {
 	/**
-	 * The Library calls this function to get marks for visible bars range.
-	 * The Library assumes that you will call `onDataCallback` only once per `getMarks` call.
+	 * The library calls this function to get marks for visible bars range.
+	 * The library assumes that you will call `onDataCallback` only once per `getMarks` call.
 	 *
 	 * A few marks per bar are allowed (for now, the maximum is 10). The time of each mark must match the time of a bar. For example, if the bar times are `2023-01-01`, `2023-01-08`, and `2023-01-15`, then a mark cannot have the time `2023-01-05`.
 	 *
@@ -8590,8 +8607,8 @@ export interface IDatafeedChartApi {
 	 */
 	getMarks?(symbolInfo: LibrarySymbolInfo, from: number, to: number, onDataCallback: GetMarksCallback<Mark>, resolution: ResolutionString): void;
 	/**
-	 * The Library calls this function to get timescale marks for visible bars range.
-	 * The Library assumes that you will call `onDataCallback` only once per `getTimescaleMarks` call.
+	 * The library calls this function to get timescale marks for visible bars range.
+	 * The library assumes that you will call `onDataCallback` only once per `getTimescaleMarks` call.
 	 *
 	 * **Remark:** This function will be called only if you confirmed that your back-end is supporting marks ({@link DatafeedConfiguration.supports_timescale_marks}).
 	 *
@@ -8604,7 +8621,7 @@ export interface IDatafeedChartApi {
 	getTimescaleMarks?(symbolInfo: LibrarySymbolInfo, from: number, to: number, onDataCallback: GetMarksCallback<TimescaleMark>, resolution: ResolutionString): void;
 	/**
 	 * This function is called if configuration flag supports_time is set to true when chart needs to know the server time.
-	 * The charting library expects callback to be called once.
+	 * The library expects callback to be called once.
 	 * The time is provided without milliseconds. Example: `1445324591`. It is used to display Countdown on the price scale.
 	 */
 	getServerTime?(callback: ServerTimeCallback): void;
@@ -8637,8 +8654,8 @@ export interface IDatafeedChartApi {
 	 */
 	getBars(symbolInfo: LibrarySymbolInfo, resolution: ResolutionString, periodParams: PeriodParams, onResult: HistoryCallback, onError: ErrorCallback): void;
 	/**
-	 * Charting Library calls this function when it wants to receive real-time updates for a symbol.
-	 * The Library assumes that you will call the callback provided by the `onTick` parameter every time you want to update the most recent bar or to add a new one.
+	 * The library calls this function when it wants to receive real-time updates for a symbol.
+	 * The library assumes that you will call the callback provided by the `onTick` parameter every time you want to update the most recent bar or to add a new one.
 	 *
 	 * @param symbolInfo A SymbolInfo object
 	 * @param resolution Resolution of the symbol
@@ -8686,7 +8703,7 @@ export interface IDatafeedChartApi {
 export interface IDatafeedQuotesApi {
 	/**
 	 * This function is called when the library needs quote data.
-	 * The charting library assumes that `onDataCallback` is called once when all the requested data is received.
+	 * The library assumes that `onDataCallback` is called once when all the requested data is received.
 	 * @param  {string[]} symbols - symbol names.
 	 * @param  {QuotesCallback} onDataCallback - callback to return the requested data.
 	 * @param  {QuotesErrorCallback} onErrorCallback - callback for responding with an error.
@@ -8853,7 +8870,7 @@ export interface IExecutionLineAdapter {
 export interface IExternalDatafeed {
 	/**
 	 * This call is intended to provide the object filled with the configuration data.
-	 * Charting Library assumes that you will call the callback function and pass your datafeed {@link DatafeedConfiguration} as an argument.
+	 * The lib assumes that you will call the callback function and pass your datafeed {@link DatafeedConfiguration} as an argument.
 	 *
 	 * @param  {OnReadyCallback} callback - callback to return your datafeed configuration ({@link DatafeedConfiguration}) to the library.
 	 */
@@ -9425,9 +9442,7 @@ export interface IPaneApi {
 	/** Restore the size of a previously collapsed pane */
 	restore(): void;
 }
-// tslint:disable:tv-variable-name
 export interface IPineSeries {
-	hist?: number[] | null;
 	/**
 	 * Get the value at a specific index.
 	 *
@@ -9451,9 +9466,52 @@ export interface IPineSeries {
 	 */
 	indexOf(time: number): number;
 	/**
-	 * Create an history to the series it's attached to.
+	 * Map some values from one time scale to another.
+	 *
+	 * @param source Source times.
+	 * @param destination Destination times.
+	 * @param mode Adopt mode. `0` for continuous, `1` for precise.
+	 *
+	 * In continuous mode (`0`) every source time will be mapped to a destination time if one exists. Multiple source times may be mapped to the same destination time.
+	 *
+	 * In precise mode (`1`) every source time will be mapped to a destination time AT MOST ONCE if one exists. Some source times may not be mapped.
+	 *
+	 * @example
+	 * ```javascript
+	 * // A pine series with values [5, 5]
+	 * const sourceTimes = ctx.new_var();
+	 * // A pine series with values [4, 5]
+	 * const destinationTimes = ctx.new_var();
+	 * // A pine series with values [1, 2]
+	 * const values = ctx.new_var();
+	 *
+	 * // Creates a pine series with values [2, 2]
+	 * const adopted1 = values.adopt(sourceTimes, destinationTimes, 0);
+	 *
+	 * // Creates a pine series with values [NaN, 2]
+	 * const adopted2 = values.adopt(sourceTimes, destinationTimes, 1);
+	 * ```
+	 *
+	 * @example
+	 *
+	 * Psuedocode of the adopt algorithm:
+	 *
+	 * ```
+	 * adopt(sourceSeries, destinationSeries, mode) =
+	 *   destinationValue = most recent value in destinationSeries
+	 *   sourceIndex = index of destinationValue in sourceSeries
+	 *
+	 *   if mode equals 1 then
+	 *     previousDestinationValue = second most recent value in destinationSeries
+	 *     previousSourceIndex = index of previousDestinationValue in sourceSeries
+	 *
+	 *     if sourceIndex equals previousSourceIndex
+	 *       return NaN
+	 *
+	 *   return value at sourceIndex
+	 * ```
 	 */
-	add_hist?(): void;
+	adopt(source: IPineSeries, destination: IPineSeries, mode: 0 | 1): number;
 }
 /**
  * An API object used to control position lines.
@@ -10290,7 +10348,9 @@ export interface ISubscription<TFunc extends Function> {
 	 */
 	unsubscribeAll(obj: object | null): void;
 }
-// tslint:disable:tv-variable-name
+/**
+ * PineJS execution context symbol information.
+ */
 export interface ISymbolInstrument {
 	/** Period Base */
 	periodBase: string;
@@ -10298,8 +10358,10 @@ export interface ISymbolInstrument {
 	tickerid: string;
 	/** Currency Code */
 	currencyCode?: string;
-	/** Period */
-	period: string;
+	/** Unit ID */
+	unitId?: string;
+	/** Bar resolution */
+	period: ResolutionString;
 	/** Index */
 	index: number;
 	/** Time */
@@ -10316,10 +10378,6 @@ export interface ISymbolInstrument {
 	volume: number;
 	/** Time of the update */
 	updatetime: number;
-	/** Session string */
-	session: string;
-	/** Script */
-	script: any; // tslint:disable-line:no-any
 	/** Ticker */
 	ticker: string;
 	/** Resolution */
@@ -10338,6 +10396,16 @@ export interface ISymbolInstrument {
 	isBarClosed: boolean;
 	/** Symbol information */
 	info?: LibrarySymbolInfo;
+	/**
+	 * Time of the bar.
+	 *
+	 * @returns the timestamp in milliseconds
+	 */
+	bartime(): number;
+	/**
+	 * @returns true if the bar resolution is day/week/month, false if it is intraday
+	 */
+	isdwm(): boolean;
 }
 export interface ISymbolValueFormatter {
 	/** Default formatter function used to assign the correct sign (+ or -) to a number  */
@@ -10420,6 +10488,19 @@ export interface IUpdatableAction extends IAction {
 	 */
 	update(options: Partial<ActionOptions>): void;
 }
+/**
+ * An API object for interacting with the widgetbar (right sidebar) watchlist.
+ *
+ * **Notes about watchlist contents**
+ *
+ * Watchlist items should be symbol names which your datafeed `resolveSymbol` method can resolve. This
+ * means that generally shorter names such as `AAPL` can be used if your datafeed understands it. However,
+ * it is recommend that you provided the symbol names as they appear within the symbolInfo result (for
+ * example: `NASDAQNM:AAPL`).
+ *
+ * Additionally, any item in the list which is prefixed with `###` will be considered a
+ * section divider in the watchlist.
+ */
 export interface IWatchListApi {
 	/**
 	 * Get a default list of symbols.
@@ -10458,7 +10539,8 @@ export interface IWatchListApi {
 	/**
 	 * Edit the list of symbols for a watchlist.
 	 * @param  {string} listId - ID of the watchlist
-	 * @param  {string[]} symbols - symbols to be set for the watchlist
+	 * @param  {string[]} symbols - symbols to be set for the watchlist. Any item in the list which is prefixed with `###` will be considered a
+	 * section divider in the watchlist.
 	 */
 	updateList(listId: string, symbols: string[]): void;
 	/**
@@ -10470,7 +10552,8 @@ export interface IWatchListApi {
 	/**
 	 * Create a list of symbols with `listName` name. If the `listName` parameter is not provided or there is no WatchList then `null` will be returned;
 	 * @param  {string} listName? - name for the watchlist
-	 * @param  {string[]} symbols? - symbol IDs for the watchlist
+	 * @param  {string[]} symbols? - symbol IDs for the watchlist. Any item in the list which is prefixed with `###` will be considered a
+	 * section divider in the watchlist.
 	 * @returns WatchListSymbolList
 	 */
 	createList(listName?: string, symbols?: string[]): WatchListSymbolList | null;
@@ -10961,14 +11044,14 @@ export interface LibraryPineStudy<TPineStudyResult> {
 	 *     context.new_sym(symbol, period);
 	 * };
 	 * ```
-	 * @param  {IContext} ctx - An object containing symbol info along with some useful methods to load/store symbol
+	 * @param  ctx - An object containing symbol info along with some useful methods to load/store symbol
 	 * @param  {<TextendsStudyInputValue>(index:number} inputs - The inputs callback is an array of input values, placed in order of inputs in Metainfo.
 	 */
 	init?(ctx: IContext, inputs: <T extends StudyInputValue>(index: number) => T): void;
 	/**
 	 * Called every time the library wants to calculate the study. Also it's called for every bar of every symbol.
 	 * Thus, if you request several additional symbols inside your indicator it will increase the count of runs.
-	 * @param  {IContext} ctx - An object containing symbol info along with some useful methods to load/store symbol
+	 * @param  ctx - An object containing symbol info along with some useful methods to load/store symbol
 	 * @param  {<TextendsStudyInputValue>(index:number} inputs - The inputs callback is an array of input values, placed in order of inputs in Metainfo.
 	 */
 	main(ctx: IContext, inputs: <T extends StudyInputValue>(index: number) => T): TPineStudyResult | null;
@@ -11200,13 +11283,13 @@ export interface LibrarySymbolInfo {
 	/**
 	 * It is an array containing resolutions that include seconds (excluding postfix) that the data feed provides.
 	 * E.g., if the data feed supports resolutions such as `["1S", "5S", "15S"]`, but has 1-second bars for some symbols then you should set `seconds_multipliers` of this symbol to `[1]`.
-	 * This will make Charting Library build 5S and 15S resolutions by itself.
+	 * This will make the library build 5S and 15S resolutions by itself.
 	 */
 	seconds_multipliers?: string[];
 	/**
 	 * The boolean value showing whether data feed has its own daily resolution bars or not.
 	 *
-	 * If `has_daily` = `false` then Charting Library will build the respective resolutions using 1-minute bars by itself.
+	 * If `has_daily` = `false` then the library will build the respective resolutions using 1-minute bars by itself.
 	 * If not, then it will request those bars from the data feed only if specified resolution belongs to `daily_multipliers`, otherwise an error will be thrown.
 	 * @default true
 	 */
@@ -11225,7 +11308,7 @@ export interface LibrarySymbolInfo {
 	/**
 	 * The boolean value showing whether data feed has its own weekly and monthly resolution bars or not.
 	 *
-	 * If `has_weekly_and_monthly` = `false` then Charting Library will build the respective resolutions using daily bars by itself.
+	 * If `has_weekly_and_monthly` = `false` then the library will build the respective resolutions using daily bars by itself.
 	 * If not, then it will request those bars from the data feed using either the `weekly_multipliers` or `monthly_multipliers` if specified.
 	 * If resolution is not within either list an error will be raised.
 	 * @default false
@@ -11304,7 +11387,7 @@ export interface LibrarySymbolInfo {
 	expired?: boolean;
 	/**
 	 * Unix timestamp of the expiration date. One must set this value when `expired` = `true`.
-	 * Charting Library will request data for this symbol starting from that time point.
+	 * The library will request data for this symbol starting from that time point.
 	 */
 	expiration_date?: number;
 	/** Sector for stocks to be displayed in the Symbol Info. */
@@ -11365,7 +11448,7 @@ export interface LibrarySymbolInfo {
 	 * the browser supports natively.
 	 *
 	 * Examples:
-	 * - `https://s3-symbol-logo.tradingview.com/apple.svg`
+	 * - `https://yourserver.com/apple.svg`
 	 * - `/images/myImage.png`
 	 * - `data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3...`
 	 * - `data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABIAAD/4...`
@@ -11376,6 +11459,19 @@ export interface LibrarySymbolInfo {
 		string,
 		string
 	];
+	/**
+	 * URL of image to be displayed as the logo for the exchange. The `show_exchange_logos` featureset needs to be enabled for this to be visible in the UI.
+	 *
+	 * The image should ideally be square in dimension. You can use any image type which
+	 * the browser supports natively. Simple SVG images are recommended.
+	 *
+	 * Examples:
+	 * - `https://yourserver.com/exchangeLogo.svg`
+	 * - `/images/myImage.png`
+	 * - `data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3...`
+	 * - `data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABIAAD/4...`
+	 */
+	exchange_logo?: string;
 }
 export interface LineBreakStylePreferences {
 	/** Up bar color */
@@ -11868,9 +11964,13 @@ export interface PineJS {
 	Std: PineJSStd;
 }
 /**
- * An interface representing the standard library functions for PineJS.
+ * PineJS standard library functions.
  */
 export interface PineJSStd {
+	/**
+	 * Default maximum size of a pine series.
+	 */
+	max_series_default_size: 10001;
 	/**
 	 * Epsilon (machine precision)
 	 *
@@ -11964,63 +12064,69 @@ export interface PineJSStd {
 	 */
 	tickerid(context: IContext): string;
 	/**
-	 * Current bar year in exchange timezone.
+	 * Year of current bar time in exchange timezone.
 	 *
 	 * @param context - PineJS execution context.
+	 * @param time optional time. Current bar time will be used by default.
 	 * @returns Current bar year in exchange timezone.
 	 */
-	year(context: IContext): number;
+	year(context: IContext, time?: number): number;
 	/**
-	 * Current month year in exchange timezone.
+	 * Month of current bar time in exchange timezone.
 	 *
 	 * @param context - PineJS execution context.
-	 * @returns Current month year in exchange timezone.
+	 * @param time optional time. Current bar time will be used by default.
+	 * @returns Current bar month in exchange timezone.
 	 */
-	month(context: IContext): number;
+	month(context: IContext, time?: number): number;
 	/**
-	 * Week number of current bar in exchange timezone.
+	 * Week number of current bar time in exchange timezone.
 	 *
 	 * @param context - PineJS execution context.
+	 * @param time optional time. Current bar time will be used by default.
 	 * @returns Week number of current bar in exchange timezone.
 	 */
-	weekofyear(context: IContext): number;
+	weekofyear(context: IContext, time?: number): number;
 	/**
 	 * Day of month for current bar time in exchange timezone.
 	 *
 	 * @param context - PineJS execution context.
+	 * @param time optional time. Current bar time will be used by default.
 	 * @returns Day of month for current bar time in exchange timezone.
 	 */
-	dayofmonth(context: IContext): number;
+	dayofmonth(context: IContext, time?: number): number;
 	/**
 	 * Day of week for current bar time in exchange timezone.
 	 *
-	 * Sunday is 1, Monday is 2, Tuesday is 3, and so on.
-	 *
 	 * @param context - PineJS execution context.
+	 * @param time optional time. Current bar time will be used by default.
 	 * @returns Day of week for current bar time in exchange timezone.
 	 */
-	dayofweek(context: IContext): number;
+	dayofweek(context: IContext, time?: number): number;
 	/**
-	 * Current bar hour in exchange timezone.
+	 * Hour of current bar time in exchange timezone.
 	 *
 	 * @param context - PineJS execution context.
+	 * @param time optional time. Current bar time will be used by default.
 	 * @returns Current bar hour in exchange timezone.
 	 */
-	hour(context: IContext): number;
+	hour(context: IContext, time?: number): number;
 	/**
-	 * Current bar minute in exchange timezone.
+	 * Minute of current bar time in exchange timezone.
 	 *
 	 * @param context - PineJS execution context.
+	 * @param time optional time. Current bar time will be used by default.
 	 * @returns Current bar minute in exchange timezone.
 	 */
-	minute(context: IContext): number;
+	minute(context: IContext, time?: number): number;
 	/**
-	 * Current bar second in exchange timezone.
+	 * Second of current bar time in exchange timezone.
 	 *
 	 * @param context - PineJS execution context.
+	 * @param time optional time. Current bar time will be used by default.
 	 * @returns Current bar second in exchange timezone.
 	 */
-	second(context: IContext): number;
+	second(context: IContext, time?: number): number;
 	/**
 	 * Checks if `n1` is greater than or equal to `n2`
 	 *
@@ -12080,49 +12186,49 @@ export interface PineJSStd {
 	 *
 	 * @param n1
 	 * @param n2
-	 * @returns True if `n1` is greater than or equal to `n2`.
+	 * @returns `1` if `n1` is greater than or equal to `n2`, `0` otherwise.
 	 */
-	ge(n1: number, n2: number): boolean;
+	ge(n1: number, n2: number): number;
 	/**
 	 * Checks if `n1` is less than or equal to `n2`
 	 *
 	 * @param n1
 	 * @param n2
-	 * @returns True if `n1` is greater than or equal to `n2`.
+	 * @returns `1` if `n1` is greater than or equal to `n2`, `0` otherwise.
 	 */
-	le(n1: number, n2: number): boolean;
+	le(n1: number, n2: number): number;
 	/**
 	 * Checks if `n1` is equal to `n2`.
 	 *
 	 * @param n1
 	 * @param n2
-	 * @returns True if `n1` is equal to `n2`.
+	 * @returns `1` if `n1` is equal to `n2`, `0` otherwise.
 	 */
-	eq(n1: number, n2: number): boolean;
+	eq(n1: number, n2: number): number;
 	/**
 	 * Checks if `n1` is not equal to `n2`.
 	 *
 	 * @param n1
 	 * @param n2
-	 * @returns True if `n1` is not equal to `n2`.
+	 * @returns `1` if `n1` is not equal to `n2`, `0` otherwise.
 	 */
-	neq(n1: number, n2: number): boolean;
+	neq(n1: number, n2: number): number;
 	/**
 	 * Checks if `n1` is greater than `n2`
 	 *
 	 * @param n1
 	 * @param n2
-	 * @returns True if `n1` is greater than `n2`.
+	 * @returns `1` if `n1` is greater than `n2`, `0` otherwise.
 	 */
-	gt(n1: number, n2: number): boolean;
+	gt(n1: number, n2: number): number;
 	/**
 	 * Checks if `n1` is less than `n2`
 	 *
 	 * @param n1
 	 * @param n2
-	 * @returns True if `n1` is less than `n2`.
+	 * @returns `1` if `n1` is less than `n2`, `0` otherwise.
 	 */
-	lt(n1: number, n2: number): boolean;
+	lt(n1: number, n2: number): number;
 	/**
 	 * If ... then ... else ...
 	 * `iff` does exactly the same thing as ternary conditional operator `?:` but in a functional style. Also `iff` is slightly less efficient than operator `?:`
@@ -12132,15 +12238,15 @@ export interface PineJSStd {
 	 * @param elseValue - value to use if condition is false
 	 * @returns either thenValue or elseValue
 	 */
-	iff<T, V>(condition: boolean, thenValue: T, elseValue: V): T | V;
+	iff(condition: number, thenValue: number, elseValue: number): number;
 	/**
 	 * True Range
 	 *
-	 * @param handleNan - How NaN values are handled. If `true`, and previous day's close is `NaN` then tr would be calculated as current day `high-low`. Otherwise (if `false`) tr would return `NaN` in such cases. Also note, that `atr` uses `tr(true)`.
-	 * @param context - PineJS execution context.
+	 * @param n_handleNaN - How NaN values are handled. If truthy, and previous bar's close is `NaN` then tr would be calculated as current bar `high-low`. Otherwise tr would return `NaN` in such cases. Also note, that `atr` uses `tr(true)`.
+	 * @param ctx - PineJS execution context.
 	 * @returns True range. It is `max(high - low, abs(high - close[1]), abs(low - close[1]))`
 	 */
-	tr(handleNan: boolean, context: IContext): number;
+	tr(n_handleNaN: number | undefined, ctx: IContext): number;
 	/**
 	 * Function atr (average true range) returns the RMA of true range. True range is `max(high - low, abs(high - close[1]), abs(low - close[1]))`
 	 *
@@ -12208,28 +12314,28 @@ export interface PineJSStd {
 	/**
 	 * Zig-zag pivot points
 	 *
-	 * @param deviation - deviation
-	 * @param depth - depth (integer)
+	 * @param n_deviation - Deviation
+	 * @param n_depth - Depth (integer)
 	 * @param context - PineJS execution context.
 	 * @returns the zig-zag pivot points
 	 */
-	zigzag(deviation: number, depth: number, context: IContext): number[];
+	zigzag(n_deviation: number, n_depth: number, context: IContext): number;
 	/**
 	 * Zig-zag pivot points
 	 *
-	 * @param deviation - deviation
-	 * @param depth - depth (integer)
+	 * @param n_deviation - Deviation
+	 * @param n_depth - Depth (integer)
 	 * @param context - PineJS execution context.
 	 * @returns the zig-zag pivot points (for bars)
 	 */
-	zigzagbars(deviation: number, depth: number, context: IContext): number[];
+	zigzagbars(n_deviation: number, n_depth: number, context: IContext): number;
 	/**
 	 * Time of the current update
 	 *
 	 * @param context - PineJS execution context.
 	 * @returns symbol update time
 	 */
-	updatetime(context: IContext): string;
+	updatetime(context: IContext): number;
 	/**
 	 * Ticker ID for the current symbol
 	 *
@@ -12237,12 +12343,6 @@ export interface PineJSStd {
 	 * @returns Ticker ID for the current symbol
 	 */
 	ticker(context: IContext): string;
-	/**
-	 * Current interval for the symbol
-	 * @param context - PineJS execution context.
-	 * @returns interval string
-	 */
-	interval(context: IContext): string;
 	/**
 	 * Percent rank is the percentage of how many previous values were less than or equal to the current value of given series.
 	 *
@@ -12258,7 +12358,7 @@ export interface PineJSStd {
 	 * @param length - Number of bars (length).
 	 * @returns `true` if current `x` is greater than any previous `x` for length bars back, `false` otherwise.
 	 */
-	rising(series: IPineSeries, length: number): boolean;
+	rising(series: IPineSeries, length: number): number;
 	/**
 	 * Test if the series is now falling for length bars long.
 	 *
@@ -12266,7 +12366,7 @@ export interface PineJSStd {
 	 * @param length - Number of bars (length).
 	 * @returns `true` if current `x` is less than any previous `x` for length bars back, `false` otherwise.
 	 */
-	falling(series: IPineSeries, length: number): boolean;
+	falling(series: IPineSeries, length: number): number;
 	/**
 	 * Relative strength index. It is calculated based on rma's of upward and downward change of x.
 	 *
@@ -12285,7 +12385,7 @@ export interface PineJSStd {
 	 */
 	sum(source: IPineSeries, length: number, context: IContext): number;
 	/**
-	 * The sma function returns the moving average, that is the sum of last `length` values of `source`, divided by `length`.
+	 * Simple Moving Average. The sum of last `length` values of `source`, divided by `length`.
 	 *
 	 * @param source - Series of values to process.
 	 * @param length - Number of bars (length).
@@ -12293,6 +12393,15 @@ export interface PineJSStd {
 	 * @returns Simple moving average of x for y bars back.
 	 */
 	sma(source: IPineSeries, length: number, context: IContext): number;
+	/**
+	 * Smoothed Moving Average.
+	 *
+	 * @param n_value Next value in the series to calculate.
+	 * @param n_length Smoothing length.
+	 * @param ctx PineJS execution context.
+	 * @returns The smoothed moving average value.
+	 */
+	smma(n_value: number, n_length: number, ctx: IContext): number;
 	/**
 	 * Moving average used in RSI. It is the exponentially weighted moving average with `alpha = 1 / length`.
 	 *
@@ -12303,7 +12412,9 @@ export interface PineJSStd {
 	 */
 	rma(source: IPineSeries, length: number, context: IContext): number;
 	/**
-	 * The ema function returns the exponentially weighted moving average. In ema weighting factors decrease exponentially. It calculates by using a formula: `EMA = alpha * x + (1 - alpha) * EMA[1]`, where `alpha = 2 / (y + 1)`
+	 * Exponential Moving Average. In EMA weighting factors decrease exponentially.
+	 *
+	 * It calculates by using a formula: `EMA = alpha * x + (1 - alpha) * EMA[1]`, where `alpha = 2 / (y + 1)`.
 	 *
 	 * @param source - Series of values to process.
 	 * @param length - Number of bars (length).
@@ -12340,11 +12451,11 @@ export interface PineJSStd {
 	/**
 	 * For a given series replaces NaN values with previous nearest non-NaN value.
 	 *
-	 * @param current - Series of values to process.
+	 * @param n_current - Series of values to process.
 	 * @param context - PineJS execution context.
 	 * @returns Series without na gaps.
 	 */
-	fixnan(current: IPineSeries, context: IContext): IPineSeries;
+	fixnan(n_current: number, context: IContext): number;
 	/**
 	 * Lowest value offset for a given number of bars back.
 	 *
@@ -12382,13 +12493,13 @@ export interface PineJSStd {
 	 */
 	highest(source: IPineSeries, length: number, context: IContext): number;
 	/**
-	 * Cumulative (total) sum of `x`. In other words it's a sum of all elements of `x`.
+	 * Cumulative (total) sum. The function tracks the previous values internally.
 	 *
-	 * @param x - Series of values to process.
-	 * @param context - PineJS execution context.
-	 * @returns Total sum series.
+	 * @param n_value Value to add to the sum.
+	 * @param context PineJS execution context.
+	 * @returns The sum.
 	 */
-	cum(x: IPineSeries, context: IContext): number;
+	cum(n_value: number, context: IContext): number;
 	/**
 	 * Accumulation/distribution index.
 	 *
@@ -12428,14 +12539,14 @@ export interface PineJSStd {
 	 */
 	tsi(source: IPineSeries, shortLength: number, longLength: number, context: IContext): number;
 	/**
-	 * Crossing of series
+	 * Crossing of series.
 	 *
-	 * @param x - First series.
-	 * @param y - Second series.
+	 * @param n_0 - First value.
+	 * @param n_1 - Second value.
 	 * @param context - PineJS execution context.
 	 * @returns `true` if two series have crossed each other, otherwise `false`.
 	 */
-	cross(x: IPineSeries, y: IPineSeries, context: IContext): boolean;
+	cross(n_0: number, n_1: number, context: IContext): boolean;
 	/**
 	 * Linear regression curve. A line that best fits the prices specified over a user-defined time period.
 	 * It is calculated using the least squares method. The result of this function is calculated using the formula:
@@ -12452,12 +12563,12 @@ export interface PineJSStd {
 	 * Parabolic SAR (parabolic stop and reverse) is a method devised by J. Welles Wilder, Jr., to find potential reversals in the market price direction of traded goods.
 	 *
 	 * @param start - Start.
-	 * @param inc - Increment
-	 * @param max - Maximum
+	 * @param inc - Increment.
+	 * @param max - Maximum.
 	 * @param context - PineJS execution context.
-	 * @returns Parabolic SAR.
+	 * @returns Parabolic SAR value.
 	 */
-	sar(start: IPineSeries, inc: number, max: number, context: IContext): number;
+	sar(start: number, inc: number, max: number, context: IContext): number;
 	/**
 	 * Arnaud Legoux Moving Average. It uses Gaussian distribution as weights for moving average.
 	 *
@@ -12521,6 +12632,15 @@ export interface PineJSStd {
 	 */
 	add_days_considering_dst(timezone: string, utcTime: Date, daysCount: number): Date;
 	/**
+	 * Get time in `yearsCount` number of years while taking Daylight savings time into account.
+	 *
+	 * @param timezone - Timezone
+	 * @param utcTime - Date (JS built-in)
+	 * @param yearsCount - Number of years
+	 * @returns The time is `yearsCount` number of years, taking into account Daylight savings time.
+	 */
+	add_years_considering_dst(timezone: string, utcTime: Date, yearsCount: number): Date;
+	/**
 	 * Calculates the directional movement values +DI, -DI, DX, ADX, and ADXR.
 	 *
 	 * @param diLength - Number of bars (length) used when calculating the +DI and -DI values.
@@ -12539,55 +12659,55 @@ export interface PineJSStd {
 	 * Test value if it's a NaN.
 	 *
 	 * @param n - value to test
-	 * @returns `true` if `x` is not a valid number (`x` is `NaN`), otherwise `false`.
+	 * @returns `1` if `n` is not a valid number (`n` is `NaN`), otherwise `0`. Returns `NaN` if `n` is undefined.
 	 */
-	na(n: number): boolean;
+	na(n?: number): number;
 	/**
 	 * Replaces NaN values with zeros (or given value) in a series.
 	 *
 	 * @param x - value to test (and potentially replace)
-	 * @param y - fallback value
+	 * @param y - fallback value. `0` by default.
 	 * @returns `x` if it's a valid (not NaN) number, otherwise `y`
 	 */
-	nz(x: number, y: number): number;
+	nz(x: number, y?: number): number;
 	/**
-	 * Logical AND. Applicable to boolean expressions.
+	 * Logical AND.
 	 *
-	 * @returns Boolean value
+	 * @returns `1` if both values are truthy, `0` otherwise.
 	 */
-	and(expr1: boolean, expr2: boolean): boolean;
+	and(n_0: number, n_1: number): number;
 	/**
-	 * Logical OR. Applicable to boolean expressions.
+	 * Logical OR.
 	 *
-	 * @returns Boolean value
+	 * @returns `1` if either value is truthy, `0` otherwise.
 	 */
-	or(expr1: boolean, expr2: boolean): boolean;
+	or(n_0: number, n_1: number): number;
 	/**
-	 * Logical negation (NOT). Applicable to boolean expressions.
+	 * Logical negation (NOT).
 	 *
-	 * @returns Boolean value
+	 * @returns `1` if value is falsy, `0` if value is truthy.
 	 */
-	not(expr1: boolean): boolean;
+	not(n_0: number): number;
 	/**
 	 * Maximum number in the array
 	 *
 	 * @returns The greatest of multiple given values
 	 */
-	max<T>(...values: T[]): T;
+	max(...values: number[]): number;
 	/**
 	 * Minimum number in the array
 	 *
 	 * @returns The smallest of multiple given values
 	 */
-	min<T>(...values: T[]): T;
+	min(...values: number[]): number;
 	/**
 	 * Mathematical power function.
 	 *
 	 * @param base - Specify the base to use.
 	 * @param exponent - Specifies the exponent.
-	 * @returns `x` raised to the power of `y`. If `x` is a series, it is calculated elementwise.
+	 * @returns `x` raised to the power of `y`.
 	 */
-	pow<T extends number | IPineSeries>(base: T, exponent: number): T;
+	pow(base: number, exponent: number): number;
 	/**
 	 * Absolute value of x is x if x >= 0, or -x otherwise.
 	 *
@@ -12689,7 +12809,7 @@ export interface PineJSStd {
 	 *
 	 * @returns the average of the values
 	 */
-	avg<T>(...values: T[]): T;
+	avg(...values: number[]): number;
 	/**
 	 * Current bar index
 	 *
@@ -12697,7 +12817,41 @@ export interface PineJSStd {
 	 * @returns Current bar index. Numbering is zero-based, index of the first historical bar is 0.
 	 */
 	n(context: IContext): number;
-	[key: string]: (...params: any[]) => any;
+	/**
+	 * Check if a value is zero.
+	 *
+	 * @param v the value to test.
+	 * @returns `true` if the value is zero, `false` otherwise.
+	 */
+	isZero: (v: number) => number;
+	/**
+	 * Convert a number to a boolean.
+	 *
+	 * @param v the value to convert.
+	 * @returns `true` if the number is finite and non-zero, `false` otherwise.
+	 */
+	toBool(v: number): boolean;
+	/**
+	 * Get the symbol currency code.
+	 *
+	 * @param ctx PineJS execution context.
+	 * @returns Symbol currency code.
+	 */
+	currencyCode(ctx: IContext): string | null | undefined;
+	/**
+	 * Get the symbol unit ID.
+	 *
+	 * @param ctx PineJS execution context.
+	 * @returns Symbol unit ID.
+	 */
+	unitId(ctx: IContext): string | null | undefined;
+	/**
+	 * Get the symbol interval. For example: if the symbol has a resolution of `1D` then this function would return `1`.
+	 *
+	 * @param ctx PineJS execution context.
+	 * @returns Symbol interval.
+	 */
+	interval(ctx: IContext): number;
 }
 export interface PineStudyResultComposite<TPineStudyResultSimple> {
 	/** Type is composite */
@@ -13335,7 +13489,7 @@ export interface RawStudyMetaInfoBase {
 	readonly shortDescription: string;
 	/** Name for the study */
 	readonly name?: string;
-	/** Metainfo version of the Charting Library, the current is 51. Default is 0. */
+	/** Metainfo version of the study, the current is 51. Default is 0. */
 	readonly _metainfoVersion?: number;
 	/** Precision of the study's output values (quantity of digits after the decimal separator) */
 	readonly precision?: number | string;
@@ -14792,6 +14946,7 @@ export interface StudyOrDrawingAddedToChartEventParams {
  * Study overrides.
  *
  * @example { 'a.overridable.property': 123 }
+ * See [Studies Overrides](https://www.tradingview.com/charting-library-docs/latest/customization/overrides/Studies-Overrides) to get a list of all possible properties to override.
  */
 export interface StudyOverrides {
 	/**
@@ -16579,7 +16734,15 @@ export interface WidgetBarParams {
 	watchlist_settings?: {
 		/**
 		 * Sets the list of default symbols for watchlist.
+		 *
+		 * Any item in the list which is prefixed with `###` will be considered a
+		 * section divider in the watchlist.
 		 * @default []
+		 *
+		 * **Example:**
+		 * ```
+		 * default_symbols: ['###TOP SECTION', 'AAPL', 'IBM', '###SECOND SECTION', 'MSFT']
+		 * ```
 		 */
 		default_symbols: string[];
 		/**
@@ -16608,18 +16771,18 @@ export type CellAlignment = "left" | "right";
  */
 export type ChartActionId = "chartProperties" | "compareOrAdd" | "scalesProperties" | "paneObjectTree" | "insertIndicator" | "symbolSearch" | "changeInterval" | "timeScaleReset" | "chartReset" | "seriesHide" | "studyHide" | "lineToggleLock" | "lineHide" | "scaleSeriesOnly" | "drawingToolbarAction" | "stayInDrawingModeAction" | "hideAllMarks" | "showCountdown" | "showSeriesLastValue" | "showSymbolLabelsAction" | "showStudyLastValue" | "showStudyPlotNamesAction" | "undo" | "redo" | "paneRemoveAllStudiesDrawingTools" | "showSymbolInfoDialog";
 /**
- * Chart type names for use within the `favourites` widget constructor option. This type is for Charting Library, if you are looking for the Trading Terminal type then please see {@link TradingTerminalChartTypeFavorites}.
+ * Chart type names for use within the `favourites` widget constructor option. This type is for Advanced Charts, if you are looking for the Trading Terminal type then please see {@link TradingTerminalChartTypeFavorites}.
  *
  * See {@link Favorites} for the widget constructor option where you can define these favorites, and {@link ChartingLibraryWidgetOptions.favorites} for the Widget Constructor option.
  */
 export type ChartTypeFavorites = "Area" | "Bars" | "Candles" | "Heiken Ashi" | "Hollow Candles" | "Line" | "Line Break" | "Baseline" | "LineWithMarkers" | "Stepline" | "Columns" | "High-low";
-/** This is the list of all featuresets that work on Charting Library */
+/** This is the list of all featuresets that work in Advanced Charts */
 export type ChartingLibraryFeatureset = 
 /** Allows storing all properties (including favorites) to the localstorage @default true */
 "use_localstorage_for_settings" | 
 /** Disabling this feature hides "Favorite this item" icon for Drawings and Intervals @default true */
 "items_favoriting" | 
-/** Can be disabled to forbid storing chart properties to the localstorage while allowing to save other properties. The other properties are favorites in the Charting Library and Watchlist symbols and some panels states in the Trading Terminal @default true @default true */
+/** Can be disabled to forbid storing chart properties to the localstorage while allowing to save other properties. The other properties are favorites in the Advanced Charts and Watchlist symbols and some panels states in the Trading Terminal @default true @default true */
 "save_chart_properties_to_local_storage" | 
 /** Add the volume indicator upon initialisation of the chart @default true */
 "create_volume_indicator_by_default" | 
@@ -16863,7 +17026,7 @@ export type ChartingLibraryFeatureset =
 "chart_template_storage" | 
 /**
  * When chart data is reset, then re-request data for just the visible range (instead of the entire range of the existing data loaded).
- * @default true
+ * @default false
  */
 "request_only_visible_range_on_reset" | 
 /** Clear pane price scales when the main series has an error or has no bars. @default true */
@@ -16878,6 +17041,11 @@ export type ChartingLibraryFeatureset =
  * @default false
  */
 "show_exchange_logos" | 
+/**
+ * Display legend values when on mobile.
+ * @default false
+ */
+"always_show_legend_values_on_mobile" | 
 /** Enable studies to extend the time scale, if enabled in the study metainfo */
 "studies_extend_time_scale";
 /** These are defining the types for a background */
@@ -17103,7 +17271,7 @@ export type RawStudyMetaInformation = Omit<RawStudyMetaInfo, "defaults" | "plots
 	readonly defaults?: Readonly<DeepPartial<StudyDefaults>>;
 };
 /**
- * Resolution or time interval is a time period of one bar. Charting Library supports tick, intraday (seconds, minutes, hours), and DWM (daily, weekly, monthly) resolutions. The table below describes how to specify different types of resolutions:
+ * Resolution or time interval is a time period of one bar. Advanced Charts supports tick, intraday (seconds, minutes, hours), and DWM (daily, weekly, monthly) resolutions. The table below describes how to specify different types of resolutions:
  *
  * Resolution | Format | Example
  * ---------|----------|---------
@@ -17253,12 +17421,12 @@ export type TimezoneId = CustomTimezones | "Etc/UTC" | "exchange";
 export type TradableSolutions = ChangeAccountSolution | ChangeSymbolSolution | OpenUrlSolution;
 export type TradingDialogCustomField = CheckboxFieldMetaInfo | TextWithCheckboxFieldMetaInfo | CustomComboBoxMetaInfo;
 /**
- * Chart type names for use within the `favourites` widget constructor option. This type is for Trading Terminal, if you are looking for the Charting Library type then please see {@link ChartTypeFavorites}.
+ * Chart type names for use within the `favourites` widget constructor option. This type is for Trading Terminal, if you are looking for the Advanced Charts type then please see {@link ChartTypeFavorites}.
  *
  * See {@link Favorites} for the widget constructor option where you can define these favorites, and {@link TradingTerminalWidgetOptions.favorites} for the Widget Constructor option.
  */
 export type TradingTerminalChartTypeFavorites = ChartTypeFavorites | "Renko" | "Kagi" | "Point & figure" | "Line Break";
-/** This is the list of all featuresets that work on Trading Terminal (which is an extension of Charting Library) */
+/** This is the list of all featuresets that work on Trading Terminal (which is an extension of Advanced Charts) */
 export type TradingTerminalFeatureset = ChartingLibraryFeatureset | 
 /** Enables the "plus" button on the price scale for quick trading @default true */
 "chart_crosshair_menu" | 
@@ -17317,7 +17485,9 @@ export type TradingTerminalFeatureset = ChartingLibraryFeatureset |
 /** Hide the right_toolbar when initialising the chart. Can be expanded using the widgetBar API {@link IWidgetbarApi}  @default false */
 "hide_right_toolbar" | 
 /** Hide the tabs within the right toolbar @default false */
-"hide_right_toolbar_tabs";
+"hide_right_toolbar_tabs" | 
+/** Hide price scales when all sources attached to the price scale are hidden. */
+"hide_price_scale_if_all_sources_hidden";
 export type VisiblePlotsSet = "ohlcv" | "ohlc" | "c";
 export type WatchListSymbolListAddedCallback = (listId: string, symbols: string[]) => void;
 export type WatchListSymbolListChangedCallback = (listId: string) => void;

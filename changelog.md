@@ -1,9 +1,32 @@
 
-ℹ️ You can check the Charting Library version by executing `TradingView.version()` in a browser console.
+ℹ️ You can check the Advanced Charts version by executing `TradingView.version()` in a browser console.
 
 <!-- markdownlint-disable no-emphasis-as-header -->
 <!-- markdownlint-disable no-inline-html -->
 <!-- markdownlint-disable code-block-style -->
+
+## Version 25.002
+
+*Date: Wed Jul 12 2023*
+
+**New Features**
+
+- **Add 52 Week High/Low study.**
+- **Enable hiding price scales when all studies or series are hidden.** Adds the `hide_price_scale_if_all_sources_hidden` feature. When enabled price scales will be hidden when all studies (or the main series) attached to the price scale are hidden.
+- **Option to always show legend values for studies on mobile.** By default, when on mobile, the legend won't display any values for studies.
+Enabling this new `always_show_legend_values_on_mobile` featureset allows you to display the values.
+
+**Improvements**
+
+- **Sections can now be added within the Watchlist.** Sections dividers can now be added within the watchlist (`Trading Terminal Only`).
+  - Any item within a list which is prefixed with `###` will be considered a section divider. [API Reference](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IChartingLibraryWidget#watchlist)
+- **Symbol and exchange logos can now be shown within the Compare Dialog.** The [symbol info](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.LibrarySymbolInfo) provided by [resolveSymbol](https://www.tradingview.com/charting-library-docs/latest/connecting_data/Datafeed-API#resolvesymbol) should now include 'exchange_logo' if you would like to use the 'show_exchange_logos' featureset.
+
+**Bug Fixes**
+
+- **Watermark API's content provider is now used for all charts within a multi-chart layout.**
+- **Fixed issue with resetData.** When resetting the data for a chart, any existing studies would become unlinked from the data source. Fixes [#7802](https://github.com/tradingview/charting_library/issues/7802)
+  - The `request_only_visible_range_on_reset` featureset now defaults to `disabled`.
 
 ## Version 25.001
 
@@ -11,7 +34,7 @@
 
 **Breaking Changes**
 
-- **price_sources moved to symbol info.** To allow price sources resolved on-demand with the associated symbol the  `price_sources` property has been removed from [the datafeed configuration object](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.DatafeedConfiguration) and added to the [symbol info object](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.LibrarySymbolInfo).
+- **price_sources moved to symbol info.** To allow price sources resolved on-demand with the associated symbol the `price_sources` property has been removed from [the datafeed configuration object](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.DatafeedConfiguration) and added to the [symbol info object](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.LibrarySymbolInfo).
 
 **New Features**
 
@@ -35,11 +58,11 @@
 
 **Bug Fixes**
 
-- **Timescale marks will adjust correctly when widget theme is changed..**
+- **Timescale marks will adjust correctly when widget theme is changed.**
 - **onAutoSaveNeeded event emitted when removing all drawings via toolbar button.**
 - **removeChart within the save load adapter will await the promise before updating the UI.**
 - **First getBars request after resetting data no longer has a countback of zero.**
-- **Market status pop up text could sometimes display Infinity or NaN values and not update on the dot..**
+- **Market status pop up text could sometimes display Infinity or NaN values and not update on the dot.**
 - **Fix custom field validators.** Fixes a bug where custom broker field validator functions were not called if provided.
 - **Fixed rendering on price and time axes when a Trend Angle line drawing is selected.**
 
@@ -47,7 +70,7 @@
 
 - **Changed validation warning message within the close position UI.** Message changed from 'Specified value is more than the instrument maximum' to 'The amount entered exceeds the position size'.
 - **Corrected the strings for the ThemeName type definition.** The possible values should have been lowercase: 'dark' & 'light'.
-- **Moved Session breaks from Events to Appearance tab in chart options..** This reverts a breaking change made in `v25.0`.
+- **Moved Session breaks from Events to Appearance tab in chart options.** This reverts a breaking change made in `v25.0`.
 
 ## Version 25
 
@@ -64,7 +87,7 @@
   - Indentation of the logo from the borders of the chart
 - **One row for grid lines settings.** The grid lines settings have been combined into one row.
 - **Remove magnet icon near cursor - Reverting feature.** Following reviews this piece of work was reverted.
-- **Update Charting Library branding.** Branding font and position is slightly changed.
+- **Update Advanced Charts branding.** Branding font and position is slightly changed.
 - **Do not load Euclid font for the branding logo on chart.** The Euclid font will not load if there is an animated logo on the chart.
 - **When the chart data is reset, the new request for data will only be for the visible range.** The previous behavior was that when [resetData](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IChartWidgetApi#resetdata) was evoked, that the datafeed would be requested to provide data for the entire range of data already loaded for that symbol. The new behavior is that the request is now only for the current visible range. This more closely matches the behavior of the first load. If you require the old behavior then you can disable the `request_only_visible_range_on_reset` featureset.
 - **Remove timezone & session breaks section from scale gear menu.** Time zone and Session breaks section has been removed from gear menu.
@@ -140,9 +163,9 @@ list.
 
 **Documentation**
 
-- **New Key Features article.** We have added the [Key Features](https://www.tradingview.com/charting-library-docs/latest/getting_started/Key-Features) article that lists features supported/unsupported in Charting Library and Trading Terminal.
+- **New Key Features article.** We have added the [Key Features](https://www.tradingview.com/charting-library-docs/latest/getting_started/Key-Features) article that lists features supported/unsupported in Advanced Charts and Trading Terminal.
 - **How to connect data via Datafeed API.** We have added a new [tutorial on connecting data via Datafeed API](https://www.tradingview.com/charting-library-docs/latest/tutorials/implement_datafeed_tutorial/).
-It will help you implement datafeed and real-time data streaming to Charting Library step-by-step.
+It will help you implement datafeed and real-time data streaming to Advanced Charts step-by-step.
 
 **Other**
 
