@@ -1,15 +1,15 @@
-# TradingView Charting Library
+# TradingView Advanced Charts
 
 [Demo][demo-url] | [Documentation][doc-url] | [Tutorial][tutorial-url] | [Discord community][discord-url]
 
-This repository contains the TradingView Charting Library package. If you use Git in your project, please feel free to use this repo as a submodule in yours.
+This repository contains the TradingView Advanced Charts package. If you use Git in your project, please feel free to use this repository as a submodule in yours.
 
 The `master` branch contains the most recent features and fixes.
 
-Please read the [documentation][doc-url] and the [Best Practices][best-practices-url] before using the Library.
+Before using the library, please read the [documentation][doc-url] and the [Best Practices][best-practices-url] article.
 
 ### Issues Tracking
-We use GitHub's [Issues tracker][issues-url] for our project. Feel free to create bug reports and features requests. Make sure to read the documentation before asking questions - this will avoid repeated questions, leaving us more time for developing the library.
+We use GitHub [Issues tracker][issues-url] for our project. Feel free to create bug reports and feature requests. Make sure to read the documentation before asking questions — this will avoid repeated questions, leaving us more time for developing the library.
 
 ### Stay Tuned
 [Follow us][twitter-url] on Twitter to receive updates.
