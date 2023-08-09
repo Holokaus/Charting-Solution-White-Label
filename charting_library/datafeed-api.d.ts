@@ -76,6 +76,10 @@ export interface DOMLevel {
 	/** Volume for DOM level */
 	volume: number;
 }
+/**
+ * Datafeed configuration data.
+ * Pass the resulting array of properties as a parameter to {@link OnReadyCallback} of the [`onReady`](https://www.tradingview.com/charting-library-docs/latest/connecting_data/Datafeed-API#onready) method.
+ */
 export interface DatafeedConfiguration {
 	/**
 	 * List of exchange descriptors.
@@ -129,7 +133,7 @@ export interface DatafeedConfiguration {
 	 */
 	symbols_types?: DatafeedSymbolType[];
 	/**
-	 * Set it if you want to group symbols in the symbol search.
+	 * Set it if you want to group symbols in the [Symbol Search](https://www.tradingview.com/charting-library-docs/latest/ui_elements/Symbol-Search.md).
 	 * Represents an object where keys are symbol types {@link SymbolType} and values are regular expressions (each regular expression should divide an instrument name into 2 parts: a root and an expiration).
 	 *
 	 * Sample:
@@ -140,6 +144,7 @@ export interface DatafeedConfiguration {
 	 * }
 	 * ```
 	 * It will be applied to the instruments with futures and stock as a type.
+	 * Refer to [Symbol grouping](https://www.tradingview.com/charting-library-docs/latest/ui_elements/Symbol-Search.md#symbol-grouping) for more information.
 	 */
 	symbols_grouping?: Record<string, string>;
 }
@@ -175,7 +180,7 @@ export interface DatafeedQuoteValues {
 	volume?: number;
 	/** Original name */
 	original_name?: string;
-	[valueName: string]: string | number | undefined;
+	[valueName: string]: string | number | string[] | number[] | undefined;
 }
 export interface DatafeedSymbolType {
 	/** Name of the symbol type */
@@ -287,7 +292,7 @@ export interface IDatafeedChartApi {
 	 */
 	unsubscribeBars(listenerGuid: string): void;
 	/**
-	 * Trading Terminal calls this function when it wants to receive real-time level 2 (DOM) for a symbol.
+	 * Trading Platform calls this function when it wants to receive real-time level 2 (DOM) for a symbol.
 	 *
 	 * @param symbol A SymbolInfo object
 	 * @param callback Function returning an object to update Depth Of Market (DOM) data
@@ -295,7 +300,7 @@ export interface IDatafeedChartApi {
 	 */
 	subscribeDepth?(symbol: string, callback: DOMCallback): string;
 	/**
-	 * Trading Terminal calls this function when it doesn't want to receive updates for this listener anymore.
+	 * Trading Platform calls this function when it doesn't want to receive updates for this listener anymore.
 	 *
 	 * @param subscriberUID A string returned by `subscribeDepth`
 	 */
@@ -326,7 +331,7 @@ export interface IDatafeedQuotesApi {
 	 */
 	getQuotes(symbols: string[], onDataCallback: QuotesCallback, onErrorCallback: QuotesErrorCallback): void;
 	/**
-	 * Trading Terminal calls this function when it wants to receive real-time quotes for a symbol.
+	 * Trading Platform calls this function when it wants to receive real-time quotes for a symbol.
 	 * The library assumes that you will call `onRealtimeCallback` every time you want to update the quotes.
 	 * @param  {string[]} symbols - list of symbols that should be updated rarely (once per minute). These symbols are included in the watchlist but they are not visible at the moment.
 	 * @param  {string[]} fastSymbols - list of symbols that should be updated frequently (at least once every 10 seconds)
@@ -335,7 +340,7 @@ export interface IDatafeedQuotesApi {
 	 */
 	subscribeQuotes(symbols: string[], fastSymbols: string[], onRealtimeCallback: QuotesCallback, listenerGUID: string): void;
 	/**
-	 * Trading Terminal calls this function when it doesn't want to receive updates for this listener anymore.
+	 * Trading Platform calls this function when it doesn't want to receive updates for this listener anymore.
 	 * `listenerGUID` will be the same object that the Library passed to `subscribeQuotes` before.
 	 * @param  {string} listenerGUID - unique identifier of the listener
 	 */
@@ -503,6 +508,12 @@ export interface LibrarySymbolInfo {
 	 * @example Quarters of 1/32: pricescale=128, minmovement=1, minmovement2=4
 	 */
 	minmove2?: number;
+	/**
+	 * Dynamic minimum price movement. It is used if the instrument's minimum price movement changes depending on the price range.
+	 *
+	 * For example, '0.01 10 0.02 25 0.05', where the tick size is 0.01 for a price less than 10, the tick size is 0.02 for a price less than 25, the tick size is 0.05 for a price greater than or equal to 25.
+	 */
+	variable_tick_size?: string;
 	/**
 	 * Boolean value showing whether the symbol includes intraday (minutes) historical data.
 	 *
@@ -843,7 +854,8 @@ export interface QuoteOkData extends QuoteDataResponse {
 	v: DatafeedQuoteValues;
 }
 /**
- * Symbol search result item
+ * [Symbol Search](https://www.tradingview.com/charting-library-docs/latest/ui_elements/Symbol-Search) result item.
+ * Pass the resulting array of symbols as a parameter to {@link SearchSymbolsCallback} of the [`searchSymbols`](https://www.tradingview.com/charting-library-docs/latest/connecting_data/Datafeed-API#searchsymbols) method.
  *
  * @example
  * ```
@@ -852,7 +864,7 @@ export interface QuoteOkData extends QuoteDataResponse {
  * 	exchange: 'NasdaqNM',
  * 	full_name: 'NasdaqNM:AAPL',
  * 	symbol: 'AAPL',
- *  ticker: 'AAPL',
+ * 	ticker: 'AAPL',
  * 	type: 'stock',
  * }
  * ```

@@ -1462,7 +1462,7 @@ export interface BrokerConfigFlags {
 	supportModifyTrailingStop?: boolean;
 	/**
 	 * Broker supports margin.
-	 * If the broker supports margin it should call `marginAvailableUpdate` ({@link IBrokerConnectionAdapterHost.marginAvailableUpdate}) when the Trading Terminal subscribes using `subscribeMarginAvailable` ({@link IBrokerWithoutRealtime.subscribeMarginAvailable}).
+	 * If the broker supports margin it should call `marginAvailableUpdate` ({@link IBrokerConnectionAdapterHost.marginAvailableUpdate}) when the Trading Platform subscribes using `subscribeMarginAvailable` ({@link IBrokerWithoutRealtime.subscribeMarginAvailable}).
 	 * @default false
 	 */
 	supportMargin?: boolean;
@@ -3075,7 +3075,7 @@ export interface ChartingLibraryWidgetOptions {
 	 */
 	study_count_limit?: number;
 	/**
-	 * A threshold delay in milliseconds that is used to reduce the number of symbol search requests when the user is typing a name of a symbol in the search box.
+	 * A threshold delay in milliseconds that is used to reduce the number of search requests when the user enters the symbol name in the [Symbol Search](https://www.tradingview.com/charting-library-docs/latest/ui_elements/Symbol-Search.md).
 	 *
 	 * ```javascript
 	 * symbol_search_request_delay: 1000,
@@ -3308,7 +3308,7 @@ export interface ChartingLibraryWidgetOptions {
 	 */
 	snapshot_url?: string;
 	/**
-	 * List of visible timeframes that can be selected at the bottom of the chart. See [this topic](https://www.tradingview.com/charting-library-docs/latest/core_concepts/Time-Frames.md) to learn more about timeframes. Timeframe is an object containing following properties:
+	 * List of visible time frames that can be selected at the bottom of the chart. See [Time frame toolbar](https://www.tradingview.com/charting-library-docs/latest/ui_elements/Time-Scale.md#time-frame-toolbar) for more information. Time frame is an object containing the following properties:
 	 *
 	 * Example:
 	 *
@@ -3494,11 +3494,11 @@ export interface ChartingLibraryWidgetOptions {
 	 */
 	custom_translate_function?: CustomTranslateFunction;
 	/**
-	 * Use this property to set a function to override the symbol input from symbol search dialogs.
+	 * Use this property to set a function to override the symbol input from the [Symbol Search](https://www.tradingview.com/charting-library-docs/latest/ui_elements/Symbol-Search.md).
 	 *
-	 * For example for you may want to get additional input from the user before deciding which symbol should be resolved.
+	 * For example, you may want to get additional input from the user before deciding which symbol should be resolved.
 	 *
-	 * The function should take two parameters: a `string` of input from the symbol search and a optional search result item. It should return a `Promise` that resolves with a symbol ticker and a human friendly symbol name.
+	 * The function should take two parameters: a `string` of input from the Symbol Search and a optional search result item. It should return a `Promise` that resolves with a symbol ticker and a human-friendly symbol name.
 	 *
 	 * **NOTE:** This override is not called when adding a symbol to the watchlist.
 	 *
@@ -3894,6 +3894,46 @@ export interface CrossHairMovedEventParams {
 	 * The price coordinate of the crosshair.
 	 */
 	price: number;
+	/**
+	 * Series and study values at the crosshair position. The object keys are study or series IDs, and the object value are study or series values.
+	 * The ID for the main series will always be the string `'_seriesId'`.
+	 */
+	entityValues?: Record<EntityId, CrossHairMovedEventSource>;
+	/**
+	 * X coordinate of the crosshair relative to the left edge of the element containing the library.
+	 */
+	offsetX?: number;
+	/**
+	 * Y coordinate of the crosshair relative to the top edge of the element containing the library.
+	 */
+	offsetY?: number;
+}
+/**
+ * Data source (a series or a study) values for a crosshair position.
+ */
+export interface CrossHairMovedEventSource {
+	/**
+	 * `true` if the source is hovered by the crosshair `false` otherwise.
+	 */
+	isHovered: boolean;
+	/**
+	 * The title of the source. Matches the title shown in the data window.
+	 */
+	title: string;
+	/**
+	 * The values of the source. Matches the values shown in the data window.
+	 */
+	values: CrossHairMovedEventSourceValue[];
+}
+export interface CrossHairMovedEventSourceValue {
+	/**
+	 * Value title. E.g. 'open', 'high', 'change', etc. Matches the title shown in the data window.
+	 */
+	title: string;
+	/**
+	 * The value formatted as a string. Matches the value shown in the data window.
+	 */
+	value: string;
 }
 /**
  * Override properties for the Crossline drawing tool.
@@ -4186,6 +4226,10 @@ export interface DOMLevel {
 	/** Volume for DOM level */
 	volume: number;
 }
+/**
+ * Datafeed configuration data.
+ * Pass the resulting array of properties as a parameter to {@link OnReadyCallback} of the [`onReady`](https://www.tradingview.com/charting-library-docs/latest/connecting_data/Datafeed-API#onready) method.
+ */
 export interface DatafeedConfiguration {
 	/**
 	 * List of exchange descriptors.
@@ -4239,7 +4283,7 @@ export interface DatafeedConfiguration {
 	 */
 	symbols_types?: DatafeedSymbolType[];
 	/**
-	 * Set it if you want to group symbols in the symbol search.
+	 * Set it if you want to group symbols in the [Symbol Search](https://www.tradingview.com/charting-library-docs/latest/ui_elements/Symbol-Search.md).
 	 * Represents an object where keys are symbol types {@link SymbolType} and values are regular expressions (each regular expression should divide an instrument name into 2 parts: a root and an expiration).
 	 *
 	 * Sample:
@@ -4250,6 +4294,7 @@ export interface DatafeedConfiguration {
 	 * }
 	 * ```
 	 * It will be applied to the instruments with futures and stock as a type.
+	 * Refer to [Symbol grouping](https://www.tradingview.com/charting-library-docs/latest/ui_elements/Symbol-Search.md#symbol-grouping) for more information.
 	 */
 	symbols_grouping?: Record<string, string>;
 }
@@ -4285,7 +4330,7 @@ export interface DatafeedQuoteValues {
 	volume?: number;
 	/** Original name */
 	original_name?: string;
-	[valueName: string]: string | number | undefined;
+	[valueName: string]: string | number | string[] | number[] | undefined;
 }
 export interface DatafeedSymbolType {
 	/** Name of the symbol type */
@@ -6896,26 +6941,26 @@ export interface IBrokerCommon {
 	 */
 	connectionStatus(): ConnectionStatus;
 	/**
-	 * Called by Trading Terminal to request orders
+	 * Called by Trading Platform to request orders
 	 */
 	orders(): Promise<Order[]>;
 	/**
-	 * This method is called by the Trading Terminal to request orders history.
+	 * This method is called by the Trading Platform to request orders history.
 	 * It is expected that returned orders will have a final status (`rejected`, `filled`, `cancelled`).
 	 *
 	 * This method is optional. If you don't support orders history, please set `supportOrdersHistory` flag to `false`.
 	 */
 	ordersHistory?(): Promise<Order[]>;
 	/**
-	 * Called by Trading Terminal to request positions
+	 * Called by Trading Platform to request positions
 	 */
 	positions?(): Promise<Position[]>;
 	/**
-	 * Called by Trading Terminal to request trades
+	 * Called by Trading Platform to request trades
 	 */
 	trades?(): Promise<Trade[]>;
 	/**
-	 * Called by Trading Terminal to request executions for the specified symbol
+	 * Called by Trading Platform to request executions for the specified symbol
 	 * @param  {string} symbol - symbol identifier
 	 */
 	executions(symbol: string): Promise<Execution[]>;
@@ -7113,7 +7158,7 @@ export interface IBrokerConnectionAdapterHost {
 	 * Call this method when a broker connection has received a margin available update.
 	 * This method is required by the standard Order Dialog to display the margin meter.
 	 * This method should be used when `supportMargin` flag is set in `configFlags`.
-	 * The Trading Terminal subscribes to margin available updates using {@link IBrokerWithoutRealtime.subscribeMarginAvailable}.
+	 * The Trading Platform subscribes to margin available updates using {@link IBrokerWithoutRealtime.subscribeMarginAvailable}.
 	 * @param  {number} marginAvailable - updated available margin
 	 */
 	marginAvailableUpdate(marginAvailable: number): void;
@@ -7405,7 +7450,7 @@ export interface IChartWidgetApi {
 	onSymbolChanged(): ISubscription<() => void>;
 	/**
 	 * Get a subscription object for the chart resolution (interval) changing. This method also allows you to track whether the chart's [date range](https://www.tradingview.com/charting-library-docs/latest/getting_started/glossary.md#date-range) is changed.
-	 * The `timeframe` argument represents if a user clicks on the [time frame toolbar](https://www.tradingview.com/charting-library-docs/latest/core_concepts/Time-Frames.md) or changes the date range manually.
+	 * The `timeframe` argument represents if a user clicks on the [time frame toolbar](https://www.tradingview.com/charting-library-docs/latest/ui_elements/Time-Scale.md#time-frame-toolbar) or changes the date range manually.
 	 * If `timeframe` is `undefined`, you can change a date range before data loading starts.
 	 * To do this, you can specify a time frame value or a certain date range.
 	 *
@@ -7489,6 +7534,12 @@ export interface IChartWidgetApi {
 	 * @returns A subscription object for the crosshair moving over the chart.
 	 */
 	crossHairMoved(): ISubscription<(params: CrossHairMovedEventParams) => void>;
+	/**
+	 * Get a subscription object for the ID of the study or series hovered by the crosshair.
+	 *
+	 * @returns A subscription object for the ID of the study or series hovered by the crosshair. Subscribers will be called with `null` if there is no study or series hovered.
+	 */
+	onHoveredSourceChanged(): ISubscription<(sourceId: EntityId) => void>;
 	/**
 	 * Scroll and/or scale the chart so a time range is visible.
 	 *
@@ -8260,18 +8311,8 @@ export interface IChartWidgetApi {
 	setTimeFrame(timeFrame: RangeOptions): void;
 }
 /**
- * The main interface for interacting with the library.
- *
- * This interface is returned to you by the widget's constructor ({@link ChartingLibraryWidgetConstructor}).
- *
- * **Remark**: Please note that it's safe to call any method only **after** `onChartReady` callback function is called.
- *
- * Example:
- * ```javascript
- * widget.onChartReady(function() {
- *     // It's now safe to call any other methods of the widget
- * });
- * ```
+ * The main interface for interacting with the library, returned by {@link ChartingLibraryWidgetConstructor}.
+ * For more information, refer to the [Widget methods](https://www.tradingview.com/charting-library-docs/latest/core_concepts/widget-methods.md) article.
  */
 export interface IChartingLibraryWidget {
 	/**
@@ -8444,12 +8485,47 @@ export interface IChartingLibraryWidget {
 	 * The widget will call the callback function each time the widget wants to display a context menu.
 	 * See also {@link ChartingLibraryWidgetOptions.context_menu}.
 	 *
+	 * **Example**
+	 * ```javascript
+	 * widget.onChartReady(function() {
+	 *     widget.onContextMenu(function(unixtime, price) {
+	 *         return [{
+	 *             position: "top",
+	 *             text: "First top menu item, time: " + unixtime + ", price: " + price,
+	 *             click: function() { alert("First clicked."); }
+	 *         },
+	 *         { text: "-", position: "top" }, // Adds a separator between buttons
+	 *         { text: "-Paste" },             // Removes the existing item from the menu
+	 *         {
+	 *             position: "top",
+	 *             text: "Second top menu item 2",
+	 *             click: function() { alert("Second clicked."); }
+	 *         }, {
+	 *             position: "bottom",
+	 *             text: "Bottom menu item",
+	 *             click: function() { alert("Third clicked."); }
+	 *         }];
+	 *     });
+	 * });
+	 * ```
+	 *
 	 * @param callback A function called with the time and price of the location on the chart that triggered the context menu.
 	 * The array of objects returned will add or remove items from the context menu.
 	 */
 	onContextMenu(callback: (unixTime: number, price: number) => ContextMenuItem[]): void;
 	/**
 	 * Create a button in the top toolbar. This should be called after {@link headerReady} has resolved.
+	 *
+	 * **Example**
+	 * ```javascript
+	 * widget.headerReady().then(function() {
+	 *     var button = widget.createButton();
+	 *     button.setAttribute('title', 'My custom button tooltip');
+	 *     button.addEventListener('click', function() { alert("My custom button pressed!"); });
+	 *     button.textContent = 'My custom button caption';
+	 * });
+	 * ```
+	 *
 	 * @param options A optional object of options for the button.
 	 * @returns A `HTMLElement` you can customize.
 	 */
@@ -8468,7 +8544,52 @@ export interface IChartingLibraryWidget {
 	 */
 	createButton(options?: CreateButtonOptions): HTMLElement | undefined;
 	/**
-	 * add your own dropdown menu to the top toolbar.
+	 * Add a custom dropdown menu to the top toolbar.
+	 *
+	 * **Example**
+	 * ```javascript
+	 * widget.createDropdown(
+	 *     {
+	 *         title: 'dropdown',
+	 *         tooltip: 'tooltip for this dropdown',
+	 *         items: [
+	 *             {
+	 *                 title: 'item#1',
+	 *                 onSelect: () => {console.log('1');},
+	 *             },
+	 *             {
+	 *                 title: 'item#2',
+	 *                 onSelect: () => {widget.setSymbol('IBM', '1D');},
+	 *             },
+	 *             {
+	 *                 title: 'item#3',
+	 *                 onSelect: () => {
+	 *                     widget.activeChart().createStudy(
+	 *                         'MACD',
+	 *                         false,
+	 *                         false,
+	 *                         {
+	 *                             in_0: 14,
+	 *                             in_1: 30,
+	 *                             in_3: 'close',
+	 *                             in_2: 9
+	 *                         }
+	 *                     );
+	 *                 },
+	 *             }
+	 *         ],
+	 *         icon: `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"><g fill="none" stroke="currentColor"><circle cx="10" cy="10" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path stroke-linecap="square" d="M17.5 7.5l-7 13"/></g></svg>`,
+	 *     }
+	 * ).then(myDropdownApi => {
+	 *     // Use myDropdownApi if you need to update the dropdown:
+	 *     // myDropdownApi.applyOptions({
+	 *     //     title: 'a new title!'
+	 *     // });
+	 *
+	 *     // Or remove the dropdown:
+	 *     // myDropdownApi.remove();
+	 * });
+	 * ```
 	 * @param  {DropdownParams} params
 	 */
 	createDropdown(params: DropdownParams): Promise<IDropdownApi>;
@@ -8542,10 +8663,10 @@ export interface IChartingLibraryWidget {
 	 */
 	applyStudiesOverrides(overrides: object): void;
 	/**
-	 * Trading Terminal only. Get a promise that resolves with an API object for interacting with the widgetbar (right sidebar) watchlist.
+	 * Trading Platform only. Get a promise that resolves with an API object for interacting with the widgetbar (right sidebar) watchlist.
 	 *
 	 * **Example**
-	 * ```js
+	 * ```javascript
 	 * const watchlistApi = await widget.watchList();
 	 * const activeListId = watchlistApi.getActiveListId();
 	 * const currentListItems = watchlistApi.getList(activeListId);
@@ -8557,13 +8678,13 @@ export interface IChartingLibraryWidget {
 	 */
 	watchList(): Promise<IWatchListApi>;
 	/**
-	 * Trading Terminal only. Get a promise that resolves with an API object for interacting with the widgetbar (right sidebar) news widget.
+	 * Trading Platform only. Get a promise that resolves with an API object for interacting with the widgetbar (right sidebar) news widget.
 	 *
 	 * @returns An API object for interacting with the widgetbar (right sidebar) widget.
 	 */
 	news(): Promise<INewsApi>;
 	/**
-	 * Trading Terminal only. Get a promise that resolves with an API object for interacting with the widgetbar (right sidebar).
+	 * Trading Platform only. Get a promise that resolves with an API object for interacting with the widgetbar (right sidebar).
 	 *
 	 * @returns An API object for interacting with the widgetbar (right sidebar).
 	 */
@@ -8626,6 +8747,11 @@ export interface IChartingLibraryWidget {
 	/**
 	 * Get the current theme of the chart.
 	 *
+	 * **Example**
+	 * ```javascript
+	 * console.log(widget.getTheme());
+	 * ```
+	 *
 	 * @returns A theme name. The name of the current theme.
 	 */
 	getTheme(): ThemeName;
@@ -8667,31 +8793,58 @@ export interface IChartingLibraryWidget {
 	 */
 	magnetMode(): IWatchedValue<number>;
 	/**
-	 * Only available in Trading Terminal. Get a watched value that can be used to read/write/subscribe to the state of the symbol sync between charts.
+	 * Only available in Trading Platform. Get a watched value that can be used to read/write/subscribe to the state of the symbol sync between charts.
+	 *
+	 * **Example**
+	 * ```javascript
+	 * if (widget.symbolSync().value()) {
+	 *     // ...
+	 * }
+	 * ```
 	 *
 	 * @returns A watched value of the state of the symbol sync.
 	 */
 	symbolSync(): IWatchedValue<boolean>;
 	/**
-	 * Only available in Trading Terminal. Get a watched value that can be used to read/write/subscribe to the state of the interval sync between charts.
+	 * Only available in Trading Platform. Get a watched value that can be used to read/write/subscribe to the state of the interval sync between charts.
+	 *
+	 * **Example**
+	 * ```javascript
+	 * widget.intervalSync().setValue(true);
+	 * ```
 	 *
 	 * @returns A watched value of the state of the interval sync.
 	 */
 	intervalSync(): IWatchedValue<boolean>;
 	/**
-	 * Only available in Trading Terminal. Get a watched value that can be used to read/write/subscribe to the state of the crosshair sync between charts.
+	 * Only available in Trading Platform. Get a watched value that can be used to read/write/subscribe to the state of the crosshair sync between charts.
+	 *
+	 * **Example**
+	 * ```javascript
+	 * widget.crosshairSync().setValue(true);
+	 * ```
 	 *
 	 * @returns A watched value of the state of the crosshair sync.
 	 */
 	crosshairSync(): IWatchedValue<boolean>;
 	/**
-	 * Only available in Trading Terminal. Get a watched value that can be used to read/write/subscribe to the state of the time sync between charts.
+	 * Only available in Trading Platform. Get a watched value that can be used to read/write/subscribe to the state of the time sync between charts.
+	 *
+	 * **Example**
+	 * ```javascript
+	 * widget.timeSync().setValue(true);
+	 * ```
 	 *
 	 * @returns A watched value of the state of the time sync.
 	 */
 	timeSync(): IWatchedValue<boolean>;
 	/**
-	 * Only available in Trading Terminal. Get a watched value that can be used to read/write/subscribe to the state of the date range sync between charts.
+	 * Only available in Trading Platform. Get a watched value that can be used to read/write/subscribe to the state of the date range sync between charts.
+	 *
+	 * **Example**
+	 * ```javascript
+	 * widget.dateRangeSync().setValue(true);
+	 * ```
 	 *
 	 * @returns A watched value of the state of the date range sync.
 	 */
@@ -9101,7 +9254,7 @@ export interface IDatafeedChartApi {
 	 */
 	unsubscribeBars(listenerGuid: string): void;
 	/**
-	 * Trading Terminal calls this function when it wants to receive real-time level 2 (DOM) for a symbol.
+	 * Trading Platform calls this function when it wants to receive real-time level 2 (DOM) for a symbol.
 	 *
 	 * @param symbol A SymbolInfo object
 	 * @param callback Function returning an object to update Depth Of Market (DOM) data
@@ -9109,7 +9262,7 @@ export interface IDatafeedChartApi {
 	 */
 	subscribeDepth?(symbol: string, callback: DOMCallback): string;
 	/**
-	 * Trading Terminal calls this function when it doesn't want to receive updates for this listener anymore.
+	 * Trading Platform calls this function when it doesn't want to receive updates for this listener anymore.
 	 *
 	 * @param subscriberUID A string returned by `subscribeDepth`
 	 */
@@ -9140,7 +9293,7 @@ export interface IDatafeedQuotesApi {
 	 */
 	getQuotes(symbols: string[], onDataCallback: QuotesCallback, onErrorCallback: QuotesErrorCallback): void;
 	/**
-	 * Trading Terminal calls this function when it wants to receive real-time quotes for a symbol.
+	 * Trading Platform calls this function when it wants to receive real-time quotes for a symbol.
 	 * The library assumes that you will call `onRealtimeCallback` every time you want to update the quotes.
 	 * @param  {string[]} symbols - list of symbols that should be updated rarely (once per minute). These symbols are included in the watchlist but they are not visible at the moment.
 	 * @param  {string[]} fastSymbols - list of symbols that should be updated frequently (at least once every 10 seconds)
@@ -9149,7 +9302,7 @@ export interface IDatafeedQuotesApi {
 	 */
 	subscribeQuotes(symbols: string[], fastSymbols: string[], onRealtimeCallback: QuotesCallback, listenerGUID: string): void;
 	/**
-	 * Trading Terminal calls this function when it doesn't want to receive updates for this listener anymore.
+	 * Trading Platform calls this function when it doesn't want to receive updates for this listener anymore.
 	 * `listenerGUID` will be the same object that the Library passed to `subscribeQuotes` before.
 	 * @param  {string} listenerGUID - unique identifier of the listener
 	 */
@@ -9180,6 +9333,13 @@ export interface IDestroyable {
 export interface IDropdownApi {
 	/**
 	 * Apply options to the dropdown menu.
+	 * Note that this method does not affect the menu's alignment. To change the alignment, you should remove and recreate the menu as follows:
+	 *
+	 * ```javascript
+	 * myCustomDropdownApi.remove();
+	 * widget.createDropdown(optionsWithDifferentAlignment);
+	 * ```
+	 *
 	 * @param  {DropdownUpdateParams} options - Partial options for the dropdown menu
 	 */
 	applyOptions(options: DropdownUpdateParams): void;
@@ -9584,6 +9744,19 @@ export interface IOrderLineAdapter {
 	 * @param callback Callback to be executed when the order line is moved.
 	 */
 	onMove<T>(data: T, callback: (data: T) => void): this;
+	/**
+	 * Attach a callback to be executed while the order line is being moved.
+	 *
+	 * @param callback Callback to be executed while the order line is being moved.
+	 */
+	onMoving(callback: () => void): this;
+	/**
+	 * Attach a callback to be executed while the order line is being moved.
+	 *
+	 * @param data Data to be passed to the callback.
+	 * @param callback Callback to be executed while the order line is being moved.
+	 */
+	onMoving<T>(data: T, callback: (data: T) => void): this;
 	/**
 	 * Attach a callback to be executed when the order line is cancelled.
 	 *
@@ -10674,7 +10847,7 @@ export interface IStudyApi {
 	applyOverrides<TOverrides extends StudyOverrides>(overrides: TOverrides): void;
 	/**
 	 * Copies the study to all charts in the layout.
-	 * Only applicable to multi-chart layouts (Trading Terminal).
+	 * Only applicable to multi-chart layouts (Trading Platform).
 	 */
 	applyToEntireLayout(): void;
 	/**
@@ -10849,7 +11022,7 @@ export interface ISymbolValueFormatter {
 	formatChange?(currentPrice: number, prevPrice: number, signPositive?: boolean): string;
 }
 /**
- * API object for interacting with the timescale.
+ * API object for interacting with the [time scale](https://www.tradingview.com/charting-library-docs/latest/ui_elements/Time-Scale.md).
  *
  * You can retrieve this interface by using the {@link IChartWidgetApi.getTimeScale} method
  */
@@ -11644,6 +11817,12 @@ export interface LibrarySymbolInfo {
 	 * @example Quarters of 1/32: pricescale=128, minmovement=1, minmovement2=4
 	 */
 	minmove2?: number;
+	/**
+	 * Dynamic minimum price movement. It is used if the instrument's minimum price movement changes depending on the price range.
+	 *
+	 * For example, '0.01 10 0.02 25 0.05', where the tick size is 0.01 for a price less than 10, the tick size is 0.02 for a price less than 25, the tick size is 0.05 for a price greater than or equal to 25.
+	 */
+	variable_tick_size?: string;
 	/**
 	 * Boolean value showing whether the symbol includes intraday (minutes) historical data.
 	 *
@@ -14496,7 +14675,8 @@ export interface SchiffpitchforkLineToolOverrides {
 	"linetoolschiffpitchfork.transparency": number;
 }
 /**
- * Symbol search result item
+ * [Symbol Search](https://www.tradingview.com/charting-library-docs/latest/ui_elements/Symbol-Search) result item.
+ * Pass the resulting array of symbols as a parameter to {@link SearchSymbolsCallback} of the [`searchSymbols`](https://www.tradingview.com/charting-library-docs/latest/connecting_data/Datafeed-API#searchsymbols) method.
  *
  * @example
  * ```
@@ -14505,7 +14685,7 @@ export interface SchiffpitchforkLineToolOverrides {
  * 	exchange: 'NasdaqNM',
  * 	full_name: 'NasdaqNM:AAPL',
  * 	symbol: 'AAPL',
- *  ticker: 'AAPL',
+ * 	ticker: 'AAPL',
  * 	type: 'stock',
  * }
  * ```
@@ -14717,7 +14897,7 @@ export interface SingleBrokerMetaInfo {
 	orderRules?: OrderRule[];
 	/**
 	 * This optional field can be used to replace the standard Order Ticket and the Add Protection dialogs with your own.
-	 * Values of the following two fields are functions that are called by the Trading Terminal to show the dialogs. Each function shows a dialog and returns a `Promise` object that should be resolved when the operation is finished or cancelled.
+	 * Values of the following two fields are functions that are called by the Trading Platform to show the dialogs. Each function shows a dialog and returns a `Promise` object that should be resolved when the operation is finished or cancelled.
 	 *
 	 * **NOTE:** The returned `Promise` object should be resolved with either `true` or `false` value.
 	 *
@@ -15933,18 +16113,18 @@ export interface SubscribeEventsMap {
 	onSelectedLineToolChanged: EmptyCallback;
 	/**
 	 * Amount or placement of the charts is about to be changed.
-	 * **Note:** this event is only applicable to Trading Terminal.
+	 * **Note:** this event is only applicable to Trading Platform.
 	 * @param  {LayoutType} newLayoutType - whether the layout is single or multi-chart
 	 */
 	layout_about_to_be_changed: (newLayoutType: LayoutType) => void;
 	/**
 	 * Amount or placement of the charts is changed.
-	 * **Note:** this event is only applicable to Trading Terminal.
+	 * **Note:** this event is only applicable to Trading Platform.
 	 */
 	layout_changed: EmptyCallback;
 	/**
 	 * Active chart has changed
-	 * **Note:** this event is only applicable to Trading Terminal.
+	 * **Note:** this event is only applicable to Trading Platform.
 	 * @param  {number} chartIndex - index of the active chart
 	 */
 	activeChartChanged: (chartIndex: number) => void;
@@ -16432,9 +16612,9 @@ export interface TradingTerminalWidgetOptions extends Omit<ChartingLibraryWidget
 	 * See {@link ChartingLibraryWidgetOptions.favorites}
 	 */
 	favorites?: Favorites<TradingTerminalChartTypeFavorites>;
-	/** configuration flags for the Trading Terminal. */
+	/** configuration flags for the Trading Platform. */
 	brokerConfig?: SingleBrokerMetaInfo;
-	/** configuration flags for the Trading Terminal. */
+	/** configuration flags for the Trading Platform. */
 	broker_config?: SingleBrokerMetaInfo;
 	/** Connection configuration settings for Rest Broker API */
 	restConfig?: RestBrokerConnectionInfo;
@@ -17220,18 +17400,18 @@ export type CellAlignment = "left" | "right";
  */
 export type ChartActionId = "chartProperties" | "compareOrAdd" | "scalesProperties" | "paneObjectTree" | "insertIndicator" | "symbolSearch" | "changeInterval" | "timeScaleReset" | "chartReset" | "seriesHide" | "studyHide" | "lineToggleLock" | "lineHide" | "scaleSeriesOnly" | "drawingToolbarAction" | "stayInDrawingModeAction" | "hideAllMarks" | "showCountdown" | "showSeriesLastValue" | "showSymbolLabelsAction" | "showStudyLastValue" | "showStudyPlotNamesAction" | "undo" | "redo" | "paneRemoveAllStudiesDrawingTools" | "showSymbolInfoDialog";
 /**
- * Chart type names for use within the `favourites` widget constructor option. This type is for Advanced Charts, if you are looking for the Trading Terminal type then please see {@link TradingTerminalChartTypeFavorites}.
+ * Chart type names for use within the `favourites` widget constructor option. This type is for Advanced Charts, if you are looking for the Trading Platform type then please see {@link TradingTerminalChartTypeFavorites}.
  *
  * See {@link Favorites} for the widget constructor option where you can define these favorites, and {@link ChartingLibraryWidgetOptions.favorites} for the Widget Constructor option.
  */
 export type ChartTypeFavorites = "Area" | "Bars" | "Candles" | "Heiken Ashi" | "Hollow Candles" | "Line" | "Line Break" | "Baseline" | "LineWithMarkers" | "Stepline" | "Columns" | "High-low";
-/** This is the list of all featuresets that work in Advanced Charts */
+/** This is the list of all [featuresets](https://www.tradingview.com/charting-library-docs/latest/customization/Featuresets.md) that work in Advanced Charts */
 export type ChartingLibraryFeatureset = 
 /** Allows storing all properties (including favorites) to the localstorage @default true */
 "use_localstorage_for_settings" | 
 /** Disabling this feature hides "Favorite this item" icon for Drawings and Intervals @default true */
 "items_favoriting" | 
-/** Can be disabled to forbid storing chart properties to the localstorage while allowing to save other properties. The other properties are favorites in the Advanced Charts and Watchlist symbols and some panels states in the Trading Terminal @default true @default true */
+/** Can be disabled to forbid storing chart properties to the localstorage while allowing to save other properties. The other properties are favorites in the Advanced Charts and Watchlist symbols and some panels states in the Trading Platform @default true @default true */
 "save_chart_properties_to_local_storage" | 
 /** Add the volume indicator upon initialisation of the chart @default true */
 "create_volume_indicator_by_default" | 
@@ -17381,7 +17561,7 @@ export type ChartingLibraryFeatureset =
 "show_chart_property_page" | 
 /** Allows overrides for the price scale @default true */
 "chart_property_page_scales" | 
-/** This feature is for the Trading Terminal only @default true */
+/** This feature is for the Trading Platform only @default true */
 "chart_property_page_trading" | 
 /** Shows the right margin editor in the setting dialog @default true */
 "chart_property_page_right_margin_editor" | 
@@ -17880,12 +18060,12 @@ export type TimezoneId = CustomTimezones | "Etc/UTC" | "exchange";
 export type TradableSolutions = ChangeAccountSolution | ChangeSymbolSolution | OpenUrlSolution;
 export type TradingDialogCustomField = CheckboxFieldMetaInfo | TextWithCheckboxFieldMetaInfo | CustomComboBoxMetaInfo;
 /**
- * Chart type names for use within the `favourites` widget constructor option. This type is for Trading Terminal, if you are looking for the Advanced Charts type then please see {@link ChartTypeFavorites}.
+ * Chart type names for use within the `favourites` widget constructor option. This type is for Trading Platform, if you are looking for the Advanced Charts type then please see {@link ChartTypeFavorites}.
  *
  * See {@link Favorites} for the widget constructor option where you can define these favorites, and {@link TradingTerminalWidgetOptions.favorites} for the Widget Constructor option.
  */
 export type TradingTerminalChartTypeFavorites = ChartTypeFavorites | "Renko" | "Kagi" | "Point & figure" | "Line Break";
-/** This is the list of all featuresets that work on Trading Terminal (which is an extension of Advanced Charts) */
+/** This is the list of all featuresets that work on Trading Platform (which is an extension of Advanced Charts) */
 export type TradingTerminalFeatureset = ChartingLibraryFeatureset | 
 /** Enables the "plus" button on the price scale for quick trading @default true */
 "chart_crosshair_menu" | 
@@ -17951,7 +18131,12 @@ export type TradingTerminalFeatureset = ChartingLibraryFeatureset |
  * Display the symbol's logo within the account manager panel. This requires that `show_symbol_logos` is enabled.
  * @default true
  */
-"show_symbol_logo_in_account_manager";
+"show_symbol_logo_in_account_manager" | 
+/**
+ * Display UI (buttons and context menu options) for creating sections within the watchlist.
+ * @default true
+ */
+"watchlist_sections";
 export type VisiblePlotsSet = "ohlcv" | "ohlc" | "c";
 export type WatchListSymbolListAddedCallback = (listId: string, symbols: string[]) => void;
 export type WatchListSymbolListChangedCallback = (listId: string) => void;

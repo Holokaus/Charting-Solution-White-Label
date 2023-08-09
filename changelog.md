@@ -5,6 +5,31 @@
 <!-- markdownlint-disable no-inline-html -->
 <!-- markdownlint-disable code-block-style -->
 
+## Version 26.001
+
+*Date: Tue Aug 08 2023*
+
+**New Features**
+
+- **Add series and study values to crosshair move event.** The [`crossHairMoved` subscription](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IChartWidgetApi/#crosshairmoved) now exposes the study and series values in the event object. The values are the same as the values shown in the data window.
+- **Adding a new Floor type for calculating Pivot.**
+- **Add the onHoveredSourceChanged method to the widget API.** See [`onHoveredSourceChanged`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IChartWidgetApi/#onhoveredsourcechanged).
+
+**Improvements**
+
+- **Added optional variable_tick_size property to symbol info.**
+- **Added onMoving to the Order Line Adapter.** [onMoving](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IOrderLineAdapter#onmoving)
+
+**Bug Fixes**
+
+- **Selecting an incorrect symbol within a study no longer prevents the study from recovering when a valid symbol is chosen later.**
+- **Fix drawing tools not affecting undo/redo stack and chart layout saving buttons.** Drawing actions can now be undone/redone and will affect the saving of the chart layout
+- **Disabling the 'open_account_manager' featureset now works as expected.**
+
+**Other**
+
+- **Watchlist sections featureset added for adjusting the visibility of the 'Add Section' button.** The UI for creating watchlist sections can now be hidden by disabling the [watchlist_sections](https://www.tradingview.com/charting-library-docs/latest/customization/Featuresets#watchlist_sections) featureset.
+
 ## Version 26
 
 *Date: Tue Jul 18 2023*
@@ -15,7 +40,7 @@
 
 **New Features**
 
-- **Adding more layouts to Trading Platform.** Users can display up to 16 charts on Trading Platform. (`Trading Terminal Only`)
+- **Adding more layouts to Trading Platform.** Users can display up to 16 charts on Trading Platform. (`Trading Platform Only`)
 - **In bottom toolbar, tooltip text for date ranges has changed.** Hovering over the time frame buttons will provide more details to understand how chart is constructed.
 - **Add setting for visibility of A (auto) and L (log) scale buttons.** In Chart settings, Scale tab, a new setting has been introduced to enable shortcuts for Auto & Logarithmic modes.
 - **Bug in compare data displayed in Data window.** There was an issue where OHLC values would only be displayed in the data window widget when using the cross hair selection instead of displaying the data from the latest available bar if nothing was selected. Fixes [#7769](https://github.com/tradingview/charting_library/issues/7769)
@@ -26,10 +51,10 @@
 
 - **Fixed a bug where on some DPR there was no separator between the right widget panel and the order panel.** Now the separator line is always visible.
 - **No bracket settings in chart settings.** Bracket settings were added to the Chart settings in the Trading tab.
-- **Symbol logos within the Legend and Account Manager.** Symbol logos can now be displayed within the [Legend](https://www.tradingview.com/charting-library-docs/latest/ui_elements/Legend#displaying-logos-within-the-legend) and the Account Manager panel (`Trading Terminal Only`) if the `show_symbol_logos` featureset is enabled.
+- **Symbol logos within the Legend and Account Manager.** Symbol logos can now be displayed within the [Legend](https://www.tradingview.com/charting-library-docs/latest/ui_elements/Legend#displaying-logos-within-the-legend) and the Account Manager panel (`Trading Platform Only`) if the `show_symbol_logos` featureset is enabled.
   - `show_symbol_logo_in_legend` featureset can be disabled to hide the logos within the legend.
   - `show_symbol_logo_for_compare_studies` featureset can be disabled to hide the logos within the legend for compare overlay studies.
-  - `show_symbol_logo_in_account_manager` featureset can be disabled to hide the logos within the Account Manager panel (`Trading Terminal Only`).
+  - `show_symbol_logo_in_account_manager` featureset can be disabled to hide the logos within the Account Manager panel (`Trading Platform Only`).
 - **Added setter and getter methods for CSS custom properties defined within the iframe.** The widget API now includes [setCSSCustomProperty](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IChartingLibraryWidget#setcsscustomproperty) and [getCSSCustomPropertyValue](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IChartingLibraryWidget#getcsscustompropertyvalue) methods for controlling CSS custom properties within the chart's iframe element.
 
 **Other**
@@ -51,7 +76,7 @@ Enabling this new `always_show_legend_values_on_mobile` featureset allows you to
 
 **Improvements**
 
-- **Sections can now be added within the Watchlist.** Sections dividers can now be added within the watchlist (`Trading Terminal Only`).
+- **Sections can now be added within the Watchlist.** Sections dividers can now be added within the watchlist (`Trading Platform Only`).
   - Any item within a list which is prefixed with `###` will be considered a section divider. [API Reference](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IChartingLibraryWidget#watchlist)
 - **Symbol and exchange logos can now be shown within the Compare Dialog.** The [symbol info](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.LibrarySymbolInfo) provided by [resolveSymbol](https://www.tradingview.com/charting-library-docs/latest/connecting_data/Datafeed-API#resolvesymbol) should now include 'exchange_logo' if you would like to use the 'show_exchange_logos' featureset.
 
@@ -72,7 +97,7 @@ Enabling this new `always_show_legend_values_on_mobile` featureset allows you to
 **New Features**
 
 - **Added Market status state getter.** [marketStatus](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IChartWidgetApi#marketstatus) method is provided within [IChartWidgetApi](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IChartWidgetApi) which returns a watched value of the charts symbols current [market status](https://www.tradingview.com/charting-library-docs/latest/api/enums/Charting_Library.MarketStatus).
-- **Symbol and exchange logos.** It is now possible to specify logo images for symbols and exchanges. These will be visible within the search dialog, and watchlist (Trading Terminal). The `show_symbol_logos` and `show_exchange_logos` featuresets should be enabled, and your datafeed should be updated to provide urls as part of the symbol info supplied by the `resolveSymbol` method, and results supplied by the `searchSymbols` method.
+- **Symbol and exchange logos.** It is now possible to specify logo images for symbols and exchanges. These will be visible within the search dialog, and watchlist (Trading Platform). The `show_symbol_logos` and `show_exchange_logos` featuresets should be enabled, and your datafeed should be updated to provide urls as part of the symbol info supplied by the `resolveSymbol` method, and results supplied by the `searchSymbols` method.
 - **Enable custom studies to extend the time scale.** Enable custom studies to extend the time scale with points that don't exist in the main series.
   - [See this article for more info](https://www.tradingview.com/charting-library-docs/latest/custom_studies/Studies-Extending-The-Time-Scale)
 - **Added Custom Symbol Status API.** The new [Custom Symbol Status API](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.ICustomSymbolStatusApi) enables the creation and customisation of an additional status to be displayed for the symbol within the legend area.
@@ -85,12 +110,12 @@ Enabling this new `always_show_legend_values_on_mobile` featureset allows you to
 
 - **Added Watermark API.** The new [Watermark API](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IWatermarkApi) enables the customisation of the watermark text in addition to providing [WatchedValues](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IWatchedValue) for the color and visibility properties.
   - The Watermark API can be accessed via the [`watermark`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IChartingLibraryWidget#watermark) method on the chart widget.
-- **Updated broker API sample to support bracket orders.** The sample broker API has been updated to support brackets (stop loss, and take profit) orders. `Trading Terminal Only`
+- **Updated broker API sample to support bracket orders.** The sample broker API has been updated to support brackets (stop loss, and take profit) orders. `Trading Platform Only`
 - **Drawings in saved charts now restore with the saved settings for lock and disableSelection.** The `lock` and `disableSelection` settings for a created shape will now be saved and restored correctly. [#6761](https://github.com/tradingview/charting_library/issues/6761)
 - **Fullscreen button can now be used to exit fullscreen mode as well.** When using the `header_in_fullscreen_mode` featureset, it is now possible to use the fullscreen button to exit fullscreen mode.
 - **Added method to programmatically set the time frame for the active chart.** The [setTimeFrame](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IChartWidgetApi#settimeframe) method has been added to the widget which can set the time frame in a similar manner to the [Timeframes at the bottom of the chart](https://www.tradingview.com/charting-library-docs/latest/ui_elements/Time-Scale#timeframes-at-the-bottom-of-the-chart) buttons.
 - **Renaming precision dropdown values in Chart settings.** To limit confusion when dealing with the Chart settings/Precision dropdown values, some fractional ones have been renamed to more readable ones.
-- **Changing Source option in line-break & renko chart.** In Trading Terminal, it was unnecessary to offer the option to change the source of data for both Renko and Line Break, as the data is taken from the close value.
+- **Changing Source option in line-break & renko chart.** In Trading Platform, it was unnecessary to offer the option to change the source of data for both Renko and Line Break, as the data is taken from the close value.
 
 **Bug Fixes**
 
@@ -107,7 +132,7 @@ Enabling this new `always_show_legend_values_on_mobile` featureset allows you to
 - **Changed validation warning message within the close position UI.** Message changed from 'Specified value is more than the instrument maximum' to 'The amount entered exceeds the position size'.
 - **Corrected the strings for the ThemeName type definition.** The possible values should have been lowercase: 'dark' & 'light'.
 - **Moved Session breaks from Events to Appearance tab in chart options.** This reverts a breaking change made in `v25.0`.
-- **Adding snippets for Trading Terminal datafeed methods.** Some functions were lacking an out of the box snippet to use within their application.
+- **Adding snippets for Trading Platform datafeed methods.** Some functions were lacking an out of the box snippet to use within their application.
 
 ## Version 25
 
@@ -157,7 +182,7 @@ Enabling this new `always_show_legend_values_on_mobile` featureset allows you to
 
 - **Theming support for pop-up menus.** Additional CSS custom properties have been added for styling pop-up menus. Pop-up (as known as 'pop-over') menus include toolbar menus, and context menus. See the full list of CSS custom properties in the [CSS Color Themes](https://www.tradingview.com/charting-library-docs/latest/customization/styles/CSS-Color-Themes) article.
 - **Add date and time input UI for custom studies.** [Custom studies](https://www.tradingview.com/charting-library-docs/latest/custom_studies) now support defining inputs of the `'time'` type and having a GUI element (date and time pickers) in the indicators settings dialog window.
-- **setActiveChart added to the Widget API.** The currently active chart in a multi-chart layout (available on Trading Terminal only) can now be changed using the `setActiveChart` method. [more info](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IChartingLibraryWidget#setactivechart)
+- **setActiveChart added to the Widget API.** The currently active chart in a multi-chart layout (available on Trading Platform only) can now be changed using the `setActiveChart` method. [more info](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IChartingLibraryWidget#setactivechart)
 
 **Bug Fixes**
 
@@ -200,7 +225,7 @@ list.
 
 **Documentation**
 
-- **New Key Features article.** We have added the [Key Features](https://www.tradingview.com/charting-library-docs/latest/getting_started/Key-Features) article that lists features supported/unsupported in Advanced Charts and Trading Terminal.
+- **New Key Features article.** We have added the [Key Features](https://www.tradingview.com/charting-library-docs/latest/getting_started/Key-Features) article that lists features supported/unsupported in Advanced Charts and Trading Platform.
 - **How to connect data via Datafeed API.** We have added a new [tutorial on connecting data via Datafeed API](https://www.tradingview.com/charting-library-docs/latest/tutorials/implement_datafeed_tutorial/).
 It will help you implement datafeed and real-time data streaming to Advanced Charts step-by-step.
 
@@ -352,7 +377,7 @@ Please use [settings_adapter](https://www.tradingview.com/charting-library-docs/
   - UI font changes to a default system one
   - Undo/redo buttons are now relocated next to the save button
 
-**Trading Terminal**
+**Trading Platform**
 
 - Default formatter `textNoWrap` has been removed.
 - `columnId` field of [SortingParameters](../api/interfaces/Broker.SortingParameters) has been renamed to `property`.
