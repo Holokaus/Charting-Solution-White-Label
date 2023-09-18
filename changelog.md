@@ -4,6 +4,43 @@
 <!-- markdownlint-disable no-emphasis-as-header -->
 <!-- markdownlint-disable no-inline-html -->
 <!-- markdownlint-disable code-block-style -->
+## Version 26.002
+
+*Date: Mon Sep 18 2023*
+
+**Improvements**
+
+- **IOrderLineAdapter and IPositionLineAdapter now support positioning with pixel units.** The
+[setLineLength](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IOrderLineAdapter#getlinelength)
+method in the IOrderLineAdapter (returned by
+[createOrderLine](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IChartWidgetApi#createorderline))
+and IPositionLineAdapter
+([createPositionLine](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IChartWidgetApi#createpositionline))
+interfaces now support setting the unit to `'pixel'`.
+  - Additionally, when using pixel unit, you can specify a negative number to
+  position from the left edge of the chart instead.
+- **Added keyboard navigation.** Keyboard navigation (activated via alt/opt + z keyboard shortcut) and many other accessability improvements have been added to the library.
+  - A featureset [accessibility](https://www.tradingview.com/charting-library-docs/latest/customization/Featuresets#accessibility) (on by default) has been added to control this behaviour.
+- **Menu name is provided to items_processor (context menu API).** [items_processor](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.ContextMenuOptions#items_processor) within the [context_menu](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.ChartingLibraryWidgetOptions#context_menu) API now includes details about the name of menu, and the ids of the related item (such as the series, drawing, study, order, or position).
+- **Support more kinds of extended sessions.** The library now supports specifying only one of the postmarket or premarket sessions without the other.
+
+**Bug Fixes**
+
+- **On mobile devices, fixed an issue for when scrolling the pricescale with one finger while another one was holding the crosshair.**
+- **Fixed an issue where it wasn't possible to set the background colour of a candle to transparent..**
+- **52 Week High/Low indicator compatibility with empty supported_resolutions array.** Fixes [#7884](https://github.com/tradingview/charting_library/issues/7884) issue.
+- **Fixed an issue where any added indicator on the chart couldn't be undone.**
+- **Fixed issue with locking visible time range while resizing chart.** When resizing the chart window with percentage right margin, and the `lock_visible_time_range_on_resize` featureset enabled then the visible range wasn't locked correctly.
+- **SuperTrend Indicator Starting Point.** The SuperTrend would previously start drawing from zero for the first bar, instead of only drawing the indicator after the initial length (defined in the indicator's inputs) when all the possible data for a symbol has been loaded.
+- **Changing the LineStyle for a position is again available.**
+- **Styles tab for Pivot Point Standard indicator.** Resolved an issue where the style tab for the Pivot Point Standard indicator would not function correctly when the type option was set to 'Floor'.
+
+**Other**
+
+- **Custom Translation Function.** The following changes have been made to the [custom_translate_function](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.ChartingLibraryWidgetOptions#custom_translate_function)
+  - The interface name for the options has changed from `TranslateOptions` to `CustomTranslateOptions`.
+  - The `plural` field in `CustomTranslateOptions` can now be either a single string, or an array of strings.
+  - A third boolean argument is now provided. When this is true then the key provided is already translated.
 
 ## Version 26.001
 
@@ -40,7 +77,6 @@
 
 **New Features**
 
-- **Adding more layouts to Trading Platform.** Users can display up to 16 charts on Trading Platform. (`Trading Platform Only`)
 - **In bottom toolbar, tooltip text for date ranges has changed.** Hovering over the time frame buttons will provide more details to understand how chart is constructed.
 - **Add setting for visibility of A (auto) and L (log) scale buttons.** In Chart settings, Scale tab, a new setting has been introduced to enable shortcuts for Auto & Logarithmic modes.
 - **Bug in compare data displayed in Data window.** There was an issue where OHLC values would only be displayed in the data window widget when using the cross hair selection instead of displaying the data from the latest available bar if nothing was selected. Fixes [#7769](https://github.com/tradingview/charting_library/issues/7769)
