@@ -4,6 +4,18 @@
 <!-- markdownlint-disable no-emphasis-as-header -->
 <!-- markdownlint-disable no-inline-html -->
 <!-- markdownlint-disable code-block-style -->
+
+## Version 26.003
+
+*Date: Thu Oct 05 2023*
+
+**Bug Fixes**
+
+- **Do not save to localstorage when the use_localstorage_for_settings feature is disabled.** Fixed a bug where use_localstorage_for_settings did not stop some settings from being saved to localstorage.
+- **Disabling `drawing_templates` completely removes the ability to save it when using line tools.**
+- **Renaming a section within watchlist was throwing an error.**
+- **Fixed an issue where it wasn't possible to set the background colour of a Renko bar to transparent.**
+
 ## Version 26.002
 
 *Date: Mon Sep 18 2023*
@@ -11,7 +23,7 @@
 **Improvements**
 
 - **IOrderLineAdapter and IPositionLineAdapter now support positioning with pixel units.** The
-[setLineLength](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IOrderLineAdapter#getlinelength)
+[setLineLength](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IOrderLineAdapter#setlinelength)
 method in the IOrderLineAdapter (returned by
 [createOrderLine](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IChartWidgetApi#createorderline))
 and IPositionLineAdapter
