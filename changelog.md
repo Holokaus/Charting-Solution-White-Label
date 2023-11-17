@@ -5,6 +5,33 @@
 <!-- markdownlint-disable no-inline-html -->
 <!-- markdownlint-disable code-block-style -->
 
+## Version 26.004
+
+*Date: Thu Nov 16 2023*
+
+**New Features**
+
+- **Add methods to handle trading quantity.** The broker API now exposes a getter [getQty](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IBrokerConnectionAdapterHost#getqty) and a setter [setQty](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IBrokerConnectionAdapterHost#setqty) along with a subscription [subscribeSuggestedQtyChange](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IBrokerConnectionAdapterHost#subscribesuggestedqtychange) and its dependant to unsubscribe [unsubscribeSuggestedQtyChange](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IBrokerConnectionAdapterHost#unsubscribesuggestedqtychange).
+
+**Improvements**
+
+- **Added anchor option to VWAP indicator.** The VWAP indicator now has input options for source and anchor.
+  - Source allows customisation of the price source for the indicator. Defaults to `hlc3`.
+  - Anchor period setting specifies how frequently the VWAP calculation will be reset. This  Defaults to `'Session'`.
+
+**Bug Fixes**
+
+- **VWAP Indicator behaviour.** The default behaviour for the VWAP indicator has been fixed. Previously it would anchor to the earliest available data point instead of the start of each session.
+- **Displaying DOM widget data on non-tradable symbols.** `Trading Platform Only` When a symbol is non-tradable (`isTradable()` in the Broker API is returning `false`) it is now possible to display depth data in the DOM widget provided via the datafeed.
+- **The price source text is visible in the screenshot..**
+- **Fix display of price sources in Overlay study.** Price sources for symbols in the Overlay study were not being shown when the main series symbol did not have the same price source
+- **Both Trend Strength Index and Linear Regression Slope indicators were missing their zero-based property to properly plot them using a histogram..**
+
+**Documentation**
+
+- **New article on core trading concepts.** We have added a new article describing [trading concepts](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/trading-concepts) in Trading Platform.
+Learn how to integrate trading functionality into your application using the Broker API and Trading Host.
+
 ## Version 26.003
 
 *Date: Thu Oct 05 2023*
