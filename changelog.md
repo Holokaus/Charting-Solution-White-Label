@@ -4,6 +4,87 @@
 <!-- markdownlint-disable no-emphasis-as-header -->
 <!-- markdownlint-disable no-inline-html -->
 <!-- markdownlint-disable code-block-style -->
+## Version 27
+
+*Date: Wed Jan 17 2024*
+
+**Breaking Changes**
+
+- **Custom study plot style text property moved.** The chars and shapes custom study plots `text` style property was moved from `metainfo.defaults.styles.[plot id].text` to `metainfo.styles.[plot id].text`. See this GitHub issue for more details [#8184](https://github.com/tradingview/charting_library/issues/8184)
+- **Changed context menu behavior of the 'Plus' button and removed the 'show_context_menu_in_crosshair_if_only_one_item' featureset.** Now, the context menu of the *Plus* button opens even if the menu has only one item. Previously, the item's action was immediately executed if there was only one item in the context menu. Additionally, the `show_context_menu_in_crosshair_if_only_one_item` featureset has been removed.
+- **Changed parameter type in the showPositionDialog method.** The `position` parameter type of the [`showPositionDialog`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.BrokerCustomUI#showpositiondialog) method in the [`BrokerCustomUI`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.BrokerCustomUI) interface has been changed to `Position | IndividualPosition`.
+- **Renamed flags in the BrokerConfigFlags interface.** The following flags have been renamed in the [`BrokerConfigFlags`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.BrokerConfigFlags) interface:
+  - `supportTrades` flag has been renamed to `supportPositionNetting`;
+  - `supportTradeBrackets` flag has been renamed to `supportIndividualPositionBrackets`;
+  - `supportCloseTrade` flag has been renamed to `supportCloseIndividualPosition`;
+  - `supportPartialCloseTrade` flag has been renamed to `supportPartialCloseIndividualPosition`;
+  - `requiresFIFOCloseTrades` flag has been renamed to `requiresFIFOCloseIndividualPositions`.
+- **Renamed TradeBase and Trade interfaces.** The `TradeBase` interface has been renamed to [`IndividualPositionBase`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IndividualPositionBase) and the `Trade` interface has been renamed to  [`IndividualPosition`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IndividualPosition) respectfully.
+All fields and their types has been left unchanged.
+- **Renamed tradeColumns field in the AccountManagerInfo interface.** The `tradesColumns` field in the [AccountManagerInfo](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Broker.AccountManagerInfo) interface has been renamed to `individualPositionColumns`.
+- **Renamed Trade member to IndividualPosition in the ParentType enum.** The `Trade` member of the [`ParentType`](https://www.tradingview.com/charting-library-docs/latest/api/enums/Charting_Library.ParentType) enum has been renamed to `IndividualPosition`.
+- **Renamed trade related methods in the IBrokerConnectionAdapterHost interface.** The following methods in the [`IBrokerConnectionAdapterHost`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IBrokerConnectionAdapterHost) have been changed:
+  - the `tradeUpdate` method has been renamed to [`individualPositionUpdate`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IBrokerConnectionAdapterHost#individualpositionupdate). The `trade` parameter of the method has been renamed to `individualPosition`. Also, the type of that parameter has been changed to `IndividualPosition`;
+  - the `tradePartialUpdate` method has been renamed to [`individualPositionPartialUpdate`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IBrokerConnectionAdapterHost#individualpositionpartialupdate). The type of the `changes` parameter has been changed to `Partial<IndividualPosition>`;
+  - the `tradePLUpdate` method has been renamed to [`individualPositionPLUpdate`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IBrokerConnectionAdapterHost#individualpositionplupdate);
+  - the type of the `position` parameter of the [`showPositionBracketsDialog`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IBrokerConnectionAdapterHost#showpositionbracketsdialog) method has been changed to `Position | IndividualPosition`.
+- **Renamed methods in the IBrokerWithoutRealtime interface.** The following changes have been made in the [`IBrokerWithoutRealtime`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IBrokerWithoutRealtime) interface:
+  - The `closeTrade` method has been renamed to `closeIndividualPosition`;
+  - The `editTradeBrackets` method has been renamed to `editIndividualPositionBrackets`.
+- **Renamed trade method in the IBrokerCommon interface.** The `trades` method in the [`IBrokerCommon`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IBrokerCommon) has been renamed to `individualPositions`. The return type of that method has been changed to `Promise<IndividualPosition[]>`.
+- **Removed the Order Panel button from the right toolbar.** To open [_Advanced Order Ticket_](https://www.tradingview.com/charting-library-docs/latest/trading_terminal#advanced-order-ticket), users should use the _Trade_ button in _Account Manager_ now.
+
+**New Features**
+
+- **Enabled in-place editing in Legend.** Users can change a symbol and resolution right from the [_Legend_](https://www.tradingview.com/charting-library-docs/latest/ui_elements/Legend) now. [#7966](https://github.com/tradingview/charting_library/issues/7966)
+- **Added ability to show daily change in the chart legend.** New _Last day change values_ option allows users to show/hide the last day change values in the main series legend.
+To make this option available in the _Chart Settings_ dialog, use the [`legend_last_day_change`](https://www.tradingview.com/charting-library-docs/latest/customization/Featuresets#legend_last_day_change) featureset. [#8193](https://github.com/tradingview/charting_library/issues/8193)
+- **Added Quick Search.** The _Quick Search_ dialog allows users to search for drawings, UI settings, and functions, such as _Remove Indicators_.
+To open this dialog, users should click the _Quick Search_ button on the top toolbar or use the _Ctrl/Cmd_ + _K_ shortcut.
+- **Updated drawing icons.** New icons for the _Text_, _Anchored Text_, _Note_, and _Anchored Note_ drawings. [#8181](https://github.com/tradingview/charting_library/issues/8181)
+
+**Improvements**
+
+- **`BREAKING CHANGE` Refactoring of the Ichimoku Cloud indicator.** Following feedback we've re-written the Ichimoku indicator and have brought the following changes:
+  - 'Leading Span B' input is now 'Leading Span Periods'.
+  - 'Lagging Span' input is now 'Lagging Span Periods'.
+  - 'Leading Shift Periods' is a brand new input that aligns better to the original definition of the indicator.
+  - Previously, 'Lagging span' was shifting both cloud and lagging lines. This should no longer apply as 'Leading Shift Periods' now handles the offset change for 'Lagging Span'.
+- **`BREAKING CHANGE` Inputs renaming for Stochastic indicator.** Inputs for the Stochastic indicator have been renamed for consistency across our products.
+- **`BREAKING CHANGE` Broker API clean up.** `Trading Platform Only` The `positionDialogOptions` object has been removed from the Broker's Configuration. Please use the `getPositionDialogOptions` method to customize the Position dialog.
+- **Added new keyboard navigation shortcut.** Starting from version [26.002](https://www.tradingview.com/charting-library-docs/latest/releases/release-notes#version-26002), the library supports a keyboard navigation activated via the _Alt/Opt_ + _Z_ shortcut. Now, you can change this default navigation shortcut to _Tab_. To do this, enable the new  [`accessible_keyboard_shortcuts`](https://www.tradingview.com/charting-library-docs/latest/customization/Featuresets#accessible_keyboard_shortcuts) featureset. For more information, refer to [Keyboard navigation](https://www.tradingview.com/charting-library-docs/latest/getting_started/accessibility#keyboard-navigation).
+- **Added ability to cancel order dragging by pressing Esc.** If a user presses _Esc_ while dragging the order, the order will be returned to its initial position.
+
+**Bug Fixes**
+
+- **Market status text during pre-market and post-market sessions.** The countdown text in the market status pop-up tooltip (in the legend area) has been fixed for pre-market and post-market sessions. The market status icon now shows an orange sunrise icon for pre-market and a blue moon icon for post-market.
+- **Floating drawing toolbar context menu.** It wasn't possibly to override the context menu for the floating drawing toolbar.
+- **Missing translation for No data here.** No data here message that is displayed on the chart whenever no bars are returned for a given symbol was missing its translation.
+- **Fixed the pane buttons on the collapsed pane.** The pane buttons used to overlap the _Scroll to the Most Recent Bar_ button when the pane is collapsed. [#8213](https://github.com/tradingview/charting_library/issues/8213)
+- **The precision setting can be applied to all charts now.** To do this, users should specify precision in the _Chart settings_ dialog and click the _Apply to all_ button. [#8343](https://github.com/tradingview/charting_library/issues/8343) `Trading Platform Only`
+- **Fix the color of high/low price label.** Now, the color of high/low labels on the price scale corresponds to the color of the high/low lines. Users can specify this color in the _Chart settings_ dialog. [#8255](https://github.com/tradingview/charting_library/issues/8255)
+- **Disabling the 'open_account_manager' featureset now works as expected.** `Trading Platform Only`
+- **Order Panel Custom Input Fields Reactivity.** `Trading Platform Only` The reactivity of UI elements within the order panel when using custom fields has been improved (Fixes [#6607](https://github.com/tradingview/charting_library/issues/6607)).
+
+**Documentation**
+
+- **Chart customization precedence article added.** The library offers multiple approaches for changing the chart appearance and behavior.
+Explore our latest article on [customization precedence](https://www.tradingview.com/charting-library-docs/latest/customization/customization-precedence)
+for a comprehensive understanding of customization methods/properties and the sequence in which they are applied.
+- **Order Ticket dialog article added.** Refer to [Order Ticket](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/order-ticket) to learn how to provide custom fields, enable an order preview, implement your custom Order Ticket, and more.
+- **New how-to guide on metainfo.** Explore our latest [guide](https://www.tradingview.com/charting-library-docs/latest/tutorials/create-custom-indicator/metainfo-implementation) on how to implement the `metainfo` field when you create a custom indicator. For more information about custom indicators and `metainfo`, refer to the updated [Custom indicators](https://www.tradingview.com/charting-library-docs/latest/custom_studies) and [Metainfo](https://www.tradingview.com/charting-library-docs/latest/custom_studies/metainfo) articles.
+- **Bracket orders article added.** Explore our latest article on [bracket orders](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/trading-concepts/brackets) in Trading Platform.
+- **Account Manager article added.** Refer to [Account Manager](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/account-manager) for more information on creating pages, customizing columns, and configuring the Account Manager behavior.
+- **Accessibility article added.** Refer to the new [Accessibility](https://www.tradingview.com/charting-library-docs/latest/getting_started/accessibility) article for information about accessibility features that the library includes.
+- **Other documentation updates.** The new documentation version includes:
+  - Updated [Resolution](https://www.tradingview.com/charting-library-docs/latest/core_concepts/Resolution) and [Price Scale](https://www.tradingview.com/charting-library-docs/latest/ui_elements/Price-Scale) articles.
+  - A full list of overrides for built-in indicators. Refer to the [Indicator Overrides](https://www.tradingview.com/charting-library-docs/latest/customization/overrides/Studies-Overrides#list-of-overrides) article for information.
+
+**Other**
+
+- **`BREAKING CHANGE` Deprecated customFormatters and brokerFactory.** Use [`custom_formatters`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.ChartingLibraryWidgetOptions#custom_formatters)
+and [`broker_factory`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.TradingTerminalWidgetOptions#broker_factory) instead.
+- **`BREAKING CHANGE` Deprecated RawStudyMetaInfo.precision.** Use the [`format`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.RawStudyMetaInfo#format) property instead. For more information, refer to the [Metainfo](https://www.tradingview.com/charting-library-docs/latest/custom_studies/metainfo) article.
 
 ## Version 26.004
 
@@ -23,9 +104,9 @@
 
 - **VWAP Indicator behaviour.** The default behaviour for the VWAP indicator has been fixed. Previously it would anchor to the earliest available data point instead of the start of each session.
 - **Displaying DOM widget data on non-tradable symbols.** `Trading Platform Only` When a symbol is non-tradable (`isTradable()` in the Broker API is returning `false`) it is now possible to display depth data in the DOM widget provided via the datafeed.
-- **The price source text is visible in the screenshot..**
+- **The price source text is visible in the screenshot.**
 - **Fix display of price sources in Overlay study.** Price sources for symbols in the Overlay study were not being shown when the main series symbol did not have the same price source
-- **Both Trend Strength Index and Linear Regression Slope indicators were missing their zero-based property to properly plot them using a histogram..**
+- **Both Trend Strength Index and Linear Regression Slope indicators were missing their zero-based property to properly plot them using a histogram.**
 
 **Documentation**
 
@@ -66,7 +147,7 @@ interfaces now support setting the unit to `'pixel'`.
 **Bug Fixes**
 
 - **On mobile devices, fixed an issue for when scrolling the pricescale with one finger while another one was holding the crosshair.**
-- **Fixed an issue where it wasn't possible to set the background colour of a candle to transparent..**
+- **Fixed an issue where it wasn't possible to set the background colour of a candle to transparent.**
 - **52 Week High/Low indicator compatibility with empty supported_resolutions array.** Fixes [#7884](https://github.com/tradingview/charting_library/issues/7884) issue.
 - **Fixed an issue where any added indicator on the chart couldn't be undone.**
 - **Fixed issue with locking visible time range while resizing chart.** When resizing the chart window with percentage right margin, and the `lock_visible_time_range_on_resize` featureset enabled then the visible range wasn't locked correctly.
