@@ -4,6 +4,26 @@
 <!-- markdownlint-disable no-emphasis-as-header -->
 <!-- markdownlint-disable no-inline-html -->
 <!-- markdownlint-disable code-block-style -->
+
+## Version 27.001
+
+*Date: Fri Feb 2 2024*
+
+**Improvements**
+
+- **Custom indicators can now dynamically hide indicator inputs in the legend when plots are hidden.** The `hideWhenPlotsHidden` option has been added for a custom indicator's input. It enables you to hide an input's value in the legend text when the user hides all of the specified plots.
+
+**Bug Fixes**
+
+- **Allow studies that extend the time scale to load historic bars before the leftmost bar of the main series.**
+
+**Documentation**
+
+- **New articles**
+  - [Context menu](https://www.tradingview.com/charting-library-docs/latest/ui_elements/context-menu)
+  - [Orders](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/trading-concepts/orders)
+  - [Snapshots](https://www.tradingview.com/charting-library-docs/latest/ui_elements/Snapshots)
+
 ## Version 27
 
 *Date: Wed Jan 17 2024*
@@ -45,6 +65,7 @@ To open this dialog, users should click the _Quick Search_ button on the top too
 - **Added ability to show daily change in the chart legend.** New _Last day change values_ option allows users to show/hide the last day change values in the main series legend.
 To make this option available in the _Chart Settings_ dialog, use the [`legend_last_day_change`](https://www.tradingview.com/charting-library-docs/latest/customization/Featuresets#legend_last_day_change) featureset. [#8193](https://github.com/tradingview/charting_library/issues/8193)
 - **Updated drawing icons.** New icons for the _Text_, _Anchored Text_, _Note_, and _Anchored Note_ drawings. [#8181](https://github.com/tradingview/charting_library/issues/8181)
+- **Drawings can now be saved separately to the chart layout**. See [Saving Drawings Separately](https://www.tradingview.com/charting-library-docs/latest/saving_loading/saving_drawings_separately) for more details.
 
 **Improvements**
 
@@ -110,6 +131,7 @@ and [`broker_factory`](https://www.tradingview.com/charting-library-docs/latest/
 - **The price source text is visible in the screenshot.**
 - **Fix display of price sources in Overlay study.** Price sources for symbols in the Overlay study were not being shown when the main series symbol did not have the same price source
 - **Both Trend Strength Index and Linear Regression Slope indicators were missing their zero-based property to properly plot them using a histogram.**
+- **onChartReady inconsistency on Safari.** Fixed an issue where `onChartReady` wouldn't reliably get called on specific versions of Safari.
 
 **Documentation**
 

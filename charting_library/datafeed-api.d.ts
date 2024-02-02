@@ -390,13 +390,9 @@ export interface LibrarySymbolInfo {
 	 * Symbol Name
 	 * It's the name of the symbol. It is a string that your users will be able to see.
 	 * Also, it will be used for data requests if you are not using tickers.
+	 * It should not contain the exchange name.
 	 */
 	name: string;
-	/**
-	 * The full name of the symbol (contains name and exchange)
-	 * Example: `BTCE:BTCUSD`
-	 */
-	full_name: string;
 	/**
 	 * Array of base symbols
 	 * Example: for `AAPL*MSFT` it is `['NASDAQ:AAPL', 'NASDAQ:MSFT']`
@@ -408,6 +404,7 @@ export interface LibrarySymbolInfo {
 	 * Unique symbol id
 	 * It's an unique identifier for this particular symbol in your symbology.
 	 * If you specify this property then its value will be used for all data requests for this symbol. ticker will be treated the same as {@link LibrarySymbolInfo.name} if not specified explicitly.
+	 * It should not contain the exchange name.
 	 */
 	ticker?: string;
 	/**

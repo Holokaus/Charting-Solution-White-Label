@@ -3971,7 +3971,7 @@ export interface ChartingLibraryWidgetOptions {
 	 */
 	overrides?: Partial<WidgetOverrides>;
 	/**
-	 * This URL is used to send a POST request with binary chart snapshots when a user presses the snapshot button.
+	 * This URL is used to send a POST request with binary chart snapshots when a user presses the [snapshot](https://www.tradingview.com/charting-library-docs/latest/ui_elements/Snapshots.md) button.
 	 * This POST request contains `multipart/form-data` with the field `preparedImage` that represents binary data of the snapshot image in `image/png` format.
 	 *
 	 * This endpoint should return the full URL of the saved image in the response.
@@ -4143,7 +4143,7 @@ export interface ChartingLibraryWidgetOptions {
 	 */
 	header_widget_buttons_mode?: HeaderWidgetButtonsMode;
 	/**
-	 * You could use this object to override context menu. You can also change the menu on the fly using the {@link IChartingLibraryWidget.onContextMenu} method.
+	 * Use this property to override the [context menu](https://www.tradingview.com/charting-library-docs/latest/ui_elements/context-menu.md). You can also change the menu on the fly using the {@link IChartingLibraryWidget.onContextMenu} method.
 	 */
 	context_menu?: ContextMenuOptions;
 	/**
@@ -4523,6 +4523,7 @@ export interface ContextMenuItem {
 	/** Callback event when menu item is clicked */
 	click: EmptyCallback;
 }
+/** Use this interface to override the [context menu](https://www.tradingview.com/charting-library-docs/latest/ui_elements/context-menu.md).  */
 export interface ContextMenuOptions {
 	/**
 	 * Provide this function if you want to change the set of actions being displayed in the context menu.
@@ -4553,8 +4554,7 @@ export interface ContextMenuOptions {
 	 */
 	items_processor?: ContextMenuItemsProcessor;
 	/**
-	 * **Note:** This API is experimental and might be changed significantly in the future releases.
-	 * By providing this function you could override the default renderer for context menu.
+	 * Provide this function to override the default renderer for context menu so you can adjust existing menu items.
 	 */
 	renderer_factory?: ContextMenuRendererFactory;
 }
@@ -4753,9 +4753,8 @@ export interface CreateShapeOptions<TOverrides extends object> extends CreateSha
 	 */
 	shape?: "arrow_up" | "arrow_down" | "flag" | "vertical_line" | "horizontal_line" | "long_position" | "short_position" | "icon" | "emoji" | "sticker" | "anchored_text" | "anchored_note";
 	/**
-	 * An optional study ID to be attached to the owner study.
-	 * It does not mean that both the owner and all possible associated IDs will behave in tandem.
-	 * Their behavior will be independent.
+	 * The ID of an indicator that the drawing is attached to.
+	 * For more information, refer to the [Attach drawing to indicator](https://www.tradingview.com/charting-library-docs/latest/ui_elements/drawings/drawings-api.md#attach-drawing-to-indicator) section.
 	 */
 	ownerStudyId?: EntityId;
 }
@@ -4776,7 +4775,7 @@ export interface CreateShapeOptionsBase<TOverrides extends object> {
 	 */
 	disableSave?: boolean;
 	/**
-	 * Disable/enable undoing the creation of the drawing.
+	 * If `true`, users cannot cancel the drawing creation in the UI. However, users can still click the _Undo_ button to cancel previous actions.
 	 */
 	disableUndo?: boolean;
 	/**
@@ -4792,7 +4791,7 @@ export interface CreateShapeOptionsBase<TOverrides extends object> {
 	 */
 	showInObjectsTree?: boolean;
 	/**
-	 * An entity ID that can be used to associate the drawing with a study.
+	 * The ID of an indicator that the drawing is attached to. For more information, refer to the [Attach drawing to indicator](https://www.tradingview.com/charting-library-docs/latest/ui_elements/drawings/drawings-api.md#attach-drawing-to-indicator) section.
 	 */
 	ownerStudyId?: EntityId;
 	/**
@@ -9980,6 +9979,7 @@ export interface IChartWidgetApi {
 	setScrollEnabled(enabled: boolean): void;
 	/**
 	 * Get an API object for interacting with groups of drawings.
+	 * Refer to the [Drawings API](https://www.tradingview.com/charting-library-docs/latest/ui_elements/drawings/drawings-api.md#drawing-groups-api) article for more information.
 	 *
 	 * **Example**
 	 * ```javascript
@@ -10549,6 +10549,7 @@ export interface IChartingLibraryWidget {
 	takeScreenshot(): void;
 	/**
 	 * Create a snapshot of the chart and return it as a canvas.
+	 * Use this method to [implement your logic](https://www.tradingview.com/charting-library-docs/latest/ui_elements/Snapshots.md#implement-your-logic) for taking snapshots.
 	 *
 	 * @param options An optional object that customizes the returned snapshot.
 	 * @returns A promise containing a `HTMLCanvasElement` of the snapshot.
@@ -12461,7 +12462,7 @@ export interface ISettingsAdapter {
 	removeValue(key: string): void;
 }
 /**
- * Drawing Groups API.
+ * Drawing Groups API. Refer to the [Drawings API](https://www.tradingview.com/charting-library-docs/latest/ui_elements/drawings/drawings-api.md#drawing-groups-api) article for more information.
  */
 export interface IShapesGroupControllerApi {
 	/**
@@ -12804,9 +12805,9 @@ export interface ISymbolInstrument {
 	/** Ticker ID */
 	tickerid: string;
 	/** Currency Code */
-	currencyCode?: string;
+	currencyCode?: string | null;
 	/** Unit ID */
-	unitId?: string;
+	unitId?: string | null;
 	/** Bar resolution */
 	period: ResolutionString;
 	/** Index */
@@ -13806,13 +13807,9 @@ export interface LibrarySymbolInfo {
 	 * Symbol Name
 	 * It's the name of the symbol. It is a string that your users will be able to see.
 	 * Also, it will be used for data requests if you are not using tickers.
+	 * It should not contain the exchange name.
 	 */
 	name: string;
-	/**
-	 * The full name of the symbol (contains name and exchange)
-	 * Example: `BTCE:BTCUSD`
-	 */
-	full_name: string;
 	/**
 	 * Array of base symbols
 	 * Example: for `AAPL*MSFT` it is `['NASDAQ:AAPL', 'NASDAQ:MSFT']`
@@ -13824,6 +13821,7 @@ export interface LibrarySymbolInfo {
 	 * Unique symbol id
 	 * It's an unique identifier for this particular symbol in your symbology.
 	 * If you specify this property then its value will be used for all data requests for this symbol. ticker will be treated the same as {@link LibrarySymbolInfo.name} if not specified explicitly.
+	 * It should not contain the exchange name.
 	 */
 	ticker?: string;
 	/**
@@ -19083,6 +19081,8 @@ export interface StudyInputBaseInfo {
 	readonly isHidden?: boolean;
 	/** Is the input visible */
 	readonly visible?: string;
+	/** An array of plot ids, upon the hiding of which, this input should also be hidden within the legend */
+	readonly hideWhenPlotsHidden?: string[];
 }
 /**
  * A description of a study input.
