@@ -5,6 +5,24 @@
 <!-- markdownlint-disable no-inline-html -->
 <!-- markdownlint-disable code-block-style -->
 
+## Version 27.002
+
+*Date: Thu Feb 22 2024*
+
+**Improvements**
+
+- **Add positive and negative filled areas to Spread.** The Spread indicator now has a positive and negative filled area above and below the baseline value of 0. The colors of the filled areas are green and red respectively.
+
+**Bug Fixes**
+
+- **Brush drawing_event is now raising a `create` event when starting drawing.**
+
+**Documentation**
+
+- **Improved drawing documentation.** Explore our latest articles about drawings.
+  - New [Drawings API](https://www.tradingview.com/charting-library-docs/latest/ui_elements/drawings/drawings-api) article describes how to manage drawings in the code.
+  - Updated [Drawing Overrides](https://www.tradingview.com/charting-library-docs/latest/customization/overrides/Drawings-Overrides) article now includes more information on how to customize drawings.
+
 ## Version 27.001
 
 *Date: Fri Feb 2 2024*
@@ -457,7 +475,7 @@ Please use [settings_adapter](https://www.tradingview.com/charting-library-docs/
 **New Features**
 
 - **Added support for specifying custom timezones.**
-  - Additional custom timezones can now be specified for use within the library. Please see the [Adding Custom Timezones](../ui_elements/timezones#adding-custom-timezones) section within the Timezones page.
+  - Additional custom timezones can now be specified for use within the library. Please see the [Adding Custom Timezones](../ui_elements/timezones#adding-custom-time-zones) section within the Timezones page.
 - **Images within timescale marks.**
   - Timescale marks now support the rendering of images within the circular shape by specifying the `imageUrl` property. Please see the [TimescaleMark](../api/interfaces/Charting_Library.TimescaleMark) interface for more details.
 - **Support different margin rates for different order types.** [6607](https://github.com/tradingview/charting_library/issues/6607)
@@ -501,7 +519,7 @@ Please use [settings_adapter](https://www.tradingview.com/charting-library-docs/
 
 **Other**
 
-- Removed `Australia/ACT` from the list of [timezones](../ui_elements/timezones) within our documentation. Please use either the Sydney timezone or [specify your own custom timezone](../ui_elements/timezones#adding-custom-timezones).
+- Removed `Australia/ACT` from the list of [timezones](../ui_elements/timezones) within our documentation. Please use either the Sydney timezone or [specify your own custom timezone](../ui_elements/timezones#adding-custom-time-zones).
 
 ## Version 24.001
 

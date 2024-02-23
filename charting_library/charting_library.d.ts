@@ -3783,7 +3783,7 @@ export interface ChartingLibraryWidgetOptions {
 	timeframe?: TimeframeOption;
 	/**
 	 * Default time zone of the chart. The time on the timescale is displayed according to this time zone.
-	 * See the [list of supported time zones](https://www.tradingview.com/charting-library-docs/latest/ui_elements/timezones.md#supported-timezones) for available values. Set it to `exchange` to use the exchange time zone. Use the {@link ChartingLibraryWidgetOptions.overrides} section if you wish to override the default value.
+	 * See the [list of supported time zones](https://www.tradingview.com/charting-library-docs/latest/ui_elements/timezones.md#supported-time-zones) for available values. Set it to `exchange` to use the exchange time zone. Use the {@link ChartingLibraryWidgetOptions.overrides} section if you wish to override the default value.
 	 *
 	 * ```javascript
 	 * timezone: "America/New_York",
@@ -8619,7 +8619,7 @@ export interface IBrokerCommon {
 	/**
 	 * Chart can have a sub-menu `Trading` in the context menu. This method should return an array of {@link ActionMetaInfo} elements, each of them representing one context menu item.
 	 * @param  {TradeContext} context - context object passed by a browser
-	 * @param  {DefaultContextMenuActionsParams} options? - default options for the context menu action parameters
+	 * @param  {DefaultContextMenuActionsParams} [options] - default options for the context menu action parameters
 	 */
 	chartContextMenuActions(context: TradeContext, options?: DefaultContextMenuActionsParams): Promise<ActionMetaInfo[]>;
 	/**
@@ -8903,14 +8903,14 @@ export interface IBrokerConnectionAdapterHost {
 	/**
 	 * Shows the order dialog
 	 * @param  {T extends PreOrder} order - order to show in the dialog
-	 * @param  {OrderTicketFocusControl} focus? - input control to focus on when dialog is opened
+	 * @param  {OrderTicketFocusControl} [focus] - input control to focus on when dialog is opened
 	 */
 	showOrderDialog?<T extends PreOrder>(order: T, focus?: OrderTicketFocusControl): Promise<boolean>;
 	/**
 	 * Shows notification message
 	 * @param  {string} title - notification title
 	 * @param  {string} text - notification content
-	 * @param  {NotificationType} notificationType? - type of notification (default: NotificationType.Error)
+	 * @param  {NotificationType} [notificationType] - type of notification (default: NotificationType.Error)
 	 */
 	showNotification(title: string, text: string, notificationType?: NotificationType): void;
 	/**
@@ -8969,7 +8969,7 @@ export interface IBrokerConnectionAdapterHost {
 	 * Displays a message dialog to a user.
 	 * @param  {string} title - title of the message dialog
 	 * @param  {string} text - message
-	 * @param  {boolean} textHasHTML? - whether message text contains HTML
+	 * @param  {boolean} [textHasHTML] - whether message text contains HTML
 	 */
 	showMessageDialog(title: string, text: string, textHasHTML?: boolean): void;
 	/**
@@ -9351,7 +9351,7 @@ export interface IChartWidgetApi {
 	 */
 	setChartType(type: SeriesType, callback?: () => void): void;
 	/**
-	 * Force the chart to re-request data.
+	 * Force the chart to re-request data, for example if there are [internet connection issues](https://www.tradingview.com/charting-library-docs/latest/connecting_data/Datafeed-Issues.md#internet-connection-issues).
 	 * Before calling this function the `onResetCacheNeededCallback` callback from {@link IDatafeedChartApi.subscribeBars} should be called.
 	 *
 	 * **Example**
@@ -9543,7 +9543,7 @@ export interface IChartWidgetApi {
 	 * widget.activeChart().sendToBack([id]);
 	 * ```
 	 *
-	 * @param sources An array of source IDs.
+	 * @param entities An array of entity IDs.
 	 */
 	sendToBack(entities: readonly EntityId[]): void;
 	/**
@@ -10417,15 +10417,23 @@ export interface IChartingLibraryWidget {
 	 */
 	getStudiesList(): string[];
 	/**
-	 * Get an array of information about the inputs of a study.
+	 * Get an array of information about indicator inputs, including their names.
+	 * You need to know an input name to refer to this property in the code.
+	 * For example, when you change an input value using the [overrides](https://www.tradingview.com/charting-library-docs/latest/customization/overrides/Studies-Overrides.md).
+	 * Consider the [Input property](https://www.tradingview.com/charting-library-docs/latest/customization/overrides/Studies-Overrides.md#input-property) section for more information.
 	 *
 	 * @param studyName The name of a study.
 	 */
 	getStudyInputs(studyName: string): StudyInputInformation[];
 	/**
-	 * Get information about the styles of a study.
+	 * Get information about indicator properties.
+	 * You can use this information to refer to the properties in the code.
+	 * For example, when you change property values using the [overrides](https://www.tradingview.com/charting-library-docs/latest/customization/overrides/Studies-Overrides.md).
 	 *
-	 * @param studyName The name of a study.
+	 * Note that `getStudyStyles` does not return actual property names but the indicator's [metadata](https://www.tradingview.com/charting-library-docs/latest/custom_studies/metainfo/metainfo.md).
+	 * Consider the [Property path](https://www.tradingview.com/charting-library-docs/latest/customization/overrides/Studies-Overrides.md#property-path) section for more information on how to refer to the properties.
+	 *
+	 * @param studyName The name of a indicator.
 	 */
 	getStudyStyles(studyName: string): StudyStyleInfo;
 	/**
@@ -10759,9 +10767,9 @@ export interface IContext {
 	 * Load a new symbol for the custom indicator
 	 * @param  {string} tickerid - Symbol identifier
 	 * @param  {string} period - period for the new symbol
-	 * @param  {string} currencyCode? - Currency code
-	 * @param  {string} unitId? - Unit id
-	 * @param  {string} unitId? - Subsession id
+	 * @param  {string} [currencyCode] - Currency code
+	 * @param  {string} [unitId] - Unit ID
+	 * @param  {string} [subsessionId] - Subsession ID
 	 */
 	new_sym(tickerid: string, period: string, currencyCode?: string, unitId?: string, subsessionId?: string): ISymbolInstrument;
 	/**
@@ -10771,12 +10779,12 @@ export interface IContext {
 	select_sym(i: number): void;
 	/**
 	 * Creates an in-memory temporary storage with depth defined by the first call `new_var(value).get(n)`
-	 * @param  {number} value? - variable's value
+	 * @param  {number} [value] - variable's value
 	 */
 	new_var(value?: number): IPineSeries;
 	/**
 	 * Creates an in-memory temporary storage with unlimited depth.
-	 * @param  {number} value? - variable's value
+	 * @param  {number} [value] - variable's value
 	 */
 	new_unlimited_var(value?: number): IPineSeries;
 	/**
@@ -11484,6 +11492,7 @@ export interface INewsApi {
 	refresh(): void;
 }
 export interface INonSeriesStudyBarsResult {
+	type: "non_series_bars";
 	/**
 	 * Non series bars
 	 */
@@ -11875,7 +11884,7 @@ export interface IPineSeries {
 	 * - s.get(1) returns second last,
 	 * - s.get(2) - third last
 	 * - and so on
-	 * @param  {number} n? - index
+	 * @param  {number} [n] - index
 	 */
 	get(n?: number): number;
 	/**
@@ -12244,7 +12253,7 @@ export interface IPriceFormatter extends ISymbolValueFormatter {
 	/**
 	 * Price Formatter
 	 * @param  {number} price - price
-	 * @param  {boolean} signPositive? - add plus sign to result string.
+	 * @param  {boolean} [signPositive] - add plus sign to result string.
 	 * @param  {number} [tailSize] - add `tailSize` digits to fractional part of result string
 	 * @param  {boolean} [signNegative] - add minus sign to result string.
 	 * @param  {boolean} [useRtlFormat] - Use Right to left format
@@ -12312,14 +12321,14 @@ export interface IPriceScaleApi {
 	currency(): CurrencyInfo | null;
 	/**
 	 * Sets a currency on the price scale.
-	 * @param  {currency} string | null - currency supported by your backend (for example 'EUR', 'USD'). A null value will reset the currency to default.
+	 * @param  {string|null} currency - currency supported by your backend (for example 'EUR', 'USD'). A null value will reset the currency to default.
 	 */
 	setCurrency(currency: string | null): void;
 	/** Returns the current unit info set on the price scale if any or null if none is specified */
 	unit(): UnitInfo | null;
 	/**
 	 * Sets a unit on the price scale.
-	 * @param  {unit} string | null - unit supported by your backend (for example 'weight', 'energy'). A null value will reset the unit to default.
+	 * @param  {string|null} unit - unit supported by your backend (for example 'weight', 'energy'). A null value will reset the unit to default.
 	 */
 	setUnit(unit: string | null): void;
 }
@@ -12331,11 +12340,12 @@ export interface IProjectionStudyResult {
 	/** last price displayed on price scale */
 	price?: number;
 	/** always projection */
-	type?: "projection";
+	type: "projection";
 	/** box size is displayed in the legend */
 	boxSize?: number;
 	/** reversal amount is displayed in the legend */
 	reversalAmount?: number;
+	projectionTime?: number;
 }
 /**
  * Allows you to select entities ([drawings](https://www.tradingview.com/charting-library-docs/latest/ui_elements/Drawings) and [indicators](https://www.tradingview.com/charting-library-docs/latest/ui_elements/indicators/)) on the chart. Consider the following example:
@@ -13041,7 +13051,7 @@ export interface IWatchedValue<T> extends IWatchedValueReadonly<T>, IObservableV
 	/**
 	 * Set value for the watched value
 	 * @param  {T} value - value to set
-	 * @param  {boolean} forceUpdate? - force an update
+	 * @param  {boolean} [forceUpdate] - force an update
 	 */
 	setValue(value: T, forceUpdate?: boolean): void;
 	/** @inheritDoc */
@@ -18351,6 +18361,14 @@ export interface SortingParameters {
  */
 export interface SpreadIndicatorOverrides {
 	/** Default value: `0` */
+	"negative fill.transparency": number;
+	/** Default value: `true` */
+	"negative fill.visible": boolean;
+	/** Default value: `0` */
+	"positive fill.transparency": number;
+	/** Default value: `true` */
+	"positive fill.visible": boolean;
+	/** Default value: `0` */
 	"plot.linestyle": number;
 	/** Default value: `2` */
 	"plot.linewidth": number;
@@ -18364,6 +18382,20 @@ export interface SpreadIndicatorOverrides {
 	"plot.color": string;
 	/** Default value: `15` */
 	"plot.display": number;
+	/** Default value: `0` */
+	"baseline.linestyle": number;
+	/** Default value: `2` */
+	"baseline.linewidth": number;
+	/** Default value: `line` */
+	"baseline.plottype": LineStudyPlotStyleName;
+	/** Default value: `false` */
+	"baseline.trackprice": boolean;
+	/** Default value: `0` */
+	"baseline.transparency": number;
+	/** Default value: `rgba(0, 0, 0, 0)` */
+	"baseline.color": string;
+	/** Default value: `0` */
+	"baseline.display": number;
 	[key: string]: StudyOverrideValueType;
 }
 /**
@@ -22771,6 +22803,14 @@ export interface StudyOverrides {
 	 */
 	"smoothed moving average.source": string;
 	/** Default value: `0` */
+	"spread.negative fill.transparency": number;
+	/** Default value: `true` */
+	"spread.negative fill.visible": boolean;
+	/** Default value: `0` */
+	"spread.positive fill.transparency": number;
+	/** Default value: `true` */
+	"spread.positive fill.visible": boolean;
+	/** Default value: `0` */
 	"spread.plot.linestyle": number;
 	/** Default value: `2` */
 	"spread.plot.linewidth": number;
@@ -22784,6 +22824,20 @@ export interface StudyOverrides {
 	"spread.plot.color": string;
 	/** Default value: `15` */
 	"spread.plot.display": number;
+	/** Default value: `0` */
+	"spread.baseline.linestyle": number;
+	/** Default value: `2` */
+	"spread.baseline.linewidth": number;
+	/** Default value: `line` */
+	"spread.baseline.plottype": LineStudyPlotStyleName;
+	/** Default value: `false` */
+	"spread.baseline.trackprice": boolean;
+	/** Default value: `0` */
+	"spread.baseline.transparency": number;
+	/** Default value: `rgba(0, 0, 0, 0)` */
+	"spread.baseline.color": string;
+	/** Default value: `0` */
+	"spread.baseline.display": number;
 	/**
 	 * - Default value: `close`
 	 * - Input type: `text`
@@ -27046,9 +27100,10 @@ export type Direction = "buy" | "sell";
  */
 export type DrawingEventType = "click" | "move" | "remove" | "hide" | "show" | "create" | "properties_changed" | "points_changed";
 /**
- * **Override properties for drawing tools.**
+ * Override properties for drawings.
+ * Refer to the [Drawing Overrides](https://www.tradingview.com/charting-library-docs/latest/customization/overrides/Drawings-Overrides.md) article for information on how to customize drawings.
  *
- * **The following constants are used within the default properties. You cannot use these names directly.**
+ * The following constants are used within the default properties. You cannot use these names directly.
  *
  * - LINESTYLE
  *   - SOLID = 0
@@ -27150,17 +27205,19 @@ export type IProjectionBar = [
 /**
  * An array of bar values.
  *
- * [time, open, high, low, close, volume, updatetime, isBarClosed]
+ * [time, open, high, low, close, volume, updatetime, isBarClosed, emptyBars, emptyBarsPrice]
  */
 export type ISeriesStudyResult = [
-	number,
-	number,
-	number,
-	number,
-	number,
-	number,
-	number | undefined,
-	boolean | undefined
+	time: number,
+	open: number,
+	high: number,
+	low: number,
+	close: number,
+	volume: number,
+	updatetime: number | undefined,
+	isBarClosed: boolean | undefined,
+	emptyBars: number[] | undefined,
+	emptyBarsPrice: number | undefined
 ];
 /**
  * Input field validator
