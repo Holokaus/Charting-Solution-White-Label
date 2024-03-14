@@ -5,6 +5,23 @@
 <!-- markdownlint-disable no-inline-html -->
 <!-- markdownlint-disable code-block-style -->
 
+## Version 27.003
+
+*Date: Thu Mar 14 2024*
+
+**Improvements**
+
+- **Added the resetLayoutSizes method.** Use [`resetLayoutSizes`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IChartingLibraryWidget#resetlayoutsizes) to reset the sizes of all charts within a multiple-chart layout back to their initial default values. `Trading Platform Only`
+- **Added the unloadUnusedCharts method.** The [`unloadUnusedCharts`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IChartingLibraryWidget#unloadunusedcharts) method deletes non-visible charts from a multiple-chart layout. Use this method to
+prevent the library's inherent behavior to restore previously displayed charts instead of creating new
+charts when changing layouts. `Trading Platform Only`
+
+**Bug Fixes**
+
+- **Displaying volume indicator on chart load when visible_plots_set is not specified.** The chart will now correctly display the volume indicator if the `create_volume_indicator_by_default` featureset is enabled even if the symbols [LibrarySymbolInfo](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.LibrarySymbolInfo) doesn't specify the optional [`visible_plots_set`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.LibrarySymbolInfo#visible_plots_set) property.
+- **Prioritise widget constructor symbol over saved state.** The [`symbol`](../api/interfaces/Charting_Library.ChartingLibraryWidgetOptions#symbol) property in the widget constructor will now have priority over symbols loaded from saved chart states when using [`saved_data`](../api/interfaces/Charting_Library.ChartingLibraryWidgetOptions#saved_data) or [`load_last_chart`](../api/interfaces/Charting_Library.ChartingLibraryWidgetOptions#load_last_chart). Fixes [#7922](https://github.com/tradingview/charting_library/issues/7922) [#8473](https://github.com/tradingview/charting_library/issues/8473) [#7926](https://github.com/tradingview/charting_library/issues/7926) [#8168](https://github.com/tradingview/charting_library/issues/8168)
+- **Fixed an issue where the time_frames description was ignored.**
+
 ## Version 27.002
 
 *Date: Thu Feb 22 2024*
