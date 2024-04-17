@@ -5,6 +5,37 @@
 <!-- markdownlint-disable no-inline-html -->
 <!-- markdownlint-disable code-block-style -->
 
+## Version 27.004
+
+*Date: Wed Apr 17 2024*
+
+**Breaking Changes**
+
+- **Fixed time parameters in CrossHairMovedEventParams.** In version 26.001, we changed the `time` property of [`CrossHairMovedEventParams`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.CrossHairMovedEventParams) to be a timestamp in the selected time zone.
+In this version, we reverted that change, and `time` represents a UTC timestamp again. Additionally, we introduced a new [`userTime`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.CrossHairMovedEventParams#usertime) property that represents a timestamp in the selected time zone.
+
+**Improvements**
+
+- **Added ability to disable pulse animation when chart type is set to Line.** New _disable_pulse_animation_ featureset allows users to disable the pulse animation when chart type is set to Line.
+
+**Bug Fixes**
+
+- **Fixed the price scale placement.** The [price scale](https://www.tradingview.com/charting-library-docs/latest/ui_elements/Price-Scale) should be placed back to its original position when a change made through the _Settings_ dialog is canceled. Fixes [#4991](https://github.com/tradingview/charting_library/issues/4991)
+- **Fixed the 52 Week High/Low indicator issue.** The 52 Week High/Low indicator no longer adds an empty space to the price scale when less than 52 weeks of historic bars are available. Fixes [#8137](https://github.com/tradingview/charting_library/issues/8137) [#8469](https://github.com/tradingview/charting_library/issues/8469)
+- **Only calculate VWAP value when entire anchor period is loaded.** The VWAP indicator will only calculate values for the input anchor period if all bars in that period have been loaded.
+- **Fixed a trailing stop modification dialog error.** Fixed a problem where opening the Order Ticket for a trailing stop position caused a "ReferenceError: isPositionLikeItem is not defined" error to be thrown.
+- **Fixed the incorrect point position for the Long Position drawing.** The `getPositionPoints()` method will now return correct point positions. Fixes [#8230](https://github.com/tradingview/charting_library/issues/8230)
+- **`BREAKING CHANGE` Position line price label does not use the correct price formatter.** The price scale will now correctly reflect the value when a formatter is used with [`createPositionLine`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IChartWidgetApi#createpositionline).
+Both [`createOrderLine`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IChartWidgetApi#createorderline) and [`createPositionLine`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IChartWidgetApi#createpositionline) methods behave similarly to the corresponding actions made in the UI via [Order Ticket](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/order-ticket).
+Fixes [#8413](https://github.com/tradingview/charting_library/issues/8413) [#8324](https://github.com/tradingview/charting_library/issues/8324)
+
+**Documentation**
+
+- **New User accounts article.** Refer to [User accounts](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/account-manager/user-accounts) for information on how to manage user accounts in the [Account Manager](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/account-manager).
+- **Session documentation updates.** The [Symbology](https://www.tradingview.com/charting-library-docs/latest/connecting_data/Symbology#session) and [Extended sessions](https://www.tradingview.com/charting-library-docs/latest/connecting_data/Extended-Sessions) articles now include more information on how to specify sessions and corrections for them.
+- **New Save user settings article.** Refer to the [Save user settings](https://www.tradingview.com/charting-library-docs/latest/saving_loading/user-settings) article for information on how to store user settings.
+- **Updated Watchlist article.** Explore our latest [Watchlist](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/Watch-List) article that describes how to customize and handle the watchlist's data.
+
 ## Version 27.003
 
 *Date: Thu Mar 14 2024*
@@ -15,6 +46,7 @@
 - **Added the unloadUnusedCharts method.** The [`unloadUnusedCharts`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IChartingLibraryWidget#unloadunusedcharts) method deletes non-visible charts from a multiple-chart layout. Use this method to
 prevent the library's inherent behavior to restore previously displayed charts instead of creating new
 charts when changing layouts. `Trading Platform Only`
+- **Added a new type that reflects the ID of the created indicator.** A new [`study_event`](../api/interfaces/Charting_Library.SubscribeEventsMap.md#study_event) type was added: `create`. It returns the `id` of the newly created indicator.
 
 **Bug Fixes**
 
@@ -601,7 +633,3 @@ Please use [settings_adapter](https://www.tradingview.com/charting-library-docs/
 - Type of `formatter` field in [column description](../api/interfaces/Broker.AccountManagerColumnBase#formatter) has been changed to [StandardFormatterName | FormatterName](../api/enums/Charting_Library.StandardFormatterName).
 - `property` field has been removed from `column description`. Use [dataFields](../api/interfaces/Broker.AccountManagerColumnBase#datafields) field instead.
 - Type of `formatter` field in [SummaryField](../api/interfaces/Broker.AccountManagerSummaryField) has been changed to [StandardFormatterName](../api/enums/Charting_Library.StandardFormatterName).
-
-## Older Versions
-
-For breaking changes on older versions of the library please consult this page: [Breaking Changes](https://github.com/tradingview/charting_library/wiki/Breaking-Changes)
