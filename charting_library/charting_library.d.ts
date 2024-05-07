@@ -8621,8 +8621,25 @@ export interface IBoxedValueReadOnly<T> {
 	value(): T;
 }
 export interface IBrokerAccountInfo {
+	/**
+	 * The library calls `accountsMetainfo` to get a list of accounts for a particular user.
+	 * The method should return an array that contains an ID and name for each account.
+	 *
+	 * Note that if `accountsMetainfo` returns an array containing more than one element, you should implement the {@link setCurrentAccount} method.
+	 * Refer to [User accounts](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/account-manager/user-accounts.md) for more information.
+	 */
 	accountsMetainfo(): Promise<AccountMetainfo[]>;
+	/**
+	 * The library calls `currentAccount` to get the current account ID.
+	 */
 	currentAccount(): AccountId;
+	/**
+	 * The library calls `setCurrentAccount` when users switch accounts using the drop-down menu in the [Account Manager](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/account-manager/account-manager.md).
+	 * This method provides your backend server with the ID of the selected account.
+	 *
+	 * Note that `setCurrentAccount` is required if {@link accountsMetainfo} returns an array containing more than one element.
+	 * Refer to [Multiple accounts](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/account-manager/user-accounts.md#multiple-accounts) for more information.
+	 */
 	setCurrentAccount?(id: AccountId): void;
 }
 export interface IBrokerCommon {
@@ -8633,19 +8650,19 @@ export interface IBrokerCommon {
 	 */
 	chartContextMenuActions(context: TradeContext, options?: DefaultContextMenuActionsParams): Promise<ActionMetaInfo[]>;
 	/**
-	 * This function is required for the Floating Trading Panel.
-	 * The ability to trade via the panel depends on the result of this function: `true` or `false`.
-	 * You don't need to implement this method if all symbols can be traded.
-	 *
-	 * If you want to show a custom message with the reason why the symbol cannot be traded then you can return an object `IsTradableResult`.
+	 * The library calls this method to check if a symbol can be traded.
+	 * If the method returns `false`, users will see the *Non-tradable symbol* message in the UI when creating orders.
+	 * You can also show a custom message with the reason why the symbol cannot be traded and the possible solution to resolve the issue.
+	 * To do this, return an `IsTradableResult` object.
 	 * @param  {string} symbol - symbol identifier
 	 */
 	isTradable(symbol: string): Promise<boolean | IsTradableResult>;
 	/**
-	 * Connection status for the Broker API.
+	 * Defines the connection status for the Broker API.
+	 * You don't need to return values other than `1` (`Connected`) since the broker is already connected when you create the widget.
 	 *
-	 * You don't need to return values other than `1` (`Connected`) typically since the broker is already connected when you create the widget.
-	 * You can use it if you want to display a spinner in the bottom panel while the data is being loaded.
+	 * If the method is not implemented, the [Account Manager](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/account-manager/account-manager.md) will have a spinner instead of the user's trading data.
+	 * In the console, the *Trading.Core:Broker broker creation error* will also be displayed.
 	 */
 	connectionStatus(): ConnectionStatus;
 	/**
@@ -8675,12 +8692,12 @@ export interface IBrokerCommon {
 	 */
 	executions(symbol: string): Promise<Execution[]>;
 	/**
-	 * Called by the internal Order dialog, DOM panel, and floating trading panel to get symbol information.
+	 * Called by the Order Ticket and DOM panel to get symbol information.
 	 * @param  {string} symbol - symbol identifier
 	 */
 	symbolInfo(symbol: string): Promise<InstrumentInfo>;
 	/**
-	 * This function should return the information that will be used to build an Account manager.
+	 * This function should return the information that will be used to build the [Account Manager](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/account-manager/account-manager.md).
 	 */
 	accountManagerInfo(): AccountManagerInfo;
 	/**
@@ -8857,13 +8874,13 @@ export interface IBrokerConnectionAdapterHost {
 	 */
 	individualPositionPLUpdate(individualPositionId: string, pl: number): void;
 	/**
-	 * Call this method when a broker connection has received an equity update. This method is required by the standard Order Dialog to calculate risks.
+	 * Call this method when a broker connection has received an equity update. This method is required by the standard Order Ticket to calculate risks.
 	 * @param  {number} equity - updated equity
 	 */
 	equityUpdate(equity: number): void;
 	/**
 	 * Call this method when a broker connection has received a margin available update.
-	 * This method is required by the standard Order Dialog to display the margin meter.
+	 * This method is required by the standard Order Ticket to display the margin meter.
 	 * This method should be used when {@link BrokerConfigFlags.supportMargin} is set to `true` in {@link SingleBrokerMetaInfo.configFlags}.
 	 * The Trading Platform subscribes to margin available updates using {@link IBrokerWithoutRealtime.subscribeMarginAvailable}.
 	 * @param  {number} marginAvailable - updated available margin
@@ -8871,7 +8888,7 @@ export interface IBrokerConnectionAdapterHost {
 	marginAvailableUpdate(marginAvailable: number): void;
 	/**
 	 * Call this method when a broker connection has received a balance update.
-	 * This method is required by the crypto Order Dialog.
+	 * This method is required by the crypto Order Ticket.
 	 * It should be implemented when the {@link BrokerConfigFlags.supportBalances} flag is set to `true` in {@link SingleBrokerMetaInfo.configFlags}.
 	 * @param  {string} symbol - symbol ID
 	 * @param  {CryptoBalance} balance - updated crypto balance
@@ -8911,7 +8928,7 @@ export interface IBrokerConnectionAdapterHost {
 	 */
 	unsubscribeSuggestedQtyChange(symbol: string, listener: SuggestedQtyChangedListener): void;
 	/**
-	 * Shows the order dialog
+	 * Shows the Order Ticket
 	 * @param  {T extends PreOrder} order - order to show in the dialog
 	 * @param  {OrderTicketFocusControl} [focus] - input control to focus on when dialog is opened
 	 */
@@ -8924,13 +8941,13 @@ export interface IBrokerConnectionAdapterHost {
 	 */
 	showNotification(title: string, text: string, notificationType?: NotificationType): void;
 	/**
-	 * Shows the cancel order dialog for specified order
+	 * Shows the cancel Order Ticket for specified order
 	 * @param  {string} orderId - id of order to potentially cancel
 	 * @param  {()=>Promise<void>} handler - cancel order confirmation handler (called when order should be cancelled)
 	 */
 	showCancelOrderDialog(orderId: string, handler: () => Promise<void>): Promise<void>;
 	/**
-	 * Shows the cancel order dialog for multiple orders
+	 * Shows the cancel Order Ticket for multiple orders
 	 * @param  {string} symbol - symbol for which to cancel orders
 	 * @param  {Side} side - side of the order
 	 * @param  {number} qty - quantity of the order
@@ -9137,20 +9154,20 @@ export interface IBrokerWithoutRealtime extends IBrokerCommon, IBrokerAccountInf
 	 */
 	previewLeverage?(leverageSetParams: LeverageSetParams): Promise<LeveragePreviewResult>;
 	/**
-	 * The method should be implemented if you use the standard Order dialog and support stop loss. Equity is used to calculate Risk in Percent.
+	 * The method should be implemented if you use the standard Order Ticket and support stop loss. Equity is used to calculate Risk in Percent.
 	 *
 	 * Once this method is called the broker should provide equity (Balance + P/L) updates via {@link IBrokerConnectionAdapterHost.equityUpdate} method.
 	 */
 	subscribeEquity?(): void;
 	/**
-	 * The method should be implemented if you use the standard Order dialog and want to show the margin meter.
+	 * The method should be implemented if you use the standard Order Ticket and want to show the margin meter.
 	 *
 	 * Once this method is called the broker should provide margin available updates via {@link IBrokerConnectionAdapterHost.marginAvailableUpdate} method.
 	 * @param  {string} symbol - symbol identifier
 	 */
 	subscribeMarginAvailable?(symbol: string): void;
 	/**
-	 * The method should be implemented if you use a standard Order dialog.
+	 * The method should be implemented if you use a standard Order Ticket.
 	 * `pipValues` is displayed in the Order info and it is used to calculate the Trade Value and risks.
 	 * If this method is not implemented then `pipValue` from the `symbolInfo` is used in the order panel/dialog.
 	 *
@@ -9159,21 +9176,21 @@ export interface IBrokerWithoutRealtime extends IBrokerCommon, IBrokerAccountInf
 	 */
 	subscribePipValue?(symbol: string): void;
 	/**
-	 * The method should be implemented if you use a standard Order dialog and implement `subscribePipValue`.
+	 * The method should be implemented if you use a standard Order Ticket and implement `subscribePipValue`.
 	 *
 	 * Once this method is called the broker should stop providing `pipValue` updates.
 	 * @param  {string} symbol - symbol identifier
 	 */
 	unsubscribePipValue?(symbol: string): void;
 	/**
-	 * The method should be implemented if you use the standard Order dialog want to show the margin meter.
+	 * The method should be implemented if you use the standard Order Ticket want to show the margin meter.
 	 *
 	 * Once this method is called the broker should stop providing margin available updates.
 	 * @param  {string} symbol - symbol identifier
 	 */
 	unsubscribeMarginAvailable?(symbol: string): void;
 	/**
-	 * The method should be implemented if you use the standard Order dialog and support stop loss.
+	 * The method should be implemented if you use the standard Order Ticket and support stop loss.
 	 *
 	 * Once this method is called the broker should stop providing equity updates.
 	 */
@@ -13952,7 +13969,7 @@ export interface LibrarySymbolInfo {
 	/**
 	 * Format of displaying labels on the price scale:
 	 *
-	 * `price` - formats decimal or fractional numbers based on `minmov`, `pricescale`, `minmove2`, `fractional` and `variableMinTick` values. See [Price Formatting](https://www.tradingview.com/charting-library-docs/latest/connecting_data/Symbology#price-format) for more details
+	 * `price` - formats decimal or fractional numbers based on `minmov`, `pricescale`, `minmove2`, `fractional` and `variableMinTick` values. See [Price format](https://www.tradingview.com/charting-library-docs/latest/connecting_data/Symbology.md#price-format) for more details.
 	 * `volume` - formats decimal numbers in thousands, millions, billions or trillions
 	 */
 	format: SeriesFormat;
@@ -24872,6 +24889,11 @@ export interface SubscribeEventsMap {
 	 * Panes' order has changed.
 	 */
 	panes_order_changed: () => void;
+	/**
+	 * Chart's widget bar is shown/hidden.
+	 * @param  {boolean} isVisible - if the widget bar is currently hidden
+	 */
+	widgetbar_visibility_changed: (isVisible: boolean) => void;
 }
 export interface SuccessFormatterParseResult<T> extends FormatterParseResult {
 	/** @inheritDoc */
@@ -25428,9 +25450,9 @@ export interface TradingTerminalWidgetOptions extends Omit<ChartingLibraryWidget
 	 * See {@link ChartingLibraryWidgetOptions.favorites}
 	 */
 	favorites?: Favorites<TradingTerminalChartTypeFavorites>;
-	/** configuration flags for the Trading Platform. */
+	/** Defines the [configuration flags](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/trading-concepts/trading-features-configuration.md) for the Trading Platform. */
 	brokerConfig?: SingleBrokerMetaInfo;
-	/** configuration flags for the Trading Platform. */
+	/** Defines the [configuration flags](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/trading-concepts/trading-features-configuration.md) for the Trading Platform. */
 	broker_config?: SingleBrokerMetaInfo;
 	/** Connection configuration settings for Rest Broker API */
 	restConfig?: RestBrokerConnectionInfo;
@@ -27612,7 +27634,7 @@ export type TradingTerminalFeatureset = ChartingLibraryFeatureset |
 "right_toolbar" | 
 /** Shows the Order Panel @default true */
 "order_panel" | 
-/** Shows the Order info section in the Order dialog @default true */
+/** Shows the Order info section in the Order Ticket @default true */
 "order_info" | 
 /** Shows the Buy/Sell Buttons in Legend @default true */
 "buy_sell_buttons" | 

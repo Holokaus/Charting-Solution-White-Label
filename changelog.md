@@ -5,6 +5,19 @@
 <!-- markdownlint-disable no-inline-html -->
 <!-- markdownlint-disable code-block-style -->
 
+## Version 27.005
+
+*Date: Tue May 07 2024*
+
+**Improvements**
+
+- **Update the Anchored AVWAP drawing.** Add bands settings to the Anchored VWAP drawing.
+- **Subscribe to widget bar visibility events.** A new [`study_event`](../api/interfaces/Charting_Library.SubscribeEventsMap.md#study_event) type was added: `widgetbar_visibility_changed`. It returns the visibility state of the widget bar.
+
+**Bug Fixes**
+
+- **Fixed a bug in the Market Status pop-up.** [Corrections](https://www.tradingview.com/charting-library-docs/latest/connecting_data/Extended-Sessions#corrections-for-extended-sessions) specified for the extended session in the [`session-correction`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.LibrarySubsessionInfo#session-correction) properties were not displayed in the _Market Status_ pop-up window.
+
 ## Version 27.004
 
 *Date: Wed Apr 17 2024*

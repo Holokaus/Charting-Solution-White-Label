@@ -478,7 +478,7 @@ export interface LibrarySymbolInfo {
 	/**
 	 * Format of displaying labels on the price scale:
 	 *
-	 * `price` - formats decimal or fractional numbers based on `minmov`, `pricescale`, `minmove2`, `fractional` and `variableMinTick` values. See [Price Formatting](https://www.tradingview.com/charting-library-docs/latest/connecting_data/Symbology#price-format) for more details
+	 * `price` - formats decimal or fractional numbers based on `minmov`, `pricescale`, `minmove2`, `fractional` and `variableMinTick` values. See [Price format](https://www.tradingview.com/charting-library-docs/latest/connecting_data/Symbology.md#price-format) for more details.
 	 * `volume` - formats decimal numbers in thousands, millions, billions or trillions
 	 */
 	format: SeriesFormat;
