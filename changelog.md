@@ -5,6 +5,14 @@
 <!-- markdownlint-disable no-inline-html -->
 <!-- markdownlint-disable code-block-style -->
 
+## Version 27.006
+
+*Date: Tue May 21 2024*
+
+**Bug Fixes**
+
+- **Resolve quotes with ticker instead of symbol name.** The library will now request quote data using the [`ticker`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.LibrarySymbolInfo#ticker) property. If `ticker` is not provided in the `LibrarySymbolInfo` object, the `name` property will be used instead. This should resolve an issue some customers were experiencing where quote data was not being properly displayed in the [Watchlist](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/Watch-List) and [Legend](https://www.tradingview.com/charting-library-docs/latest/ui_elements/Legend).
+
 ## Version 27.005
 
 *Date: Tue May 07 2024*

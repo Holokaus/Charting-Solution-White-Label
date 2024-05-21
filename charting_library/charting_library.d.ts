@@ -15698,7 +15698,7 @@ export interface PineJSStd {
 	 * Current bar time
 	 *
 	 * @param context - PineJS execution context.
-	 * @returns UNIX time of current bar
+	 * @returns UNIX time of current bar according to the symbol timezone and not UTC.
 	 */
 	time(context: IContext): number;
 	/**
@@ -15706,10 +15706,9 @@ export interface PineJSStd {
 	 *
 	 * @param context - PineJS execution context.
 	 * @param period - Period
-	 * @param spec
-	 * @returns UNIX time of current bar
+	 * @returns UNIX time of current bar according to the symbol timezone and not UTC.
 	 */
-	time(context: IContext, period: string, spec: unknown): number;
+	time(context: IContext, period: string): number;
 	/**
 	 * Is a shortcut for (high + low)/2
 	 *
