@@ -4,6 +4,120 @@
 <!-- markdownlint-disable no-emphasis-as-header -->
 <!-- markdownlint-disable no-inline-html -->
 <!-- markdownlint-disable code-block-style -->
+## Version 28.0.0
+
+*Date: Tue Aug 13 2024*
+
+**Breaking Changes**
+
+- **Removed `full_name`.** The `LibrarySymbolInfo.full_name` property was removed from public API. The property contained strings in the `'EXCHANGE:SYMBOL'` format and was used to request data from the datafeed. Therefore:
+  - Now, you should use either the [`name`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.LibrarySymbolInfo#name) or [`ticker`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.LibrarySymbolInfo#ticker) property to specify an identifier for a certain symbol. For more information, refer to the [Symbology](https://www.tradingview.com/charting-library-docs/latest/connecting_data/Symbology#symbol-name) article.
+  - Instead of `'EXCHANGE:SYMBOL'`, the library will send either `name` or `ticker` values to the datafeed when calling methods such as [`getBars`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IDatafeedChartApi#getbars), [`getQuotes`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IDatafeedQuotesApi#getquotes), and [`subscribeQuotes`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IDatafeedQuotesApi#subscribequotes).
+  - The `'EXCHANGE:SYMBOL'` strings are no longer displayed in the Trading Platform UI. The symbol name will be used instead. You can disable the [`prefer_symbol_name_over_fullname`](https://www.tradingview.com/charting-library-docs/latest/customization/Featuresets#prefer_symbol_name_over_fullname) featureset to revert to the old behavior. `Trading Platform Only`
+- **Deprecated API methods.** The following methods are now marked `deprecated` for the Advanced Charts users.
+  - [`createOrderLine`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IChartWidgetApi#createorderline)
+  - [`createPositionLine`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IChartWidgetApi#createpositionline)
+  - [`createExecutionShape`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IChartWidgetApi#createexecutionshape)
+
+  These methods will be removed from the Advanced Charts library in the next major version.
+  However, they will still be available in Trading Platform.
+- **Make `cancelOrders` optional.** The [`cancelOrders`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IBrokerWithoutRealtime#cancelOrders) method is marked as optional because the library calls it only for the [Depth of Market](https://www.tradingview.com/charting-library-docs/latest/trading_terminal#depth-of-market) widget. `Trading Platform Only`
+- **Removed the `calculatePLUsingLast` flag.** The `calculatePLUsingLast` [broker configuration flag](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/trading-concepts/trading-features-configuration) has been removed. `Trading Platform Only`
+- **Symbol search dialog behavior.** Previously, when users pressed _Enter_ in the [_Symbol Search_](https://www.tradingview.com/charting-library-docs/latest/ui_elements/Symbol-Search) dialog, they could enter arbitrary input directly. This input was passed to the datafeed for resolution and loading, regardless of whether the input matched any search results.<br />
+Now, pressing _Enter_ selects the top search result unless the user has explicitly chosen another item. If there are no search results, pressing _Enter_ will have no effect. You can enable the [`allow_arbitrary_symbol_search_input`](https://www.tradingview.com/charting-library-docs/latest/customization/Featuresets#allow_arbitrary_symbol_search_input) featureset to use the old behavior.
+- **Change custom translation API.** Change the [custom_translate_function](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.ChartingLibraryWidgetOptions#custom_translate_function) interface to accept different parameters: the original text, the singular original text, and the translated text. For example "prices", "price", "prix".
+- **Changed the behavior of data display in the Depth of Market widget.** Now, data is displayed in static mode.
+This means that the price series is fixed, while the current price moves within, above, or below the designated range.
+To center on the current price, click the centering button (<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M3.57821 9.5C3.81565 12.1079 5.89214 14.1843 8.5 14.4218V16H9.5V14.4218C12.1079 14.1843 14.1843 12.1079 14.4218 9.5H16V8.5H14.4218C14.1843 5.89214 12.1079 3.81565 9.5 3.57821V2H8.5V3.57821C5.89214 3.81565 3.81565 5.89214 3.57821 8.5H2V9.5H3.57821ZM8.5 6V4.58337C6.44491 4.81345 4.81345 6.44491 4.58337 8.5H6V9.5H4.58337C4.81345 11.5551 6.44491 13.1866 8.5 13.4166V12H9.5V13.4166C11.5551 13.1866 13.1866 11.5551 13.4166 9.5H12V8.5H13.4166C13.1866 6.44491 11.5551 4.81345 9.5 4.58337V6H8.5Z" fill="#131722"/></svg>) or use the *Shift + Alt/Option + C* shortcut.
+Previously, centering was applied dynamically.
+- **Renamed the Symbol Info dialog.** The _Symbol Info_ dialog and the corresponding items in context menus are called _Security Info_ now. [#8444](https://github.com/tradingview/charting_library/issues/8444)
+- **Renamed ErrorCallback to DatafeedErrorCallback.** `ErrorCallback` used in `IDatafeedChartApi` has been renamed to `DatafeedErrorCallback`.
+- **Updated `selectedCurrency` behavior.** In `CurrencyInfo`, the [`selectedCurrency`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.CurrencyInfo#selectedcurrency) property now returns `null` instead of `"Mixed"` when price scales contain mixed currencies.
+- **Deprecated property.** The `brokerConfig` property in the [`TradingTerminalWidgetOptions`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.TradingTerminalWidgetOptions) interface is deprecated and will be removed in the next major release.
+Use the [`broker_config`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.TradingTerminalWidgetOptions#broker_config) property instead.
+
+**New Features**
+
+- **New Custom themes API.** This API allows you to customize colors of the chart elements including toolbars, dialogs, and buttons.
+To do this, you should specify your own theme with a custom color palette.
+For more information, refer to the [Custom themes API](https://www.tradingview.com/charting-library-docs/latest/customization/styles/custom-themes) article.
+- **Added Volume Candles chart style.** This chart style allows for a visual assessment of the volume of trades for each candle. These are still candlesticks, but the width of each candle depends on the volume of trades during the period of formation of this candle. The greater the trading volume during the formation period of the candle, the larger the width of the candle.
+To display Volume Candles, select the corresponding option in the drop-down menu on the top toolbar.
+
+**Improvements**
+
+- **Behavior change for `chartContextMenuActions`.** When the [`chartContextMenuActions`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IBrokerWithoutRealtime#chartcontextmenuactions) method returns an empty array, the _Trade_ item within the chart [context menu](https://www.tradingview.com/charting-library-docs/latest/ui_elements/context-menu) will not be displayed. Previously, the item was rendered but grayed out. `Trading Platform Only`
+- **Added the `library_custom_fields` property to the `LibrarySymbolInfo` interface.** This property is used to include additional metadata in the symbol information. The metadata will not be processed by the library.
+- **Added extra properties to `symbolExt` method.** The [`symbolExt`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IChartWidgetApi#symbolext) method now returns additional properties including `ticker`.
+- **Added the `debug_broker` option to the Widget Constructor.** When [`debug_broker`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.TradingTerminalWidgetOptions#debug_broker) is specified, the library logs calls and responses to [`IBrokerWithoutRealtime`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IBrokerWithoutRealtime) and [`IBrokerConnectionAdapterHost`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IBrokerConnectionAdapterHost) in the browser console. You can set `debug_broker` to one of the debug levels defined by [`BrokerDebugMode`](https://www.tradingview.com/charting-library-docs/latest/api/modules/Charting_Library#brokerdebugmode). `Trading Platform Only`
+- **Updated the Anchored VWAP drawing.** Add bands settings to the Anchored VWAP drawing.
+- **Added new methods to the Trading Host.** The `getOrderTicketSetting` and `setOrderTicketSetting` methods have been added to the [`IBrokerConnectionAdapterHost`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IBrokerConnectionAdapterHost) interface. These methods allow you to read and adjust Order Ticket settings. `Trading Platform Only`
+- **Changed `const enum` to `enum` in the library type declarations.** This change allows you to import enums from the library in a TypeScript environment with the [`isolatedModules`](https://www.typescriptlang.org/tsconfig/#isolatedModules) option enabled, such as when using Vite or similar tools.
+- **Added the `hideStudiesFromLegend` option to `ClientSnapshotOptions`.** When `hideStudiesFromLegend` is set to true, the legend within the generated screenshots won't contain any studies applied to the chart.
+- **Exposed `connectionStatusUpdate` from `IBrokerConnectionAdapterHost`.** An existing [`connectionStatusUpdate`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IBrokerConnectionAdapterHost#connectionstatusupdate) API has been exposed for [`IBrokerConnectionAdapterHost`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IBrokerConnectionAdapterHost) to help reflect connection status changes throughout the application lifecycle. `Trading Platform Only`
+- **New keyboard shortcuts.** The following [shortcuts](https://www.tradingview.com/charting-library-docs/latest/getting_started/Shortcuts) were added:
+  - _Shift_ + _Mouse wheel_  — scroll the chart horizontally
+  - _Shift_ + _Alt_ + _B_ — place limit order to buy
+  - _Shift_ + _Alt_ + _S_ — place limit order to sell
+- **Enabled in-place editing for drawing texts.** For the following drawings, users can now add custom text and edit it on the chart:
+  - _Fib Retracement_
+  - _Trend-based Fib Extension_
+  - _Horizontal_ and _Vertical Line_
+  - _Trend Line_
+  - _Info Line_
+  - _Ray_
+  - _Extended Line_
+  - _Signpost_
+  - _Note_
+  - _Anchored Note_
+  - _Comment_
+  - _Rectangle_
+  - _Ellipse_
+  - _Circle_
+
+  To enter the text, users should click the _+Add text_ placeholder that appears on hover.
+- **Disabled color pickers in Chart settings.** If a certain price label or line is hidden on the chart, users cannot adjust the color of this label/line in the _Chart settings_ dialog.
+- **Time zones.** Time zone updates:
+  - Changed the Almaty (UTC+6) time zone to Astana (UTC+5).
+  - Added the new Kuala Lumpur (UTC+8) time zone.
+- **Visibility of price labels for risk-reward drawings.** Previously, price labels for the _Long position_ and _Short position_ drawings could be either hidden entirely or always displayed.
+Now, if the price labels are disabled for a certain drawing, the labels will be displayed when the drawing is selected.
+- **Accessibility improvement.** Users can now select the following elements in the _Legend_ when navigating with the keyboard.
+  - The _More_ (<svg width="16" height="4" viewBox="0 0 16 4" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="2" cy="2" r="1.5" stroke="currentColor"/><circle cx="8" cy="2" r="1.5" stroke="currentColor"/><circle cx="14" cy="2" r="1.5" stroke="currentColor"/></svg>) button and items in the corresponding menu
+  - The _Remove_ (<svg width="18" height="18" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg"><path d="M7.5 4a.5.5 0 0 0-.5.5V5h4v-.5a.5.5 0 0 0-.5-.5h-3ZM12 5h3v1h-1.05l-.85 7.67A1.5 1.5 0 0 1 11.6 15H6.4a1.5 1.5 0 0 1-1.5-1.33L4.05 6H3V5h3v-.5C6 3.67 6.67 3 7.5 3h3c.83 0 1.5.67 1.5 1.5V5ZM5.06 6l.84 7.56a.5.5 0 0 0 .5.44h5.2a.5.5 0 0 0 .5-.44L12.94 6H5.06Z" fill="currentColor"/></svg>) button
+- **Added new multiple-chart layouts combinations.** `Trading Platform Only`
+- **New style settings for the Note drawing.** Now:
+  - The _Background_ and _Border_ settings are optional.
+  - The default color of the drawing depends on the current chart [theme](https://www.tradingview.com/charting-library-docs/latest/customization#theme).
+
+**Bug Fixes**
+
+- **Fixed the _Pivot Points Standard_ compatibility with Japanese chart types.** The _Pivot Points Standard_ indicator used to cause the _Assertion failed: data must have unique sorted times_ error when applied to chart types such as Line Break, Renko, Kagi, and Point-and-Figure under certain data conditions.
+- **Workaround for corrupted chart layouts.** In rare cases, chart layouts can become corrupted and cause a _DEFAULT_SYMBOL is not defined_ error when loaded by the library. To work around this error, set [`symbol`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.ChartingLibraryWidgetOptions#symbol) to be used as a fallback for any corrupted charts.
+- **Fixed an issue where 0-volume data were not displayed in the Legend.** [#8662](https://github.com/tradingview/charting_library/issues/8662)
+- **Fixed the time indicator.** The time indicator now correctly moves across the timeline in the [Market Status](https://www.tradingview.com/charting-library-docs/latest/ui_elements/Symbol-Status) pop-up.
+- **Fixed resizing for risk-reward tools.** The resizing of _Long position_ and _Short position_ drawings works correctly now. [#8513](https://github.com/tradingview/charting_library/issues/8513)
+- **Fixed changing of drawing coordinates.** The setting dialog used to crash when users changed coordinates of drawings such as _Anchored Volume Profile_, _Fixed Range Volume Profile_, and _Regression Trend_.
+- **Fixed the drawing settings bug.** Previously, when users clicked _Hide/Show_ on a drawing, the settings applied to this drawing would override the default ones. Now, changing drawing visibility does not affect the default settings. [#8434](https://github.com/tradingview/charting_library/issues/8434)
+- **Fixed colors of the scale buttons.** The colors of the _A_ (auto) and _L_ (log) scale buttons match the chart background color now. [#8459](https://github.com/tradingview/charting_library/issues/8459)
+- **Fixed bugs on the multiple-chart layout.** `Trading Platform Only` The following bugs were fixed:
+  - The _Long/Short Position_ drawing used to cause errors if the drawing was hidden for a certain resolution and that resolution was currently displayed on the chart.
+  - Synchronized _Path_ and _Polyline_ drawings were not displayed on larger resolutions if the first two points of the drawing were set at the same level on a smaller resolution.
+  - The _Curve_ and _Double Curve_ drawings used to cause errors if a user moved the drawing before enabling layout synchronization.
+  - Changing the Profit/Stop level of the synchronized _Long/Short Position_ drawing used to cause errors if the drawing was hidden for a certain resolution and that resolution was currently displayed on the chart.
+
+**Documentation**
+
+- **Updated types for overrides.** The following categories of overrides within the
+[`ChartPropertiesOverrides`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.ChartPropertiesOverrides)
+have been added or updated:
+  - Added types for the Step line chart style (`mainSeriesProperties.steplineStyle.*`).
+  - Updated the types for `paneProperties.*`.
+  - Added overrides that affect Trading Platform features (`tradingProperties.*`).
+- **New articles.** Explore our latest articles:
+  - [How to create a custom indicator](https://www.tradingview.com/charting-library-docs/latest/tutorials/create-custom-indicator) — a step-by-step tutorial that demonstrates the Moving Average implementation.
+  - [Custom indicators. Inputs](https://www.tradingview.com/charting-library-docs/latest/custom_studies/metainfo/Custom-Studies-Inputs) — an overview of how to specify and manage input parameters for a custom indicator.
+  - [Authentication](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/trading-concepts/authentication) — an article that outlines possible authentication approaches. `Trading Platform Only`
 
 ## Version 27.006
 
@@ -153,7 +267,6 @@ To open this dialog, users should click the _Quick Search_ button on the top too
 - **Added ability to show daily change in the chart legend.** New _Last day change values_ option allows users to show/hide the last day change values in the main series legend.
 To make this option available in the _Chart Settings_ dialog, use the [`legend_last_day_change`](https://www.tradingview.com/charting-library-docs/latest/customization/Featuresets#legend_last_day_change) featureset. [#8193](https://github.com/tradingview/charting_library/issues/8193)
 - **Updated drawing icons.** New icons for the _Text_, _Anchored Text_, _Note_, and _Anchored Note_ drawings. [#8181](https://github.com/tradingview/charting_library/issues/8181)
-- **Drawings can now be saved separately to the chart layout**. See [Saving Drawings Separately](https://www.tradingview.com/charting-library-docs/latest/saving_loading/saving_drawings_separately) for more details.
 
 **Improvements**
 
@@ -190,7 +303,7 @@ for a comprehensive understanding of customization methods/properties and the se
 - **Accessibility article added.** Refer to the new [Accessibility](https://www.tradingview.com/charting-library-docs/latest/getting_started/accessibility) article for information about accessibility features that the library includes.
 - **Other documentation updates.** The new documentation version includes:
   - Updated [Resolution](https://www.tradingview.com/charting-library-docs/latest/core_concepts/Resolution) and [Price Scale](https://www.tradingview.com/charting-library-docs/latest/ui_elements/Price-Scale) articles.
-  - A full list of overrides for built-in indicators. Refer to the [Indicator Overrides](https://www.tradingview.com/charting-library-docs/latest/customization/overrides/Studies-Overrides#list-of-overrides) article for information.
+  - A full list of overrides for built-in indicators. Refer to the [Indicator Overrides](https://www.tradingview.com/charting-library-docs/latest/customization/overrides/indicator-overrides#list-of-overrides) article for information.
 
 **Other**
 
