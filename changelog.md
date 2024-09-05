@@ -4,9 +4,40 @@
 <!-- markdownlint-disable no-emphasis-as-header -->
 <!-- markdownlint-disable no-inline-html -->
 <!-- markdownlint-disable code-block-style -->
+
+## Version 28.1.0
+
+*Date: Wed Sep 04 2024*
+
+**Breaking Changes**
+
+- **Deprecated API methods.** [`activateBottomWidget`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IBrokerConnectionAdapterHost#activatebottomwidget) is now marked `deprecated`. Please use [`setAccountManagerVisibilityMode`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IBrokerConnectionAdapterHost#setaccountmanagervisibilitymode) instead.
+If you want to retrieve the current state of the Account Manager please use [`getAccountManagerVisibilityMode`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IBrokerConnectionAdapterHost#getaccountmanagervisibilitymode)
+
+**New Features**
+
+- **Added `iframe_loading_same_origin` featureset.** The `iframe_loading_same_origin` featureset ensures the library's iframe is loaded from the same domain as the `library_path` files.
+
+**Improvements**
+
+- **Added new event to `SubscribeEventsMap`.** The [`study_dialog_save_defaults`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.SubscribeEventsMap#study_dialog_save_defaults) event is triggered when the _Save as default_ option is selected in the indicator settings.
+- **Changed the return type for `OrderPreviewResult`.** When implementing [`previewOrder`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IBrokerTerminal#previeworder), you can specify links to external URLs now. The links will be displayed within the `warnings` or `errors` block.  `Trading Platform Only`
+- **Added an item counter for custom pages.** By default, custom pages added to the [Account Manager](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/account-manager) do not display the number of items in their corresponding table. Enabling [`displayCounterInTab`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.AccountManagerPage#displaycounterintab) will show this number next to the tab title.  `Trading Platform Only`
+
+**Bug Fixes**
+
+- **charting_library_debug_mode.** Fixed an issue where enabling the featureset `charting_library_debug_mode` was of no effect.
+
+- **Instant display of refreshed marks.** Fixed an issue where new [marks](https://www.tradingview.com/charting-library-docs/latest/ui_elements/Marks) added after calling [`refreshMarks`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IChartWidgetApi#refreshmarks) were not immediately displayed on the chart. Previously, these marks only appeared after user interaction, but now they are instantly visible once the data is provided.
+- **Fixed an issue with `multiple_watchlists` featureset.** When the `multiple_watchlists` featureset was disabled, it was still possible to see the `Create a new list` option under the Watchlist drop-down menu.
+
+**Documentation**
+
+- **New how-to guide.** Check out a new guide on [enabling debug modes](https://www.tradingview.com/charting-library-docs/latest/tutorials/enable-debug-mode) to help identify potential issues when implementing your app and ensure it is running smoothly.
+
 ## Version 28.0.0
 
-*Date: Tue Aug 13 2024*
+*Date: Wed Aug 14 2024*
 
 **Breaking Changes**
 
@@ -460,7 +491,7 @@ Enabling this new `always_show_legend_values_on_mobile` featureset allows you to
 
 - **Sections can now be added within the Watchlist.** Sections dividers can now be added within the watchlist (`Trading Platform Only`).
   - Any item within a list which is prefixed with `###` will be considered a section divider. [API Reference](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IChartingLibraryWidget#watchlist)
-- **Symbol and exchange logos can now be shown within the Compare Dialog.** The [symbol info](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.LibrarySymbolInfo) provided by [resolveSymbol](https://www.tradingview.com/charting-library-docs/latest/connecting_data/Datafeed-API#resolvesymbol) should now include 'exchange_logo' if you would like to use the 'show_exchange_logos' featureset.
+- **Symbol and exchange logos can now be shown within the Compare Dialog.** The [symbol info](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.LibrarySymbolInfo) provided by [resolveSymbol](https://www.tradingview.com/charting-library-docs/latest/connecting_data/datafeed-api/required-methods#resolvesymbol) should now include 'exchange_logo' if you would like to use the 'show_exchange_logos' featureset.
 
 **Bug Fixes**
 
@@ -646,7 +677,7 @@ Please use [settings_adapter](https://www.tradingview.com/charting-library-docs/
 
 **Documentation**
 
-- **Add FAQ about unsubscribeBars delay.** Added [a new FAQ](https://www.tradingview.com/charting-library-docs/latest/getting_started/Frequently-Asked-Questions) about [`unsubscribeBars`](https://www.tradingview.com/charting-library-docs/latest/connecting_data/Datafeed-API#unsubscribebars) being called with a delay.
+- **Add FAQ about unsubscribeBars delay.** Added [a new FAQ](https://www.tradingview.com/charting-library-docs/latest/getting_started/Frequently-Asked-Questions) about [`unsubscribeBars`](https://www.tradingview.com/charting-library-docs/latest/connecting_data/datafeed-api/required-methods#unsubscribebars) being called with a delay.
 
 **Other**
 
