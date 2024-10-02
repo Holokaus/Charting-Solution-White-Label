@@ -635,6 +635,17 @@ export interface LibrarySymbolInfo {
 	 */
 	seconds_multipliers?: string[];
 	/**
+	 * The boolean value showing whether or not seconds bars for this symbol can be built from ticks. Only available in Trading Platform.
+	 *
+	 * * {@link LibrarySymbolInfo.has_seconds} must also be `true`
+	 * * {@link LibrarySymbolInfo.has_ticks} must also be `true`
+	 * * {@link LibrarySymbolInfo.seconds_multipliers} must be an empty array or only contain multipliers that the datafeed provides itself
+	 *
+	 * The library builds resolutions from ticks only if there are no seconds resolutions from the datafeed or the provided resolutions are larger then the required one. For example, the datafeed provides `3S` resolution. In this case, the library can build only `1S` or `2S` resolutions from ticks. Resolutions such as `15S` will be build with seconds bars.
+	 * @default false
+	 */
+	build_seconds_from_ticks?: boolean;
+	/**
 	 * The boolean value specifying whether the datafeed can supply historical data at the daily resolution.
 	 *
 	 * If `has_daily` is set to `false`, all buttons for resolutions that include days are disabled for this particular symbol.
@@ -1088,7 +1099,7 @@ export type QuotesErrorCallback = (reason: string) => void;
  *
  * Resolution | Format | Example
  * ---------|----------|---------
- * Ticks | `xT` | `1T` — one tick
+ * Ticks | `xT` | `1T` — one tick, `5T` — five ticks, `100T` — one hundred ticks
  * Seconds | `xS` | `1S` — one second
  * Minutes | `x` | `1` — one minute
  * Hours | `x` minutes | `60` — one hour

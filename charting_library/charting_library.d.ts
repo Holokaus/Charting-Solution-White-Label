@@ -808,7 +808,7 @@ export interface AccountManagerInfo {
 	 * An array of data objects that create columns for the [History](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/account-manager/#history) page where all orders from previous sessions are shown.
 	 * Note that this page is only shown
 	 * if you set the {@link BrokerConfigFlags.supportOrdersHistory} to `true`
-	 * and implement the {@link IBrokerTerminal.ordersHistory} method.
+	 * and implement the [`ordersHistory`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IBrokerWithoutRealtime#ordershistory) method.
 	 */
 	historyColumns?: AccountManagerColumn[];
 	/** Optional sorting of the table on the [History](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/account-manager/#history) page. */
@@ -2022,8 +2022,8 @@ export interface BrokerConfigFlags {
 	 */
 	supportGuaranteedStop?: boolean;
 	/**
-	 * Enables positions.
-	 * This flag requires the {@link IBrokerTerminal.positions} method to be implemented.
+	 * Enables [positions](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/trading-concepts/positions).
+	 * This flag requires the [`positions`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IBrokerWithoutRealtime#positions) method to be implemented.
 	 * If you set `supportPositions` to `false`, the _Positions_ tab in the [Account Manager](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/account-manager/) will be hidden.
 	 * @default true
 	 */
@@ -2031,36 +2031,37 @@ export interface BrokerConfigFlags {
 	/**
 	 * Enables position brackets: take-profit and stop-loss orders.
 	 * If you set `supportPositionBrackets` to `true`, the library displays an _Edit_ button for positions and _Edit position..._ in the position's context menu.
-	 * This flag requires the {@link IBrokerTerminal.editPositionBrackets} method to be implemented.
+	 * This flag requires the {@link IBrokerWithoutRealtime.editPositionBrackets} method to be implemented.
 	 * @default false
 	 */
 	supportPositionBrackets?: boolean;
 	/**
 	 * Enables brackets for individual positions: take-profit and stop-loss orders.
 	 * If you set this flag to `true`, the library displays an _Edit_ button for individual positions and _Edit position..._ in the individual position's context menu.
-	 * This flag requires the {@link IBrokerTerminal.editIndividualPositionBrackets} method to be implemented.
+	 * This flag requires the {@link IBrokerWithoutRealtime.editIndividualPositionBrackets} method to be implemented.
 	 * @default false
 	 */
 	supportIndividualPositionBrackets?: boolean;
 	/**
-	 * Enables individual and net positions.
+	 * Enables [position netting](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/trading-concepts/positions#position-netting).
+	 * This flag requires the [`positions`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IBrokerWithoutRealtime#positions) and [`individualPositions`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IBrokerWithoutRealtime#individualpositions) method to be implemented.
+	 *
 	 * If you set this flag to `true`, the [Account Manager](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/account-manager/) will have two tabs: _Individual Positions_ and _Net Positions_.
-	 * This flag requires the {@link IBrokerTerminal.individualPositions} method to be implemented.
 	 *
 	 * @default false
 	 */
 	supportPositionNetting?: boolean;
 	/**
 	 * Enables position closing.
-	 * This flag requires the {@link IBrokerTerminal.closePosition} method to be implemented.
+	 * This flag requires the {@link IBrokerWithoutRealtime.closePosition} method to be implemented.
 	 * If `supportClosePosition` is set to `true`, the library displays a close button and calls the `closePosition` method.
-	 * If `supportClosePosition` is set to `false`, the library displays a close button but calls the {@link IBrokerTerminal.placeOrder} method with the `isClose` property set to `true`.
+	 * If `supportClosePosition` is set to `false`, the library displays a close button but calls the {@link IBrokerWithoutRealtime.placeOrder} method with the `isClose` property set to `true`.
 	 * @default false
 	 */
 	supportClosePosition?: boolean;
 	/**
 	 * Enables individual position closing.
-	 * This flag requires the {@link IBrokerTerminal.closeIndividualPosition} method to be implemented.
+	 * This flag requires the {@link IBrokerWithoutRealtime.closeIndividualPosition} method to be implemented.
 	 * @default false
 	 */
 	supportCloseIndividualPosition?: boolean;
@@ -2090,8 +2091,11 @@ export interface BrokerConfigFlags {
 	 */
 	supportLevel2Data?: boolean;
 	/**
-	 * Enables multiple positions for one instrument at the same time.
-	 * Supporting multiple positions prevents creating the default implementation for a reversing position.
+	 * Enables [multiple positions](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/trading-concepts/positions#multiposition) for one instrument at the same time.
+	 *
+	 * Note that if the flag is set to `true`:
+	 * - The {@link BrokerConfigFlags.supportNativeReversePosition} flag will not work.
+	 * - The _Flatten_ button in the [Depth of Market](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/depth-of-market) widget will be disabled.
 	 * @default false
 	 */
 	supportMultiposition?: boolean;
@@ -2110,8 +2114,8 @@ export interface BrokerConfigFlags {
 	supportReversePosition?: boolean;
 	/**
 	 * Enables native position reversing.
-	 * This flag requires the {@link IBrokerTerminal.reversePosition} method to be implemented.
-	 * If `supportNativeReversePosition` is set to `false`, the library expects you to place a reversing order via the {@link IBrokerTerminal.placeOrder} method.
+	 * This flag requires the {@link IBrokerWithoutRealtime.reversePosition} method to be implemented.
+	 * If `supportNativeReversePosition` is set to `false`, the library expects you to place a reversing order via the {@link IBrokerWithoutRealtime.placeOrder} method.
 	 * @default false
 	 */
 	supportNativeReversePosition?: boolean;
@@ -2170,7 +2174,7 @@ export interface BrokerConfigFlags {
 	 * Allows providing the estimated commission, fees, margin, and other order information before placing the order without actually placing it.
 	 * This information will be displayed in the _Order confirmation_ dialog.
 	 *
-	 * This flag requires the {@link IBrokerTerminal.previewOrder} method to be implemented and `confirmId` parameter to be passed in the {@link IBrokerTerminal.placeOrder} method.
+	 * This flag requires the {@link IBrokerWithoutRealtime.previewOrder} method to be implemented and `confirmId` parameter to be passed in the {@link IBrokerWithoutRealtime.placeOrder} method.
 	 * Refer to [Enable order preview](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/order-ticket#add-custom-fields) for more information.
 	 * @default false
 	 */
@@ -2179,7 +2183,7 @@ export interface BrokerConfigFlags {
 	 * Allows providing the estimated commission, fees, margin, and other order information before modifying the order without actually modifying it.
 	 * This information will be displayed in the _Order confirmation_ dialog.
 	 *
-	 * This flag requires the {@link IBrokerTerminal.previewOrder} method to be implemented and `confirmId` parameter to be passed in the {@link IBrokerTerminal.modifyOrder} method.
+	 * This flag requires the {@link IBrokerWithoutRealtime.previewOrder} method to be implemented and `confirmId` parameter to be passed in the {@link IBrokerWithoutRealtime.modifyOrder} method.
 	 * Refer to [Enable order preview](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/order-ticket#add-custom-fields) for more information.
 	 * @default false
 	 */
@@ -2201,7 +2205,7 @@ export interface BrokerConfigFlags {
 	/**
 	 * Enables orders history.
 	 * If `supportOrdersHistory` is set to `true`, the [Account Manager](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/account-manager/) will have an additional tab: _Orders History_.
-	 * This flag requires the {@link IBrokerTerminal.ordersHistory} method to be implemented.
+	 * This flag requires the [`ordersHistory`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IBrokerWithoutRealtime#ordershistory) method to be implemented.
 	 * The method should return a list of orders with the `filled`, `cancelled`, and `rejected` statuses from previous trade sessions.
 	 * @default false
 	 */
@@ -2243,13 +2247,13 @@ export interface BrokerConfigFlags {
 	positionPLInInstrumentCurrency?: boolean;
 	/**
 	 * Enables partial position closing.
-	 * This flag requires the {@link IBrokerTerminal.closePosition} method to be implemented.
+	 * This flag requires the {@link IBrokerWithoutRealtime.closePosition} method to be implemented.
 	 * @default false
 	 */
 	supportPartialClosePosition?: boolean;
 	/**
 	 * Enables partial individual position closing.
-	 * This flag requires the {@link IBrokerTerminal.closeIndividualPosition} method to be implemented.
+	 * This flag requires the {@link IBrokerWithoutRealtime.closeIndividualPosition} method to be implemented.
 	 * @default false
 	 */
 	supportPartialCloseIndividualPosition?: boolean;
@@ -2259,7 +2263,7 @@ export interface BrokerConfigFlags {
 	 * When set to `false`, the text will include the ID of the singular bracket order being cancelled.
 	 *
 	 * Note that the library does not cancel orders itself.
-	 * You should implement the {@link IBrokerTerminal.cancelOrder} or {@link IBrokerTerminal.cancelOrders } method.
+	 * You should implement the {@link IBrokerWithoutRealtime.cancelOrder} or {@link IBrokerWithoutRealtime.cancelOrders } method.
 	 * @default false
 	 */
 	supportCancellingBothBracketsOnly?: boolean;
@@ -2291,7 +2295,7 @@ export interface BrokerConfigFlags {
 	supportStrictCheckingLimitOrderPrice?: boolean;
 	/**
 	 * If set to `true`, executions are displayed on the chart.
-	 * This flag requires the {@link IBrokerTerminal.executions} method to be implemented.
+	 * This flag requires the [`executions`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IBrokerWithoutRealtime#executions) method to be implemented.
 	 * @default false
 	 */
 	supportExecutions?: boolean;
@@ -2700,9 +2704,9 @@ export interface ChartPropertiesOverrides {
 	 */
 	"paneProperties.horzGridProperties.style": OverrideLineStyle;
 	/**
-	 * Pane horizontal grid line style.
+	 * Pane grid line mode.
 	 *
-	 * @default LineStyle.Solid
+	 * @default "both"
 	 */
 	"paneProperties.gridLinesMode": GridLinesMode;
 	/**
@@ -9262,12 +9266,12 @@ export interface IBrokerCommon {
 	 */
 	ordersHistory?(): Promise<Order[]>;
 	/**
-	 * Called by Trading Platform to request positions.
+	 * Called by Trading Platform to request [positions](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/trading-concepts/positions).
 	 * Required if the {@link BrokerConfigFlags.supportPositions} flag is set to `true`.
 	 */
 	positions?(): Promise<Position[]>;
 	/**
-	 * Called by Trading Platform to request individual positions.
+	 * Called by Trading Platform to request [individual positions](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/trading-concepts/positions).
 	 * Required if the {@link BrokerConfigFlags.supportPositionNetting} flag is set to `true`.
 	 */
 	individualPositions?(): Promise<IndividualPosition[]>;
@@ -10409,7 +10413,7 @@ export interface IChartWidgetApi {
 	 */
 	applyStudyTemplate(template: object): void;
 	/**
-	 * @deprecated This Trading Platform method will be removed from the Advanced Charts library in the next major version.
+	 * @deprecated Starting from version 29, this method will only be available in Trading Platform.
 	 *
 	 * Create a new trading order on the chart.
 	 *
@@ -10437,7 +10441,7 @@ export interface IChartWidgetApi {
 	 */
 	createOrderLine(options?: UndoOptions): IOrderLineAdapter;
 	/**
-	 * @deprecated This Trading Platform method will be removed from the Advanced Charts library in the next major version.
+	 * @deprecated Starting from version 29, this method will only be available in Trading Platform.
 	 *
 	 * Creates a new trading position on the chart.
 	 *
@@ -10470,7 +10474,7 @@ export interface IChartWidgetApi {
 	 */
 	createPositionLine(options?: UndoOptions): IPositionLineAdapter;
 	/**
-	 * @deprecated This Trading Platform method will be removed from the Advanced Charts library in the next major version.
+	 * @deprecated Starting from version 29, this method will only be available in Trading Platform.
 	 *
 	 * Creates a new trade execution on the chart.
 	 *
@@ -12645,7 +12649,7 @@ export interface IPineSeries {
 	 *
 	 * @example
 	 *
-	 * Psuedocode of the adopt algorithm:
+	 * Pseudocode of the adopt algorithm:
 	 *
 	 * ```
 	 * adopt(sourceSeries, destinationSeries, mode) =
@@ -14758,6 +14762,17 @@ export interface LibrarySymbolInfo {
 	 * This will make the library build 5S and 15S resolutions by itself.
 	 */
 	seconds_multipliers?: string[];
+	/**
+	 * The boolean value showing whether or not seconds bars for this symbol can be built from ticks. Only available in Trading Platform.
+	 *
+	 * * {@link LibrarySymbolInfo.has_seconds} must also be `true`
+	 * * {@link LibrarySymbolInfo.has_ticks} must also be `true`
+	 * * {@link LibrarySymbolInfo.seconds_multipliers} must be an empty array or only contain multipliers that the datafeed provides itself
+	 *
+	 * The library builds resolutions from ticks only if there are no seconds resolutions from the datafeed or the provided resolutions are larger then the required one. For example, the datafeed provides `3S` resolution. In this case, the library can build only `1S` or `2S` resolutions from ticks. Resolutions such as `15S` will be build with seconds bars.
+	 * @default false
+	 */
+	build_seconds_from_ticks?: boolean;
 	/**
 	 * The boolean value specifying whether the datafeed can supply historical data at the daily resolution.
 	 *
@@ -25929,6 +25944,12 @@ export interface SubscribeEventsMap {
 	 * @param  {EntityId} id - entity ID
 	 */
 	study_dialog_save_defaults: (id: EntityId) => void;
+	/**
+	 * Time interval has been changed.
+	 * Can come from either the bottom toolbar or the {@link setTimeFrame} API.
+	 * @param {RangeOptions} range - Object that represents a selected time frame.
+	 */
+	timeframe_interval: (range: RangeOptions) => void;
 }
 export interface SuccessFormatterParseResult<T> extends FormatterParseResult {
 	/** @inheritDoc */
@@ -26413,10 +26434,10 @@ export interface TradeContext {
 	last: number;
 }
 export interface TradingCustomization {
-	/** Overrides for Positions */
-	position: Overrides;
-	/** Overrides for Orders */
-	order: Overrides;
+	/** Overrides for position lines created using the {@link IChartWidgetApi.createPositionLine} method. */
+	position?: Partial<PositionLineToolOverrides>;
+	/** Overrides for order lines created using the {@link IChartWidgetApi.createOrderLine} method. */
+	order?: Partial<OrderLineToolOverrides>;
 }
 export interface TradingDialogOptions {
 	/** Custom fields that are displayed in the Order Ticket.
@@ -26575,7 +26596,7 @@ export interface TradingTerminalWidgetOptions extends Omit<ChartingLibraryWidget
 	 * See [News API examples](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/news/News-Api-Examples) for usage examples.
 	 */
 	news_provider?: GetNewsFunction;
-	/** Override customizations for trading */
+	/** Overrides order and position lines created using the [`createOrderLine`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IChartWidgetApi#createorderline) and [`createPositionLine`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IChartWidgetApi#createpositionline) methods. */
 	trading_customization?: TradingCustomization;
 	/**
 	 * Use this field to pass the function that returns a new object which implements Broker API. This is a function that accepts the Trading Host ({@link IBrokerConnectionAdapterHost}).
@@ -28626,7 +28647,7 @@ export type RawStudyMetaInformation = Omit<RawStudyMetaInfo, "defaults" | "plots
  *
  * Resolution | Format | Example
  * ---------|----------|---------
- * Ticks | `xT` | `1T` — one tick
+ * Ticks | `xT` | `1T` — one tick, `5T` — five ticks, `100T` — one hundred ticks
  * Seconds | `xS` | `1S` — one second
  * Minutes | `x` | `1` — one minute
  * Hours | `x` minutes | `60` — one hour
