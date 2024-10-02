@@ -6,14 +6,6 @@
 <!-- markdownlint-disable code-block-style -->
 ## Version 28.2.0
 
-*Date: Wed Oct 02 2024*
-
-**Improvements**
-
-- **Sped up sorting animation in the Account Manager.** Raised by [#8760](https://github.com/tradingview/charting_library/issues/8760) `Trading Platform Only`
-
-## Version 28.2.0
-
 *Date: Tue Oct 01 2024*
 
 **New Features**
@@ -26,6 +18,7 @@
 - **Added an option to customize the default Volume MA calculation in the Volume indicator.** By default, the Volume MA, optionally plotted in the Volume indicator, used the SMA calculation. We have now introduced two additional options: EMA and WMA.
 - **Added new event to `SubscribeEventsMap`.** The [`timeframe_interval`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.SubscribeEventsMap#timeframe_interval) event is triggered when the one of the bottom left intervals is selected or the [`setTimeFrame`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IChartWidgetApi#settimeframe) API is used.
 - **Added a symbol change to MACD indicator.** It is now possible to change the targeted symbol when plotting MACD indicator without using the main series.
+- **Sped up sorting animation in the Account Manager.** Raised by [#8760](https://github.com/tradingview/charting_library/issues/8760) `Trading Platform Only`
 
 ## Version 28.1.0
 
