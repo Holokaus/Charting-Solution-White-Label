@@ -4,6 +4,26 @@
 <!-- markdownlint-disable no-emphasis-as-header -->
 <!-- markdownlint-disable no-inline-html -->
 <!-- markdownlint-disable code-block-style -->
+
+## Version 28.3.0
+
+*Date: Thu Oct 24 2024*
+
+**New Features**
+
+- **Symbol name in the Watchlist and Details widgets.** Now, the [`DatafeedQuoteValues.short_name`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Datafeed.DatafeedQuoteValues#short_name) value is displayed as a symbol's short name in the [Watchlist](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/Watch-List) and [Details](https://www.tradingview.com/charting-library-docs/latest/trading_terminal#details).
+ You can disable the [`prefer_quote_short_name`](https://www.tradingview.com/charting-library-docs/latest/customization/Featuresets#prefer_quote_short_name) featureset to revert to the old behavior. In this case, the [`ticker`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.LibrarySymbolInfo#ticker) value will be used instead. `Trading Platform Only`
+
+**Improvements**
+
+- **Added new time zone Azores (UTC).**
+
+**Bug Fixes**
+
+- **Anchored Note in multi-layout.** Fixed an issue where plotting a saved Anchored Note in multi-layout would raise an error. `Trading Platform Only`
+- **Fixed symbol logo persistence in legend.** Resolved an issue where a failed image load (e.g., a 404 error) for a symbol logo would cause the previous logo to persist in the legend. Now, the legend correctly updates to reflect the absence of a logo when loading fails. See the [Symbol logos](https://www.tradingview.com/charting-library-docs/latest/ui_elements/Legend#symbol-logos) section of the Legend documentation for more details on the feature.
+- **Fixed ordering of symbol logos.** Fixed an issue where symbol logos with two URLs defined in [`logo_urls`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.LibrarySymbolInfo#logo_urls) were displayed in an inconsistent order. The order has been corrected on the chart legend and within the Account Manager table.
+
 ## Version 28.2.0
 
 *Date: Tue Oct 01 2024*
@@ -12,13 +32,13 @@
 
 - **Added `Rank Correlation Index` indicator.**
 - **Support building seconds bars from ticks.** Trading Platform now supports building seconds bars from ticks for symbols configured to support it. Compatible symbols must set the [`build_seconds_from_ticks`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.LibrarySymbolInfo#build_seconds_from_ticks) flag to `true`. Additionally, [`has_seconds`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.LibrarySymbolInfo#has_seconds) and [`has_ticks`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.LibrarySymbolInfo#has_ticks) must be `true`, and [`seconds_multipliers`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.LibrarySymbolInfo#seconds_multipliers) must be an empty array or only contain multipliers that the datafeed provides itself. `Trading Platform Only`
+- **Sped up sorting animation in the Account Manager.** Raised by [#8760](https://github.com/tradingview/charting_library/issues/8760) `Trading Platform Only`
 
 **Improvements**
 
 - **Added an option to customize the default Volume MA calculation in the Volume indicator.** By default, the Volume MA, optionally plotted in the Volume indicator, used the SMA calculation. We have now introduced two additional options: EMA and WMA.
 - **Added new event to `SubscribeEventsMap`.** The [`timeframe_interval`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.SubscribeEventsMap#timeframe_interval) event is triggered when the one of the bottom left intervals is selected or the [`setTimeFrame`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IChartWidgetApi#settimeframe) API is used.
 - **Added a symbol change to MACD indicator.** It is now possible to change the targeted symbol when plotting MACD indicator without using the main series.
-- **Sped up sorting animation in the Account Manager.** Raised by [#8760](https://github.com/tradingview/charting_library/issues/8760) `Trading Platform Only`
 
 ## Version 28.1.0
 
