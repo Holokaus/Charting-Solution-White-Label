@@ -5,6 +5,35 @@
 <!-- markdownlint-disable no-inline-html -->
 <!-- markdownlint-disable code-block-style -->
 
+## Version 28.4.0
+
+*Date: Thu Nov 28 2024*
+
+**New Features**
+
+- **Added `includeOHLCValuesForSingleValuePlots` option when exporting data.** When set to `true`, this option forces all four OHLC plot values to be exported, even if the plot has a single value. This applies, for example, when the symbol has `visible_plots_set: 'c'` or when the exported plot is a single-value style (Area, Baseline, Line, Line with markets, Stepline, or Column).
+
+**Improvements**
+
+- **Added logging of quotes events.** Added extra logging of quote events when [debug mode](https://www.tradingview.com/charting-library-docs/latest/tutorials/enable-debug-mode#enable-debug-mode-for-data-connection) is enabled. The logs will contain information about quote data requests, real-time subscribe and unsubscribe events, and alerts for data requests that do not respond within 10 seconds.
+
+**Bug Fixes**
+
+- **Fixed an issue where missing translations caused errors when opening the settings dialog of the Ichimoku Cloud indicator.**
+- **Fixed an issue where the Point and Figure series would not be displayed.**
+
+**Documentation**
+
+- **New articles.** Explore our latest articles:
+  - [Positions](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/trading-concepts/positions) — an article that overviews position types supported in the library and describes how to manage them.
+  - [UI elements](https://www.tradingview.com/charting-library-docs/latest/ui_elements) — an overview of the library's UI elements.
+  - [News](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/news) — an article that explains how to connect data to the _News_ widget.
+- **Other updates.** The following articles were improved:
+  - [NPM](https://www.tradingview.com/charting-library-docs/latest/getting_started/NPM)
+  - [Custom themes API](https://www.tradingview.com/charting-library-docs/latest/customization/styles/custom-themes)
+  - [CSS color themes](https://www.tradingview.com/charting-library-docs/latest/customization/styles/CSS-Color-Themes)
+  - [Market Status](https://www.tradingview.com/charting-library-docs/latest/ui_elements/market-status)
+
 ## Version 28.3.0
 
 *Date: Thu Oct 24 2024*
@@ -13,10 +42,6 @@
 
 - **Symbol name in the Watchlist and Details widgets.** Now, the [`DatafeedQuoteValues.short_name`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Datafeed.DatafeedQuoteValues#short_name) value is displayed as a symbol's short name in the [Watchlist](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/Watch-List) and [Details](https://www.tradingview.com/charting-library-docs/latest/trading_terminal#details).
  You can disable the [`prefer_quote_short_name`](https://www.tradingview.com/charting-library-docs/latest/customization/Featuresets#prefer_quote_short_name) featureset to revert to the old behavior. In this case, the [`ticker`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.LibrarySymbolInfo#ticker) value will be used instead. `Trading Platform Only`
-
-**Improvements**
-
-- **Added new time zone Azores (UTC).**
 
 **Bug Fixes**
 
