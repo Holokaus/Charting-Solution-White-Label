@@ -4,6 +4,25 @@
 <!-- markdownlint-disable no-emphasis-as-header -->
 <!-- markdownlint-disable no-inline-html -->
 <!-- markdownlint-disable code-block-style -->
+## Version 28.5.0
+
+*Date: Wed Dec 18 2024*
+
+**New Features**
+
+- **Added `baselinePosition` property for column series.** The [`baselinePosition`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.ColumnStylePreferences#baselineposition) property allows column series to be drawn relative to the specified baseline value.
+  - The default value is `'bottom'`, which draws columns with the bottom of the chart pane as their baseline.
+  - Setting the value to `'zero'` draws columns with a baseline of 0, displayed as either 0% or 0.00 depending on the price scale mode.
+- **Added the _Another symbol_ input field to Moving Average Double.** This field allows users to specify a different symbol for calculating the indicator. By default, the current symbol on the chart is used.
+
+**Documentation**
+
+- **New how-to guide.** Check out a new [guide](https://www.tradingview.com/charting-library-docs/latest/tutorials/create-custom-page-in-account-manager) that explains how to create a custom page in the Account Manager.
+- **Other updates.** The following enhancements were made:
+  - Added a new section that explains how to enable and specify [last day change values](https://www.tradingview.com/charting-library-docs/latest/ui_elements/Legend#last-day-change-values).
+  - Updated information on [overnight sessions](https://www.tradingview.com/charting-library-docs/latest/connecting_data/Trading-Sessions#overnight-sessions).
+  - Updated information on how to [close](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/trading-concepts/positions#close-positions) and [reverse](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/trading-concepts/positions#reverse-positions) positions.
+  - Updated API overview page.
 
 ## Version 28.4.0
 
