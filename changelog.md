@@ -4,6 +4,69 @@
 <!-- markdownlint-disable no-emphasis-as-header -->
 <!-- markdownlint-disable no-inline-html -->
 <!-- markdownlint-disable code-block-style -->
+
+## Version 29.0.0
+
+*Date: Wed Feb 05 2025*
+
+**Breaking Changes**
+
+- **Removed trading API methods from Advanced Charts.** The following methods are now available exclusively in Trading Platform. If you’re using Advanced Charts, these methods will no longer be accessible.
+  - [`createOrderLine`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IChartWidgetApi#createorderline)
+  - [`createPositionLine`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IChartWidgetApi#createpositionline)
+  - [`createExecutionShape`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IChartWidgetApi#createexecutionshape)
+- **Changed the `getPositionDialogOptions` signature.** The [`getPositionDialogOptions`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IBrokerCommon#getpositiondialogoptions) method is asynchronous and returns a promise now. The method also expects a symbol as a parameter.
+- **Broker API simplification.** To further improve and simplify the library, we have merged the two existing APIs, `IBrokerWithoutRealtime` and `IBrokerTerminal`, and now exclusively expose the latter. Additionally, we have removed the `subscribeDOM`/`unsubscribeDOM` methods, as they were rarely used and duplicated the functionality of [`subscribeDepth`](https://www.tradingview.com/charting-library-docs/latest/connecting_data/datafeed-api/trading-platform-methods#subscribedepth)/[`unsubscribeDepth`](https://www.tradingview.com/charting-library-docs/latest/connecting_data/datafeed-api/trading-platform-methods#unsubscribedepth). This change ensures that the datafeed fully handles all data management responsibilities.
+- **Removed the Anchored Note drawing.**
+- **Renamed the Note drawing to Pin.**
+- **Updated the default colors for drawings/indicators with Volume Profiles.**
+- **Added MACD smoothing inputs.**
+- **Drawing creation methods now return Promises instead of synchronous values.** The drawing creation methods ([`createShape`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IChartWidgetApi#createshape), [`createMultipointShape`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IChartWidgetApi#createmultipointshape), and [`createAnchoredShape`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IChartWidgetApi#createanchoredshape)) now return Promises that resolve to the drawing ID. The methods also throw an Error through a rejected Promise when the drawing creation fails, instead of returning `null`.
+- **Trading Platform methods for drawing creation now return Promises instead of synchronous values.** The ([`createOrderLine`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IChartWidgetApi#createorderline), [`createPositionLine`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IChartWidgetApi#createpositionline), and [`createExecutionShape`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IChartWidgetApi#createexecutionshape)) methods now return Promises that resolve to the corresponding API interface.  (Trading Platform only)
+
+**New Features**
+
+- **Added the _Another symbol_ input field to Ichimoku Cloud, Bollinger Bands, and Average Price.** This field allows users to specify a different symbol for calculating the indicator. By default, the current symbol on the chart is used.
+- **New properties for customizing order and position lines.** You can now override the style of order and position lines created with the [Broker API](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/trading-concepts#broker-api).
+The [`trading_customization`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.TradingTerminalWidgetOptions#trading_customization) option in the Widget Constructor now supports `brokerOrder` and `brokerPosition` properties.
+For more details, see the [Trading Overrides](https://www.tradingview.com/charting-library-docs/latest/customization/overrides/trading-overrides#created-with-broker-api) article. (Trading Platform only)
+
+**Improvements**
+
+- **Added an option to keep the leftmost bar visible after resolution switching.** By default, the library resets the chart to the latest data when the resolution is changed. To keep the current time range, users can enable the Save chart left edge position when changing interval option in *Chart settings* → *Scales*.
+- **Added option to hide/show scroll to the most recent bar button.** The presence of the *Scroll to the most* recent bar button now depends on the Navigation buttons settings (*Chart settings* → *Canvas* → *Buttons* → *Navigation*).
+- **Added a new `paneIndex` getter to the `StudyAPI`.** The [`paneIndex`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.ISeriesApi#paneindex) function returns the index of the pane the indicator belongs to.
+- **Enabled users to adjust coordinates of Parallel Channel within the drawing settings.**
+- **Enabled users to reverse the Long/Short Position drawings.**
+- **Buy/Sell buttons' visibility can now be changed for each chart in the layout.**
+- **Added the Volume option for the Date Range and Date & Price Range tools.**
+- **Added multiline option for Parallel Channel.** Additional level lines have been added.
+- **Show price line of Heikin Ashi on real price when the real price label is selected.** On Heikin Ashi chart, the price line now matches the position of the *Last price* label when the *Real prices on price scale (instead of Heikin-Ashi price)* setting is enabled.
+- **Added new time zone Azores (UTC-1).**
+- **Added an error message for unsupported resolutions.** If the selected resolution is not supported by the current symbol, an error message appears on the chart along with a button to switch to a supported resolution.
+- **Implemented dynamic loading for drawings to optimize bundle size.** Drawings have been refactored to utilize dynamic imports, reducing the initial bundle size by loading these components on-demand. This optimization results in faster initial page loads and improved application startup time, while maintaining full drawing functionality through lazy loading when tools are actually accessed by users.
+- **Added a star icon to chart context menu for indicator.** This icon is displayed next to the _Add this indicator to favorites / Remove this indicator_ from favorites option in the indicator context menu.
+- **Changed the return type for `OrderPreviewResult`.** When implementing [`previewOrder`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IBrokerTerminal#previeworder), you can specify links to external URLs now. The links will be displayed within the `warnings` or `errors` block.   (Trading Platform only)
+
+**Bug Fixes**
+
+- **Fixed unreliable onChartReady callback with cached bundles.** When using `iframe_loading_compatibility_mode` with cached library bundles, the `onChartReady` callback would sometimes fail to execute. Fixes [#8889](https://github.com/tradingview/charting_library/issues/8889)
+- **Long/Short Position tools are extended to the right if the next bar crosses stop/profit level.** Fixed a bug where Long/Short Position would get partially extended to the right if the next bar crossed the stop/profit level.
+- **Fixed hovering on the indicator legend.** Now, when an indicator is deleted via the legend, the hover state shifts to the legend of the next indicator below.
+- **Fixed an issue when cloning drawings that were not selected.** Fixed a bug where _Ctrl+Drag_ would create copies of the last selected drawings on chart, even if they were no longer selected. Now, this shortcut enables area selection.
+
+**Documentation**
+
+- **New how-to guide.** Check out a new [guide](https://www.tradingview.com/charting-library-docs/latest/tutorials/add-custom-button-to-top-toolbar) on how to add a custom button to the top toolbar.
+- **Other updates.** The following enhancements were made:
+  - Added a new section that explains [multiple symbol resolving](https://www.tradingview.com/charting-library-docs/latest/connecting_data/datafeed-api/required-methods#multiple-symbol-resolving).
+  - Updated information on how to [change colors of the *Buy/Sell* buttons](https://www.tradingview.com/charting-library-docs/latest/customization/styles/CSS-Color-Themes#buysell-buttons-properties).
+  - Updated the [Toolbars](https://www.tradingview.com/charting-library-docs/latest/ui_elements/Toolbars) article.
+  - Added a new [section](https://www.tradingview.com/charting-library-docs/latest/ui_elements/Chart#execute-action-by-id) that describes how to trigger specific actions, such as opening the *Chart settings* dialog, using the [`executeActionById`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IChartWidgetApi#executeactionbyid) method.
+  - Added an [overview](https://www.tradingview.com/charting-library-docs/latest/getting_started/product-comparison) of other TradingView products.
+
+---
+
 ## Version 28.5.0
 
 *Date: Wed Dec 18 2024*
@@ -475,8 +538,8 @@ and IPositionLineAdapter
 interfaces now support setting the unit to `'pixel'`.
   - Additionally, when using pixel unit, you can specify a negative number to
   position from the left edge of the chart instead.
-- **Added keyboard navigation.** Keyboard navigation (activated via alt/opt + z keyboard shortcut) and many other accessability improvements have been added to the library.
-  - A featureset [accessibility](https://www.tradingview.com/charting-library-docs/latest/customization/Featuresets#accessibility) (on by default) has been added to control this behaviour.
+- **Added keyboard navigation.** Keyboard navigation (activated via alt/opt + z keyboard shortcut) and many other accessibility improvements have been added to the library.
+  - A featureset `accessibility` (on by default) has been added to control this behaviour.
 - **Menu name is provided to items_processor (context menu API).** [items_processor](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.ContextMenuOptions#items_processor) within the [context_menu](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.ChartingLibraryWidgetOptions#context_menu) API now includes details about the name of menu, and the ids of the related item (such as the series, drawing, study, order, or position).
 - **Support more kinds of extended sessions.** The library now supports specifying only one of the postmarket or premarket sessions without the other.
 

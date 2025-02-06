@@ -106,18 +106,18 @@
 						});
 					});
 
-					createHeaderButton('load', 'Load chart', function() {
+					createHeaderButton('load', 'Load chart', async function() {
 						if (savedWidgetContent) {
-							widget.load(savedWidgetContent);
+							await widget.load(savedWidgetContent);
 						}
 					});
 
-					createHeaderButton('load reference', 'Load reference', function() {
-						widget.load(referenceChart);
+					createHeaderButton('load reference', 'Load reference', async function() {
+						await widget.load(referenceChart);
 					});
 
-					createHeaderButton('load reference 2', 'Load reference 2', function() {
-						widget.load(referenceChart2);
+					createHeaderButton('load reference 2', 'Load reference 2', async function() {
+						await widget.load(referenceChart2);
 					});
 
 					createHeaderButton('save template (-i)', '', function() {
@@ -188,10 +188,6 @@
 						));
 					}, { align: 'right' });
 
-					createHeaderButton('new order', '', function() {
-						widget.chart().createOrderLine();
-					});
-
 					createHeaderButton('rm all studies', '', function() {
 						widget.chart().removeAllStudies();
 					});
@@ -212,7 +208,7 @@
 					});
 				});
 
-				widget.onChartReady(function() {
+				widget.onChartReady(async function() {
 					widget.onContextMenu(function(time, price) {
 						return [
 							{
@@ -234,39 +230,6 @@
 					widget.onShortcut("ctrl+alt+s", function() {
 						widget.chart().executeActionById("symbolSearch");
 					});
-
-					var position = widget.chart().createPositionLine()
-						.onReverse(function(text) {
-							console.log("Position reverse event");
-						})
-						.onClose(function(text) {
-							console.log("Position close event");
-						})
-						.setText("PROFIT: 71.1 (3.31%)")
-						.setQuantity("8.235")
-						.setLineLength(3);
-					position.setPrice(position.getPrice() - 2);
-
-					var order = widget.chart().createOrderLine()
-						.onMove(function() {
-							console.log("Order moved event");
-						})
-						.onCancel(function(text) {
-							console.log("Order cancel event");
-						})
-						.setText("STOP: 73.5 (5,64%)")
-						.setLineLength(3)
-						.setQuantity("2");
-					order.setPrice(order.getPrice() - 2.5);
-
-					widget.chart().createExecutionShape()
-						.setText("@1,320.75 Limit Buy 1")
-						.setTextColor("rgba(255,0,0,0.5)")
-						.setArrowSpacing(25)
-						.setArrowHeight(25)
-						.setArrowColor("#F00")
-						.setTime(new Date("4 Dec 2014 00:00:00 GMT+0").valueOf() / 1000)
-						.setPrice(15.5);
 
 					var fourMonthAgo = Math.floor(new Date().valueOf() / 1000 - 4 * 30 * 24 * 60 * 60);
 					var today = Math.floor(new Date().valueOf() / 1000);
