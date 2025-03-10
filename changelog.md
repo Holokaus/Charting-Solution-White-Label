@@ -5,6 +5,38 @@
 <!-- markdownlint-disable no-inline-html -->
 <!-- markdownlint-disable code-block-style -->
 
+
+## Version 29.1.0
+
+*Date: Fri Mar 07 2025*
+
+### New Features
+
+- **Added the _Another symbol_ input field to Moving Average Multiple, Moving Average Triple, and Pivot Points Standard.** This field allows users to specify a different symbol for calculating the indicator. By default, the current symbol on the chart is used.<ReleaseNoteAnchor id="v29_1-added_other_symbol_to_moving_average_multiple_and_triple" /><br/>
+
+#### Trading Platform only
+
+- **Pre-/post-market lines.** Added the `pre_post_market_price_line` featureset that allows you to enable or disable the pre-/post-market price lines. To display the pre-/post-market lines, you need to provide the `rtc` property in [quotes](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Datafeed.DatafeedQuoteValues).<ReleaseNoteAnchor id="v29_1-pre_post_market_lines" /><br/>
+
+### Improvements
+
+- **Adds an offset input to the Bollinger Bands indicator.**
+- **Allow overriding the default shortcuts.** Now, you can override the default shortcuts using the [`onShortcut`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IChartingLibraryWidget#onshortcut) method. Note that modal dialogs shortcuts cannot be changed.
+
+### Documentation
+
+- **New articles.** Explore our latest articles:
+  - [Object tree](https://www.tradingview.com/charting-library-docs/latest/ui_elements/object-tree) — an overview of the feature.
+  - [Quotes](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/trading-concepts/quotes) — an article explaining the importance of quotes in Trading Platform.
+
+- **Other updates.** The following enhancements were made:
+  - Updated the guide on [how to add a custom page to the Account Manager](https://www.tradingview.com/charting-library-docs/latest/tutorials/create-custom-page-in-account-manager). It now describes how to make the symbol name clickable on the custom page.
+  - Added a guide on how to troubleshoot when [quotes are not displayed or refreshed](https://www.tradingview.com/charting-library-docs/latest/connecting_data/Datafeed-Issues#quotes-are-not-displayed-or-refreshed).
+  - Added a guide on how to troubleshoot [delays in Trading Platform UI elements](https://www.tradingview.com/charting-library-docs/latest/connecting_data/Datafeed-Issues#delays-in-trading-platform-ui-elements).
+  - Added a new FAQ — [Does the library set cookies](https://www.tradingview.com/charting-library-docs/latest/getting_started/Frequently-Asked-Questions#other-questions).
+
+---
+
 ## Version 29.0.0
 
 *Date: Wed Feb 05 2025*
@@ -35,7 +67,7 @@ For more details, see the [Trading Overrides](https://www.tradingview.com/charti
 
 - **Added an option to keep the leftmost bar visible after resolution switching.** By default, the library resets the chart to the latest data when the resolution is changed. To keep the current time range, users can enable the Save chart left edge position when changing interval option in *Chart settings* → *Scales*.
 - **Added option to hide/show scroll to the most recent bar button.** The presence of the *Scroll to the most* recent bar button now depends on the Navigation buttons settings (*Chart settings* → *Canvas* → *Buttons* → *Navigation*).
-- **Added a new `paneIndex` getter to the `StudyAPI`.** The [`paneIndex`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.ISeriesApi#paneindex) function returns the index of the pane the indicator belongs to.
+- **Added a new `paneIndex` getter to the `StudyAPI`.** The [`paneIndex`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IStudyApi#paneindex) function returns the index of the pane the indicator belongs to.
 - **Enabled users to adjust coordinates of Parallel Channel within the drawing settings.**
 - **Enabled users to reverse the Long/Short Position drawings.**
 - **Buy/Sell buttons' visibility can now be changed for each chart in the layout.**
@@ -194,7 +226,7 @@ If you want to retrieve the current state of the Account Manager please use [`ge
 
   These methods will be removed from the Advanced Charts library in the next major version.
   However, they will still be available in Trading Platform.
-- **Make `cancelOrders` optional.** The [`cancelOrders`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IBrokerWithoutRealtime#cancelOrders) method is marked as optional because the library calls it only for the [Depth of Market](https://www.tradingview.com/charting-library-docs/latest/trading_terminal#depth-of-market) widget. `Trading Platform Only`
+- **Make `cancelOrders` optional.** The [`cancelOrders`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IBrokerWithoutRealtime#cancelorders) method is marked as optional because the library calls it only for the [Depth of Market](https://www.tradingview.com/charting-library-docs/latest/trading_terminal#depth-of-market) widget. `Trading Platform Only`
 - **Removed the `calculatePLUsingLast` flag.** The `calculatePLUsingLast` [broker configuration flag](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/trading-concepts/trading-features-configuration) has been removed. `Trading Platform Only`
 - **Symbol search dialog behavior.** Previously, when users pressed _Enter_ in the [_Symbol Search_](https://www.tradingview.com/charting-library-docs/latest/ui_elements/Symbol-Search) dialog, they could enter arbitrary input directly. This input was passed to the datafeed for resolution and loading, regardless of whether the input matched any search results.<br />
 Now, pressing _Enter_ selects the top search result unless the user has explicitly chosen another item. If there are no search results, pressing _Enter_ will have no effect. You can enable the [`allow_arbitrary_symbol_search_input`](https://www.tradingview.com/charting-library-docs/latest/customization/Featuresets#allow_arbitrary_symbol_search_input) featureset to use the old behavior.
@@ -606,7 +638,7 @@ interfaces now support setting the unit to `'pixel'`.
 
 - **Fixed a bug where on some DPR there was no separator between the right widget panel and the order panel.** Now the separator line is always visible.
 - **No bracket settings in chart settings.** Bracket settings were added to the Chart settings in the Trading tab.
-- **Symbol logos within the Legend and Account Manager.** Symbol logos can now be displayed within the [Legend](https://www.tradingview.com/charting-library-docs/latest/ui_elements/Legend#displaying-logos-within-the-legend) and the Account Manager panel (`Trading Platform Only`) if the `show_symbol_logos` featureset is enabled.
+- **Symbol logos within the Legend and Account Manager.** Symbol logos can now be displayed within the [Legend](https://www.tradingview.com/charting-library-docs/latest/ui_elements/Legend#symbol-logos) and the Account Manager panel (`Trading Platform Only`) if the `show_symbol_logos` featureset is enabled.
   - `show_symbol_logo_in_legend` featureset can be disabled to hide the logos within the legend.
   - `show_symbol_logo_for_compare_studies` featureset can be disabled to hide the logos within the legend for compare overlay studies.
   - `show_symbol_logo_in_account_manager` featureset can be disabled to hide the logos within the Account Manager panel (`Trading Platform Only`).
@@ -757,7 +789,7 @@ Enabling this new `always_show_legend_values_on_mobile` featureset allows you to
 indicator name. Favorited indicators will appear at the top of the indicator
 list.
   - The `items_favoriting` featureset should be enabled. [more info](https://www.tradingview.com/charting-library-docs/latest/customization/Featuresets)
-- **Adding two featuresets to hide the right_toolbar or its tabs.** There are 2 new featuresets `hide_right_toolbar` & `hide_right_toolbar_tabs` plus an additional WidgetBar API [changeWidgetBarVisibility](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IWidgetbarApi#changeWidgetBarVisibility) to control the right toolbar.
+- **Adding two featuresets to hide the right_toolbar or its tabs.** There are 2 new featuresets `hide_right_toolbar` & `hide_right_toolbar_tabs` plus an additional WidgetBar API [changeWidgetBarVisibility](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IWidgetbarApi#changewidgetbarvisibility) to control the right toolbar.
   - `hide_right_toolbar` allows you to instantiate the toolbar without showing it in the UI.
   - `hide_right_toolbar_tabs` will do the same with the exception of not showing tabs when displaying the right toolbar.
 
@@ -867,7 +899,7 @@ Please use [settings_adapter](https://www.tradingview.com/charting-library-docs/
 
 **Documentation**
 
-- Added [migration guide](../trading_terminal/#how-to-migrate-from-charting-library) from TAC to CTP.
+- Added [migration guide](../trading_terminal/#how-to-migrate-from-advanced-charts) from TAC to CTP.
 - Added additional documentation for [Drawings](../ui_elements/drawings/).
 - Missing overrides in documentation. [7457](https://github.com/tradingview/charting_library/issues/7457)
 - Updated documentation for [Marks](../ui_elements/Marks).

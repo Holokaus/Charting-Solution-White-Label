@@ -150,12 +150,13 @@ export interface DatafeedConfiguration {
 	symbols_grouping?: Record<string, string>;
 }
 /**
- * This object contains symbol quote values, where a quote represents a set of data describing the current price.
+ * This object contains symbol quote values, where a [quote](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/trading-concepts/quotes) represents a set of data describing the current price.
  * The library uses quote data for various trading functionalities, including the [Order Ticket](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/order-ticket), [Legend](https://www.tradingview.com/charting-library-docs/latest/ui_elements/Legend),
  * and widgets, such as [Watchlist](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/Watch-List), [Details](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/#details),
  * [News](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/news), and [Depth of Market](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/#depth-of-market).
  *
  * While all properties in this object are marked as optional, populating most of them is required for supporting trading functionalities.
+ * Providing values that do not match the expected data types can cause issues such as UI [loading delays](https://www.tradingview.com/charting-library-docs/latest/connecting_data/Datafeed-Issues#delays-in-trading-platform-ui-elements) or [missing data](https://www.tradingview.com/charting-library-docs/latest/connecting_data/Datafeed-Issues#quotes-are-not-displayed-or-refreshed).
  * See property descriptions for more information.
  */
 export interface DatafeedQuoteValues {
@@ -178,26 +179,26 @@ export interface DatafeedQuoteValues {
 	chp?: number;
 	/** Short name for a symbol. Short name is used in the title for the [News](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/news), [Watchlist](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/Watch-List) and [Details](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/#details) widgets. You can disable the [`prefer_quote_short_name`](https://www.tradingview.com/charting-library-docs/latest/customization/Featuresets#prefer_quote_short_name) to use the {@link LibrarySymbolInfo.ticker} value instead. */
 	short_name?: string;
-	/** The name of the exchange */
+	/** The name of the exchange. The exchange name is displayed in the [Details](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/#details) widget. */
 	exchange?: string;
 	/** A short description of the symbol. This description is displayed in the [Details](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/#details) widget and the tooltip of the [Watchlist](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/Watch-List) widget. */
 	description?: string;
 	/**
 	 * The price at which the most recent trade of a security occurred, regardless of whether it was a buy or sell.
-	 * Required for the [Details](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/#details) and [Watchlist](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/Watch-List) widgets.
+	 * Required for the [Order Ticket](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/order-ticket), [Depth of Market](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/#depth-of-market), [Buy/Sell buttons](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/#buysell-buttons-and-lines), and [Details](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/#details) and [Watchlist](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/Watch-List) widgets.
 	 */
 	lp?: number;
-	/** Ask price */
+	/** Ask price – the lowest price a seller is willing to accept for a security. The value is displayed in the [Order Ticket](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/order-ticket) and [Buy/Sell buttons](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/#buysell-buttons-and-lines). */
 	ask?: number;
-	/** Bid price */
+	/** Bid price – the highest price a buyer is willing to pay for a security. The value is displayed in the [Order Ticket](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/order-ticket) and [Buy/Sell buttons](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/#buysell-buttons-and-lines). */
 	bid?: number;
-	/** Spread (difference between the ask and bid prices) */
+	/** Spread – the difference between the ask and bid prices. The value is displayed between [Buy/Sell buttons](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/#buysell-buttons-and-lines). */
 	spread?: number;
 	/** Today's opening price */
 	open_price?: number;
-	/** Today's high price */
+	/** Today's high price. The value is displayed in the [Details](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/#details) widget. */
 	high_price?: number;
-	/** Today's low price */
+	/** Today's low price. The value is displayed in the [Details](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/#details) widget. */
 	low_price?: number;
 	/**
 	 * Closing price of the symbol from the previous regular market session.
@@ -205,10 +206,18 @@ export interface DatafeedQuoteValues {
 	 * Required for mobile apps. Otherwise, `NaN` values will appear in the [Legend](https://www.tradingview.com/charting-library-docs/latest/ui_elements/Legend).
 	 */
 	prev_close_price?: number;
-	/** Today's trading volume */
+	/** Today's trading volume. This value is displayed in the [Watchlist](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/Watch-List) widget. */
 	volume?: number;
 	/** Original name */
 	original_name?: string;
+	/** Pre-/post-market price. This value is used for the pre-/post-market price line and in the [Details](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/#details) widget */
+	rtc?: number;
+	/** Pre-/post-market price update time. This value is used in the [Details](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/#details) widget */
+	rtc_time?: number;
+	/** Pre-/post-market change. This value is used in the [Details](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/#details) widget */
+	rch?: number;
+	/** Pre-/post-market change percent. This value is used in the [Details](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/#details) widget */
+	rchp?: number;
 	[valueName: string]: string | number | string[] | number[] | undefined;
 }
 export interface DatafeedSymbolType {
@@ -1016,7 +1025,7 @@ export interface SymbolResolveExtension {
 	/**
 	 * Indicates the currency for conversions if `currency_codes` configuration field is set,
 	 * and `currency_code` is provided in the original symbol information ({@link LibrarySymbolInfo}).
-	 * Read more about [currency conversion](https://www.tradingview.com/charting-library-docs/latest/ui_elements/Price-Scale#currency-conversion).
+	 * Read more about [currency conversion](https://www.tradingview.com/charting-library-docs/latest/ui_elements/Price-Scale#enable-currency-conversion).
 	 */
 	currencyCode?: string;
 	/**
