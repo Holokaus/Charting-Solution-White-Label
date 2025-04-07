@@ -4,6 +4,48 @@
 <!-- markdownlint-disable no-emphasis-as-header -->
 <!-- markdownlint-disable no-inline-html -->
 <!-- markdownlint-disable code-block-style -->
+## Version 29.2.0
+
+*Date: Mon Apr 07 2025*
+
+**New Features**
+
+- **Added new methods to Trading Host.** The [Trading Host](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/trading-concepts#trading-host) now includes three new methods designed to clear specific caches and trigger fresh data fetches:
+  - [`ordersFullUpdate`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IBrokerConnectionAdapterHost#ordersfullupdate)
+  - [`positionsFullUpdate`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IBrokerConnectionAdapterHost#positionsfullupdate)
+  - [`individualPositionsFullUpdate`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IBrokerConnectionAdapterHost#individualpositionsfullupdate)
+- **Added cross-tab synchronization for watchlists.** This feature is enabled by default and requires the `use_localstorage_for_settings` [featureset](https://www.tradingview.com/charting-library-docs/latest/customization/Featuresets) to be enabled.
+To disable the cross-tab synchronization, use the `watchlist_cross_tab_sync` featureset. (Trading Platform only)
+
+**Improvements**
+
+- **New `resetCache` method.** The new `resetCache` method allows you to delete previously loaded data for all symbol and resolution combinations known to the datafeed at once. You can use this method instead of [`onResetCacheNeededCallback`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IDatafeedChartApi#subscribebars) to clear the cache before calling [`resetData`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IChartWidgetApi#resetdata). In this case, you do not need to wait for [`subscribeBars`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IDatafeedChartApi#subscribebars) to be called to access the callback.
+
+**Bug Fixes**
+
+- **Save button tooltip still shows shortcut when `save_shortcut` is disabled.** Fixed a bug where the _Save_ button's tooltip still showed the shortcut when the `save_shortcut` featureset was disabled. Fixes [#8925](https://github.com/tradingview/charting_library/issues/8925)
+- **Fixed an issue where on some occasions PineJS functions would not return the right values when internally comparing it to MIN_VALUE or MAX_VALUE.**
+
+- **Adding a custom interval could cause an error.** Adding a custom interval after enabling the [`custom_resolution`](https://www.tradingview.com/charting-library-docs/latest/customization/Featuresets#custom_resolutions) featureset used to cause a console error.
+- **Fixed an issue with time scale marks that couldn't contain any underscore character.**
+
+- **Fixed a bug where `getBars` failed to display error messages containing semicolons.**
+
+- **Future bar time extrapolation with `disable_resolution_rebuild`.** Fixed an issue where future bar times would be extrapolated incorrectly when the `disable_resolution_rebuild` featureset was enabled, and daily bars that do not consider the January 1 to be the first day of the year were provided to the library.
+- **Compare Symbol search dialog behavior.** Fixed an issue where the library would try to resolve a symbol that may not exist when users pressed _Enter_ whenever the featureset `allow_arbitrary_symbol_search_input` would be enabled.
+- **Compare symbol legend context menu.** Fixed an issue where the context menu for compared symbols would show the _Add this indicator to favorites_ item.
+- **Main series context menu.** Fixed an issue where the [context menu](https://www.tradingview.com/charting-library-docs/latest/ui_elements/context-menu) for the main series would show a blank space instead of the _Add SYMBOL to watchlist_ item.
+- **Watchlist item counter.** Fixed an issue where the watchlist item count would include section titles in its calculation.
+- **Fixed drawing keyboard shortcuts.** Fixed an issue where using keyboard shortcuts to add drawings would sometimes open the _Symbol Search_ dialog instead of adding the intended drawing.
+
+**Documentation**
+
+- **The following enhancements were made.** 
+  - Added a new section explaining how to [display pre- and post-market price lines](https://www.tradingview.com/charting-library-docs/latest/connecting_data/Extended-Sessions#enable-the-price-line).
+  - Added a new section explaining how to [provide profit and loss values](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/trading-concepts/positions#provide-profit-and-loss) in Trading Platform.
+  - Updated the [Trading Session](https://www.tradingview.com/charting-library-docs/latest/connecting_data/Trading-Sessions) article with information on how to specify [session history](https://www.tradingview.com/charting-library-docs/latest/connecting_data/Trading-Sessions#session-history)
+
+---
 
 
 ## Version 29.1.0

@@ -210,13 +210,13 @@ export interface DatafeedQuoteValues {
 	volume?: number;
 	/** Original name */
 	original_name?: string;
-	/** Pre-/post-market price. This value is used for the pre-/post-market price line and in the [Details](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/#details) widget */
+	/** Pre-/post-market price. This value is required to display the [pre-/post-market price line](https://www.tradingview.com/charting-library-docs/latest/connecting_data/Extended-Sessions#enable-the-price-line) on the chart and information on the extended session in the [Details](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/#details) widget. */
 	rtc?: number;
-	/** Pre-/post-market price update time. This value is used in the [Details](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/#details) widget */
+	/** Pre-/post-market price update time. This value is required to display information on the [extended session](https://www.tradingview.com/charting-library-docs/latest/connecting_data/Extended-Sessions) in the [Details](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/#details) widget. */
 	rtc_time?: number;
-	/** Pre-/post-market change. This value is used in the [Details](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/#details) widget */
+	/** Pre-/post-market price change. This value is required to display information on the [extended session](https://www.tradingview.com/charting-library-docs/latest/connecting_data/Extended-Sessions) in the [Details](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/#details) widget. */
 	rch?: number;
-	/** Pre-/post-market change percent. This value is used in the [Details](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/#details) widget */
+	/** Pre-/post-market price change percentage. This value is required to display information on the [extended session](https://www.tradingview.com/charting-library-docs/latest/connecting_data/Extended-Sessions) the [Details](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/#details) widget. */
 	rchp?: number;
 	[valueName: string]: string | number | string[] | number[] | undefined;
 }

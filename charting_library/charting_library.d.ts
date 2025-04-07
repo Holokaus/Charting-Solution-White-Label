@@ -2158,9 +2158,15 @@ export interface BrokerConfigFlags {
 	 */
 	supportMultiposition?: boolean;
 	/**
-	 * Allows you to use your own Profit & Loss (P&L) values for positions.
-	 * If `supportPLUpdate` is set to `true`, you should call the {@link IBrokerConnectionAdapterHost.plUpdate} method as soon as P&L values are changed.
+	 * Allows using your own [profit and loss](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/trading-concepts/positions#provide-profit-and-loss) (P&L) values for positions.
+	 * By default, `supportPLUpdate` is set to `true`, which means:
+	 * - You should calculate the P&L value for a position on your backend server.
+	 * - Once calculated, call the {@link IBrokerConnectionAdapterHost.plUpdate} method to provide the library with updated values.
+	 * - If [position netting](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/trading-concepts/positions#position-netting) is enabled, you should also call {@link IBrokerConnectionAdapterHost.individualPositionPLUpdate}.
+	 *
 	 * If `supportPLUpdate` is set to `false`, the library automatically calculates P&L values as the difference between the current trade and the average position price.
+	 * However, we recommend using your own P&L calculations for positions.
+	 * This helps avoid any discrepancies between the P&L values of the account and positions due to potential delays.
 	 * @default true
 	 */
 	supportPLUpdate?: boolean;
@@ -6342,13 +6348,13 @@ export interface DatafeedQuoteValues {
 	volume?: number;
 	/** Original name */
 	original_name?: string;
-	/** Pre-/post-market price. This value is used for the pre-/post-market price line and in the [Details](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/#details) widget */
+	/** Pre-/post-market price. This value is required to display the [pre-/post-market price line](https://www.tradingview.com/charting-library-docs/latest/connecting_data/Extended-Sessions#enable-the-price-line) on the chart and information on the extended session in the [Details](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/#details) widget. */
 	rtc?: number;
-	/** Pre-/post-market price update time. This value is used in the [Details](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/#details) widget */
+	/** Pre-/post-market price update time. This value is required to display information on the [extended session](https://www.tradingview.com/charting-library-docs/latest/connecting_data/Extended-Sessions) in the [Details](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/#details) widget. */
 	rtc_time?: number;
-	/** Pre-/post-market change. This value is used in the [Details](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/#details) widget */
+	/** Pre-/post-market price change. This value is required to display information on the [extended session](https://www.tradingview.com/charting-library-docs/latest/connecting_data/Extended-Sessions) in the [Details](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/#details) widget. */
 	rch?: number;
-	/** Pre-/post-market change percent. This value is used in the [Details](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/#details) widget */
+	/** Pre-/post-market price change percentage. This value is required to display information on the [extended session](https://www.tradingview.com/charting-library-docs/latest/connecting_data/Extended-Sessions) the [Details](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/#details) widget. */
 	rchp?: number;
 	[valueName: string]: string | number | string[] | number[] | undefined;
 }
@@ -9942,6 +9948,10 @@ export interface IBrokerConnectionAdapterHost {
 	 */
 	orderUpdate(order: Order): void;
 	/**
+	 * Call this method to clear the current cache for orders and notify the chart that it needs to request orders again.
+	 */
+	ordersFullUpdate(): void;
+	/**
 	 * Call this method when an order is not changed, but the fields that you added to the order object to display in the Account Manager have changed.
 	 * It should be used only if you want to display custom fields in the Account Manager.
 	 * @param  {string} id - order id
@@ -9955,6 +9965,10 @@ export interface IBrokerConnectionAdapterHost {
 	 */
 	positionUpdate(position: Position, isHistoryUpdate?: boolean): void;
 	/**
+	 * Call this method to clear the current cache for positions and notify the chart that it needs to request positions again.
+	 */
+	positionsFullUpdate(): void;
+	/**
 	 * Call this method when a position is not changed, but the fields that you added to the position object to display in the Account Manager have changed.
 	 * It should be used only if you want to display custom fields in the Account Manager.
 	 * @param  {string} id - id of the position
@@ -9967,6 +9981,10 @@ export interface IBrokerConnectionAdapterHost {
 	 * @param  {boolean} [isHistoryUpdate] - whether the change is a history update
 	 */
 	individualPositionUpdate(individualPosition: IndividualPosition, isHistoryUpdate?: boolean): void;
+	/**
+	 * Call this method to clear the current cache for individual positions and notify the chart that it needs to request individual positions again.
+	 */
+	individualPositionsFullUpdate(): void;
 	/**
 	 * Call this method when an individual position has not changed, but fields that you added to the individual position object to display in the Account Manager have changed.
 	 * @param  {string} id - ID of the updated individual position
@@ -9989,7 +10007,7 @@ export interface IBrokerConnectionAdapterHost {
 	 */
 	realtimeUpdate(symbol: string, data: TradingQuotes): void;
 	/**
-	 * Call this method when a broker connection has received a PL update.
+	 * Call this method when a broker connection has received a [profit and loss](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/trading-concepts/positions#provide-profit-and-loss) update.
 	 * Use this method when the {@link BrokerConfigFlags.supportPLUpdate} flag is set to `true` in {@link SingleBrokerMetaInfo.configFlags}.
 	 * @param  {string} positionId - ID of the position
 	 * @param  {number} pl - updated profit / loss value
@@ -10003,7 +10021,7 @@ export interface IBrokerConnectionAdapterHost {
 	 */
 	pipValueUpdate(symbol: string, pipValues: PipValues): void;
 	/**
-	 * Call this method when a broker connection has received an individual position PL update.
+	 * Call this method when a broker connection has received an individual position [profit and loss](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/trading-concepts/positions#provide-profit-and-loss) update.
 	 * @param  {string} individualPositionId - ID of the individual position
 	 * @param  {number} pl - updated profit / loss for the individual position
 	 */
@@ -10521,7 +10539,7 @@ export interface IChartWidgetApi {
 	setChartType(type: SeriesType, callback?: () => void): void;
 	/**
 	 * Force the chart to re-request data, for example if there are [internet connection issues](https://www.tradingview.com/charting-library-docs/latest/connecting_data/Datafeed-Issues#internet-connection-issues).
-	 * Before calling this function the `onResetCacheNeededCallback` callback from {@link IDatafeedChartApi.subscribeBars} should be called.
+	 * Before calling this function the {@link IChartWidgetApi.resetCache} method should be called.
 	 *
 	 * **Example**
 	 * ```javascript
@@ -11990,6 +12008,12 @@ export interface IChartingLibraryWidget {
 	 * @returns An API object for interacting with the custom themes.
 	 */
 	customThemes(): Promise<ICustomThemesApi>;
+	/**
+	 * Reset cached bar data from the datafeed, for all symbols.
+	 *
+	 * This has the same effect as calling [`onResetCacheNeededCallback`](@api/interfaces/Charting_Library.IDatafeedChartApi.md#subscribebars) for all symbol and resolution combinations at once.
+	 */
+	resetCache(): void;
 }
 /**
  * PineJS execution context.
@@ -29528,11 +29552,16 @@ export type TradingTerminalFeatureset = ChartingLibraryFeatureset |
 /**
  * Enables the pre-/post-market price line.
  *
- * To enable the pre-/post-market lines, you need to provide {@link DatafeedQuoteValues.rtc} to the quote values.
+ * To enable the pre-/post-market lines, you need to provide {@link DatafeedQuoteValues.rtc} to the quote object.
  *
  * @default false
  */
-"pre_post_market_price_line";
+"pre_post_market_price_line" | 
+/**
+ * Enables cross-tab synchronization for [watchlists](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/Watch-List).
+ * @default true
+ */
+"watchlist_cross_tab_sync";
 export type VisiblePlotsSet = "ohlcv" | "ohlc" | "c";
 export type WatchListSymbolListAddedCallback = (listId: string, symbols: string[]) => void;
 export type WatchListSymbolListChangedCallback = (listId: string) => void;
