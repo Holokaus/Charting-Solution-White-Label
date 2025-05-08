@@ -4,9 +4,40 @@
 <!-- markdownlint-disable no-emphasis-as-header -->
 <!-- markdownlint-disable no-inline-html -->
 <!-- markdownlint-disable code-block-style -->
+
+## Version 29.3.0
+
+*Date: Thu May 08 2025*
+
+**New Features**
+
+- **Added HLC bars chart style.** The HLC bars chart style is the same as regular bars but doesn't display the open price. When exporting a series or [overlay](https:/www.tradingview.com/charting-library-docs/latest/ui_elements/indicators#add-and-compare-new-series) indicator that uses the HLC bars chart style, open values are not included. Open values also do not appear in the data window or [legend](https:/www.tradingview.com/charting-library-docs/latest/ui_elements/Legend) for series or overlay indicators using this style.
+
+**Improvements**
+
+- **Added price scale details to context menu event.** When invoking the [context menu](https:/www.tradingview.com/charting-library-docs/latest/ui_elements/context-menu) on the price scale, it now returns the following details:
+  - `id` of the price scale
+  - `paneIndex` which is the index of the pane the price scale is linked to
+  - `chartIndex`  which is the index of the chart the price scale is linked to
+- **Added icon to dropdown items.** A new property `icon` was added to the [`DropdownItem`](https:/www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.DropdownItem) interface.
+
+**Bug Fixes**
+
+- **Empty context menu.** Fixed an issue where the [context menu](https:/www.tradingview.com/charting-library-docs/latest/ui_elements/context-menu) would be partially empty on mobile
+- **onContextMenu callback received incorrect arguments.** Fixed a bug where the [`onContextMenu`](https:/www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IChartingLibraryWidget#oncontextmenu) callback received an object instead of the expected arguments.
+- **Autosave won't trigger with empty text box created during autosave delay.**
+
+**Documentation**
+
+- **The following enhancements were made.**
+  - Added a new section explaining how to [programmatically open and close Symbol Search](https:/www.tradingview.com/charting-library-docs/latest/ui_elements/Symbol-Search#openclose-symbol-search).
+  - Updated the [Customization overview](https:/www.tradingview.com/charting-library-docs/latest/customization) and [Time zones](https:/www.tradingview.com/charting-library-docs/latest/ui_elements/timezones) articles.
+
+---
+
 ## Version 29.2.0
 
-*Date: Mon Apr 07 2025*
+*Date: Tue Apr 08 2025*
 
 **New Features**
 
@@ -24,29 +55,28 @@ To disable the cross-tab synchronization, use the `watchlist_cross_tab_sync` fea
 **Bug Fixes**
 
 - **Save button tooltip still shows shortcut when `save_shortcut` is disabled.** Fixed a bug where the _Save_ button's tooltip still showed the shortcut when the `save_shortcut` featureset was disabled. Fixes [#8925](https://github.com/tradingview/charting_library/issues/8925)
+- **Compare Symbol search dialog behavior.** Fixed an issue where the library would try to resolve a symbol that may not exist when users pressed _Enter_ whenever the featureset `allow_arbitrary_symbol_search_input` would be enabled.
+- **Adding a custom interval could cause an error.** Adding a custom interval after enabling the [`custom_resolution`](https://www.tradingview.com/charting-library-docs/latest/customization/Featuresets#custom_resolutions) featureset used to cause a console error.
 - **Fixed an issue where on some occasions PineJS functions would not return the right values when internally comparing it to MIN_VALUE or MAX_VALUE.**
 
-- **Adding a custom interval could cause an error.** Adding a custom interval after enabling the [`custom_resolution`](https://www.tradingview.com/charting-library-docs/latest/customization/Featuresets#custom_resolutions) featureset used to cause a console error.
+- **Future bar time extrapolation with `disable_resolution_rebuild`.** Fixed an issue where future bar times would be extrapolated incorrectly when the `disable_resolution_rebuild` featureset was enabled, and daily bars that do not consider the January 1 to be the first day of the year were provided to the library.
+- **Compare symbol legend context menu.** Fixed an issue where the context menu for compared symbols would show the _Add this indicator to favorites_ item.
+- **Main series context menu.** Fixed an issue where the [context menu](https://www.tradingview.com/charting-library-docs/latest/ui_elements/context-menu) for the main series would show a blank space instead of the _Add SYMBOL to watchlist_ item.
+- **Watchlist item counter.** Fixed an issue where the watchlist item count would include section titles in its calculation.
 - **Fixed an issue with time scale marks that couldn't contain any underscore character.**
 
 - **Fixed a bug where `getBars` failed to display error messages containing semicolons.**
 
-- **Future bar time extrapolation with `disable_resolution_rebuild`.** Fixed an issue where future bar times would be extrapolated incorrectly when the `disable_resolution_rebuild` featureset was enabled, and daily bars that do not consider the January 1 to be the first day of the year were provided to the library.
-- **Compare Symbol search dialog behavior.** Fixed an issue where the library would try to resolve a symbol that may not exist when users pressed _Enter_ whenever the featureset `allow_arbitrary_symbol_search_input` would be enabled.
-- **Compare symbol legend context menu.** Fixed an issue where the context menu for compared symbols would show the _Add this indicator to favorites_ item.
-- **Main series context menu.** Fixed an issue where the [context menu](https://www.tradingview.com/charting-library-docs/latest/ui_elements/context-menu) for the main series would show a blank space instead of the _Add SYMBOL to watchlist_ item.
-- **Watchlist item counter.** Fixed an issue where the watchlist item count would include section titles in its calculation.
 - **Fixed drawing keyboard shortcuts.** Fixed an issue where using keyboard shortcuts to add drawings would sometimes open the _Symbol Search_ dialog instead of adding the intended drawing.
 
 **Documentation**
 
-- **The following enhancements were made.** 
+- **The following enhancements were made.**
   - Added a new section explaining how to [display pre- and post-market price lines](https://www.tradingview.com/charting-library-docs/latest/connecting_data/Extended-Sessions#enable-the-price-line).
   - Added a new section explaining how to [provide profit and loss values](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/trading-concepts/positions#provide-profit-and-loss) in Trading Platform.
   - Updated the [Trading Session](https://www.tradingview.com/charting-library-docs/latest/connecting_data/Trading-Sessions) article with information on how to specify [session history](https://www.tradingview.com/charting-library-docs/latest/connecting_data/Trading-Sessions#session-history)
 
 ---
-
 
 ## Version 29.1.0
 
@@ -381,7 +411,7 @@ have been added or updated:
 **Improvements**
 
 - **Update the Anchored AVWAP drawing.** Add bands settings to the Anchored VWAP drawing.
-- **Subscribe to widget bar visibility events.** A new [`study_event`](../api/interfaces/Charting_Library.SubscribeEventsMap.md#study_event) type was added: `widgetbar_visibility_changed`. It returns the visibility state of the widget bar.
+- **Subscribe to widget bar visibility events.** A new [`study_event`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.SubscribeEventsMap.md#study_event) type was added: `widgetbar_visibility_changed`. It returns the visibility state of the widget bar.
 
 **Bug Fixes**
 
@@ -428,12 +458,12 @@ Fixes [#8413](https://github.com/tradingview/charting_library/issues/8413) [#832
 - **Added the unloadUnusedCharts method.** The [`unloadUnusedCharts`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IChartingLibraryWidget#unloadunusedcharts) method deletes non-visible charts from a multiple-chart layout. Use this method to
 prevent the library's inherent behavior to restore previously displayed charts instead of creating new
 charts when changing layouts. `Trading Platform Only`
-- **Added a new type that reflects the ID of the created indicator.** A new [`study_event`](../api/interfaces/Charting_Library.SubscribeEventsMap.md#study_event) type was added: `create`. It returns the `id` of the newly created indicator.
+- **Added a new type that reflects the ID of the created indicator.** A new [`study_event`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.SubscribeEventsMap.md#study_event) type was added: `create`. It returns the `id` of the newly created indicator.
 
 **Bug Fixes**
 
 - **Displaying volume indicator on chart load when visible_plots_set is not specified.** The chart will now correctly display the volume indicator if the `create_volume_indicator_by_default` featureset is enabled even if the symbols [LibrarySymbolInfo](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.LibrarySymbolInfo) doesn't specify the optional [`visible_plots_set`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.LibrarySymbolInfo#visible_plots_set) property.
-- **Prioritise widget constructor symbol over saved state.** The [`symbol`](../api/interfaces/Charting_Library.ChartingLibraryWidgetOptions#symbol) property in the widget constructor will now have priority over symbols loaded from saved chart states when using [`saved_data`](../api/interfaces/Charting_Library.ChartingLibraryWidgetOptions#saved_data) or [`load_last_chart`](../api/interfaces/Charting_Library.ChartingLibraryWidgetOptions#load_last_chart). Fixes [#7922](https://github.com/tradingview/charting_library/issues/7922) [#8473](https://github.com/tradingview/charting_library/issues/8473) [#7926](https://github.com/tradingview/charting_library/issues/7926) [#8168](https://github.com/tradingview/charting_library/issues/8168)
+- **Prioritise widget constructor symbol over saved state.** The [`symbol`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.ChartingLibraryWidgetOptions#symbol) property in the widget constructor will now have priority over symbols loaded from saved chart states when using [`saved_data`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.ChartingLibraryWidgetOptions#saved_data) or [`load_last_chart`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.ChartingLibraryWidgetOptions#load_last_chart). Fixes [#7922](https://github.com/tradingview/charting_library/issues/7922) [#8473](https://github.com/tradingview/charting_library/issues/8473) [#7926](https://github.com/tradingview/charting_library/issues/7926) [#8168](https://github.com/tradingview/charting_library/issues/8168)
 - **Fixed an issue where the time_frames description was ignored.**
 
 ## Version 27.002
@@ -905,13 +935,13 @@ Please use [settings_adapter](https://www.tradingview.com/charting-library-docs/
 **New Features**
 
 - **Added support for specifying custom timezones.**
-  - Additional custom timezones can now be specified for use within the library. Please see the [Adding Custom Timezones](../ui_elements/timezones#adding-custom-time-zones) section within the Timezones page.
+  - Additional custom timezones can now be specified for use within the library. Please see the [Adding Custom Timezones](../ui_elements/timezones#custom-time-zones) section within the Timezones page.
 - **Images within timescale marks.**
-  - Timescale marks now support the rendering of images within the circular shape by specifying the `imageUrl` property. Please see the [TimescaleMark](../api/interfaces/Charting_Library.TimescaleMark) interface for more details.
+  - Timescale marks now support the rendering of images within the circular shape by specifying the `imageUrl` property. Please see the [TimescaleMark](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.TimescaleMark) interface for more details.
 - **Support different margin rates for different order types.** [6607](https://github.com/tradingview/charting_library/issues/6607)
   - `marginRate` has been deprecated
-  - A [`supportLeverageButton`](../api/interfaces/Broker.BrokerConfigFlags#supportleveragebutton) flag that displays a leverage button has been added to the Broker configuration.
-  - The [`supportLeverage`](../api/interfaces/Broker.BrokerConfigFlags#supportleverage) flag enables leverage calculation by getting information from `leverageInfo`.
+  - A [`supportLeverageButton`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Broker.BrokerConfigFlags#supportleveragebutton) flag that displays a leverage button has been added to the Broker configuration.
+  - The [`supportLeverage`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Broker.BrokerConfigFlags#supportleverage) flag enables leverage calculation by getting information from `leverageInfo`.
 
 **Enhancements**
 
@@ -919,7 +949,7 @@ Please use [settings_adapter](https://www.tradingview.com/charting-library-docs/
 
 **Bug fixes**
 
-- [`setUserEditEnabled`](../api/interfaces/Charting_Library.IStudyApi#setusereditenabled) does not hide 3 dots in Legend. [6765](https://github.com/tradingview/charting_library/issues/6765) | [6165](https://github.com/tradingview/charting_library/issues/6165)
+- [`setUserEditEnabled`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IStudyApi#setusereditenabled) does not hide 3 dots in Legend. [6765](https://github.com/tradingview/charting_library/issues/6765) | [6165](https://github.com/tradingview/charting_library/issues/6165)
 
       widget.activeChart().getAllStudies().forEach(({ id }) => {
         console.log(id);
@@ -932,7 +962,7 @@ Please use [settings_adapter](https://www.tradingview.com/charting-library-docs/
 - `right_toolbar` featureset didn't have a default `on` value.
 - Empty time frames at the bottom toolbar if `data_status: endofday`
 - Export data doesn’t include projected data.
-  - Projected data can be included by setting [`includeOffsetStudyValues`](../api/interfaces/Charting_Library.ExportDataOptions#includeoffsetstudyvalues) to `true`.
+  - Projected data can be included by setting [`includeOffsetStudyValues`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.ExportDataOptions#includeoffsetstudyvalues) to `true`.
   - `await widget.activeChart().exportData({ includeOffsetStudyValues: true });`
 - Highest PineJS.Std function doesn’t work correctly with negative numbers.
 - Missing types in bundled definition file. [7445](https://github.com/tradingview/charting_library/issues/7445) | [7446](https://github.com/tradingview/charting_library/issues/7446)
@@ -941,15 +971,15 @@ Please use [settings_adapter](https://www.tradingview.com/charting-library-docs/
 
 **Documentation**
 
-- Added [migration guide](../trading_terminal/#how-to-migrate-from-advanced-charts) from TAC to CTP.
-- Added additional documentation for [Drawings](../ui_elements/drawings/).
+- Added [migration guide](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/#how-to-migrate-from-advanced-charts) from TAC to CTP.
+- Added additional documentation for [Drawings](https://www.tradingview.com/charting-library-docs/latest/ui_elements/drawings/).
 - Missing overrides in documentation. [7457](https://github.com/tradingview/charting_library/issues/7457)
-- Updated documentation for [Marks](../ui_elements/Marks).
+- Updated documentation for [Marks](https://www.tradingview.com/charting-library-docs/latest/ui_elements/Marks).
 - Align ChartMetaInfo & ChartData.
 
 **Other**
 
-- Removed `Australia/ACT` from the list of [timezones](../ui_elements/timezones) within our documentation. Please use either the Sydney timezone or [specify your own custom timezone](../ui_elements/timezones#adding-custom-time-zones).
+- Removed `Australia/ACT` from the list of [timezones](../ui_elements/timezones) within our documentation. Please use either the Sydney timezone or [specify your own custom timezone](../ui_elements/timezones#custom-time-zones).
 
 ## Version 24.001
 
@@ -990,8 +1020,8 @@ Please use [settings_adapter](https://www.tradingview.com/charting-library-docs/
 - `preset` Widget-Constructor parameter has been removed. Users can still use some featuresets to mimic the same behavior by disabling the following list:
   - `'left_toolbar', 'header_widget', 'timeframes_toolbar', 'edit_buttons_in_legend', 'context_menus', 'control_bar', 'border_around_the_chart'`
 - `chart_style_hilo` featureset is now enabled by default. This adds the High-low option to chart style controls dropdown. This featureset has been available since 1.15 but was previously disabled by default.
-- Added typings for custom indicators. Typescript equivalents of our existing examples are available here: [Custom Studies Typescript Examples](../custom_studies/Custom-Studies-Examples).
-- [`symbol_search_complete`](../api/interfaces/Charting_Library.ChartingLibraryWidgetOptions#symbol_search_complete) has changed. The function now takes an additional search result object parameter, and returns an additional human-friendly symbol name.
+- Added typings for custom indicators. Typescript equivalents of our existing examples are available here: [Custom Studies Typescript Examples](https://www.tradingview.com/charting-library-docs/latest/custom_studies/Custom-Studies-Examples).
+- [`symbol_search_complete`](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.ChartingLibraryWidgetOptions#symbol_search_complete) has changed. The function now takes an additional search result object parameter, and returns an additional human-friendly symbol name.
 
 **UI changes**
 
@@ -1009,8 +1039,8 @@ Please use [settings_adapter](https://www.tradingview.com/charting-library-docs/
 **Trading Platform**
 
 - Default formatter `textNoWrap` has been removed.
-- `columnId` field of [SortingParameters](../api/interfaces/Broker.SortingParameters) has been renamed to `property`.
-- Required `id` field has been added to [column description](../api/interfaces/Broker.AccountManagerColumnBase#id).
-- Type of `formatter` field in [column description](../api/interfaces/Broker.AccountManagerColumnBase#formatter) has been changed to [StandardFormatterName | FormatterName](../api/enums/Charting_Library.StandardFormatterName).
-- `property` field has been removed from `column description`. Use [dataFields](../api/interfaces/Broker.AccountManagerColumnBase#datafields) field instead.
-- Type of `formatter` field in [SummaryField](../api/interfaces/Broker.AccountManagerSummaryField) has been changed to [StandardFormatterName](../api/enums/Charting_Library.StandardFormatterName).
+- `columnId` field of [SortingParameters](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Broker.SortingParameters) has been renamed to `property`.
+- Required `id` field has been added to [column description](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Broker.AccountManagerColumnBase#id).
+- Type of `formatter` field in [column description](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Broker.AccountManagerColumnBase#formatter) has been changed to [StandardFormatterName | FormatterName](https://www.tradingview.com/charting-library-docs/latest/api/enums/Charting_Library.StandardFormatterName).
+- `property` field has been removed from `column description`. Use [dataFields](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Broker.AccountManagerColumnBase#datafields) field instead.
+- Type of `formatter` field in [SummaryField](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Broker.AccountManagerSummaryField) has been changed to [StandardFormatterName](https://www.tradingview.com/charting-library-docs/latest/api/enums/Charting_Library.StandardFormatterName).

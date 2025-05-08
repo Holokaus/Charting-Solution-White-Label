@@ -315,7 +315,7 @@ export interface IDatafeedChartApi {
 	 * @param resolution Resolution of the symbol
 	 * @param periodParams An object used to pass specific requirements for getting bars
 	 * @param onResult Callback function for historical data
-	 * @param onError Callback function whose only argument is a text error message
+	 * @param onError Callback function whose only argument is a text error message. If using special characters, please consider `encodeURIComponent`.
 	 */
 	getBars(symbolInfo: LibrarySymbolInfo, resolution: ResolutionString, periodParams: PeriodParams, onResult: HistoryCallback, onError: DatafeedErrorCallback): void;
 	/**

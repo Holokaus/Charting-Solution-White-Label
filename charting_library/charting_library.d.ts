@@ -259,7 +259,8 @@ export declare enum ChartStyle {
 	LineWithMarkers = 14,
 	Stepline = 15,
 	HLCArea = 16,
-	VolCandle = 19
+	VolCandle = 19,
+	HLCBars = 21
 }
 /**
  * Mode to clear the marks on the chart.
@@ -497,6 +498,7 @@ export declare enum SeriesType {
 	Stepline = 15,
 	HLCArea = 16,
 	VolCandle = 19,
+	HLCBars = 21,
 	Renko = 4,
 	Kagi = 5,
 	PointAndFigure = 6,
@@ -5625,7 +5627,7 @@ export interface CreateContextMenuParams {
 	menuName: string;
 	/**
 	 * Additional details for the context menu.
-	 * `type` field can be one of the following: `series`, `study`, `shape`, or `groupOfShapes`
+	 * `type` field can be one of the following: `series`, `study`, `shape`, `groupOfShapes`, `position`, `order`, `priceScale`.
 	 */
 	detail?: {
 		/** series type */
@@ -5657,6 +5659,15 @@ export interface CreateContextMenuParams {
 		type: "order";
 		/** id */
 		id: string | null;
+	} | {
+		/** Price scale */
+		type: "priceScale";
+		/** id */
+		id: string;
+		/** Pane index */
+		paneIndex: number;
+		/** Chart index */
+		chartIndex: number;
 	};
 }
 export interface CreateHTMLButtonOptions {
@@ -6656,6 +6667,8 @@ export interface DragStartParams {
 export interface DropdownItem {
 	/** Title of the menu item */
 	title: string;
+	/** Icons for the menu item (SVG mark-up) */
+	icon?: string;
 	/** Callback for when the item is selected by the user */
 	onSelect: () => void;
 }
@@ -7066,6 +7079,12 @@ export interface ExportDataOptions {
 	 * Include open, high, low, and close values for plots that only display a single value on the chart. For example line series or symbols with visible_plot_set = 'c'.
 	 */
 	includeOHLCValuesForSingleValuePlots?: boolean;
+	/**
+	 * Include hidden studies in the exported data.
+	 *
+	 * @default false
+	 */
+	includeHiddenStudies?: boolean;
 }
 /**
  * Export data from the chart
@@ -9478,6 +9497,12 @@ export interface HLCAreaStylePreferences {
 	highCloseFillColor: string;
 	/** Fill color of area between close and low lines */
 	closeLowFillColor: string;
+}
+export interface HLCBarsStylePreferences {
+	/** Bar color */
+	color: string;
+	/** Draw thin bars. Default - `true` */
+	thinBars: boolean;
 }
 /**
  * Override properties for the Headandshoulders drawing tool.
@@ -12315,7 +12340,7 @@ export interface IDatafeedChartApi {
 	 * @param resolution Resolution of the symbol
 	 * @param periodParams An object used to pass specific requirements for getting bars
 	 * @param onResult Callback function for historical data
-	 * @param onError Callback function whose only argument is a text error message
+	 * @param onError Callback function whose only argument is a text error message. If using special characters, please consider `encodeURIComponent`.
 	 */
 	getBars(symbolInfo: LibrarySymbolInfo, resolution: ResolutionString, periodParams: PeriodParams, onResult: HistoryCallback, onError: DatafeedErrorCallback): void;
 	/**
@@ -19693,6 +19718,8 @@ export interface SeriesPreferencesMap {
 	[ChartStyle.HiLo]: HiLoStylePreferences;
 	/** Columns Style Preferences */
 	[ChartStyle.Column]: ColumnStylePreferences;
+	/** HLC bars Style Preferences */
+	[ChartStyle.HLCBars]: HLCBarsStylePreferences;
 	/** Volume Candle Style Preferences */
 	[ChartStyle.VolCandle]: CandleStylePreferences;
 }
