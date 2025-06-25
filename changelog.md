@@ -5,6 +5,53 @@
 <!-- markdownlint-disable no-inline-html -->
 <!-- markdownlint-disable code-block-style -->
 
+## Version 29.4.0
+
+*Date: Tue Jun 25 2025*
+
+**New Features**
+
+- **Added new legend property.** A new overrides property `paneProperties.legendProperties.showSeriesLegendCloseOnMobile` was added to hide/show the close value in the legend when on mobile. The default value is `true`.
+- **Support multiple tick resolution.** The library now supports multiple [tick resolutions](https:/www.tradingview.com/charting-library-docs/latest/core_concepts/Resolution#resolution-in-ticks). Previously, it was possible to set only `1T` resolution.<br/>
+Note that the library does not support tick multipliers. This means it is not possible to build a higher resolution (e.g., `10T`) from a lower one (e.g., `1T`). Therefore, your datafeed must explicitly provide each required resolution. (Trading Platform only)
+- **Enabled custom price formatting for Watchlist values.** `priceFormatterFactory` from [`custom_formatters`](https:/www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.ChartingLibraryWidgetOptions#custom_formatters) can now be used to format values displayed in the Watchlist columns titled _Last_ and _Chg_. (Trading Platform only)
+
+**Improvements**
+
+- **Updated snapshots functionality in the top toolbar.** Now, handling and storing [snapshots](https:/www.tradingview.com/charting-library-docs/latest/ui_elements/Snapshots) rely solely on the [`snapshot_url`](https:/www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.ChartingLibraryWidgetOptions#snapshot_url) property.
+This means all server-side snapshot actions (*Copy link*, *Open in new tab*, *Tweet image*) must be implemented using your own server.
+For details on how to set up your own server, see our guide to [implementing a snapshot server](https:/www.tradingview.com/charting-library-docs/latest/tutorials/implement-snapshots-server).
+- **Added the `use_symbol_name_for_header_toolbar` featureset.** This featureset allows you to show the symbol name over the ticker in the _Symbol Search_ dialog.
+- **Added `searchSource` parameter to `searchSymbols`.** [`searchSymbols`](https:/www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IDatafeedChartApi#searchsymbols) now receives a new parameter `searchSource` to indicate where the search was triggered from.
+- **Added a new property to the `BrokerCustomUI` interface.** [`showReversePositionDialog`](https:/www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.BrokerCustomUI#showreversepositiondialog) allows overriding the default *Reverse position* dialog with a custom implementation.
+- **Added VWAP insufficient data warning.** Users will now see a warning icon and message in the legend if there isn't enough data loaded to calculate VWAP.
+- **Add featureset to display inactivity gaps on intraday charts.** The new `intraday_inactivity_gaps` featureset enables the display of inactivity gaps on intraday charts. These gaps represent periods within the trading session when there has been no trading activity, resulting in missing bars on the chart.<br/>
+When `intraday_inactivity_gaps` is enabled, a checkbox appears in the chart settings dialog, allowing users to toggle inactivity gaps on or off. The featureset also exposes the [`intradayInactivityGaps`](https:/www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IChartWidgetApi#intradayinactivitygaps) watched value on the Widget API for programmatic control.
+- **Improved data loading efficiency by throttling data requests during user scrolling.** This significantly reduces the frequency of small, incremental requests to the Datafeed API.
+- **Order & Position lines display the same information on desktop and mobile.** Users can now benefit from the same design on both desktop and mobile when an order/position is displayed on the chart. (Trading Platform only)
+
+**Bug Fixes**
+
+- **Fixed indicator template favorite menu bug.** Fixed an issue where favoriting an indicator template with leading whitespace in its name caused the quick access button in the header menu to appear empty.
+- **Fixed Relative Strength Index indicator.** The Relative Strength Index indicator was broken in version 29.2.0 and has now been fixed.
+- **Fixed a bug where switching chart type to a Japanese one would lead to an error in the console.**
+
+- **Fixed vertical line drawing bug.** Fixed an issue where it was impossible to move an existing vertical line drawing to the right of the most recent bar on the chart.
+- **Fixed an error when drawing execution shapes on the chart led to an invalid chart state.** Fixes [#9109](https://github.com/tradingview/charting_library/issues/9109)
+- **Fixed the spread operator issue in the Compare symbol dialog.** Spread operators now function correctly in the _Compare symbol_ dialog, ensuring consistency with the _Symbol Search_ dialog.
+- **Fix for sameorigin.html loading from relative path.** This fix ensures proper loading of the `sameorigin.html` file when using the `iframe_loading_same_origin` featureset and the current page is not the root page.
+- **The `_getStyleOverrides` error message.** Fixed a bug where the `_getStyleOverrides` error message could be seen in the console when instantiating the chart with pre-existing orders or positions. (Trading Platform only)
+- **Fix rendering of multiple execution shapes on a single bar.** Fixed an issue where adding multiple [execution shapes](https:/www.tradingview.com/charting-library-docs/latest/ui_elements/drawings/drawings-api#createexecutionshape) to a single bar would only render the first shape. (Trading Platform only)
+
+**Documentation**
+
+- **New tutorial.** Check out our [new tutorial](https:/www.tradingview.com/charting-library-docs/latest/tutorials/implement-broker-api) on how to implement the required methods to enable basic trading functionality using the Broker API.
+By the end of this tutorial, you will learn how to enable trading UI and how to store, return, and update orders to make the trading flow functional.
+- **New troubleshooting article.** Explore a new article on common [customization issues](https:/www.tradingview.com/charting-library-docs/latest/customization/customization-issues) and potential solutions.
+- **Other enhancements.** Updated the [Custom themes API](https:/www.tradingview.com/charting-library-docs/latest/customization/styles/custom-themes) article and added a new [example](https://codepen.io/tradingview/pen/xbGRaKd) to demonstrate how chart colors can be adjusted using this API.
+
+---
+
 ## Version 29.3.0
 
 *Date: Thu May 08 2025*
@@ -26,6 +73,7 @@
 - **Empty context menu.** Fixed an issue where the [context menu](https:/www.tradingview.com/charting-library-docs/latest/ui_elements/context-menu) would be partially empty on mobile
 - **onContextMenu callback received incorrect arguments.** Fixed a bug where the [`onContextMenu`](https:/www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IChartingLibraryWidget#oncontextmenu) callback received an object instead of the expected arguments.
 - **Autosave won't trigger with empty text box created during autosave delay.**
+- **Fixed an error where vertical lines would revert to their previous position when moved beyond latest bar.** Fixes [#8894](https://github.com/tradingview/charting_library/issues/8894)
 
 **Documentation**
 
