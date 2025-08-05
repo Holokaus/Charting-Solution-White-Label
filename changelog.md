@@ -5,6 +5,22 @@
 <!-- markdownlint-disable no-inline-html -->
 <!-- markdownlint-disable code-block-style -->
 
+## Version 29.5.0
+
+*Date: Tue Aug 05 2025*
+
+**Improvements**
+
+- **Improved crosshair movement in tracking mode on mobile.** Previously, the crosshair moved incorrectly in tracking mode when `vert_touch_drag_scroll` was disabled. Now, page scrolling is disabled in tracking mode, allowing the crosshair to move on touch.
+- **Added `setLayoutSizes` method to `IChartingLibraryWidget`.** The [`setLayoutSizes`](https:/www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IChartingLibraryWidget#setlayoutsizes) method can be used to resize the charts in [multiple-chart layouts](https:/www.tradingview.com/charting-library-docs/latest/trading_terminal#multiple-chart-layout). (Trading Platform only)
+
+**Bug Fixes**
+
+- **Fixed an issue where setMinimumAdditionalDepth would be ignored.** Fixed an issue where custom studies would sometimes not request enough historic bars after calling [`setMinimumAdditionalDepth`](https:/www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IContext/#setminimumadditionaldepth).
+- **Fixed an issue where pivot points could be drawn on the wrong bar for overnight sessions.** Fixed an issue where pivot points could be drawn on the wrong bars for symbols with overnight sessions when calculating with a daily timeframe.
+
+---
+
 ## Version 29.4.0
 
 *Date: Tue Jun 25 2025*
