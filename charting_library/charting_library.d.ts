@@ -12129,8 +12129,16 @@ export interface IContext {
 	 */
 	is_main_symbol(symbol: ISymbolInstrument | undefined): boolean;
 	/**
-	 * Allows the minimum depth to be forced.
-	 * @param  {number} value - minimum depth to set
+	 * Allows you to specify how many data points beyond the [visible range](https://www.tradingview.com/charting-library-docs/latest/ui_elements/Time-Scale#time-range) the library should request.
+	 * You should use this method only in **exceptional** cases.
+	 *
+	 * By default, the library request data for the visible range and some additional data points required for calculations.
+	 * For example, if you calculate 10-period Moving Average with the {@link PineJSStd.sma} function, the library will request at least 10 extra bars of historical data.
+	 *
+	 * However, the library cannot determine the number of extra bars when your indicator depends on another indicator (chained calculations).
+	 * In this exceptional case, you can specify this number using the `setMinimumAdditionalDepth` method.
+	 * Consider the [Custom Moving Average](https://www.tradingview.com/charting-library-docs/latest/tutorials/create-custom-indicator/constructor-implementation#2-call-setminimumadditionaldepth) example, where a series is calculated and then used as an input for the second calculation.
+	 * @param  {number} value - minimum number of bars to request
 	 */
 	setMinimumAdditionalDepth(value: number): void;
 }
@@ -20841,6 +20849,10 @@ export interface StudyOhlcStylesInfo {
 export interface StudyOrDrawingAddedToChartEventParams {
 	/**
 	 * Name of the added study or drawing.
+	 */
+	label: string;
+	/**
+	 * Id of the added study or drawing.
 	 */
 	value: string;
 }

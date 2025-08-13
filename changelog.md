@@ -5,6 +5,16 @@
 <!-- markdownlint-disable no-inline-html -->
 <!-- markdownlint-disable code-block-style -->
 
+## Version 29.6.0
+
+*Date: Wed Aug 13 2025*
+
+**Improvements**
+
+- **Added a `label` property to StudyOrDrawingAddedToChartEventParams.** The [`label`](https:/www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.StudyOrDrawingAddedToChartEventParams#label) property contains the indicator's name as defined in the [`description`](https:/www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.RawStudyMetaInfo#description) field of its [metainfo](https:/www.tradingview.com/charting-library-docs/latest/custom_studies/metainfo).
+
+---
+
 ## Version 29.5.0
 
 *Date: Tue Aug 05 2025*
