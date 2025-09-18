@@ -4,14 +4,80 @@
 <!-- markdownlint-disable no-emphasis-as-header -->
 <!-- markdownlint-disable no-inline-html -->
 <!-- markdownlint-disable code-block-style -->
+## Version 30.0.0
 
-## Version 29.6.0
+*Date: Thu Sep 18 2025*
 
-*Date: Wed Aug 13 2025*
+**Breaking Changes**
+
+- **Scrolling and resizing cannot be canceled anymore.** Chart scrolling or resizing via the time or price scale no longer triggers a change event. Therefore, these actions cannot be canceled with undo action anymore.
+- **Update line tools overrides.** The text visibility checkbox has been removed from the drawing settings. Now, the text is always displayed when specified.
+For this reason, the `showLabel` override property has no effect for the line tools such as Trend Line.
+- **Update UDF properties.** Both `exchange-listed` and `exchange-traded` have been marked deprecated in favour of a single `exchange_listed_name` property.
+From version 31 they will be removed.
+- **Extend featureset to display inactivity gaps on DWM charts.** The new [`inactivity_gaps`](https:/www.tradingview.com/charting-library-docs/latest/customization/Featuresets#inactivity_gaps) featureset replaces the existing `intraday_inactivity_gaps` and enables the display of inactivity gaps both on intraday and DWM (daily, weekly, monthly) charts. For more information, refer to the [Show/hide gaps on the chart](https:/www.tradingview.com/charting-library-docs/latest/ui_elements/Chart#showhide-gaps-on-the-chart) section.
+- **Removed support for iOS version below 15.** Only iOS versions including and above 16 are now compatible with the library.
+
+**New Features**
+
+- **Added the "Day of week labels" checkbox to the "Scales and lines" settings dialog.**
+
+- **Added a floating tooltip for detailed bar analysis in the *Cursors* menu.** On a long press on the chart, the tooltip appears and displays the OHLCV values and price change for the selected bar.
+It then follows the cursor or finger as you move, providing a seamless way to inspect data across the chart.
+To disable this feature, use the `long_press_floating_tooltip` featureset.
 
 **Improvements**
 
+- **Added option to remove locked drawings.** A new toggle *Always remove locked drawings* is now available in the left toolbar’s delete menu.
+When enabled, this option forces the deletion of locked drawings along with other items.
+- **Added subscription for *Zoom out* tool.** [`IChartWidgetApi`](https:/www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IChartWidgetApi) has a new property `canZoomOutWV`. It returns whether the chart can be zoomed out using [`zoomOut`](https:/www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IChartWidgetApi#zoomout).
+- **The `onSymbolChanged` method returns the right type.** [`onSymbolChanged`](https:/www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IChartWidgetApi#onsymbolchanged) now returns the expected type.
+- **Deprecated support for letters in shortcuts.** The support for letters in [shortcuts](https:/www.tradingview.com/charting-library-docs/latest/getting_started/Shortcuts) has been deprecated. Starting from version 31, string key names are no longer supported.
+Old styles like `'ctrl+shift+/'` or `['ctrl', 'shift', '/']` are deprecated. Use the supportable style like `['ctrl', 'shift', 191]` instead. For more information, refer to the [Manage shortcuts](https:/www.tradingview.com/charting-library-docs/latest/getting_started/Shortcuts#manage-shortcuts) section.
 - **Added a `label` property to StudyOrDrawingAddedToChartEventParams.** The [`label`](https:/www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.StudyOrDrawingAddedToChartEventParams#label) property contains the indicator's name as defined in the [`description`](https:/www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.RawStudyMetaInfo#description) field of its [metainfo](https:/www.tradingview.com/charting-library-docs/latest/custom_studies/metainfo).
+- **New featuresets for legend in-place edit.** The `disable_legend_inplace_resolution_change` and `disable_legend_inplace_symbol_change` featuresets control whether users can change the resolution or symbol directly from the [legend](https:/www.tradingview.com/charting-library-docs/latest/ui_elements/Legend).
+- **Show symbol name in the _Сompare_ dialog.** When the [`use_symbol_name_for_header_toolbar`](https:/www.tradingview.com/charting-library-docs/latest/customization/Featuresets#use_symbol_name_for_header_toolbar) featureset is enabled, the symbol [`name`](https:/www.tradingview.com/charting-library-docs/latest/connecting_data/Symbology/#name) is displayed in the _Compare_ search dialog instead of [`ticker`](https:/www.tradingview.com/charting-library-docs/latest/connecting_data/Symbology/#ticker).
+- **Added new time zone for Kabul.**
+
+- **Added new APIs to control the watermark settings.** The [Watermark API](https:/www.tradingview.com/charting-library-docs/latest/ui_elements/watermarks#watermark-api-recommended) now has three different properties that can be set independently:
+  - [`tickerVisibility`](https:/www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IWatermarkApi/#tickervisibility) to toggle the display of the ticker (e.g. AAPL)
+  - [`intervalVisibility`](https:/www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IWatermarkApi/#intervalvisibility) to toggle the display of the interval (e.g. 1h)
+  - [`descriptionVisibility`](https:/www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IWatermarkApi/#descriptionvisibility) to toggle the display of the description (e.g. Apple Inc.)
+- **The `setVisibleRange` method can be rejected.** [`setVisibleRange`](https:/www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IChartWidgetApi#setvisiblerange) now returns a `Promise` that can be rejected.
+- **Added `chart_theme_changed` event to `SubscribeEventsMap`.** The [`chart_theme_changed`](https:/www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.SubscribeEventsMap#chart_theme_changed) event is fired when a user applies a saved [chart template](https:/www.tradingview.com/charting-library-docs/latest/saving_loading#chart-templates), resets the theme to the default built-in settings, or when the [`changeTheme`](https:/www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IChartingLibraryWidget#changetheme) or [`loadChartTemplate`](https:/www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IChartWidgetApi#loadcharttemplate) methods are called.
+- **New `applyTradingCustomization` method.** This method allows you to override the style of order and position lines created with the [Broker API](https:/www.tradingview.com/charting-library-docs/latest/trading_terminal/trading-concepts#broker-api) after the widget has been created. (Trading Platform only)
+- **Added a date property to `PositionBase`.** [`PositionBase`](https:/www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.PositionBase) now has an optional `updateTime` property. (Trading Platform only)
+- **Added a `canBeClosed` property to different Position APIs.** Both [`IndividualPositionBase`](https:/www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IndividualPositionBase) and [`IndividualPosition`](https:/www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IndividualPosition) now have an optional `canBeClosed` property to determine if a position can be closed. (Trading Platform only)
+- **Added price information (price and profit/loss details) to the tooltip for positions, orders, and brackets.**  (Trading Platform only)
+- **Redesigned *Trading settings* panel.** The *Trading settings* panel has been reworked to be more intuitive and provide users with clearer options for customizing their trading view. (Trading Platform only)
+
+**Bug Fixes**
+
+- **Fixed an issue where Spread and Ratio indicators did not work correctly on intraday resolutions.** Previously, the Spread and Ratio indicators did not work correctly on intraday resolutions when the compared symbol had a different session (e.g., 24x7 and 0930-1630).
+- **Fixed an issue where the _Long Position_ and _Short Position_ drawings were not reversed correctly.**
+
+- **Fixed a bug that allowed orders to be placed without a price.**  (Trading Platform only)
+- **Fixed *Reverse* button color overrides.** Previously, setting override properties for the *Reverse* button within the [`trading_customization`](https:/www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.TradingTerminalWidgetOptions#trading_customization) object would result in the button rendering as black. (Trading Platform only)
+
+**Documentation**
+
+- **AI docs assistant.** You can now download a comprehensive knowledge file containing our complete, up-to-date documentation and full TypeScript definitions. Feed this file to your favorite LLM to create a dedicated expert assistant for our library, ensuring you get accurate, context-aware answers and code examples. [Learn how to set it up](https:/www.tradingview.com/charting-library-docs/latest/getting_started/llm-context).
+- **New watermarks guide.** The [Watermarks](https:/www.tradingview.com/charting-library-docs/latest/ui_elements/watermarks) article explains how to programmatically control the watermark's visibility, color, and content using the Watermark API.
+- **New profit and loss article.** The [Profit and loss](https:/www.tradingview.com/charting-library-docs/latest/trading_terminal/trading-concepts/profit-and-loss) article explains how to provide P&L values from your backend. It details the different methods for updating the data and clarifies how the library uses this data for the *Money*, *Ticks*, and *Percentage* display modes.
+- **Other updates.** The following enhancements were made:
+  - Added a new section that describes [time ranges](https:/www.tradingview.com/charting-library-docs/latest/ui_elements/Time-Scale#time-range) and how to use `setVisibleRange`.
+  - Added a new section that describes [how to show/hide gaps on the chart](https:/www.tradingview.com/charting-library-docs/latest/ui_elements/Chart#showhide-gaps-on-the-chart) using the `intraday_inactivity_gaps` featureset.
+  - Updated information on [mobile app development](https:/www.tradingview.com/charting-library-docs/latest/mobile_specifics#mobile-applications).
+  - Updated [`setMinimumAdditionalDepth`](https:/www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.IContext#setminimumadditionaldepth) description, mentioning when to use the method.
+  - Updated the [Trading primitives](https:/www.tradingview.com/charting-library-docs/latest/trading_terminal/Trading-Primitives) article, providing clear explanations and examples on the primitive methods.
+  - Updated the [Online playgrounds](https:/www.tradingview.com/charting-library-docs/latest/getting_started/Online-Editors) article, providing templates for [CodePen](https://codepen.io/tradingview).
+- **Update the Datafeed API tutorial.** We updated both the code example and documentation for the [How to connect data via datafeed API](https:/www.tradingview.com/charting-library-docs/latest/tutorials/implement_datafeed_tutorial) tutorial. The latest version introduces several key improvements:
+
+  - Added support for minute and hour resolutions.
+  - Removed `full_name` from the `SymbolInfo` object. Now, `ticker` is used instead.
+  - `searchSymbols` now properly filters results by user input, selected exchange, and symbol type.
+  - `getBars` now selects the correct API endpoint based on the requested `resolution` (minute, hour, or day), ensuring the most appropriate data is used.
+  - Reworked streaming logic to support multiple subscriptions to data updates.
 
 ---
 
@@ -147,7 +213,7 @@ To disable the cross-tab synchronization, use the `watchlist_cross_tab_sync` fea
 
 - **The following enhancements were made.**
   - Added a new section explaining how to [display pre- and post-market price lines](https://www.tradingview.com/charting-library-docs/latest/connecting_data/Extended-Sessions#enable-the-price-line).
-  - Added a new section explaining how to [provide profit and loss values](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/trading-concepts/positions#provide-profit-and-loss) in Trading Platform.
+  - Added a new section explaining how to [provide profit and loss values](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/trading-concepts/profit-and-loss) in Trading Platform.
   - Updated the [Trading Session](https://www.tradingview.com/charting-library-docs/latest/connecting_data/Trading-Sessions) article with information on how to specify [session history](https://www.tradingview.com/charting-library-docs/latest/connecting_data/Trading-Sessions#session-history)
 
 ---
@@ -1009,7 +1075,7 @@ Please use [settings_adapter](https://www.tradingview.com/charting-library-docs/
 **New Features**
 
 - **Added support for specifying custom timezones.**
-  - Additional custom timezones can now be specified for use within the library. Please see the [Adding Custom Timezones](../ui_elements/timezones#custom-time-zones) section within the Timezones page.
+  - Additional custom timezones can now be specified for use within the library. Please see the [Adding Custom Timezones](https://www.tradingview.com/charting-library-docs/latest/ui_elements/timezones#adding-custom-time-zones) section within the Timezones page.
 - **Images within timescale marks.**
   - Timescale marks now support the rendering of images within the circular shape by specifying the `imageUrl` property. Please see the [TimescaleMark](https://www.tradingview.com/charting-library-docs/latest/api/interfaces/Charting_Library.TimescaleMark) interface for more details.
 - **Support different margin rates for different order types.** [6607](https://github.com/tradingview/charting_library/issues/6607)
@@ -1053,7 +1119,7 @@ Please use [settings_adapter](https://www.tradingview.com/charting-library-docs/
 
 **Other**
 
-- Removed `Australia/ACT` from the list of [timezones](../ui_elements/timezones) within our documentation. Please use either the Sydney timezone or [specify your own custom timezone](../ui_elements/timezones#custom-time-zones).
+- Removed `Australia/ACT` from the list of [timezones](https://www.tradingview.com/charting-library-docs/latest/ui_elements/timezones) within our documentation. Please use either the Sydney timezone or [specify your own custom timezone](https://www.tradingview.com/charting-library-docs/latest/ui_elements/timezones#adding-custom-time-zones).
 
 ## Version 24.001
 
