@@ -48,6 +48,9 @@
 					client_id: 'tradingview.com',
 					user_id: 'public_user_id',
 					theme: getParameterByName('theme'),
+					favorites: {
+						chartTypes: ["Candles", "Bars", "Line", "Heiken Ashi", "Volume Footprint"]
+					},
 				});
 				window.frames[0].focus();
 			};

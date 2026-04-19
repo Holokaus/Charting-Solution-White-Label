@@ -512,7 +512,10 @@ export declare enum SeriesType {
 	LineWithMarkers = 14,
 	Stepline = 15,
 	HLCArea = 16,
+	VolumeFootprint = 17,
+	TPO = 18,
 	VolCandle = 19,
+	SVP = 20,
 	HLCBars = 21,
 	Renko = 4,
 	Kagi = 5,
@@ -29032,7 +29035,7 @@ export type ChartDescriptorFunction = (context: ChartDescriptionContext) => Prom
  *
  * See {@link Favorites} for the Widget Constructor option where you can define these favorites, and {@link ChartingLibraryWidgetOptions.favorites} for the Widget Constructor option.
  */
-export type ChartTypeFavorites = "Area" | "Bars" | "Candles" | "Heiken Ashi" | "Hollow Candles" | "Line" | "Line Break" | "Baseline" | "LineWithMarkers" | "Stepline" | "Columns" | "High-low";
+export type ChartTypeFavorites = "Area" | "Bars" | "Candles" | "Heiken Ashi" | "Hollow Candles" | "Line" | "Line Break" | "Baseline" | "LineWithMarkers" | "Stepline" | "Columns" | "High-low" | "Volume Footprint" | "TPO" | "Volume Candles" | "SVP";
 /** This is the list of all [featuresets](https://www.tradingview.com/charting-library-docs/latest/customization/Featuresets) that work in Advanced Charts */
 export type ChartingLibraryFeatureset = 
 /** Allows storing all properties (including favorites) to the localstorage @default true */
@@ -29854,7 +29857,7 @@ export type TradingDialogCustomField = CheckboxFieldMetaInfo | TextWithCheckboxF
  *
  * See {@link Favorites} for the Widget Constructor option where you can define these favorites, and {@link TradingTerminalWidgetOptions.favorites} for the Widget Constructor option.
  */
-export type TradingTerminalChartTypeFavorites = ChartTypeFavorites | "Renko" | "Kagi" | "Point & figure" | "Line Break";
+export type TradingTerminalChartTypeFavorites = ChartTypeFavorites | "Renko" | "Kagi" | "Point & figure";
 /** This is the list of all featuresets that work on Trading Platform (which is an extension of Advanced Charts) */
 export type TradingTerminalFeatureset = ChartingLibraryFeatureset | 
 /** Enables the "plus" button on the price scale for quick trading @default true */
