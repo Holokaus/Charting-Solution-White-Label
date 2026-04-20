@@ -86,12 +86,12 @@ var TradingView = (function (e) {
     Re,
     De,
     ke;
-  function Ve(e, t) {
+  function mergeOptions(e, t) {
     const i = { ...e };
     for (const o in t)
       "object" != typeof e[o] || null === e[o] || Array.isArray(e[o])
         ? void 0 !== t[o] && (i[o] = t[o])
-        : (i[o] = Ve(e[o], t[o]));
+        : (i[o] = mergeOptions(e[o], t[o]));
     return i;
   }
   ((e.ActionId = void 0),
@@ -1006,7 +1006,7 @@ var TradingView = (function (e) {
     ((ke = e.LineStyle || (e.LineStyle = {}))[(ke.Solid = 0)] = "Solid"),
     (ke[(ke.Dotted = 1)] = "Dotted"),
     (ke[(ke.Dashed = 2)] = "Dashed"));
-  const Fe = {
+  const defaultWidgetOptions = {
       width: 800,
       height: 500,
       interval: "1D",
@@ -1053,11 +1053,11 @@ var TradingView = (function (e) {
     We = JSON.parse(
       '[{"iso":"en","dir":"ltr","language":"en"},{"iso":"en","dir":"ltr","language":"en"},{"iso":"de","dir":"ltr","language":"de"},{"iso":"fr","dir":"ltr","language":"fr"},{"iso":"ca","dir":"ltr","language":"ca_ES"},{"iso":"es","dir":"ltr","language":"es"},{"iso":"it","dir":"ltr","language":"it"},{"iso":"pl","dir":"ltr","language":"pl"},{"iso":"hu","dir":"ltr","language":"hu_HU"},{"iso":"sv","dir":"ltr","language":"sv"},{"iso":"tr","dir":"ltr","language":"tr"},{"iso":"ru","dir":"ltr","language":"ru"},{"iso":"pt","dir":"ltr","language":"pt"},{"iso":"id","dir":"ltr","language":"id_ID"},{"iso":"ms","dir":"ltr","language":"ms_MY"},{"iso":"th","dir":"ltr","language":"th"},{"iso":"vi","dir":"ltr","language":"vi"},{"iso":"ja","dir":"ltr","language":"ja"},{"iso":"ko","dir":"ltr","language":"ko"},{"iso":"zh-Hans","dir":"ltr","language":"zh"},{"iso":"zh-Hant","dir":"ltr","language":"zh_TW"},{"iso":"ar","dir":"rtl","language":"ar"},{"iso":"he","dir":"rtl","language":"he_IL"}]',
     );
-  let Ee = !1;
-  function Me() {
+  let debugModeEnabled = !1;
+  function getVersion() {
     return "CL v30.0.0 (internal id a7798f5b2167d88489048eb7e1527e9bf896690e @ 2025-09-18T15:48:20.147Z)";
   }
-  const Be = class {
+  const ChartWidget = class {
     constructor(e) {
       if (
         ((this._id = `tradingview_${((1048576 * (1 + Math.random())) | 0).toString(16).substring(1)}`),
@@ -1074,13 +1074,13 @@ var TradingView = (function (e) {
         delete e.overrides[
           "mainSeriesProperties.priceAxisProperties.lockScale"
         ]),
-        (this._options = Ve(Fe, e)));
+        (this._options = mergeOptions(defaultWidgetOptions, e)));
       ("dark" === (this._options.theme ?? "light").toLowerCase() &&
         void 0 === this._options.loading_screen &&
         (this._options.loading_screen = { backgroundColor: "#131722" }),
         (this._options.debug || this._options.debug_broker) &&
-          (Ee ||
-            ((Ee = !0),
+          (debugModeEnabled ||
+            ((debugModeEnabled = !0),
             console.log(
               "Using CL v30.0.0 (internal id a7798f5b2167d88489048eb7e1527e9bf896690e @ 2025-09-18T15:48:20.147Z)",
             ))),
@@ -1217,7 +1217,7 @@ var TradingView = (function (e) {
       this._innerWindow().addCustomCSSFile(e);
     }
     applyOverrides(e) {
-      ((this._options = Ve(this._options, { overrides: e })),
+      ((this._options = mergeOptions(this._options, { overrides: e })),
         this._doWhenInnerWindowLoaded((t) => {
           t.applyOverrides(e);
         }));
@@ -1420,7 +1420,7 @@ var TradingView = (function (e) {
     _autoResizeChart() {
       this._options.fullscreen &&
         ((this._iFrame.style.height = window.innerHeight + "px"),
-        Ne &&
+        isChromeIOS &&
           setTimeout(() => {
             this._iFrame.style.height = window.innerHeight + "px";
           }, 30));
@@ -1696,12 +1696,12 @@ var TradingView = (function (e) {
   };
   "undefined" != typeof window &&
     ((window.TradingView = window.TradingView || {}),
-    (window.TradingView.version = Me));
-  const Ne =
+    (window.TradingView.version = getVersion));
+  const isChromeIOS =
     !(
       "undefined" == typeof window ||
       !window.navigator ||
       !window.navigator.userAgent
     ) && window.navigator.userAgent.includes("CriOS");
-  return ((e.version = Me), (e.widget = Be), e);
+  return ((e.version = getVersion), (e.widget = ChartWidget), e);
 })({});
