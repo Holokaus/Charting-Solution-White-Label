@@ -1,12 +1,1 @@
-```
-# Dependencies
-node_modules/
-
-# Logs
-*.log
-
-# Environment
-.env
-.env.local
-.env.*
-```
+(docs/PHASE_3_STEP2_COMPLETE.md is a documentation file, which should not be added to .gitignore)
