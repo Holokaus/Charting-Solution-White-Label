@@ -1,17 +1,7 @@
 ```
-# Dependencies
-node_modules/
+# Beautified modules directory
+beautified-modules-manual/
 
-# Editor/IDE files
-.vscode/
-
-# Logs and temp files
-*.log
-*.tmp
-*.swp
-
-# Environment
-.env
-.env.local
-*.env.*
+# Documentation
+docs/*.md
 ```
