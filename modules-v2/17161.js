@@ -1,0 +1,1 @@
+17161:(e,t,i)=>{"use strict";i.d(t,{alwaysShowLastPriceAndLastDayChange:()=>s,lastDayChangeAvailable:()=>o});i(37103);const s=!1,o=!1

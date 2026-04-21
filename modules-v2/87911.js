@@ -1,0 +1,2 @@
+87911:(e,t,i)=>{"use strict";i.d(t,{
+restoreShowMarketOpenStatusProperty:()=>c,showMarketOpenStatusProperty:()=>l});var s=i(41072),o=i(1765);const n="Chart.ShowMarketOpenStatus",r=!0;function a(){return o.getBool(n,r)}const l=(0,s.createPrimitiveProperty)(a());function c(){l.setValue(r),o.remove(n)}o.onSync.subscribe(null,(()=>l.setValue(a()))),l.subscribe(null,(()=>o.setValue(n,l.value())))

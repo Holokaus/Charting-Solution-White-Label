@@ -1,0 +1,1 @@
+42516:(e,t,i)=>{"use strict";i.d(t,{sourcesAffectState:()=>n});var s=i(97217),o=i(13896);function n(e){return!o.lineToolsDoNotAffectChartInvalidation||e.some((e=>!(0,s.isLineTool)(e)))}

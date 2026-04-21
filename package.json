@@ -4,5 +4,8 @@
   "type": "module",
   "main": "charting_library.cjs.js",
   "module": "charting_library.esm.js",
-  "types": "charting_library.d.ts"
+  "types": "charting_library.d.ts",
+  "devDependencies": {
+    "js-beautify": "^1.15.4"
+  }
 }

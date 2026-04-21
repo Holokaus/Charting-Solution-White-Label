@@ -1,0 +1,1 @@
+70548:(e,t,i)=>{"use strict";i.d(t,{createWVFromProperty:()=>o});var s=i(8811);function o(e){return(0,s.createWVFromGetterAndSubscription)((()=>e.value()),e)}

@@ -1,0 +1,1 @@
+22455:(e,t,i)=>{"use strict";function s(e){return e?.symbolSource&&e.symbolSource()===e||void 0!==e?.isActingAsSymbolSource}function o(e){return s(e)&&"quotesProvider"in e}function n(e){return s(e)&&e.isActingAsSymbolSource().value()}i.d(t,{isActingAsSymbolSource:()=>n,isSymbolSource:()=>s,isSymbolSourceWithQuotesProvider:()=>o})

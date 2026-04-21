@@ -1,0 +1,492 @@
+// Module 29803
+// Original file: 29803.js
+// Size: 18.0 KB
+// Purpose: Auto-extracted webpack module from TradingView library
+
+(e, t, i) => {
+  "use strict";
+  i.d(t, {
+    linking: () => f
+  });
+  var s = i(90484),
+    o = i(50151),
+    n = i(9343),
+    r = i(22613),
+    a = (i(37103), i(46082)),
+    l = i(95059),
+    c = i(48943),
+    h = i(8811);
+  var d = i(54370),
+    u = i(69109);
+  const _ = (0, n.getLogger)("Linking");
+  var p, m;
+  ! function(e) {
+    e[e.NotBound = 0] = "NotBound", e[e.BoundToWidget = 1] = "BoundToWidget", e[e.BoundToModel = 2] = "BoundToModel"
+  }(p || (p = {})),
+  function(e) {
+    e[e.Symbol = 0] = "Symbol", e[e.Resolution = 1] = "Resolution"
+  }(m || (m = {}));
+  class g {
+    constructor(e, t, i) {
+      this.watchedSymbols = new r.WatchedValue([]),
+        this.watchedSymbol = new r.WatchedValue, this.seriesShortSymbol = new r.WatchedValue, this.proSymbol = new r
+        .WatchedValue, this.ensuredProSymbol = new r.WatchedValue, this.watchedInterval = new r.WatchedValue, this
+        .watchedIntraday = new r.WatchedValue, this.watchedSeconds = new r.WatchedValue, this.watchedTicks = new r
+        .WatchedValue, this.watchedDataFrequencyResolution = new r.WatchedValue, this.watchedRange = new r
+        .WatchedValue, this.watchedSupportedResolutions = new r.WatchedValue, this.watchedSupportedChartStyles = new r
+        .WatchedValue, this.symbolNamesList = new r.WatchedValue, this._chartWidgetCollection = null, this
+        ._chartWidgetBindingState = 0, this._activeChartWidget = null, this._linkingGroupCharts = null, this
+        ._boundChartWidget = null, this._watchedSymbolListenerBound = this._watchedSymbolListener.bind(this), this
+        ._watchedIntervalListenerBound = this._watchedIntervalListener.bind(this), this
+        ._setGroupSymbolCancellationToken = {
+          cancelled: !1
+        }, this._muted = !1, this.updateBoundChartWidget = () => {
+          const e = this._chartToBind();
+          e !== this._boundChartWidget && (null === e ? this.unbindFromChartWidget() : this.bindToChartWidget(e))
+        }, this._updateAllGroupChartWidgets = () => {
+          this._destroySymbolIntervalPropertySubscriptions?.();
+          const e = (0, o.ensureNotNull)(this._linkingGroupCharts)
+            .value(),
+            t = [],
+            i = [];
+          for (const s of e) {
+            const e = s.symbolWV()
+              .spawn(),
+              o = s.resolutionWV()
+              .spawn();
+            e.subscribe(this._updateSymbolByProperty.bind(this, s)), o.subscribe(this._updateIntervalByProperty.bind(
+              this, s)), t.push(e), i.push(o)
+          }
+          this._destroySymbolIntervalPropertySubscriptions = () => {
+            t.forEach((e => e.destroy())), i.forEach((e => e.destroy())), this
+              ._destroySymbolIntervalPropertySubscriptions = void 0
+          };
+          const s = this.watchedSymbol.value();
+          e.length > 1 && this._needApplySymbol(s) && !this._muted && this._setGroupSymbol(s);
+          const n = this.watchedInterval.value();
+          e.length > 1 && this._needApplyInterval(n) && !this._muted && this._setGroupInterval(n), this
+            .updateBoundChartWidget()
+        }, this._groupIndex = e;
+      const s = (e, t) => {
+        e.subscribe((e => {
+          i() === this && t.setValue(e)
+        }), {
+          callWithLast: !0
+        })
+      };
+      s(this.watchedSymbols, t.watchedSymbols), s(this.watchedSymbol, t.watchedSymbol), s(this.seriesShortSymbol, t
+        .seriesShortSymbol), s(this.proSymbol, t.proSymbol), s(this.ensuredProSymbol, t.ensuredProSymbol), s(this
+        .watchedInterval, t.watchedInterval), s(this.watchedIntraday, t.watchedIntraday), s(this.watchedSeconds, t
+        .watchedSeconds), s(this.watchedTicks, t.watchedTicks), s(this.watchedDataFrequencyResolution, t
+        .watchedDataFrequencyResolution), s(this.watchedRange, t.watchedRange), s(this.watchedSupportedResolutions,
+        t.watchedSupportedResolutions), s(this.watchedSupportedChartStyles, t.watchedSupportedChartStyles), s(this
+        .symbolNamesList, t.symbolNamesList), this.watchedSymbol.subscribe((e => {
+        this._boundChartWidget && this._boundChartWidget.hasModel() && this.mainSeries()
+          .symbolSameAsCurrent(e) || this.proSymbol.setValue(e)
+      }), {
+        callWithLast: !0
+      })
+    }
+    mute(e) {
+      this._muted = e
+    }
+    bindToChartWidgetCollection(e) {
+      this.unbindFromChartWidgetCollection(), this._chartWidgetCollection = e, this._activeChartWidget = e
+        .activeChartWidget.spawn(), this._activeChartWidget.subscribe(this.updateBoundChartWidget),
+        this._linkingGroupCharts = e.linkingGroupsCharts(this._groupIndex)
+        .spawn(), this._linkingGroupCharts.subscribe(this._updateAllGroupChartWidgets), this.updateBoundChartWidget(),
+        this._updateAllGroupChartWidgets();
+      const t = function(e) {
+        const t = (0, c.combine)((() => e.getAll()
+            .filter((e => e.isVisible() && e.hasModel()))
+            .map((e => (0, h.createWVFromGetterAndSubscription)((() => e.model()
+                  .mainSeries()
+                  .symbol()), e.model()
+                .mainSeries()
+                .symbolResolved())
+              .ownership()))), e.chartModels()
+          .weakReference(), e.layout.weakReference());
+        return (0, c.accumulate)((e => e), t.ownership())
+      }(e);
+      t.subscribe((e => {
+        this.watchedSymbols.setValue(e)
+      })), this.watchedSymbols.setValue(t.value())
+    }
+    unbindFromChartWidgetCollection() {
+      this.unbindFromChartWidget(), this._chartWidgetCollection = null, this._activeChartWidget?.destroy(), this
+        ._activeChartWidget = null, this._linkingGroupCharts?.destroy(), this._linkingGroupCharts = null, this
+        ._destroySymbolIntervalPropertySubscriptions?.()
+    }
+    bindToChartWidget(e) {
+      if (this.unbindFromChartWidget(), this._boundChartWidget = e, e.hasModel()) return void this
+        ._onChartModelCreated(e.model());
+      e.modelCreated()
+        .subscribe(this, this._onChartModelCreated, !0), this._chartWidgetBindingState = 1;
+      const t = e.mainSeriesProperties()
+        .childs();
+      this.watchedSymbol.setValue(t.symbol.value()), this.watchedInterval.setValue(t.interval.value()), this
+        ._boundChartWidget.linkingGroupIndex()
+        .subscribe(this.updateBoundChartWidget)
+    }
+    unbindFromChartWidget() {
+      const e = this._boundChartWidget;
+      if (null !== e) {
+        switch (this._chartWidgetBindingState) {
+          case 1:
+            e.modelCreated()
+              .unsubscribeAll(this);
+            break;
+          case 2:
+            this.watchedSymbol.unsubscribe(this._watchedSymbolListenerBound);
+            const t = this.mainSeries()
+              .dataEvents();
+            t.symbolResolved()
+              .unsubscribeAll(this), t.symbolError()
+              .unsubscribeAll(this), this.mainSeries()
+              .onIntervalChanged()
+              .unsubscribeAll(this), this.watchedInterval.unsubscribe(this._watchedIntervalListenerBound), delete this
+              .watchedSymbol.writeLock
+        }
+        e.linkingGroupIndex()
+          .unsubscribe(this.updateBoundChartWidget), this._boundChartWidget = null, this._chartWidgetBindingState = 0
+      }
+    }
+    boundChartWidget() {
+      return this._boundChartWidget
+    }
+    mainSeries() {
+      if (!this._boundChartWidget) throw new Error("ChartWidget is undefined");
+      return this._boundChartWidget.model()
+        .mainSeries()
+    }
+    _watchedSymbolListener(e) {
+      this._needApplySymbol(e) && !this._muted && this._setGroupSymbol(e)
+    }
+    _updateSymbolByProperty(e, t) {
+      const i = this._symbolLock();
+      i && this._needApplySymbol(t) && !this._muted && this._setGroupSymbol(t), (i || e === this._boundChartWidget) &&
+        this.watchedSymbol.setValue(t)
+    }
+    _watchedIntervalListener(e) {
+      const t = a.Interval.normalize(e);
+      t && this._needApplyInterval(t) && !this._muted && this._setGroupInterval(t)
+    }
+    _updateIntervalByProperty(e, t) {
+      const i = this._intervalLock(),
+        s = a.Interval.normalize(t);
+      i && s && this._needApplyInterval(s) && !this._muted && this._setGroupInterval(s), (i || e === this
+        ._boundChartWidget) && this.watchedInterval.setValue(s ?? t)
+    }
+    _updateSeriesSymbolInfo() {
+      this.seriesShortSymbol.setValue((0, o.ensureNotNull)(this._boundChartWidget)
+        .getSymbol(!0));
+      const e = this.mainSeries()
+        .symbolInfo();
+      if (e) {
+        const t = e.pro_name || !1;
+        this.proSymbol.setValue(t || this.watchedSymbol.value()), this.ensuredProSymbol.setValue(this.proSymbol
+        .value()), e.aliases && this.symbolNamesList.setValue(e.aliases);
+        {
+          const t = e.supported_resolutions;
+          t ? this.watchedSupportedResolutions.setValue(t) : this.watchedSupportedResolutions.setValue(void 0)
+        }
+        let i = (0, d.allChartStyles)();
+        ((0, l.isCloseBasedSymbol)(e) || this.mainSeries()
+          .intervalObj()
+          .value()
+          .is1Tick()) && (i = i.filter((e => (0, l.isSingleValueBasedStyle)(e)))), "hlc" === e.visible_plots_set && (
+            i = i.filter((e => (0, l.isHLCBasedStyle)(e) || (0, l.isSingleValueBasedStyle)(e)))), this
+          .watchedSupportedChartStyles.setValue(i), this.watchedIntraday.setValue(!!e.has_intraday), this
+          .watchedSeconds.setValue(!!e.has_seconds), this.watchedTicks.setValue(!(0, l.isCloseBasedSymbol)(e) && !!e[
+            "is-tickbars-available"]), this.watchedRange.setValue(!(0, l.isCloseBasedSymbol)(e));
+        const s = e.data_frequency ? e.data_frequency : void 0;
+        this.watchedDataFrequencyResolution.setValue(s)
+      } else this.watchedIntraday.setValue(!1), this.watchedSeconds.setValue(!1), this.watchedTicks.setValue(!1), this
+        .watchedRange.setValue(!1), this.mainSeries()
+        .isFailed() && this.ensuredProSymbol.setValue(this.proSymbol.value())
+    }
+    _onChartModelCreated(e) {
+      if (!this._boundChartWidget) throw new Error("ChartWidget is undefined");
+      this._chartWidgetBindingState = 2, this.watchedSymbol.setValue(this._boundChartWidget.symbolWV()
+        .value()), this.watchedSymbol.subscribe(this._watchedSymbolListenerBound);
+      const t = e.mainSeries()
+        .dataEvents();
+      t.symbolResolved()
+        .subscribe(this, this._updateSeriesSymbolInfo), t.symbolError()
+        .subscribe(this, this._updateSeriesSymbolInfo), e.mainSeries()
+        .onIntervalChanged()
+        .subscribe(this, this._updateSeriesSymbolInfo), this._updateSeriesSymbolInfo(), this.watchedInterval.setValue(
+          this._boundChartWidget.resolutionWV()
+          .value()), this.watchedInterval.subscribe(this._watchedIntervalListenerBound), this._boundChartWidget
+        .readOnly() && (this.watchedSymbol.writeLock = !0)
+    }
+    _chartToBind() {
+      const e = this._chartWidgetCollection;
+      return null === e ? null : e.activeChartWidget.value()
+    }
+    _symbolLock() {
+      return !!this._chartWidgetCollection?.lock.symbol.value()
+    }
+    _intervalLock() {
+      return !!this._chartWidgetCollection?.lock.interval.value()
+    }
+    _chartsForLock(e) {
+      return (0 === e ? this._symbolLock() : this._intervalLock()) ? (0, o.ensureNotNull)(this._linkingGroupCharts)
+        .value() : this._boundChartWidget ? [this._boundChartWidget] : []
+    }
+    _setGroupSymbol(e) {
+      this.mute(!0), this._setGroupSymbolCancellationToken.cancelled = !0;
+      const t = this._setGroupSymbolCancellationToken = {
+        cancelled: !1
+      };
+      (0, o.ensureNotNull)(this._chartWidgetCollection)
+      .setSymbol(e, this._groupIndex, (0, o.ensureNotNull)(this._boundChartWidget))
+        .finally((() => {
+          if (this._boundChartWidget && !t.cancelled) {
+            const t = this._boundChartWidget.model()
+              .mainSeries();
+            t.symbolSameAsCurrent(e) || (this.watchedSymbol.setValue(t.symbol()), this.proSymbol.setValue(t
+              .proSymbol()))
+          }
+        })), this.mute(!1)
+    }
+    _needApplySymbol(e) {
+      const t = this._chartsForLock(0),
+        i = t.find((t => t.hasModel() && t.model()
+          .mainSeries()
+          .symbolInfo() && t.model()
+          .mainSeries()
+          .symbolSameAsResolved(e)));
+      if (i) {
+        const e = i.model()
+          .mainSeries();
+        if (t.every((t => e.symbolSameAsResolved(t.symbolWV()
+            .value())))) return !1
+      }
+      return t.some((t => t.symbolWV()
+        .value() !== e))
+    }
+    _setGroupInterval(e) {
+      this.mute(!0), (0, o.ensureNotNull)(this._chartWidgetCollection)
+        .setResolution(e, this._groupIndex)
+        .finally((() => {
+          if (this._boundChartWidget) {
+            const t = this._boundChartWidget.resolutionWV()
+              .value();
+            a.Interval.isEqual(t, e) || this.watchedInterval.setValue(t)
+          }
+        })), this.mute(!1)
+    }
+    _needApplyInterval(e) {
+      return this._chartsForLock(1)
+        .some((t => !a.Interval.isEqual(t.resolutionWV()
+          .value(), e)))
+    }
+  }
+  const f = new class {
+    constructor() {
+      this._watchedSymbols = new r.WatchedValue([]), this._watchedSymbol = new r.WatchedValue, this
+        ._seriesShortSymbol = new r.WatchedValue, this._proSymbol = new r.WatchedValue, this._ensuredProSymbol =
+        new r.WatchedValue, this._watchedInterval = new r.WatchedValue, this._watchedIntraday = new r.WatchedValue,
+        this._watchedSeconds = new r.WatchedValue, this._watchedTicks = new r.WatchedValue, this
+        ._watchedDataFrequencyResolution = new r.WatchedValue, this._watchedRange = new r.WatchedValue, this
+        ._watchedSupportedResolutions = new r.WatchedValue, this._watchedSupportedChartStyles = new r.WatchedValue(
+        []), this._symbolNamesList = new r.WatchedValue, this._chartWidgetCollection = null, this
+        ._onSymbolLinkBound = this._onSymbolLink.bind(this), this._searchCharts = null, this
+        ._searchChartsLoadDebounced = null, this._selfEmit = !1, this._preventFeedBySymbol = !1, this
+        ._feedBySymbolDebounceCounter = 0, this._linkingGroups = new Map, this._activeLinkingGroup = new r
+        .WatchedValue, this._activeLinkingGroupIndex = null, this._updateLinkingGroups = () => {
+          (0, o.ensureNotNull)(this._chartWidgetCollection)
+          .allLinkingGroups()
+            .value()
+            .forEach((e => this._linkingGroup(e))), this._linkingGroups.forEach((e => e.updateBoundChartWidget()))
+        }, this._activeLinkingGroup.setValue(this._linkingGroup(null));
+      const e = (e, t) => {
+        e.subscribe((e => t()
+          .setValue(e)), {
+          callWithLast: !0
+        })
+      };
+      e(this._watchedSymbols, (() => this._activeLinkingGroup.value()
+        .watchedSymbols)), e(this._watchedSymbol, (() => this._activeLinkingGroup.value()
+        .watchedSymbol)), e(this._seriesShortSymbol, (() => this._activeLinkingGroup.value()
+        .seriesShortSymbol)), e(this._proSymbol, (() => this._activeLinkingGroup.value()
+        .proSymbol)), e(this._ensuredProSymbol, (() => this._activeLinkingGroup.value()
+        .ensuredProSymbol)), e(this._watchedInterval, (() => this._activeLinkingGroup.value()
+        .watchedInterval)), e(this._watchedIntraday, (() => this._activeLinkingGroup.value()
+        .watchedIntraday)), e(this._watchedSeconds, (() => this._activeLinkingGroup.value()
+        .watchedSeconds)), e(this._watchedTicks, (() => this._activeLinkingGroup.value()
+        .watchedTicks)), e(this._watchedDataFrequencyResolution, (() => this._activeLinkingGroup.value()
+        .watchedDataFrequencyResolution)), e(this._watchedRange, (() => this._activeLinkingGroup.value()
+        .watchedRange)), e(this._watchedSupportedResolutions, (() => this._activeLinkingGroup.value()
+        .watchedSupportedResolutions)), e(this._watchedSupportedChartStyles, (() => this._activeLinkingGroup
+        .value()
+        .watchedSupportedChartStyles)), e(this._symbolNamesList, (() => this._activeLinkingGroup.value()
+        .symbolNamesList));
+      const t = e => {
+        this._watchedSymbol.setValue(e.watchedSymbol.value()),
+          this._seriesShortSymbol.setValue(e.seriesShortSymbol.value()), this._proSymbol.setValue(e.proSymbol
+            .value()), this._ensuredProSymbol.setValue(e.ensuredProSymbol.value()), this._watchedInterval
+          .setValue(e.watchedInterval.value()), this._watchedIntraday.setValue(e.watchedIntraday.value()), this
+          ._watchedSeconds.setValue(e.watchedSeconds.value()), this._watchedTicks.setValue(e.watchedTicks
+        .value()), this._watchedDataFrequencyResolution.setValue(e.watchedDataFrequencyResolution.value()), this
+          ._watchedRange.setValue(e.watchedRange.value()), this._watchedSupportedResolutions.setValue(e
+            .watchedSupportedResolutions.value()), this._watchedSupportedChartStyles.setValue(e
+            .watchedSupportedChartStyles.value()), this._symbolNamesList.setValue(e.symbolNamesList.value())
+      };
+      this._activeLinkingGroup.subscribe(t), t(this._activeLinkingGroup.value()), (0, u.setMuteLinkingGroup)(((e,
+        t) => {
+          this._linkingGroup(e)
+            .mute(t)
+        }))
+    }
+    get symbols() {
+      return this._watchedSymbols
+    }
+    get symbol() {
+      return this._watchedSymbol
+    }
+    get proSymbol() {
+      return this._proSymbol.readonly()
+    }
+    get ensuredProSymbol() {
+      return this._ensuredProSymbol.readonly()
+    }
+    get symbolNamesList() {
+      return this._symbolNamesList.readonly()
+    }
+    get seriesShortSymbol() {
+      return this._seriesShortSymbol.readonly()
+    }
+    get interval() {
+      return this._watchedInterval
+    }
+    get intraday() {
+      return this._watchedIntraday.readonly()
+    }
+    get seconds() {
+      return this._watchedSeconds.readonly()
+    }
+    get ticks() {
+      return this._watchedTicks.readonly()
+    }
+    get range() {
+      return this._watchedRange.readonly()
+    }
+    get supportedResolutions() {
+      return this._watchedSupportedResolutions.readonly()
+    }
+    get supportedChartStyles() {
+      return this._watchedSupportedChartStyles.readonly()
+    }
+    get preventFeedBySymbol() {
+      return this._preventFeedBySymbol
+    }
+    get dataFrequencyResolution() {
+      return this._watchedDataFrequencyResolution.readonly()
+    }
+    activeLinkingGroup() {
+      return this._activeLinkingGroup.readonly()
+    }
+    getChartWidget() {
+      return this.activeLinkingGroup()
+        .value()
+        .boundChartWidget()
+    }
+    bindToChartWidgetCollection(e) {
+      this._chartWidgetCollection?.onAboutToBeDestroyed.unsubscribeAll(this), this
+        ._unbindFromChartWidgetCollection(), this._chartWidgetCollection = e, this._chartWidgetCollection
+        .onAboutToBeDestroyed.subscribe(this, this._unbindFromChartWidgetCollection), this._chartWidgetCollection
+        .allLinkingGroups()
+        .subscribe(this._updateLinkingGroups), this._updateLinkingGroups(), this._activeLinkingGroupIndex = e
+        .activeLinkingGroup()
+        .spawn(), this._activeLinkingGroupIndex.subscribe((e => {
+          this._activeLinkingGroup.setValue(this._linkingGroup(e))
+        }), {
+          callWithLast: !0
+        }), this._linkingGroups.forEach((t => t.bindToChartWidgetCollection(e)))
+    }
+    bindToSearchCharts(e) {
+      this.unbindFromSearchCharts(), this._searchCharts = e, e.onSearchBySymbol.subscribe(this, this
+        ._onSearchBySymbol), e.loadingSymbol.subscribe((e => {
+        !1 === e && (this._feedBySymbolDebounceCounter = 0)
+      })), this._watchedSymbol.subscribe(this._onSymbolLinkBound)
+    }
+    unbindFromSearchCharts() {
+      this._searchCharts && (this._searchCharts.onSearchBySymbol.unsubscribe(this, this._onSearchBySymbol), this
+        ._watchedSymbol.unsubscribe(this._onSymbolLinkBound), this._searchCharts = null)
+    }
+    setPreventFeedBySymbol(e) {
+      this._preventFeedBySymbol = e
+    }
+    setSymbolAndLogInitiator(e, t, i, s = !1) {
+      (this.symbol.value() !== e || i) && (_.logInfo(`Change linking symbol to ${e}, initiator: ${t}`), this.symbol
+        .setValue(e, i))
+    }
+    setIntervalAndLogInitiator(e, t) {
+      a.Interval.isEqual(this.interval.value(), e) || this.interval.setValue(e)
+    }
+    _onSearchBySymbol(e) {
+      if (!e.resolved_symbol) throw new Error("no resolved_symbol");
+      this._selfEmit = !0, this._watchedSymbol.setValue(e.resolved_symbol), this._selfEmit = !1
+    }
+    _onSymbolLink(e) {
+      if (!this._selfEmit) {
+        if (!this._searchCharts) {
+          const e = "No search charts defined";
+          throw _.logError(e), new Error(e)
+        }
+        this._preventFeedBySymbol || this._loadSearchCharts(e)
+      }
+    }
+    _loadSearchCharts(e) {
+      if (!this._searchCharts) {
+        const e = "No search charts defined";
+        throw _.logError(e), new Error(e)
+      }
+      if (this._searchChartsLoadDebounced) return void(this._feedBySymbolDebounceCounter < 100 && (this
+        ._feedBySymbolDebounceCounter++, this._searchChartsLoadDebounced(e)));
+      const t = e => this._searchCharts ? (!0 === this._searchCharts.loadingSymbol.value() ? this
+          ._feedBySymbolDebounceCounter < 100 && (this._feedBySymbolDebounceCounter++, this
+            ._searchChartsLoadDebounced = (0, s.default)(t, 2e3), this._searchChartsLoadDebounced(e)) : this
+          ._searchChartsLoadDebounced = null, this._searchCharts.feedBySymbol.call(this._searchCharts, e)) :
+      () => {};
+      !0 === this._searchCharts.loadingSymbol.value() ? this._feedBySymbolDebounceCounter < 100 && (this
+        ._feedBySymbolDebounceCounter++, this._searchChartsLoadDebounced = (0, s.default)(t, 2e3), this
+        ._searchChartsLoadDebounced(e)) : this._searchCharts.feedBySymbol(e)
+    }
+    _linkingGroup(e) {
+      e = null;
+      let t = this._linkingGroups.get(e);
+      if (void 0 === t) {
+        const i = {
+          watchedSymbols: this._watchedSymbols,
+          watchedSymbol: this._watchedSymbol,
+          seriesShortSymbol: this._seriesShortSymbol,
+          proSymbol: this._proSymbol,
+          ensuredProSymbol: this._ensuredProSymbol,
+          watchedInterval: this._watchedInterval,
+          watchedIntraday: this._watchedIntraday,
+          watchedSeconds: this._watchedSeconds,
+          watchedTicks: this._watchedTicks,
+          watchedDataFrequencyResolution: this._watchedDataFrequencyResolution,
+          watchedRange: this._watchedRange,
+          watchedSupportedResolutions: this._watchedSupportedResolutions,
+          watchedSupportedChartStyles: this._watchedSupportedChartStyles,
+          symbolNamesList: this._symbolNamesList
+        };
+        t = new g(e, i, (() => this._activeLinkingGroup.value())), this._linkingGroups.set(e, t), this
+          ._chartWidgetCollection && t.bindToChartWidgetCollection(this._chartWidgetCollection)
+      }
+      return t
+    }
+    _unbindFromChartWidgetCollection() {
+      null !== this._chartWidgetCollection && (this._activeLinkingGroupIndex?.destroy(), this
+        ._activeLinkingGroupIndex = null, this._linkingGroups.forEach((e => e.unbindFromChartWidgetCollection())),
+        this._chartWidgetCollection.allLinkingGroups()
+        .unsubscribe(this._updateLinkingGroups), this._chartWidgetCollection = null)
+    }
+  };
+  window.TradingViewApi || (window.TradingViewApi = {
+    linking: f
+  })

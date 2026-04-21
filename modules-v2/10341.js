@@ -1,0 +1,1 @@
+10341:(e,t,i)=>{"use strict";i.d(t,{showTooManyStudiesNotice:()=>n});var s=i(11542),o=i(3615);function n(e){(0,o.showWarning)({title:s.t(null,void 0,i(66719)),text:s.t(null,{replace:{number:`${e}`}},i(86146))})}

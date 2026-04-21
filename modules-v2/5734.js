@@ -1,0 +1,1 @@
+5734:(e,t,i)=>{"use strict";i.d(t,{doNotShowDeleteLockedLineConfirmProperty:()=>a,doNotShowDeleteLockedLineKey:()=>n});var s=i(1765),o=i(41072);const n="do_not_show_delete_locked_line_confirm";function r(){return s.getBool(n,!1)}const a=(0,o.createPrimitiveProperty)(r());a.subscribe(null,(()=>s.setValue(n,a.value()))),s.onSync.subscribe(null,(()=>a.setValue(r())))

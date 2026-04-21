@@ -1,0 +1,1 @@
+57340:(e,t,i)=>{"use strict";i.d(t,{chartFloatingTooltipEnabledWV:()=>a});var s=i(1765),o=i(22613);const n="chart_floating_tooltip_enabled";function r(){return s.getJSON(n,true)}const a=new o.WatchedValue(r());a.subscribe((()=>s.setValue(n,a.value()))),s.onSync.subscribe(null,(()=>a.setValue(r())))

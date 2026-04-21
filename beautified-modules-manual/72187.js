@@ -1,0 +1,434 @@
+// Module 72187
+// Original file: 72187.js
+// Size: 10.5 KB
+// Purpose: Auto-extracted webpack module from TradingView library
+
+(e, t, i) => {
+  "use strict";
+  i.d(t, {
+    PlotList: () => u,
+    mergeMinMax: () => _
+  });
+  var s = i(50151),
+    o = i(12217),
+    n = i(82284),
+    r = i(9343),
+    a = i(5471);
+  const l = (0, r.getLogger)("Chart.PlotList"),
+    c = 30;
+
+  function h(e) {
+    return e.index
+  }
+
+  function d(e) {
+    return e.value[0]
+  }
+  class u {
+    constructor(e = null, t = null) {
+      this._items = [], this._start = 0, this._end = 0, this._shareRead = !1, this._minMaxCache = new Map, this
+        ._rowSearchCacheByIndex = new Map, this._rowSearchCacheByIndexWithoutEmptyValues = new Map, this
+        ._rowSearchCacheByTime = new Map, this._rowSearchCacheByTimeWithoutEmptyValues = new Map, this
+        ._plotFunctions = e || new Map, this._emptyValuePredicate = t
+    }
+    clear() {
+      this._items = [], this._start = 0, this._end = 0, this._shareRead = !1, this._minMaxCache.clear(), this
+        ._invalidateSearchCaches()
+    }
+    first() {
+      return this.size() > 0 ? this._items[this._start] : null
+    }
+    last() {
+      return this.size() > 0 ? this._items[this._end - 1] : null
+    }
+    firstIndex() {
+      return this.size() > 0 ? this._indexAt(this._start) : null
+    }
+    firstPlottableIndex() {
+      if (this.isEmpty()) return null;
+      for (let e = this._start; e < this._end; ++e) {
+        const t = this._indexAt(e);
+        if (t > n.UNPLOTTABLE_TIME_POINT_INDEX) return t
+      }
+      return null
+    }
+    lastIndex() {
+      return this.size() > 0 ? this._indexAt(this._end - 1) : null
+    }
+    clone() {
+      const e = this.firstIndex(),
+        t = this.lastIndex();
+      return null === e || null === t ? new u : this.range(e, t)
+    }
+    size() {
+      return this._end - this._start
+    }
+    isEmpty() {
+      return 0 === this.size()
+    }
+    contains(e) {
+      return null !== this.search(e, a.PlotRowSearchMode.Exact)
+    }
+    valueAt(e) {
+      const t = this.search(e);
+      return null !== t ? t.value : null
+    }
+    add(e, t) {
+      if (this._shareRead) return l.logDebug("add: readonly collection modification attempt"), !1;
+      const i = {
+          index: e,
+          value: t
+        },
+        s = this._nonCachedSearch(e, a.PlotRowSearchMode.Exact, h);
+      return this._invalidateSearchCaches(), null === s ? (this._items.splice(this._lowerbound(e, h), 0, i), this
+        ._start = 0, this._end = this._items.length, !0) : (this._items[s] = i, !1)
+    }
+    search(e, t = a.PlotRowSearchMode.Exact, i) {
+      return this._searchImpl(e, t, this._rowSearchCacheByIndex, this._rowSearchCacheByIndexWithoutEmptyValues, h, i)
+    }
+    searchByTime(e, t = a.PlotRowSearchMode.Exact, i) {
+      return this._searchImpl(e, t, this._rowSearchCacheByTime, this._rowSearchCacheByTimeWithoutEmptyValues, d, i)
+    }
+    fold(e, t) {
+      let i = t;
+      for (let t = this._start; t < this._end; ++t) {
+        i = e(this._indexAt(t), this._valueAt(t), i)
+      }
+      return i
+    }
+    findFirst(e, t) {
+      const i = void 0 !== t && Math.min(this._start + t, this._end) || this._end;
+      for (let t = this._start; t < i; ++t) {
+        const i = this._indexAt(t),
+          s = this._valueAt(t);
+        if (e(i, s)) return {
+          index: i,
+          value: s
+        }
+      }
+      return null
+    }
+    findLast(e, t) {
+      const i = void 0 !== t && Math.max(this._end - t, this._start) || this._start;
+      for (let t = this._end - 1; t >= i; --t) {
+        const i = this._indexAt(t),
+          s = this._valueAt(t);
+        if (e(i, s)) return {
+          index: i,
+          value: s
+        }
+      }
+      return null
+    }
+    each(e) {
+      for (let t = this._start; t < this._end; ++t) {
+        if (e(this._indexAt(t), this._valueAt(t))) break
+      }
+    }
+    reduce(e, t) {
+      let i = t;
+      for (let t = this._start; t < this._end; ++t) {
+        i = e(i, this._indexAt(t), this._valueAt(t))
+      }
+      return i
+    }
+    range(e, t) {
+      const i = new u(this._plotFunctions, this._emptyValuePredicate);
+      return i._items = this._items, i._start = this._lowerbound(e, h), i._end = this._upperbound(t), i._shareRead = !
+        0, i
+    }
+    plottableRange(e) {
+      const t = new u(this._plotFunctions, this._emptyValuePredicate);
+      return t._items = this._items, t._start = this._upperbound(n.UNPLOTTABLE_TIME_POINT_INDEX), t._end = this._end,
+        t._shareRead = !0, !0 === e && t._start > this._start && (t._start -= 1), t
+    }
+    rangeCountback(e, t) {
+      if (null === this.firstIndex()) return new u;
+      const i = new u(this._plotFunctions, this._emptyValuePredicate);
+      return i._items = this._items, i._end = this._upperbound(e), i._start = Math.max(this._start, i._end - t), i
+        ._shareRead = !0, i
+    }
+    rangeIterator(e, t) {
+      const i = this._lowerbound(e, h),
+        s = this._upperbound(t);
+      return this._rangeIteratorImpl(i, s)
+    }
+    fullRangeIterator() {
+      return this._rangeIteratorImpl(this._start, this._end)
+    }
+    minMaxOnRangeCached(e, t, i) {
+      if (this.isEmpty()) return null;
+      let s = null;
+      for (const o of i) {
+        s = _(s, this._minMaxOnRangeCachedImpl(e - o.offset, t - o.offset, o.name))
+      }
+      return s
+    }
+    minMaxOnRange(e, t, i) {
+      if (this.isEmpty()) return null;
+      let s = null;
+      for (const o of i) {
+        s = _(s, this._minMaxOnRange(e - o.offset, t - o.offset, o.name))
+      }
+      return s
+    }
+    merge(e) {
+      return this._shareRead ? (l.logDebug("merge: readonly collection modification attempt"), null) : 0 === e
+        .length ? null : this.isEmpty() || e[e.length - 1].index < this._items[0].index ? this._prepend(e) : e[0]
+        .index > this._items[this._items.length - 1].index ? this._append(e) : 1 === e.length && e[0].index === this
+        ._items[this._items.length - 1].index ? (this._updateLast(e[0]), e[0]) : this._merge(e)
+    }
+    addTail(e, t = !1) {
+      if (0 === e.length) return;
+      let i = 0;
+      t && this._end - this._start > 0 && (i = 1, this._items[this._end - this._start - 1].value = e[0].value);
+      for (let t = i; t < e.length; ++t) {
+        const i = e[t],
+          s = this.lastIndex();
+        if (null === s) {
+          l.logError("Can't add tail to the empty plotlist");
+          break
+        }
+        this.add(s + 1, i.value)
+      }
+      this._invalidateSearchCaches()
+    }
+    move(e) {
+      if (this._shareRead) return void l.logDebug("move: readonly collection modification attempt");
+      if (0 === e.length) return;
+      const t = this._items.slice();
+      for (const i of e) {
+        const e = this._bsearch(i.old, h);
+        if (null !== e && void 0 !== t[e])
+          if (i.new === n.INVALID_TIME_POINT_INDEX) t[e] = void 0;
+          else {
+            t[e] = {
+              index: i.new,
+              value: t[e].value
+            };
+            const s = this._bsearch(i.new, h);
+            if (null !== s) {
+              const e = t[s];
+              void 0 !== e && e.index === i.new && (t[s] = void 0)
+            }
+          }
+      }
+      this._items = t.filter((e => void 0 !== e))
+        .sort(((e, t) => e.index - t.index)), this._invalidateSearchCaches(), this._minMaxCache.clear(), this._start =
+        0, this._end = this._items.length
+    }
+    remove(e) {
+      if (this._shareRead) return l.logDebug("remove: readonly collection modification attempt"), null;
+      const t = this._nonCachedSearch(e, a.PlotRowSearchMode.NearestRight, h);
+      if (null === t) return null;
+      const i = this._items.splice(t);
+      return this._end = this._items.length, this._minMaxCache.clear(), this._invalidateSearchCaches(), i.length > 0 ?
+        i[0] : null
+    }
+    state() {
+      const e = this._items.slice(this._start, this._end);
+      return {
+        start: 0,
+        end: e.length,
+        data: e
+      }
+    }
+    restoreState(e) {
+      e ? (this._start = e.start, this._end = e.end, this._shareRead = !1, this._items = e.data, this._minMaxCache
+        .clear(), this._invalidateSearchCaches()) : this.clear()
+    }
+    _indexAt(e) {
+      return this._items[e].index
+    }
+    _valueAt(e) {
+      return this._items[e].value
+    }
+    _length() {
+      return this._items.length
+    }
+    _searchImpl(e, t, i, s, o, n) {
+      const r = void 0 !== n ? i : s,
+        a = void 0 !== n ? 1e4 * (t + 1) + n : t;
+      let l = r.get(e);
+      if (void 0 !== l) {
+        const e = l.get(a);
+        if (void 0 !== e) return e
+      }
+      const c = this._nonCachedSearch(e, t, o, n);
+      if (null === c) return null;
+      const h = {
+        index: this._indexAt(c),
+        value: this._valueAt(c)
+      };
+      return void 0 === l && (l = new Map, r.set(e, l)), l.set(a, h), h
+    }
+    _nonCachedSearch(e, t, i, s) {
+      const o = this._lowerbound(e, i),
+        n = o === this._end || e !== i(this._items[o]);
+      if (n && t !== a.PlotRowSearchMode.Exact) switch (t) {
+        case a.PlotRowSearchMode.NearestLeft:
+          return this._searchNearestLeft(o, s);
+        case a.PlotRowSearchMode.NearestRight:
+          return this._searchNearestRight(o, s);
+        default:
+          throw new TypeError("Unknown search mode")
+      }
+      if (void 0 === s || n || t === a.PlotRowSearchMode.Exact) return n ? null : o;
+      switch (t) {
+        case a.PlotRowSearchMode.NearestLeft:
+          return this._nonEmptyNearestLeft(o, s);
+        case a.PlotRowSearchMode.NearestRight:
+          return this._nonEmptyNearestRight(o, s);
+        default:
+          throw new TypeError("Unknown search mode")
+      }
+    }
+    _nonEmptyNearestRight(e, t) {
+      const i = (0, s.ensure)(this._emptyValuePredicate),
+        o = (0, s.ensure)(t);
+      for (; e < this._end && i(this._valueAt(e), o);) e += 1;
+      return e === this._end ? null : e
+    }
+    _nonEmptyNearestLeft(e, t) {
+      const i = (0, s.ensureNotNull)(this._emptyValuePredicate),
+        o = (0, s.ensure)(t);
+      for (; e >= this._start && i(this._valueAt(e), o);) e -= 1;
+      return e < this._start ? null : e
+    }
+    _searchNearestLeft(e, t) {
+      if (e === this._start) return null;
+      const i = e - 1,
+        s = i !== this._end ? i : null;
+      return void 0 !== t && null !== s ? this._nonEmptyNearestLeft(s, t) : s
+    }
+    _searchNearestRight(e, t) {
+      const i = e,
+        s = i !== this._end ? i : null;
+      return void 0 !== t && null !== s ? this._nonEmptyNearestRight(s, t) : s
+    }
+    _bsearch(e, t) {
+      const i = this._lowerbound(e, t);
+      return i !== this._end && e === t(this._items[i]) ? i : null
+    }
+    _lowerbound(e, t) {
+      return (0, o.lowerbound)(this._items, e, ((e, i) => t(e) < i), this._start, this._end)
+    }
+    _upperbound(e) {
+      return (0, o.upperbound)(this._items, e, ((e, t) => t.index > e), this._start, this._end)
+    }
+    _plotMinMax(e, t, i) {
+      let s = null;
+      const o = this._plotFunctions.get(i);
+      if (void 0 === o) throw new Error(`Plot "${i}" is not registered`);
+      for (let i = e; i < t; i++) {
+        const e = o(this._items[i].value);
+        null == e || Number.isNaN(e) || (null === s ? s = {
+          min: e,
+          max: e
+        } : (e < s.min && (s.min = e), e > s.max && (s.max = e)))
+      }
+      return s
+    }
+    _invalidateCacheForRow(e) {
+      const t = Math.floor(e.index / c);
+      this._minMaxCache.forEach((e => e.delete(t)))
+    }
+    _prepend(e) {
+      return (0, s.assert)(!this._shareRead, "collection should not be readonly"), (0, s.assert)(0 !== e.length,
+          "plotRows should not be empty"), this._invalidateSearchCaches(), this._minMaxCache.clear(), this._items = e
+        .concat(this._items), this._start = 0, this._end = this._items.length, e[0]
+    }
+    _append(e) {
+      return (0, s.assert)(!this._shareRead, "collection should not be readonly"), (0, s.assert)(0 !== e.length,
+          "plotRows should not be empty"), this._invalidateSearchCaches(), this._minMaxCache.clear(), this._items =
+        this._items.concat(e), this._start = 0, this._end = this._items.length, e[0]
+    }
+    _updateLast(e) {
+      (0, s.assert)(!this.isEmpty(), "plot list should not be empty");
+      const t = this._items[this._end - 1];
+      (0,
+        s.assert)(t.index === e.index, "last row index should match new row index"), this._invalidateCacheForRow(e),
+        this._invalidateSearchCaches(), this._items[this._end - 1] = e
+    }
+    _merge(e) {
+      return (0, s.assert)(0 !== e.length, "plot rows should not be empty"), this._invalidateSearchCaches(), this
+        ._minMaxCache.clear(), this._items = function(e, t) {
+          const i = function(e, t) {
+              const i = e.length,
+                s = t.length;
+              let o = i + s,
+                n = 0,
+                r = 0;
+              for (; n < i && r < s;) e[n].index < t[r].index ? n++ : e[n].index > t[r].index ? r++ : (n++, r++, o--);
+              return o
+            }(e, t),
+            s = new Array(i);
+          let o = 0,
+            n = 0;
+          const r = e.length,
+            a = t.length;
+          let l = 0;
+          for (; o < r && n < a;) e[o].index < t[n].index ? (s[l] = e[o], o++) : e[o].index > t[n].index ? (s[l] = t[
+            n], n++) : (s[l] = t[n], o++, n++), l++;
+          for (; o < r;) s[l] = e[o], o++, l++;
+          for (; n < a;) s[l] = t[n], n++, l++;
+          return s
+        }(this._items, e), this._start = 0, this._end = this._items.length, e[0]
+    }
+    _minMaxOnRangeCachedImpl(e, t, i) {
+      if (this.isEmpty()) return null;
+      let o = null;
+      const n = (0, s.ensureNotNull)(this.firstIndex()),
+        r = (0, s.ensureNotNull)(this.lastIndex()),
+        a = Math.max(e, n),
+        l = Math.min(t, r),
+        h = Math.ceil(a / c) * c,
+        d = Math.max(h, Math.floor(l / c) * c);
+      o = _(o, this._minMaxOnRange(a, Math.min(h, t, l), i));
+      let u = this._minMaxCache.get(i);
+      void 0 === u && (u = new Map, this._minMaxCache.set(i, u));
+      for (let e = Math.max(h + 1, a); e < d; e += c) {
+        const t = Math.floor(e / c);
+        let s = u.get(t);
+        if (void 0 === s) {
+          const e = t * c,
+            o = (t + 1) * c - 1;
+          s = this._minMaxOnRange(e, o, i), u.set(t, s)
+        }
+        o = _(o, s)
+      }
+      o = _(o, this._minMaxOnRange(d, l, i));
+      return o
+    }
+    _minMaxOnRange(e, t, i) {
+      return this._plotMinMax(this._lowerbound(e, h), this._upperbound(t), i)
+    }
+    _rangeIteratorImpl(e, t) {
+      let i = e - 1;
+      return {
+        [Symbol.iterator]() {
+          return this
+        },
+        next: () => (i += 1, i >= t ? {
+          done: !0,
+          value: void 0
+        } : {
+          done: !1,
+          value: this._items[i]
+        })
+      }
+    }
+    _invalidateSearchCaches() {
+      this._rowSearchCacheByIndex.clear(), this._rowSearchCacheByIndexWithoutEmptyValues.clear(), this
+        ._rowSearchCacheByTime.clear(), this._rowSearchCacheByTimeWithoutEmptyValues.clear()
+    }
+  }
+
+  function _(e, t) {
+    if (null === e) return t;
+    if (null === t) return e;
+    return {
+      min: Math.min(e.min, t.min),
+      max: Math.max(e.max, t.max)
+    }
+  }
