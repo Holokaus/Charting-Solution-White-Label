@@ -1,0 +1,14 @@
+```
+# Build artifacts and generated files
+beautified-rendering/
+rendering-modules-analysis/
+
+# Logs and temporary files
+*.log
+*.tmp
+
+# Environment files
+.env
+.env.local
+*.env.*
+```
