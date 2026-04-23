@@ -1,31 +1,36 @@
 ```
-# Logs and temp files
-*.log
+# Documentation and temporary files
 *.tmp
-*.swp
 
-# Environment
+# Environment files
 .env
 .env.local
 *.env.*
 
-# Editors
+# Editor/IDE files
 .vscode/
 .idea/
+*.swp
+*.swo
+
+# Logs
+*.log
 
 # Dependencies
 node_modules/
-.venv/
 venv/
+.venv/
 __pycache__/
 .mypy_cache/
 .pytest_cache/
-dist/
-build/
+.julia/
+zig*/
 target/
 .gradle/
 
-# Compiled files
+# Build artifacts
+dist/
+build/
 *.pyc
 *.class
 *.o
