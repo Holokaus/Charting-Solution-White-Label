@@ -1,3 +1,4 @@
+```
 # Logs and temp files
 *.log
 *.tmp
@@ -6,30 +7,33 @@
 # Environment
 .env
 .env.local
-.env.*
+*.env.*
 
 # Editors
 .vscode/
 .idea/
 
 # Dependencies
+node_modules/
 .venv/
 venv/
-node_modules/
-
-# Build artifacts
+__pycache__/
+.mypy_cache/
+.pytest_cache/
 dist/
 build/
 target/
+.gradle/
+
+# Compiled files
 *.pyc
-__pycache__/
 *.class
 *.o
-*.obj
 *.exe
 *.dll
 *.so
 *.a
+*.obj
 *.out
 
 # System files
@@ -64,3 +68,4 @@ htmlcov/
 *.tar.bz2
 *.tar.xz
 *.tar.zst
+```
