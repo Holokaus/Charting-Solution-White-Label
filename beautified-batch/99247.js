@@ -1,0 +1,91 @@
+/**
+ * Module 99247 - Auto-beautified from TradingView webpack bundle
+ *
+ * @module 99247
+ * @date 2026-04-23
+ * @size 1799 bytes
+ *
+ * Status: Beautified (variable renaming pending)
+ *
+ * Dependencies: 15754, 24640, 76460, 81251
+ *
+ * Exports:
+ *   - MouseClickAutoBlurHandler (internal: r)
+ *   - initMouseClickAutoBlurHandler (internal: a)
+ *
+ * Next Steps:
+ *   1. Rename single-letter variables to semantic names
+ *   2. Add JSDoc comments for classes/functions
+ *   3. Map dependency relationships
+ */
+
+99247: (e, t, i) => {
+    "use strict";
+    i.d(t, {
+      MouseClickAutoBlurHandler: () => r,
+      initMouseClickAutoBlurHandler: () => a
+    });
+    var s = i(81251),
+      o = i(76460);
+    const n = "data-mouse-click-auto-blur";
+    class r {
+      constructor() {
+        this._handler = e => {
+          document.activeElement instanceof HTMLElement && ((0, o.isKeyboardClick)(e) || e.target instanceof Element && "INPUT" !== document.activeElement.tagName && null !== document.activeElement.closest(`[${n}]`) && document.activeElement.blur())
+        }, window.addEventListener("click", this._handler, !0)
+      }
+      static attributes(e = !0) {
+        return e ? {
+          [n]: !0
+        } : {}
+      }
+    }
+    const a = (0, s.default)((() => new r))
+  },
+  22692: (e, t, i) => {
+    "use strict";
+    i.d(t, {
+      mapKeyCodeToDirection: () => h,
+      navigationOrderComparator: () => r,
+      queryFocusableElements: () => l,
+      queryTabbableElements: () => a,
+      updateTabIndexes: () => c
+    });
+    var s, o = i(24640),
+      n = i(15754);
+
+    function r(e, t) {
+      return e === t ? 0 : e.compareDocumentPosition(t) & Node.DOCUMENT_POSITION_FOLLOWING ? -1 : 1
+    }
+
+    function a(e) {
+      return Array.from(e.querySelectorAll('button:not([disabled]):not([aria-disabled]):not([tabindex="-1"]), [tabindex]:not([disabled]):not([aria-disabled]):not([tabindex="-1"])')).filter((0, n.createScopedVisibleElementFilter)(e))
+    }
+
+    function l(e) {
+      return Array.from(e.querySelectorAll('button:not([disabled]):not([aria-disabled="true"]):not([aria-disabled=""]), [tabindex]:not([disabled]):not([aria-disabled="true"]):not([aria-disabled=""])')).filter((0, n.createScopedVisibleElementFilter)(e))
+    }
+
+    function c() {
+      window.dispatchEvent(new CustomEvent("keyboard-navigation-activation", {
+        bubbles: !0
+      }))
+    }
+
+    function h(e) {
+      const t = (0, o.isRtl)();
+      switch (e) {
+        case 38:
+          return "blockPrev";
+        case 40:
+          return "blockNext";
+        case 37:
+          return t ? "inlineNext" : "inlinePrev";
+        case 39:
+          return t ? "inlinePrev" : "inlineNext";
+        default:
+          return null
+      }
+    }! function(e) {
+      e.BlockPrev = "blockPrev", e.BlockNext = "blockNext", e.InlinePrev = "inlinePrev", e.InlineNext = "inlineNext"
+    }(s || (s = {}))

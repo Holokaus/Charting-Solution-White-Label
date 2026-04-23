@@ -1,0 +1,41 @@
+/**
+ * Module 3615 - Auto-beautified from TradingView webpack bundle
+ *
+ * @module 3615
+ * @date 2026-04-23
+ * @size 1159 bytes
+ *
+ * Status: Beautified (variable renaming pending)
+ *
+ * Dependencies: None detected
+ *
+ * Exports:
+ *   - showConfirm (internal: o)
+ *   - showRename (internal: s)
+ *   - showWarning (internal: n)
+ *
+ * Next Steps:
+ *   1. Rename single-letter variables to semantic names
+ *   2. Add JSDoc comments for classes/functions
+ *   3. Map dependency relationships
+ */
+
+3615: (e, t, i) => {
+    "use strict";
+    async function s(e, t) {
+      const s = await Promise.all([i.e(3581), i.e(8185), i.e(1681), i.e(5371), i.e(2202), i.e(1171), i.e(6032), i.e(3672), i.e(2537), i.e(8894), i.e(5743), i.e(7780), i.e(4495), i.e(9323), i.e(159), i.e(683), i.e(6633), i.e(9658), i.e(2227), i.e(4931), i.e(3179), i.e(769), i.e(5705), i.e(8890)]).then(i.bind(i, 70493));
+      return s.showSimpleDialog(e, s.renameModule, t)
+    }
+    async function o(e, t) {
+      const s = await Promise.all([i.e(3581), i.e(8185), i.e(1681), i.e(5371), i.e(2202), i.e(1171), i.e(6032), i.e(3672), i.e(2537), i.e(8894), i.e(5743), i.e(7780), i.e(4495), i.e(9323), i.e(159), i.e(683), i.e(6633), i.e(9658), i.e(2227), i.e(4931), i.e(3179), i.e(769), i.e(5705), i.e(8890)]).then(i.bind(i, 70493));
+      return s.showSimpleDialog(e, s.confirmModule, t)
+    }
+    async function n(e, t) {
+      const s = await Promise.all([i.e(3581), i.e(8185), i.e(1681), i.e(5371), i.e(2202), i.e(1171), i.e(6032), i.e(3672), i.e(2537), i.e(8894), i.e(5743), i.e(7780), i.e(4495), i.e(9323), i.e(159), i.e(683), i.e(6633), i.e(9658), i.e(2227), i.e(4931), i.e(3179), i.e(769), i.e(5705), i.e(8890)]).then(i.bind(i, 70493));
+      return s.showSimpleDialog(e, s.warningModule, t)
+    }
+    i.d(t, {
+      showConfirm: () => o,
+      showRename: () => s,
+      showWarning: () => n
+    })

@@ -1,0 +1,132 @@
+/**
+ * Module 43222 - Auto-beautified from TradingView webpack bundle
+ *
+ * @module 43222
+ * @date 2026-04-23
+ * @size 2936 bytes
+ *
+ * Status: Beautified (variable renaming pending)
+ *
+ * Dependencies: 3343, 52499, 54717, 93132
+ *
+ * Exports:
+ *   - ACTION_API_GROUP_ORDER (internal: _)
+ *   - createGroup (internal: p)
+ *   - keyboardPressedKeysState (internal: u)
+ *   - pressedKeys (internal: d)
+ *   - registerWindow (internal: m)
+ *
+ * Next Steps:
+ *   1. Rename single-letter variables to semantic names
+ *   2. Add JSDoc comments for classes/functions
+ *   3. Map dependency relationships
+ */
+
+"use strict";
+i.d(t, {
+  ACTION_API_GROUP_ORDER: () => _,
+  createGroup: () => p,
+  keyboardPressedKeysState: () => u,
+  pressedKeys: () => d,
+  registerWindow: () => m
+});
+var s = i(52499),
+  o = i(3343),
+  n = i(54717);
+class r {
+  constructor(e, t) {
+    this.modifiers = e, this.code = t
+  }
+  altOrOptionCode() {
+    return "AltLeft" === this.code || "AltRight" === this.code
+  }
+  controlOrMetaCode() {
+    return o.isMacKeyboard ? "MetaLeft" === this.code || "MetaRight" === this.code || "OSLeft" === this.code || "OSRight" === this.code : "ControlLeft" === this.code || "ControlRight" === this.code
+  }
+}
+class a extends s.WatchedValue {
+  setValue(e, t) {
+    const i = this.value();
+    (t || void 0 === i || i.code !== e.code || i.modifiers !== e.modifiers) && super.setValue(e)
+  }
+}
+
+function l(e, t) {
+  return e.order + (e.modal ? t : 0)
+}
+var c = i(93132);
+const h = new class {
+    constructor() {
+      this._groups = [], this._pressedKeys = new s.WatchedValue(0), this._keyboardPressedKeysState = new a(new r(0)), this._keyDownListener = e => {
+        if (e.defaultPrevented) return;
+        const t = (0, o.hashFromEvent)(e);
+        if (this._pressedKeys.setValue(t), this._keyboardPressedKeysState.setValue(new r((0, o.modifiersFromEvent)(e), e.code)), !(0, n.isNativeUIInteraction)(t, e.target))
+          for (let i = this._groups.length; i-- > 0;) {
+            const s = this._groups[i];
+            if (!s.isDisabled()) {
+              if (s.handleHotkey(t, e)) return;
+              if (s.modal) return
+            }
+          }
+      }, this._keyUpListener = e => {
+        const t = (0, o.hashFromEvent)(e);
+        this._pressedKeys.setValue(t), this._keyboardPressedKeysState.setValue(new r((0, o.modifiersFromEvent)(e), ""))
+      }, this._blurEvent = () => {
+        this._pressedKeys.setValue(0), this._keyboardPressedKeysState.setValue(new r(0, ""))
+      }, this._mouseEvent = e => {
+        const t = (0,
+            o.modifiersFromEvent)(e),
+          i = 255 & (this._pressedKeys.value() ?? 0);
+        this._pressedKeys.setValue(t | i)
+      }
+    }
+    listen(e) {
+      e.addEventListener("keydown", this._keyDownListener), e.addEventListener("keyup", this._keyUpListener), e.addEventListener("blur", this._blurEvent), e.addEventListener("mousemove", this._mouseEvent)
+    }
+    unlisten(e) {
+      e.removeEventListener("keydown", this._keyDownListener), e.removeEventListener("keyup", this._keyUpListener), e.removeEventListener("blur", this._blurEvent), e.removeEventListener("mousemove", this._mouseEvent)
+    }
+    registerGroup(e) {
+      this._groups.push(e), this.sortGroups()
+    }
+    unregisterGroup(e) {
+      for (let t = this._groups.length; t--;) this._groups[t] === e && this._groups.splice(t, 1)
+    }
+    promoteGroup(e) {
+      const t = this._getModalOrderEpoch(),
+        i = l(e, t);
+      let s = this._groups.findIndex((e => l(e, t) === i)),
+        o = 0;
+      for (; s < this._groups.length && l(this._groups[s], t) === i;) {
+        const n = this._groups[s];
+        n === e ? o = 1 : l(n, t) === i && (this._groups[s - o] = n), s++
+      }
+      this._groups[s - o] = e
+    }
+    pressedKeys() {
+      return this._pressedKeys.readonly()
+    }
+    keyboardPressedKeysState() {
+      return this._keyboardPressedKeysState.readonly()
+    }
+    sortGroups() {
+      const e = this._getModalOrderEpoch();
+      this._groups.sort(((t, i) => l(i, e) - l(t, e)))
+    }
+    _getMinOrder() {
+      return this._groups.reduce(((e, t) => Math.min(e, t.order)), 0)
+    }
+    _getModalOrderEpoch() {
+      return -2 * (Math.abs(this._getMinOrder()) - 1)
+    }
+  },
+  d = h.pressedKeys(),
+  u = h.keyboardPressedKeysState(),
+  _ = -100;
+
+function p(e) {
+  return new c.ActionGroup(h, e)
+}
+
+function m(e) {
+  h.listen(e)

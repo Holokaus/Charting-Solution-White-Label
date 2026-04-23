@@ -1,0 +1,56 @@
+/**
+ * Module 55393 - Auto-beautified from TradingView webpack bundle
+ *
+ * @module 55393
+ * @date 2026-04-23
+ * @size 827 bytes
+ *
+ * Status: Beautified (variable renaming pending)
+ *
+ * Dependencies: 22613, 41414, 50151
+ *
+ * Exports:
+ *   - LineToolBrushBase (internal: r)
+ *
+ * Next Steps:
+ *   1. Rename single-letter variables to semantic names
+ *   2. Add JSDoc comments for classes/functions
+ *   3. Map dependency relationships
+ */
+
+"use strict";
+i.d(t, {
+  LineToolBrushBase: () => r
+});
+var s = i(50151),
+  o = i(41414),
+  n = i(22613);
+class r extends o.LineDataSource {
+    constructor() {
+      super(...arguments), this._hasEditableCoordinates = new n.WatchedValue(!1), this._finished = !1
+    }
+    pointsCount() {
+      return -1
+    }
+    finished() {
+      return this._finished
+    }
+    finish() {
+      this._finished = !0, this._lastPoint = null, this._normalizePoints(), this.createServerPoints()
+    }
+    hasOnlyOnePoint() {
+      return 1 === this._points.length
+    }
+    addPoint(e, t, i) {
+      if (this._finished) return !0;
+      if (this._lastPoint = null, this._points.length > 0) {
+        const t = this._points[this._points.length - 1],
+          i = (0, s.ensureNotNull)(this.pointToScreenPoint(t));
+        if ((0,
+            s.ensureNotNull)(this.pointToScreenPoint(e)).subtract(i).length() < 2) return this._finished
+      }
+      return super.addPoint(e), this._finished
+    }
+    restorePoints(e, t, i) {
+      super.restorePoints(e, t, i), this._finished = !0
+    }

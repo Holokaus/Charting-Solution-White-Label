@@ -1,0 +1,46 @@
+/**
+ * Module 68659 - Auto-beautified from TradingView webpack bundle
+ *
+ * @module 68659
+ * @date 2026-04-23
+ * @size 1068 bytes
+ *
+ * Status: Beautified (variable renaming pending)
+ *
+ * Dependencies: 9343, 11417
+ *
+ * Next Steps:
+ *   1. Rename single-letter variables to semantic names
+ *   2. Add JSDoc comments for classes/functions
+ *   3. Map dependency relationships
+ */
+
+68659: (e, t, i) => {
+    "use strict";
+    i.r(t);
+    var s = i(9343),
+      o = i(11417);
+    const n = "tv.logger.loglevel",
+      r = "tv.logger.logHighRate",
+      a = (0, s.getLogger)("logger");
+
+    function l() {
+      try {
+        o.TVLocalStorage.setItem(r, String((0, s.isHighRateEnabled)())), o.TVLocalStorage.setItem(n, String((0, s.getLogLevel)()))
+      } catch (e) {
+        a.logWarn(`Cannot save logger state (level: ${(0,s.getLogLevel)()}, high-rate: ${(0,s.isHighRateEnabled)()}) to localStorage: ${e.message}`)
+      }
+    }
+    window.lget = s.getLogHistory, window.lon = (e, t) => {
+        a.logNormal("Debug logging enabled"), (0, s.loggingOn)(e, t), l()
+      }, window.loff = () => {
+        a.logInfo("Debug logging disabled"), (0, s.loggingOff)(), l()
+      }, window.llevel = e => {
+        a.logInfo("Changed logging level"), (0, s.setLogLevel)(e), l()
+      },
+      function() {
+        const e = "true" === o.TVLocalStorage.getItem(r);
+        (0, s.setHighRateStatus)(e);
+        let t = parseInt(o.TVLocalStorage.getItem(n) || "");
+        Number.isNaN(t) && (t = s.LOGLEVEL.WARNING), (0, s.setLogLevel)(t), a.logNormal(`Init with settings - level: ${(0,s.getLogLevel)()}, high-rate: ${(0,s.isHighRateEnabled)()}`)
+      }(), a.logNormal(`Sync logger and perf times, now is ${performance.now()}`)

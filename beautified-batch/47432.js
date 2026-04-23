@@ -1,0 +1,56 @@
+/**
+ * Module 47432 - Auto-beautified from TradingView webpack bundle
+ *
+ * @module 47432
+ * @date 2026-04-23
+ * @size 1394 bytes
+ *
+ * Status: Beautified (variable renaming pending)
+ *
+ * Dependencies: 36281, 50151, 52859
+ *
+ * Exports:
+ *   - LineToolPriceAxisView (internal: r)
+ *
+ * Next Steps:
+ *   1. Rename single-letter variables to semantic names
+ *   2. Add JSDoc comments for classes/functions
+ *   3. Map dependency relationships
+ */
+
+"use strict";
+i.d(t, {
+  LineToolPriceAxisView: () => r
+});
+var s = i(50151),
+  o = i(36281),
+  n = i(52859);
+class r extends o.PriceAxisView {
+    constructor(e, t) {
+      super(), this._source = e, this._data = t, this._properties = e.model().properties().childs().scalesProperties
+    }
+    _updateRendererData(e, t, i) {
+      e.visible = !1;
+      const s = this._source.model();
+      if (!s.timeScale() || s.timeScale().isEmpty()) return;
+      const o = this._source.priceScale();
+      if (null === o || o.isEmpty()) return;
+      if (!s.selection().isSelected(this._source) && !this._source.isForcedDrawPriceAxisLabel()) return;
+      if (null === s.timeScale().visibleBarsStrictRange()) return;
+      const r = this._source.priceAxisPoints(),
+        a = this._data.pointIndex;
+      if (r.length <= a) return;
+      const l = r[a];
+      if (!isFinite(l.price)) return;
+      const c = this._source.ownerSource(),
+        h = null !== c ? c.firstValue() : null;
+      if (null === h) return;
+      let d = this._data.backgroundPropertyGetter ? this._data.backgroundPropertyGetter() : null;
+      null === d && (d = this._getBgColor()), i.background = (0, n.resetTransparency)(d), i.borderColor = "#2E84A6", i.textColor = this.generateTextColor(i.background), i.coordinate = o.priceToCoordinate(l.price, h), e.text = this._formatPrice(l.price, h), e.visible = !0
+    }
+    _getBgColor() {
+      return this._active ? this._properties.childs().axisLineToolLabelBackgroundColorActive.value() : this._properties.childs().axisLineToolLabelBackgroundColorCommon.value()
+    }
+    _formatPrice(e, t) {
+      return (0, s.ensureNotNull)(this._source.priceScale()).formatPrice(e, t)
+    }

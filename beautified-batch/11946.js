@@ -1,0 +1,79 @@
+/**
+ * Module 11946 - Auto-beautified from TradingView webpack bundle
+ *
+ * @module 11946
+ * @date 2026-04-23
+ * @size 3004 bytes
+ *
+ * Status: Beautified (variable renaming pending)
+ *
+ * Dependencies: None detected
+ *
+ * Exports:
+ *   - isLineDrawnWithPressedButton (internal: l)
+ *   - isLineToolDrawWithoutPoints (internal: h)
+ *   - isLineToolFinishRequiredWhenCreatedByApi (internal: c)
+ *   - isLineToolName (internal: a)
+ *   - isMtpPredictorToolName (internal: n)
+ *   - isStudyLineToolName (internal: r)
+ *   - isTextToolName (internal: d)
+ *
+ * Next Steps:
+ *   1. Rename single-letter variables to semantic names
+ *   2. Add JSDoc comments for classes/functions
+ *   3. Map dependency relationships
+ */
+
+11946: (e, t, i) => {
+    "use strict";
+    i.d(t, {
+      isLineDrawnWithPressedButton: () => l,
+      isLineToolDrawWithoutPoints: () => h,
+      isLineToolFinishRequiredWhenCreatedByApi: () => c,
+      isLineToolName: () => a,
+      isMtpPredictorToolName: () => n,
+      isStudyLineToolName: () => r,
+      isTextToolName: () => d
+    });
+    const s = new Set([]),
+      o = new Set(["LineToolFibRetracement", "LineToolFibChannel", "LineToolFibSpeedResistanceArcs", "LineToolProjection", "LineToolTrendBasedFibExtension", "LineToolElliott", "LineToolFibCircles", "LineToolVertLine", "LineToolCrossLine", "LineToolBarsPattern", "LineToolTrendBasedFibTime", "LineToolFibTimeZone", "LineToolCircleLines", "LineToolDateRange", "LineToolPriceRange", "LineToolDateAndPriceRange", "LineToolParallelChannel", "LineToolTrendAngle", "LineToolTrendLine", "LineToolInfoLine", "LineToolArrowMark", "LineToolPitchfan", "LineToolGannSquare", "LineToolFibSpeedResistanceFan", "LineToolGannComplex", "LineToolGannFixed", "LineToolGannFan", "LineToolFibWedge", "LineToolPitchfork", "LineToolDisjointAngle", "LineToolFlatBottom", "LineToolIcon", "LineToolEmoji", "LineToolSticker", "LineToolRotatedRectangle", "LineToolFibSpiral", "LineToolHeadAndShoulders", "LineToolTriangle", "LineToolTrianglePattern", "LineTool5PointsPattern", "LineToolThreeDrivers", "LineToolABCD", "LineToolPolyline", "LineToolPath", "LineToolPrediction", "LineToolPriceLabel", "LineToolPriceNote", "LineToolTextNote", "LineToolNote", "LineToolNoteAbsolute", "LineToolArrowMarker", "LineToolSignpost", "LineToolBrush", "LineToolArc", "LineToolCallout", "LineToolBalloon", "LineToolComment", "LineToolText", "LineToolHorzLine", "LineToolHorzRay", "LineToolRectangle", "LineToolCircle", "LineToolEllipse", "LineToolTimeCycles", "LineToolSineLine", "LineToolGhostFeed", "LineToolBezierQuadro", "LineToolBezierCubic", "LineToolArrow", "LineToolRay", "LineToolExtended", "LineToolSchiffPitchfork", "LineToolSchiffPitchfork2", "LineToolInsidePitchfork", "LineToolTextAbsolute", "LineToolArrowMarkLeft", "LineToolArrowMarkRight", "LineToolArrowMarkUp", "LineToolArrowMarkDown", "LineToolFlagMark", "LineToolCypherPattern", "LineToolElliottImpulse", "LineToolElliottTriangle", "LineToolElliottTripleCombo", "LineToolElliottCorrection", "LineToolElliottDoubleCombo", "LineToolRiskRewardLong", "LineToolRiskRewardShort", "LineToolPosition", "LineToolOrder", "LineToolHighlighter", "LineToolTable", "LineToolImage"]);
+
+    function n(e) {
+      return s.has(e)
+    }
+
+    function r(e) {
+      return "LineToolRegressionTrend" === e || "LineToolVbPFixed" === e || "LineToolFixedRangeVolumeProfile" === e || "LineToolAnchoredVolumeProfile" === e || "LineToolAnchoredVWAP" === e
+    }
+
+    function a(e) {
+      return o.has(e) || r(e)
+    }
+
+    function l(e) {
+      return "LineToolBrush" === e || "LineToolHighlighter" === e
+    }
+
+    function c(e) {
+      return l(e) || "LineToolPath" === e || "LineToolPolyline" === e || "LineToolGhostFeed" === e
+    }
+
+    function h(e) {
+      return "LineToolTweet" === e || "LineToolIdea" === e || "LineToolImage" === e
+    }
+
+    function d(e) {
+      switch (e) {
+        case "LineToolBalloon":
+        case "LineToolComment":
+        case "LineToolText":
+        case "LineToolTextAbsolute":
+        case "LineToolCallout":
+        case "LineToolNote":
+        case "LineToolNoteAbsolute":
+        case "LineToolSignpost":
+          return !0
+      }
+      return !1
+    }
+    o.add("LineToolExecution")

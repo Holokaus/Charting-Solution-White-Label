@@ -1,0 +1,72 @@
+/**
+ * Module 57025 - Auto-beautified from TradingView webpack bundle
+ *
+ * @module 57025
+ * @date 2026-04-23
+ * @size 1882 bytes
+ *
+ * Status: Beautified (variable renaming pending)
+ *
+ * Dependencies: 4226, 32544, 48096
+ *
+ * Exports:
+ *   - QuotesProvider (internal: r)
+ *
+ * Next Steps:
+ *   1. Rename single-letter variables to semantic names
+ *   2. Add JSDoc comments for classes/functions
+ *   3. Map dependency relationships
+ */
+
+"use strict";
+i.d(t, {
+  QuotesProvider: () => r
+});
+var s = i(32544),
+  o = i(48096),
+  n = i(4226);
+class r {
+  constructor(e = "full", t) {
+    this._quotes = null, this._quoteSessionSymbol = null, this._quoteSessionClientId = "", this._pausedQuoteSessionSymbol = null, this._quotesUpdate = new o.Delegate, this._quoteSymbolChanged = new o.Delegate, this._multiplexerType = e, this._hibernated = t, this._hibernated?.subscribe((e => {
+      e ? this.pause() : this.resume()
+    }))
+  }
+  setQuotesSessionSymbol(e) {
+    this._quoteSessionSymbol !== e && (this._pausedQuoteSessionSymbol = null, this._quoteSessionClientId || (this._quoteSessionClientId = "series-" + (0, n.guid)()), this._unsubscribeQuoteSession(), this._quoteSessionSymbol = e, this._quoteSymbolChanged.fire(), e && this._subscribeQuoteSession(e))
+  }
+  symbol() {
+    return this._quoteSessionSymbol
+  }
+  quotesUpdate() {
+    return this._quotesUpdate
+  }
+  quoteSymbolChanged() {
+    return this._quoteSymbolChanged
+  }
+  quotes() {
+    return this._quotes
+  }
+  async quotesSnapshot(e) {
+    return (0, s.getQuoteSessionInstance)("simple").snapshot(e)
+  }
+  isPaused() {
+    return null !== this._pausedQuoteSessionSymbol
+  }
+  pause() {
+    null === this._pausedQuoteSessionSymbol && (this._pausedQuoteSessionSymbol = this._quoteSessionSymbol, this._unsubscribeQuoteSession())
+  }
+  resume() {
+    null !== this._pausedQuoteSessionSymbol && (this._subscribeQuoteSession(this._pausedQuoteSessionSymbol), this._pausedQuoteSessionSymbol = null)
+  }
+  destroy() {
+    this._unsubscribeQuoteSession(), this._hibernated?.release()
+  }
+  _onUpdate(e, t) {
+    this._quotes = e && e.values || null, t && t.values && this._quotesUpdate.fire(e, t)
+  }
+  _subscribeQuoteSession(e) {
+    this._quoteSessionSymbol = e, (0, s.getQuoteSessionInstance)(this._multiplexerType).subscribe(this._quoteSessionClientId, this._quoteSessionSymbol, this._onUpdate.bind(this))
+  }
+  _unsubscribeQuoteSession() {
+    this._quoteSessionSymbol && ((0, s.getQuoteSessionInstance)(this._multiplexerType).unsubscribe(this._quoteSessionClientId, this._quoteSessionSymbol), this._quoteSessionSymbol = null, this._quotes = null)
+  }

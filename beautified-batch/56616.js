@@ -1,0 +1,91 @@
+/**
+ * Module 56616 - Auto-beautified from TradingView webpack bundle
+ *
+ * @module 56616
+ * @date 2026-04-23
+ * @size 1381 bytes
+ *
+ * Status: Beautified (variable renaming pending)
+ *
+ * Dependencies: None detected
+ *
+ * Exports:
+ *   - copyToClipboard (internal: o)
+ *   - getClipboard (internal: s)
+ *   - writeImpl (internal: n)
+ *   - writePromiseUsingApi (internal: a)
+ *
+ * Next Steps:
+ *   1. Rename single-letter variables to semantic names
+ *   2. Add JSDoc comments for classes/functions
+ *   3. Map dependency relationships
+ */
+
+56616: (e, t, i) => {
+    "use strict";
+
+    function s() {
+      return navigator.clipboard
+    }
+
+    function o(e) {
+      return n(e, null)
+    }
+
+    function n(e, t) {
+      const i = e.files && e.files.length > 0;
+      if (!i && t && t.eventPhase > 0) return r(t, e), Promise.resolve();
+      if (!i) {
+        let t = !1;
+        const i = i => {
+          i.stopImmediatePropagation(), r(i, e), t = !0
+        };
+        try {
+          document.addEventListener("copy", i, !0), document.execCommand("copy")
+        } finally {
+          document.removeEventListener("copy", i, !0)
+        }
+        if (t) return Promise.resolve()
+      }
+      return async function(e) {
+        const t = s();
+        if (!t || !t.write || !window.ClipboardItem) throw new DOMException("ClipboardApi is not supported", "NotSupportedError");
+        const i = {};
+        for (const t of e.files || []) i[t.type] = t;
+        e.text && (i["text/plain"] = e.text);
+        e.html && (i["text/html"] = e.html);
+        return t.write([new window.ClipboardItem(i)])
+      }(e)
+    }
+
+    function r(e, t) {
+      e.preventDefault();
+      const i = e.clipboardData;
+      t.text && i.setData("text/plain", t.text), t.html && i.setData("text/html", t.html)
+    }
+    async function a(e, t) {
+      const i = s();
+      if ("text/plain" === t && !i.write) {
+        const t = await e;
+        return i.writeText(await t.text())
+      }
+      if (!i || !i.write || !window.ClipboardItem) throw new DOMException("ClipboardApi is not supported", "NotSupportedError");
+      let o = null;
+      try {
+        o = new window.ClipboardItem({
+          [t]: e
+        })
+      } catch (i) {
+        o = new window.ClipboardItem({
+          [t]: await e
+        })
+      }
+      if (o) return i.write([o]);
+      throw new Error("ClipboardApi is not supported")
+    }
+    i.d(t, {
+      copyToClipboard: () => o,
+      getClipboard: () => s,
+      writeImpl: () => n,
+      writePromiseUsingApi: () => a
+    })

@@ -1,0 +1,72 @@
+/**
+ * Module 78966 - Auto-beautified from TradingView webpack bundle
+ *
+ * @module 78966
+ * @date 2026-04-23
+ * @size 1654 bytes
+ *
+ * Status: Beautified (variable renaming pending)
+ *
+ * Dependencies: 51101
+ *
+ * Next Steps:
+ *   1. Rename single-letter variables to semantic names
+ *   2. Add JSDoc comments for classes/functions
+ *   3. Map dependency relationships
+ */
+
+"use strict";
+var s, o = i(51101),
+  n = {};
+e.exports = function(e, t, i, r) {
+    var a, l, c, h, d = {},
+      u = n[i] || "out_of_session",
+      _ = !1,
+      p = i,
+      m = t,
+      g = null,
+      f = null;
+
+    function y() {
+      var e = {};
+      e.symbolname = p, e.status = "ok", e.values = {}, e.values.current_session = u, n[p] = u, r.getChartApiMessager(m).onQuotesData([m].concat([e]))
+    }
+
+    function v() {
+      if (a)
+        if (h) u = "out_of_session";
+        else {
+          var e = (new Date).getTime(),
+            t = o.isTradingNow(e, a) ? "market" : "out_of_session";
+          l && o.isTradingNow(e, l) ? t = "pre_market" : c && o.isTradingNow(e, c) && (t = "post_market"), t !== u && (u = t)
+        }
+    }
+    return e(i, null, (function(e) {
+      _ || function(e) {
+        a = new o.SessionInfo(e.timezone, e.session_display ?? e.session, e.session_holidays, e.corrections), h = e.expired, e.subsession_id && e.subsessions ? e.subsessions.forEach((t => {
+          switch (t.id) {
+            case "regular":
+              a = new o.SessionInfo(e.timezone, t["session-display"] ?? t.session, e.session_holidays, t["session-correction"] || e["session-correction"] || e.corrections);
+              break;
+            case "premarket":
+              l = new o.SessionInfo(e.timezone, t["session-display"] ?? t.session, e.session_holidays, t["session-correction"] || e["session-premarket-correction"] || e.corrections);
+              break;
+            case "postmarket":
+              c = new o.SessionInfo(e.timezone, t["session-display"] ?? t.session, e.session_holidays, t["session-correction"] || e["session-postmarket-correction"] || e.corrections)
+          }
+        })) : (l = void 0, c = void 0);
+        const t = 60 - new Date(Date.now()).getSeconds();
+        s && s?.ticker === e.ticker || (s = {
+          ticker: e.ticker,
+          timer: t
+        }, clearTimeout(s.timeout)), f = setTimeout((() => {
+          g = setInterval((() => {
+            v(), y()
+          }), 6e4), v(), y()
+        }), 1e3 * s.timer), s && void 0 !== s?.timeout || (s.timeout = f), v(), y()
+      }(e)
+    }), (function() {})), d.stop = function() {
+      _ = !0, g && clearInterval(g), f && clearInterval(f)
+    }, d.marketStatus = function() {
+      return u
+    }, d

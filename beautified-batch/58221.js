@@ -1,0 +1,275 @@
+/**
+ * Module 58221 - Auto-beautified from TradingView webpack bundle
+ *
+ * @module 58221
+ * @date 2026-04-23
+ * @size 5012 bytes
+ *
+ * Status: Beautified (variable renaming pending)
+ *
+ * Dependencies: 10555, 18330, 33065, 33350, 48892, 69558
+ *
+ * Exports:
+ *   - addHorizontalLineToPath (internal: d)
+ *   - addLineToPath (internal: P)
+ *   - addPixelPerfectLineToPath (internal: M)
+ *   - addVerticalLineToPath (internal: _)
+ *   - clearRectWithGradient (internal: c)
+ *   - clipPolygonByEdge (internal: A)
+ *   - computeDashPattern (internal: T)
+ *   - createCircle (internal: b)
+ *   - drawHorizontalLine (internal: u)
+ *   - drawLine (internal: x)
+ *   - drawPixelPerfectLine (internal: I)
+ *   - drawPoly (internal: w)
+ *   - drawRoundRect (internal: f)
+ *   - drawRoundRectWithInnerBorder (internal: y)
+ *   - drawVerticalLine (internal: p)
+ *   - fillRectInnerBorder (internal: h)
+ *   - fillRectWithBorder (internal: S)
+ *   - scaleDrawRoundRectRadii (internal: m)
+ *   - scalePath2D (internal: L)
+ *   - scaledDashPattern (internal: v)
+ *   - setLineStyle (internal: C)
+ *
+ * Next Steps:
+ *   1. Rename single-letter variables to semantic names
+ *   2. Add JSDoc comments for classes/functions
+ *   3. Map dependency relationships
+ */
+
+"use strict";
+i.r(t), i.d(t, {
+  addHorizontalLineToPath: () => d,
+  addLineToPath: () => P,
+  addPixelPerfectLineToPath: () => M,
+  addVerticalLineToPath: () => _,
+  clearRectWithGradient: () => c,
+  clipPolygonByEdge: () => A,
+  computeDashPattern: () => T,
+  createCircle: () => b,
+  drawHorizontalLine: () => u,
+  drawLine: () => x,
+  drawPixelPerfectLine: () => I,
+  drawPoly: () => w,
+  drawRoundRect: () => f,
+  drawRoundRectWithInnerBorder: () => y,
+  drawVerticalLine: () => p,
+  fillRectInnerBorder: () => h,
+  fillRectWithBorder: () => S,
+  scaleDrawRoundRectRadii: () => m,
+  scalePath2D: () => L,
+  scaledDashPattern: () => v,
+  setLineStyle: () => C
+});
+var s = i(10555),
+  o = i(48892),
+  n = i(69558),
+  r = i(18330),
+  a = i(33350),
+  l = i(33065);
+
+function c(e, t, i, s, o, n, r) {
+  e.save(), e.globalCompositeOperation = "copy";
+  const a = e.createLinearGradient(0, 0, 0, o);
+  a.addColorStop(0, n), a.addColorStop(1, r), e.fillStyle = a, e.fillRect(t, i, s, o), e.restore()
+}
+
+function h(e, t, i, s, o, n) {
+  e.fillRect(t + n, i, s - 2 * n, n), e.fillRect(t + n, i + o - n, s - 2 * n, n), e.fillRect(t, i, n, o), e.fillRect(t + s - n, i, n, o)
+}
+
+function d(e, t, i, s) {
+  const o = e.lineWidth % 2 ? .5 : 0;
+  e.moveTo(i, t + o), e.lineTo(s, t + o)
+}
+
+function u(e, t, i, s) {
+  e.beginPath(), d(e, t, i, s), e.stroke()
+}
+
+function _(e, t, i, s) {
+  const o = e.lineWidth % 2 ? .5 : 0;
+  e.moveTo(t + o, i), e.lineTo(t + o, s)
+}
+
+function p(e, t, i, s) {
+  e.beginPath(), _(e, t, i, s), e.stroke()
+}
+
+function m(e, t) {
+  return Array.isArray(e) ? e.map((e => Math.round(e * t))) : Math.round(e * t)
+}
+
+function g(e, t) {
+  return Array.isArray(e) ? e.map((e => 0 === e ? e : e + t)) : e + t
+}
+
+function f(e, t, i, s, o, n, r) {
+  let a, l, c, h;
+  if (Array.isArray(n))
+    if (2 === n.length) {
+      const e = Math.max(0, n[0]),
+        t = Math.max(0, n[1]);
+      a = e, l = e, c = t, h = t
+    } else {
+      if (4 !== n.length) throw new Error("Wrong border radius - it should be like css border radius");
+      a = Math.max(0, n[0]), l = Math.max(0, n[1]), c = Math.max(0, n[2]), h = Math.max(0, n[3])
+    }
+  else {
+    const e = Math.max(0, n);
+    a = e, l = e, c = e, h = e
+  }
+  r || e.beginPath(), e.moveTo(t + a, i), e.lineTo(t + s - l, i), 0 !== l && e.arcTo(t + s, i, t + s, i + l, l), e.lineTo(t + s, i + o - c), 0 !== c && e.arcTo(t + s, i + o, t + s - c, i + o, c), e.lineTo(t + h, i + o), 0 !== h && e.arcTo(t, i + o, t, i + o - h, h), e.lineTo(t, i + a), 0 !== a && e.arcTo(t, i, t + a, i, a)
+}
+
+function y(e, t, i, s, o, n, a = 0, l = 0, c = "", h = r.LineStyle.Solid) {
+  if (e.save(), !l || !c || c === n) return f(e, t, i, s, o, a), e.fillStyle = n, e.fill(), void e.restore();
+  const d = l / 2;
+  if ("transparent" !== n) {
+    const d = "transparent" !== c && h !== r.LineStyle.Solid;
+    f(e, d ? t : t + l, d ? i : i + l, d ? s : s - 2 * l, d ? o : o - 2 * l, d ? a : g(a, -l)), e.fillStyle = n, e.fill()
+  }
+  if ("transparent" !== c) {
+    f(e, t + d, i + d, s - l, o - l, g(a, -d)), e.lineWidth = l, e.strokeStyle = c, C(e, h), e.closePath(), e.stroke()
+  }
+  e.restore()
+}
+
+function v(e, t) {
+  return t = Math.max(1, t), e.map((e => e * t))
+}
+
+function S(e, t, i, s, o, l, c, h, d) {
+  const {
+    context: _
+  } = e, p = l % 2 / 2, m = t + p, g = s + p;
+  let f, y;
+  if (h) {
+    const {
+      borderMode: e,
+      borderWidth: r,
+      color: a,
+      dashPattern: c,
+      lineStyle: d
+    } = h;
+    switch (e) {
+      case "outer": {
+        const e = -l / 2 - r / 2,
+          t = -r / 2;
+        y = {
+          left: m + e,
+          right: g - e,
+          top: i + t,
+          bottom: o - t
+        };
+        break
+      }
+      case "center": {
+        const e = r % 2 / 2;
+        y = {
+          left: t + e,
+          right: s + e,
+          top: i + e,
+          bottom: o + e
+        };
+        break
+      }
+      case "inner": {
+        const e = -l / 2 + r / 2,
+          t = r / 2;
+        y = {
+          left: m + e,
+          right: g - e,
+          top: i + t,
+          bottom: o - t
+        }
+      }
+    }
+    _.strokeStyle = a, _.lineWidth = r;
+    let u = -1;
+    c ? _.setLineDash(v(c, r)) : void 0 !== d && (C(_, d), d === n.LINESTYLE_SOLID && (u = 1)), f = {
+      left: y.left + u * r / 2,
+      top: y.top + u * r / 2,
+      right: y.right - u * r / 2,
+      bottom: y.bottom - u * r / 2
+    }
+  }
+  if (c && (_.fillStyle = c.color, f || (f = {
+      left: m - l / 2,
+      right: g + l / 2,
+      top: i,
+      bottom: o
+    }), _.fillRect(f.left, f.top, f.right - f.left, f.bottom - f.top)), d) {
+    const {
+      lineWidth: n,
+      lineColor: r,
+      lineStyle: l,
+      excludeBoundaries: c
+    } = d;
+    _.save(), _.lineCap = "butt", _.lineWidth = n, _.strokeStyle = r, C(_, l);
+    const p = () => u(_, Math.floor((i + o) / 2), h?.rightToLeftStroke ? s : t, h?.rightToLeftStroke ? t : s);
+    c ? (0, a.drawWithExclusionAreaByScope)(e, c, p) : p(), _.restore()
+  }
+  if (y) {
+    if ((h?.lineStyle ?? r.LineStyle.Solid) === r.LineStyle.Solid) _.strokeRect(y.left, y.top, y.right - y.left, y.bottom - y.top);
+    else {
+      const e = h?.rightToLeftStroke ? y.right : y.left,
+        t = h?.rightToLeftStroke ? y.left : y.right,
+        i = y.top,
+        s = y.bottom;
+      _.lineCap = "butt", [[e, i, t, i], [e, s, t, s], [e, i, e, s], [t, i, t, s]].forEach((([e, t, i, s]) => {
+        _.beginPath(), _.moveTo(e, t), _.lineTo(i, s), _.stroke()
+      }))
+    }
+  }
+}
+
+function b(e, t, i, s) {
+  e.beginPath(), e.arc(t, i, s, 0, 2 * Math.PI, !1), e.closePath()
+}
+
+function w(e, t, i) {
+  e.beginPath(), e.moveTo(t[0].x, t[0].y);
+  for (const i of t) e.lineTo(i.x, i.y);
+  e.closePath(), e.stroke(), i && e.fill()
+}
+
+function C(e, t) {
+  let i = [];
+  t !== n.LINESTYLE_SOLID && (i = T(e.lineWidth, t)), e.setLineDash(i)
+}
+
+function T(e, t) {
+  return [[e, 2 * e], [5 * e, 6 * e], [6 * e, 6 * e], [e, 4 * e], [2 * e, e]][t - 1]
+}
+
+function P(e, t, i, s, o) {
+  e.moveTo(t, i), e.lineTo(s, o)
+}
+
+function x(e, t, i, s, o) {
+  isFinite(t) && isFinite(s) && isFinite(i) && isFinite(o) && (e.beginPath(), P(e, t, i, s, o), e.stroke())
+}
+
+function M(e, t, i, s, o, n) {
+  const {
+    horizontalPixelRatio: r,
+    verticalPixelRatio: a
+  } = n;
+  let l;
+  return t === s ? (l = [Math.round(t * r), i * a, Math.round(t * r), o * a], _(e, l[0], l[1], l[3])) : i === o ? (l = [t * r, Math.round(i * a), s * r, Math.round(i * a)], d(e, l[1], l[0], l[2])) : (l = [t * r, i * a, s * r, o * a], P(e, l[0], l[1], l[2], l[3])), l
+}
+
+function I(e, t, i, s, o, n = l.dpr1PixelRatioInfo) {
+  e.beginPath(), M(e, t, i, s, o, n), e.stroke()
+}
+
+function A(e, t, i, n) {
+  const r = (0, s.equalPoints)(i, n[0]) ? (0, s.equalPoints)(i, n[1]) ? null : n[1] : n[0];
+  return null !== e && null !== r ? (0, o.intersectPolygonAndHalfplane)(e, (0, s.halfplaneThroughPoint)((0, s.lineThroughPoints)(t, i), r)) : null
+}
+
+function L(e, t) {
+  const i = new Path2D;
+  return i.addPath(e, (new DOMMatrix).scaleSelf(t, t)), i

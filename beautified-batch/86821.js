@@ -1,0 +1,90 @@
+/**
+ * Module 86821 - Auto-beautified from TradingView webpack bundle
+ *
+ * @module 86821
+ * @date 2026-04-23
+ * @size 3536 bytes
+ *
+ * Status: Beautified (variable renaming pending)
+ *
+ * Dependencies: 9343, 9787, 87465
+ *
+ * Next Steps:
+ *   1. Rename single-letter variables to semantic names
+ *   2. Add JSDoc comments for classes/functions
+ *   3. Map dependency relationships
+ */
+
+86821: (e, t, i) => {
+    "use strict";
+    const {
+      clone: s
+    } = i(87465);
+    var o = i(9787).Version,
+      n = i(9343).getLogger("Chart.StudyMigration");
+
+    function r(e) {
+      this._studyId = e, this._maxToVers = o.ZERO, this._maxFromVers = o.ZERO, this._migrs = []
+    }
+    r.prototype.addMigration = function(e, t, i) {
+      var s = o.parse(e),
+        n = o.parse(t);
+      s.isGreater(this._maxFromVers) && (this._maxFromVers = s), n.isGreater(this._maxToVers) && (this._maxToVers = n), this._migrs.push({
+        fromVers: s,
+        toVers: n,
+        rules: i
+      })
+    }, r.prototype.updateInputs = function(e, t, i) {
+      if (!i) return i;
+      for (var o = s(i), r = e; r.isLess(t);) {
+        var a = this._findMigration(r);
+        if (null == a) break;
+        if (n.logNormal("Migrating study inputs from " + a.fromVers + " to " + a.toVers + " version, studyId: " + this._studyId + ", migration: " + JSON.stringify(a) + ", inputs: " + JSON.stringify(i)), o = this._applyMigration(o, a), !r.isLess(a.toVers)) throw new Error("Problems in study migration process... Possible infinite cycle has been detected and stopped.");
+        r = a.toVers
+      }
+      return r > e && n.logNormal("Study inputs migration is done, studyId: " + this._studyId + ", inputs: " + JSON.stringify(o)), o
+    }, r.prototype._findMigration = function(e) {
+      for (var t = -1, i = this._maxFromVers, s = 0; s < this._migrs.length; s++) {
+        var o = this._migrs[s];
+        o.fromVers.isLess(e) || o.fromVers.isLessOrEqual(i) && (i = o.fromVers, t = s)
+      }
+      return t < 0 ? null : this._migrs[t]
+    }, r.prototype._applyMigration = function(e, t) {
+      for (var i = e, s = 0; s < t.rules.length; s++) {
+        var o = t.rules[s];
+        i = this._getApplyRuleFun(o.type)(i, o)
+      }
+      return i
+    }, r.prototype._getApplyRuleFun = function(e) {
+      if ("inputRemoved" === e) return r._applyInputRemovedRule;
+      if ("inputChangedType" === e) return r._applyInputChangedTypeRule;
+      if ("inputChangedMinMax" === e) return r._applyInputChangedMinMaxRule;
+      if ("inputChangedOptions" === e) return r._applyInputChangedOptionsRule;
+      throw new Error("Unknown migration rule type: " + e)
+    }, r._applyInputRemovedRule = function(e, t) {
+      if (!(t.inputId in e)) return e;
+      if ("removeVal" !== t.action) throw new Error("Unexpected rule.action=" + t.action + " in rule.type=" + t.type);
+      var i = e[t.inputId];
+      return delete e[t.inputId], n.logNormal("Input " + t.inputId + "=" + i + " removed"), e
+    }, r._applyInputChangedTypeRule = function(e, t) {
+      var i = e[t.inputId];
+      if ("resetToDefVal" === t.action) return e[t.inputId] = t.defVal, n.logNormal("Input " + t.inputId + "=" + i + " reset to default value " + t.defVal), e;
+      if ("convertVal" === t.action) {
+        if (null == i) return e;
+        if ("float" === t.inputTypeFrom && "integer" === t.inputType) return e[t.inputId] = Math.round(e[t.inputId]), n.logNormal("Input " + t.inputId + "=" + i + " converted to value " + e[t.inputId]), e;
+        if ("integer" === t.inputTypeFrom && "float" === t.inputType) return e;
+        if ("text" === t.inputTypeFrom && "source" === t.inputType) return r._isValidSource(i, t.options) || (e[t.inputId] = t.defVal), e;
+        throw new Error("Cannot convertVal from " + t.inputTypeFrom + " to " + t.inputType)
+      }
+      throw new Error("Unknown action " + t.action + " for rule with type " + t.type)
+    }, r._isValidSource = function(e, t) {
+      return e.indexOf("$") >= 0 || t.indexOf(e) >= 0
+    }, r._applyInputChangedMinMaxRule = function(e, t) {
+      if ("adjustValIfNeeded" !== t.action) throw new Error("Unknown action " + t.action + " for rule with type " + t.type);
+      var i = e[t.inputId];
+      return i < t.minVal ? e[t.inputId] = t.minVal : i > t.maxVal && (e[t.inputId] = t.maxVal), n.logNormal("Input " + t.inputId + "=" + i + " adjusted to value " + e[t.inputId]), e
+    }, r._applyInputChangedOptionsRule = function(e, t) {
+      if (!(["text"].indexOf(t.inputType) >= 0 && "resetToDefValIfNeeded" === t.action)) throw new Error("Unexpected rule.inputType=" + t.inputType + " in rule.action=" + t.action);
+      var i = e[t.inputId];
+      return t.options.indexOf(i) < 0 && (e[t.inputId] = t.defVal, n.logNormal("Input " + t.inputId + "=" + i + " reset to default value " + t.defVal)), e
+    }, e.exports = r

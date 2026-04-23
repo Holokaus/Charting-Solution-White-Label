@@ -1,0 +1,77 @@
+/**
+ * Module 86572 - Auto-beautified from TradingView webpack bundle
+ *
+ * @module 86572
+ * @date 2026-04-23
+ * @size 1426 bytes
+ *
+ * Status: Beautified (variable renaming pending)
+ *
+ * Dependencies: None detected
+ *
+ * Exports:
+ *   - CustomSourceLayer (internal: a)
+ *   - PlDisplay (internal: o)
+ *   - RecalcVisibleRangeStudiesReason (internal: c)
+ *   - TradedGroupHorizontalAlignment (internal: n)
+ *   - tradingPreferencesDefault (internal: r)
+ *
+ * Next Steps:
+ *   1. Rename single-letter variables to semantic names
+ *   2. Add JSDoc comments for classes/functions
+ *   3. Map dependency relationships
+ */
+
+86572: (e, t, i) => {
+    "use strict";
+    var s, o, n;
+    i.d(t, {
+        CustomSourceLayer: () => a,
+        PlDisplay: () => o,
+        RecalcVisibleRangeStudiesReason: () => c,
+        TradedGroupHorizontalAlignment: () => n,
+        tradingPreferencesDefault: () => r
+      }),
+      function(e) {
+        e[e.Initial = 2] = "Initial", e[e.SeriesZOrderIsAlwaysZero = 3] = "SeriesZOrderIsAlwaysZero", e[e.Current = 3] = "Current"
+      }(s || (s = {})),
+      function(e) {
+        e[e.Money = 0] = "Money", e[e.Pips = 1] = "Pips", e[e.Percentage = 2] = "Percentage"
+      }(o || (o = {})),
+      function(e) {
+        e[e.Left = 0] = "Left", e[e.Center = 1] = "Center", e[e.Right = 2] = "Right"
+      }(n || (n = {}));
+    const r = {
+      showPositions: !1,
+      positionAndBracketsPL: !1,
+      positionPL: {
+        visibility: !1,
+        display: o.Money
+      },
+      bracketsPL: {
+        visibility: !1,
+        display: o.Money
+      },
+      showOrders: !1,
+      showExecutions: !1,
+      showExecutionsLabels: !1,
+      showReverse: !1,
+      extendLeft: !1,
+      lineLength: 0,
+      horizontalAlignment: n.Right,
+      lineWidth: 0,
+      lineStyle: 0
+    };
+    var a, l, c, h;
+    ! function(e) {
+      e[e.Background = 0] = "Background", e[e.Foreground = 1] = "Foreground", e[e.Topmost = 2] = "Topmost"
+    }(a || (a = {})),
+    function(e) {
+      e[e.Unavailable = 0] = "Unavailable", e[e.AvailableReadonlyAlwaysDisabled = 1] = "AvailableReadonlyAlwaysDisabled", e[e.AvailableReadonlyAlwaysEnabled = 2] = "AvailableReadonlyAlwaysEnabled", e[e.Available = 3] = "Available"
+    }(l || (l = {})),
+    function(e) {
+      e[e.ViewportChangeUserAction = 0] = "ViewportChangeUserAction", e[e.DataUpdate = 1] = "DataUpdate", e[e.SeriesRestart = 2] = "SeriesRestart", e[e.SeriesCompleted = 3] = "SeriesCompleted", e[e.StudyCreation = 4] = "StudyCreation"
+    }(c || (c = {})),
+    function(e) {
+      e[e.Chart = 0] = "Chart"
+    }(h || (h = {}))

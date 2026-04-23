@@ -1,0 +1,61 @@
+/**
+ * Module 93946 - Auto-beautified from TradingView webpack bundle
+ *
+ * @module 93946
+ * @date 2026-04-23
+ * @size 702 bytes
+ *
+ * Status: Beautified (variable renaming pending)
+ *
+ * Dependencies: 49483
+ *
+ * Exports:
+ *   - EnvironmentState (internal: o)
+ *
+ * Next Steps:
+ *   1. Rename single-letter variables to semantic names
+ *   2. Add JSDoc comments for classes/functions
+ *   3. Map dependency relationships
+ */
+
+"use strict";
+i.d(t, {
+  EnvironmentState: () => o
+});
+var s = i(49483);
+class o {
+  constructor(e, t = !1) {
+    this._shift = !1, this._mod = !1, this._alt = !1, void 0 !== e && (this._shift = Boolean(e.shiftKey), this._mod = Boolean((0, s.isMac)() ? e.metaKey : e.ctrlKey), this._alt = Boolean(e.altKey)), this._isApiEvent = t
+  }
+  shift() {
+    return this._shift
+  }
+  mod() {
+    return this._mod
+  }
+  alt() {
+    return this._alt
+  }
+  shiftOnly() {
+    return this._shift && !this._mod && !this._alt
+  }
+  modOnly() {
+    return this._mod && !this._shift && !this._alt
+  }
+  altOnly() {
+    return this._alt && !this._shift && !this._mod
+  }
+  modShift() {
+    return this._shift && this._mod && !this._alt
+  }
+  isApiEvent() {
+    return this._isApiEvent
+  }
+  static create(e = !1, t = !1, i = !1) {
+    return new o({
+      shiftKey: e,
+      ctrlKey: t,
+      metaKey: t,
+      altKey: i
+    })
+  }

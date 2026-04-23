@@ -1,0 +1,212 @@
+/**
+ * Module 2258 - Auto-beautified from TradingView webpack bundle
+ *
+ * @module 2258
+ * @date 2026-04-23
+ * @size 3701 bytes
+ *
+ * Status: Beautified (variable renaming pending)
+ *
+ * Dependencies: 29447, 30551, 35990, 36313, 43337, 48096, 48943, 50151, 50279, 51304, 52499, 67135, 67563, 72972, 80671, 86252
+ *
+ * Exports:
+ *   - StudyStub (internal: b)
+ *   - isStudyStubDescriptor (internal: w)
+ *
+ * Next Steps:
+ *   1. Rename single-letter variables to semantic names
+ *   2. Add JSDoc comments for classes/functions
+ *   3. Map dependency relationships
+ */
+
+"use strict";
+i.d(t, {
+  StudyStub: () => b,
+  isStudyStubDescriptor: () => w
+});
+var s = i(50279),
+  o = i(30551),
+  n = i(50151),
+  r = i(52499),
+  a = (i(48943), i(51304)),
+  l = i(80671),
+  c = i(67135),
+  h = i(67563),
+  d = i(48096),
+  u = i(43337),
+  _ = i(35990),
+  p = i(36313);
+class m extends _.StudyStatusProviderBase {
+  text() {
+    return this._source.isActualInterval() ? `${this._source.title(p.TitleDisplayTarget.StatusLine)} ${this.sourceStatusText()}` : this._source.title(p.TitleDisplayTarget.StatusLine)
+  }
+}
+var g = i(86252),
+  f = i(29447),
+  y = i(72972);
+class v {
+  getItems() {
+    return []
+  }
+  getValues(e) {
+    return []
+  }
+}
+const S = new d.Delegate;
+class b extends c.PriceDataSource {
+  constructor(e, t, i, s, o = null) {
+    super(e), this._priceStep = .01, this._origState = null, this._descriptor = null, this._status = {
+      type: g.StudyStatusType.Undefined
+    }, this._statusChanged = new d.Delegate, this._descriptorChanged = new d.Delegate, this._formatter = new h.PriceFormatter({
+      priceScale: 100
+    }), this._showPineVersionInStatusLine = new r.WatchedValue(!1).spawn(), this._pineSourceCodeModel = null, (0, y.isStudyDescriptor)(t) ? this._descriptor = t : this._origState = t, this._title = i, this._alwaysShowInLegend = void 0 !== s, this._isOverlay = s, this._studyMetaInfo = o;
+    this._properties = new u.Property({
+      visible: !0
+    }), this._statusView = new l.StudyStatusView(this)
+  }
+  destroy() {
+    this._pineSourceCodeModel?.destroy(), this._showPineVersionInStatusLine.destroy(), super.destroy()
+  }
+  barColorer() {
+    return null
+  }
+  properties() {
+    return this._properties
+  }
+  statusView() {
+    return this._statusView
+  }
+  legendView() {
+    return null
+  }
+  state(e) {
+    return this._origState
+  }
+  getDescriptor() {
+    return null === this._descriptor ? null : {
+      descriptor: this._descriptor,
+      title: this._title,
+      isOverlay: this._isOverlay,
+      id: this.id(),
+      status: this._status
+    }
+  }
+  updateDescriptor(e) {
+    (0, s.default)(this._descriptor, e) || (this._descriptor = e, this._descriptorChanged.fire())
+  }
+  onDescriptorChanged() {
+    return this._descriptorChanged
+  }
+  metaInfo() {
+    return this._studyMetaInfo
+  }
+  setMetaInfo(e) {
+    this._studyMetaInfo = e
+  }
+  setStatus(e) {
+    const t = this.isDisplayedInLegend();
+    if (this._status = e, this._statusChanged.fire(), this.isDisplayedInLegend() !== t) {
+      const e = this._model.paneForSource(this);
+      if (e) {
+        const t = this._model.panes().indexOf(e),
+          i = a.InvalidationMask.invalidateLegendWidgetLayout(t);
+        this.model().invalidate(i)
+      }
+    }
+  }
+  formatter() {
+    return this._formatter
+  }
+  name() {
+    return this._title
+  }
+  title() {
+    return this.titleInParts().join(" ")
+  }
+  titleInParts() {
+    const e = [this._title];
+    return this._showPineVersionInStatusLine.value() && e.push((0, n.ensureDefined)(this._studyMetaInfo?.pine).version), e
+  }
+  inputsInParts() {
+    return null
+  }
+  isFailed() {
+    return this._status.type === g.StudyStatusType.Error
+  }
+  isLoading() {
+    return this._status.type === g.StudyStatusType.Loading
+  }
+  isDisplayedInLegend() {
+    return this._alwaysShowInLegend || this.isFailed()
+  }
+  setFailed(e, t) {
+    this.setStatus({
+      type: g.StudyStatusType.Error,
+      errorDescription: {
+        error: e,
+        title: t
+      }
+    }), this._model.updateSource(this)
+  }
+  isSymbolInvalid() {
+    return !1
+  }
+  isActualInterval() {
+    return !0
+  }
+  onIsActualIntervalChange() {
+    return S
+  }
+  start() {}
+  status() {
+    return this._status
+  }
+  onStatusChanged() {
+    return this._statusChanged
+  }
+  firstValue() {
+    return null
+  }
+  currency() {
+    return null
+  }
+  sessionId() {
+    return this._model.mainSeries().sessionId()
+  }
+  sessionIdChanged() {
+    return this._model.mainSeries().sessionIdChanged()
+  }
+  unit() {
+    return null
+  }
+  symbolSource() {
+    return this._model.mainSeries()
+  }
+  symbolSourceWV() {
+    return this._model.mainSeries().symbolSourceWV()
+  }
+  barsProvider() {
+    return this._model.mainSeries()
+  }
+  valuesProvider() {
+    return new v
+  }
+  legendValuesProvider() {
+    return new v
+  }
+  statusProvider(e) {
+    return new m(this)
+  }
+  isRemovedByStudyTemplates() {
+    return null !== this._origState && (0, f.isStudyState)(this._origState)
+  }
+  pineSourceCodeModel() {
+    return Promise.resolve(null)
+  }
+  contextMenuStatName() {
+    return "StudyStubContextMenu"
+  }
+}
+
+function w(e) {
+  return (0, o.isObject)(e) && "descriptor" in e && (0, y.isStudyDescriptor)(e.descriptor)

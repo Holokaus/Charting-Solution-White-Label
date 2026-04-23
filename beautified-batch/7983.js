@@ -1,0 +1,19 @@
+/**
+ * Module 7983 - Auto-beautified from TradingView webpack bundle
+ *
+ * @module 7983
+ * @date 2026-04-23
+ * @size 333 bytes
+ *
+ * Status: Beautified (variable renaming pending)
+ *
+ * Dependencies: None detected
+ *
+ * Next Steps:
+ *   1. Rename single-letter variables to semantic names
+ *   2. Add JSDoc comments for classes/functions
+ *   3. Map dependency relationships
+ */
+
+7983: e => {
+    e.exports = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 13" width="15" height="13"><path fill="currentColor" fill-rule="evenodd" d="M4.1 1 1.14 6.5 4.1 12h6.8l2.96-5.5L10.9 1H4.1ZM15 6.5 11.5 0h-8L0 6.5 3.5 13h8L15 6.5ZM7.5 8a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Zm0 1a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"/></svg>'

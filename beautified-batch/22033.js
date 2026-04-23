@@ -1,0 +1,254 @@
+/**
+ * Module 22033 - Auto-beautified from TradingView webpack bundle
+ *
+ * @module 22033
+ * @date 2026-04-23
+ * @size 3242 bytes
+ *
+ * Status: Beautified (variable renaming pending)
+ *
+ * Dependencies: 93201
+ *
+ * Exports:
+ *   - RangeBarStyle (internal: y)
+ *   - areaStylePreferencesDefault (internal: c)
+ *   - barStylePreferencesDefault (internal: r)
+ *   - baselineStylePreferencesDefault (internal: d)
+ *   - candleStylePreferencesDefault (internal: o)
+ *   - columnStylePreferencesDefault (internal: S)
+ *   - haStylePreferencesDefault (internal: _)
+ *   - hiloStylePreferencesDefault (internal: u)
+ *   - hlcAreaStylePreferencesDefault (internal: h)
+ *   - hlcBarsStylePreferencesDefault (internal: a)
+ *   - hollowCandlePreferencesStyleDefault (internal: n)
+ *   - kagiStylePreferencesDefault (internal: g)
+ *   - lineStyleDefault (internal: l)
+ *   - pbStylePreferencesDefault (internal: m)
+ *   - pnfStylePreferencesDefault (internal: f)
+ *   - rangeStylePreferencesDefault (internal: v)
+ *   - renkoStylePreferencesDefault (internal: p)
+ *
+ * Next Steps:
+ *   1. Rename single-letter variables to semantic names
+ *   2. Add JSDoc comments for classes/functions
+ *   3. Map dependency relationships
+ */
+
+"use strict";
+i.d(t, {
+  RangeBarStyle: () => y,
+  areaStylePreferencesDefault: () => c,
+  barStylePreferencesDefault: () => r,
+  baselineStylePreferencesDefault: () => d,
+  candleStylePreferencesDefault: () => o,
+  columnStylePreferencesDefault: () => S,
+  haStylePreferencesDefault: () => _,
+  hiloStylePreferencesDefault: () => u,
+  hlcAreaStylePreferencesDefault: () => h,
+  hlcBarsStylePreferencesDefault: () => a,
+  hollowCandlePreferencesStyleDefault: () => n,
+  kagiStylePreferencesDefault: () => g,
+  lineStyleDefault: () => l,
+  pbStylePreferencesDefault: () => m,
+  pnfStylePreferencesDefault: () => f,
+  rangeStylePreferencesDefault: () => v,
+  renkoStylePreferencesDefault: () => p
+});
+var s = i(93201);
+const o = {
+    upColor: "",
+    downColor: "",
+    drawWick: !1,
+    drawBorder: !1,
+    drawBody: !0,
+    borderColor: "",
+    borderUpColor: "",
+    borderDownColor: "",
+    wickColor: "",
+    wickUpColor: "",
+    wickDownColor: "",
+    barColorsOnPrevClose: !1
+  },
+  n = {
+    upColor: "",
+    downColor: "",
+    drawWick: !1,
+    drawBorder: !1,
+    drawBody: !0,
+    borderColor: "",
+    borderUpColor: "",
+    borderDownColor: "",
+    wickColor: "",
+    wickUpColor: "",
+    wickDownColor: ""
+  },
+  r = {
+    upColor: "",
+    downColor: "",
+    barColorsOnPrevClose: !1,
+    dontDrawOpen: !1,
+    thinBars: !0
+  },
+  a = {
+    color: "",
+    thinBars: !0
+  },
+  l = {
+    color: "",
+    linestyle: 0,
+    linewidth: 0,
+    colorType: s.ColorType.Gradient,
+    gradientStartColor: "",
+    gradientEndColor: ""
+  },
+  c = {
+    color1: "",
+    color2: "",
+    linecolor: "",
+    linestyle: 0,
+    linewidth: 0,
+    transparency: 0
+  },
+  h = {
+    highLineVisible: !0,
+    highLineColor: "",
+    highLineStyle: 0,
+    highLineWidth: 0,
+    lowLineVisible: !0,
+    lowLineColor: "",
+    lowLineStyle: 0,
+    lowLineWidth: 0,
+    closeLineColor: "",
+    closeLineStyle: 0,
+    closeLineWidth: 0,
+    highCloseFillColor: "",
+    closeLowFillColor: ""
+  },
+  d = {
+    topFillColor1: "",
+    topFillColor2: "",
+    bottomFillColor1: "",
+    bottomFillColor2: "",
+    topLineColor: "",
+    bottomLineColor: "",
+    baselineColor: "",
+    topLineWidth: 0,
+    bottomLineWidth: 0,
+    topLineStyle: 0,
+    bottomLineStyle: 0,
+    transparency: 0,
+    baseLevelPercentage: 0
+  },
+  u = {
+    color: "",
+    showBorders: !1,
+    borderColor: "",
+    showLabels: !1,
+    labelColor: "",
+    drawBody: !0
+  },
+  _ = {
+    upColor: "",
+    downColor: "",
+    drawWick: !1,
+    drawBorder: !1,
+    drawBody: !0,
+    borderColor: "",
+    borderUpColor: "",
+    borderDownColor: "",
+    wickColor: "",
+    wickUpColor: "",
+    wickDownColor: "",
+    showRealLastPrice: !1,
+    barColorsOnPrevClose: !1,
+    inputs: {}
+  },
+  p = {
+    upColor: "",
+    downColor: "",
+    borderUpColor: "",
+    borderDownColor: "",
+    upColorProjection: "",
+    downColorProjection: "",
+    borderUpColorProjection: "",
+    borderDownColorProjection: "",
+    wickUpColor: "",
+    wickDownColor: "",
+    inputs: {
+      boxSize: 0,
+      style: "",
+      atrLength: 0,
+      percentageLTP: 0,
+      wicks: !1,
+      sources: "",
+      source: ""
+    }
+  },
+  m = {
+    upColor: "",
+    downColor: "",
+    borderUpColor: "",
+    borderDownColor: "",
+    upColorProjection: "",
+    downColorProjection: "",
+    borderUpColorProjection: "",
+    borderDownColorProjection: "",
+    inputs: {
+      source: "",
+      lb: 0
+    }
+  },
+  g = {
+    upColor: "",
+    downColor: "",
+    upColorProjection: "",
+    downColorProjection: "",
+    inputs: {
+      style: "",
+      atrLength: 0,
+      percentageLTP: 0,
+      reversalAmount: 0
+    }
+  },
+  f = {
+    upColor: "",
+    downColor: "",
+    upColorProjection: "",
+    downColorProjection: "",
+    inputs: {
+      reversalAmount: 0,
+      boxSize: 0,
+      style: "",
+      atrLength: 0,
+      percentageLTP: 0,
+      oneStepBackBuilding: !1,
+      sources: "Close"
+    }
+  };
+var y;
+! function(e) {
+  e[e.Bars = 0] = "Bars", e[e.Candles = 1] = "Candles"
+}(y || (y = {}));
+const v = {
+    barStyle: 0,
+    upColor: "",
+    downColor: "",
+    upColorProjection: "",
+    downColorProjection: "",
+    thinBars: !1,
+    candlesUpColor: "",
+    candlesDownColor: "",
+    candlesBorderUpColor: "",
+    candlesBorderDownColor: "",
+    candlesWickUpColor: "",
+    candlesWickDownColor: "",
+    inputs: {
+      range: 0,
+      phantomBars: !1
+    }
+  },
+  S = {
+    upColor: "",
+    downColor: "",
+    barColorsOnPrevClose: !1,
+    baselinePosition: "bottom"

@@ -1,0 +1,98 @@
+/**
+ * Module 30376 - Auto-beautified from TradingView webpack bundle
+ *
+ * @module 30376
+ * @date 2026-04-23
+ * @size 1416 bytes
+ *
+ * Status: Beautified (variable renaming pending)
+ *
+ * Dependencies: 31645, 86811
+ *
+ * Exports:
+ *   - GraphicsList (internal: n)
+ *
+ * Next Steps:
+ *   1. Rename single-letter variables to semantic names
+ *   2. Add JSDoc comments for classes/functions
+ *   3. Map dependency relationships
+ */
+
+"use strict";
+i.d(t, {
+  GraphicsList: () => n
+});
+var s = i(86811),
+  o = i(31645);
+class n {
+  constructor() {
+    this._items = [], this._owner = null
+  }
+  primitivesData(e) {
+    const t = [];
+    for (const i of this._items) e.isIgnoredObj(i) || t.push(i.primitiveData());
+    return t
+  }
+  get(e) {
+    return this._items[e]
+  }
+  set(e, t) {
+    return this.dirty(), t.setOwner(this), this._items[e] = t, t
+  }
+  addAtIndex(e, t) {
+    this.dirty(), t.setOwner(this), this._items[e] = t
+  }
+  clear() {
+    this._unsetOwner(this._items), this._items = [], this.dirty()
+  }
+  addAllFromNumber(e, t) {
+    this.setOwner(t), this._items.splice(e, 0, ...t._items);
+    const i = !0;
+    return this._setCachedDataValid(!1), i
+  }
+  addAll(e) {
+    this.setOwner(e), this._items.push(...e._items);
+    const t = !0;
+    return this._setCachedDataValid(!1), t
+  }
+  remove(e) {
+    const t = this._items[e];
+    return this._items.splice(e, 1), t.unsetOwner(this), this.dirty(), t
+  }
+  getItems() {
+    return this._items
+  }
+  size() {
+    return this._items.length
+  }
+  add(e) {
+    e.setOwner(this), this._items.push(e);
+    const t = !0;
+    return this._setCachedDataValid(!1), t
+  }
+  deleteErasedItems() {
+    this._items = this._items.filter((e => !e.isErased()))
+  }
+  markPostedItems() {
+    for (const e of this._items) e.markAsPosted()
+  }
+  isNaN() {
+    if (0 === this._items.length) return !0;
+    for (const e of this._items) {
+      if (!(0, o.isNaNable)(e)) return !1;
+      if (!e.isNaN()) return !1
+    }
+    return !0
+  }
+  setOwner(e) {
+    this._owner = e
+  }
+  dirty() {
+    null !== this._owner && this._owner.dirty()
+  }
+  _unsetOwner(e) {
+    for (const t of e) t instanceof s.GraphicsObj && t.unsetOwner(this)
+  }
+  _setCachedDataValid(e) {
+    e || this.dirty()
+  }

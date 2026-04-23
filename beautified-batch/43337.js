@@ -1,0 +1,193 @@
+/**
+ * Module 43337 - Auto-beautified from TradingView webpack bundle
+ *
+ * @module 43337
+ * @date 2026-04-23
+ * @size 4171 bytes
+ *
+ * Status: Beautified (variable renaming pending)
+ *
+ * Dependencies: 9343, 38486, 50151, 55114, 56052, 69708, 79603, 83350, 83873, 88987
+ *
+ * Exports:
+ *   - Property (internal: m)
+ *   - isPrimitiveType (internal: p)
+ *
+ * Next Steps:
+ *   1. Rename single-letter variables to semantic names
+ *   2. Add JSDoc comments for classes/functions
+ *   3. Map dependency relationships
+ */
+
+"use strict";
+i.d(t, {
+  Property: () => m,
+  isPrimitiveType: () => p
+});
+var s = i(69708),
+  o = i(83873),
+  n = i(83350),
+  r = i(88987),
+  a = i(56052),
+  l = i(50151),
+  c = i(9343),
+  h = i(38486),
+  d = i(79603),
+  u = i(55114);
+const _ = (0, c.getLogger)("Property");
+
+function p(e) {
+  return null === e || (0, s.default)(e) && Number.isFinite(e) || (0,
+    o.default)(e) || (0, n.default)(e)
+}
+class m extends d.PropertyBase {
+    constructor(e, t) {
+      if (super(), this._childs = [], this._dependents = [], this._schema = t || (0, u.createPropertySchema)(e), void 0 !== e)
+        if ((0, u.validateSchema)(e, this._schema) || _.logWarn(`The state with a data type: ${(0,u.dataType)(e)} does not match a schema`), p(e)) this._value = e;
+        else {
+          let t = Object.entries(e);
+          (0, u.isArraySchema)(this._schema) && (t = t.filter((([e]) => !Number.isNaN(+e))));
+          for (const [e, i] of t) this.addProperty(e, i)
+        }
+    }
+    destroy() {
+      this.listeners().destroy();
+      for (const e of this._childs) this.child(e)?.destroy?.()
+    }
+    merge(e, t) {
+      let i = null,
+        s = 0;
+      if (t && (i = [], s = i.length), void 0 === e) return i;
+      if (p(e)) return this._value !== e && i?.push(this), this._value = e, i;
+      if ((0, a.default)(e)) {
+        (0, u.isArraySchema)(this._schema) || _.logWarn("Property is not an array");
+        for (let s = 0; s < e.length; s++) {
+          const o = this.childs()[s];
+          if (o) {
+            const n = o.merge(e[s], t);
+            i?.push(...n)
+          } else {
+            const t = this.addProperty(`${s}`, e[s]);
+            i?.push(t)
+          }
+        }
+      } else {
+        let s = Object.entries(e);
+        (0, u.isArraySchema)(this._schema) && (s = s.filter((([e]) => !Number.isNaN(+e))));
+        for (const [e, o] of s) {
+          const s = this.childs()[e];
+          if (s) {
+            const e = s.merge(o, t);
+            i?.push(...e)
+          } else {
+            const t = this.addProperty(e, o);
+            i?.push(t)
+          }
+        }
+      }
+      return i && i.length > s && i.push(this), i
+    }
+    mergeAndFire(e) {
+      const t = (0, l.ensureNotNull)(this.merge(e, !0));
+      this._fireMergeAndFireChangedProps(t)
+    }
+    state(e, t) {
+      const i = (0, r.default)(this.value) ? this.value() : void 0;
+      if (void 0 !== i) return i;
+      const s = (0, u.isArraySchema)(this._schema) ? [] : {};
+      for (const i of this._childs) {
+        if (e && -1 !== e.indexOf(i)) continue;
+        if ((0, u.isArraySchema)(this._schema) && Number.isNaN(+i)) continue;
+        if (void 0 !== t && "subschema" in this._schema) {
+          const e = (0, u.isArraySchema)(this._schema) ? this._schema.subschema : this._schema.subschema[i];
+          if (void 0 !== this._schema.saveFlags && !e) continue;
+          if (void 0 !== e?.saveFlags && !(e.saveFlags & t)) continue
+        }
+        const o = this.childs()[i];
+        let n;
+        if (e) {
+          const s = [];
+          for (const t of e) t.startsWith(i + ".") && s.push(t.substring(i.length + 1));
+          n = o?.state(s, t)
+        } else n = o?.state();
+        (void 0 !== n || o?.storeStateIfUndefined()) && ((0, a.default)(s) ? s[+i] = n : s[i] = n)
+      }
+      return s
+    }
+    clone() {
+      return new m(this.state())
+    }
+    value() {
+      return this._value
+    }
+    childCount() {
+      return this._childs.length
+    }
+    childNames() {
+      return this._childs
+    }
+    childByPath(e) {
+      let t = this;
+      for (const i of e.split(".")) {
+        if (void 0 === t) break;
+        t = t.child(i)
+      }
+      return t
+    }
+    hasChild(e) {
+      return this._childs.includes(e)
+    }
+    setValue(e, t) {
+      (this._value !== e || t) && (this._value = e, this.fireChanged())
+    }
+    setValueSilently(e) {
+      this._value = e
+    }
+    addProperty(e, t) {
+      let i;
+      (0, u.isArraySchema)(this._schema) && Number.isNaN(+e) && _.logWarn("Property is an array"), this.removeProperty(e), this._schema.type === u.DataTypes.OBJECT ? i = this._schema.subschema[e] : this._schema.type === u.DataTypes.ARRAY && (i = this._schema.subschema);
+      const s = new m(t, i);
+      return this[e] = s, this._childs.push(e), s.subscribe(this, ((e, t) => {
+        this._childChanged(e, t)
+      })), s.setOwner(this), s.setNameInOwner(e), s
+    }
+    removeProperty(e) {
+      const t = this.child(e);
+      t && (t.setNameInOwner(""), t.setOwner(null), t.unsubscribeAll(this), delete this[e], this._childs = this._childs.filter((t => t !== e)))
+    }
+    addChild(e, t) {
+      if ((0,
+          u.isArraySchema)(this._schema) && Number.isNaN(+e)) throw new Error("Property is an array");
+      this[e] && this.removeProperty(e), this[e] = t, -1 === this._childs.indexOf(e) && this._childs.push(e), t.subscribe(this, ((e, t) => this._childChanged(e, t))), t.setOwner(this), t.setNameInOwner(e)
+    }
+    childs() {
+      return this
+    }
+    storeStateIfUndefined() {
+      return !0
+    }
+    ownership() {
+      return (0, h.ownership)(this)
+    }
+    weakReference() {
+      return (0, h.weakReference)(this)
+    }
+    addDependent(e) {
+      this._dependents.push(e)
+    }
+    removeDependent(e) {
+      const t = this._dependents.indexOf(e);
+      t >= 0 && this._dependents.splice(t, 1)
+    }
+    dependents() {
+      return this._dependents
+    }
+    _childChanged(e, t) {
+      this._muteChildChanges || this._listeners.fire(this, t)
+    }
+    _fireMergeAndFireChangedProps(e) {
+      this.muteChildChanges(!0);
+      for (const t of e) t.muteChildChanges(!0);
+      for (const t of e) t.muteChildChanges(!1), t.fireChanged();
+      this.muteChildChanges(!1)
+    }

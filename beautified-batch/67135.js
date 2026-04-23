@@ -1,0 +1,153 @@
+/**
+ * Module 67135 - Auto-beautified from TradingView webpack bundle
+ *
+ * @module 67135
+ * @date 2026-04-23
+ * @size 2427 bytes
+ *
+ * Status: Beautified (variable renaming pending)
+ *
+ * Dependencies: 2072, 22455, 48096, 50151, 72207
+ *
+ * Exports:
+ *   - PriceDataSource (internal: c)
+ *   - isPriceDataSource (internal: l)
+ *
+ * Next Steps:
+ *   1. Rename single-letter variables to semantic names
+ *   2. Add JSDoc comments for classes/functions
+ *   3. Map dependency relationships
+ */
+
+"use strict";
+i.d(t, {
+  PriceDataSource: () => c,
+  isPriceDataSource: () => l
+});
+var s = i(50151),
+  o = i(2072),
+  n = i(72207),
+  r = i(48096),
+  a = i(22455);
+
+function l(e) {
+  return e instanceof c
+}
+class c extends n.DataSource {
+    constructor(e, t) {
+      super(t), this._formatterChanged = new r.Delegate, this._priceStepChanged = new r.Delegate, this._currencyChanged = new r.Delegate, this._unitChanged = new r.Delegate, this._priceRangeReadyChanged = new r.Delegate, this._dataRangeUpdated = new r.Delegate, this._priceStep = null, this._signature = new o.WatchedValue(null), this._priceRangeReady = !0, this._model = e
+    }
+    base() {
+      return 0
+    }
+    model() {
+      return this._model
+    }
+    currencyChanged() {
+      return this._currencyChanged
+    }
+    isCurrencySource() {
+      return !0
+    }
+    isDisplayedInLegend() {
+      return !0
+    }
+    unitChanged() {
+      return this._unitChanged
+    }
+    isUnitSource() {
+      return !0
+    }
+    signature() {
+      return this._signature.readonly()
+    }
+    priceRange(e, t, i) {
+      return null
+    }
+    isDraggable() {
+      return !0
+    }
+    priceLineColor(e) {
+      return e
+    }
+    formatterChanged() {
+      return this._formatterChanged
+    }
+    priceStep(e) {
+      return this._priceStep
+    }
+    priceStepChanged() {
+      return this._priceStepChanged
+    }
+    isIncludedInAutoScale() {
+      return !0
+    }
+    tableViewValuesProvider() {
+      return null
+    }
+    chartFloatingTooltipValuesProvider() {
+      return this.valuesProvider()
+    }
+    correctScaleMargins(e) {
+      return e
+    }
+    priceRangeReady() {
+      return this._priceRangeReady
+    }
+    priceRangeReadyChanged() {
+      return this._priceRangeReadyChanged
+    }
+    disablePriceRangeReady() {
+      const e = this.priceScale();
+      null === e || e.isAutoScale() || e.mainSource() !== this || (this._priceRangeReady = !1, e.recalculatePriceRangeOnce()), this._priceRangeReadyChanged.fire(!1)
+    }
+    statusView() {
+      return null
+    }
+    legendView() {
+      return null
+    }
+    marketStatusModel() {
+      return null
+    }
+    dataUpdatedModeModel() {
+      return null
+    }
+    dataProblemModel() {
+      return null
+    }
+    alertSourceModel() {
+      return null
+    }
+    canHasAlertOnLineTools() {
+      return !0
+    }
+    dataRangeUpdated() {
+      return this._dataRangeUpdated
+    }
+    _onIndexDiffsApplied(e) {
+      const [t, i] = (0, s.ensureNotNull)(this._plotsDataRange());
+      let o = 1 / 0,
+        n = -1 / 0;
+      for (const t of e) o = Math.min(o, t.old, t.new), n = Math.max(n, t.old, t.new);
+      this._dataRangeUpdated.fire({
+        type: "partial",
+        startIndex: Math.max(o, t),
+        endIndex: Math.min(n, i)
+      })
+    }
+    _plotsDataRange() {
+      return null
+    }
+    _enablePriceRangeReady() {
+      this._priceRangeReady = !0, this._priceRangeReadyChanged.fire(!0)
+    }
+    _onSourceCurrencyChanged() {
+      (0, a.isActingAsSymbolSource)(this) || this._currencyChanged.fire()
+    }
+    _onSourceUnitChanged() {
+      (0, a.isActingAsSymbolSource)(this) || this._unitChanged.fire()
+    }
+    _onSourcePriceRangeReadyChanged(e) {
+      (0, a.isActingAsSymbolSource)(this) || e || this.disablePriceRangeReady()
+    }
