@@ -6,9 +6,7 @@
   "module": "charting_library.esm.js",
   "types": "charting_library.d.ts",
   "devDependencies": {
-    "js-beautify": "^1.15.4"
-  },
-  "dependencies": {
+    "js-beautify": "^1.15.4",
     "prettier": "^3.8.3"
   }
 }
