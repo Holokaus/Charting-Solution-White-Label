@@ -1,6 +1,1 @@
-```
-# Renamed modules - ignore backup/temporary files that might be created during renaming
-renamed-modules/*.bak
-renamed-modules/*~
-renamed-modules/.*.swp
-```
+Nothing should be ignored in this case, as the only added file is a markdown document (`DETAILED_AUDIT_REPORT_2026.md`) which is a source/config file and not a build artifact, dependency, or temporary file.
