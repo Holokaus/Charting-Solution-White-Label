@@ -8,7 +8,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const inputFile = path.join(__dirname, 'beautified-modules-manual/49156-colors.js');
+const inputFile = path.join(__dirname, 'modules-awaiting-beautification/49156-colors.js');
 const outputFile = path.join(__dirname, 'renamed-modules/49156-colors-renamed.js');
 
 if (!fs.existsSync(path.dirname(outputFile))) {

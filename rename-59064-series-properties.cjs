@@ -8,7 +8,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const inputFile = path.join(__dirname, 'beautified-modules-manual/59064-series-properties.js');
+const inputFile = path.join(__dirname, 'modules-awaiting-beautification/59064-series-properties.js');
 const outputFile = path.join(__dirname, 'renamed-modules/59064-series-properties-renamed.js');
 
 if (!fs.existsSync(path.dirname(outputFile))) {

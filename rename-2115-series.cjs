@@ -8,8 +8,8 @@
 const fs = require('fs');
 const path = require('path');
 
-const inputFile = path.join(__dirname, 'beautified-modules-manual/2115.js');
-const outputFile = path.join(__dirname, 'renamed-modules/2115-series.js');
+const inputFile = path.join(__dirname, 'modules-awaiting-beautification/2115.js');
+const outputFile = path.join(__dirname, 'renamed-modules/2115-series-renamed.js');
 
 if (!fs.existsSync(path.dirname(outputFile))) {
   fs.mkdirSync(path.dirname(outputFile), { recursive: true });
