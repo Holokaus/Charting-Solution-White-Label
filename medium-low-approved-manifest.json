@@ -1,0 +1,153 @@
+{
+  "timestamp": "2026-05-03T17:51:57.354Z",
+  "totalArchived": 16,
+  "quality": "GOOD (75-90%)",
+  "confidenceTier": "Medium-Low (35-50%)",
+  "modules": [
+    {
+      "moduleId": "25246",
+      "semanticName": "watchedValue",
+      "confidence": 0.44999999999999996,
+      "validationScore": 87.5,
+      "quality": "GOOD",
+      "checksPassed": 7,
+      "archived": "2026-05-03T17:51:57.315Z"
+    },
+    {
+      "moduleId": "2433",
+      "semanticName": "priceDataSource",
+      "confidence": 0.4,
+      "validationScore": 75,
+      "quality": "GOOD",
+      "checksPassed": 6,
+      "archived": "2026-05-03T17:51:57.320Z"
+    },
+    {
+      "moduleId": "3618",
+      "semanticName": "lineToolUtils",
+      "confidence": 0.44999999999999996,
+      "validationScore": 75,
+      "quality": "GOOD",
+      "checksPassed": 6,
+      "archived": "2026-05-03T17:51:57.322Z"
+    },
+    {
+      "moduleId": "22033",
+      "semanticName": "deleteLockedLineTools",
+      "confidence": 0.44999999999999996,
+      "validationScore": 75,
+      "quality": "GOOD",
+      "checksPassed": 6,
+      "archived": "2026-05-03T17:51:57.324Z"
+    },
+    {
+      "moduleId": "23024",
+      "semanticName": "seriesData",
+      "confidence": 0.44999999999999996,
+      "validationScore": 75,
+      "quality": "GOOD",
+      "checksPassed": 6,
+      "archived": "2026-05-03T17:51:57.326Z"
+    },
+    {
+      "moduleId": "31237",
+      "semanticName": "deleteLockedLineTools",
+      "confidence": 0.44999999999999996,
+      "validationScore": 75,
+      "quality": "GOOD",
+      "checksPassed": 6,
+      "archived": "2026-05-03T17:51:57.328Z"
+    },
+    {
+      "moduleId": "31789",
+      "semanticName": "priceDataSource",
+      "confidence": 0.4,
+      "validationScore": 75,
+      "quality": "GOOD",
+      "checksPassed": 6,
+      "archived": "2026-05-03T17:51:57.329Z"
+    },
+    {
+      "moduleId": "40153",
+      "semanticName": "watchedValue",
+      "confidence": 0.44999999999999996,
+      "validationScore": 75,
+      "quality": "GOOD",
+      "checksPassed": 6,
+      "archived": "2026-05-03T17:51:57.333Z"
+    },
+    {
+      "moduleId": "56876",
+      "semanticName": "lineToolUtils",
+      "confidence": 0.4,
+      "validationScore": 75,
+      "quality": "GOOD",
+      "checksPassed": 6,
+      "archived": "2026-05-03T17:51:57.336Z"
+    },
+    {
+      "moduleId": "59064",
+      "semanticName": "series",
+      "confidence": 0.44999999999999996,
+      "validationScore": 75,
+      "quality": "GOOD",
+      "checksPassed": 6,
+      "archived": "2026-05-03T17:51:57.339Z"
+    },
+    {
+      "moduleId": "60709",
+      "semanticName": "chartDataManager",
+      "confidence": 0.44999999999999996,
+      "validationScore": 75,
+      "quality": "GOOD",
+      "checksPassed": 6,
+      "archived": "2026-05-03T17:51:57.342Z"
+    },
+    {
+      "moduleId": "62548",
+      "semanticName": "seriesBarFunction",
+      "confidence": 0.44999999999999996,
+      "validationScore": 75,
+      "quality": "GOOD",
+      "checksPassed": 6,
+      "archived": "2026-05-03T17:51:57.344Z"
+    },
+    {
+      "moduleId": "70548",
+      "semanticName": "watchedValue",
+      "confidence": 0.44999999999999996,
+      "validationScore": 75,
+      "quality": "GOOD",
+      "checksPassed": 6,
+      "archived": "2026-05-03T17:51:57.346Z"
+    },
+    {
+      "moduleId": "71843",
+      "semanticName": "series",
+      "confidence": 0.44999999999999996,
+      "validationScore": 75,
+      "quality": "GOOD",
+      "checksPassed": 6,
+      "archived": "2026-05-03T17:51:57.348Z"
+    },
+    {
+      "moduleId": "81360",
+      "semanticName": "lineToolUtils",
+      "confidence": 0.4,
+      "validationScore": 75,
+      "quality": "GOOD",
+      "checksPassed": 6,
+      "archived": "2026-05-03T17:51:57.350Z"
+    },
+    {
+      "moduleId": "97902",
+      "semanticName": "watchedValue",
+      "confidence": 0.44999999999999996,
+      "validationScore": 75,
+      "quality": "GOOD",
+      "checksPassed": 6,
+      "archived": "2026-05-03T17:51:57.353Z"
+    }
+  ],
+  "outputDirectory": "./medium-low-approved"
+}

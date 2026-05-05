@@ -1,0 +1,24 @@
+/**
+ * Module 67225 - Beautified
+ * Auto-formatted from webpack bundle
+ * Semantic variable names applied
+ */
+
+67225: (e, t, i) => {
+    "use strict";
+    i.d(t, {
+      GradientColorCache: () => o
+    });
+    var s = i(52859);
+    class o {
+      constructor() {
+        this._color1 = "", this._color2 = "", this._colors = new Map
+      }
+      gradientColor(e, t, i) {
+        if (t === e) return t;
+        i = Math.max(0, Math.min(100, Math.round(100 * i))), this._color1 === e && this._color2 === t || (this._colors
+          .clear(), this._color1 = e, this._color2 = t);
+        let o = this._colors.get(i);
+        return void 0 === o && (o = (0, s.gradientColorAtPercent)(e, t, i / 100), this._colors.set(i, o)), o
+      }
+    }

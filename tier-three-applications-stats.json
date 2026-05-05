@@ -1,0 +1,1275 @@
+{
+  "timestamp": "2026-05-03T17:33:53.366Z",
+  "appliedCount": 211,
+  "totalReplacements": 16007,
+  "averageReplacements": 75.86255924170617,
+  "semanticCategories": 17,
+  "appliedModules": [
+    {
+      "moduleId": "10544",
+      "semanticName": "series",
+      "confidence": 1,
+      "replacements": 106
+    },
+    {
+      "moduleId": "10845",
+      "semanticName": "watchedValue",
+      "confidence": 1,
+      "replacements": 41
+    },
+    {
+      "moduleId": "10980",
+      "semanticName": "lineToolUtils",
+      "confidence": 1,
+      "replacements": 42
+    },
+    {
+      "moduleId": "11417",
+      "semanticName": "watchedValue",
+      "confidence": 1,
+      "replacements": 38
+    },
+    {
+      "moduleId": "12362",
+      "semanticName": "seriesData",
+      "confidence": 1,
+      "replacements": 185
+    },
+    {
+      "moduleId": "13173",
+      "semanticName": "mainInitialization",
+      "confidence": 1,
+      "replacements": 22
+    },
+    {
+      "moduleId": "13607",
+      "semanticName": "series",
+      "confidence": 1,
+      "replacements": 93
+    },
+    {
+      "moduleId": "13651",
+      "semanticName": "series",
+      "confidence": 1,
+      "replacements": 2
+    },
+    {
+      "moduleId": "13823",
+      "semanticName": "watchedValue",
+      "confidence": 1,
+      "replacements": 37
+    },
+    {
+      "moduleId": "14411",
+      "semanticName": "mainInitialization",
+      "confidence": 1,
+      "replacements": 29
+    },
+    {
+      "moduleId": "14429",
+      "semanticName": "series",
+      "confidence": 1,
+      "replacements": 6
+    },
+    {
+      "moduleId": "14715",
+      "semanticName": "lineToolUtils",
+      "confidence": 1,
+      "replacements": 29
+    },
+    {
+      "moduleId": "15219",
+      "semanticName": "watchedValue",
+      "confidence": 1,
+      "replacements": 180
+    },
+    {
+      "moduleId": "15754",
+      "semanticName": "lineToolUtils",
+      "confidence": 1,
+      "replacements": 33
+    },
+    {
+      "moduleId": "16216",
+      "semanticName": "lineToolUtils",
+      "confidence": 0.7000000000000001,
+      "replacements": 25
+    },
+    {
+      "moduleId": "16329",
+      "semanticName": "series",
+      "confidence": 1,
+      "replacements": 506
+    },
+    {
+      "moduleId": "16659",
+      "semanticName": "watchedValue",
+      "confidence": 1,
+      "replacements": 38
+    },
+    {
+      "moduleId": "16879",
+      "semanticName": "lineToolUtils",
+      "confidence": 1,
+      "replacements": 176
+    },
+    {
+      "moduleId": "18041",
+      "semanticName": "watchedValue",
+      "confidence": 0.85,
+      "replacements": 19
+    },
+    {
+      "moduleId": "18185",
+      "semanticName": "mainInitialization",
+      "confidence": 1,
+      "replacements": 24
+    },
+    {
+      "moduleId": "18330",
+      "semanticName": "deleteLockedLineTools",
+      "confidence": 1,
+      "replacements": 35
+    },
+    {
+      "moduleId": "19136",
+      "semanticName": "mainInitialization",
+      "confidence": 1,
+      "replacements": 149
+    },
+    {
+      "moduleId": "19844",
+      "semanticName": "lineToolManager",
+      "confidence": 1,
+      "replacements": 278
+    },
+    {
+      "moduleId": "19979",
+      "semanticName": "watchedValue",
+      "confidence": 1,
+      "replacements": 488
+    },
+    {
+      "moduleId": "20512",
+      "semanticName": "timeInterval",
+      "confidence": 0.7999999999999999,
+      "replacements": 25
+    },
+    {
+      "moduleId": "2088",
+      "semanticName": "logger",
+      "confidence": 1,
+      "replacements": 54
+    },
+    {
+      "moduleId": "21097",
+      "semanticName": "watchedValue",
+      "confidence": 1,
+      "replacements": 31
+    },
+    {
+      "moduleId": "22455",
+      "semanticName": "dialogManager",
+      "confidence": 0.7000000000000001,
+      "replacements": 13
+    },
+    {
+      "moduleId": "2258",
+      "semanticName": "mainInitialization",
+      "confidence": 1,
+      "replacements": 73
+    },
+    {
+      "moduleId": "22961",
+      "semanticName": "series",
+      "confidence": 1,
+      "replacements": 10
+    },
+    {
+      "moduleId": "23502",
+      "semanticName": "logger",
+      "confidence": 1,
+      "replacements": 74
+    },
+    {
+      "moduleId": "23752",
+      "semanticName": "watchedValue",
+      "confidence": 1,
+      "replacements": 51
+    },
+    {
+      "moduleId": "2383",
+      "semanticName": "series",
+      "confidence": 1,
+      "replacements": 57
+    },
+    {
+      "moduleId": "24317",
+      "semanticName": "chartDataManager",
+      "confidence": 0.65,
+      "replacements": 79
+    },
+    {
+      "moduleId": "24437",
+      "semanticName": "seriesData",
+      "confidence": 1,
+      "replacements": 176
+    },
+    {
+      "moduleId": "24451",
+      "semanticName": "mainInitialization",
+      "confidence": 1,
+      "replacements": 16
+    },
+    {
+      "moduleId": "24640",
+      "semanticName": "logger",
+      "confidence": 1,
+      "replacements": 28
+    },
+    {
+      "moduleId": "26709",
+      "semanticName": "watchedValue",
+      "confidence": 0.7000000000000001,
+      "replacements": 11
+    },
+    {
+      "moduleId": "27593",
+      "semanticName": "watchedValue",
+      "confidence": 1,
+      "replacements": 83
+    },
+    {
+      "moduleId": "27808",
+      "semanticName": "mainInitialization",
+      "confidence": 1,
+      "replacements": 50
+    },
+    {
+      "moduleId": "28056",
+      "semanticName": "series",
+      "confidence": 1,
+      "replacements": 14
+    },
+    {
+      "moduleId": "28334",
+      "semanticName": "mainInitialization",
+      "confidence": 1,
+      "replacements": 32
+    },
+    {
+      "moduleId": "29063",
+      "semanticName": "lineToolUtils",
+      "confidence": 1,
+      "replacements": 237
+    },
+    {
+      "moduleId": "29447",
+      "semanticName": "lineToolUtils",
+      "confidence": 0.9999999999999999,
+      "replacements": 18
+    },
+    {
+      "moduleId": "29603",
+      "semanticName": "mainInitialization",
+      "confidence": 1,
+      "replacements": 40
+    },
+    {
+      "moduleId": "29806",
+      "semanticName": "seriesData",
+      "confidence": 0.7999999999999999,
+      "replacements": 48
+    },
+    {
+      "moduleId": "29970",
+      "semanticName": "logger",
+      "confidence": 1,
+      "replacements": 32
+    },
+    {
+      "moduleId": "30376",
+      "semanticName": "series",
+      "confidence": 1,
+      "replacements": 26
+    },
+    {
+      "moduleId": "30798",
+      "semanticName": "seriesBarFunction",
+      "confidence": 0.7999999999999999,
+      "replacements": 44
+    },
+    {
+      "moduleId": "30947",
+      "semanticName": "mainInitialization",
+      "confidence": 1,
+      "replacements": 45
+    },
+    {
+      "moduleId": "31269",
+      "semanticName": "series",
+      "confidence": 1,
+      "replacements": 42
+    },
+    {
+      "moduleId": "3186",
+      "semanticName": "watchedValue",
+      "confidence": 1,
+      "replacements": 17
+    },
+    {
+      "moduleId": "32112",
+      "semanticName": "mainInitialization",
+      "confidence": 1,
+      "replacements": 44
+    },
+    {
+      "moduleId": "32399",
+      "semanticName": "series",
+      "confidence": 1,
+      "replacements": 38
+    },
+    {
+      "moduleId": "32503",
+      "semanticName": "series",
+      "confidence": 1,
+      "replacements": 81
+    },
+    {
+      "moduleId": "32853",
+      "semanticName": "series",
+      "confidence": 1,
+      "replacements": 40
+    },
+    {
+      "moduleId": "33350",
+      "semanticName": "logger",
+      "confidence": 1,
+      "replacements": 79
+    },
+    {
+      "moduleId": "3343",
+      "semanticName": "seriesData",
+      "confidence": 0.9,
+      "replacements": 52
+    },
+    {
+      "moduleId": "33505",
+      "semanticName": "series",
+      "confidence": 1,
+      "replacements": 29
+    },
+    {
+      "moduleId": "3354",
+      "semanticName": "lineToolUtils",
+      "confidence": 0.9,
+      "replacements": 26
+    },
+    {
+      "moduleId": "34378",
+      "semanticName": "lineToolManager",
+      "confidence": 0.7,
+      "replacements": 61
+    },
+    {
+      "moduleId": "35990",
+      "semanticName": "series",
+      "confidence": 1,
+      "replacements": 20
+    },
+    {
+      "moduleId": "36281",
+      "semanticName": "logger",
+      "confidence": 1,
+      "replacements": 97
+    },
+    {
+      "moduleId": "36313",
+      "semanticName": "seriesData",
+      "confidence": 0.9999999999999999,
+      "replacements": 21
+    },
+    {
+      "moduleId": "36597",
+      "semanticName": "lineToolUtils",
+      "confidence": 1,
+      "replacements": 81
+    },
+    {
+      "moduleId": "37236",
+      "semanticName": "series",
+      "confidence": 1,
+      "replacements": 135
+    },
+    {
+      "moduleId": "38780",
+      "semanticName": "logger",
+      "confidence": 1,
+      "replacements": 147
+    },
+    {
+      "moduleId": "3885",
+      "semanticName": "series",
+      "confidence": 1,
+      "replacements": 69
+    },
+    {
+      "moduleId": "38888",
+      "semanticName": "series",
+      "confidence": 1,
+      "replacements": 20
+    },
+    {
+      "moduleId": "39488",
+      "semanticName": "seriesData",
+      "confidence": 1,
+      "replacements": 292
+    },
+    {
+      "moduleId": "39697",
+      "semanticName": "mainInitialization",
+      "confidence": 1,
+      "replacements": 68
+    },
+    {
+      "moduleId": "40080",
+      "semanticName": "chunkLoaderModule",
+      "confidence": 0.75,
+      "replacements": 19
+    },
+    {
+      "moduleId": "40472",
+      "semanticName": "dataSource",
+      "confidence": 1,
+      "replacements": 14
+    },
+    {
+      "moduleId": "40738",
+      "semanticName": "series",
+      "confidence": 1,
+      "replacements": 4
+    },
+    {
+      "moduleId": "41414",
+      "semanticName": "watchedValue",
+      "confidence": 1,
+      "replacements": 515
+    },
+    {
+      "moduleId": "41706",
+      "semanticName": "watchedValue",
+      "confidence": 1,
+      "replacements": 31
+    },
+    {
+      "moduleId": "4226",
+      "semanticName": "lineToolUtils",
+      "confidence": 0.7000000000000001,
+      "replacements": 17
+    },
+    {
+      "moduleId": "4249",
+      "semanticName": "mainInitialization",
+      "confidence": 1,
+      "replacements": 30
+    },
+    {
+      "moduleId": "43046",
+      "semanticName": "mainInitialization",
+      "confidence": 1,
+      "replacements": 199
+    },
+    {
+      "moduleId": "43229",
+      "semanticName": "mainInitialization",
+      "confidence": 1,
+      "replacements": 13
+    },
+    {
+      "moduleId": "43337",
+      "semanticName": "watchedValue",
+      "confidence": 1,
+      "replacements": 88
+    },
+    {
+      "moduleId": "43501",
+      "semanticName": "watchedValue",
+      "confidence": 1,
+      "replacements": 87
+    },
+    {
+      "moduleId": "4359",
+      "semanticName": "logger",
+      "confidence": 1,
+      "replacements": 144
+    },
+    {
+      "moduleId": "44862",
+      "semanticName": "logger",
+      "confidence": 1,
+      "replacements": 83
+    },
+    {
+      "moduleId": "45",
+      "semanticName": "series",
+      "confidence": 1,
+      "replacements": 54
+    },
+    {
+      "moduleId": "45345",
+      "semanticName": "watchedValue",
+      "confidence": 0.7,
+      "replacements": 20
+    },
+    {
+      "moduleId": "4539",
+      "semanticName": "logger",
+      "confidence": 1,
+      "replacements": 36
+    },
+    {
+      "moduleId": "45720",
+      "semanticName": "mainInitialization",
+      "confidence": 1,
+      "replacements": 40
+    },
+    {
+      "moduleId": "45801",
+      "semanticName": "watchedValue",
+      "confidence": 1,
+      "replacements": 32
+    },
+    {
+      "moduleId": "4622",
+      "semanticName": "watchedValue",
+      "confidence": 0.65,
+      "replacements": 21
+    },
+    {
+      "moduleId": "46340",
+      "semanticName": "watchedValue",
+      "confidence": 1,
+      "replacements": 58
+    },
+    {
+      "moduleId": "4699",
+      "semanticName": "deleteLockedLineTools",
+      "confidence": 0.65,
+      "replacements": 61
+    },
+    {
+      "moduleId": "47312",
+      "semanticName": "mainInitialization",
+      "confidence": 1,
+      "replacements": 51
+    },
+    {
+      "moduleId": "4753",
+      "semanticName": "logger",
+      "confidence": 1,
+      "replacements": 286
+    },
+    {
+      "moduleId": "4783",
+      "semanticName": "series",
+      "confidence": 1,
+      "replacements": 954
+    },
+    {
+      "moduleId": "48227",
+      "semanticName": "series",
+      "confidence": 1,
+      "replacements": 105
+    },
+    {
+      "moduleId": "48480",
+      "semanticName": "series",
+      "confidence": 1,
+      "replacements": 0
+    },
+    {
+      "moduleId": "50605",
+      "semanticName": "chunkLoaderModule",
+      "confidence": 0.65,
+      "replacements": 17
+    },
+    {
+      "moduleId": "50888",
+      "semanticName": "mainInitialization",
+      "confidence": 0.9,
+      "replacements": 29
+    },
+    {
+      "moduleId": "51101",
+      "semanticName": "series",
+      "confidence": 1,
+      "replacements": 415
+    },
+    {
+      "moduleId": "51304",
+      "semanticName": "series",
+      "confidence": 1,
+      "replacements": 89
+    },
+    {
+      "moduleId": "51768",
+      "semanticName": "logger",
+      "confidence": 1,
+      "replacements": 37
+    },
+    {
+      "moduleId": "52479",
+      "semanticName": "mainInitialization",
+      "confidence": 1,
+      "replacements": 4
+    },
+    {
+      "moduleId": "52691",
+      "semanticName": "mainInitialization",
+      "confidence": 1,
+      "replacements": 14
+    },
+    {
+      "moduleId": "52859",
+      "semanticName": "lineToolUtils",
+      "confidence": 1,
+      "replacements": 109
+    },
+    {
+      "moduleId": "52945",
+      "semanticName": "logger",
+      "confidence": 1,
+      "replacements": 31
+    },
+    {
+      "moduleId": "52974",
+      "semanticName": "mainInitialization",
+      "confidence": 1,
+      "replacements": 28
+    },
+    {
+      "moduleId": "53690",
+      "semanticName": "series",
+      "confidence": 1,
+      "replacements": 65
+    },
+    {
+      "moduleId": "54405",
+      "semanticName": "mainInitialization",
+      "confidence": 1,
+      "replacements": 30
+    },
+    {
+      "moduleId": "54717",
+      "semanticName": "logger",
+      "confidence": 1,
+      "replacements": 14
+    },
+    {
+      "moduleId": "55114",
+      "semanticName": "logger",
+      "confidence": 1,
+      "replacements": 32
+    },
+    {
+      "moduleId": "55393",
+      "semanticName": "watchedValue",
+      "confidence": 1,
+      "replacements": 11
+    },
+    {
+      "moduleId": "55396",
+      "semanticName": "chunkLoaderModule",
+      "confidence": 0.85,
+      "replacements": 21
+    },
+    {
+      "moduleId": "56265",
+      "semanticName": "mainInitialization",
+      "confidence": 1,
+      "replacements": 62
+    },
+    {
+      "moduleId": "56616",
+      "semanticName": "delegate",
+      "confidence": 0.9,
+      "replacements": 62
+    },
+    {
+      "moduleId": "57025",
+      "semanticName": "mainInitialization",
+      "confidence": 1,
+      "replacements": 27
+    },
+    {
+      "moduleId": "57622",
+      "semanticName": "watchedValue",
+      "confidence": 1,
+      "replacements": 70
+    },
+    {
+      "moduleId": "57658",
+      "semanticName": "series",
+      "confidence": 1,
+      "replacements": 27
+    },
+    {
+      "moduleId": "58221",
+      "semanticName": "logger",
+      "confidence": 1,
+      "replacements": 149
+    },
+    {
+      "moduleId": "58554",
+      "semanticName": "lineToolUtils",
+      "confidence": 0.85,
+      "replacements": 32
+    },
+    {
+      "moduleId": "58570",
+      "semanticName": "logger",
+      "confidence": 1,
+      "replacements": 115
+    },
+    {
+      "moduleId": "58978",
+      "semanticName": "mainInitialization",
+      "confidence": 0.7000000000000001,
+      "replacements": 43
+    },
+    {
+      "moduleId": "59149",
+      "semanticName": "lineToolUtils",
+      "confidence": 1,
+      "replacements": 243
+    },
+    {
+      "moduleId": "60336",
+      "semanticName": "series",
+      "confidence": 1,
+      "replacements": 27
+    },
+    {
+      "moduleId": "60755",
+      "semanticName": "mainInitialization",
+      "confidence": 1,
+      "replacements": 11
+    },
+    {
+      "moduleId": "60876",
+      "semanticName": "series",
+      "confidence": 1,
+      "replacements": 120
+    },
+    {
+      "moduleId": "60911",
+      "semanticName": "lineToolUtils",
+      "confidence": 1,
+      "replacements": 41
+    },
+    {
+      "moduleId": "62153",
+      "semanticName": "series",
+      "confidence": 1,
+      "replacements": 205
+    },
+    {
+      "moduleId": "62312",
+      "semanticName": "lineToolUtils",
+      "confidence": 0.7000000000000001,
+      "replacements": 22
+    },
+    {
+      "moduleId": "62802",
+      "semanticName": "mainInitialization",
+      "confidence": 1,
+      "replacements": 27
+    },
+    {
+      "moduleId": "64138",
+      "semanticName": "series",
+      "confidence": 1,
+      "replacements": 32
+    },
+    {
+      "moduleId": "64651",
+      "semanticName": "mainInitialization",
+      "confidence": 1,
+      "replacements": 21
+    },
+    {
+      "moduleId": "64876",
+      "semanticName": "series",
+      "confidence": 1,
+      "replacements": 30
+    },
+    {
+      "moduleId": "64960",
+      "semanticName": "priceDataSource",
+      "confidence": 1,
+      "replacements": 11
+    },
+    {
+      "moduleId": "66142",
+      "semanticName": "watchedValue",
+      "confidence": 0.85,
+      "replacements": 26
+    },
+    {
+      "moduleId": "6652",
+      "semanticName": "series",
+      "confidence": 1,
+      "replacements": 29
+    },
+    {
+      "moduleId": "66786",
+      "semanticName": "mainInitialization",
+      "confidence": 1,
+      "replacements": 12
+    },
+    {
+      "moduleId": "67225",
+      "semanticName": "mainInitialization",
+      "confidence": 1,
+      "replacements": 18
+    },
+    {
+      "moduleId": "67763",
+      "semanticName": "watchedValue",
+      "confidence": 1,
+      "replacements": 11
+    },
+    {
+      "moduleId": "69422",
+      "semanticName": "logger",
+      "confidence": 1,
+      "replacements": 73
+    },
+    {
+      "moduleId": "69455",
+      "semanticName": "lineToolUtils",
+      "confidence": 0.65,
+      "replacements": 38
+    },
+    {
+      "moduleId": "69555",
+      "semanticName": "watchedValue",
+      "confidence": 1,
+      "replacements": 22
+    },
+    {
+      "moduleId": "69866",
+      "semanticName": "seriesBarFunction",
+      "confidence": 0.9999999999999999,
+      "replacements": 52
+    },
+    {
+      "moduleId": "70680",
+      "semanticName": "mainInitialization",
+      "confidence": 1,
+      "replacements": 59
+    },
+    {
+      "moduleId": "71149",
+      "semanticName": "series",
+      "confidence": 1,
+      "replacements": 33
+    },
+    {
+      "moduleId": "72187",
+      "semanticName": "mainInitialization",
+      "confidence": 1,
+      "replacements": 406
+    },
+    {
+      "moduleId": "72270",
+      "semanticName": "mainInitialization",
+      "confidence": 1,
+      "replacements": 12
+    },
+    {
+      "moduleId": "72755",
+      "semanticName": "timeInterval",
+      "confidence": 0.9999999999999999,
+      "replacements": 74
+    },
+    {
+      "moduleId": "72972",
+      "semanticName": "seriesData",
+      "confidence": 1,
+      "replacements": 106
+    },
+    {
+      "moduleId": "7304",
+      "semanticName": "timeInterval",
+      "confidence": 0.75,
+      "replacements": 10
+    },
+    {
+      "moduleId": "73041",
+      "semanticName": "lineToolUtils",
+      "confidence": 1,
+      "replacements": 147
+    },
+    {
+      "moduleId": "73773",
+      "semanticName": "seriesData",
+      "confidence": 1,
+      "replacements": 91
+    },
+    {
+      "moduleId": "74109",
+      "semanticName": "seriesData",
+      "confidence": 1,
+      "replacements": 157
+    },
+    {
+      "moduleId": "74991",
+      "semanticName": "series",
+      "confidence": 1,
+      "replacements": 36
+    },
+    {
+      "moduleId": "76220",
+      "semanticName": "mainInitialization",
+      "confidence": 1,
+      "replacements": 20
+    },
+    {
+      "moduleId": "76422",
+      "semanticName": "lineToolUtils",
+      "confidence": 1,
+      "replacements": 44
+    },
+    {
+      "moduleId": "76559",
+      "semanticName": "watchedValue",
+      "confidence": 0.9,
+      "replacements": 16
+    },
+    {
+      "moduleId": "77914",
+      "semanticName": "lineToolUtils",
+      "confidence": 1,
+      "replacements": 40
+    },
+    {
+      "moduleId": "78176",
+      "semanticName": "settingsAdapter",
+      "confidence": 1,
+      "replacements": 326
+    },
+    {
+      "moduleId": "78966",
+      "semanticName": "series",
+      "confidence": 1,
+      "replacements": 40
+    },
+    {
+      "moduleId": "79268",
+      "semanticName": "mainInitialization",
+      "confidence": 1,
+      "replacements": 338
+    },
+    {
+      "moduleId": "79603",
+      "semanticName": "series",
+      "confidence": 1,
+      "replacements": 20
+    },
+    {
+      "moduleId": "79740",
+      "semanticName": "mainInitialization",
+      "confidence": 1,
+      "replacements": 14
+    },
+    {
+      "moduleId": "80671",
+      "semanticName": "mainInitialization",
+      "confidence": 1,
+      "replacements": 9
+    },
+    {
+      "moduleId": "80819",
+      "semanticName": "seriesData",
+      "confidence": 1,
+      "replacements": 170
+    },
+    {
+      "moduleId": "81922",
+      "semanticName": "mainInitialization",
+      "confidence": 1,
+      "replacements": 205
+    },
+    {
+      "moduleId": "82087",
+      "semanticName": "seriesData",
+      "confidence": 1,
+      "replacements": 110
+    },
+    {
+      "moduleId": "82095",
+      "semanticName": "seriesData",
+      "confidence": 0.9999999999999999,
+      "replacements": 92
+    },
+    {
+      "moduleId": "82130",
+      "semanticName": "lineToolUtils",
+      "confidence": 1,
+      "replacements": 49
+    },
+    {
+      "moduleId": "85565",
+      "semanticName": "mainInitialization",
+      "confidence": 1,
+      "replacements": 40
+    },
+    {
+      "moduleId": "85630",
+      "semanticName": "seriesData",
+      "confidence": 1,
+      "replacements": 91
+    },
+    {
+      "moduleId": "86228",
+      "semanticName": "seriesData",
+      "confidence": 1,
+      "replacements": 183
+    },
+    {
+      "moduleId": "86252",
+      "semanticName": "logger",
+      "confidence": 1,
+      "replacements": 38
+    },
+    {
+      "moduleId": "86572",
+      "semanticName": "series",
+      "confidence": 1,
+      "replacements": 35
+    },
+    {
+      "moduleId": "86821",
+      "semanticName": "series",
+      "confidence": 1,
+      "replacements": 42
+    },
+    {
+      "moduleId": "86957",
+      "semanticName": "mainInitialization",
+      "confidence": 1,
+      "replacements": 26
+    },
+    {
+      "moduleId": "87296",
+      "semanticName": "logger",
+      "confidence": 1,
+      "replacements": 71
+    },
+    {
+      "moduleId": "87347",
+      "semanticName": "logger",
+      "confidence": 1,
+      "replacements": 136
+    },
+    {
+      "moduleId": "87465",
+      "semanticName": "lineToolUtils",
+      "confidence": 1,
+      "replacements": 108
+    },
+    {
+      "moduleId": "87713",
+      "semanticName": "delegate",
+      "confidence": 0.65,
+      "replacements": 7
+    },
+    {
+      "moduleId": "87911",
+      "semanticName": "seriesBarFunction",
+      "confidence": 0.65,
+      "replacements": 23
+    },
+    {
+      "moduleId": "88145",
+      "semanticName": "lineToolUtils",
+      "confidence": 1,
+      "replacements": 19
+    },
+    {
+      "moduleId": "88732",
+      "semanticName": "watchedValue",
+      "confidence": 1,
+      "replacements": 65
+    },
+    {
+      "moduleId": "89837",
+      "semanticName": "dataSource",
+      "confidence": 0.85,
+      "replacements": 14
+    },
+    {
+      "moduleId": "89959",
+      "semanticName": "watchedValue",
+      "confidence": 0.65,
+      "replacements": 12
+    },
+    {
+      "moduleId": "90995",
+      "semanticName": "priceDataSource",
+      "confidence": 1,
+      "replacements": 18
+    },
+    {
+      "moduleId": "91106",
+      "semanticName": "watchedValue",
+      "confidence": 0.65,
+      "replacements": 10
+    },
+    {
+      "moduleId": "91565",
+      "semanticName": "mainInitialization",
+      "confidence": 1,
+      "replacements": 106
+    },
+    {
+      "moduleId": "91682",
+      "semanticName": "mainInitialization",
+      "confidence": 1,
+      "replacements": 42
+    },
+    {
+      "moduleId": "91799",
+      "semanticName": "timeInterval",
+      "confidence": 0.7000000000000001,
+      "replacements": 83
+    },
+    {
+      "moduleId": "93387",
+      "semanticName": "watchedValue",
+      "confidence": 1,
+      "replacements": 38
+    },
+    {
+      "moduleId": "93463",
+      "semanticName": "seriesData",
+      "confidence": 1,
+      "replacements": 118
+    },
+    {
+      "moduleId": "93946",
+      "semanticName": "mainInitialization",
+      "confidence": 1,
+      "replacements": 18
+    },
+    {
+      "moduleId": "94119",
+      "semanticName": "priceDataSource",
+      "confidence": 1,
+      "replacements": 11
+    },
+    {
+      "moduleId": "94602",
+      "semanticName": "mainInitialization",
+      "confidence": 1,
+      "replacements": 37
+    },
+    {
+      "moduleId": "95059",
+      "semanticName": "settingsAdapter",
+      "confidence": 1,
+      "replacements": 310
+    },
+    {
+      "moduleId": "95406",
+      "semanticName": "lineToolUtils",
+      "confidence": 0.9,
+      "replacements": 23
+    },
+    {
+      "moduleId": "95603",
+      "semanticName": "seriesData",
+      "confidence": 0.8,
+      "replacements": 66
+    },
+    {
+      "moduleId": "95779",
+      "semanticName": "lineToolUtils",
+      "confidence": 1,
+      "replacements": 46
+    },
+    {
+      "moduleId": "95804",
+      "semanticName": "mainInitialization",
+      "confidence": 1,
+      "replacements": 19
+    },
+    {
+      "moduleId": "96708",
+      "semanticName": "series",
+      "confidence": 1,
+      "replacements": 6
+    },
+    {
+      "moduleId": "96777",
+      "semanticName": "series",
+      "confidence": 1,
+      "replacements": 223
+    },
+    {
+      "moduleId": "96937",
+      "semanticName": "logger",
+      "confidence": 1,
+      "replacements": 19
+    },
+    {
+      "moduleId": "97126",
+      "semanticName": "series",
+      "confidence": 1,
+      "replacements": 55
+    },
+    {
+      "moduleId": "97719",
+      "semanticName": "mainInitialization",
+      "confidence": 1,
+      "replacements": 8
+    },
+    {
+      "moduleId": "9787",
+      "semanticName": "mainInitialization",
+      "confidence": 1,
+      "replacements": 40
+    },
+    {
+      "moduleId": "97906",
+      "semanticName": "series",
+      "confidence": 1,
+      "replacements": 21
+    },
+    {
+      "moduleId": "9860",
+      "semanticName": "series",
+      "confidence": 1,
+      "replacements": 11
+    },
+    {
+      "moduleId": "99247",
+      "semanticName": "lineToolUtils",
+      "confidence": 1,
+      "replacements": 47
+    },
+    {
+      "moduleId": "99481",
+      "semanticName": "deleteLockedLineTools",
+      "confidence": 1,
+      "replacements": 79
+    },
+    {
+      "moduleId": "99955",
+      "semanticName": "watchedValue",
+      "confidence": 0.85,
+      "replacements": 46
+    }
+  ]
+}

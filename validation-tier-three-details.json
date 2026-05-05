@@ -1,0 +1,3610 @@
+{
+  "timestamp": "2026-05-03T17:34:45.924Z",
+  "totalModules": 211,
+  "expectedModules": 211,
+  "averageScore": 77.01421800947867,
+  "qualityBreakdown": {
+    "excellent": 0,
+    "good": 204,
+    "needsReview": 7
+  },
+  "checklistPerformance": {
+    "moduleIdValid": "100.0",
+    "semanticNameValid": "100.0",
+    "contentValid": "100.0",
+    "headerPresent": "100.0",
+    "semanticsApplied": "71.6",
+    "exportsFound": "44.5",
+    "noObviousErrors": "0.0",
+    "sizeReasonable": "100.0"
+  },
+  "allResults": [
+    {
+      "moduleId": "4359",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 7,
+      "total": 8,
+      "score": 87.5,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "4622",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 7,
+      "total": 8,
+      "score": 87.5,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "4753",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 7,
+      "total": 8,
+      "score": 87.5,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "10544",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 7,
+      "total": 8,
+      "score": 87.5,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "10845",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 7,
+      "total": 8,
+      "score": 87.5,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "13823",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 7,
+      "total": 8,
+      "score": 87.5,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "15219",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 7,
+      "total": 8,
+      "score": 87.5,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "18041",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 7,
+      "total": 8,
+      "score": 87.5,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "19979",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 7,
+      "total": 8,
+      "score": 87.5,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "21097",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 7,
+      "total": 8,
+      "score": 87.5,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "23502",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 7,
+      "total": 8,
+      "score": 87.5,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "23752",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 7,
+      "total": 8,
+      "score": 87.5,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "26709",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 7,
+      "total": 8,
+      "score": 87.5,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "27593",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 7,
+      "total": 8,
+      "score": 87.5,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "32503",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 7,
+      "total": 8,
+      "score": 87.5,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "36281",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 7,
+      "total": 8,
+      "score": 87.5,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "38780",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 7,
+      "total": 8,
+      "score": 87.5,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "41414",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 7,
+      "total": 8,
+      "score": 87.5,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "41706",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 7,
+      "total": 8,
+      "score": 87.5,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "43337",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 7,
+      "total": 8,
+      "score": 87.5,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "43501",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 7,
+      "total": 8,
+      "score": 87.5,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "44862",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 7,
+      "total": 8,
+      "score": 87.5,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "45345",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 7,
+      "total": 8,
+      "score": 87.5,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "45801",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 7,
+      "total": 8,
+      "score": 87.5,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "46340",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 7,
+      "total": 8,
+      "score": 87.5,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "55114",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 7,
+      "total": 8,
+      "score": 87.5,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "55393",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 7,
+      "total": 8,
+      "score": 87.5,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "57622",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 7,
+      "total": 8,
+      "score": 87.5,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "60876",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 7,
+      "total": 8,
+      "score": 87.5,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "66142",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 7,
+      "total": 8,
+      "score": 87.5,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "69555",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 7,
+      "total": 8,
+      "score": 87.5,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "76559",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 7,
+      "total": 8,
+      "score": 87.5,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "86252",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 7,
+      "total": 8,
+      "score": 87.5,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "87296",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 7,
+      "total": 8,
+      "score": 87.5,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "87347",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 7,
+      "total": 8,
+      "score": 87.5,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "88732",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 7,
+      "total": 8,
+      "score": 87.5,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "89959",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 7,
+      "total": 8,
+      "score": 87.5,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "91106",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 7,
+      "total": 8,
+      "score": 87.5,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "93387",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 7,
+      "total": 8,
+      "score": 87.5,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "96937",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 7,
+      "total": 8,
+      "score": 87.5,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "99955",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 7,
+      "total": 8,
+      "score": 87.5,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "2088",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": false,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "2258",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "2383",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": false,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "3186",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": false,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "3343",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "3354",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "3885",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": false,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "4226",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "4249",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "4539",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": false,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "4699",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "6652",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": false,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "7304",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "9787",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "9860",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": false,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "10980",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "11417",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "12362",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "13173",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "13651",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": false,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "14411",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "14429",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": false,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "14715",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "15754",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "16216",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "16329",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": false,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "16659",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": false,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "16879",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "18185",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "18330",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "19136",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "19844",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "20512",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "22455",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "22961",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": false,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "24317",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "24437",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "24451",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "24640",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": false,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "27808",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "28056",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": false,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "28334",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "29063",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "29447",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "29603",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "29806",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "29970",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": false,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "30376",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": false,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "30798",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "30947",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "31269",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": false,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "32112",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "32399",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": false,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "33350",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": false,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "33505",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": false,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "34378",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "35990",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": false,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "36313",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "36597",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "37236",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": false,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "38888",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": false,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "39488",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "39697",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "40080",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "40472",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": false,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "40738",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": false,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "43046",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "43229",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "45720",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "47312",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "48227",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": false,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "50605",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "50888",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "51101",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": false,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "51304",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": false,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "51768",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": false,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "52479",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "52691",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "52859",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "52945",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": false,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "52974",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "53690",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": false,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "54405",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "54717",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": false,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "55396",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "56265",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "56616",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "57025",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "57658",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": false,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "58221",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": false,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "58554",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "58570",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": false,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "58978",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "59149",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "60336",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": false,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "60755",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "60911",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "62153",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": false,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "62312",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "62802",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "64138",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": false,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "64651",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "64876",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": false,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "64960",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": false,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "66786",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "67225",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "67763",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": false,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "69422",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": false,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "69455",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "69866",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "70680",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "71149",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": false,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "72187",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "72270",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "72755",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "72972",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "73041",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "73773",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "74109",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "74991",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": false,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "76220",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "76422",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "77914",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "78176",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "79268",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "79603",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": false,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "79740",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "80671",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "80819",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "81922",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "82087",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "82095",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "82130",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "85565",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "85630",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "86228",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "86572",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": false,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "86957",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "87465",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "87713",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "87911",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "88145",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "89837",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": false,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "90995",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": false,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "91565",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "91682",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "91799",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "93463",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "93946",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "94119",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": false,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "94602",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "95059",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "95406",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "95603",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "95779",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "95804",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "96708",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": false,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "96777",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": false,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "97126",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": false,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "97719",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "97906",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": false,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "99247",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "99481",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "45",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": false,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 5,
+      "total": 8,
+      "score": 62.5,
+      "quality": "NEEDS_REVIEW"
+    },
+    {
+      "moduleId": "4783",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": false,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 5,
+      "total": 8,
+      "score": 62.5,
+      "quality": "NEEDS_REVIEW"
+    },
+    {
+      "moduleId": "13607",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": false,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 5,
+      "total": 8,
+      "score": 62.5,
+      "quality": "NEEDS_REVIEW"
+    },
+    {
+      "moduleId": "32853",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": false,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 5,
+      "total": 8,
+      "score": 62.5,
+      "quality": "NEEDS_REVIEW"
+    },
+    {
+      "moduleId": "48480",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": false,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 5,
+      "total": 8,
+      "score": 62.5,
+      "quality": "NEEDS_REVIEW"
+    },
+    {
+      "moduleId": "78966",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": false,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 5,
+      "total": 8,
+      "score": 62.5,
+      "quality": "NEEDS_REVIEW"
+    },
+    {
+      "moduleId": "86821",
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": false,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "passed": 5,
+      "total": 8,
+      "score": 62.5,
+      "quality": "NEEDS_REVIEW"
+    }
+  ]
+}

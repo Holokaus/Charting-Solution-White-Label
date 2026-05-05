@@ -1,0 +1,18 @@
+/**
+ * Module 40080 - Beautified
+ * Auto-formatted from webpack bundle
+ * Semantic variable names applied
+ */
+
+40080: (e, t, i) => {
+    "use strict";
+    var s, o, n;
+    ! function(e) {
+      e.BuyAndSell = "Buy and sell", e.Delta = "Delta", e.Total = "Total", e.Ladder = "Ladder"
+    }(s || (s = {})),
+    function(e) {
+      e[e.Cluster = 0] = "Cluster", e[e.Profile = 1] = "Profile"
+    }(o || (o = {})),
+    function(e) {
+      e[e.InfoBox = 0] = "InfoBox", e[e.Table = 1] = "Table"
+    }(n || (n = {}))

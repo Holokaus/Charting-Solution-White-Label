@@ -1,0 +1,181 @@
+{
+  "timestamp": "2026-05-05T15:37:45.792Z",
+  "baselineSize": 330,
+  "qualityGates": [
+    "keyword_verification",
+    "semantic_confidence",
+    "conservative_thresholds"
+  ],
+  "summary": {
+    "highConf": 15,
+    "medConf": 4,
+    "lowConf": 1,
+    "rejected": {
+      "noKeywords": 4609,
+      "lowScore": 0,
+      "ambiguous": 119
+    }
+  },
+  "discoveries": [
+    {
+      "moduleId": "11751",
+      "tier": "HIGH",
+      "suggested": "watchedValue",
+      "score": 100,
+      "keywords": 3,
+      "verified": true
+    },
+    {
+      "moduleId": "22613",
+      "tier": "HIGH",
+      "suggested": "watchedValue",
+      "score": 100,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "42516",
+      "tier": "HIGH",
+      "suggested": "series",
+      "score": 100,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "52499",
+      "tier": "HIGH",
+      "suggested": "watchedValue",
+      "score": 100,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "92211",
+      "tier": "HIGH",
+      "suggested": "seriesBarFunction",
+      "score": 100,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "14881",
+      "tier": "HIGH",
+      "suggested": "watchedValue",
+      "score": 90,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "45580",
+      "tier": "HIGH",
+      "suggested": "series",
+      "score": 90,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "51829",
+      "tier": "HIGH",
+      "suggested": "seriesBarFunction",
+      "score": 90,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "54370",
+      "tier": "HIGH",
+      "suggested": "seriesBarFunction",
+      "score": 90,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "26352",
+      "tier": "HIGH",
+      "suggested": "seriesBarFunction",
+      "score": 85,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "13896",
+      "tier": "HIGH",
+      "suggested": "series",
+      "score": 80,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "1395",
+      "tier": "HIGH",
+      "suggested": "lineToolManager",
+      "score": 80,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "35727",
+      "tier": "HIGH",
+      "suggested": "priceDataSource",
+      "score": 80,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "36947",
+      "tier": "HIGH",
+      "suggested": "lineToolManager",
+      "score": 80,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "7543",
+      "tier": "HIGH",
+      "suggested": "dataSource",
+      "score": 80,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "59883",
+      "tier": "MEDIUM",
+      "suggested": "lineToolManager",
+      "score": 70,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "91111",
+      "tier": "MEDIUM",
+      "suggested": "lineToolManager",
+      "score": 70,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "97217",
+      "tier": "MEDIUM",
+      "suggested": "lineToolManager",
+      "score": 70,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "97995",
+      "tier": "MEDIUM",
+      "suggested": "lineToolManager",
+      "score": 70,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "84526",
+      "tier": "MEDIUM_LOW",
+      "suggested": "logger",
+      "score": 55,
+      "keywords": 2,
+      "verified": false
+    }
+  ]
+}

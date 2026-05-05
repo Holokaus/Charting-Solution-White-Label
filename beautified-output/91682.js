@@ -1,0 +1,74 @@
+/**
+ * Module 91682 - Beautified
+ * Auto-formatted from webpack bundle
+ * Semantic variable names applied
+ */
+
+91682: (e, t, i) => {
+    "use strict";
+    i.d(t, {
+      capitalizeFirstLetterInWord: () => u,
+      decodeHTMLEntities: () => l,
+      getFirstSegmentOrCodePointString: () => _,
+      htmlEscape: () => c,
+      removeSpaces: () => d,
+      removeTags: () => h
+    });
+    const s = /[<"'&>]/g,
+      o = e => `&#${e.charCodeAt(0)};`,
+      n = {
+        "&lt;": "<",
+        "&gt;": ">",
+        "&quot;": '"',
+        "&apos;": "'",
+        "&amp;": "&",
+        "&#60;": "<",
+        "&#62;": ">",
+        "&#34;": '"',
+        "&#39;": "'",
+        "&#039;": "'",
+        "&#38;": "&"
+      },
+      r = Object.assign({}, ...Object.entries(n).map((([e, t]) => ({
+        [t]: e
+      })))),
+      a = new RegExp(Object.keys(n).join("|"), "g");
+    new RegExp(Object.keys(r).join("|"), "g");
+
+    function l(e) {
+      return e.replace(a, (e => n[e] || e))
+    }
+
+    function c(e) {
+      return e.replace(s, o)
+    }
+
+    function h(e = "") {
+      return e.replace(/(<([^>]+)>)/gi, "")
+    }
+
+    function d(e = "") {
+      return e.replace(/\s+/g, "")
+    }
+
+    function u(e = "") {
+      return e.replace(/\b\w/g, (e => e.toUpperCase()))
+    }
+
+    function _(e) {
+      const t = Intl.Segmenter;
+      if (t) {
+        const i = new t(void 0, {
+            granularity: "grapheme"
+          }),
+          [{
+            segment: s
+          } = {
+            segment: null
+          }] = i.segment(e);
+        return s?.toUpperCase() ?? null
+      } {
+        const t = e.codePointAt(0);
+        return t ? String.fromCodePoint(t).toUpperCase() : null
+      }
+    }

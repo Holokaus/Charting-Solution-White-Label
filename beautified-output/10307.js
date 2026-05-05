@@ -1,0 +1,23 @@
+/**
+ * Module 10307 - Beautified
+ * Auto-formatted from webpack bundle
+ * Semantic variable names applied
+ */
+
+10307: (e, t, i) => {
+    "use strict";
+    i.d(t, {
+      BitmapCoordinatesPaneRenderer: () => o
+    });
+    var canvasRendering = i(27714);
+    class o {
+      draw(e, t) {
+        new canvasRendering.CanvasRenderingTarget2D(e, t.mediaSize, t.bitmapSize).useBitmapCoordinateSpace((e => this
+          ._drawImpl(e)))
+      }
+      drawBackground(e, t) {
+        new canvasRendering.CanvasRenderingTarget2D(e, t.mediaSize, t.bitmapSize).useBitmapCoordinateSpace((e => this
+          ._drawBackgroundImpl(e)))
+      }
+      _drawBackgroundImpl(e) {}
+    }

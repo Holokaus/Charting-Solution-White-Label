@@ -1,0 +1,37 @@
+/**
+ * Module 62312 - Beautified
+ * Auto-formatted from webpack bundle
+ * Semantic variable names applied
+ */
+
+62312: (e, t, i) => {
+    "use strict";
+
+    function s(e, t = "shift", i) {
+      return {
+        studyConstructorAsyncGetter: e,
+        colorRotationMode: t,
+        colorRotationComparator: i
+      }
+    }
+    i.d(t, {
+      addStudyInfoToMap: () => n,
+      createStudyInfo: () => s,
+      getStudyClassName: () => a,
+      getStudyInfoByName: () => r
+    });
+    const o = new Map;
+
+    function n(e, t) {
+      o.set(e, t)
+    }
+
+    function r(e) {
+      return o.get(e)
+    }
+
+    function a(e) {
+      for (const [t, i] of o.entries())
+        if (i.studyConstructor === e) return t;
+      return null
+    }

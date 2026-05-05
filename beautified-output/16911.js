@@ -1,0 +1,9 @@
+/**
+ * Module 16911 - Beautified
+ * Auto-formatted from webpack bundle
+ * Semantic variable names applied
+ */
+
+16911: e => {
+    e.exports =
+      '<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"><g fill="none" fill-rule="evenodd" stroke="currentColor" transform="translate(3 6)"><path d="M.964 8C3 4 6.679.5 11 .5 15.32.5 19 4 21.036 8 19 12 15.32 15.5 11 15.5 6.679 15.5 3 12 .964 8z"/><circle cx="11" cy="8" r="3.5"/></g></svg>'

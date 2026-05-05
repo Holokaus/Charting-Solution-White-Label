@@ -1,0 +1,42 @@
+/**
+ * Module 56186 - Beautified
+ * Auto-formatted from webpack bundle
+ * Semantic variable names applied
+ */
+
+56186: (e, t, i) => {
+    "use strict";
+
+    function s(e) {
+      if (e instanceof Error) return e.stack || e.message;
+      try {
+        return e.outerHTML.slice(0, 1024)
+      } catch {}
+      try {
+        if (void 0 !== e) return JSON.stringify(e).slice(0, 1024)
+      } catch {}
+      return String(e)
+    }
+
+    function o() {
+      window.__tv_js_errors || (window.__tv_js_errors = []), window.addEventListener("error", (e => {
+        const t = (new Date).toISOString();
+        window.__tv_js_errors.push(
+          `${t} ${e.message||"JS error"}. ${e.filename||"<unknown url>"}, line ${e.lineno}, col ${e.colno}.\nError: ${s(e.error)}`
+          )
+      }), !1), window.addEventListener("unhandledrejection", (e => {
+        const t = (new Date).toISOString();
+        window.__tv_js_errors.push(`${t} Unhandled rejection.\nReason: ${s(e.reason)}`)
+      }), !1), document.addEventListener("securitypolicyviolation", (e => {
+        if (String(e.sourceFile).startsWith("https://securepubads.g.doubleclick.net") && String(e.blockedURI)
+          .startsWith("https://adservice.google.")) return;
+        const t = (new Date).toISOString(),
+          i = "report" === e.disposition ? "CSP report-only" : "CSP violation";
+        window.__tv_js_errors.push(
+          `${t} ${i}: ${e.violatedDirective||e.effectiveDirective}. ${e.sourceFile||"<unknown url>"}, line ${e.lineNumber}, col ${e.columnNumber}.\nBlocked URI: ${e.blockedURI}\nSample: ${e.sample}\nTarget: ${s(e.target)}`
+          )
+      }), !1)
+    }
+    i.d(t, {
+      install: () => o
+    })

@@ -1,0 +1,204 @@
+{
+  "timestamp": "2026-05-05T16:02:47.533Z",
+  "version": "Round 4 Improved V2",
+  "baseline": 330,
+  "discoveries": [
+    {
+      "moduleId": "11751",
+      "tier": "HIGH",
+      "suggested": "watchedValue",
+      "score": 100,
+      "keywords": 3,
+      "minRequired": 3,
+      "verified": true
+    },
+    {
+      "moduleId": "13896",
+      "tier": "MEDIUM",
+      "suggested": "lineToolManager",
+      "score": 80,
+      "keywords": 2,
+      "minRequired": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "1395",
+      "tier": "MEDIUM",
+      "suggested": "lineToolManager",
+      "score": 88,
+      "keywords": 2,
+      "minRequired": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "14881",
+      "tier": "MEDIUM",
+      "suggested": "watchedValue",
+      "score": 92,
+      "keywords": 2,
+      "minRequired": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "22613",
+      "tier": "MEDIUM",
+      "suggested": "watchedValue",
+      "score": 100,
+      "keywords": 2,
+      "minRequired": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "26352",
+      "tier": "MEDIUM",
+      "suggested": "seriesBarFunction",
+      "score": 90,
+      "keywords": 2,
+      "minRequired": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "35727",
+      "tier": "MEDIUM",
+      "suggested": "priceDataSource",
+      "score": 88,
+      "keywords": 2,
+      "minRequired": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "36947",
+      "tier": "MEDIUM",
+      "suggested": "lineToolManager",
+      "score": 88,
+      "keywords": 2,
+      "minRequired": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "42516",
+      "tier": "MEDIUM",
+      "suggested": "seriesBarFunction",
+      "score": 100,
+      "keywords": 2,
+      "minRequired": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "45580",
+      "tier": "MEDIUM",
+      "suggested": "seriesBarFunction",
+      "score": 92,
+      "keywords": 2,
+      "minRequired": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "51829",
+      "tier": "MEDIUM",
+      "suggested": "seriesBarFunction",
+      "score": 92,
+      "keywords": 2,
+      "minRequired": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "52499",
+      "tier": "MEDIUM",
+      "suggested": "watchedValue",
+      "score": 100,
+      "keywords": 2,
+      "minRequired": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "54370",
+      "tier": "MEDIUM",
+      "suggested": "seriesBarFunction",
+      "score": 92,
+      "keywords": 2,
+      "minRequired": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "59883",
+      "tier": "MEDIUM",
+      "suggested": "lineToolManager",
+      "score": 80,
+      "keywords": 2,
+      "minRequired": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "7543",
+      "tier": "MEDIUM",
+      "suggested": "dataSource",
+      "score": 70,
+      "keywords": 2,
+      "minRequired": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "84526",
+      "tier": "MEDIUM",
+      "suggested": "logger",
+      "score": 70,
+      "keywords": 2,
+      "minRequired": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "91111",
+      "tier": "MEDIUM",
+      "suggested": "lineToolManager",
+      "score": 80,
+      "keywords": 2,
+      "minRequired": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "92211",
+      "tier": "MEDIUM",
+      "suggested": "seriesBarFunction",
+      "score": 100,
+      "keywords": 2,
+      "minRequired": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "97217",
+      "tier": "MEDIUM",
+      "suggested": "lineToolManager",
+      "score": 80,
+      "keywords": 2,
+      "minRequired": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "97995",
+      "tier": "MEDIUM",
+      "suggested": "lineToolManager",
+      "score": 80,
+      "keywords": 2,
+      "minRequired": 2,
+      "verified": true
+    }
+  ],
+  "byTier": {
+    "high": 1,
+    "medium": 19
+  },
+  "rejections": {
+    "noKeywordsHigh": 0,
+    "lowScoreHigh": 0,
+    "noKeywordsMedium": 0,
+    "lowScoreMedium": 0,
+    "ambiguous": 119
+  },
+  "improvements": {
+    "keywordWeighting": "60% (was 40%)",
+    "highThreshold": "80% (was 75%)",
+    "mediumThreshold": "65% (was 60%)",
+    "minKeywordsHigh": "3 (was 2)"
+  }
+}

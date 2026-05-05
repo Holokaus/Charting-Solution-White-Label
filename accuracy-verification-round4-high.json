@@ -1,0 +1,85 @@
+{
+  "timestamp": "2026-05-05T15:55:38.935Z",
+  "standard": "Class-1 Quality",
+  "gate": "Spot-check Verification (80%+ required)",
+  "sampleSize": 5,
+  "passCount": 2,
+  "totalModules": 15,
+  "passRate": "40.0",
+  "gateStatus": "FAIL",
+  "results": [
+    {
+      "moduleId": "52499",
+      "semantic": "watchedValue",
+      "keywordMatches": [],
+      "matchCount": 0,
+      "verified": false,
+      "confidenceLevel": "LOW",
+      "status": "INACCURATE",
+      "passed": false
+    },
+    {
+      "moduleId": "35727",
+      "semantic": "priceDataSource",
+      "keywordMatches": [
+        {
+          "keyword": "data",
+          "occurrences": 1
+        }
+      ],
+      "matchCount": 1,
+      "verified": false,
+      "confidenceLevel": "LOW",
+      "status": "INACCURATE",
+      "passed": false
+    },
+    {
+      "moduleId": "7543",
+      "semantic": "dataSource",
+      "keywordMatches": [
+        {
+          "keyword": "data",
+          "occurrences": 1
+        },
+        {
+          "keyword": "source",
+          "occurrences": 2
+        }
+      ],
+      "matchCount": 2,
+      "verified": true,
+      "confidenceLevel": "MEDIUM",
+      "status": "ACCURATE",
+      "passed": true
+    },
+    {
+      "moduleId": "36947",
+      "semantic": "lineToolManager",
+      "keywordMatches": [],
+      "matchCount": 0,
+      "verified": false,
+      "confidenceLevel": "LOW",
+      "status": "INACCURATE",
+      "passed": false
+    },
+    {
+      "moduleId": "13896",
+      "semantic": "series",
+      "keywordMatches": [
+        {
+          "keyword": "series",
+          "occurrences": 2
+        },
+        {
+          "keyword": "data",
+          "occurrences": 1
+        }
+      ],
+      "matchCount": 2,
+      "verified": true,
+      "confidenceLevel": "MEDIUM",
+      "status": "ACCURATE",
+      "passed": true
+    }
+  ]
+}

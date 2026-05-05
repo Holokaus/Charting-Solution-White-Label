@@ -1,0 +1,1838 @@
+{
+  "timestamp": "2026-05-03T17:16:05.079Z",
+  "summary": {
+    "totalModules": 466,
+    "knownModules": 31,
+    "highConfidenceIdentifications": 37,
+    "mediumConfidenceCandidates": 47
+  },
+  "highConfidenceIdentifications": [
+    {
+      "moduleId": "18712",
+      "suggestedName": "watchedValue",
+      "matchedTo": "2072",
+      "score": 1,
+      "confidence": "HIGH"
+    },
+    {
+      "moduleId": "26610",
+      "suggestedName": "lineToolManager",
+      "matchedTo": "78861",
+      "score": 1,
+      "confidence": "HIGH"
+    },
+    {
+      "moduleId": "28450",
+      "suggestedName": "watchedValue",
+      "matchedTo": "2072",
+      "score": 1,
+      "confidence": "HIGH"
+    },
+    {
+      "moduleId": "4659",
+      "suggestedName": "watchedValue",
+      "matchedTo": "2072",
+      "score": 1,
+      "confidence": "HIGH"
+    },
+    {
+      "moduleId": "70859",
+      "suggestedName": "watchedValue",
+      "matchedTo": "2072",
+      "score": 1,
+      "confidence": "HIGH"
+    },
+    {
+      "moduleId": "94322",
+      "suggestedName": "watchedValue",
+      "matchedTo": "2072",
+      "score": 1,
+      "confidence": "HIGH"
+    },
+    {
+      "moduleId": "68028",
+      "suggestedName": "watchedValue",
+      "matchedTo": "2072",
+      "score": 0.9999999999999999,
+      "confidence": "HIGH"
+    },
+    {
+      "moduleId": "10892",
+      "suggestedName": "timeInterval",
+      "matchedTo": "46082",
+      "score": 0.95,
+      "confidence": "HIGH"
+    },
+    {
+      "moduleId": "20820",
+      "suggestedName": "bitmapCoordinatesPane",
+      "matchedTo": "10307",
+      "score": 0.95,
+      "confidence": "HIGH"
+    },
+    {
+      "moduleId": "43222",
+      "suggestedName": "watchedValue",
+      "matchedTo": "2072",
+      "score": 0.9499999999999998,
+      "confidence": "HIGH"
+    },
+    {
+      "moduleId": "7793",
+      "suggestedName": "watchedValue",
+      "matchedTo": "2072",
+      "score": 0.9,
+      "confidence": "HIGH"
+    },
+    {
+      "moduleId": "67563",
+      "suggestedName": "mainInitialization",
+      "matchedTo": "37150",
+      "score": 0.8999999999999999,
+      "confidence": "HIGH"
+    },
+    {
+      "moduleId": "75579",
+      "suggestedName": "watchedValue",
+      "matchedTo": "2072",
+      "score": 0.8999999999999999,
+      "confidence": "HIGH"
+    },
+    {
+      "moduleId": "35107",
+      "suggestedName": "dataSource",
+      "matchedTo": "72207",
+      "score": 0.85,
+      "confidence": "HIGH"
+    },
+    {
+      "moduleId": "63903",
+      "suggestedName": "priceDataSource",
+      "matchedTo": "67135",
+      "score": 0.7999999999999999,
+      "confidence": "HIGH"
+    },
+    {
+      "moduleId": "11768",
+      "suggestedName": "series",
+      "matchedTo": "2115",
+      "score": 0.75,
+      "confidence": "HIGH"
+    },
+    {
+      "moduleId": "86811",
+      "suggestedName": "watchedValue",
+      "matchedTo": "2072",
+      "score": 0.75,
+      "confidence": "HIGH"
+    },
+    {
+      "moduleId": "19233",
+      "suggestedName": "seriesData",
+      "matchedTo": "52746",
+      "score": 0.7499999999999999,
+      "confidence": "HIGH"
+    },
+    {
+      "moduleId": "24062",
+      "suggestedName": "watchedValue",
+      "matchedTo": "2072",
+      "score": 0.7499999999999999,
+      "confidence": "HIGH"
+    },
+    {
+      "moduleId": "28001",
+      "suggestedName": "seriesBarFunction",
+      "matchedTo": "17776",
+      "score": 0.7499999999999999,
+      "confidence": "HIGH"
+    },
+    {
+      "moduleId": "64236",
+      "suggestedName": "timeInterval",
+      "matchedTo": "46082",
+      "score": 0.7499999999999999,
+      "confidence": "HIGH"
+    },
+    {
+      "moduleId": "13421",
+      "suggestedName": "seriesData",
+      "matchedTo": "52746",
+      "score": 0.7,
+      "confidence": "HIGH"
+    },
+    {
+      "moduleId": "30693",
+      "suggestedName": "priceDataSource",
+      "matchedTo": "67135",
+      "score": 0.7,
+      "confidence": "HIGH"
+    },
+    {
+      "moduleId": "40137",
+      "suggestedName": "watchedValue",
+      "matchedTo": "2072",
+      "score": 0.7,
+      "confidence": "HIGH"
+    },
+    {
+      "moduleId": "53107",
+      "suggestedName": "watchedValue",
+      "matchedTo": "2072",
+      "score": 0.7,
+      "confidence": "HIGH"
+    },
+    {
+      "moduleId": "59998",
+      "suggestedName": "watchedValue",
+      "matchedTo": "2072",
+      "score": 0.7,
+      "confidence": "HIGH"
+    },
+    {
+      "moduleId": "61710",
+      "suggestedName": "dataSource",
+      "matchedTo": "72207",
+      "score": 0.7,
+      "confidence": "HIGH"
+    },
+    {
+      "moduleId": "65045",
+      "suggestedName": "watchedValue",
+      "matchedTo": "2072",
+      "score": 0.7,
+      "confidence": "HIGH"
+    },
+    {
+      "moduleId": "28477",
+      "suggestedName": "seriesBarFunction",
+      "matchedTo": "17776",
+      "score": 0.6499999999999999,
+      "confidence": "HIGH"
+    },
+    {
+      "moduleId": "3190",
+      "suggestedName": "watchedValue",
+      "matchedTo": "2072",
+      "score": 0.6499999999999999,
+      "confidence": "HIGH"
+    },
+    {
+      "moduleId": "5734",
+      "suggestedName": "deleteLockedLineTools",
+      "matchedTo": "89947",
+      "score": 0.6499999999999999,
+      "confidence": "HIGH"
+    },
+    {
+      "moduleId": "97363",
+      "suggestedName": "watchedValue",
+      "matchedTo": "2072",
+      "score": 0.6499999999999999,
+      "confidence": "HIGH"
+    },
+    {
+      "moduleId": "22489",
+      "suggestedName": "chartDataManager",
+      "matchedTo": "34840",
+      "score": 0.6000000000000001,
+      "confidence": "HIGH"
+    },
+    {
+      "moduleId": "16708",
+      "suggestedName": "deleteLockedLineTools",
+      "matchedTo": "89947",
+      "score": 0.6,
+      "confidence": "HIGH"
+    },
+    {
+      "moduleId": "45530",
+      "suggestedName": "priceDataSource",
+      "matchedTo": "67135",
+      "score": 0.6,
+      "confidence": "HIGH"
+    },
+    {
+      "moduleId": "48943",
+      "suggestedName": "watchedValue",
+      "matchedTo": "2072",
+      "score": 0.6,
+      "confidence": "HIGH"
+    },
+    {
+      "moduleId": "75550",
+      "suggestedName": "dataSource",
+      "matchedTo": "72207",
+      "score": 0.6,
+      "confidence": "HIGH"
+    }
+  ],
+  "mediumConfidenceCandidates": [
+    {
+      "moduleId": "33718",
+      "suggestedName": "watchedValue",
+      "score": 0.5499999999999999,
+      "confidence": "MEDIUM",
+      "otherMatches": [
+        {
+          "semantic": "settingsAdapter",
+          "moduleId": "1765",
+          "score": 0.15,
+          "confidence": "LOW",
+          "breakdown": [
+            {
+              "type": "export_keyword",
+              "value": 0.15
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "38414",
+      "suggestedName": "watchedValue",
+      "score": 0.5499999999999999,
+      "confidence": "MEDIUM",
+      "otherMatches": [
+        {
+          "semantic": "bitmapCoordinatesPane",
+          "moduleId": "10307",
+          "score": 0.25,
+          "confidence": "LOW",
+          "breakdown": [
+            {
+              "type": "class_exact",
+              "value": 0.25
+            }
+          ]
+        },
+        {
+          "semantic": "chunkLoaderModule",
+          "moduleId": "38881",
+          "score": 0.25,
+          "confidence": "LOW",
+          "breakdown": [
+            {
+              "type": "class_exact",
+              "value": 0.25
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "45591",
+      "suggestedName": "priceDataSource",
+      "score": 0.5499999999999999,
+      "confidence": "MEDIUM",
+      "otherMatches": [
+        {
+          "semantic": "clipboardData",
+          "moduleId": "92848",
+          "score": 0.5499999999999999,
+          "confidence": "MEDIUM",
+          "breakdown": [
+            {
+              "type": "export_keyword",
+              "value": 0.15
+            },
+            {
+              "type": "import_exact",
+              "value": 0.2
+            },
+            {
+              "type": "function_keyword",
+              "value": 0.1
+            },
+            {
+              "type": "function_keyword",
+              "value": 0.1
+            }
+          ]
+        },
+        {
+          "semantic": "watchedValue",
+          "moduleId": "2072",
+          "score": 0.5,
+          "confidence": "MEDIUM",
+          "breakdown": [
+            {
+              "type": "class_exact",
+              "value": 0.25
+            },
+            {
+              "type": "class_exact",
+              "value": 0.25
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "47432",
+      "suggestedName": "priceDataSource",
+      "score": 0.5499999999999999,
+      "confidence": "MEDIUM",
+      "otherMatches": [
+        {
+          "semantic": "clipboardData",
+          "moduleId": "92848",
+          "score": 0.30000000000000004,
+          "confidence": "LOW",
+          "breakdown": [
+            {
+              "type": "import_exact",
+              "value": 0.2
+            },
+            {
+              "type": "function_keyword",
+              "value": 0.1
+            }
+          ]
+        },
+        {
+          "semantic": "lineToolUtils",
+          "moduleId": "11946",
+          "score": 0.3,
+          "confidence": "LOW",
+          "breakdown": [
+            {
+              "type": "export_keyword",
+              "value": 0.15
+            },
+            {
+              "type": "export_keyword",
+              "value": 0.15
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "55803",
+      "suggestedName": "chunkLoaderModule",
+      "score": 0.5499999999999999,
+      "confidence": "MEDIUM",
+      "otherMatches": [
+        {
+          "semantic": "priceDataSource",
+          "moduleId": "67135",
+          "score": 0.30000000000000004,
+          "confidence": "LOW",
+          "breakdown": [
+            {
+              "type": "import_exact",
+              "value": 0.2
+            },
+            {
+              "type": "function_keyword",
+              "value": 0.1
+            }
+          ]
+        },
+        {
+          "semantic": "clipboardData",
+          "moduleId": "92848",
+          "score": 0.30000000000000004,
+          "confidence": "LOW",
+          "breakdown": [
+            {
+              "type": "import_exact",
+              "value": 0.2
+            },
+            {
+              "type": "function_keyword",
+              "value": 0.1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "60661",
+      "suggestedName": "seriesBarFunction",
+      "score": 0.5499999999999999,
+      "confidence": "MEDIUM",
+      "otherMatches": [
+        {
+          "semantic": "priceDataSource",
+          "moduleId": "67135",
+          "score": 0.2,
+          "confidence": "LOW",
+          "breakdown": [
+            {
+              "type": "import_exact",
+              "value": 0.2
+            }
+          ]
+        },
+        {
+          "semantic": "clipboardData",
+          "moduleId": "92848",
+          "score": 0.2,
+          "confidence": "LOW",
+          "breakdown": [
+            {
+              "type": "import_exact",
+              "value": 0.2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "67777",
+      "suggestedName": "priceDataSource",
+      "score": 0.5499999999999999,
+      "confidence": "MEDIUM",
+      "otherMatches": [
+        {
+          "semantic": "dataSource",
+          "moduleId": "72207",
+          "score": 0.5499999999999999,
+          "confidence": "MEDIUM",
+          "breakdown": [
+            {
+              "type": "export_keyword",
+              "value": 0.15
+            },
+            {
+              "type": "function_keyword",
+              "value": 0.1
+            },
+            {
+              "type": "function_keyword",
+              "value": 0.1
+            },
+            {
+              "type": "function_keyword",
+              "value": 0.1
+            },
+            {
+              "type": "function_keyword",
+              "value": 0.1
+            }
+          ]
+        },
+        {
+          "semantic": "bitmapCoordinatesPane",
+          "moduleId": "10307",
+          "score": 0.2,
+          "confidence": "LOW",
+          "breakdown": [
+            {
+              "type": "function_keyword",
+              "value": 0.1
+            },
+            {
+              "type": "function_keyword",
+              "value": 0.1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "10544",
+      "suggestedName": "mainInitialization",
+      "score": 0.5,
+      "confidence": "MEDIUM",
+      "otherMatches": [
+        {
+          "semantic": "lineToolUtils",
+          "moduleId": "11946",
+          "score": 0.3,
+          "confidence": "LOW",
+          "breakdown": [
+            {
+              "type": "export_keyword",
+              "value": 0.15
+            },
+            {
+              "type": "export_keyword",
+              "value": 0.15
+            }
+          ]
+        },
+        {
+          "semantic": "lineToolManager",
+          "moduleId": "78861",
+          "score": 0.3,
+          "confidence": "LOW",
+          "breakdown": [
+            {
+              "type": "export_keyword",
+              "value": 0.15
+            },
+            {
+              "type": "export_keyword",
+              "value": 0.15
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "19136",
+      "suggestedName": "priceDataSource",
+      "score": 0.5,
+      "confidence": "MEDIUM",
+      "otherMatches": [
+        {
+          "semantic": "dataSource",
+          "moduleId": "72207",
+          "score": 0.5,
+          "confidence": "MEDIUM",
+          "breakdown": [
+            {
+              "type": "export_keyword",
+              "value": 0.15
+            },
+            {
+              "type": "export_keyword",
+              "value": 0.15
+            },
+            {
+              "type": "export_exact",
+              "value": 0.2
+            }
+          ]
+        },
+        {
+          "semantic": "seriesData",
+          "moduleId": "52746",
+          "score": 0.4,
+          "confidence": "MEDIUM",
+          "breakdown": [
+            {
+              "type": "export_keyword",
+              "value": 0.15
+            },
+            {
+              "type": "class_exact",
+              "value": 0.25
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "20512",
+      "suggestedName": "timeInterval",
+      "score": 0.5,
+      "confidence": "MEDIUM",
+      "otherMatches": []
+    },
+    {
+      "moduleId": "22613",
+      "suggestedName": "watchedValue",
+      "score": 0.5,
+      "confidence": "MEDIUM",
+      "otherMatches": [
+        {
+          "semantic": "mainInitialization",
+          "moduleId": "37150",
+          "score": 0.2,
+          "confidence": "LOW",
+          "breakdown": [
+            {
+              "type": "import_exact",
+              "value": 0.2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "23752",
+      "suggestedName": "watchedValue",
+      "score": 0.5,
+      "confidence": "MEDIUM",
+      "otherMatches": [
+        {
+          "semantic": "delegate",
+          "moduleId": "48096",
+          "score": 0.25,
+          "confidence": "LOW",
+          "breakdown": [
+            {
+              "type": "class_exact",
+              "value": 0.25
+            }
+          ]
+        },
+        {
+          "semantic": "mainInitialization",
+          "moduleId": "37150",
+          "score": 0.2,
+          "confidence": "LOW",
+          "breakdown": [
+            {
+              "type": "import_exact",
+              "value": 0.2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "2383",
+      "suggestedName": "dataSource",
+      "score": 0.5,
+      "confidence": "MEDIUM",
+      "otherMatches": [
+        {
+          "semantic": "chartDataManager",
+          "moduleId": "34840",
+          "score": 0.25,
+          "confidence": "LOW",
+          "breakdown": [
+            {
+              "type": "export_keyword",
+              "value": 0.15
+            },
+            {
+              "type": "function_keyword",
+              "value": 0.1
+            }
+          ]
+        },
+        {
+          "semantic": "seriesData",
+          "moduleId": "52746",
+          "score": 0.25,
+          "confidence": "LOW",
+          "breakdown": [
+            {
+              "type": "export_keyword",
+              "value": 0.15
+            },
+            {
+              "type": "function_keyword",
+              "value": 0.1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "29806",
+      "suggestedName": "seriesData",
+      "score": 0.5,
+      "confidence": "MEDIUM",
+      "otherMatches": [
+        {
+          "semantic": "series",
+          "moduleId": "2115",
+          "score": 0.35,
+          "confidence": "LOW",
+          "breakdown": [
+            {
+              "type": "export_keyword",
+              "value": 0.15
+            },
+            {
+              "type": "export_exact",
+              "value": 0.2
+            }
+          ]
+        },
+        {
+          "semantic": "seriesBarFunction",
+          "moduleId": "17776",
+          "score": 0.15,
+          "confidence": "LOW",
+          "breakdown": [
+            {
+              "type": "export_keyword",
+              "value": 0.15
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "41414",
+      "suggestedName": "dataSource",
+      "score": 0.5,
+      "confidence": "MEDIUM",
+      "otherMatches": [
+        {
+          "semantic": "priceDataSource",
+          "moduleId": "67135",
+          "score": 0.3,
+          "confidence": "LOW",
+          "breakdown": [
+            {
+              "type": "export_keyword",
+              "value": 0.15
+            },
+            {
+              "type": "export_keyword",
+              "value": 0.15
+            }
+          ]
+        },
+        {
+          "semantic": "mainInitialization",
+          "moduleId": "37150",
+          "score": 0.2,
+          "confidence": "LOW",
+          "breakdown": [
+            {
+              "type": "import_exact",
+              "value": 0.2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "43501",
+      "suggestedName": "seriesData",
+      "score": 0.5,
+      "confidence": "MEDIUM",
+      "otherMatches": [
+        {
+          "semantic": "series",
+          "moduleId": "2115",
+          "score": 0.35,
+          "confidence": "LOW",
+          "breakdown": [
+            {
+              "type": "export_keyword",
+              "value": 0.15
+            },
+            {
+              "type": "export_exact",
+              "value": 0.2
+            }
+          ]
+        },
+        {
+          "semantic": "bitmapCoordinatesPane",
+          "moduleId": "10307",
+          "score": 0.15,
+          "confidence": "LOW",
+          "breakdown": [
+            {
+              "type": "export_keyword",
+              "value": 0.15
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "51101",
+      "suggestedName": "mainInitialization",
+      "score": 0.5,
+      "confidence": "MEDIUM",
+      "otherMatches": [
+        {
+          "semantic": "seriesData",
+          "moduleId": "52746",
+          "score": 0.4,
+          "confidence": "MEDIUM",
+          "breakdown": [
+            {
+              "type": "export_keyword",
+              "value": 0.15
+            },
+            {
+              "type": "class_exact",
+              "value": 0.25
+            }
+          ]
+        },
+        {
+          "semantic": "seriesBarFunction",
+          "moduleId": "17776",
+          "score": 0.35,
+          "confidence": "LOW",
+          "breakdown": [
+            {
+              "type": "export_keyword",
+              "value": 0.15
+            },
+            {
+              "type": "function_keyword",
+              "value": 0.1
+            },
+            {
+              "type": "function_keyword",
+              "value": 0.1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "52499",
+      "suggestedName": "watchedValue",
+      "score": 0.5,
+      "confidence": "MEDIUM",
+      "otherMatches": [
+        {
+          "semantic": "mainInitialization",
+          "moduleId": "37150",
+          "score": 0.2,
+          "confidence": "LOW",
+          "breakdown": [
+            {
+              "type": "import_exact",
+              "value": 0.2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "54405",
+      "suggestedName": "watchedValue",
+      "score": 0.5,
+      "confidence": "MEDIUM",
+      "otherMatches": [
+        {
+          "semantic": "series",
+          "moduleId": "2115",
+          "score": 0.35,
+          "confidence": "LOW",
+          "breakdown": [
+            {
+              "type": "export_keyword",
+              "value": 0.15
+            },
+            {
+              "type": "export_exact",
+              "value": 0.2
+            }
+          ]
+        },
+        {
+          "semantic": "seriesBarFunction",
+          "moduleId": "17776",
+          "score": 0.25,
+          "confidence": "LOW",
+          "breakdown": [
+            {
+              "type": "export_keyword",
+              "value": 0.15
+            },
+            {
+              "type": "function_keyword",
+              "value": 0.1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "57340",
+      "suggestedName": "watchedValue",
+      "score": 0.5,
+      "confidence": "MEDIUM",
+      "otherMatches": [
+        {
+          "semantic": "drawingToolbarState",
+          "moduleId": "55308",
+          "score": 0.2,
+          "confidence": "LOW",
+          "breakdown": [
+            {
+              "type": "import_exact",
+              "value": 0.2
+            }
+          ]
+        },
+        {
+          "semantic": "deleteLockedLineTools",
+          "moduleId": "89947",
+          "score": 0.2,
+          "confidence": "LOW",
+          "breakdown": [
+            {
+              "type": "import_exact",
+              "value": 0.2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "58570",
+      "suggestedName": "lineToolManager",
+      "score": 0.5,
+      "confidence": "MEDIUM",
+      "otherMatches": [
+        {
+          "semantic": "lineToolUtils",
+          "moduleId": "11946",
+          "score": 0.3,
+          "confidence": "LOW",
+          "breakdown": [
+            {
+              "type": "export_keyword",
+              "value": 0.15
+            },
+            {
+              "type": "export_keyword",
+              "value": 0.15
+            }
+          ]
+        },
+        {
+          "semantic": "settingsAdapter",
+          "moduleId": "1765",
+          "score": 0.2,
+          "confidence": "LOW",
+          "breakdown": [
+            {
+              "type": "export_exact",
+              "value": 0.2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "64876",
+      "suggestedName": "watchedValue",
+      "score": 0.5,
+      "confidence": "MEDIUM",
+      "otherMatches": [
+        {
+          "semantic": "mainInitialization",
+          "moduleId": "37150",
+          "score": 0.36,
+          "confidence": "LOW",
+          "breakdown": [
+            {
+              "type": "string_exact",
+              "value": 0.18
+            },
+            {
+              "type": "string_exact",
+              "value": 0.18
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "67763",
+      "suggestedName": "watchedValue",
+      "score": 0.5,
+      "confidence": "MEDIUM",
+      "otherMatches": [
+        {
+          "semantic": "bitmapCoordinatesPane",
+          "moduleId": "10307",
+          "score": 0.25,
+          "confidence": "LOW",
+          "breakdown": [
+            {
+              "type": "class_exact",
+              "value": 0.25
+            }
+          ]
+        },
+        {
+          "semantic": "chunkLoaderModule",
+          "moduleId": "38881",
+          "score": 0.25,
+          "confidence": "LOW",
+          "breakdown": [
+            {
+              "type": "class_exact",
+              "value": 0.25
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "69555",
+      "suggestedName": "watchedValue",
+      "score": 0.5,
+      "confidence": "MEDIUM",
+      "otherMatches": [
+        {
+          "semantic": "bitmapCoordinatesPane",
+          "moduleId": "10307",
+          "score": 0.5,
+          "confidence": "MEDIUM",
+          "breakdown": [
+            {
+              "type": "export_keyword",
+              "value": 0.15
+            },
+            {
+              "type": "class_exact",
+              "value": 0.25
+            },
+            {
+              "type": "function_keyword",
+              "value": 0.1
+            }
+          ]
+        },
+        {
+          "semantic": "priceDataSource",
+          "moduleId": "67135",
+          "score": 0.44999999999999996,
+          "confidence": "MEDIUM",
+          "breakdown": [
+            {
+              "type": "export_keyword",
+              "value": 0.15
+            },
+            {
+              "type": "function_keyword",
+              "value": 0.1
+            },
+            {
+              "type": "function_keyword",
+              "value": 0.1
+            },
+            {
+              "type": "function_keyword",
+              "value": 0.1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "7543",
+      "suggestedName": "dataSource",
+      "score": 0.5,
+      "confidence": "MEDIUM",
+      "otherMatches": [
+        {
+          "semantic": "priceDataSource",
+          "moduleId": "67135",
+          "score": 0.3,
+          "confidence": "LOW",
+          "breakdown": [
+            {
+              "type": "export_keyword",
+              "value": 0.15
+            },
+            {
+              "type": "export_keyword",
+              "value": 0.15
+            }
+          ]
+        },
+        {
+          "semantic": "chartDataManager",
+          "moduleId": "34840",
+          "score": 0.15,
+          "confidence": "LOW",
+          "breakdown": [
+            {
+              "type": "export_keyword",
+              "value": 0.15
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "79740",
+      "suggestedName": "dataSource",
+      "score": 0.5,
+      "confidence": "MEDIUM",
+      "otherMatches": [
+        {
+          "semantic": "watchedValue",
+          "moduleId": "2072",
+          "score": 0.44999999999999996,
+          "confidence": "MEDIUM",
+          "breakdown": [
+            {
+              "type": "class_exact",
+              "value": 0.25
+            },
+            {
+              "type": "function_keyword",
+              "value": 0.1
+            },
+            {
+              "type": "function_keyword",
+              "value": 0.1
+            }
+          ]
+        },
+        {
+          "semantic": "priceDataSource",
+          "moduleId": "67135",
+          "score": 0.3,
+          "confidence": "LOW",
+          "breakdown": [
+            {
+              "type": "export_keyword",
+              "value": 0.15
+            },
+            {
+              "type": "export_keyword",
+              "value": 0.15
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "43046",
+      "suggestedName": "priceDataSource",
+      "score": 0.45,
+      "confidence": "MEDIUM",
+      "otherMatches": [
+        {
+          "semantic": "drawingToolbarState",
+          "moduleId": "55308",
+          "score": 0.44999999999999996,
+          "confidence": "MEDIUM",
+          "breakdown": [
+            {
+              "type": "export_keyword",
+              "value": 0.15
+            },
+            {
+              "type": "function_keyword",
+              "value": 0.1
+            },
+            {
+              "type": "function_keyword",
+              "value": 0.1
+            },
+            {
+              "type": "function_keyword",
+              "value": 0.1
+            }
+          ]
+        },
+        {
+          "semantic": "dataSource",
+          "moduleId": "72207",
+          "score": 0.25,
+          "confidence": "LOW",
+          "breakdown": [
+            {
+              "type": "class_exact",
+              "value": 0.25
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "36281",
+      "suggestedName": "dataSource",
+      "score": 0.44999999999999996,
+      "confidence": "MEDIUM",
+      "otherMatches": [
+        {
+          "semantic": "priceDataSource",
+          "moduleId": "67135",
+          "score": 0.35,
+          "confidence": "LOW",
+          "breakdown": [
+            {
+              "type": "export_keyword",
+              "value": 0.15
+            },
+            {
+              "type": "function_keyword",
+              "value": 0.1
+            },
+            {
+              "type": "function_keyword",
+              "value": 0.1
+            }
+          ]
+        },
+        {
+          "semantic": "chartDataManager",
+          "moduleId": "34840",
+          "score": 0.2,
+          "confidence": "LOW",
+          "breakdown": [
+            {
+              "type": "function_keyword",
+              "value": 0.1
+            },
+            {
+              "type": "function_keyword",
+              "value": 0.1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "55393",
+      "suggestedName": "watchedValue",
+      "score": 0.44999999999999996,
+      "confidence": "MEDIUM",
+      "otherMatches": [
+        {
+          "semantic": "lineToolUtils",
+          "moduleId": "11946",
+          "score": 0.3,
+          "confidence": "LOW",
+          "breakdown": [
+            {
+              "type": "export_keyword",
+              "value": 0.15
+            },
+            {
+              "type": "export_keyword",
+              "value": 0.15
+            }
+          ]
+        },
+        {
+          "semantic": "lineToolManager",
+          "moduleId": "78861",
+          "score": 0.3,
+          "confidence": "LOW",
+          "breakdown": [
+            {
+              "type": "export_keyword",
+              "value": 0.15
+            },
+            {
+              "type": "export_keyword",
+              "value": 0.15
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "59613",
+      "suggestedName": "timeInterval",
+      "score": 0.44999999999999996,
+      "confidence": "MEDIUM",
+      "otherMatches": [
+        {
+          "semantic": "dialogManager",
+          "moduleId": "3615",
+          "score": 0.25,
+          "confidence": "LOW",
+          "breakdown": [
+            {
+              "type": "export_keyword",
+              "value": 0.15
+            },
+            {
+              "type": "function_keyword",
+              "value": 0.1
+            }
+          ]
+        },
+        {
+          "semantic": "settingsAdapter",
+          "moduleId": "1765",
+          "score": 0.2,
+          "confidence": "LOW",
+          "breakdown": [
+            {
+              "type": "export_exact",
+              "value": 0.2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "69866",
+      "suggestedName": "seriesBarFunction",
+      "score": 0.44999999999999996,
+      "confidence": "MEDIUM",
+      "otherMatches": [
+        {
+          "semantic": "priceDataSource",
+          "moduleId": "67135",
+          "score": 0.2,
+          "confidence": "LOW",
+          "breakdown": [
+            {
+              "type": "import_exact",
+              "value": 0.2
+            }
+          ]
+        },
+        {
+          "semantic": "clipboardData",
+          "moduleId": "92848",
+          "score": 0.2,
+          "confidence": "LOW",
+          "breakdown": [
+            {
+              "type": "import_exact",
+              "value": 0.2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "81922",
+      "suggestedName": "timeInterval",
+      "score": 0.44999999999999996,
+      "confidence": "MEDIUM",
+      "otherMatches": [
+        {
+          "semantic": "settingsAdapter",
+          "moduleId": "1765",
+          "score": 0.2,
+          "confidence": "LOW",
+          "breakdown": [
+            {
+              "type": "export_exact",
+              "value": 0.2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "82087",
+      "suggestedName": "timeInterval",
+      "score": 0.44999999999999996,
+      "confidence": "MEDIUM",
+      "otherMatches": []
+    },
+    {
+      "moduleId": "99955",
+      "suggestedName": "seriesBarFunction",
+      "score": 0.44999999999999996,
+      "confidence": "MEDIUM",
+      "otherMatches": [
+        {
+          "semantic": "timeInterval",
+          "moduleId": "46082",
+          "score": 0.15,
+          "confidence": "LOW",
+          "breakdown": [
+            {
+              "type": "export_keyword",
+              "value": 0.15
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "12362",
+      "suggestedName": "lineToolUtils",
+      "score": 0.4,
+      "confidence": "MEDIUM",
+      "otherMatches": [
+        {
+          "semantic": "chartSaver",
+          "moduleId": "71846",
+          "score": 0.4,
+          "confidence": "MEDIUM",
+          "breakdown": [
+            {
+              "type": "export_keyword",
+              "value": 0.15
+            },
+            {
+              "type": "export_keyword",
+              "value": 0.15
+            },
+            {
+              "type": "function_keyword",
+              "value": 0.1
+            }
+          ]
+        },
+        {
+          "semantic": "lineToolManager",
+          "moduleId": "78861",
+          "score": 0.4,
+          "confidence": "MEDIUM",
+          "breakdown": [
+            {
+              "type": "function_keyword",
+              "value": 0.1
+            },
+            {
+              "type": "function_keyword",
+              "value": 0.1
+            },
+            {
+              "type": "function_keyword",
+              "value": 0.1
+            },
+            {
+              "type": "function_keyword",
+              "value": 0.1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "13173",
+      "suggestedName": "seriesBarFunction",
+      "score": 0.4,
+      "confidence": "MEDIUM",
+      "otherMatches": [
+        {
+          "semantic": "watchedValue",
+          "moduleId": "2072",
+          "score": 0.25,
+          "confidence": "LOW",
+          "breakdown": [
+            {
+              "type": "class_exact",
+              "value": 0.25
+            }
+          ]
+        },
+        {
+          "semantic": "bitmapCoordinatesPane",
+          "moduleId": "10307",
+          "score": 0.25,
+          "confidence": "LOW",
+          "breakdown": [
+            {
+              "type": "class_exact",
+              "value": 0.25
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "24437",
+      "suggestedName": "lineToolUtils",
+      "score": 0.4,
+      "confidence": "MEDIUM",
+      "otherMatches": [
+        {
+          "semantic": "lineToolManager",
+          "moduleId": "78861",
+          "score": 0.4,
+          "confidence": "MEDIUM",
+          "breakdown": [
+            {
+              "type": "string_keyword",
+              "value": 0.1
+            },
+            {
+              "type": "string_keyword",
+              "value": 0.1
+            },
+            {
+              "type": "string_keyword",
+              "value": 0.1
+            },
+            {
+              "type": "string_keyword",
+              "value": 0.1
+            }
+          ]
+        },
+        {
+          "semantic": "deleteLockedLineTools",
+          "moduleId": "89947",
+          "score": 0.4,
+          "confidence": "MEDIUM",
+          "breakdown": [
+            {
+              "type": "string_keyword",
+              "value": 0.1
+            },
+            {
+              "type": "string_keyword",
+              "value": 0.1
+            },
+            {
+              "type": "string_keyword",
+              "value": 0.1
+            },
+            {
+              "type": "string_keyword",
+              "value": 0.1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "28334",
+      "suggestedName": "seriesBarFunction",
+      "score": 0.4,
+      "confidence": "MEDIUM",
+      "otherMatches": [
+        {
+          "semantic": "series",
+          "moduleId": "2115",
+          "score": 0.35,
+          "confidence": "LOW",
+          "breakdown": [
+            {
+              "type": "export_keyword",
+              "value": 0.15
+            },
+            {
+              "type": "export_exact",
+              "value": 0.2
+            }
+          ]
+        },
+        {
+          "semantic": "bitmapCoordinatesPane",
+          "moduleId": "10307",
+          "score": 0.25,
+          "confidence": "LOW",
+          "breakdown": [
+            {
+              "type": "export_keyword",
+              "value": 0.15
+            },
+            {
+              "type": "function_keyword",
+              "value": 0.1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "32853",
+      "suggestedName": "watchedValue",
+      "score": 0.4,
+      "confidence": "MEDIUM",
+      "otherMatches": []
+    },
+    {
+      "moduleId": "38780",
+      "suggestedName": "timeInterval",
+      "score": 0.4,
+      "confidence": "MEDIUM",
+      "otherMatches": []
+    },
+    {
+      "moduleId": "4249",
+      "suggestedName": "watchedValue",
+      "score": 0.4,
+      "confidence": "MEDIUM",
+      "otherMatches": [
+        {
+          "semantic": "series",
+          "moduleId": "2115",
+          "score": 0.35,
+          "confidence": "LOW",
+          "breakdown": [
+            {
+              "type": "export_keyword",
+              "value": 0.15
+            },
+            {
+              "type": "export_exact",
+              "value": 0.2
+            }
+          ]
+        },
+        {
+          "semantic": "seriesBarFunction",
+          "moduleId": "17776",
+          "score": 0.25,
+          "confidence": "LOW",
+          "breakdown": [
+            {
+              "type": "export_keyword",
+              "value": 0.15
+            },
+            {
+              "type": "function_keyword",
+              "value": 0.1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "52945",
+      "suggestedName": "watchedValue",
+      "score": 0.4,
+      "confidence": "MEDIUM",
+      "otherMatches": [
+        {
+          "semantic": "priceDataSource",
+          "moduleId": "67135",
+          "score": 0.35,
+          "confidence": "LOW",
+          "breakdown": [
+            {
+              "type": "export_keyword",
+              "value": 0.15
+            },
+            {
+              "type": "function_keyword",
+              "value": 0.1
+            },
+            {
+              "type": "function_keyword",
+              "value": 0.1
+            }
+          ]
+        },
+        {
+          "semantic": "mainInitialization",
+          "moduleId": "37150",
+          "score": 0.2,
+          "confidence": "LOW",
+          "breakdown": [
+            {
+              "type": "import_exact",
+              "value": 0.2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "62802",
+      "suggestedName": "watchedValue",
+      "score": 0.4,
+      "confidence": "MEDIUM",
+      "otherMatches": [
+        {
+          "semantic": "seriesBarFunction",
+          "moduleId": "17776",
+          "score": 0.4,
+          "confidence": "MEDIUM",
+          "breakdown": [
+            {
+              "type": "export_keyword",
+              "value": 0.15
+            },
+            {
+              "type": "export_keyword",
+              "value": 0.15
+            },
+            {
+              "type": "function_keyword",
+              "value": 0.1
+            }
+          ]
+        },
+        {
+          "semantic": "series",
+          "moduleId": "2115",
+          "score": 0.35,
+          "confidence": "LOW",
+          "breakdown": [
+            {
+              "type": "export_keyword",
+              "value": 0.15
+            },
+            {
+              "type": "export_exact",
+              "value": 0.2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "85630",
+      "suggestedName": "seriesData",
+      "score": 0.4,
+      "confidence": "MEDIUM",
+      "otherMatches": [
+        {
+          "semantic": "series",
+          "moduleId": "2115",
+          "score": 0.35,
+          "confidence": "LOW",
+          "breakdown": [
+            {
+              "type": "export_keyword",
+              "value": 0.15
+            },
+            {
+              "type": "export_exact",
+              "value": 0.2
+            }
+          ]
+        },
+        {
+          "semantic": "seriesBarFunction",
+          "moduleId": "17776",
+          "score": 0.25,
+          "confidence": "LOW",
+          "breakdown": [
+            {
+              "type": "export_keyword",
+              "value": 0.15
+            },
+            {
+              "type": "function_keyword",
+              "value": 0.1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "87911",
+      "suggestedName": "watchedValue",
+      "score": 0.4,
+      "confidence": "MEDIUM",
+      "otherMatches": []
+    },
+    {
+      "moduleId": "8811",
+      "suggestedName": "watchedValue",
+      "score": 0.4,
+      "confidence": "MEDIUM",
+      "otherMatches": []
+    },
+    {
+      "moduleId": "99247",
+      "suggestedName": "lineToolManager",
+      "score": 0.4,
+      "confidence": "MEDIUM",
+      "otherMatches": [
+        {
+          "semantic": "watchedValue",
+          "moduleId": "2072",
+          "score": 0.25,
+          "confidence": "LOW",
+          "breakdown": [
+            {
+              "type": "class_exact",
+              "value": 0.25
+            }
+          ]
+        },
+        {
+          "semantic": "lineToolUtils",
+          "moduleId": "11946",
+          "score": 0.2,
+          "confidence": "LOW",
+          "breakdown": [
+            {
+              "type": "string_keyword",
+              "value": 0.1
+            },
+            {
+              "type": "string_keyword",
+              "value": 0.1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

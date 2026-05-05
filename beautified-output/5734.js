@@ -1,0 +1,22 @@
+/**
+ * Module 5734 - Beautified
+ * Auto-formatted from webpack bundle
+ * Semantic variable names applied
+ */
+
+5734: (e, t, i) => {
+    "use strict";
+    i.d(t, {
+      doNotShowDeleteLockedLineConfirmProperty: () => a,
+      doNotShowDeleteLockedLineKey: () => n
+    });
+    var settingsAdapter = i(1765),
+      o = i(41072);
+    const n = "do_not_show_delete_locked_line_confirm";
+
+    function r() {
+      return settingsAdapter.getBool(n, !1)
+    }
+    const a = (0, o.createPrimitiveProperty)(r());
+    a.subscribe(null, (() => settingsAdapter.setValue(n, a.value()))), settingsAdapter.onSync.subscribe(null, (() => a
+      .setValue(r())))

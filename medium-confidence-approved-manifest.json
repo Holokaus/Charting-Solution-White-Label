@@ -1,0 +1,224 @@
+{
+  "timestamp": "2026-05-03T17:42:43.824Z",
+  "totalArchived": 24,
+  "quality": "GOOD (75-90%)",
+  "modules": [
+    {
+      "moduleId": "95772",
+      "semanticName": "watchedValue",
+      "confidence": 0.5,
+      "validationScore": 87.5,
+      "quality": "GOOD",
+      "checksPasseed": 7,
+      "archived": "2026-05-03T17:42:43.770Z"
+    },
+    {
+      "moduleId": "4745",
+      "semanticName": "dialogManager",
+      "confidence": 0.5,
+      "validationScore": 75,
+      "quality": "GOOD",
+      "checksPasseed": 6,
+      "archived": "2026-05-03T17:42:43.774Z"
+    },
+    {
+      "moduleId": "8811",
+      "semanticName": "watchedValue",
+      "confidence": 0.6,
+      "validationScore": 75,
+      "quality": "GOOD",
+      "checksPasseed": 6,
+      "archived": "2026-05-03T17:42:43.776Z"
+    },
+    {
+      "moduleId": "19334",
+      "semanticName": "lineToolUtils",
+      "confidence": 0.5,
+      "validationScore": 75,
+      "quality": "GOOD",
+      "checksPasseed": 6,
+      "archived": "2026-05-03T17:42:43.778Z"
+    },
+    {
+      "moduleId": "26867",
+      "semanticName": "dialogManager",
+      "confidence": 0.5,
+      "validationScore": 75,
+      "quality": "GOOD",
+      "checksPasseed": 6,
+      "archived": "2026-05-03T17:42:43.779Z"
+    },
+    {
+      "moduleId": "32544",
+      "semanticName": "lineToolUtils",
+      "confidence": 0.5,
+      "validationScore": 75,
+      "quality": "GOOD",
+      "checksPasseed": 6,
+      "archived": "2026-05-03T17:42:43.782Z"
+    },
+    {
+      "moduleId": "32925",
+      "semanticName": "watchedValue",
+      "confidence": 0.6,
+      "validationScore": 75,
+      "quality": "GOOD",
+      "checksPasseed": 6,
+      "archived": "2026-05-03T17:42:43.785Z"
+    },
+    {
+      "moduleId": "39527",
+      "semanticName": "dialogManager",
+      "confidence": 0.5,
+      "validationScore": 75,
+      "quality": "GOOD",
+      "checksPasseed": 6,
+      "archived": "2026-05-03T17:42:43.788Z"
+    },
+    {
+      "moduleId": "39612",
+      "semanticName": "dialogManager",
+      "confidence": 0.5,
+      "validationScore": 75,
+      "quality": "GOOD",
+      "checksPasseed": 6,
+      "archived": "2026-05-03T17:42:43.790Z"
+    },
+    {
+      "moduleId": "48961",
+      "semanticName": "dialogManager",
+      "confidence": 0.5,
+      "validationScore": 75,
+      "quality": "GOOD",
+      "checksPasseed": 6,
+      "archived": "2026-05-03T17:42:43.792Z"
+    },
+    {
+      "moduleId": "49251",
+      "semanticName": "dialogManager",
+      "confidence": 0.5,
+      "validationScore": 75,
+      "quality": "GOOD",
+      "checksPasseed": 6,
+      "archived": "2026-05-03T17:42:43.794Z"
+    },
+    {
+      "moduleId": "50470",
+      "semanticName": "lineToolUtils",
+      "confidence": 0.5,
+      "validationScore": 75,
+      "quality": "GOOD",
+      "checksPasseed": 6,
+      "archived": "2026-05-03T17:42:43.796Z"
+    },
+    {
+      "moduleId": "51052",
+      "semanticName": "seriesData",
+      "confidence": 0.6,
+      "validationScore": 75,
+      "quality": "GOOD",
+      "checksPasseed": 6,
+      "archived": "2026-05-03T17:42:43.799Z"
+    },
+    {
+      "moduleId": "52706",
+      "semanticName": "dialogManager",
+      "confidence": 0.5,
+      "validationScore": 75,
+      "quality": "GOOD",
+      "checksPasseed": 6,
+      "archived": "2026-05-03T17:42:43.801Z"
+    },
+    {
+      "moduleId": "55014",
+      "semanticName": "seriesBarFunction",
+      "confidence": 0.6,
+      "validationScore": 75,
+      "quality": "GOOD",
+      "checksPasseed": 6,
+      "archived": "2026-05-03T17:42:43.804Z"
+    },
+    {
+      "moduleId": "56186",
+      "semanticName": "dialogManager",
+      "confidence": 0.5,
+      "validationScore": 75,
+      "quality": "GOOD",
+      "checksPasseed": 6,
+      "archived": "2026-05-03T17:42:43.806Z"
+    },
+    {
+      "moduleId": "57340",
+      "semanticName": "watchedValue",
+      "confidence": 0.6,
+      "validationScore": 75,
+      "quality": "GOOD",
+      "checksPasseed": 6,
+      "archived": "2026-05-03T17:42:43.808Z"
+    },
+    {
+      "moduleId": "64971",
+      "semanticName": "dialogManager",
+      "confidence": 0.5,
+      "validationScore": 75,
+      "quality": "GOOD",
+      "checksPasseed": 6,
+      "archived": "2026-05-03T17:42:43.809Z"
+    },
+    {
+      "moduleId": "68659",
+      "semanticName": "timeInterval",
+      "confidence": 0.55,
+      "validationScore": 75,
+      "quality": "GOOD",
+      "checksPasseed": 6,
+      "archived": "2026-05-03T17:42:43.812Z"
+    },
+    {
+      "moduleId": "72104",
+      "semanticName": "deleteLockedLineTools",
+      "confidence": 0.6,
+      "validationScore": 75,
+      "quality": "GOOD",
+      "checksPasseed": 6,
+      "archived": "2026-05-03T17:42:43.814Z"
+    },
+    {
+      "moduleId": "84696",
+      "semanticName": "lineToolManager",
+      "confidence": 0.6,
+      "validationScore": 75,
+      "quality": "GOOD",
+      "checksPasseed": 6,
+      "archived": "2026-05-03T17:42:43.816Z"
+    },
+    {
+      "moduleId": "87163",
+      "semanticName": "watchedValue",
+      "confidence": 0.5,
+      "validationScore": 75,
+      "quality": "GOOD",
+      "checksPasseed": 6,
+      "archived": "2026-05-03T17:42:43.818Z"
+    },
+    {
+      "moduleId": "94194",
+      "semanticName": "dialogManager",
+      "confidence": 0.5,
+      "validationScore": 75,
+      "quality": "GOOD",
+      "checksPasseed": 6,
+      "archived": "2026-05-03T17:42:43.821Z"
+    },
+    {
+      "moduleId": "95322",
+      "semanticName": "dialogManager",
+      "confidence": 0.5,
+      "validationScore": 75,
+      "quality": "GOOD",
+      "checksPasseed": 6,
+      "archived": "2026-05-03T17:42:43.823Z"
+    }
+  ],
+  "outputDirectory": "./tier-three-medium-confidence-approved"
+}

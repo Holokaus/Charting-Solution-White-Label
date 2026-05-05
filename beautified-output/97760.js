@@ -1,0 +1,15 @@
+/**
+ * Module 97760 - Beautified
+ * Auto-formatted from webpack bundle
+ * Semantic variable names applied
+ */
+
+97760: (e, t, i) => {
+    "use strict";
+    var s;
+    i.d(t, {
+        StatsPosition: () => s
+      }),
+      function(e) {
+        e[e.Left = 0] = "Left", e[e.Center = 1] = "Center", e[e.Right = 2] = "Right", e[e.Auto = 3] = "Auto"
+      }(s || (s = {}))

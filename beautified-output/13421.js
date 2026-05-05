@@ -1,0 +1,156 @@
+/**
+ * Module 13421 - Beautified
+ * Auto-formatted from webpack bundle
+ * Semantic variable names applied
+ */
+
+13421: (e, t, i) => {
+    "use strict";
+    i.d(t, {
+      JStudyDataUpdate: () => p
+    });
+    var s = i(75719);
+    class o {
+      constructor() {
+        this.isUpdate = !1, this.graphicsCmds = new s.GraphicsCmds, this._offsetsChanged = !1, this
+          ._disableGraphicsAndData = !1
+      }
+      isNaN() {
+        return this.graphicsCmds.isNaN()
+      }
+      primitiveData(e) {
+        const t = {};
+        if (!this._disableGraphicsAndData) {
+          const i = this.graphicsCmds.primitiveData(e);
+          null !== i && (t.graphicsCmds = i)
+        }
+        return this.isUpdate && (t.isUpdate = !0), void 0 === t.graphicsCmds ? void 0 : t
+      }
+      disable() {
+        this._disableGraphicsAndData = !0
+      }
+      checkForChangeAndResetChangedState(e) {
+        const t = this._offsetsChanged,
+          i = this.graphicsCmds.isModified();
+        this.graphicsCmds.setModified(!1), this._offsetsChanged = !1;
+        return i || t || 0 !== e.length
+      }
+    }
+    class n {
+      constructor(e) {
+        this._dataObj = new o, this._isDirty = !1, this._eraseCmds = [], this._enableCmdDataStudy = e
+      }
+      init(e) {
+        this._dataObj.graphicsCmds.setCreate(e), this.update(!0)
+      }
+      dataObj() {
+        return this._dataObj
+      }
+      setEraseCmds(e) {
+        this._eraseCmds = e
+      }
+      resetDirtyState() {
+        this._isDirty = !1
+      }
+      disable() {
+        this._dataObj.disable()
+      }
+    }
+    var r, a = i(87465),
+      l = i(31645);
+
+    function c(e) {
+      return Boolean(e.isPosted)
+    }! function(e) {
+      e[e.New = 0] = "New", e[e.Posted = 1] = "Posted", e[e.Erased = 2] = "Erased"
+    }(r || (r = {}));
+    class h {
+      isIgnoredObj(e, t) {
+        return h.isIgnoredObjDefault(e, t)
+      }
+      static isIgnoredObjDefault(e, t) {
+        if (void 0 === t) return h.isIgnoredObjNaNable(e);
+        const i = e[t];
+        return h.isIgnoredByGeneralRules(e, t) || h.isIgnoredObjNaNable(i) || h.isIgnoredObjListOfNaNables(i)
+      }
+      static isIgnoredObjNaNable(e) {
+        return (0, l.isNaNable)(e) && e.isNaN()
+      }
+      static isIgnoredObjListOfNaNables(e) {
+        if (!(0, a.isArray)(e)) return !1;
+        let t = !0;
+        for (const i of e)
+          if (!(0, l.isNaNable)(i) || !i.isNaN()) {
+            t = !1;
+            break
+          } return t
+      }
+      static isIgnoredObjPosted(e) {
+        return c(e) && e.isPosted()
+      }
+      static isIgnoredObjErased(e) {
+        return c(e) && e.isErased()
+      }
+      static isIgnoredByGeneralRules(e, t) {
+        const i = e[t];
+        return (0, a.isArray)(i) && 0 === i.length
+      }
+    }
+    class d {
+      isIgnoredObj(e, t) {
+        if (void 0 === t) return h.isIgnoredObjDefault(e) || h.isIgnoredObjErased(e);
+        const i = e[t];
+        return h.isIgnoredObjDefault(e, t) || h.isIgnoredObjErased(i)
+      }
+    }
+    class u extends n {
+      constructor(e) {
+        super(e), this._snapshotPredicate = new d, this._dataSnapShot = {}
+      }
+      getData() {
+        return this._dataSnapShot
+      }
+      getUpdate() {
+        return this._isDirty ? this._dataSnapShot : {}
+      }
+      update(e) {
+        (this._dataObj.checkForChangeAndResetChangedState(this._eraseCmds) || e) && (null !== this._dataObj
+          .graphicsCmds.create && (this._dataObj.graphicsCmds.create.deleteErasedObjs(), this._dataObj.graphicsCmds
+            .erase = [new s.EraseAll]), this._makeSnapshot(), this._isDirty = !0)
+      }
+      _makeSnapshot() {
+        this._json = this._dataObj.primitiveData(this._snapshotPredicate), this._dataSnapShot = {
+          json: this._json
+        }
+      }
+    }
+    class _ {
+      isIgnoredObj(e, t) {
+        if (void 0 === t) return h.isIgnoredObjDefault(e) || h.isIgnoredObjErased(e) || h.isIgnoredObjPosted(e);
+        const i = e[t];
+        return h.isIgnoredObjDefault(e, t) || h.isIgnoredObjErased(i) || h.isIgnoredObjPosted(i)
+      }
+    }
+    class p extends u {
+      constructor(e) {
+        super(e), this._updatePredicate = new _, this._sendShapshotOnly = !0, this._isFirstNotForcedUpdate = !0
+      }
+      update(e) {
+        (this._dataObj.checkForChangeAndResetChangedState(this._eraseCmds) || e) && (null !== this._dataObj
+          .graphicsCmds.create && (this._dataObj.graphicsCmds.erase = [new s.EraseAll]), this._dataObj.isUpdate = !0,
+          this._makeSnapshot(), null !== this._dataObj.graphicsCmds.create && (this._dataObj.graphicsCmds.erase = this
+            ._eraseCmds), this._dataObj.isUpdate = !0, this._jsonUpdate = this._dataObj.primitiveData(this
+            ._updatePredicate), null !== this._dataObj.graphicsCmds.create && this._dataObj.graphicsCmds.create
+          .deleteErasedAndMarkPostedObjs(), this._sendShapshotOnly = e || this._isFirstNotForcedUpdate, this
+          ._isFirstNotForcedUpdate = Boolean(e), this._isDirty = !0)
+      }
+      getUpdate() {
+        return this._isDirty ? this._enableCmdDataStudy ? {
+          json: this._sendShapshotOnly ? this._json : void 0,
+          jsonUpdate: this._sendShapshotOnly ? void 0 : this._jsonUpdate
+        } : {
+          json: this._json,
+          jsonUpdate: this._sendShapshotOnly ? void 0 : this._jsonUpdate
+        } : {}
+      }
+    }

@@ -1,0 +1,135 @@
+/**
+ * Module 2088 - Beautified
+ * Auto-formatted from webpack bundle
+ * Semantic variable names applied
+ */
+
+2088: (e, t, i) => {
+    "use strict";
+    i.d(t, {
+      createStudy: () => w,
+      hasConfirmInputs: () => x,
+      hasPendingStudiesModuleLoading: () => b,
+      isCompareOrOverlayStudy: () => v,
+      isESDStudy: () => f,
+      isFundamentalStudy: () => g,
+      isOverlayStudy: () => y,
+      isStudy: () => _,
+      isStudyStrategy: () => p,
+      isStudyStub: () => m,
+      isSymbolicStudy: () => I,
+      studyColorRotationMode: () => C,
+      useSameColorRotationComparator: () => P
+    });
+    var s = i(88987),
+      o = i(50151),
+      n = i(37103),
+      r = i(19844),
+      a = i(2258);
+    const l = "study_Internal$STD;Fund_";
+
+    function c(e) {
+      const t = "study_" + (e.classId || e.shortId);
+      return t.startsWith(l) ? l : t
+    }
+    var h = i(62312);
+    i(72207);
+    const d = (0, h.createStudyInfo)((() => Promise.all([i.e(8736), i.e(6025), i.e(9378), i.e(1485), i.e(5456), i.e(
+      7539)]).then(i.bind(i, 11485)).then((e => e.Study))));
+    (0, h.addStudyInfoToMap)("Study", d), (0, h.addStudyInfoToMap)("study_PivotPointsStandard", (0, h.createStudyInfo)((
+      () => Promise.all([i.e(8736), i.e(6025), i.e(9378), i.e(1485), i.e(5456), i.e(7539)]).then(i.bind(i, 96664))
+      .then((e => e.study_PivotPointsStandard))))), (0, h.addStudyInfoToMap)("study_Overlay", (0, h.createStudyInfo)((
+    () => Promise.all([i.e(8736), i.e(6025), i.e(9378), i.e(1485), i.e(5456), i.e(7539)]).then(i.bind(i, 34771))
+      .then((e => e.study_Overlay))), "sexyColors")), (0, h.addStudyInfoToMap)("study_Compare", (0, h.createStudyInfo)((
+      () => Promise.all([i.e(8736), i.e(6025), i.e(9378), i.e(1485), i.e(5456), i.e(7539)]).then(i.bind(i, 55456))
+      .then((e => e.StudyCompare))), "sexyColors")), (0, h.addStudyInfoToMap)("study_Volume", (0, h.createStudyInfo)((
+    () => Promise.all([i.e(8736), i.e(6025), i.e(9378), i.e(1485), i.e(5456), i.e(7539)]).then(i.bind(i, 51106))
+      .then((e => e.VolumeStudy))))), (0, h.addStudyInfoToMap)("study_VbPVisible", (0, h.createStudyInfo)((() => Promise
+      .all([i.e(8736), i.e(6025), i.e(9378), i.e(1485), i.e(5456), i.e(7539)]).then(i.bind(i, 10635)).then((e => e
+        .VbPVisibleWrapper))), "noRotations")), (0, h.addStudyInfoToMap)("study_VbPFixed", (0,
+      h.createStudyInfo)((() => Promise.all([i.e(8736), i.e(6025), i.e(9378), i.e(1485), i.e(5456), i.e(7539)]).then(i
+      .bind(i, 10635)).then((e => e.VolumeProfileStudyWithThemedColors))), "noRotations")), (0, h.addStudyInfoToMap)(
+      "study_ScriptWithDataOffset", (0, h.createStudyInfo)((() => Promise.all([i.e(8736), i.e(6025), i.e(9378), i.e(
+        1485), i.e(5456), i.e(7539)]).then(i.bind(i, 75848)).then((e => e.study_ScriptWithDataOffset))))), n.enabled(
+      "moving_average_study_changable_currency_unit") && (0, h.addStudyInfoToMap)("study_Moving Average", (0, h
+      .createStudyInfo)((() => Promise.all([i.e(7598), i.e(6025), i.e(9378), i.e(1485), i.e(5248)]).then(i.bind(i,
+      45135)).then((e => e.study_MovingAverage)))));
+    const u = ["studyName", "guiPlotName", "isLinkedToSeries"];
+
+    function _(e) {
+      return u.every((t => t in e))
+    }
+
+    function p(e) {
+      return !1
+    }
+
+    function m(e) {
+      return e instanceof a.StudyStub
+    }
+
+    function g(e) {
+      return !1
+    }
+
+    function f(e) {
+      return !1
+    }
+
+    function y(e) {
+      return _(e) && "Overlay@tv-basicstudies" === e.metaInfo().id
+    }
+
+    function v(e) {
+      return y(e) || _(e) && "Compare@tv-basicstudies" === e.metaInfo().id
+    }
+    let S = 0;
+
+    function b() {
+      return S > 0
+    }
+    async function w(e, t, i, s, n, r, a, l) {
+      let u;
+      const _ = 2 === a;
+      if (!u) {
+        const e = c(s);
+        u = (0, h.getStudyInfoByName)(e ?? "Study") ?? d
+      }
+      u.studyConstructor || (S += 1, u.studyConstructor = await (0, o.ensureDefined)(u.studyConstructorAsyncGetter)(),
+        S -= 1);
+      const p = new((0, o.ensureDefined)(u?.studyConstructor))(e, t, i, s, n, _, !!l);
+      return void 0 !== r && p.setId(r), p
+    }
+
+    function C(e) {
+      const t = c(e),
+        i = (0, h.getStudyInfoByName)(t);
+      return i ? (0, s.default)(i.colorRotationMode) ? i.colorRotationMode(e) : i.colorRotationMode : void 0 === e
+        .pine || r.StudyMetaInfo.isStandardPine(e.id) ? 1 !== e.plots.length ? "shift" : "loop" : null
+    }
+
+    function T(e, t) {
+      return e.id === t.id && (s = t, ((i = e).pine ? i.pine.version : void 0) === (s.pine ? s.pine.version : void 0));
+      var i, s
+    }
+
+    function P(e) {
+      const t = c(e),
+        i = (0, h.getStudyInfoByName)(t);
+      if (i) {
+        const e = i.colorRotationComparator;
+        if (void 0 !== e) return e
+      }
+      return T
+    }
+
+    function x(e) {
+      return (e ?? []).some((e => e.confirm))
+    }
+    const M = ["Overlay@tv-basicstudies", "CorrelationCoefficient@tv-basicstudies", "Correlation Coeff@tv-basicstudies",
+      "Spread@tv-basicstudies", "Ratio@tv-basicstudies"
+    ];
+
+    function I(e) {
+      return M.includes(e.id)
+    }

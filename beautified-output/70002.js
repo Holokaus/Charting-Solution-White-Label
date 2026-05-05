@@ -1,0 +1,18 @@
+/**
+ * Module 70002 - Beautified
+ * Auto-formatted from webpack bundle
+ * Semantic variable names applied
+ */
+
+70002: (e, t, i) => {
+    "use strict";
+    var s;
+    i.d(t, {
+        TabNames: () => s
+      }),
+      function(e) {
+        e.background = "Background", e.coordinates = "Coordinates", e.drawings = "Drawings", e.events = "Events", e
+          .alerts = "Alerts", e.inputs = "Inputs", e.properties = "Properties", e.scales = "Scales", e.legend =
+          "Legend", e.sourceCode = "Source Code", e.style = "Style", e.symbol = "Symbol", e.timezoneSessions =
+          "Timezone/Sessions", e.trading = "Trading", e.visibility = "Visibility", e.text = "Text"
+      }(s || (s = {}))

@@ -1,0 +1,33 @@
+{
+  "modules": 4,
+  "totalReplacements": 64,
+  "byCategory": {
+    "tier3_high": {
+      "modules": 4,
+      "replacements": 64
+    }
+  },
+  "errors": [],
+  "applied": [
+    {
+      "moduleId": "12217",
+      "semantic": "tier3_high",
+      "replacements": 25
+    },
+    {
+      "moduleId": "4168",
+      "semantic": "tier3_high",
+      "replacements": 14
+    },
+    {
+      "moduleId": "68335",
+      "semantic": "tier3_high",
+      "replacements": 14
+    },
+    {
+      "moduleId": "76662",
+      "semantic": "tier3_high",
+      "replacements": 11
+    }
+  ]
+}

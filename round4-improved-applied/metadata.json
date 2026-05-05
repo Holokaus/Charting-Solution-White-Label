@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-05-05T16:03:26.260Z",
+  "version": "Round 4 Improved V2",
+  "applied": 1,
+  "totalReplacements": 2,
+  "results": [
+    {
+      "moduleId": "11751",
+      "semantic": "watchedValue",
+      "score": 100,
+      "keywords": 3,
+      "replacements": 2,
+      "status": "APPLIED"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+/**
+ * Module 94839 - Beautified
+ * Auto-formatted from webpack bundle
+ * Semantic variable names applied
+ */
+
+94839: e => {
+    e.exports =
+      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28" width="28" height="28"><path fill="currentColor" d="M23 6v1H5V6h18ZM14 16v-5h1v5h5v1h-5v5h-1v-5H9v-1h5Z"/></svg>'

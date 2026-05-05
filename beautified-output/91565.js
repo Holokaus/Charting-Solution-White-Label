@@ -1,0 +1,138 @@
+/**
+ * Module 91565 - Beautified
+ * Auto-formatted from webpack bundle
+ * Semantic variable names applied
+ */
+
+91565: (e, t, i) => {
+    "use strict";
+    i.d(t, {
+      VolumeFormatter: () => l
+    });
+    var s = i(11542),
+      o = i(97906),
+      n = i(87465);
+    const r = [{
+      value: 3,
+      letter: "K"
+    }, {
+      value: 6,
+      letter: "M"
+    }, {
+      value: 9,
+      letter: "B"
+    }, {
+      value: 12,
+      letter: "T"
+    }];
+
+    function a(e, t) {
+      const i = e - t;
+      return r.find((e => e.value >= i)) ?? r[r.length - 1]
+    }
+    class l {
+      constructor(e = {}) {
+        this.type = "volume";
+        const {
+          precision: t = 0,
+          minPrecision: i = 0,
+          dimensionPrecision: s = 2,
+          dimensionMinPrecision: n = 0,
+          significantDigits: r = 3,
+          ignoreLocaleNumberFormat: a,
+          noExponentialForm: l,
+          removeSpaceBeforeDimension: c
+        } = e;
+        this._precision = t, this._formatter = new o.NumericFormatter({
+            ignoreLocaleNumberFormat: a,
+            precision: this._precision,
+            minPrecision: i,
+            noExponentialForm: l
+          }), this._dimensionPrecision = s, this._dimensionFormatter = new o.NumericFormatter({
+            ignoreLocaleNumberFormat: a,
+            precision: this._dimensionPrecision,
+            minPrecision: n,
+            noExponentialForm: l
+          }), this._significantDigits = r,
+          this._fractionalValues = void 0 !== t && t > 0, this._spaceBeforeDimension = c ? "" : " ", this._options = e
+      }
+      state() {
+        const {
+          ignoreLocaleNumberFormat: e,
+          ...t
+        } = this._options;
+        return t
+      }
+      format(e, t) {
+        if (!(0, n.isNumber)(e)) return "---";
+        if (Math.abs(e) >= 1e100) return s.t(null, void 0, i(96935));
+        let o = "";
+        Math.abs(e) < 1 && (e = +e.toFixed(this._precision)), e < 0 ? o = "−" : e > 0 && t?.signPositive && (o = "+"),
+          e = Math.abs(e);
+        const r = !!(t?.ignoreLocaleNumberFormat ?? this._options.ignoreLocaleNumberFormat);
+        let l, c, h = Math.floor(Math.log10(e)) + 1;
+        if (h <= this._significantDigits && (e = +e.toFixed(this._precision), h = Math.floor(Math.log10(e)) + 1), h <=
+          this._significantDigits) l = this._formatNumber(e, r, this._formatter);
+        else {
+          let t = a(h, this._significantDigits);
+          const i = Math.pow(10, t.value);
+          e = +(e / i).toFixed(this._dimensionPrecision) * i, t = a(Math.floor(Math.log10(e)) + 1, this
+              ._significantDigits), l = this._formatNumber(e / Math.pow(10, t.value), r, this._dimensionFormatter),
+            c = t.letter
+        }
+        return c ? `${o}${l}${this._spaceBeforeDimension}${c}` : `${o}${l}`
+      }
+      parse(e, t) {
+        if ("---" === e) return {
+          error: "not a number",
+          res: !1,
+          value: NaN
+        };
+        const i = {
+            K: 1e3,
+            M: 1e6,
+            B: 1e9,
+            T: 1e12
+          },
+          s = (e = e.replace("−", "-")).slice(-1);
+        if (i.hasOwnProperty(s)) {
+          const o = this._formatter.parse(e.slice(0, -1).trim(), t),
+            r = o.res ? o.value : NaN;
+          return (0, n.isNumber)(r) ? {
+            res: !0,
+            value: r * i[s]
+          } : {
+            error: "not a number",
+            res: !1,
+            value: NaN
+          }
+        } {
+          const i = this._formatter.parse(e.trim(), t);
+          let s = i.res ? i.value : NaN;
+          return -0 === s && (s = 0), (0, n.isNumber)(s) ? {
+            res: !0,
+            value: s
+          } : {
+            error: "not a number",
+            res: !1,
+            value: NaN
+          }
+        }
+      }
+      static serialize(e) {
+        return e.state()
+      }
+      static deserialize(e) {
+        return new l(e)
+      }
+      _formatNumber(e, t, i) {
+        if (this._fractionalValues && 0 !== e) {
+          const t = 14 - Math.ceil(Math.log10(e)),
+            i = Math.pow(10, t);
+          e = Math.round(e * i) / i
+        }
+        return i.format(e, {
+          ignoreLocaleNumberFormat: t
+        })
+      }
+    }

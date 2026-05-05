@@ -1,0 +1,29 @@
+/**
+ * Module 80671 - Beautified
+ * Auto-formatted from webpack bundle
+ * Semantic variable names applied
+ */
+
+80671: (e, t, i) => {
+    "use strict";
+    i.d(t, {
+      StudyStatusView: () => o
+    });
+    var s = i(13651);
+    class o extends s.StatusView {
+      constructor(e) {
+        super(e.statusProvider())
+      }
+      getSplitTitle() {
+        return this._statusProvider.getSplitTitle()
+      }
+      titleTooltip() {
+        return this._statusProvider.titleTooltip()
+      }
+      getInputsTitles() {
+        return this._statusProvider.getInputsTitles()
+      }
+      update(e) {
+        this._text = this._statusProvider.text()
+      }
+    }

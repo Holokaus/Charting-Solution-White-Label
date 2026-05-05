@@ -1,0 +1,28 @@
+/**
+ * Module 64971 - Beautified
+ * Auto-formatted from webpack bundle
+ * Semantic variable names applied
+ */
+
+64971: (e, t, i) => {
+    "use strict";
+    i.d(t, {
+      getImage: () => n
+    });
+    const s = new Map;
+
+    function o(e) {
+      e.crossOrigin = "anonymous"
+    }
+
+    function n(e, t, i = o) {
+      let n = s.get(e);
+      return void 0 === n && (n = new Promise(((e, s) => {
+        const o = new Image;
+        o.onload = () => {
+          e(o), o.onload = null, o.onerror = null
+        }, o.onerror = () => {
+          s(), o.onload = null, o.onerror = null
+        }, i(o), o.src = t
+      })), s.set(e, n)), n
+    }

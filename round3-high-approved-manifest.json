@@ -1,0 +1,30 @@
+{
+  "4168": {
+    "semanticName": "tier3_high",
+    "quality": "GOOD",
+    "score": "75.0",
+    "source": "round3-high",
+    "archived": "2026-05-05T14:45:57.169Z"
+  },
+  "12217": {
+    "semanticName": "tier3_high",
+    "quality": "GOOD",
+    "score": "87.5",
+    "source": "round3-high",
+    "archived": "2026-05-05T14:45:57.165Z"
+  },
+  "68335": {
+    "semanticName": "tier3_high",
+    "quality": "GOOD",
+    "score": "75.0",
+    "source": "round3-high",
+    "archived": "2026-05-05T14:45:57.170Z"
+  },
+  "76662": {
+    "semanticName": "tier3_high",
+    "quality": "GOOD",
+    "score": "75.0",
+    "source": "round3-high",
+    "archived": "2026-05-05T14:45:57.172Z"
+  }
+}

@@ -1,0 +1,21 @@
+/**
+ * Module 33065 - Beautified
+ * Auto-formatted from webpack bundle
+ * Semantic variable names applied
+ */
+
+33065: (e, t, i) => {
+    "use strict";
+    i.d(t, {
+      dpr1PixelRatioInfo: () => s,
+      equalPixelRatios: () => o
+    });
+    i(27714);
+    const s = {
+      horizontalPixelRatio: 1,
+      verticalPixelRatio: 1
+    };
+
+    function o(e, t) {
+      return e.horizontalPixelRatio === t.horizontalPixelRatio && e.verticalPixelRatio === t.verticalPixelRatio
+    }

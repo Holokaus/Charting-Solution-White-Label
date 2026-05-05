@@ -1,0 +1,1009 @@
+{
+  "timestamp": "2026-05-05T14:41:00.748Z",
+  "baselineSize": 326,
+  "summary": {
+    "highConf": 4,
+    "medConf": 28,
+    "lowConf": 27
+  },
+  "discoveries": [
+    {
+      "moduleId": "11751",
+      "tier": "MEDIUM",
+      "suggested": "watchedValue",
+      "score": 0.6,
+      "matches": [
+        {
+          "semantic": "watchedValue",
+          "matchedTo": "2072",
+          "score": 0.6,
+          "matchCount": 4
+        },
+        {
+          "semantic": "watchedValue",
+          "matchedTo": "18712",
+          "score": 0.6,
+          "matchCount": 4
+        },
+        {
+          "semantic": "watchedValue",
+          "matchedTo": "48943",
+          "score": 0.6,
+          "matchCount": 4
+        }
+      ]
+    },
+    {
+      "moduleId": "12178",
+      "tier": "MEDIUM_LOW",
+      "suggested": "timeInterval",
+      "score": 0.44999999999999996
+    },
+    {
+      "moduleId": "12217",
+      "tier": "HIGH",
+      "suggested": "tier3_high",
+      "matchedTo": "16879",
+      "score": 1,
+      "matches": [
+        {
+          "semantic": "tier3_high",
+          "matchedTo": "16879",
+          "score": 1,
+          "matchCount": 6
+        },
+        {
+          "semantic": "tier3_high",
+          "matchedTo": "76422",
+          "score": 0.30000000000000004,
+          "matchCount": 2
+        },
+        {
+          "semantic": "chunkLoaderModule",
+          "matchedTo": "38881",
+          "score": 0.25,
+          "matchCount": 2
+        }
+      ]
+    },
+    {
+      "moduleId": "13896",
+      "tier": "MEDIUM_LOW",
+      "suggested": "lineToolUtils",
+      "score": 0.4
+    },
+    {
+      "moduleId": "1395",
+      "tier": "MEDIUM",
+      "suggested": "deleteLockedLineTools",
+      "score": 0.6,
+      "matches": [
+        {
+          "semantic": "deleteLockedLineTools",
+          "matchedTo": "16708",
+          "score": 0.6,
+          "matchCount": 4
+        },
+        {
+          "semantic": "lineToolManager",
+          "matchedTo": "78861",
+          "score": 0.6,
+          "matchCount": 4
+        },
+        {
+          "semantic": "chunkLoaderModule",
+          "matchedTo": "55803",
+          "score": 0.44999999999999996,
+          "matchCount": 3
+        }
+      ]
+    },
+    {
+      "moduleId": "14881",
+      "tier": "MEDIUM",
+      "suggested": "tier3_high",
+      "score": 0.5,
+      "matches": [
+        {
+          "semantic": "tier3_high",
+          "matchedTo": "38780",
+          "score": 0.5,
+          "matchCount": 3
+        },
+        {
+          "semantic": "chunkLoaderModule",
+          "matchedTo": "55803",
+          "score": 0.44999999999999996,
+          "matchCount": 3
+        },
+        {
+          "semantic": "series",
+          "matchedTo": "2115",
+          "score": 0.30000000000000004,
+          "matchCount": 2
+        }
+      ]
+    },
+    {
+      "moduleId": "15574",
+      "tier": "MEDIUM_LOW",
+      "suggested": "seriesBarFunction",
+      "score": 0.44999999999999996
+    },
+    {
+      "moduleId": "18113",
+      "tier": "MEDIUM_LOW",
+      "suggested": "seriesBarFunction",
+      "score": 0.44999999999999996
+    },
+    {
+      "moduleId": "22613",
+      "tier": "MEDIUM",
+      "suggested": "watchedValue",
+      "score": 0.6,
+      "matches": [
+        {
+          "semantic": "watchedValue",
+          "matchedTo": "2072",
+          "score": 0.6,
+          "matchCount": 4
+        },
+        {
+          "semantic": "watchedValue",
+          "matchedTo": "18712",
+          "score": 0.4,
+          "matchCount": 3
+        },
+        {
+          "semantic": "watchedValue",
+          "matchedTo": "33718",
+          "score": 0.4,
+          "matchCount": 3
+        }
+      ]
+    },
+    {
+      "moduleId": "24633",
+      "tier": "MEDIUM",
+      "suggested": "tier3_high",
+      "score": 0.5,
+      "matches": [
+        {
+          "semantic": "tier3_high",
+          "matchedTo": "19979",
+          "score": 0.5,
+          "matchCount": 3
+        },
+        {
+          "semantic": "chunkLoaderModule",
+          "matchedTo": "55803",
+          "score": 0.44999999999999996,
+          "matchCount": 3
+        },
+        {
+          "semantic": "series",
+          "matchedTo": "2115",
+          "score": 0.30000000000000004,
+          "matchCount": 2
+        }
+      ]
+    },
+    {
+      "moduleId": "25338",
+      "tier": "MEDIUM",
+      "suggested": "dialogManager",
+      "score": 0.5,
+      "matches": [
+        {
+          "semantic": "dialogManager",
+          "matchedTo": "3615",
+          "score": 0.5,
+          "matchCount": 3
+        },
+        {
+          "semantic": "tier3_high",
+          "matchedTo": "22455",
+          "score": 0.5,
+          "matchCount": 3
+        },
+        {
+          "semantic": "tier3_medium",
+          "matchedTo": "39527",
+          "score": 0.5,
+          "matchCount": 3
+        }
+      ]
+    },
+    {
+      "moduleId": "25672",
+      "tier": "MEDIUM_LOW",
+      "suggested": "deleteLockedLineTools",
+      "score": 0.44999999999999996
+    },
+    {
+      "moduleId": "26010",
+      "tier": "MEDIUM",
+      "suggested": "tier3_high",
+      "score": 0.5,
+      "matches": [
+        {
+          "semantic": "tier3_high",
+          "matchedTo": "76422",
+          "score": 0.5,
+          "matchCount": 3
+        },
+        {
+          "semantic": "tier3_high",
+          "matchedTo": "4359",
+          "score": 0.30000000000000004,
+          "matchCount": 2
+        },
+        {
+          "semantic": "tier3_high",
+          "matchedTo": "4539",
+          "score": 0.30000000000000004,
+          "matchCount": 2
+        }
+      ]
+    },
+    {
+      "moduleId": "30342",
+      "tier": "MEDIUM_LOW",
+      "suggested": "chunkLoaderModule",
+      "score": 0.44999999999999996
+    },
+    {
+      "moduleId": "33065",
+      "tier": "MEDIUM",
+      "suggested": "tier3_high",
+      "score": 0.5,
+      "matches": [
+        {
+          "semantic": "tier3_high",
+          "matchedTo": "77914",
+          "score": 0.5,
+          "matchCount": 3
+        },
+        {
+          "semantic": "seriesBarFunction",
+          "matchedTo": "17776",
+          "score": 0.44999999999999996,
+          "matchCount": 3
+        },
+        {
+          "semantic": "watchedValue",
+          "matchedTo": "2072",
+          "score": 0.30000000000000004,
+          "matchCount": 2
+        }
+      ]
+    },
+    {
+      "moduleId": "35749",
+      "tier": "MEDIUM",
+      "suggested": "tier3_high",
+      "score": 0.5,
+      "matches": [
+        {
+          "semantic": "tier3_high",
+          "matchedTo": "54717",
+          "score": 0.5,
+          "matchCount": 3
+        },
+        {
+          "semantic": "tier3_high",
+          "matchedTo": "76422",
+          "score": 0.30000000000000004,
+          "matchCount": 2
+        },
+        {
+          "semantic": "chunkLoaderModule",
+          "matchedTo": "38881",
+          "score": 0.25,
+          "matchCount": 2
+        }
+      ]
+    },
+    {
+      "moduleId": "36947",
+      "tier": "MEDIUM",
+      "suggested": "lineToolManager",
+      "score": 0.6,
+      "matches": [
+        {
+          "semantic": "lineToolManager",
+          "matchedTo": "78861",
+          "score": 0.6,
+          "matchCount": 4
+        },
+        {
+          "semantic": "deleteLockedLineTools",
+          "matchedTo": "16708",
+          "score": 0.44999999999999996,
+          "matchCount": 3
+        },
+        {
+          "semantic": "chunkLoaderModule",
+          "matchedTo": "55803",
+          "score": 0.44999999999999996,
+          "matchCount": 3
+        }
+      ]
+    },
+    {
+      "moduleId": "38486",
+      "tier": "MEDIUM",
+      "suggested": "dialogManager",
+      "score": 0.5,
+      "matches": [
+        {
+          "semantic": "dialogManager",
+          "matchedTo": "3615",
+          "score": 0.5,
+          "matchCount": 3
+        },
+        {
+          "semantic": "tier3_high",
+          "matchedTo": "22455",
+          "score": 0.5,
+          "matchCount": 3
+        },
+        {
+          "semantic": "tier3_medium",
+          "matchedTo": "39527",
+          "score": 0.5,
+          "matchCount": 3
+        }
+      ]
+    },
+    {
+      "moduleId": "39058",
+      "tier": "MEDIUM",
+      "suggested": "tier3_high",
+      "score": 0.5,
+      "matches": [
+        {
+          "semantic": "tier3_high",
+          "matchedTo": "56616",
+          "score": 0.5,
+          "matchCount": 3
+        },
+        {
+          "semantic": "chunkLoaderModule",
+          "matchedTo": "55803",
+          "score": 0.44999999999999996,
+          "matchCount": 3
+        },
+        {
+          "semantic": "tier3_high",
+          "matchedTo": "13607",
+          "score": 0.4,
+          "matchCount": 2
+        }
+      ]
+    },
+    {
+      "moduleId": "41072",
+      "tier": "MEDIUM_LOW",
+      "suggested": "seriesBarFunction",
+      "score": 0.44999999999999996
+    },
+    {
+      "moduleId": "4168",
+      "tier": "HIGH",
+      "suggested": "tier3_high",
+      "matchedTo": "4226",
+      "score": 0.7000000000000001,
+      "matches": [
+        {
+          "semantic": "tier3_high",
+          "matchedTo": "4226",
+          "score": 0.7000000000000001,
+          "matchCount": 4
+        },
+        {
+          "semantic": "chunkLoaderModule",
+          "matchedTo": "38881",
+          "score": 0.25,
+          "matchCount": 2
+        },
+        {
+          "semantic": "chunkLoaderModule",
+          "matchedTo": "55803",
+          "score": 0.25,
+          "matchCount": 2
+        }
+      ]
+    },
+    {
+      "moduleId": "42516",
+      "tier": "MEDIUM",
+      "suggested": "lineToolUtils",
+      "score": 0.6,
+      "matches": [
+        {
+          "semantic": "lineToolUtils",
+          "matchedTo": "11946",
+          "score": 0.6,
+          "matchCount": 4
+        },
+        {
+          "semantic": "priceDataSource",
+          "matchedTo": "63903",
+          "score": 0.44999999999999996,
+          "matchCount": 3
+        },
+        {
+          "semantic": "deleteLockedLineTools",
+          "matchedTo": "16708",
+          "score": 0.4,
+          "matchCount": 3
+        }
+      ]
+    },
+    {
+      "moduleId": "43838",
+      "tier": "MEDIUM_LOW",
+      "suggested": "chunkLoaderModule",
+      "score": 0.44999999999999996
+    },
+    {
+      "moduleId": "45580",
+      "tier": "MEDIUM",
+      "suggested": "lineToolManager",
+      "score": 0.6,
+      "matches": [
+        {
+          "semantic": "lineToolManager",
+          "matchedTo": "78861",
+          "score": 0.6,
+          "matchCount": 4
+        },
+        {
+          "semantic": "deleteLockedLineTools",
+          "matchedTo": "16708",
+          "score": 0.44999999999999996,
+          "matchCount": 3
+        },
+        {
+          "semantic": "chunkLoaderModule",
+          "matchedTo": "55803",
+          "score": 0.44999999999999996,
+          "matchCount": 3
+        }
+      ]
+    },
+    {
+      "moduleId": "47132",
+      "tier": "MEDIUM",
+      "suggested": "dialogManager",
+      "score": 0.5,
+      "matches": [
+        {
+          "semantic": "dialogManager",
+          "matchedTo": "3615",
+          "score": 0.5,
+          "matchCount": 3
+        },
+        {
+          "semantic": "tier3_high",
+          "matchedTo": "4622",
+          "score": 0.5,
+          "matchCount": 3
+        },
+        {
+          "semantic": "tier3_medium",
+          "matchedTo": "4745",
+          "score": 0.5,
+          "matchCount": 3
+        }
+      ]
+    },
+    {
+      "moduleId": "51829",
+      "tier": "MEDIUM_LOW",
+      "suggested": "chunkLoaderModule",
+      "score": 0.44999999999999996
+    },
+    {
+      "moduleId": "52092",
+      "tier": "MEDIUM_LOW",
+      "suggested": "chunkLoaderModule",
+      "score": 0.44999999999999996
+    },
+    {
+      "moduleId": "52499",
+      "tier": "MEDIUM",
+      "suggested": "watchedValue",
+      "score": 0.6,
+      "matches": [
+        {
+          "semantic": "watchedValue",
+          "matchedTo": "2072",
+          "score": 0.6,
+          "matchCount": 4
+        },
+        {
+          "semantic": "watchedValue",
+          "matchedTo": "59998",
+          "score": 0.6,
+          "matchCount": 4
+        },
+        {
+          "semantic": "watchedValue",
+          "matchedTo": "18712",
+          "score": 0.4,
+          "matchCount": 3
+        }
+      ]
+    },
+    {
+      "moduleId": "54370",
+      "tier": "MEDIUM",
+      "suggested": "tier3_high",
+      "score": 0.5,
+      "matches": [
+        {
+          "semantic": "tier3_high",
+          "matchedTo": "20512",
+          "score": 0.5,
+          "matchCount": 3
+        },
+        {
+          "semantic": "tier3_high",
+          "matchedTo": "54717",
+          "score": 0.5,
+          "matchCount": 3
+        },
+        {
+          "semantic": "tier3_high",
+          "matchedTo": "56616",
+          "score": 0.5,
+          "matchCount": 3
+        }
+      ]
+    },
+    {
+      "moduleId": "5471",
+      "tier": "MEDIUM_LOW",
+      "suggested": "chunkLoaderModule",
+      "score": 0.44999999999999996
+    },
+    {
+      "moduleId": "55279",
+      "tier": "MEDIUM",
+      "suggested": "dialogManager",
+      "score": 0.5,
+      "matches": [
+        {
+          "semantic": "dialogManager",
+          "matchedTo": "3615",
+          "score": 0.5,
+          "matchCount": 3
+        },
+        {
+          "semantic": "tier3_high",
+          "matchedTo": "4622",
+          "score": 0.5,
+          "matchCount": 3
+        },
+        {
+          "semantic": "tier3_medium",
+          "matchedTo": "4745",
+          "score": 0.5,
+          "matchCount": 3
+        }
+      ]
+    },
+    {
+      "moduleId": "59613",
+      "tier": "MEDIUM_LOW",
+      "suggested": "dialogManager",
+      "score": 0.44999999999999996
+    },
+    {
+      "moduleId": "59672",
+      "tier": "MEDIUM_LOW",
+      "suggested": "dialogManager",
+      "score": 0.44999999999999996
+    },
+    {
+      "moduleId": "59883",
+      "tier": "MEDIUM_LOW",
+      "suggested": "lineToolUtils",
+      "score": 0.4
+    },
+    {
+      "moduleId": "61814",
+      "tier": "MEDIUM",
+      "suggested": "dialogManager",
+      "score": 0.5,
+      "matches": [
+        {
+          "semantic": "dialogManager",
+          "matchedTo": "3615",
+          "score": 0.5,
+          "matchCount": 3
+        },
+        {
+          "semantic": "tier3_high",
+          "matchedTo": "4622",
+          "score": 0.5,
+          "matchCount": 3
+        },
+        {
+          "semantic": "tier3_medium",
+          "matchedTo": "4745",
+          "score": 0.5,
+          "matchCount": 3
+        }
+      ]
+    },
+    {
+      "moduleId": "62773",
+      "tier": "MEDIUM_LOW",
+      "suggested": "watchedValue",
+      "score": 0.44999999999999996
+    },
+    {
+      "moduleId": "63681",
+      "tier": "MEDIUM",
+      "suggested": "tier3_high",
+      "score": 0.5,
+      "matches": [
+        {
+          "semantic": "tier3_high",
+          "matchedTo": "86252",
+          "score": 0.5,
+          "matchCount": 3
+        },
+        {
+          "semantic": "chunkLoaderModule",
+          "matchedTo": "55803",
+          "score": 0.44999999999999996,
+          "matchCount": 3
+        },
+        {
+          "semantic": "series",
+          "matchedTo": "2115",
+          "score": 0.30000000000000004,
+          "matchCount": 2
+        }
+      ]
+    },
+    {
+      "moduleId": "64717",
+      "tier": "MEDIUM",
+      "suggested": "dialogManager",
+      "score": 0.5,
+      "matches": [
+        {
+          "semantic": "dialogManager",
+          "matchedTo": "3615",
+          "score": 0.5,
+          "matchCount": 3
+        },
+        {
+          "semantic": "tier3_high",
+          "matchedTo": "22455",
+          "score": 0.5,
+          "matchCount": 3
+        },
+        {
+          "semantic": "tier3_medium",
+          "matchedTo": "39527",
+          "score": 0.5,
+          "matchCount": 3
+        }
+      ]
+    },
+    {
+      "moduleId": "68335",
+      "tier": "HIGH",
+      "suggested": "tier3_high",
+      "matchedTo": "3343",
+      "score": 1,
+      "matches": [
+        {
+          "semantic": "tier3_high",
+          "matchedTo": "3343",
+          "score": 1,
+          "matchCount": 6
+        },
+        {
+          "semantic": "tier3_high",
+          "matchedTo": "26709",
+          "score": 0.30000000000000004,
+          "matchCount": 2
+        },
+        {
+          "semantic": "chunkLoaderModule",
+          "matchedTo": "38881",
+          "score": 0.25,
+          "matchCount": 2
+        }
+      ]
+    },
+    {
+      "moduleId": "69109",
+      "tier": "MEDIUM",
+      "suggested": "dialogManager",
+      "score": 0.5,
+      "matches": [
+        {
+          "semantic": "dialogManager",
+          "matchedTo": "3615",
+          "score": 0.5,
+          "matchCount": 3
+        },
+        {
+          "semantic": "tier3_high",
+          "matchedTo": "4622",
+          "score": 0.5,
+          "matchCount": 3
+        },
+        {
+          "semantic": "tier3_medium",
+          "matchedTo": "4745",
+          "score": 0.5,
+          "matchCount": 3
+        }
+      ]
+    },
+    {
+      "moduleId": "70002",
+      "tier": "MEDIUM_LOW",
+      "suggested": "timeInterval",
+      "score": 0.44999999999999996
+    },
+    {
+      "moduleId": "7024",
+      "tier": "MEDIUM_LOW",
+      "suggested": "chunkLoaderModule",
+      "score": 0.44999999999999996
+    },
+    {
+      "moduleId": "71382",
+      "tier": "MEDIUM_LOW",
+      "suggested": "seriesBarFunction",
+      "score": 0.44999999999999996
+    },
+    {
+      "moduleId": "7543",
+      "tier": "MEDIUM",
+      "suggested": "dataSource",
+      "score": 0.6,
+      "matches": [
+        {
+          "semantic": "dataSource",
+          "matchedTo": "72207",
+          "score": 0.6,
+          "matchCount": 4
+        },
+        {
+          "semantic": "dataSource",
+          "matchedTo": "35107",
+          "score": 0.4,
+          "matchCount": 3
+        },
+        {
+          "semantic": "priceDataSource",
+          "matchedTo": "45530",
+          "score": 0.4,
+          "matchCount": 3
+        }
+      ]
+    },
+    {
+      "moduleId": "75641",
+      "tier": "MEDIUM_LOW",
+      "suggested": "timeInterval",
+      "score": 0.44999999999999996
+    },
+    {
+      "moduleId": "76662",
+      "tier": "HIGH",
+      "suggested": "tier3_high",
+      "matchedTo": "74991",
+      "score": 0.7000000000000001,
+      "matches": [
+        {
+          "semantic": "tier3_high",
+          "matchedTo": "74991",
+          "score": 0.7000000000000001,
+          "matchCount": 4
+        },
+        {
+          "semantic": "chunkLoaderModule",
+          "matchedTo": "38881",
+          "score": 0.25,
+          "matchCount": 2
+        },
+        {
+          "semantic": "chunkLoaderModule",
+          "matchedTo": "55803",
+          "score": 0.25,
+          "matchCount": 2
+        }
+      ]
+    },
+    {
+      "moduleId": "78136",
+      "tier": "MEDIUM",
+      "suggested": "dialogManager",
+      "score": 0.5,
+      "matches": [
+        {
+          "semantic": "dialogManager",
+          "matchedTo": "3615",
+          "score": 0.5,
+          "matchCount": 3
+        },
+        {
+          "semantic": "tier3_high",
+          "matchedTo": "4622",
+          "score": 0.5,
+          "matchCount": 3
+        },
+        {
+          "semantic": "tier3_medium",
+          "matchedTo": "4745",
+          "score": 0.5,
+          "matchCount": 3
+        }
+      ]
+    },
+    {
+      "moduleId": "80007",
+      "tier": "MEDIUM",
+      "suggested": "dialogManager",
+      "score": 0.5,
+      "matches": [
+        {
+          "semantic": "dialogManager",
+          "matchedTo": "3615",
+          "score": 0.5,
+          "matchCount": 3
+        },
+        {
+          "semantic": "tier3_high",
+          "matchedTo": "22455",
+          "score": 0.5,
+          "matchCount": 3
+        },
+        {
+          "semantic": "tier3_medium",
+          "matchedTo": "26867",
+          "score": 0.5,
+          "matchCount": 3
+        }
+      ]
+    },
+    {
+      "moduleId": "84015",
+      "tier": "MEDIUM",
+      "suggested": "dialogManager",
+      "score": 0.5,
+      "matches": [
+        {
+          "semantic": "dialogManager",
+          "matchedTo": "3615",
+          "score": 0.5,
+          "matchCount": 3
+        },
+        {
+          "semantic": "tier3_high",
+          "matchedTo": "22455",
+          "score": 0.5,
+          "matchCount": 3
+        },
+        {
+          "semantic": "tier3_medium",
+          "matchedTo": "39527",
+          "score": 0.5,
+          "matchCount": 3
+        }
+      ]
+    },
+    {
+      "moduleId": "84526",
+      "tier": "MEDIUM_LOW",
+      "suggested": "dialogManager",
+      "score": 0.44999999999999996
+    },
+    {
+      "moduleId": "91111",
+      "tier": "MEDIUM_LOW",
+      "suggested": "lineToolUtils",
+      "score": 0.4
+    },
+    {
+      "moduleId": "92211",
+      "tier": "MEDIUM_LOW",
+      "suggested": "seriesBarFunction",
+      "score": 0.44999999999999996
+    },
+    {
+      "moduleId": "92572",
+      "tier": "MEDIUM_LOW",
+      "suggested": "dialogManager",
+      "score": 0.44999999999999996
+    },
+    {
+      "moduleId": "93201",
+      "tier": "MEDIUM_LOW",
+      "suggested": "chunkLoaderModule",
+      "score": 0.44999999999999996
+    },
+    {
+      "moduleId": "97217",
+      "tier": "MEDIUM_LOW",
+      "suggested": "seriesBarFunction",
+      "score": 0.44999999999999996
+    },
+    {
+      "moduleId": "97725",
+      "tier": "MEDIUM",
+      "suggested": "dialogManager",
+      "score": 0.5,
+      "matches": [
+        {
+          "semantic": "dialogManager",
+          "matchedTo": "3615",
+          "score": 0.5,
+          "matchCount": 3
+        },
+        {
+          "semantic": "tier3_high",
+          "matchedTo": "22455",
+          "score": 0.5,
+          "matchCount": 3
+        },
+        {
+          "semantic": "tier3_medium",
+          "matchedTo": "39527",
+          "score": 0.5,
+          "matchCount": 3
+        }
+      ]
+    },
+    {
+      "moduleId": "97760",
+      "tier": "MEDIUM_LOW",
+      "suggested": "chunkLoaderModule",
+      "score": 0.44999999999999996
+    },
+    {
+      "moduleId": "98155",
+      "tier": "MEDIUM_LOW",
+      "suggested": "chunkLoaderModule",
+      "score": 0.44999999999999996
+    },
+    {
+      "moduleId": "98422",
+      "tier": "MEDIUM",
+      "suggested": "dialogManager",
+      "score": 0.5,
+      "matches": [
+        {
+          "semantic": "dialogManager",
+          "matchedTo": "3615",
+          "score": 0.5,
+          "matchCount": 3
+        },
+        {
+          "semantic": "tier3_high",
+          "matchedTo": "4622",
+          "score": 0.5,
+          "matchCount": 3
+        },
+        {
+          "semantic": "tier3_medium",
+          "matchedTo": "4745",
+          "score": 0.5,
+          "matchCount": 3
+        }
+      ]
+    }
+  ]
+}

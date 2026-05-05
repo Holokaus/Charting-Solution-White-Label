@@ -1,0 +1,44 @@
+/**
+ * Module 50888 - Beautified
+ * Auto-formatted from webpack bundle
+ * Semantic variable names applied
+ */
+
+50888: (e, t, i) => {
+    "use strict";
+    i.d(t, {
+      CRUCIAL_REALTIME_BATS: () => l,
+      firstReplacedByBatsExchange: () => c,
+      isAmexToCboeMigratedSymbol: () => _,
+      isDelay: () => d,
+      isEod: () => h,
+      witoutRealtime: () => u
+    });
+    i(50151);
+    var s = i(59149),
+      o = i.n(s);
+    const n = ["DJ", "JSE", "BELEX"],
+      r = ["NZX"],
+      a = ["BIVA"],
+      l = ["AMEX", "NASDAQ", "NYSE"];
+
+    function c(e) {
+      return null
+    }
+
+    function h(e, t) {
+      return o().hasEodSymbols(e.full_name) || 6 === t
+    }
+
+    function d(e) {
+      return void 0 !== e && e > 0
+    }
+
+    function u(e) {
+      return "index" === e.type && n.includes(e.listed_exchange) || "futures" === e.type && r.includes(e
+        .listed_exchange) || a.includes(e.listed_exchange)
+    }
+
+    function _(e, t) {
+      return "amex" === t && "CBOE" === e
+    }

@@ -1,0 +1,266 @@
+{
+  "timestamp": "2026-05-05T14:44:44.891Z",
+  "summary": {
+    "total": 4,
+    "good": 4,
+    "fair": 0,
+    "needsReview": 0,
+    "passRate": 100
+  },
+  "results": [
+    {
+      "moduleId": "12217",
+      "semantic": "tier3_high",
+      "passed": 7,
+      "total": 8,
+      "score": 87.5,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "4168",
+      "semantic": "tier3_high",
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "68335",
+      "semantic": "tier3_high",
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "76662",
+      "semantic": "tier3_high",
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    }
+  ],
+  "details": {
+    "4168": {
+      "results": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": false,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "details": {
+        "moduleIdValid": {
+          "passed": true,
+          "check": "Numeric format"
+        },
+        "semanticNameValid": {
+          "passed": true,
+          "check": "Header with semantic mapping present",
+          "headerFound": true
+        },
+        "contentValid": {
+          "passed": false,
+          "lines": 10,
+          "threshold": 15
+        },
+        "headerPresent": {
+          "passed": true,
+          "check": "JSDoc header exists"
+        },
+        "semanticsApplied": {
+          "passed": true,
+          "matchCount": 5,
+          "threshold": 3
+        },
+        "exportsFound": {
+          "passed": true,
+          "check": "Export statement detected"
+        },
+        "noObviousErrors": {
+          "passed": false,
+          "openBraces": 2,
+          "closeBraces": 1,
+          "check": "Brace balance"
+        },
+        "sizeReasonable": {
+          "passed": true,
+          "bytes": 513,
+          "range": "100-500000"
+        }
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75
+    },
+    "12217": {
+      "results": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "details": {
+        "moduleIdValid": {
+          "passed": true,
+          "check": "Numeric format"
+        },
+        "semanticNameValid": {
+          "passed": true,
+          "check": "Header with semantic mapping present",
+          "headerFound": true
+        },
+        "contentValid": {
+          "passed": true,
+          "lines": 24,
+          "threshold": 15
+        },
+        "headerPresent": {
+          "passed": true,
+          "check": "JSDoc header exists"
+        },
+        "semanticsApplied": {
+          "passed": true,
+          "matchCount": 4,
+          "threshold": 3
+        },
+        "exportsFound": {
+          "passed": true,
+          "check": "Export statement detected"
+        },
+        "noObviousErrors": {
+          "passed": false,
+          "openBraces": 2,
+          "closeBraces": 1,
+          "check": "Brace balance"
+        },
+        "sizeReasonable": {
+          "passed": true,
+          "bytes": 1157,
+          "range": "100-500000"
+        }
+      },
+      "passed": 7,
+      "total": 8,
+      "score": 87.5
+    },
+    "68335": {
+      "results": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": false,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "details": {
+        "moduleIdValid": {
+          "passed": true,
+          "check": "Numeric format"
+        },
+        "semanticNameValid": {
+          "passed": true,
+          "check": "Header with semantic mapping present",
+          "headerFound": true
+        },
+        "contentValid": {
+          "passed": false,
+          "lines": 13,
+          "threshold": 15
+        },
+        "headerPresent": {
+          "passed": true,
+          "check": "JSDoc header exists"
+        },
+        "semanticsApplied": {
+          "passed": true,
+          "matchCount": 4,
+          "threshold": 3
+        },
+        "exportsFound": {
+          "passed": true,
+          "check": "Export statement detected"
+        },
+        "noObviousErrors": {
+          "passed": false,
+          "openBraces": 2,
+          "closeBraces": 1,
+          "check": "Brace balance"
+        },
+        "sizeReasonable": {
+          "passed": true,
+          "bytes": 692,
+          "range": "100-500000"
+        }
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75
+    },
+    "76662": {
+      "results": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": false,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "details": {
+        "moduleIdValid": {
+          "passed": true,
+          "check": "Numeric format"
+        },
+        "semanticNameValid": {
+          "passed": true,
+          "check": "Header with semantic mapping present",
+          "headerFound": true
+        },
+        "contentValid": {
+          "passed": false,
+          "lines": 10,
+          "threshold": 15
+        },
+        "headerPresent": {
+          "passed": true,
+          "check": "JSDoc header exists"
+        },
+        "semanticsApplied": {
+          "passed": true,
+          "matchCount": 4,
+          "threshold": 3
+        },
+        "exportsFound": {
+          "passed": true,
+          "check": "Export statement detected"
+        },
+        "noObviousErrors": {
+          "passed": false,
+          "openBraces": 2,
+          "closeBraces": 1,
+          "check": "Brace balance"
+        },
+        "sizeReasonable": {
+          "passed": true,
+          "bytes": 491,
+          "range": "100-500000"
+        }
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75
+    }
+  }
+}

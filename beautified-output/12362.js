@@ -1,0 +1,181 @@
+/**
+ * Module 12362 - Beautified
+ * Auto-formatted from webpack bundle
+ * Semantic variable names applied
+ */
+
+12362: (e, t, i) => {
+    "use strict";
+    i.d(t, {
+      ChartSaverBase: () => d
+    });
+    var s = i(50279),
+      o = i(50151),
+      n = (i(11542), i(14411)),
+      r = i(23024),
+      a = i(48096),
+      l = i(37103),
+      c = i(81593);
+
+    function h(e, t) {
+      e.content = JSON.stringify(t)
+    }
+    new WeakMap;
+    new TextEncoder;
+    class d {
+      constructor(e) {
+        this._prevChartState = null, this._chartSavedDelegate = new a.Delegate, this._chartAboutToBeSavedDelegate =
+          new a.Delegate, this._chartSizeLimitExceededDelegate = new a.Delegate, this._isSaveInProcess = !1, this
+          ._savingToken = null, this._chartWidgetCollection = e
+      }
+      async saveChartLineTools(e, t, s, o) {
+        if (l.enabled("saveload_separate_drawings_storage")) {
+          const n = await (0, r.getChartStorage)(),
+            a = this.layoutId(),
+            l = i => n.saveLineToolsAndGroups(i, e, t, s, o);
+          if (!a) {
+            this._chartSavedDelegate.subscribe(null, (e => {
+              if (e) {
+                const e = this._chartWidgetCollection.metaInfo.uid.value();
+                l(e)
+              }
+            }), !0);
+            const {
+              SavingLineToolsLibraryError: e
+            } = await i.e(5565).then(i.bind(i, 98653));
+            throw new e("Layout ID not yet created.", !0)
+          }
+          return l(a)
+        }
+        return Promise.reject("Line tools storage is not supported")
+      }
+      layoutId() {
+        return this._chartWidgetCollection.metaInfo.uid.value()
+      }
+      saveChartSilently(e, t, i) {
+        const s = i || {};
+        this._isSaveInProcess = !0, this._chartAboutToBeSavedDelegate.fire(), this._saveChart((e => {
+          const t = e && l.enabled("saveload_separate_drawings_storage"),
+            i = this._getChartWidgetCollectionState(!1, void 0, void 0, void 0, t),
+            o = this._getCommonSavingInfo(!1);
+          return h(o, i), s.chartName && (o.name = s.chartName), o.name && 0 !== o.name.length || !s
+            .defaultChartName || (o.name = s.defaultChartName), s.autoSave && (o.autoSave = !0), o
+        }), ((t, i) => {
+          (0, o.assert)(!this._chartWidgetCollection.readOnly(), "Trying to save layout in read-only mode"), i
+            && this.layoutId() === t.uid && this._chartWidgetCollection.metaInfo.name.setValue(i.name ?? ""),
+            this._prevChartState = i, this._chartSavedDelegate.fire(!0), this._isSaveInProcess = !1, e && e({
+              uid: t.uid,
+              data: i
+            }), this._prevChartState && delete this._prevChartState.savingToken
+        }), (e => {
+          this._chartSavedDelegate.fire(!1), this._isSaveInProcess = !1, t && t(e)
+        }), s)
+      }
+      saveToJSON(e) {
+        const t = e && !1 === e.includeDrawings || void 0,
+          i = this._getCommonSavingInfo(!1);
+        return h(i, this._getChartWidgetCollectionState(!1, !0, t, void 0, t)), i
+      }
+      isSaveInProcess() {
+        return this._isSaveInProcess
+      }
+      _getChartWidgetCollectionState(e, t, i, s, o) {
+        let n = !1;
+        return e ? n = !0 : (t = !0, s = !1), this._chartWidgetCollection.state({
+          withData: !!e,
+          skipLineToolsFromOtherSymbols: !!i,
+          wipeSensitiveData: !!s,
+          skipLineTools: o,
+          skipHiddenSources: n,
+          addOnlyActiveChart: !t
+        })
+      }
+      _getCommonSavingInfo(e) {
+        const t = this._chartWidgetCollection,
+          i = this._chartWidgetCollection.chartsSymbols()[t.activeChartWidget.value().id()],
+          s = {
+            ...(o = i, {
+              ...o,
+              legs: JSON.stringify(o.legs ?? [])
+            })
+          };
+        var o;
+        const n = t.metaInfo,
+          r = n.id.value();
+        return null !== r && (s.id = r), s.name = n.name.value() || "", s.description = n.description.value() || "", s
+          .is_realtime = s.is_realtime = e ? "0" : "1", s
+      }
+      async _saveLineToolsToStorage() {
+        if (l.enabled("saveload_separate_drawings_storage")) {
+          this.layoutId();
+          0;
+          const [e, t] = this._chartWidgetCollection.getAll().reduce(((e, t) => {
+            const i = t.lineToolsSynchronizer();
+            if (i) {
+              e[0] ||= i.hasUnsavedMigrationsFromChartState();
+              const t = i.flushPendingSavings();
+              t && e[1].push(t)
+            }
+            return e
+          }), [!1, []]);
+          return t.length && await Promise.all(t), t.length > 0 && e
+        }
+        return !1
+      }
+      _invalidateAllLineTools() {
+        this._chartWidgetCollection.getAll().forEach((e => e.lineToolsSynchronizer()?.invalidateAll()))
+      }
+      _saveChartImpl(e, t, i, s, o, n) {
+        let r;
+        r = s => {
+          t.uid || t.uid !== this.layoutId() || (t.id = s.result, t.uid = `${s.result}`, this._chartWidgetCollection
+            .metaInfo.id.setValue(t.id), this._chartWidgetCollection.metaInfo.uid.setValue(t.uid)), i(t, e)
+        }, e.name ? c.backend.saveChart(e.name, e.short_name, e.resolution, e, t).then(r).catch((async e => {
+          const t = e instanceof Response ? e : void 0,
+            i = e instanceof Error ? e : void 0;
+          this._savingToken = null;
+          const o = s.bind(null, {
+            status: t?.status,
+            message: t?.statusText ?? i?.message ?? "Unknown error"
+          });
+          o()
+        })) : s({
+          status: -1,
+          message: "Saving chart with empty name is not allowed"
+        })
+      }
+      async _saveChart(e, t, o, r) {
+        const a = this._chartWidgetCollection.metaInfo,
+          c = {
+            name: a.name.value(),
+            description: a.description.value(),
+            uid: a.uid.value(),
+            id: a.id.value(),
+            lastModified: a.lastModified.value(),
+            username: a.username.value(),
+            isPrivate: a.isPrivate.value()
+          };
+        let h = r.changes ?? n.changedAll;
+        l.enabled("saveload_separate_drawings_storage") && this._invalidateAllLineTools();
+        let d = !0;
+        if (2 & h || l.enabled("saveload_separate_drawings_storage")) try {
+          await this._saveLineToolsToStorage() && (h |= 1)
+        } catch (e) {
+          h |= 1;
+          const {
+            SavingLineToolsLibraryError: t
+          } = await i.e(5565).then(i.bind(i, 98653));
+          e instanceof t && e.safe || (d = !1)
+        }
+        if (1 & h) {
+          const i = e(d);
+          if ((0, s.default)(this._prevChartState, i) && null !== c.id) return this._chartSavedDelegate.fire(!0),
+            void t(c, i);
+          0;
+          const n = (e, i) => (d || this._chartWidgetCollection.getAll().forEach((e => e.lineToolsSynchronizer()
+            ?.markAsValidatedBecauseOfSavingToContent())), t(e, i));
+          return this._saveChartImpl(i, c, n, o, r, e)
+        }
+        this._chartSavedDelegate.fire(!0), t(c, e(d))
+      }
+    }

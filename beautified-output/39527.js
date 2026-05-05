@@ -1,0 +1,35 @@
+/**
+ * Module 39527 - Beautified
+ * Auto-formatted from webpack bundle
+ * Semantic variable names applied
+ */
+
+39527: (e, t, i) => {
+    "use strict";
+
+    function s(e, ...t) {
+      return e && "object" == typeof e ? (0 === t.length || t.forEach((t => {
+        null != t && "object" == typeof t && Object.keys(t).forEach((i => {
+          const n = e[i],
+            r = t[i];
+          if (r === e) return;
+          const a = Array.isArray(r);
+          if (r && (o(r) || a)) {
+            let t;
+            t = a ? n && Array.isArray(n) ? n : [] : n && o(n) ? n : {}, e[i] = s(t, r)
+          } else void 0 !== r && (e[i] = r)
+        }))
+      })), e) : e
+    }
+
+    function o(e) {
+      if (!e || "[object Object]" !== Object.prototype.toString.call(e)) return !1;
+      const t = Object.getPrototypeOf(e);
+      if (!t) return !0;
+      const i = Object.hasOwnProperty.toString,
+        s = t.hasOwnProperty("constructor") && t.constructor;
+      return "function" == typeof s && i.call(s) === i.call(Object)
+    }
+    i.d(t, {
+      deepExtend: () => s
+    })

@@ -1,0 +1,22 @@
+/**
+ * Module 38486 - Beautified
+ * Auto-formatted from webpack bundle
+ * Semantic variable names applied
+ */
+
+38486: (e, t, i) => {
+    "use strict";
+
+    function s(e) {
+      const t = Object.create(e);
+      return t.release = () => {}, t.ownership = () => t, t
+    }
+
+    function o(e) {
+      const t = e;
+      return t.release = () => t.destroy(), t.ownership = () => t, t
+    }
+    i.d(t, {
+      ownership: () => o,
+      weakReference: () => s
+    })

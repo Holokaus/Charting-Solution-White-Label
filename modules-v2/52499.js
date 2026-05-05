@@ -1,1 +1,1 @@
-52499:(e,t,i)=>{"use strict";i.d(t,{WatchedObject:()=>o.WatchedObject,WatchedValue:()=>s.WatchedValue});var s=i(2072),o=i(59998)
+52499:(e,t,i)=>{"use strict";i.d(t,{WatchedObject:()=>o.WatchedObject,WatchedValue:()=>watchedValue.WatchedValue});var watchedValue=i(2072),o=i(59998)

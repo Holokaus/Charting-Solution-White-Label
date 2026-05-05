@@ -1,0 +1,109 @@
+/**
+ * Module 85630 - Beautified
+ * Auto-formatted from webpack bundle
+ * Semantic variable names applied
+ */
+
+85630: (e, t, i) => {
+    "use strict";
+    i.d(t, {
+      SeriesColumnsPaneView: () => p
+    });
+    var s = i(50151),
+      o = i(10555),
+      n = i(37103),
+      r = i(69708),
+      a = i(2383),
+      l = i(94602),
+      c = i(5471),
+      h = i(13173),
+      d = i(45801),
+      u = i(93387),
+      _ = i(52945);
+    class p {
+      constructor(e, t) {
+        this._items = [], this._invalidated = !0, this._isMarkersEnabled = (0, n.enabled)("source_selection_markers"),
+          this._selectionData = null, this._histogramBase = 0, this._source = e, this._model = t, this
+          ._selectionIndexer = new h.SelectionIndexes(t.timeScale())
+      }
+      update() {
+        this._invalidated = !0
+      }
+      renderer() {
+        this._invalidated && (this._updateImpl(), this._invalidated = !1);
+        const e = {
+            barSpacing: this._model.timeScale().barSpacing(),
+            items: this._items,
+            lineColor: "",
+            histogramBase: this._histogramBase
+          },
+          t = new l.CompositeRenderer;
+        return t.append(new u.PaneRendererColumns(e)), this._model.selection().isSelected(this._source) && this
+          ._isMarkersEnabled && this._selectionData && t.append(new d.SelectionRenderer(this._selectionData)), t
+      }
+      _updateImpl() {
+        this._items = [];
+        const e = this._model.timeScale(),
+          t = this._source.priceScale();
+        if (e.isEmpty() || !t || t.isEmpty()) return;
+        const i = e.visibleBarsStrictRange();
+        if (null === i) return;
+        if (0 === this._source.bars().size()) return;
+        const n = this._source.nearestIndex(i.firstBar(), c.PlotRowSearchMode.NearestRight),
+          l = this._source.nearestIndex(i.lastBar(), c.PlotRowSearchMode.NearestLeft);
+        if (void 0 === n || void 0 === l) return;
+        const h = this._source.barColorer(),
+          d = {},
+          u = this._source.barFunction();
+        for (const {
+            index: e,
+            value: t
+          }
+          of this._source.bars().rangeIterator(n, l)) {
+          const i = u(t);
+          if (!(0, r.default)(i)) continue;
+          d.value = t;
+          let s = this._source.precomputedBarStyle(t);
+          void 0 === s && (s = h.barStyle(e, !1, d), this._source.setPrecomputedBarStyle(t, s)), this._items.push({
+            timePointIndex: e,
+            left: NaN,
+            center: NaN,
+            right: NaN,
+            y: i,
+            style: s
+          }), d.previousValue = t
+        }
+        const p = this._source.firstValue();
+        if (null === p) return;
+        t.pointsArrayToCoordinates(this._items, p), e.fillBarBorders(this._items);
+        const m = this._source.properties().childs().columnStyle.childs().baselinePosition?.value();
+        if ("zero" === m) {
+          const e = t.isPercentage() ? (0, _.fromPercent)(0, p) : 0;
+          this._histogramBase = t.priceToCoordinate(e, p)
+        } else this._histogramBase = t.isInverted() ? 0 : t.height();
+        if (this._model.selection().isSelected(this._source)) {
+          const i = this._selectionIndexer.indexes();
+          this._selectionData = {
+            points: [],
+            bgColors: [],
+            visible: !0,
+            barSpacing: e.barSpacing(),
+            hittestResult: a.HitTarget.Regular
+          };
+          const n = (0,
+            s.ensureNotNull)(this._model.paneForSource(this._source)).height();
+          this._selectionData.hittestResult = a.HitTarget.Regular;
+          for (let s = 0; s < i.length; s++) {
+            const r = i[s],
+              a = this._source.bars().valueAt(r);
+            if (null === a) continue;
+            const l = u(a),
+              c = e.indexToCoordinate(r),
+              h = t.priceToCoordinate(l, p);
+            this._selectionData.points.push({
+              point: new o.Point(c, h)
+            }), this._selectionData.bgColors.push(this._model.backgroundColorAtYPercentFromTop(h / n))
+          }
+        } else this._selectionIndexer.clear()
+      }
+    }

@@ -1,0 +1,15 @@
+/**
+ * Module 93201 - Beautified
+ * Auto-formatted from webpack bundle
+ * Semantic variable names applied
+ */
+
+93201: (e, t, i) => {
+    "use strict";
+    var s;
+    i.d(t, {
+        ColorType: () => s
+      }),
+      function(e) {
+        e.Solid = "solid", e.Gradient = "gradient"
+      }(s || (s = {}))

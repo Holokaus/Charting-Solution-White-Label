@@ -1,0 +1,81 @@
+/**
+ * Module 52974 - Beautified
+ * Auto-formatted from webpack bundle
+ * Semantic variable names applied
+ */
+
+52974: (e, t, i) => {
+    "use strict";
+    const s = i(41414).LineDataSource,
+      o = i(62301).alignToStep,
+      n = i(35727).customFormatters,
+      r = i(95059).createSeriesFormatter;
+    class a extends s {
+      constructor(e, t) {
+        super(e, t), this.customization.forcePriceAxisLabel = !0, this.customization.disableErasing = !0, this
+          .customization.showInObjectsTree = !1, this._createFormatter(e.mainSeries().symbolInfo()), this
+          .setSelectionEnabled(!1)
+      }
+      isSynchronizable() {
+        return !1
+      }
+      pointsCount() {
+        return a.POINTS_COUNT
+      }
+      hasContextMenu() {
+        return !1
+      }
+      state() {
+        return null
+      }
+      startMoving() {
+        super.startMoving.apply(this, arguments), this._cursorMoved = !1
+      }
+      endMoving() {
+        super.endMoving.apply(this, arguments), this._cursorMoved = !1
+      }
+      userEditEnabled() {
+        return !0
+      }
+      movable() {
+        return !1
+      }
+      canBeHidden() {
+        return !1
+      }
+      isUserDeletable() {
+        return !1
+      }
+      showInObjectTree() {
+        return !1
+      }
+      doesMovingAffectsUndo() {
+        return !1
+      }
+      isAvailableInFloatingWidget() {
+        return !1
+      }
+      timeAxisViews() {
+        return null
+      }
+      cloneable() {
+        return !1
+      }
+      copiable() {
+        return !1
+      }
+      _correctPoints(e, t) {
+        this._currentMovingPoint && this._startMovingPoint ? this._currentMovingPoint.logical.price - this
+          ._startMovingPoint.logical.price && (this._cursorMoved = !0) : this._cursorMoved = !1;
+        for (var i = 1 / this.priceScale().mainSource().base(), s = 0; s < e.length; s++) {
+          var n = e[s];
+          this._cursorMoved && (n.price = this._currentMovingPoint.logical.price), n.price = o(n.price, i), e[s] = n
+        }
+      }
+      _createFormatter(e) {
+        let t = null;
+        t = n && n.priceFormatterFactory && n.priceFormatterFactory(e), null == t && (t = null), this._formatter =
+          null !== t ? t : r(e, "default", !1, !0)
+      }
+    }
+    a.POINTS_COUNT = 1, e.exports.LineToolTrading = a

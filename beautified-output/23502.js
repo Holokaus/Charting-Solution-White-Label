@@ -1,0 +1,155 @@
+/**
+ * Module 23502 - Beautified
+ * Auto-formatted from webpack bundle
+ * Semantic variable names applied
+ */
+
+23502: (e, t, i) => {
+    "use strict";
+    i.d(t, {
+      prepareStudyProperties: () => w,
+      prepareStudyPropertiesForLoadChart: () => g
+    });
+    var s = i(16738),
+      o = i(30551),
+      n = i(9343),
+      r = i(87465),
+      a = i(19844),
+      l = i(69558),
+      c = i(60973),
+      h = i(15219),
+      d = i(37293),
+      u = i(78176),
+      _ = i(97719),
+      p = i(4359);
+    const m = (0, n.getLogger)("Chart.Study");
+
+    function g(e, t, i, o, n, l) {
+      return function(e, t, i, o, n, l, h) {
+        const d = function(e, t, i, o, n) {
+          e.version && i.version && e.version !== i.version && m.logWarn("Serialized metaInfo version " + e
+            .version + " is not equal to the saved state version " + i.version);
+          const l = t || e,
+            h = (0, r.clone)(l.defaults) ?? {},
+            d = a.StudyMetaInfo.getStudyPropertyRootName(l),
+            u = a.StudyMetaInfo.getStudyPropertyRootName(e);
+          let _ = y();
+          (0, s.default)(_, f(e)), (0, s.default)(_, (0, r.clone)(e.defaults)), (0, s.default)(_, h), (0, s.default)
+          (_, (0, c.factoryDefaults)(d)), (0, s.default)(_, (0, c.factoryDefaults)(u)), (0, s.default)(_, v(l, o,
+            d)), (0, s.default)(_, v(e, o, u)), (0, s.default)(_, i), _ = o.updateStudyState(_, e, t), void 0 !==
+            n && t && (_ = n(i, _, e, t));
+          a.StudyMetaInfo.versionOf(l) >= 1 && (0, s.default)(_, S(h, _));
+          return _
+        }(e, t, i, o, l);
+        return T(t || e, n, d, h, !0)
+      }(e, t, i, o, a.StudyMetaInfo.getStudyPropertyRootName(e), n, l)
+    }
+
+    function f(e) {
+      const t = {};
+      if (e.plots)
+        for (let i = 0; i < e.plots.length; i++) {
+          const s = e.plots[i],
+            o = s.id;
+          if ((0, p.isColorerPlot)(s)) continue;
+          const n = {
+            display: 15,
+            color: "#0496FF",
+            linestyle: l.LINESTYLE_SOLID,
+            linewidth: 2,
+            plottype: p.LineStudyPlotStyle.Line,
+            trackPrice: !1
+          };
+          (0, p.isBarColorerPlot)(s) && (n.transparency = 0), n.plottype = s.type, n.title = o, t[o] = n
+        }
+      return {
+        styles: t
+      }
+    }
+
+    function y() {
+      const e = (0, r.clone)((0, c.defaults)("study"));
+      return e.intervalsVisibilities = (0, r.clone)(d.intervalsVisibilitiesDefaults), e
+    }
+
+    function v(e, t, i) {
+      let s = (0, r.clone)((0, c.defaults)(i, t));
+      return "Overlay" !== e.shortId && "Compare" !== e.shortId || (s.currencyId = null, s.unitId = null), e
+        .isTVScript && e.TVScriptSourceCode !== s.TVScriptSourceCode && (s = (0, r.clone)((0, c.factoryDefaults)(i))), s
+    }
+
+    function S(e, t) {
+      const i = {};
+      return h.StudyVersioning.mergeInputsObjPart(i, e.inputs ?? {}), h.StudyVersioning.mergeInputsObjPart(i, t
+      .inputs), {
+        inputs: i
+      }
+    }
+
+    function b(e, t, i, n) {
+      if (a.StudyMetaInfo.versionOf(e) < 1) throw new Error(
+        "This function cannot work with metainfo of the old format version. Required format version >= 1");
+      const l = a.StudyMetaInfo.getStudyPropertyRootName(e),
+        h = (0, r.clone)(e.defaults),
+        d = (0, c.factoryDefaults)(l),
+        u = y();
+      if ((0, s.default)(u, f(e)), (0, s.default)(u, h), (0, s.default)(u, d), (0, s.default)(u, v(e, n, l)), (0, s
+          .default)(u, t), (0, s.default)(u, S(h, u)), null !== i) {
+        const t = i.model().studiesColorRotatorFactory().getColorRotator(e);
+        null !== t && ("Overlay@tv-basicstudies" === e.id ? u.lineStyle.color = t.getColor(u.lineStyle.color, d
+          .lineStyle.color === u.lineStyle.color) : (0, s.default)(u, function(e, t) {
+          for (const i of Object.keys(e.styles)) {
+            const s = e.styles[i];
+            if ((0, o.isObject)(s) && "color" in s) {
+              const e = s.color;
+              s.color = t.getColor(e)
+            }
+          }
+          return e
+        }(u, t)))
+      }
+      return n.updateStudyInputsIfNeeded(u, u.version ?? e.version, e), u
+    }
+
+    function w(e, t, i, s, o) {
+      return function(e, t, i, s, o, n) {
+        const l = b(e, t, i, s),
+          c = a.StudyMetaInfo.getSourceInputIds(e);
+        return c.forEach(((e, t) => {
+          const i = l.inputs[e];
+          t < n.length ? l.inputs[e] = `${n[t].id()}$0` : (0, r.isString)(i) && i.includes("$") && (l.inputs[
+            e] = "close")
+        })), T(e, o, l)
+      }(e, t, i, s, a.StudyMetaInfo.getStudyPropertyRootName(e), o)
+    }
+    const C = ["id", "description", "description_localized", "shortDescription", "_metainfoVersion", "is_price_study",
+      "is_hidden_study", "priceScale", "fullId", "shortId", "scriptIdPart", "packageId", "productId",
+      "isTVScriptStub", "defaults", "symbolSource", "historyCalculationMayChange", "format", "linkedToSeries",
+      "isTVLibrary", "docs", "exports", "exportTypes", "extra", "usesPrivateLib", "financialPeriod", "groupingKey",
+      "pine", "isRGB", "isTVScript", "TVScriptMetaInfoExprs", "usePlotsZOrder", "isTVScriptStrategy",
+      "TVScriptSourceCode", "lookaheadFutureData", "hasAlertFunction", "defaultStrategyAlertMessage", "tags",
+      "canBeChild", "canNotBeChild", "_serverMetaInfoVersion", "warnings"
+    ];
+
+    function T(e, t, i, s, o) {
+      for (const e of C) delete i[e];
+      const n = ["visible", "precision", "minTick", "intervalsVisibilities", "inputs.first_visible_bar_time",
+        "inputs.last_visible_bar_time", "inputs.subscribeRealtime", "patchMetaInfoDefaults"
+      ];
+      for (let t = 0; t < e.inputs.length; ++t) {
+        const i = e.inputs[t];
+        i.isHidden && (n.push(`inputs.${t}`), n.push(`inputs.${i.id}`))
+      }
+      const r = new u.DefaultProperty({
+        defaultName: t,
+        state: i,
+        excludedDefaultsKeys: n,
+        excludedStateKeys: ["version"],
+        theme: s
+      });
+      r.removeProperty("intervalsVisibilities"), r.addChild("intervalsVisibilities", new _
+          .IntervalsVisibilitiesProperty(i && i.intervalsVisibilities)), "PivotPointsStandard@tv-basicstudies" !== e
+        .id && "PivotPointsHighLow@tv-basicstudies" !== e.id || !r.hasChild("font") || r.removeProperty("font");
+      const l = a.StudyMetaInfo.versionOf(e);
+      return r.hasChild("version") ? r.childs().version?.setValue(l) : r.addProperty("version", l), r
+    }

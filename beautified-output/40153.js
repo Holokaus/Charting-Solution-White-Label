@@ -1,0 +1,20 @@
+/**
+ * Module 40153 - Beautified
+ * Auto-formatted from webpack bundle
+ * Semantic variable names applied
+ */
+
+40153: (e, t, i) => {
+    "use strict";
+    i.d(t, {
+      withWeekdayProperty: () => a
+    });
+    var s = i(1765),
+      o = i(41072);
+    const n = "date_format_with_weekday";
+
+    function r() {
+      return s.getBool(n, !0)
+    }
+    const a = (0, o.createPrimitiveProperty)(r());
+    a.subscribe(null, (() => s.setValue(n, a.value()))), s.onSync.subscribe(null, (() => a.setValue(r())))

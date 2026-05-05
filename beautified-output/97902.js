@@ -1,0 +1,16 @@
+/**
+ * Module 97902 - Beautified
+ * Auto-formatted from webpack bundle
+ * Semantic variable names applied
+ */
+
+97902: (e, t, i) => {
+    "use strict";
+    var s;
+    i.d(t, {
+        PriceAxisLastValueMode: () => s
+      }),
+      function(e) {
+        e[e.LastPriceAndPercentageValue = 0] = "LastPriceAndPercentageValue", e[e.LastValueAccordingToScale = 1] =
+          "LastValueAccordingToScale"
+      }(s || (s = {}))

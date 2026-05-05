@@ -1,0 +1,9 @@
+/**
+ * Module 2872 - Beautified
+ * Auto-formatted from webpack bundle
+ * Semantic variable names applied
+ */
+
+2872: e => {
+    e.exports =
+      '<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"><g fill="none" fill-rule="evenodd" stroke="currentColor" transform="translate(6 3)"><rect width="15" height="12" rx="2" x=".5" y="8.5"/><path stroke-linecap="round" stroke-width="2" d="M8 15v2"/><path d="M11.5 4a3.5 3.5 0 0 0-7 0v4.5"/></g></svg>'

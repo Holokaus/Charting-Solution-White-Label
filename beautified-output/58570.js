@@ -1,0 +1,199 @@
+/**
+ * Module 58570 - Beautified
+ * Auto-formatted from webpack bundle
+ * Semantic variable names applied
+ */
+
+58570: (e, t, i) => {
+    "use strict";
+    i.d(t, {
+      asLineToolName: () => f,
+      ensureLineToolLoaded: () => g,
+      getLoadedLineTool: () => v,
+      isAsyncGenericLineToolName: () => d,
+      isAsyncStudyLineToolName: () => u,
+      isLineToolLoaded: () => _,
+      loadLineTool: () => m,
+      loadMetaInfoForLinetoolIfRequired: () => y
+    });
+    var s = i(50151),
+      o = i(72972),
+      n = i(35107);
+    const r = new Map;
+    const a = async e => {
+      const [t, s] = await Promise.all([Promise.all([i.e(2342), i.e(3952)]).then(i.bind(i, 85834)), Promise.all([i
+        .e(2342), i.e(3952)
+      ]).then(i.bind(i, 92483))]), o = t.LineToolRiskRewardLong, n = s.LineToolRiskRewardShort;
+      return r.set("LineToolRiskRewardLong", o), r.set("LineToolRiskRewardShort", n), "LineToolRiskRewardLong" ===
+        e ? o : n
+    }, l = new Map([
+      ["LineToolPriceNote", async () => (await Promise.all([i.e(9426), i.e(5410), i.e(2745), i.e(380)]).then(i
+        .bind(i, 97865))).LineToolPriceNote],
+      ["LineToolTextNote", async () => (await Promise.all([i.e(6645), i.e(5410), i.e(2745), i.e(986), i.e(9123)])
+        .then(i.bind(i, 55241))).LineToolTextNote],
+      ["LineToolNote", async () => (await Promise.all([i.e(3355), i.e(5410), i.e(2745), i.e(986), i.e(3248)])
+        .then(i.bind(i, 77977))).LineToolNote],
+      ["LineToolFibSpiral", async () => (await Promise.all([i.e(3181), i.e(5410), i.e(2745), i.e(8090)]).then(i
+        .bind(i, 40882))).LineToolFibSpiral],
+      ["LineToolCircleLines", async () => (await Promise.all([i.e(8896), i.e(5410), i.e(2745), i.e(9445)]).then(i
+        .bind(i, 75249))).LineToolCyclicLines],
+      ["LineToolNoteAbsolute", async () => (await Promise.all([i.e(3355), i.e(5410), i.e(2745), i.e(986), i.e(
+        3248)]).then(i.bind(i, 77977))).LineToolNoteAbsolute],
+      ["LineToolTable", async () => (await Promise.all([i.e(9494), i.e(5410), i.e(2745), i.e(986), i.e(319)])
+        .then(i.bind(i, 53768))).LineToolTable],
+      ["LineToolFibSpeedResistanceArcs", async () => (await Promise.all([i.e(1427), i.e(5410), i.e(2745), i.e(
+        986), i.e(3710)
+      ]).then(i.bind(i, 2709))).LineToolFibSpeedResistanceArcs],
+      ["LineToolPitchfan", async () => (await Promise.all([i.e(7952), i.e(5410), i.e(2745), i.e(8823), i.e(1313)])
+        .then(i.bind(i, 23712))).LineToolPitchfan],
+      ["LineToolFibSpeedResistanceFan", async () => (await Promise.all([i.e(1308), i.e(5410), i.e(2745), i.e(
+        906)]).then(i.bind(i, 5352))).LineToolFibSpeedResistanceFan],
+      ["LineToolFibWedge", async () => (await Promise.all([i.e(6760), i.e(5410), i.e(2745), i.e(986), i.e(3314)])
+        .then(i.bind(i, 39653))).LineToolFibWedge],
+      ["LineToolEmoji", async () => (await Promise.all([i.e(6155), i.e(5410), i.e(2745), i.e(6668), i.e(5529)])
+        .then(i.bind(i, 97879))).LineToolEmoji],
+      ["LineToolBalloon", async () => (await Promise.all([i.e(2303), i.e(5410), i.e(2745), i.e(2891), i.e(1277)])
+        .then(i.bind(i, 12891))).LineToolBalloon],
+      ["LineToolComment", async () => (await Promise.all([i.e(2303), i.e(5410), i.e(2745), i.e(986), i.e(2891), i
+        .e(3966)
+      ]).then(i.bind(i, 67046))).LineToolComment],
+      ["LineToolBezierCubic", async () => (await Promise.all([i.e(1432), i.e(5410), i.e(2745), i.e(9014)]).then(i
+        .bind(i, 42318))).LineToolBezierCubic],
+      ["LineToolInsidePitchfork", async () => (await Promise.all([i.e(8763), i.e(8468)]).then(i.bind(i, 72298)))
+        .LineToolInsidePitchfork]
+    ]);
+    l.set("LineToolFibRetracement", (async () => (await Promise.all([i.e(7850), i.e(3723)]).then(i.bind(i, 91308)))
+        .LineToolFibRetracement)), l.set("LineToolFibChannel", (async () => (await Promise.all([i.e(7850), i.e(2283)])
+        .then(i.bind(i, 5871))).LineToolFibChannel)), l.set("LineToolProjection", (async () => (await Promise.all([i.e(
+        7122), i.e(3945)]).then(i.bind(i, 11437))).LineToolProjection)), l.set("LineToolTrendBasedFibExtension", (
+      async () => (await Promise.all([i.e(7850), i.e(4731)]).then(i.bind(i, 1086))).LineToolTrendBasedFibExtension)), l
+      .set("LineToolElliott", (async () => (await Promise.resolve().then(i.bind(i, 10544))).LineToolElliott)), l.set(
+        "LineToolFibCircles", (async () => (await Promise.all([i.e(7850), i.e(2816)]).then(i.bind(i, 33985)))
+          .LineToolFibCircles)),
+      l.set("LineToolVertLine", (async () => (await Promise.all([i.e(7122), i.e(1282)]).then(i.bind(i, 94894)))
+        .LineToolVertLine)), l.set("LineToolCrossLine", (async () => (await i.e(7203).then(i.bind(i, 9431)))
+        .LineToolCrossLine)), l.set("LineToolBarsPattern", (async () => (await Promise.all([i.e(4543), i.e(5206)]).then(
+        i.bind(i, 66807))).LineToolBarsPattern)), l.set("LineToolTrendBasedFibTime", (async () => (await Promise.all([i
+        .e(5111), i.e(7127)
+      ]).then(i.bind(i, 42232))).LineToolTrendBasedFibTime)), l.set("LineToolFibTimeZone", (async () => (await Promise
+        .all([i.e(5111), i.e(1506)]).then(i.bind(i, 40228))).LineToolFibTimeZone)), l.set("LineToolDateRange", (
+    async () => (await i.e(4273).then(i.bind(i, 65096))).LineToolDateRange)), l.set("LineToolPriceRange", (async () => (
+        await i.e(6477).then(i.bind(i, 27223))).LineToolPriceRange)), l.set("LineToolDateAndPriceRange", (async () => (
+        await i.e(1455).then(i.bind(i, 22003))).LineToolDateAndPriceRange)), l.set("LineToolParallelChannel", (
+    async () => (await i.e(2050).then(i.bind(i, 31191))).LineToolParallelChannel)), l.set("LineToolTrendAngle", (
+    async () => (await Promise.all([i.e(7122), i.e(8372)]).then(i.bind(i, 75820))).LineToolTrendAngle)), l.set(
+        "LineToolTrendLine", (async () => (await Promise.all([i.e(7122), i.e(8673)]).then(i.bind(i, 42150)))
+          .LineToolTrendLine)), l.set("LineToolInfoLine", (async () => (await Promise.all([i.e(7122), i.e(7488)]).then(i
+        .bind(i, 43470))).LineToolInfoLine)), l.set("LineToolArrowMark", (async () => (await i.e(569).then(i.bind(i,
+        70214))).LineToolArrowMark)), l.set("LineToolGannSquare", (async () => (await i.e(9478).then(i.bind(i, 26141)))
+        .LineToolGannSquare)), l.set("LineToolGannComplex", (async () => (await i.e(1963).then(i.bind(i, 68991)))
+        .LineToolGannComplex)), l.set("LineToolGannFixed", (async () => (await i.e(6336).then(i.bind(i, 44934)))
+        .LineToolGannFixed)), l.set("LineToolGannFan", (async () => (await Promise.all([i.e(5111), i.e(4981)]).then(i
+        .bind(i, 646))).LineToolGannFan)), l.set("LineToolPitchfork", (async () => (await Promise.all([i.e(8763), i.e(
+        5055)]).then(i.bind(i, 7029))).LineToolPitchfork)), l.set("LineToolDisjointAngle", (async () => (await i.e(9581)
+        .then(i.bind(i, 56348))).LineToolDisjointChannel)), l.set("LineToolFlatBottom", (async () => (await i.e(9310)
+        .then(i.bind(i, 28121))).LineToolFlatBottom)), l.set("LineToolIcon", (async () => (await i.e(7806).then(i.bind(
+        i, 37130))).LineToolIcon)), l.set("LineToolSticker", (async () => (await i.e(8949).then(i.bind(i, 13238)))
+        .LineToolSticker)), l.set("LineToolRotatedRectangle", (async () => (await i.e(4015).then(i.bind(i, 92417)))
+        .LineToolRotatedRectangle)), l.set("LineToolHeadAndShoulders", (async () => (await i.e(3378).then(i.bind(i,
+        43684))).LineToolHeadAndShoulders)), l.set("LineToolTriangle", (async () => (await i.e(6432).then(i.bind(i,
+        41160))).LineToolTriangle)), l.set("LineToolTrianglePattern", (async () => (await i.e(3383).then(i.bind(i,
+        94407))).LineToolTrianglePattern)), l.set("LineTool5PointsPattern", (async () => (await i.e(1155).then(i.bind(i,
+        77657))).LineTool5PointsPattern)), l.set("LineToolThreeDrivers", (async () => (await i.e(4602).then(i.bind(i,
+        95400))).LineToolThreeDrivers)),
+      l.set("LineToolABCD", (async () => (await i.e(5283).then(i.bind(i, 21730))).LineToolABCD)), l.set(
+        "LineToolPolyline", (async () => (await i.e(3866).then(i.bind(i, 52982))).LineToolPolyline)), l.set(
+        "LineToolPath", (async () => (await i.e(961).then(i.bind(i, 18441))).LineToolPath)), l.set("LineToolPrediction",
+        (async () => (await i.e(9534).then(i.bind(i, 45372))).LineToolPrediction)), l.set("LineToolPriceLabel", (
+    async () => (await i.e(6484).then(i.bind(i, 60594))).LineToolPriceLabel)), l.set("LineToolArrowMarker", (async () =>
+        (await i.e(1470).then(i.bind(i, 14638))).LineToolArrowMarker)), l.set("LineToolSignpost", (async () => (
+        await Promise.all([i.e(7122), i.e(4674)]).then(i.bind(i, 4838))).LineToolSignpost)), l.set("LineToolBrush", (
+        async () => (await i.e(5122).then(i.bind(i, 71514))).LineToolBrush)), l.set("LineToolArc", (async () => (await i
+        .e(5967).then(i.bind(i, 20272))).LineToolArc)), l.set("LineToolCallout", (async () => (await Promise.all([i.e(
+        7122), i.e(688)]).then(i.bind(i, 9587))).LineToolCallout)), l.set("LineToolText", (async () => (await Promise
+        .all([i.e(7122), i.e(2312)]).then(i.bind(i, 77532))).LineToolText)), l.set("LineToolHorzLine", (async () => (
+        await Promise.all([i.e(7122), i.e(4201)]).then(i.bind(i, 66605))).LineToolHorzLine)), l.set("LineToolHorzRay", (
+        async () => (await i.e(574).then(i.bind(i, 80102))).LineToolHorzRay)), l.set("LineToolRectangle", (async () => (
+        await Promise.all([i.e(7122), i.e(8422)]).then(i.bind(i, 22132))).LineToolRectangle)), l.set("LineToolCircle", (
+        async () => (await Promise.all([i.e(7122), i.e(6748)]).then(i.bind(i, 40283))).LineToolCircle)), l.set(
+        "LineToolEllipse", (async () => (await Promise.all([i.e(7122), i.e(7660)]).then(i.bind(i, 95121)))
+          .LineToolEllipse)), l.set("LineToolTimeCycles", (async () => (await i.e(8334).then(i.bind(i, 79327)))
+        .LineToolTimeCycles)), l.set("LineToolSineLine", (async () => (await i.e(1713).then(i.bind(i, 49684)))
+        .LineToolSineLine)), l.set("LineToolGhostFeed", (async () => (await i.e(7563).then(i.bind(i, 46350)))
+        .LineToolGhostFeed)), l.set("LineToolBezierQuadro", (async () => (await i.e(8061).then(i.bind(i, 12148)))
+        .LineToolBezierQuadro)), l.set("LineToolArrow", (async () => (await Promise.all([i.e(7122), i.e(8607)]).then(i
+        .bind(i, 81817))).LineToolArrow)), l.set("LineToolRay", (async () => (await Promise.all([i.e(7122), i.e(4934)])
+        .then(i.bind(i, 94984))).LineToolRay)), l.set("LineToolExtended", (async () => (await Promise.all([i.e(7122), i
+        .e(925)
+      ]).then(i.bind(i, 81951))).LineToolExtended)), l.set("LineToolSchiffPitchfork", (async () => (await Promise.all([i
+        .e(8763), i.e(7175)
+      ]).then(i.bind(i, 28216))).LineToolSchiffPitchfork)), l.set("LineToolSchiffPitchfork2", (async () => (
+        await Promise.all([i.e(8763), i.e(341)]).then(i.bind(i, 23366))).LineToolSchiffPitchfork2)), l.set(
+        "LineToolTextAbsolute", (async () => (await Promise.all([i.e(7122), i.e(2312)]).then(i.bind(i, 77532)))
+          .LineToolTextAbsolute)), l.set("LineToolArrowMarkLeft", (async () => (await i.e(569).then(i.bind(i, 70214)))
+        .LineToolArrowMarkLeft)), l.set("LineToolArrowMarkRight", (async () => (await i.e(569).then(i.bind(i, 70214)))
+        .LineToolArrowMarkRight)), l.set("LineToolArrowMarkUp", (async () => (await i.e(569).then(i.bind(i, 70214)))
+        .LineToolArrowMarkUp)),
+      l.set("LineToolArrowMarkDown", (async () => (await i.e(569).then(i.bind(i, 70214))).LineToolArrowMarkDown)), l
+      .set("LineToolFlagMark", (async () => (await i.e(8820).then(i.bind(i, 23283))).LineToolFlagMark)), l.set(
+        "LineToolCypherPattern", (async () => (await i.e(6740).then(i.bind(i, 573))).LineToolCypherPattern)), l.set(
+        "LineToolElliottImpulse", (async () => (await Promise.resolve().then(i.bind(i, 10544))).LineToolElliottImpulse)
+        ), l.set("LineToolElliottTriangle", (async () => (await Promise.resolve().then(i.bind(i, 10544)))
+        .LineToolElliottTriangle)), l.set("LineToolElliottTripleCombo", (async () => (await Promise.resolve().then(i
+        .bind(i, 10544))).LineToolElliottTripleCombo)), l.set("LineToolElliottCorrection", (async () => (await Promise
+        .resolve().then(i.bind(i, 10544))).LineToolElliottCorrection)), l.set("LineToolElliottDoubleCombo", (async () =>
+        (await Promise.resolve().then(i.bind(i, 10544))).LineToolElliottDoubleCombo)), l.set("LineToolRiskRewardLong", (
+        () => a("LineToolRiskRewardLong"))), l.set("LineToolRiskRewardShort", (() => a("LineToolRiskRewardShort"))), l
+      .set("LineToolPosition", (async () => (await i.e(1314).then(i.t.bind(i, 69593, 19))).LineToolPosition)), l.set(
+        "LineToolOrder", (async () => (await i.e(2232).then(i.t.bind(i, 28837, 19))).LineToolOrder)), l.set(
+        "LineToolHighlighter", (async () => (await i.e(2087).then(i.bind(i, 50991))).LineToolHighlighter)), l.set(
+        "LineToolImage", (async () => (await Promise.all([i.e(5402), i.e(5231)]).then(i.bind(i, 62414))).LineToolImage)
+        ), l.set("LineToolExecution", (async () => (await Promise.resolve().then(i.bind(i, 27593))).LineToolExecution));
+    const c = new Map,
+      h = new Map([
+        ["LineToolAnchoredVWAP", async () => (await Promise.all([i.e(6025), i.e(9378), i.e(5500)]).then(i.bind(i,
+          55157))).LineToolAnchoredVWAP],
+        ["LineToolRegressionTrend", async () => (await i.e(9748).then(i.bind(i, 1232))).LineToolRegressionTrend],
+        ["LineToolVbPFixed", async () => (await Promise.all([i.e(6025), i.e(5695)]).then(i.bind(i, 71112)))
+          .LineToolVbPFixed],
+        ["LineToolFixedRangeVolumeProfile", async () => (await Promise.all([i.e(6025), i.e(5695)]).then(i.bind(i,
+          57296))).LineToolFixedRangeVolumeProfile]
+      ]);
+
+    function d(e) {
+      return l.has(e) || h.has(e) || r.has(e)
+    }
+
+    function u(e) {
+      return h.has(e)
+    }
+
+    function _(e) {
+      return !d(e) || r.has(e) || c.has(e)
+    }
+    let p = 0;
+    async function m(e) {
+      if (_(e)) return v(e);
+      const t = u(e);
+      p += 1;
+      const i = (0, s.ensureDefined)((t ? h : l).get(e)),
+        o = await i();
+      return p -= 1, t ? (c.set(e, (0, s.ensureDefined)(o)), v(e)) : (r.set(e, (0, s.ensureDefined)(o)), v(e))
+    }
+    async function g(e) {
+      await y(e), d(e) && !_(e) && await m(e)
+    }
+
+    function f(e) {
+      return e
+    }
+    async function y(e) {
+      (function(e) {
+        return ["LineToolRiskRewardLong", "LineToolRiskRewardShort"].includes(e), (0, n.isStudyLineTool)(e) || u(e)
+      })(e) && await (0, o.studyMetaInfoRepository)().findAllJavaStudies()
+    }
+
+    function v(e) {
+      return u(e) ? (0, s.ensureDefined)(c.get(e), `Study line tool ${e}`) : (0, s.ensureDefined)(r.get(e),
+        `Line tool ${e}`)
+    }

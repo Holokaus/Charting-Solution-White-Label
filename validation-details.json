@@ -1,0 +1,2607 @@
+[
+  {
+    "moduleId": "10892",
+    "semanticName": "timeInterval",
+    "passed": 5,
+    "failed": 0,
+    "warnings": [
+      "No exports explicitly defined"
+    ],
+    "validations": [
+      {
+        "type": "moduleId_format",
+        "status": "PASS",
+        "message": "Valid numeric module ID"
+      },
+      {
+        "type": "name_format",
+        "status": "PASS",
+        "message": "Valid camelCase semantic name"
+      },
+      {
+        "type": "content_valid",
+        "status": "PASS",
+        "message": "Valid content (7380 bytes)"
+      },
+      {
+        "type": "header_present",
+        "status": "PASS",
+        "message": "Documentation header present"
+      },
+      {
+        "type": "semantic_vars",
+        "status": "PASS",
+        "message": "8 semantic variables found"
+      },
+      {
+        "type": "dependencies",
+        "status": "WARNING",
+        "message": "No dependencies found"
+      },
+      {
+        "type": "errors",
+        "status": "WARNING",
+        "message": "1 potential errors"
+      }
+    ],
+    "score": 100,
+    "quality": "EXCELLENT",
+    "tier": 1
+  },
+  {
+    "moduleId": "11768",
+    "semanticName": "series",
+    "passed": 6,
+    "failed": 0,
+    "warnings": [
+      "No exports explicitly defined"
+    ],
+    "validations": [
+      {
+        "type": "moduleId_format",
+        "status": "PASS",
+        "message": "Valid numeric module ID"
+      },
+      {
+        "type": "name_format",
+        "status": "PASS",
+        "message": "Valid camelCase semantic name"
+      },
+      {
+        "type": "content_valid",
+        "status": "PASS",
+        "message": "Valid content (2915 bytes)"
+      },
+      {
+        "type": "header_present",
+        "status": "PASS",
+        "message": "Documentation header present"
+      },
+      {
+        "type": "semantic_vars",
+        "status": "PASS",
+        "message": "8 semantic variables found"
+      },
+      {
+        "type": "dependencies",
+        "status": "WARNING",
+        "message": "No dependencies found"
+      },
+      {
+        "type": "errors",
+        "status": "PASS",
+        "message": "No obvious errors detected"
+      }
+    ],
+    "score": 100,
+    "quality": "EXCELLENT",
+    "tier": 1
+  },
+  {
+    "moduleId": "13421",
+    "semanticName": "seriesData",
+    "passed": 5,
+    "failed": 0,
+    "warnings": [
+      "No exports explicitly defined"
+    ],
+    "validations": [
+      {
+        "type": "moduleId_format",
+        "status": "PASS",
+        "message": "Valid numeric module ID"
+      },
+      {
+        "type": "name_format",
+        "status": "PASS",
+        "message": "Valid camelCase semantic name"
+      },
+      {
+        "type": "content_valid",
+        "status": "PASS",
+        "message": "Valid content (7257 bytes)"
+      },
+      {
+        "type": "header_present",
+        "status": "PASS",
+        "message": "Documentation header present"
+      },
+      {
+        "type": "semantic_vars",
+        "status": "PASS",
+        "message": "8 semantic variables found"
+      },
+      {
+        "type": "dependencies",
+        "status": "WARNING",
+        "message": "No dependencies found"
+      },
+      {
+        "type": "errors",
+        "status": "WARNING",
+        "message": "1 potential errors"
+      }
+    ],
+    "score": 100,
+    "quality": "EXCELLENT",
+    "tier": 1
+  },
+  {
+    "moduleId": "16708",
+    "semanticName": "deleteLockedLineTools",
+    "passed": 6,
+    "failed": 0,
+    "warnings": [
+      "No exports explicitly defined"
+    ],
+    "validations": [
+      {
+        "type": "moduleId_format",
+        "status": "PASS",
+        "message": "Valid numeric module ID"
+      },
+      {
+        "type": "name_format",
+        "status": "PASS",
+        "message": "Valid camelCase semantic name"
+      },
+      {
+        "type": "content_valid",
+        "status": "PASS",
+        "message": "Valid content (3093 bytes)"
+      },
+      {
+        "type": "header_present",
+        "status": "PASS",
+        "message": "Documentation header present"
+      },
+      {
+        "type": "semantic_vars",
+        "status": "PASS",
+        "message": "8 semantic variables found"
+      },
+      {
+        "type": "dependencies",
+        "status": "WARNING",
+        "message": "No dependencies found"
+      },
+      {
+        "type": "errors",
+        "status": "PASS",
+        "message": "No obvious errors detected"
+      }
+    ],
+    "score": 100,
+    "quality": "EXCELLENT",
+    "tier": 1
+  },
+  {
+    "moduleId": "18712",
+    "semanticName": "watchedValue",
+    "passed": 6,
+    "failed": 0,
+    "warnings": [
+      "No exports explicitly defined"
+    ],
+    "validations": [
+      {
+        "type": "moduleId_format",
+        "status": "PASS",
+        "message": "Valid numeric module ID"
+      },
+      {
+        "type": "name_format",
+        "status": "PASS",
+        "message": "Valid camelCase semantic name"
+      },
+      {
+        "type": "content_valid",
+        "status": "PASS",
+        "message": "Valid content (1655 bytes)"
+      },
+      {
+        "type": "header_present",
+        "status": "PASS",
+        "message": "Documentation header present"
+      },
+      {
+        "type": "semantic_vars",
+        "status": "PASS",
+        "message": "8 semantic variables found"
+      },
+      {
+        "type": "dependencies",
+        "status": "WARNING",
+        "message": "No dependencies found"
+      },
+      {
+        "type": "errors",
+        "status": "PASS",
+        "message": "No obvious errors detected"
+      }
+    ],
+    "score": 100,
+    "quality": "EXCELLENT",
+    "tier": 1
+  },
+  {
+    "moduleId": "19233",
+    "semanticName": "seriesData",
+    "passed": 5,
+    "failed": 0,
+    "warnings": [
+      "No exports explicitly defined"
+    ],
+    "validations": [
+      {
+        "type": "moduleId_format",
+        "status": "PASS",
+        "message": "Valid numeric module ID"
+      },
+      {
+        "type": "name_format",
+        "status": "PASS",
+        "message": "Valid camelCase semantic name"
+      },
+      {
+        "type": "content_valid",
+        "status": "PASS",
+        "message": "Valid content (2653 bytes)"
+      },
+      {
+        "type": "header_present",
+        "status": "PASS",
+        "message": "Documentation header present"
+      },
+      {
+        "type": "semantic_vars",
+        "status": "PASS",
+        "message": "8 semantic variables found"
+      },
+      {
+        "type": "dependencies",
+        "status": "WARNING",
+        "message": "No dependencies found"
+      },
+      {
+        "type": "errors",
+        "status": "WARNING",
+        "message": "1 potential errors"
+      }
+    ],
+    "score": 100,
+    "quality": "EXCELLENT",
+    "tier": 1
+  },
+  {
+    "moduleId": "20820",
+    "semanticName": "bitmapCoordinatesPane",
+    "passed": 6,
+    "failed": 0,
+    "warnings": [
+      "No exports explicitly defined"
+    ],
+    "validations": [
+      {
+        "type": "moduleId_format",
+        "status": "PASS",
+        "message": "Valid numeric module ID"
+      },
+      {
+        "type": "name_format",
+        "status": "PASS",
+        "message": "Valid camelCase semantic name"
+      },
+      {
+        "type": "content_valid",
+        "status": "PASS",
+        "message": "Valid content (1657 bytes)"
+      },
+      {
+        "type": "header_present",
+        "status": "PASS",
+        "message": "Documentation header present"
+      },
+      {
+        "type": "semantic_vars",
+        "status": "PASS",
+        "message": "8 semantic variables found"
+      },
+      {
+        "type": "dependencies",
+        "status": "WARNING",
+        "message": "No dependencies found"
+      },
+      {
+        "type": "errors",
+        "status": "PASS",
+        "message": "No obvious errors detected"
+      }
+    ],
+    "score": 100,
+    "quality": "EXCELLENT",
+    "tier": 1
+  },
+  {
+    "moduleId": "22489",
+    "semanticName": "chartDataManager",
+    "passed": 6,
+    "failed": 0,
+    "warnings": [
+      "No exports explicitly defined"
+    ],
+    "validations": [
+      {
+        "type": "moduleId_format",
+        "status": "PASS",
+        "message": "Valid numeric module ID"
+      },
+      {
+        "type": "name_format",
+        "status": "PASS",
+        "message": "Valid camelCase semantic name"
+      },
+      {
+        "type": "content_valid",
+        "status": "PASS",
+        "message": "Valid content (13613 bytes)"
+      },
+      {
+        "type": "header_present",
+        "status": "PASS",
+        "message": "Documentation header present"
+      },
+      {
+        "type": "semantic_vars",
+        "status": "PASS",
+        "message": "8 semantic variables found"
+      },
+      {
+        "type": "dependencies",
+        "status": "WARNING",
+        "message": "No dependencies found"
+      },
+      {
+        "type": "errors",
+        "status": "PASS",
+        "message": "No obvious errors detected"
+      }
+    ],
+    "score": 100,
+    "quality": "EXCELLENT",
+    "tier": 1
+  },
+  {
+    "moduleId": "24062",
+    "semanticName": "watchedValue",
+    "passed": 6,
+    "failed": 0,
+    "warnings": [
+      "No exports explicitly defined"
+    ],
+    "validations": [
+      {
+        "type": "moduleId_format",
+        "status": "PASS",
+        "message": "Valid numeric module ID"
+      },
+      {
+        "type": "name_format",
+        "status": "PASS",
+        "message": "Valid camelCase semantic name"
+      },
+      {
+        "type": "content_valid",
+        "status": "PASS",
+        "message": "Valid content (4376 bytes)"
+      },
+      {
+        "type": "header_present",
+        "status": "PASS",
+        "message": "Documentation header present"
+      },
+      {
+        "type": "semantic_vars",
+        "status": "PASS",
+        "message": "8 semantic variables found"
+      },
+      {
+        "type": "dependencies",
+        "status": "WARNING",
+        "message": "No dependencies found"
+      },
+      {
+        "type": "errors",
+        "status": "PASS",
+        "message": "No obvious errors detected"
+      }
+    ],
+    "score": 100,
+    "quality": "EXCELLENT",
+    "tier": 1
+  },
+  {
+    "moduleId": "26610",
+    "semanticName": "lineToolManager",
+    "passed": 6,
+    "failed": 0,
+    "warnings": [
+      "No exports explicitly defined"
+    ],
+    "validations": [
+      {
+        "type": "moduleId_format",
+        "status": "PASS",
+        "message": "Valid numeric module ID"
+      },
+      {
+        "type": "name_format",
+        "status": "PASS",
+        "message": "Valid camelCase semantic name"
+      },
+      {
+        "type": "content_valid",
+        "status": "PASS",
+        "message": "Valid content (10524 bytes)"
+      },
+      {
+        "type": "header_present",
+        "status": "PASS",
+        "message": "Documentation header present"
+      },
+      {
+        "type": "semantic_vars",
+        "status": "PASS",
+        "message": "8 semantic variables found"
+      },
+      {
+        "type": "dependencies",
+        "status": "WARNING",
+        "message": "No dependencies found"
+      },
+      {
+        "type": "errors",
+        "status": "PASS",
+        "message": "No obvious errors detected"
+      }
+    ],
+    "score": 100,
+    "quality": "EXCELLENT",
+    "tier": 1
+  },
+  {
+    "moduleId": "28001",
+    "semanticName": "seriesBarFunction",
+    "passed": 6,
+    "failed": 0,
+    "warnings": [
+      "No exports explicitly defined"
+    ],
+    "validations": [
+      {
+        "type": "moduleId_format",
+        "status": "PASS",
+        "message": "Valid numeric module ID"
+      },
+      {
+        "type": "name_format",
+        "status": "PASS",
+        "message": "Valid camelCase semantic name"
+      },
+      {
+        "type": "content_valid",
+        "status": "PASS",
+        "message": "Valid content (2141 bytes)"
+      },
+      {
+        "type": "header_present",
+        "status": "PASS",
+        "message": "Documentation header present"
+      },
+      {
+        "type": "semantic_vars",
+        "status": "PASS",
+        "message": "8 semantic variables found"
+      },
+      {
+        "type": "dependencies",
+        "status": "WARNING",
+        "message": "No dependencies found"
+      },
+      {
+        "type": "errors",
+        "status": "PASS",
+        "message": "No obvious errors detected"
+      }
+    ],
+    "score": 100,
+    "quality": "EXCELLENT",
+    "tier": 1
+  },
+  {
+    "moduleId": "28450",
+    "semanticName": "watchedValue",
+    "passed": 6,
+    "failed": 0,
+    "warnings": [
+      "No exports explicitly defined"
+    ],
+    "validations": [
+      {
+        "type": "moduleId_format",
+        "status": "PASS",
+        "message": "Valid numeric module ID"
+      },
+      {
+        "type": "name_format",
+        "status": "PASS",
+        "message": "Valid camelCase semantic name"
+      },
+      {
+        "type": "content_valid",
+        "status": "PASS",
+        "message": "Valid content (8253 bytes)"
+      },
+      {
+        "type": "header_present",
+        "status": "PASS",
+        "message": "Documentation header present"
+      },
+      {
+        "type": "semantic_vars",
+        "status": "PASS",
+        "message": "8 semantic variables found"
+      },
+      {
+        "type": "dependencies",
+        "status": "WARNING",
+        "message": "No dependencies found"
+      },
+      {
+        "type": "errors",
+        "status": "PASS",
+        "message": "No obvious errors detected"
+      }
+    ],
+    "score": 100,
+    "quality": "EXCELLENT",
+    "tier": 1
+  },
+  {
+    "moduleId": "28477",
+    "semanticName": "seriesBarFunction",
+    "passed": 6,
+    "failed": 0,
+    "warnings": [
+      "No exports explicitly defined"
+    ],
+    "validations": [
+      {
+        "type": "moduleId_format",
+        "status": "PASS",
+        "message": "Valid numeric module ID"
+      },
+      {
+        "type": "name_format",
+        "status": "PASS",
+        "message": "Valid camelCase semantic name"
+      },
+      {
+        "type": "content_valid",
+        "status": "PASS",
+        "message": "Valid content (1589 bytes)"
+      },
+      {
+        "type": "header_present",
+        "status": "PASS",
+        "message": "Documentation header present"
+      },
+      {
+        "type": "semantic_vars",
+        "status": "PASS",
+        "message": "8 semantic variables found"
+      },
+      {
+        "type": "dependencies",
+        "status": "WARNING",
+        "message": "No dependencies found"
+      },
+      {
+        "type": "errors",
+        "status": "PASS",
+        "message": "No obvious errors detected"
+      }
+    ],
+    "score": 100,
+    "quality": "EXCELLENT",
+    "tier": 1
+  },
+  {
+    "moduleId": "30693",
+    "semanticName": "priceDataSource",
+    "passed": 6,
+    "failed": 0,
+    "warnings": [
+      "No exports explicitly defined"
+    ],
+    "validations": [
+      {
+        "type": "moduleId_format",
+        "status": "PASS",
+        "message": "Valid numeric module ID"
+      },
+      {
+        "type": "name_format",
+        "status": "PASS",
+        "message": "Valid camelCase semantic name"
+      },
+      {
+        "type": "content_valid",
+        "status": "PASS",
+        "message": "Valid content (5137 bytes)"
+      },
+      {
+        "type": "header_present",
+        "status": "PASS",
+        "message": "Documentation header present"
+      },
+      {
+        "type": "semantic_vars",
+        "status": "PASS",
+        "message": "8 semantic variables found"
+      },
+      {
+        "type": "dependencies",
+        "status": "WARNING",
+        "message": "No dependencies found"
+      },
+      {
+        "type": "errors",
+        "status": "PASS",
+        "message": "No obvious errors detected"
+      }
+    ],
+    "score": 100,
+    "quality": "EXCELLENT",
+    "tier": 1
+  },
+  {
+    "moduleId": "3190",
+    "semanticName": "watchedValue",
+    "passed": 6,
+    "failed": 0,
+    "warnings": [
+      "No exports explicitly defined"
+    ],
+    "validations": [
+      {
+        "type": "moduleId_format",
+        "status": "PASS",
+        "message": "Valid numeric module ID"
+      },
+      {
+        "type": "name_format",
+        "status": "PASS",
+        "message": "Valid camelCase semantic name"
+      },
+      {
+        "type": "content_valid",
+        "status": "PASS",
+        "message": "Valid content (1691 bytes)"
+      },
+      {
+        "type": "header_present",
+        "status": "PASS",
+        "message": "Documentation header present"
+      },
+      {
+        "type": "semantic_vars",
+        "status": "PASS",
+        "message": "8 semantic variables found"
+      },
+      {
+        "type": "dependencies",
+        "status": "WARNING",
+        "message": "No dependencies found"
+      },
+      {
+        "type": "errors",
+        "status": "PASS",
+        "message": "No obvious errors detected"
+      }
+    ],
+    "score": 100,
+    "quality": "EXCELLENT",
+    "tier": 1
+  },
+  {
+    "moduleId": "35107",
+    "semanticName": "dataSource",
+    "passed": 6,
+    "failed": 0,
+    "warnings": [
+      "No exports explicitly defined"
+    ],
+    "validations": [
+      {
+        "type": "moduleId_format",
+        "status": "PASS",
+        "message": "Valid numeric module ID"
+      },
+      {
+        "type": "name_format",
+        "status": "PASS",
+        "message": "Valid camelCase semantic name"
+      },
+      {
+        "type": "content_valid",
+        "status": "PASS",
+        "message": "Valid content (15995 bytes)"
+      },
+      {
+        "type": "header_present",
+        "status": "PASS",
+        "message": "Documentation header present"
+      },
+      {
+        "type": "semantic_vars",
+        "status": "PASS",
+        "message": "8 semantic variables found"
+      },
+      {
+        "type": "dependencies",
+        "status": "WARNING",
+        "message": "No dependencies found"
+      },
+      {
+        "type": "errors",
+        "status": "PASS",
+        "message": "No obvious errors detected"
+      }
+    ],
+    "score": 100,
+    "quality": "EXCELLENT",
+    "tier": 1
+  },
+  {
+    "moduleId": "40137",
+    "semanticName": "watchedValue",
+    "passed": 6,
+    "failed": 0,
+    "warnings": [
+      "No exports explicitly defined"
+    ],
+    "validations": [
+      {
+        "type": "moduleId_format",
+        "status": "PASS",
+        "message": "Valid numeric module ID"
+      },
+      {
+        "type": "name_format",
+        "status": "PASS",
+        "message": "Valid camelCase semantic name"
+      },
+      {
+        "type": "content_valid",
+        "status": "PASS",
+        "message": "Valid content (2368 bytes)"
+      },
+      {
+        "type": "header_present",
+        "status": "PASS",
+        "message": "Documentation header present"
+      },
+      {
+        "type": "semantic_vars",
+        "status": "PASS",
+        "message": "8 semantic variables found"
+      },
+      {
+        "type": "dependencies",
+        "status": "WARNING",
+        "message": "No dependencies found"
+      },
+      {
+        "type": "errors",
+        "status": "PASS",
+        "message": "No obvious errors detected"
+      }
+    ],
+    "score": 100,
+    "quality": "EXCELLENT",
+    "tier": 1
+  },
+  {
+    "moduleId": "43222",
+    "semanticName": "watchedValue",
+    "passed": 6,
+    "failed": 0,
+    "warnings": [
+      "No exports explicitly defined"
+    ],
+    "validations": [
+      {
+        "type": "moduleId_format",
+        "status": "PASS",
+        "message": "Valid numeric module ID"
+      },
+      {
+        "type": "name_format",
+        "status": "PASS",
+        "message": "Valid camelCase semantic name"
+      },
+      {
+        "type": "content_valid",
+        "status": "PASS",
+        "message": "Valid content (6295 bytes)"
+      },
+      {
+        "type": "header_present",
+        "status": "PASS",
+        "message": "Documentation header present"
+      },
+      {
+        "type": "semantic_vars",
+        "status": "PASS",
+        "message": "8 semantic variables found"
+      },
+      {
+        "type": "dependencies",
+        "status": "WARNING",
+        "message": "No dependencies found"
+      },
+      {
+        "type": "errors",
+        "status": "PASS",
+        "message": "No obvious errors detected"
+      }
+    ],
+    "score": 100,
+    "quality": "EXCELLENT",
+    "tier": 1
+  },
+  {
+    "moduleId": "45530",
+    "semanticName": "priceDataSource",
+    "passed": 6,
+    "failed": 0,
+    "warnings": [
+      "No exports explicitly defined"
+    ],
+    "validations": [
+      {
+        "type": "moduleId_format",
+        "status": "PASS",
+        "message": "Valid numeric module ID"
+      },
+      {
+        "type": "name_format",
+        "status": "PASS",
+        "message": "Valid camelCase semantic name"
+      },
+      {
+        "type": "content_valid",
+        "status": "PASS",
+        "message": "Valid content (6204 bytes)"
+      },
+      {
+        "type": "header_present",
+        "status": "PASS",
+        "message": "Documentation header present"
+      },
+      {
+        "type": "semantic_vars",
+        "status": "PASS",
+        "message": "8 semantic variables found"
+      },
+      {
+        "type": "dependencies",
+        "status": "WARNING",
+        "message": "No dependencies found"
+      },
+      {
+        "type": "errors",
+        "status": "PASS",
+        "message": "No obvious errors detected"
+      }
+    ],
+    "score": 100,
+    "quality": "EXCELLENT",
+    "tier": 1
+  },
+  {
+    "moduleId": "4659",
+    "semanticName": "watchedValue",
+    "passed": 5,
+    "failed": 0,
+    "warnings": [
+      "No exports explicitly defined"
+    ],
+    "validations": [
+      {
+        "type": "moduleId_format",
+        "status": "PASS",
+        "message": "Valid numeric module ID"
+      },
+      {
+        "type": "name_format",
+        "status": "PASS",
+        "message": "Valid camelCase semantic name"
+      },
+      {
+        "type": "content_valid",
+        "status": "PASS",
+        "message": "Valid content (3037 bytes)"
+      },
+      {
+        "type": "header_present",
+        "status": "PASS",
+        "message": "Documentation header present"
+      },
+      {
+        "type": "semantic_vars",
+        "status": "PASS",
+        "message": "8 semantic variables found"
+      },
+      {
+        "type": "dependencies",
+        "status": "WARNING",
+        "message": "No dependencies found"
+      },
+      {
+        "type": "errors",
+        "status": "WARNING",
+        "message": "1 potential errors"
+      }
+    ],
+    "score": 100,
+    "quality": "EXCELLENT",
+    "tier": 1
+  },
+  {
+    "moduleId": "48943",
+    "semanticName": "watchedValue",
+    "passed": 6,
+    "failed": 0,
+    "warnings": [
+      "No exports explicitly defined"
+    ],
+    "validations": [
+      {
+        "type": "moduleId_format",
+        "status": "PASS",
+        "message": "Valid numeric module ID"
+      },
+      {
+        "type": "name_format",
+        "status": "PASS",
+        "message": "Valid camelCase semantic name"
+      },
+      {
+        "type": "content_valid",
+        "status": "PASS",
+        "message": "Valid content (3218 bytes)"
+      },
+      {
+        "type": "header_present",
+        "status": "PASS",
+        "message": "Documentation header present"
+      },
+      {
+        "type": "semantic_vars",
+        "status": "PASS",
+        "message": "8 semantic variables found"
+      },
+      {
+        "type": "dependencies",
+        "status": "WARNING",
+        "message": "No dependencies found"
+      },
+      {
+        "type": "errors",
+        "status": "PASS",
+        "message": "No obvious errors detected"
+      }
+    ],
+    "score": 100,
+    "quality": "EXCELLENT",
+    "tier": 1
+  },
+  {
+    "moduleId": "53107",
+    "semanticName": "watchedValue",
+    "passed": 6,
+    "failed": 0,
+    "warnings": [
+      "No exports explicitly defined"
+    ],
+    "validations": [
+      {
+        "type": "moduleId_format",
+        "status": "PASS",
+        "message": "Valid numeric module ID"
+      },
+      {
+        "type": "name_format",
+        "status": "PASS",
+        "message": "Valid camelCase semantic name"
+      },
+      {
+        "type": "content_valid",
+        "status": "PASS",
+        "message": "Valid content (8733 bytes)"
+      },
+      {
+        "type": "header_present",
+        "status": "PASS",
+        "message": "Documentation header present"
+      },
+      {
+        "type": "semantic_vars",
+        "status": "PASS",
+        "message": "8 semantic variables found"
+      },
+      {
+        "type": "dependencies",
+        "status": "WARNING",
+        "message": "No dependencies found"
+      },
+      {
+        "type": "errors",
+        "status": "PASS",
+        "message": "No obvious errors detected"
+      }
+    ],
+    "score": 100,
+    "quality": "EXCELLENT",
+    "tier": 1
+  },
+  {
+    "moduleId": "5734",
+    "semanticName": "deleteLockedLineTools",
+    "passed": 6,
+    "failed": 0,
+    "warnings": [
+      "No exports explicitly defined"
+    ],
+    "validations": [
+      {
+        "type": "moduleId_format",
+        "status": "PASS",
+        "message": "Valid numeric module ID"
+      },
+      {
+        "type": "name_format",
+        "status": "PASS",
+        "message": "Valid camelCase semantic name"
+      },
+      {
+        "type": "content_valid",
+        "status": "PASS",
+        "message": "Valid content (1626 bytes)"
+      },
+      {
+        "type": "header_present",
+        "status": "PASS",
+        "message": "Documentation header present"
+      },
+      {
+        "type": "semantic_vars",
+        "status": "PASS",
+        "message": "8 semantic variables found"
+      },
+      {
+        "type": "dependencies",
+        "status": "WARNING",
+        "message": "No dependencies found"
+      },
+      {
+        "type": "errors",
+        "status": "PASS",
+        "message": "No obvious errors detected"
+      }
+    ],
+    "score": 100,
+    "quality": "EXCELLENT",
+    "tier": 1
+  },
+  {
+    "moduleId": "59998",
+    "semanticName": "watchedValue",
+    "passed": 6,
+    "failed": 0,
+    "warnings": [
+      "No exports explicitly defined"
+    ],
+    "validations": [
+      {
+        "type": "moduleId_format",
+        "status": "PASS",
+        "message": "Valid numeric module ID"
+      },
+      {
+        "type": "name_format",
+        "status": "PASS",
+        "message": "Valid camelCase semantic name"
+      },
+      {
+        "type": "content_valid",
+        "status": "PASS",
+        "message": "Valid content (1552 bytes)"
+      },
+      {
+        "type": "header_present",
+        "status": "PASS",
+        "message": "Documentation header present"
+      },
+      {
+        "type": "semantic_vars",
+        "status": "PASS",
+        "message": "8 semantic variables found"
+      },
+      {
+        "type": "dependencies",
+        "status": "WARNING",
+        "message": "No dependencies found"
+      },
+      {
+        "type": "errors",
+        "status": "PASS",
+        "message": "No obvious errors detected"
+      }
+    ],
+    "score": 100,
+    "quality": "EXCELLENT",
+    "tier": 1
+  },
+  {
+    "moduleId": "61710",
+    "semanticName": "dataSource",
+    "passed": 6,
+    "failed": 0,
+    "warnings": [
+      "No exports explicitly defined"
+    ],
+    "validations": [
+      {
+        "type": "moduleId_format",
+        "status": "PASS",
+        "message": "Valid numeric module ID"
+      },
+      {
+        "type": "name_format",
+        "status": "PASS",
+        "message": "Valid camelCase semantic name"
+      },
+      {
+        "type": "content_valid",
+        "status": "PASS",
+        "message": "Valid content (15155 bytes)"
+      },
+      {
+        "type": "header_present",
+        "status": "PASS",
+        "message": "Documentation header present"
+      },
+      {
+        "type": "semantic_vars",
+        "status": "PASS",
+        "message": "8 semantic variables found"
+      },
+      {
+        "type": "dependencies",
+        "status": "WARNING",
+        "message": "No dependencies found"
+      },
+      {
+        "type": "errors",
+        "status": "PASS",
+        "message": "No obvious errors detected"
+      }
+    ],
+    "score": 100,
+    "quality": "EXCELLENT",
+    "tier": 1
+  },
+  {
+    "moduleId": "63903",
+    "semanticName": "priceDataSource",
+    "passed": 6,
+    "failed": 0,
+    "warnings": [
+      "No exports explicitly defined"
+    ],
+    "validations": [
+      {
+        "type": "moduleId_format",
+        "status": "PASS",
+        "message": "Valid numeric module ID"
+      },
+      {
+        "type": "name_format",
+        "status": "PASS",
+        "message": "Valid camelCase semantic name"
+      },
+      {
+        "type": "content_valid",
+        "status": "PASS",
+        "message": "Valid content (2609 bytes)"
+      },
+      {
+        "type": "header_present",
+        "status": "PASS",
+        "message": "Documentation header present"
+      },
+      {
+        "type": "semantic_vars",
+        "status": "PASS",
+        "message": "8 semantic variables found"
+      },
+      {
+        "type": "dependencies",
+        "status": "WARNING",
+        "message": "No dependencies found"
+      },
+      {
+        "type": "errors",
+        "status": "PASS",
+        "message": "No obvious errors detected"
+      }
+    ],
+    "score": 100,
+    "quality": "EXCELLENT",
+    "tier": 1
+  },
+  {
+    "moduleId": "64236",
+    "semanticName": "timeInterval",
+    "passed": 6,
+    "failed": 0,
+    "warnings": [
+      "No exports explicitly defined"
+    ],
+    "validations": [
+      {
+        "type": "moduleId_format",
+        "status": "PASS",
+        "message": "Valid numeric module ID"
+      },
+      {
+        "type": "name_format",
+        "status": "PASS",
+        "message": "Valid camelCase semantic name"
+      },
+      {
+        "type": "content_valid",
+        "status": "PASS",
+        "message": "Valid content (3954 bytes)"
+      },
+      {
+        "type": "header_present",
+        "status": "PASS",
+        "message": "Documentation header present"
+      },
+      {
+        "type": "semantic_vars",
+        "status": "PASS",
+        "message": "8 semantic variables found"
+      },
+      {
+        "type": "dependencies",
+        "status": "WARNING",
+        "message": "No dependencies found"
+      },
+      {
+        "type": "errors",
+        "status": "PASS",
+        "message": "No obvious errors detected"
+      }
+    ],
+    "score": 100,
+    "quality": "EXCELLENT",
+    "tier": 1
+  },
+  {
+    "moduleId": "65045",
+    "semanticName": "watchedValue",
+    "passed": 5,
+    "failed": 0,
+    "warnings": [
+      "No exports explicitly defined"
+    ],
+    "validations": [
+      {
+        "type": "moduleId_format",
+        "status": "PASS",
+        "message": "Valid numeric module ID"
+      },
+      {
+        "type": "name_format",
+        "status": "PASS",
+        "message": "Valid camelCase semantic name"
+      },
+      {
+        "type": "content_valid",
+        "status": "PASS",
+        "message": "Valid content (4098 bytes)"
+      },
+      {
+        "type": "header_present",
+        "status": "PASS",
+        "message": "Documentation header present"
+      },
+      {
+        "type": "semantic_vars",
+        "status": "PASS",
+        "message": "8 semantic variables found"
+      },
+      {
+        "type": "dependencies",
+        "status": "WARNING",
+        "message": "No dependencies found"
+      },
+      {
+        "type": "errors",
+        "status": "WARNING",
+        "message": "1 potential errors"
+      }
+    ],
+    "score": 100,
+    "quality": "EXCELLENT",
+    "tier": 1
+  },
+  {
+    "moduleId": "67563",
+    "semanticName": "mainInitialization",
+    "passed": 5,
+    "failed": 0,
+    "warnings": [
+      "No exports explicitly defined"
+    ],
+    "validations": [
+      {
+        "type": "moduleId_format",
+        "status": "PASS",
+        "message": "Valid numeric module ID"
+      },
+      {
+        "type": "name_format",
+        "status": "PASS",
+        "message": "Valid camelCase semantic name"
+      },
+      {
+        "type": "content_valid",
+        "status": "PASS",
+        "message": "Valid content (21535 bytes)"
+      },
+      {
+        "type": "header_present",
+        "status": "PASS",
+        "message": "Documentation header present"
+      },
+      {
+        "type": "semantic_vars",
+        "status": "PASS",
+        "message": "8 semantic variables found"
+      },
+      {
+        "type": "dependencies",
+        "status": "WARNING",
+        "message": "No dependencies found"
+      },
+      {
+        "type": "errors",
+        "status": "WARNING",
+        "message": "1 potential errors"
+      }
+    ],
+    "score": 100,
+    "quality": "EXCELLENT",
+    "tier": 1
+  },
+  {
+    "moduleId": "68028",
+    "semanticName": "watchedValue",
+    "passed": 6,
+    "failed": 0,
+    "warnings": [
+      "No exports explicitly defined"
+    ],
+    "validations": [
+      {
+        "type": "moduleId_format",
+        "status": "PASS",
+        "message": "Valid numeric module ID"
+      },
+      {
+        "type": "name_format",
+        "status": "PASS",
+        "message": "Valid camelCase semantic name"
+      },
+      {
+        "type": "content_valid",
+        "status": "PASS",
+        "message": "Valid content (2622 bytes)"
+      },
+      {
+        "type": "header_present",
+        "status": "PASS",
+        "message": "Documentation header present"
+      },
+      {
+        "type": "semantic_vars",
+        "status": "PASS",
+        "message": "8 semantic variables found"
+      },
+      {
+        "type": "dependencies",
+        "status": "WARNING",
+        "message": "No dependencies found"
+      },
+      {
+        "type": "errors",
+        "status": "PASS",
+        "message": "No obvious errors detected"
+      }
+    ],
+    "score": 100,
+    "quality": "EXCELLENT",
+    "tier": 1
+  },
+  {
+    "moduleId": "70859",
+    "semanticName": "watchedValue",
+    "passed": 6,
+    "failed": 0,
+    "warnings": [
+      "No exports explicitly defined"
+    ],
+    "validations": [
+      {
+        "type": "moduleId_format",
+        "status": "PASS",
+        "message": "Valid numeric module ID"
+      },
+      {
+        "type": "name_format",
+        "status": "PASS",
+        "message": "Valid camelCase semantic name"
+      },
+      {
+        "type": "content_valid",
+        "status": "PASS",
+        "message": "Valid content (16854 bytes)"
+      },
+      {
+        "type": "header_present",
+        "status": "PASS",
+        "message": "Documentation header present"
+      },
+      {
+        "type": "semantic_vars",
+        "status": "PASS",
+        "message": "8 semantic variables found"
+      },
+      {
+        "type": "dependencies",
+        "status": "WARNING",
+        "message": "No dependencies found"
+      },
+      {
+        "type": "errors",
+        "status": "PASS",
+        "message": "No obvious errors detected"
+      }
+    ],
+    "score": 100,
+    "quality": "EXCELLENT",
+    "tier": 1
+  },
+  {
+    "moduleId": "75550",
+    "semanticName": "dataSource",
+    "passed": 6,
+    "failed": 0,
+    "warnings": [
+      "No exports explicitly defined"
+    ],
+    "validations": [
+      {
+        "type": "moduleId_format",
+        "status": "PASS",
+        "message": "Valid numeric module ID"
+      },
+      {
+        "type": "name_format",
+        "status": "PASS",
+        "message": "Valid camelCase semantic name"
+      },
+      {
+        "type": "content_valid",
+        "status": "PASS",
+        "message": "Valid content (2668 bytes)"
+      },
+      {
+        "type": "header_present",
+        "status": "PASS",
+        "message": "Documentation header present"
+      },
+      {
+        "type": "semantic_vars",
+        "status": "PASS",
+        "message": "8 semantic variables found"
+      },
+      {
+        "type": "dependencies",
+        "status": "WARNING",
+        "message": "No dependencies found"
+      },
+      {
+        "type": "errors",
+        "status": "PASS",
+        "message": "No obvious errors detected"
+      }
+    ],
+    "score": 100,
+    "quality": "EXCELLENT",
+    "tier": 1
+  },
+  {
+    "moduleId": "75579",
+    "semanticName": "watchedValue",
+    "passed": 6,
+    "failed": 0,
+    "warnings": [
+      "No exports explicitly defined"
+    ],
+    "validations": [
+      {
+        "type": "moduleId_format",
+        "status": "PASS",
+        "message": "Valid numeric module ID"
+      },
+      {
+        "type": "name_format",
+        "status": "PASS",
+        "message": "Valid camelCase semantic name"
+      },
+      {
+        "type": "content_valid",
+        "status": "PASS",
+        "message": "Valid content (6998 bytes)"
+      },
+      {
+        "type": "header_present",
+        "status": "PASS",
+        "message": "Documentation header present"
+      },
+      {
+        "type": "semantic_vars",
+        "status": "PASS",
+        "message": "8 semantic variables found"
+      },
+      {
+        "type": "dependencies",
+        "status": "WARNING",
+        "message": "No dependencies found"
+      },
+      {
+        "type": "errors",
+        "status": "PASS",
+        "message": "No obvious errors detected"
+      }
+    ],
+    "score": 100,
+    "quality": "EXCELLENT",
+    "tier": 1
+  },
+  {
+    "moduleId": "7793",
+    "semanticName": "watchedValue",
+    "passed": 6,
+    "failed": 0,
+    "warnings": [
+      "No exports explicitly defined"
+    ],
+    "validations": [
+      {
+        "type": "moduleId_format",
+        "status": "PASS",
+        "message": "Valid numeric module ID"
+      },
+      {
+        "type": "name_format",
+        "status": "PASS",
+        "message": "Valid camelCase semantic name"
+      },
+      {
+        "type": "content_valid",
+        "status": "PASS",
+        "message": "Valid content (3631 bytes)"
+      },
+      {
+        "type": "header_present",
+        "status": "PASS",
+        "message": "Documentation header present"
+      },
+      {
+        "type": "semantic_vars",
+        "status": "PASS",
+        "message": "8 semantic variables found"
+      },
+      {
+        "type": "dependencies",
+        "status": "WARNING",
+        "message": "No dependencies found"
+      },
+      {
+        "type": "errors",
+        "status": "PASS",
+        "message": "No obvious errors detected"
+      }
+    ],
+    "score": 100,
+    "quality": "EXCELLENT",
+    "tier": 1
+  },
+  {
+    "moduleId": "86811",
+    "semanticName": "watchedValue",
+    "passed": 5,
+    "failed": 0,
+    "warnings": [
+      "No exports explicitly defined"
+    ],
+    "validations": [
+      {
+        "type": "moduleId_format",
+        "status": "PASS",
+        "message": "Valid numeric module ID"
+      },
+      {
+        "type": "name_format",
+        "status": "PASS",
+        "message": "Valid camelCase semantic name"
+      },
+      {
+        "type": "content_valid",
+        "status": "PASS",
+        "message": "Valid content (4585 bytes)"
+      },
+      {
+        "type": "header_present",
+        "status": "PASS",
+        "message": "Documentation header present"
+      },
+      {
+        "type": "semantic_vars",
+        "status": "PASS",
+        "message": "8 semantic variables found"
+      },
+      {
+        "type": "dependencies",
+        "status": "WARNING",
+        "message": "No dependencies found"
+      },
+      {
+        "type": "errors",
+        "status": "WARNING",
+        "message": "1 potential errors"
+      }
+    ],
+    "score": 100,
+    "quality": "EXCELLENT",
+    "tier": 1
+  },
+  {
+    "moduleId": "94322",
+    "semanticName": "watchedValue",
+    "passed": 5,
+    "failed": 0,
+    "warnings": [
+      "No exports explicitly defined"
+    ],
+    "validations": [
+      {
+        "type": "moduleId_format",
+        "status": "PASS",
+        "message": "Valid numeric module ID"
+      },
+      {
+        "type": "name_format",
+        "status": "PASS",
+        "message": "Valid camelCase semantic name"
+      },
+      {
+        "type": "content_valid",
+        "status": "PASS",
+        "message": "Valid content (4000 bytes)"
+      },
+      {
+        "type": "header_present",
+        "status": "PASS",
+        "message": "Documentation header present"
+      },
+      {
+        "type": "semantic_vars",
+        "status": "PASS",
+        "message": "8 semantic variables found"
+      },
+      {
+        "type": "dependencies",
+        "status": "WARNING",
+        "message": "No dependencies found"
+      },
+      {
+        "type": "errors",
+        "status": "WARNING",
+        "message": "1 potential errors"
+      }
+    ],
+    "score": 100,
+    "quality": "EXCELLENT",
+    "tier": 1
+  },
+  {
+    "moduleId": "97363",
+    "semanticName": "watchedValue",
+    "passed": 6,
+    "failed": 0,
+    "warnings": [
+      "No exports explicitly defined"
+    ],
+    "validations": [
+      {
+        "type": "moduleId_format",
+        "status": "PASS",
+        "message": "Valid numeric module ID"
+      },
+      {
+        "type": "name_format",
+        "status": "PASS",
+        "message": "Valid camelCase semantic name"
+      },
+      {
+        "type": "content_valid",
+        "status": "PASS",
+        "message": "Valid content (1751 bytes)"
+      },
+      {
+        "type": "header_present",
+        "status": "PASS",
+        "message": "Documentation header present"
+      },
+      {
+        "type": "semantic_vars",
+        "status": "PASS",
+        "message": "8 semantic variables found"
+      },
+      {
+        "type": "dependencies",
+        "status": "WARNING",
+        "message": "No dependencies found"
+      },
+      {
+        "type": "errors",
+        "status": "PASS",
+        "message": "No obvious errors detected"
+      }
+    ],
+    "score": 100,
+    "quality": "EXCELLENT",
+    "tier": 1
+  },
+  {
+    "moduleId": "33718",
+    "semanticName": "unknown",
+    "passed": 6,
+    "failed": 0,
+    "warnings": [
+      "No exports explicitly defined"
+    ],
+    "validations": [
+      {
+        "type": "moduleId_format",
+        "status": "PASS",
+        "message": "Valid numeric module ID"
+      },
+      {
+        "type": "name_format",
+        "status": "PASS",
+        "message": "Valid camelCase semantic name"
+      },
+      {
+        "type": "content_valid",
+        "status": "PASS",
+        "message": "Valid content (2223 bytes)"
+      },
+      {
+        "type": "header_present",
+        "status": "PASS",
+        "message": "Documentation header present"
+      },
+      {
+        "type": "semantic_vars",
+        "status": "PASS",
+        "message": "8 semantic variables found"
+      },
+      {
+        "type": "dependencies",
+        "status": "WARNING",
+        "message": "No dependencies found"
+      },
+      {
+        "type": "errors",
+        "status": "PASS",
+        "message": "No obvious errors detected"
+      }
+    ],
+    "score": 100,
+    "quality": "EXCELLENT",
+    "tier": 2
+  },
+  {
+    "moduleId": "38414",
+    "semanticName": "unknown",
+    "passed": 6,
+    "failed": 0,
+    "warnings": [
+      "No exports explicitly defined"
+    ],
+    "validations": [
+      {
+        "type": "moduleId_format",
+        "status": "PASS",
+        "message": "Valid numeric module ID"
+      },
+      {
+        "type": "name_format",
+        "status": "PASS",
+        "message": "Valid camelCase semantic name"
+      },
+      {
+        "type": "content_valid",
+        "status": "PASS",
+        "message": "Valid content (1258 bytes)"
+      },
+      {
+        "type": "header_present",
+        "status": "PASS",
+        "message": "Documentation header present"
+      },
+      {
+        "type": "semantic_vars",
+        "status": "PASS",
+        "message": "5 semantic variables found"
+      },
+      {
+        "type": "dependencies",
+        "status": "WARNING",
+        "message": "No dependencies found"
+      },
+      {
+        "type": "errors",
+        "status": "PASS",
+        "message": "No obvious errors detected"
+      }
+    ],
+    "score": 100,
+    "quality": "EXCELLENT",
+    "tier": 2
+  },
+  {
+    "moduleId": "45591",
+    "semanticName": "unknown",
+    "passed": 5,
+    "failed": 0,
+    "warnings": [
+      "No exports explicitly defined"
+    ],
+    "validations": [
+      {
+        "type": "moduleId_format",
+        "status": "PASS",
+        "message": "Valid numeric module ID"
+      },
+      {
+        "type": "name_format",
+        "status": "PASS",
+        "message": "Valid camelCase semantic name"
+      },
+      {
+        "type": "content_valid",
+        "status": "PASS",
+        "message": "Valid content (3083 bytes)"
+      },
+      {
+        "type": "header_present",
+        "status": "PASS",
+        "message": "Documentation header present"
+      },
+      {
+        "type": "semantic_vars",
+        "status": "PASS",
+        "message": "5 semantic variables found"
+      },
+      {
+        "type": "dependencies",
+        "status": "WARNING",
+        "message": "No dependencies found"
+      },
+      {
+        "type": "errors",
+        "status": "WARNING",
+        "message": "1 potential errors"
+      }
+    ],
+    "score": 100,
+    "quality": "EXCELLENT",
+    "tier": 2
+  },
+  {
+    "moduleId": "47432",
+    "semanticName": "unknown",
+    "passed": 6,
+    "failed": 0,
+    "warnings": [
+      "No exports explicitly defined"
+    ],
+    "validations": [
+      {
+        "type": "moduleId_format",
+        "status": "PASS",
+        "message": "Valid numeric module ID"
+      },
+      {
+        "type": "name_format",
+        "status": "PASS",
+        "message": "Valid camelCase semantic name"
+      },
+      {
+        "type": "content_valid",
+        "status": "PASS",
+        "message": "Valid content (3009 bytes)"
+      },
+      {
+        "type": "header_present",
+        "status": "PASS",
+        "message": "Documentation header present"
+      },
+      {
+        "type": "semantic_vars",
+        "status": "PASS",
+        "message": "7 semantic variables found"
+      },
+      {
+        "type": "dependencies",
+        "status": "WARNING",
+        "message": "No dependencies found"
+      },
+      {
+        "type": "errors",
+        "status": "PASS",
+        "message": "No obvious errors detected"
+      }
+    ],
+    "score": 100,
+    "quality": "EXCELLENT",
+    "tier": 2
+  },
+  {
+    "moduleId": "55803",
+    "semanticName": "unknown",
+    "passed": 6,
+    "failed": 0,
+    "warnings": [
+      "No exports explicitly defined"
+    ],
+    "validations": [
+      {
+        "type": "moduleId_format",
+        "status": "PASS",
+        "message": "Valid numeric module ID"
+      },
+      {
+        "type": "name_format",
+        "status": "PASS",
+        "message": "Valid camelCase semantic name"
+      },
+      {
+        "type": "content_valid",
+        "status": "PASS",
+        "message": "Valid content (5803 bytes)"
+      },
+      {
+        "type": "header_present",
+        "status": "PASS",
+        "message": "Documentation header present"
+      },
+      {
+        "type": "semantic_vars",
+        "status": "PASS",
+        "message": "7 semantic variables found"
+      },
+      {
+        "type": "dependencies",
+        "status": "WARNING",
+        "message": "No dependencies found"
+      },
+      {
+        "type": "errors",
+        "status": "PASS",
+        "message": "No obvious errors detected"
+      }
+    ],
+    "score": 100,
+    "quality": "EXCELLENT",
+    "tier": 2
+  },
+  {
+    "moduleId": "60661",
+    "semanticName": "unknown",
+    "passed": 6,
+    "failed": 0,
+    "warnings": [
+      "No exports explicitly defined"
+    ],
+    "validations": [
+      {
+        "type": "moduleId_format",
+        "status": "PASS",
+        "message": "Valid numeric module ID"
+      },
+      {
+        "type": "name_format",
+        "status": "PASS",
+        "message": "Valid camelCase semantic name"
+      },
+      {
+        "type": "content_valid",
+        "status": "PASS",
+        "message": "Valid content (2900 bytes)"
+      },
+      {
+        "type": "header_present",
+        "status": "PASS",
+        "message": "Documentation header present"
+      },
+      {
+        "type": "semantic_vars",
+        "status": "PASS",
+        "message": "8 semantic variables found"
+      },
+      {
+        "type": "dependencies",
+        "status": "WARNING",
+        "message": "No dependencies found"
+      },
+      {
+        "type": "errors",
+        "status": "PASS",
+        "message": "No obvious errors detected"
+      }
+    ],
+    "score": 100,
+    "quality": "EXCELLENT",
+    "tier": 2
+  },
+  {
+    "moduleId": "67777",
+    "semanticName": "unknown",
+    "passed": 6,
+    "failed": 0,
+    "warnings": [
+      "No exports explicitly defined"
+    ],
+    "validations": [
+      {
+        "type": "moduleId_format",
+        "status": "PASS",
+        "message": "Valid numeric module ID"
+      },
+      {
+        "type": "name_format",
+        "status": "PASS",
+        "message": "Valid camelCase semantic name"
+      },
+      {
+        "type": "content_valid",
+        "status": "PASS",
+        "message": "Valid content (2630 bytes)"
+      },
+      {
+        "type": "header_present",
+        "status": "PASS",
+        "message": "Documentation header present"
+      },
+      {
+        "type": "semantic_vars",
+        "status": "PASS",
+        "message": "5 semantic variables found"
+      },
+      {
+        "type": "dependencies",
+        "status": "WARNING",
+        "message": "No dependencies found"
+      },
+      {
+        "type": "errors",
+        "status": "PASS",
+        "message": "No obvious errors detected"
+      }
+    ],
+    "score": 100,
+    "quality": "EXCELLENT",
+    "tier": 2
+  },
+  {
+    "moduleId": "1765",
+    "semanticName": "settingsAdapter",
+    "passed": 6,
+    "failed": 0,
+    "warnings": [
+      "No module documentation header found",
+      "Low semantic variable count: 0"
+    ],
+    "validations": [
+      {
+        "type": "moduleId_format",
+        "status": "PASS",
+        "message": "Valid numeric module ID"
+      },
+      {
+        "type": "name_format",
+        "status": "PASS",
+        "message": "Valid camelCase semantic name"
+      },
+      {
+        "type": "content_valid",
+        "status": "PASS",
+        "message": "Valid content (6131 bytes)"
+      },
+      {
+        "type": "semantic_vars",
+        "status": "WARNING",
+        "message": "Only 0 semantic variables found"
+      },
+      {
+        "type": "exports_defined",
+        "status": "PASS",
+        "message": "16 exports defined"
+      },
+      {
+        "type": "dependencies",
+        "status": "PASS",
+        "message": "1 dependencies"
+      },
+      {
+        "type": "errors",
+        "status": "PASS",
+        "message": "No obvious errors detected"
+      }
+    ],
+    "score": 100,
+    "quality": "EXCELLENT",
+    "tier": 0
+  },
+  {
+    "moduleId": "2072",
+    "semanticName": "watchedValue",
+    "passed": 4,
+    "failed": 0,
+    "warnings": [
+      "No module documentation header found",
+      "Low semantic variable count: 0"
+    ],
+    "validations": [
+      {
+        "type": "moduleId_format",
+        "status": "PASS",
+        "message": "Valid numeric module ID"
+      },
+      {
+        "type": "name_format",
+        "status": "PASS",
+        "message": "Valid camelCase semantic name"
+      },
+      {
+        "type": "content_valid",
+        "status": "PASS",
+        "message": "Valid content (6566 bytes)"
+      },
+      {
+        "type": "semantic_vars",
+        "status": "WARNING",
+        "message": "Only 0 semantic variables found"
+      },
+      {
+        "type": "exports_defined",
+        "status": "PASS",
+        "message": "1 exports defined"
+      },
+      {
+        "type": "dependencies",
+        "status": "WARNING",
+        "message": "No dependencies found"
+      },
+      {
+        "type": "errors",
+        "status": "WARNING",
+        "message": "1 potential errors"
+      }
+    ],
+    "score": 100,
+    "quality": "EXCELLENT",
+    "tier": 0
+  },
+  {
+    "moduleId": "2115",
+    "semanticName": "series",
+    "passed": 6,
+    "failed": 0,
+    "warnings": [
+      "No module documentation header found"
+    ],
+    "validations": [
+      {
+        "type": "moduleId_format",
+        "status": "PASS",
+        "message": "Valid numeric module ID"
+      },
+      {
+        "type": "name_format",
+        "status": "PASS",
+        "message": "Valid camelCase semantic name"
+      },
+      {
+        "type": "content_valid",
+        "status": "PASS",
+        "message": "Valid content (157763 bytes)"
+      },
+      {
+        "type": "semantic_vars",
+        "status": "PASS",
+        "message": "3 semantic variables found"
+      },
+      {
+        "type": "exports_defined",
+        "status": "PASS",
+        "message": "1 exports defined"
+      },
+      {
+        "type": "dependencies",
+        "status": "PASS",
+        "message": "16 dependencies"
+      },
+      {
+        "type": "errors",
+        "status": "WARNING",
+        "message": "1 potential errors"
+      }
+    ],
+    "score": 100,
+    "quality": "EXCELLENT",
+    "tier": 0
+  },
+  {
+    "moduleId": "3615",
+    "semanticName": "dialogManager",
+    "passed": 5,
+    "failed": 0,
+    "warnings": [
+      "No module documentation header found",
+      "Low semantic variable count: 0"
+    ],
+    "validations": [
+      {
+        "type": "moduleId_format",
+        "status": "PASS",
+        "message": "Valid numeric module ID"
+      },
+      {
+        "type": "name_format",
+        "status": "PASS",
+        "message": "Valid camelCase semantic name"
+      },
+      {
+        "type": "content_valid",
+        "status": "PASS",
+        "message": "Valid content (1560 bytes)"
+      },
+      {
+        "type": "semantic_vars",
+        "status": "WARNING",
+        "message": "Only 0 semantic variables found"
+      },
+      {
+        "type": "exports_defined",
+        "status": "PASS",
+        "message": "3 exports defined"
+      },
+      {
+        "type": "dependencies",
+        "status": "WARNING",
+        "message": "No dependencies found"
+      },
+      {
+        "type": "errors",
+        "status": "PASS",
+        "message": "No obvious errors detected"
+      }
+    ],
+    "score": 100,
+    "quality": "EXCELLENT",
+    "tier": 0
+  },
+  {
+    "moduleId": "9343",
+    "semanticName": "logger",
+    "passed": 5,
+    "failed": 0,
+    "warnings": [
+      "No module documentation header found",
+      "Low semantic variable count: 0"
+    ],
+    "validations": [
+      {
+        "type": "moduleId_format",
+        "status": "PASS",
+        "message": "Valid numeric module ID"
+      },
+      {
+        "type": "name_format",
+        "status": "PASS",
+        "message": "Valid camelCase semantic name"
+      },
+      {
+        "type": "content_valid",
+        "status": "PASS",
+        "message": "Valid content (3440 bytes)"
+      },
+      {
+        "type": "semantic_vars",
+        "status": "WARNING",
+        "message": "Only 0 semantic variables found"
+      },
+      {
+        "type": "exports_defined",
+        "status": "PASS",
+        "message": "11 exports defined"
+      },
+      {
+        "type": "dependencies",
+        "status": "WARNING",
+        "message": "No dependencies found"
+      },
+      {
+        "type": "errors",
+        "status": "PASS",
+        "message": "No obvious errors detected"
+      }
+    ],
+    "score": 100,
+    "quality": "EXCELLENT",
+    "tier": 0
+  },
+  {
+    "moduleId": "9753",
+    "semanticName": "constants",
+    "passed": 6,
+    "failed": 0,
+    "warnings": [
+      "No module documentation header found",
+      "Low semantic variable count: 0"
+    ],
+    "validations": [
+      {
+        "type": "moduleId_format",
+        "status": "PASS",
+        "message": "Valid numeric module ID"
+      },
+      {
+        "type": "name_format",
+        "status": "PASS",
+        "message": "Valid camelCase semantic name"
+      },
+      {
+        "type": "content_valid",
+        "status": "PASS",
+        "message": "Valid content (359 bytes)"
+      },
+      {
+        "type": "semantic_vars",
+        "status": "WARNING",
+        "message": "Only 0 semantic variables found"
+      },
+      {
+        "type": "exports_defined",
+        "status": "PASS",
+        "message": "2 exports defined"
+      },
+      {
+        "type": "dependencies",
+        "status": "PASS",
+        "message": "1 dependencies"
+      },
+      {
+        "type": "errors",
+        "status": "PASS",
+        "message": "No obvious errors detected"
+      }
+    ],
+    "score": 100,
+    "quality": "EXCELLENT",
+    "tier": 0
+  },
+  {
+    "moduleId": "10307",
+    "semanticName": "bitmapCoordinatesPane",
+    "passed": 6,
+    "failed": 0,
+    "warnings": [
+      "No module documentation header found",
+      "Low semantic variable count: 0"
+    ],
+    "validations": [
+      {
+        "type": "moduleId_format",
+        "status": "PASS",
+        "message": "Valid numeric module ID"
+      },
+      {
+        "type": "name_format",
+        "status": "PASS",
+        "message": "Valid camelCase semantic name"
+      },
+      {
+        "type": "content_valid",
+        "status": "PASS",
+        "message": "Valid content (666 bytes)"
+      },
+      {
+        "type": "semantic_vars",
+        "status": "WARNING",
+        "message": "Only 0 semantic variables found"
+      },
+      {
+        "type": "exports_defined",
+        "status": "PASS",
+        "message": "1 exports defined"
+      },
+      {
+        "type": "dependencies",
+        "status": "PASS",
+        "message": "1 dependencies"
+      },
+      {
+        "type": "errors",
+        "status": "PASS",
+        "message": "No obvious errors detected"
+      }
+    ],
+    "score": 100,
+    "quality": "EXCELLENT",
+    "tier": 0
+  },
+  {
+    "moduleId": "11946",
+    "semanticName": "lineToolUtils",
+    "passed": 5,
+    "failed": 0,
+    "warnings": [
+      "No module documentation header found",
+      "Low semantic variable count: 0"
+    ],
+    "validations": [
+      {
+        "type": "moduleId_format",
+        "status": "PASS",
+        "message": "Valid numeric module ID"
+      },
+      {
+        "type": "name_format",
+        "status": "PASS",
+        "message": "Valid camelCase semantic name"
+      },
+      {
+        "type": "content_valid",
+        "status": "PASS",
+        "message": "Valid content (3869 bytes)"
+      },
+      {
+        "type": "semantic_vars",
+        "status": "WARNING",
+        "message": "Only 0 semantic variables found"
+      },
+      {
+        "type": "exports_defined",
+        "status": "PASS",
+        "message": "7 exports defined"
+      },
+      {
+        "type": "dependencies",
+        "status": "WARNING",
+        "message": "No dependencies found"
+      },
+      {
+        "type": "errors",
+        "status": "PASS",
+        "message": "No obvious errors detected"
+      }
+    ],
+    "score": 100,
+    "quality": "EXCELLENT",
+    "tier": 0
+  },
+  {
+    "moduleId": "17776",
+    "semanticName": "seriesBarFunction",
+    "passed": 6,
+    "failed": 0,
+    "warnings": [
+      "No module documentation header found",
+      "Low semantic variable count: 0"
+    ],
+    "validations": [
+      {
+        "type": "moduleId_format",
+        "status": "PASS",
+        "message": "Valid numeric module ID"
+      },
+      {
+        "type": "name_format",
+        "status": "PASS",
+        "message": "Valid camelCase semantic name"
+      },
+      {
+        "type": "content_valid",
+        "status": "PASS",
+        "message": "Valid content (652 bytes)"
+      },
+      {
+        "type": "semantic_vars",
+        "status": "WARNING",
+        "message": "Only 0 semantic variables found"
+      },
+      {
+        "type": "exports_defined",
+        "status": "PASS",
+        "message": "1 exports defined"
+      },
+      {
+        "type": "dependencies",
+        "status": "PASS",
+        "message": "1 dependencies"
+      },
+      {
+        "type": "errors",
+        "status": "PASS",
+        "message": "No obvious errors detected"
+      }
+    ],
+    "score": 100,
+    "quality": "EXCELLENT",
+    "tier": 0
+  }
+]

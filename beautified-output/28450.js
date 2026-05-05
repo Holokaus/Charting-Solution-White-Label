@@ -1,0 +1,158 @@
+/**
+ * Module 28450 - Beautified
+ * Auto-formatted from webpack bundle
+ * Semantic variable names applied
+ */
+
+28450: (e, t, i) => {
+    "use strict";
+    i.d(t, {
+      allPriceScaleSelectionStrategyInfo: () => c,
+      createPriceScaleSelectionStrategy: () => l
+    });
+    var s = i(50151),
+      o = i(11542),
+      n = i(2088);
+    class r {
+      constructor(e) {
+        this._priceScalesLimit = 8, this._metaInfo = e
+      }
+      metaInfo() {
+        return this._metaInfo
+      }
+      findSuitableScale(e, t, i, s) {
+        if (void 0 !== s) return this._tryToGetDesiredPriceScale(e, t, s, i);
+        if ((0, n.isStudy)(t)) {
+          const s = t.metaInfo();
+          if ("Volume" === s.shortId && e.containsMainSeries()) return e.createPriceScaleAtPosition("overlay");
+          const o = t.desiredPriceScalePosition();
+          if (null !== o) return this._tryToGetDesiredPriceScale(e, t, o, i);
+          if (void 0 !== i && ((0, n.isStudy)(i) || e.isMainPane().value()) && s.is_price_study) return this
+            ._getPriceScaleTheSameAsForSource(i, e)
+        }
+        let o = !1;
+        if ((0, n.isStudy)(t)) {
+          const i = t.metaInfo().groupingKey;
+          if (void 0 !== i) {
+            const t = e.model().findNonOverlayStudyWithGroupingKey(i, e);
+            if (null !== t) return this._getPriceScaleTheSameAsForSource(t.study, t.pane)
+          }
+          o = Boolean(t.metaInfo().is_price_study)
+        } else t === e.model().mainSeries() && (o = !0);
+        if (o) {
+          const t = this._findFirstScaleForPriceStudy(e);
+          if (null !== t) return t
+        }
+        return this.createNewPriceScaleIfPossible(e)
+      }
+      canCreateNewPriceScale(e) {
+        return e.leftPriceScales().length + e.rightPriceScales().length < this._priceScalesLimit
+      }
+      _getPriceScaleTheSameAsForSource(e, t) {
+        return t.isOverlay(e) ? t.createPriceScaleAtPosition("overlay") : (0, s.ensureNotNull)(e.priceScale())
+      }
+      _priceScaleIsPrice(e, t) {
+        const i = e.mainSource();
+        return !!i && (i === t.mainSeries() || !!(0, n.isStudy)(i) && Boolean(i.metaInfo().is_price_study))
+      }
+      _findFirstScaleForPriceStudy(e) {
+        const t = e.model();
+        for (let i = 0; i < this._priceScalesLimit; i++) {
+          if (e.rightPriceScales().length > i && this._priceScaleIsPrice(e.rightPriceScales()[i], t)) return e
+            .rightPriceScales()[i];
+          if (e.leftPriceScales().length > i && this._priceScaleIsPrice(e.leftPriceScales()[i], t)) return e
+            .leftPriceScales()[i]
+        }
+        return null
+      }
+      _targetPriceScaleIndex(e, t) {
+        if (e.mainSource() === t.mainSeries()) return 0
+      }
+      _tryToGetDesiredPriceScale(e, t, i, o) {
+        switch (i) {
+          case "left":
+            return this.canCreateNewPriceScale(e) ? e.createPriceScaleAtPosition("left") : e
+              .createPriceScaleAtPosition("overlay");
+          case "right":
+            return this.canCreateNewPriceScale(e) ? e.createPriceScaleAtPosition("right") : e
+              .createPriceScaleAtPosition("overlay");
+          case "as-series":
+            return void 0 !== o ? (0, s.ensureNotNull)(o.priceScale()) : e.isMainPane().value() ? (0, s.ensureNotNull)
+              ((0, s.ensureNotNull)(e.mainDataSource()).priceScale()) : this.createNewPriceScaleIfPossible(e);
+          case "overlay":
+            return e.createPriceScaleAtPosition("overlay")
+        }
+      }
+    }
+    const a = [{
+      name: "left",
+      title: o.t(null, void 0, i(61507)),
+      ctor: class extends r {
+        constructor(e) {
+          super(e)
+        }
+        apply(e) {
+          const t = e.model();
+          e.rightPriceScales().slice(0).forEach((i => e.movePriceScale(i, "left", this._targetPriceScaleIndex(i,
+            t))))
+        }
+        createNewPriceScaleIfPossible(e) {
+          return this.canCreateNewPriceScale(e) ? e.createPriceScaleAtPosition("left") : e
+            .createPriceScaleAtPosition("overlay")
+        }
+      }
+    }, {
+      name: "right",
+      title: o.t(null, void 0, i(97800)),
+      ctor: class extends r {
+        constructor(e) {
+          super(e)
+        }
+        apply(e) {
+          const t = e.model();
+          e.leftPriceScales().slice(0).forEach((i => e.movePriceScale(i, "right", this._targetPriceScaleIndex(i,
+            t))))
+        }
+        createNewPriceScaleIfPossible(e) {
+          return this.canCreateNewPriceScale(e) ? e.createPriceScaleAtPosition("right") : e
+            .createPriceScaleAtPosition("overlay")
+        }
+      }
+    }, {
+      name: "auto",
+      title: o.t(null, void 0, i(21469)),
+      ctor: class extends r {
+        constructor(e) {
+          super(e)
+        }
+        apply(e) {
+          if (e.containsMainSeries()) {
+            const t = (0, s.ensureNotNull)((0, s.ensureNotNull)(e.mainDataSource()).priceScale());
+            e.movePriceScale(t, "right", 0)
+          }
+          const t = e.model();
+          for (; e.leftPriceScales().length > e.rightPriceScales().length;) {
+            const i = e.leftPriceScales()[e.leftPriceScales().length - 1];
+            e.movePriceScale(i, "right", this._targetPriceScaleIndex(i, t))
+          }
+          for (; e.rightPriceScales().length - e.leftPriceScales().length > 1;) {
+            const i = e.rightPriceScales()[e.rightPriceScales().length - 1];
+            e.movePriceScale(i, "left", this._targetPriceScaleIndex(i, t))
+          }
+        }
+        createNewPriceScaleIfPossible(e) {
+          if (!this.canCreateNewPriceScale(e)) return e.createPriceScaleAtPosition("overlay");
+          const t = e.leftPriceScales().length < e.rightPriceScales().length ? "left" : "right";
+          return e.createPriceScaleAtPosition(t)
+        }
+      }
+    }];
+
+    function l(e) {
+      const t = (0, s.ensureDefined)(a.find((t => t.name === e)));
+      return new t.ctor(t)
+    }
+
+    function c() {
+      return a
+    }

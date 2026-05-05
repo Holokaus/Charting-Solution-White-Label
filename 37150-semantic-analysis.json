@@ -1,0 +1,125 @@
+{
+  "summary": {
+    "totalClasses": 0,
+    "totalFunctions": 3475,
+    "totalAssignments": 0,
+    "totalProperties": 1981,
+    "totalMethods": 2646,
+    "totalHandlers": 18,
+    "totalWatchers": 0,
+    "totalSemanticNames": 8120
+  },
+  "minifiedAnalysis": {
+    "singleLetterVars": [
+      "e",
+      "t",
+      "i",
+      "s",
+      "o",
+      "n",
+      "r",
+      "a",
+      "l",
+      "c",
+      "h",
+      "d",
+      "u",
+      "p",
+      "m",
+      "g",
+      "f",
+      "v",
+      "b",
+      "w",
+      "x",
+      "k",
+      "z",
+      "j",
+      "y",
+      "q"
+    ],
+    "moduleImports": 117,
+    "closureParameters": [
+      {
+        "original": "e",
+        "suggested": "exports"
+      },
+      {
+        "original": "t",
+        "suggested": "module"
+      },
+      {
+        "original": "i",
+        "suggested": "require"
+      }
+    ]
+  },
+  "semanticNames": {
+    "classes": [],
+    "functions": [
+      "parse",
+      "forEach",
+      "setEnabled",
+      "setSettingsAdapter",
+      "sync",
+      "enabled",
+      "_startLoading",
+      "all",
+      "then",
+      "bind",
+      "getRestrictedToolSet",
+      "createElement",
+      "appendChild",
+      "add",
+      "function",
+      "constructor",
+      "super",
+      "negotiateHeight",
+      "value",
+      "load"
+    ],
+    "handlers": [
+      "_toggleAutoSaveEnabledHandler",
+      "_clickHandler",
+      "_enterHandler",
+      "_leaveHandler",
+      "_errorMessageHandler",
+      "_mouseEventHandler",
+      "_canvasConfiguredHandler",
+      "_onMagnetStateChangedListener",
+      "_onShiftKeyStateChangedListener",
+      "_paneCellMouseEventHandler",
+      "_invalidateHandler",
+      "_hotkeysListener",
+      "_resizeHandler",
+      "_invalidationHandler",
+      "_clipboardHandler",
+      "_onReadyCallback",
+      "_inputCallback",
+      "dataListener"
+    ],
+    "watchers": []
+  },
+  "mappingStrategy": {
+    "totalMappingsGenerated": 10,
+    "minifiedToSemanticMap": {
+      "e": "exports",
+      "t": "temp",
+      "i": "require",
+      "s": "state",
+      "n": "next",
+      "a": "array",
+      "o": "object",
+      "r": "result",
+      "c": "config",
+      "l": "logger"
+    }
+  },
+  "recommendations": [
+    "1. Apply minified-to-semantic mappings for single-letter variables",
+    "2. Keep all semantic class names and handlers intact",
+    "3. Map object properties to camelCase semantic names where possible",
+    "4. Validate closure parameters align with webpack module format",
+    "5. Extract and document all public API methods and properties"
+  ]
+}

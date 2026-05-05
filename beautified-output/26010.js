@@ -1,0 +1,67 @@
+/**
+ * Module 26010 - Beautified
+ * Auto-formatted from webpack bundle
+ * Semantic variable names applied
+ */
+
+26010: (e, t, i) => {
+    "use strict";
+    let s;
+    i.d(t, {
+      formatterOptions: () => o,
+      formatterOptionsLibraryOverrides: () => n,
+      getNumberFormat: () => d
+    });
+    const o = {
+        decimalSign: ".",
+        decimalSignFractional: "'"
+      },
+      n = {};
+    const r = {
+        groupingSeparator: ",",
+        decimalSign: "."
+      },
+      a = {
+        groupingSeparator: ".",
+        decimalSign: ","
+      },
+      l = {
+        groupingSeparator: " ",
+        decimalSign: ","
+      },
+      c = {
+        groupingSeparator: "",
+        decimalSign: "."
+      },
+      h = new Map([
+        ["en", r],
+        ["th", r],
+        ["ja", r],
+        ["ko", r],
+        ["zh", r],
+        ["zh_TW", r],
+        ["ar", r],
+        ["he_IL", r],
+        ["ms_MY", r],
+        ["vi", r],
+        ["de", a],
+        ["es", a],
+        ["it", a],
+        ["tr", a],
+        ["pt", a],
+        ["id_ID", a],
+        ["fr", l],
+        ["pl", l],
+        ["ru", l]
+      ]);
+
+    function d(e) {
+      if (e) return {
+        decimalSign: o.decimalSign,
+        groupingSeparator: ""
+      };
+      return {
+        ...h.get(s || window.language || "") ?? c,
+        ...n
+      }
+    }

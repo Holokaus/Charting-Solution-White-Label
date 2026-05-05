@@ -1,0 +1,32 @@
+/**
+ * Module 91106 - Beautified
+ * Auto-formatted from webpack bundle
+ * Semantic variable names applied
+ */
+
+91106: (e, t, i) => {
+    "use strict";
+    i.d(t, {
+      actualCurrencyUnitVisibility: () => c,
+      currencyUnitVisibilityOptions: () => a,
+      currencyUnitVisibilityProperty: () => r,
+      migrateShowCurrencyAndShowUnitProperties: () => d,
+      restoreCurrencyUnitVisibilitySettingsValue: () => l
+    });
+    var s, o = i(64876),
+      n = i(1765);
+    ! function(e) {
+      e.SettingsKey = "PriceAxisCurrencyAndUnit.visibility"
+    }(s || (s = {}));
+    const {
+      property: r,
+      availableValues: a,
+      restoreDefaultValue: l,
+      actualBehavior: c
+    } = (0, o.createVisibilityController)("PriceAxisCurrencyAndUnit.visibility");
+    let h = !1;
+
+    function d(e, t) {
+      h || (h = !0, void 0 === n.default.getValue("PriceAxisCurrencyAndUnit.visibility") && r().setValue(e || t ?
+        "alwaysOn" : "alwaysOff"))
+    }

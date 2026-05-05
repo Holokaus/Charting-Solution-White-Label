@@ -1,0 +1,31 @@
+/**
+ * Module 39612 - Beautified
+ * Auto-formatted from webpack bundle
+ * Semantic variable names applied
+ */
+
+39612: (e, t, i) => {
+    "use strict";
+    i.d(t, {
+      lastMouseOrTouchEventInfo: () => o,
+      setLastMouseOrTouchEventInfo: () => n
+    });
+    let s = (0, i(49483).supportTouch)() ? {
+      isTouch: !0,
+      stylus: !1
+    } : {
+      isTouch: !1
+    };
+
+    function o() {
+      return s
+    }
+
+    function n(e) {
+      s = e.isTouch ? {
+        isTouch: !0,
+        stylus: e.stylus
+      } : {
+        isTouch: !1
+      }
+    }

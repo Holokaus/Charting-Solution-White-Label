@@ -1,0 +1,24 @@
+/**
+ * Module 25246 - Beautified
+ * Auto-formatted from webpack bundle
+ * Semantic variable names applied
+ */
+
+25246: (e, t, i) => {
+    "use strict";
+    i.d(t, {
+      actualAutoLogButtonsVisibility: () => l,
+      autoLogButtonsVisibilityOptions: () => r,
+      autoLogButtonsVisibilityProperty: () => n,
+      restoreAutoLogButtonsVisibilitySettingsValue: () => a
+    });
+    var s, o = i(64876);
+    ! function(e) {
+      e.SettingsKey = "PriceAxisAutoLogButtons.visibility"
+    }(s || (s = {}));
+    const {
+      property: n,
+      availableValues: r,
+      restoreDefaultValue: a,
+      actualBehavior: l
+    } = (0, o.createVisibilityController)("PriceAxisAutoLogButtons.visibility")

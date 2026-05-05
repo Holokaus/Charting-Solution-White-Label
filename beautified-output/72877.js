@@ -1,0 +1,19 @@
+/**
+ * Module 72877 - Beautified
+ * Auto-formatted from webpack bundle
+ * Semantic variable names applied
+ */
+
+72877: e => {
+    e.exports = {
+      container: "container-B8mkOfAH",
+      inner: "inner-B8mkOfAH",
+      "border-left": "border-left-B8mkOfAH",
+      "border-right": "border-right-B8mkOfAH",
+      "border-top": "border-top-B8mkOfAH",
+      "border-bottom": "border-bottom-B8mkOfAH",
+      "top-right-radius": "top-right-radius-B8mkOfAH",
+      "top-left-radius": "top-left-radius-B8mkOfAH",
+      "bottom-right-radius": "bottom-right-radius-B8mkOfAH",
+      "bottom-left-radius": "bottom-left-radius-B8mkOfAH"
+    }

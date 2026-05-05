@@ -1,0 +1,19 @@
+/**
+ * Module 98155 - Beautified
+ * Auto-formatted from webpack bundle
+ * Semantic variable names applied
+ */
+
+98155: (e, t, i) => {
+    "use strict";
+    var s;
+    i.d(t, {
+        SymbolErrorPermissionDeniedReason: () => s,
+        invalidSymbol: () => n,
+        permissionDenied: () => o
+      }),
+      function(e) {
+        e.Symbol = "symbol", e.GroupPermission = "group"
+      }(s || (s = {}));
+    const o = "permission denied",
+      n = "invalid symbol"

@@ -1,0 +1,156 @@
+{
+  "timestamp": "2026-05-05T14:58:36.372Z",
+  "totalModules": 24,
+  "spotCheckSize": 5,
+  "spotCheckModules": [
+    "42516",
+    "24633",
+    "97725",
+    "36947",
+    "78136"
+  ],
+  "results": [
+    {
+      "moduleId": "42516",
+      "semantic": "lineToolUtils",
+      "assessment": "QUESTIONABLE_ASSIGNMENT",
+      "confidenceScore": 10,
+      "keywordMatches": 0,
+      "methodPatterns": 1,
+      "exports": 0
+    },
+    {
+      "moduleId": "24633",
+      "semantic": "tier3_high",
+      "assessment": "QUESTIONABLE_ASSIGNMENT",
+      "confidenceScore": 10,
+      "keywordMatches": 0,
+      "methodPatterns": 1,
+      "exports": 0
+    },
+    {
+      "moduleId": "97725",
+      "semantic": "dialogManager",
+      "assessment": "QUESTIONABLE_ASSIGNMENT",
+      "confidenceScore": 10,
+      "keywordMatches": 0,
+      "methodPatterns": 2,
+      "exports": 0
+    },
+    {
+      "moduleId": "36947",
+      "semantic": "lineToolManager",
+      "assessment": "QUESTIONABLE_ASSIGNMENT",
+      "confidenceScore": 10,
+      "keywordMatches": 0,
+      "methodPatterns": 1,
+      "exports": 0
+    },
+    {
+      "moduleId": "78136",
+      "semantic": "dialogManager",
+      "assessment": "QUESTIONABLE_ASSIGNMENT",
+      "confidenceScore": 10,
+      "keywordMatches": 0,
+      "methodPatterns": 2,
+      "exports": 0
+    }
+  ],
+  "details": [
+    {
+      "moduleId": "42516",
+      "semanticName": "lineToolUtils",
+      "indicators": {
+        "keywordMatches": [],
+        "methodPatterns": [
+          "nextValue"
+        ],
+        "classNames": [],
+        "exports": [],
+        "dataStructures": [
+          "complex_collections"
+        ],
+        "confidenceScore": 10
+      },
+      "assessment": "QUESTIONABLE_ASSIGNMENT"
+    },
+    {
+      "moduleId": "24633",
+      "semanticName": "tier3_high",
+      "indicators": {
+        "keywordMatches": [],
+        "methodPatterns": [
+          "function"
+        ],
+        "classNames": [],
+        "exports": [],
+        "dataStructures": [
+          "complex_collections",
+          "event_handling"
+        ],
+        "confidenceScore": 10
+      },
+      "assessment": "QUESTIONABLE_ASSIGNMENT"
+    },
+    {
+      "moduleId": "97725",
+      "semanticName": "dialogManager",
+      "indicators": {
+        "keywordMatches": [],
+        "methodPatterns": [
+          "state",
+          "object"
+        ],
+        "classNames": [],
+        "exports": [],
+        "dataStructures": [
+          "complex_collections"
+        ],
+        "confidenceScore": 10
+      },
+      "assessment": "QUESTIONABLE_ASSIGNMENT"
+    },
+    {
+      "moduleId": "36947",
+      "semanticName": "lineToolManager",
+      "indicators": {
+        "keywordMatches": [],
+        "methodPatterns": [
+          "function"
+        ],
+        "classNames": [],
+        "exports": [],
+        "dataStructures": [
+          "complex_collections",
+          "event_handling"
+        ],
+        "confidenceScore": 10
+      },
+      "assessment": "QUESTIONABLE_ASSIGNMENT"
+    },
+    {
+      "moduleId": "78136",
+      "semanticName": "dialogManager",
+      "indicators": {
+        "keywordMatches": [],
+        "methodPatterns": [
+          "object",
+          "nextValue"
+        ],
+        "classNames": [],
+        "exports": [],
+        "dataStructures": [
+          "complex_collections"
+        ],
+        "confidenceScore": 10
+      },
+      "assessment": "QUESTIONABLE_ASSIGNMENT"
+    }
+  ],
+  "summary": {
+    "highConfidence": 0,
+    "mediumConfidence": 0,
+    "uncertain": 5,
+    "passRate": "0.0"
+  }
+}

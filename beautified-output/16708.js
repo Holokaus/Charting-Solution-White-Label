@@ -1,0 +1,54 @@
+/**
+ * Module 16708 - Beautified
+ * Auto-formatted from webpack bundle
+ * Semantic variable names applied
+ */
+
+16708: (e, t, i) => {
+    "use strict";
+    i.d(t, {
+      DeleteLockedLineToolReason: () => s,
+      confirmRemovingLockedLineTools: () => d,
+      showDeleteLockedLineToolsConfirm: () => h
+    });
+    var s, o = i(11542),
+      n = i(3615),
+      r = i(5734),
+      a = i(89947);
+    ! function(e) {
+      e[e.RemoveSelected = 0] = "RemoveSelected", e[e.RemoveAll = 1] = "RemoveAll"
+    }(s || (s = {}));
+    const l = o.t(null, void 0, i(41019)),
+      c = o.t(null, void 0, i(41019));
+    async function h(e, t) {
+      if (r.doNotShowDeleteLockedLineConfirmProperty.value()) return void t(a.deleteLockedLineToolsProperty.value());
+      const {
+        getContent: h
+      } = await Promise.all([i.e(7328), i.e(3425), i.e(6052), i.e(1065), i.e(4598)]).then(i.bind(i, 30627));
+      (0, n.showConfirm)({
+        title: o.t(null, void 0, i(71692)),
+        content: h(e === s.RemoveSelected ? l : c),
+        id: `${r.doNotShowDeleteLockedLineKey}-confirm`,
+        mainButtonText: o.t(null, void 0, i(93123)),
+        mainButtonIntent: "danger",
+        cancelButtonText: o.t(null, void 0, i(99024)),
+        onConfirm: ({
+          dialogClose: e
+        }) => {
+          r.doNotShowDeleteLockedLineConfirmProperty.value() && a.deleteLockedLineToolsProperty.setValue(!0), t(!
+            0), e()
+        },
+        onCancel: ({
+          dialogClose: e
+        }) => {
+          r.doNotShowDeleteLockedLineConfirmProperty.value() && a.deleteLockedLineToolsProperty.setValue(!1), t(!
+            1), e()
+        }
+      })
+    }
+
+    function d(e) {
+      return new Promise((t => {
+        h(e, t)
+      }))
+    }

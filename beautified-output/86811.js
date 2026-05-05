@@ -1,0 +1,120 @@
+/**
+ * Module 86811 - Beautified
+ * Auto-formatted from webpack bundle
+ * Semantic variable names applied
+ */
+
+86811: (e, t, i) => {
+    "use strict";
+    i.d(t, {
+      GraphicsObj: () => l
+    });
+    var s = i(19979);
+    class o {
+      constructor(e, t, i, s) {
+        this._value = e, this._name = t, this._owner = i, this._comparer = void 0 !== s ? s : (e, t) => null == e ?
+          null != t : e === t
+      }
+      getName() {
+        return this._name
+      }
+      set(e) {
+        const t = this._comparer(this._value, e);
+        return t && this._owner.dirty(), this._value = e, t
+      }
+      get() {
+        return this._value
+      }
+    }
+    class n {
+      constructor(e, t, i) {
+        this._owner = null, this._value = e, this._name = t, this._owner = i
+      }
+      getName() {
+        return this._name
+      }
+      set(e) {
+        return this._value !== e && (this._value = e, null !== this._owner && this._owner.dirty(), !0)
+      }
+      get() {
+        return this._value
+      }
+    }
+    class r extends o {
+      constructor(e, t, i, s) {
+        super(e, t, i, s)
+      }
+    }
+    class a {
+      constructor(e) {
+        this._owner = e
+      }
+      createField(e, t) {
+        return new o(e, t, this)
+      }
+      createDoubleField(e, t) {
+        return new o(e, t, this, ((e, t) => !s.Std.equal(e, t)))
+      }
+      createDoubleArrayField(e, t) {
+        return new r(e, t, this, ((e, t) => {
+          if (e === t) return !1;
+          const i = e.length;
+          if (t.length !== i) return !0;
+          for (let o = 0; o < i; o++) {
+            const i = e[o],
+              n = t[o];
+            if (!s.Std.equal(i, n)) return !0
+          }
+          return !1
+        }))
+      }
+      createTimeField(e, t) {
+        return new n(e, t, this)
+      }
+      dirty() {
+        null !== this._owner && this._owner.dirty()
+      }
+      setOwner(e) {
+        this._owner = e
+      }
+    }
+    class l {
+      constructor(e) {
+        this._mixinJSONObject = new a(this), this._state = 0, this._owner = null, this._gen = e, this._id = e
+          .nextGraphicsObjId(), this._id2 = this._mixinJSONObject.createField(this.id(), "id")
+      }
+      dirty() {
+        null !== this._owner && this._owner.dirty()
+      }
+      setOwner(e) {
+        this._owner = e
+      }
+      id() {
+        return this._id
+      }
+      unsetOwner(e) {
+        this._owner === e && (this._owner = null)
+      }
+      state() {
+        return this._state
+      }
+      erase() {
+        1 === this._state && this._gen.pushEraseObjCmd(this._id, this.jsonName()), this._state = 2, this.dirty()
+      }
+      markAsPosted() {
+        1 !== this._state && (this._state = 1, this.dirty())
+      }
+      isErased() {
+        return 2 === this._state
+      }
+      isPosted() {
+        return 1 === this._state
+      }
+      isNaN() {
+        return !1
+      }
+      _processObjUpdate() {
+        1 === this._state && (this._gen.pushEraseObjCmd(this._id, this.jsonName()), this._id = this._gen
+          .nextGraphicsObjId(), this._id2.set(this._id), this._state = 0), this.dirty()
+      }
+    }

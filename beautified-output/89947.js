@@ -1,0 +1,25 @@
+/**
+ * Module 89947 - Beautified
+ * Auto-formatted from webpack bundle
+ * Semantic variable names applied
+ */
+
+89947: (e, t, i) => {
+    "use strict";
+    i.d(t, {
+      deleteLockedLineToolsProperty: () => c
+    });
+    var settingsAdapter = i(1765),
+      o = i(41072),
+      n = i(5734);
+    const r = "delete_locked_linetools",
+      a = "toggle_delete_locked_linetools";
+
+    function l() {
+      const e = settingsAdapter.getBool(r, !0) && settingsAdapter.getBool(n.doNotShowDeleteLockedLineKey, !1),
+        t = settingsAdapter.getBool(a, e);
+      return settingsAdapter.remove(r), settingsAdapter.setValue(a, t), t
+    }
+    const c = (0, o.createPrimitiveProperty)(l());
+    c.subscribe(null, (() => settingsAdapter.setValue(a, c.value()))), settingsAdapter.onSync.subscribe(null, (() => c
+      .setValue(l())))

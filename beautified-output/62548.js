@@ -1,0 +1,24 @@
+/**
+ * Module 62548 - Beautified
+ * Auto-formatted from webpack bundle
+ * Semantic variable names applied
+ */
+
+62548: (e, t, i) => {
+    "use strict";
+    i.d(t, {
+      layoutInitialSizingState: () => o
+    });
+    var s = i(69708);
+    i(50151);
+
+    function o(e) {
+      const [, ...t] = e;
+      return function(e) {
+        const t = 1 / e.length;
+        return e.map((e => ({
+          percent: t,
+          substate: (0, s.default)(e) ? void 0 : o(e)
+        })))
+      }(t)
+    }

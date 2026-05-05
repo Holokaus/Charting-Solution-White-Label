@@ -1,0 +1,2965 @@
+{
+  "timestamp": "2026-05-03T17:51:18.092Z",
+  "mode": "RIGOROUS",
+  "totalModules": 49,
+  "expectedModules": 49,
+  "averageScore": 66.83673469387755,
+  "passRate": 32.6530612244898,
+  "qualityBreakdown": {
+    "excellent": 0,
+    "good": 16,
+    "needsReview": 33
+  },
+  "checklistPerformance": {
+    "moduleIdValid": 100,
+    "semanticNameValid": 100,
+    "contentValid": 26.5,
+    "headerPresent": 100,
+    "semanticsApplied": 89.8,
+    "exportsFound": 18.4,
+    "noObviousErrors": 0,
+    "sizeReasonable": 100
+  },
+  "allResults": [
+    {
+      "moduleId": "25246",
+      "confidence": 0.44999999999999996,
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "details": {
+        "moduleIdValid": {
+          "check": "Numeric ID format",
+          "passed": true,
+          "value": "25246"
+        },
+        "semanticNameValid": {
+          "check": "Valid semantic name in header",
+          "passed": true,
+          "value": "watchedValue"
+        },
+        "contentValid": {
+          "check": "Substantive content (>15 non-comment lines)",
+          "passed": true,
+          "value": "18 substantive lines"
+        },
+        "headerPresent": {
+          "check": "Proper comment header with Module, Semantic, Confidence",
+          "passed": true,
+          "value": "Header found"
+        },
+        "semanticsApplied": {
+          "check": "Semantic variables applied (>=2 unique variables)",
+          "passed": true,
+          "value": "4 semantic variables found"
+        },
+        "exportsFound": {
+          "check": "Exports defined or used",
+          "passed": true,
+          "value": "Exports found"
+        },
+        "noObviousErrors": {
+          "check": "No obvious syntax errors (braces balanced, no double undefined)",
+          "passed": false,
+          "value": "Braces mismatch: 5 vs 4"
+        },
+        "sizeReasonable": {
+          "check": "File size reasonable (100B - 500KB)",
+          "passed": true,
+          "value": "0.89 KB"
+        }
+      },
+      "passed": 7,
+      "total": 8,
+      "score": 87.5,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "2433",
+      "confidence": 0.4,
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": false,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "details": {
+        "moduleIdValid": {
+          "check": "Numeric ID format",
+          "passed": true,
+          "value": "2433"
+        },
+        "semanticNameValid": {
+          "check": "Valid semantic name in header",
+          "passed": true,
+          "value": "priceDataSource"
+        },
+        "contentValid": {
+          "check": "Substantive content (>15 non-comment lines)",
+          "passed": true,
+          "value": "271 substantive lines"
+        },
+        "headerPresent": {
+          "check": "Proper comment header with Module, Semantic, Confidence",
+          "passed": true,
+          "value": "Header found"
+        },
+        "semanticsApplied": {
+          "check": "Semantic variables applied (>=2 unique variables)",
+          "passed": false,
+          "value": "1 semantic variables found"
+        },
+        "exportsFound": {
+          "check": "Exports defined or used",
+          "passed": true,
+          "value": "Exports found"
+        },
+        "noObviousErrors": {
+          "check": "No obvious syntax errors (braces balanced, no double undefined)",
+          "passed": false,
+          "value": "Braces mismatch: 46 vs 45"
+        },
+        "sizeReasonable": {
+          "check": "File size reasonable (100B - 500KB)",
+          "passed": true,
+          "value": "7.83 KB"
+        }
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "3618",
+      "confidence": 0.44999999999999996,
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "details": {
+        "moduleIdValid": {
+          "check": "Numeric ID format",
+          "passed": true,
+          "value": "3618"
+        },
+        "semanticNameValid": {
+          "check": "Valid semantic name in header",
+          "passed": true,
+          "value": "lineToolUtils"
+        },
+        "contentValid": {
+          "check": "Substantive content (>15 non-comment lines)",
+          "passed": true,
+          "value": "16 substantive lines"
+        },
+        "headerPresent": {
+          "check": "Proper comment header with Module, Semantic, Confidence",
+          "passed": true,
+          "value": "Header found"
+        },
+        "semanticsApplied": {
+          "check": "Semantic variables applied (>=2 unique variables)",
+          "passed": true,
+          "value": "5 semantic variables found"
+        },
+        "exportsFound": {
+          "check": "Exports defined or used",
+          "passed": false,
+          "value": "No exports detected"
+        },
+        "noObviousErrors": {
+          "check": "No obvious syntax errors (braces balanced, no double undefined)",
+          "passed": false,
+          "value": "Braces mismatch: 5 vs 4"
+        },
+        "sizeReasonable": {
+          "check": "File size reasonable (100B - 500KB)",
+          "passed": true,
+          "value": "0.66 KB"
+        }
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "22033",
+      "confidence": 0.44999999999999996,
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "details": {
+        "moduleIdValid": {
+          "check": "Numeric ID format",
+          "passed": true,
+          "value": "22033"
+        },
+        "semanticNameValid": {
+          "check": "Valid semantic name in header",
+          "passed": true,
+          "value": "deleteLockedLineTools"
+        },
+        "contentValid": {
+          "check": "Substantive content (>15 non-comment lines)",
+          "passed": true,
+          "value": "220 substantive lines"
+        },
+        "headerPresent": {
+          "check": "Proper comment header with Module, Semantic, Confidence",
+          "passed": true,
+          "value": "Header found"
+        },
+        "semanticsApplied": {
+          "check": "Semantic variables applied (>=2 unique variables)",
+          "passed": true,
+          "value": "18 semantic variables found"
+        },
+        "exportsFound": {
+          "check": "Exports defined or used",
+          "passed": false,
+          "value": "No exports detected"
+        },
+        "noObviousErrors": {
+          "check": "No obvious syntax errors (braces balanced, no double undefined)",
+          "passed": false,
+          "value": "Braces mismatch: 26 vs 25"
+        },
+        "sizeReasonable": {
+          "check": "File size reasonable (100B - 500KB)",
+          "passed": true,
+          "value": "5.96 KB"
+        }
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "23024",
+      "confidence": 0.44999999999999996,
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "details": {
+        "moduleIdValid": {
+          "check": "Numeric ID format",
+          "passed": true,
+          "value": "23024"
+        },
+        "semanticNameValid": {
+          "check": "Valid semantic name in header",
+          "passed": true,
+          "value": "seriesData"
+        },
+        "contentValid": {
+          "check": "Substantive content (>15 non-comment lines)",
+          "passed": true,
+          "value": "22 substantive lines"
+        },
+        "headerPresent": {
+          "check": "Proper comment header with Module, Semantic, Confidence",
+          "passed": true,
+          "value": "Header found"
+        },
+        "semanticsApplied": {
+          "check": "Semantic variables applied (>=2 unique variables)",
+          "passed": true,
+          "value": "4 semantic variables found"
+        },
+        "exportsFound": {
+          "check": "Exports defined or used",
+          "passed": false,
+          "value": "No exports detected"
+        },
+        "noObviousErrors": {
+          "check": "No obvious syntax errors (braces balanced, no double undefined)",
+          "passed": false,
+          "value": "Braces mismatch: 7 vs 6"
+        },
+        "sizeReasonable": {
+          "check": "File size reasonable (100B - 500KB)",
+          "passed": true,
+          "value": "0.98 KB"
+        }
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "31237",
+      "confidence": 0.44999999999999996,
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "details": {
+        "moduleIdValid": {
+          "check": "Numeric ID format",
+          "passed": true,
+          "value": "31237"
+        },
+        "semanticNameValid": {
+          "check": "Valid semantic name in header",
+          "passed": true,
+          "value": "deleteLockedLineTools"
+        },
+        "contentValid": {
+          "check": "Substantive content (>15 non-comment lines)",
+          "passed": true,
+          "value": "34 substantive lines"
+        },
+        "headerPresent": {
+          "check": "Proper comment header with Module, Semantic, Confidence",
+          "passed": true,
+          "value": "Header found"
+        },
+        "semanticsApplied": {
+          "check": "Semantic variables applied (>=2 unique variables)",
+          "passed": true,
+          "value": "10 semantic variables found"
+        },
+        "exportsFound": {
+          "check": "Exports defined or used",
+          "passed": false,
+          "value": "No exports detected"
+        },
+        "noObviousErrors": {
+          "check": "No obvious syntax errors (braces balanced, no double undefined)",
+          "passed": false,
+          "value": "Braces mismatch: 11 vs 10"
+        },
+        "sizeReasonable": {
+          "check": "File size reasonable (100B - 500KB)",
+          "passed": true,
+          "value": "1.40 KB"
+        }
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "31789",
+      "confidence": 0.4,
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": false,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "details": {
+        "moduleIdValid": {
+          "check": "Numeric ID format",
+          "passed": true,
+          "value": "31789"
+        },
+        "semanticNameValid": {
+          "check": "Valid semantic name in header",
+          "passed": true,
+          "value": "priceDataSource"
+        },
+        "contentValid": {
+          "check": "Substantive content (>15 non-comment lines)",
+          "passed": true,
+          "value": "32 substantive lines"
+        },
+        "headerPresent": {
+          "check": "Proper comment header with Module, Semantic, Confidence",
+          "passed": true,
+          "value": "Header found"
+        },
+        "semanticsApplied": {
+          "check": "Semantic variables applied (>=2 unique variables)",
+          "passed": false,
+          "value": "1 semantic variables found"
+        },
+        "exportsFound": {
+          "check": "Exports defined or used",
+          "passed": true,
+          "value": "Exports found"
+        },
+        "noObviousErrors": {
+          "check": "No obvious syntax errors (braces balanced, no double undefined)",
+          "passed": false,
+          "value": "Braces mismatch: 11 vs 10"
+        },
+        "sizeReasonable": {
+          "check": "File size reasonable (100B - 500KB)",
+          "passed": true,
+          "value": "1.06 KB"
+        }
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "40153",
+      "confidence": 0.44999999999999996,
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": false,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "details": {
+        "moduleIdValid": {
+          "check": "Numeric ID format",
+          "passed": true,
+          "value": "40153"
+        },
+        "semanticNameValid": {
+          "check": "Valid semantic name in header",
+          "passed": true,
+          "value": "watchedValue"
+        },
+        "contentValid": {
+          "check": "Substantive content (>15 non-comment lines)",
+          "passed": false,
+          "value": "13 substantive lines"
+        },
+        "headerPresent": {
+          "check": "Proper comment header with Module, Semantic, Confidence",
+          "passed": true,
+          "value": "Header found"
+        },
+        "semanticsApplied": {
+          "check": "Semantic variables applied (>=2 unique variables)",
+          "passed": true,
+          "value": "5 semantic variables found"
+        },
+        "exportsFound": {
+          "check": "Exports defined or used",
+          "passed": true,
+          "value": "Exports found"
+        },
+        "noObviousErrors": {
+          "check": "No obvious syntax errors (braces balanced, no double undefined)",
+          "passed": false,
+          "value": "Braces mismatch: 3 vs 2"
+        },
+        "sizeReasonable": {
+          "check": "File size reasonable (100B - 500KB)",
+          "passed": true,
+          "value": "0.73 KB"
+        }
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "56876",
+      "confidence": 0.4,
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "details": {
+        "moduleIdValid": {
+          "check": "Numeric ID format",
+          "passed": true,
+          "value": "56876"
+        },
+        "semanticNameValid": {
+          "check": "Valid semantic name in header",
+          "passed": true,
+          "value": "lineToolUtils"
+        },
+        "contentValid": {
+          "check": "Substantive content (>15 non-comment lines)",
+          "passed": true,
+          "value": "107 substantive lines"
+        },
+        "headerPresent": {
+          "check": "Proper comment header with Module, Semantic, Confidence",
+          "passed": true,
+          "value": "Header found"
+        },
+        "semanticsApplied": {
+          "check": "Semantic variables applied (>=2 unique variables)",
+          "passed": true,
+          "value": "5 semantic variables found"
+        },
+        "exportsFound": {
+          "check": "Exports defined or used",
+          "passed": false,
+          "value": "No exports detected"
+        },
+        "noObviousErrors": {
+          "check": "No obvious syntax errors (braces balanced, no double undefined)",
+          "passed": false,
+          "value": "Braces mismatch: 6 vs 5"
+        },
+        "sizeReasonable": {
+          "check": "File size reasonable (100B - 500KB)",
+          "passed": true,
+          "value": "6.05 KB"
+        }
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "59064",
+      "confidence": 0.44999999999999996,
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": false,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "details": {
+        "moduleIdValid": {
+          "check": "Numeric ID format",
+          "passed": true,
+          "value": "59064"
+        },
+        "semanticNameValid": {
+          "check": "Valid semantic name in header",
+          "passed": true,
+          "value": "series"
+        },
+        "contentValid": {
+          "check": "Substantive content (>15 non-comment lines)",
+          "passed": true,
+          "value": "278 substantive lines"
+        },
+        "headerPresent": {
+          "check": "Proper comment header with Module, Semantic, Confidence",
+          "passed": true,
+          "value": "Header found"
+        },
+        "semanticsApplied": {
+          "check": "Semantic variables applied (>=2 unique variables)",
+          "passed": false,
+          "value": "0 semantic variables found"
+        },
+        "exportsFound": {
+          "check": "Exports defined or used",
+          "passed": true,
+          "value": "Exports found"
+        },
+        "noObviousErrors": {
+          "check": "No obvious syntax errors (braces balanced, no double undefined)",
+          "passed": false,
+          "value": "Braces mismatch: 65 vs 64"
+        },
+        "sizeReasonable": {
+          "check": "File size reasonable (100B - 500KB)",
+          "passed": true,
+          "value": "6.87 KB"
+        }
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "60709",
+      "confidence": 0.44999999999999996,
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "details": {
+        "moduleIdValid": {
+          "check": "Numeric ID format",
+          "passed": true,
+          "value": "60709"
+        },
+        "semanticNameValid": {
+          "check": "Valid semantic name in header",
+          "passed": true,
+          "value": "chartDataManager"
+        },
+        "contentValid": {
+          "check": "Substantive content (>15 non-comment lines)",
+          "passed": true,
+          "value": "16 substantive lines"
+        },
+        "headerPresent": {
+          "check": "Proper comment header with Module, Semantic, Confidence",
+          "passed": true,
+          "value": "Header found"
+        },
+        "semanticsApplied": {
+          "check": "Semantic variables applied (>=2 unique variables)",
+          "passed": true,
+          "value": "6 semantic variables found"
+        },
+        "exportsFound": {
+          "check": "Exports defined or used",
+          "passed": false,
+          "value": "No exports detected"
+        },
+        "noObviousErrors": {
+          "check": "No obvious syntax errors (braces balanced, no double undefined)",
+          "passed": false,
+          "value": "Braces mismatch: 6 vs 5"
+        },
+        "sizeReasonable": {
+          "check": "File size reasonable (100B - 500KB)",
+          "passed": true,
+          "value": "0.81 KB"
+        }
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "62548",
+      "confidence": 0.44999999999999996,
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "details": {
+        "moduleIdValid": {
+          "check": "Numeric ID format",
+          "passed": true,
+          "value": "62548"
+        },
+        "semanticNameValid": {
+          "check": "Valid semantic name in header",
+          "passed": true,
+          "value": "seriesBarFunction"
+        },
+        "contentValid": {
+          "check": "Substantive content (>15 non-comment lines)",
+          "passed": true,
+          "value": "17 substantive lines"
+        },
+        "headerPresent": {
+          "check": "Proper comment header with Module, Semantic, Confidence",
+          "passed": true,
+          "value": "Header found"
+        },
+        "semanticsApplied": {
+          "check": "Semantic variables applied (>=2 unique variables)",
+          "passed": true,
+          "value": "4 semantic variables found"
+        },
+        "exportsFound": {
+          "check": "Exports defined or used",
+          "passed": false,
+          "value": "No exports detected"
+        },
+        "noObviousErrors": {
+          "check": "No obvious syntax errors (braces balanced, no double undefined)",
+          "passed": false,
+          "value": "Braces mismatch: 5 vs 4"
+        },
+        "sizeReasonable": {
+          "check": "File size reasonable (100B - 500KB)",
+          "passed": true,
+          "value": "0.74 KB"
+        }
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "70548",
+      "confidence": 0.44999999999999996,
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": false,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "details": {
+        "moduleIdValid": {
+          "check": "Numeric ID format",
+          "passed": true,
+          "value": "70548"
+        },
+        "semanticNameValid": {
+          "check": "Valid semantic name in header",
+          "passed": true,
+          "value": "watchedValue"
+        },
+        "contentValid": {
+          "check": "Substantive content (>15 non-comment lines)",
+          "passed": false,
+          "value": "9 substantive lines"
+        },
+        "headerPresent": {
+          "check": "Proper comment header with Module, Semantic, Confidence",
+          "passed": true,
+          "value": "Header found"
+        },
+        "semanticsApplied": {
+          "check": "Semantic variables applied (>=2 unique variables)",
+          "passed": true,
+          "value": "3 semantic variables found"
+        },
+        "exportsFound": {
+          "check": "Exports defined or used",
+          "passed": true,
+          "value": "Exports found"
+        },
+        "noObviousErrors": {
+          "check": "No obvious syntax errors (braces balanced, no double undefined)",
+          "passed": false,
+          "value": "Braces mismatch: 3 vs 2"
+        },
+        "sizeReasonable": {
+          "check": "File size reasonable (100B - 500KB)",
+          "passed": true,
+          "value": "0.52 KB"
+        }
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "71843",
+      "confidence": 0.44999999999999996,
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": false,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "details": {
+        "moduleIdValid": {
+          "check": "Numeric ID format",
+          "passed": true,
+          "value": "71843"
+        },
+        "semanticNameValid": {
+          "check": "Valid semantic name in header",
+          "passed": true,
+          "value": "series"
+        },
+        "contentValid": {
+          "check": "Substantive content (>15 non-comment lines)",
+          "passed": true,
+          "value": "35 substantive lines"
+        },
+        "headerPresent": {
+          "check": "Proper comment header with Module, Semantic, Confidence",
+          "passed": true,
+          "value": "Header found"
+        },
+        "semanticsApplied": {
+          "check": "Semantic variables applied (>=2 unique variables)",
+          "passed": false,
+          "value": "1 semantic variables found"
+        },
+        "exportsFound": {
+          "check": "Exports defined or used",
+          "passed": true,
+          "value": "Exports found"
+        },
+        "noObviousErrors": {
+          "check": "No obvious syntax errors (braces balanced, no double undefined)",
+          "passed": false,
+          "value": "Braces mismatch: 6 vs 5"
+        },
+        "sizeReasonable": {
+          "check": "File size reasonable (100B - 500KB)",
+          "passed": true,
+          "value": "1.46 KB"
+        }
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "81360",
+      "confidence": 0.4,
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": true,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "details": {
+        "moduleIdValid": {
+          "check": "Numeric ID format",
+          "passed": true,
+          "value": "81360"
+        },
+        "semanticNameValid": {
+          "check": "Valid semantic name in header",
+          "passed": true,
+          "value": "lineToolUtils"
+        },
+        "contentValid": {
+          "check": "Substantive content (>15 non-comment lines)",
+          "passed": true,
+          "value": "44 substantive lines"
+        },
+        "headerPresent": {
+          "check": "Proper comment header with Module, Semantic, Confidence",
+          "passed": true,
+          "value": "Header found"
+        },
+        "semanticsApplied": {
+          "check": "Semantic variables applied (>=2 unique variables)",
+          "passed": true,
+          "value": "4 semantic variables found"
+        },
+        "exportsFound": {
+          "check": "Exports defined or used",
+          "passed": false,
+          "value": "No exports detected"
+        },
+        "noObviousErrors": {
+          "check": "No obvious syntax errors (braces balanced, no double undefined)",
+          "passed": false,
+          "value": "Braces mismatch: 10 vs 9"
+        },
+        "sizeReasonable": {
+          "check": "File size reasonable (100B - 500KB)",
+          "passed": true,
+          "value": "1.52 KB"
+        }
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "97902",
+      "confidence": 0.44999999999999996,
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": false,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "details": {
+        "moduleIdValid": {
+          "check": "Numeric ID format",
+          "passed": true,
+          "value": "97902"
+        },
+        "semanticNameValid": {
+          "check": "Valid semantic name in header",
+          "passed": true,
+          "value": "watchedValue"
+        },
+        "contentValid": {
+          "check": "Substantive content (>15 non-comment lines)",
+          "passed": false,
+          "value": "10 substantive lines"
+        },
+        "headerPresent": {
+          "check": "Proper comment header with Module, Semantic, Confidence",
+          "passed": true,
+          "value": "Header found"
+        },
+        "semanticsApplied": {
+          "check": "Semantic variables applied (>=2 unique variables)",
+          "passed": true,
+          "value": "2 semantic variables found"
+        },
+        "exportsFound": {
+          "check": "Exports defined or used",
+          "passed": true,
+          "value": "Exports found"
+        },
+        "noObviousErrors": {
+          "check": "No obvious syntax errors (braces balanced, no double undefined)",
+          "passed": false,
+          "value": "Braces mismatch: 4 vs 3"
+        },
+        "sizeReasonable": {
+          "check": "File size reasonable (100B - 500KB)",
+          "passed": true,
+          "value": "0.61 KB"
+        }
+      },
+      "passed": 6,
+      "total": 8,
+      "score": 75,
+      "quality": "GOOD"
+    },
+    {
+      "moduleId": "5471",
+      "confidence": 0.44999999999999996,
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": false,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "details": {
+        "moduleIdValid": {
+          "check": "Numeric ID format",
+          "passed": true,
+          "value": "5471"
+        },
+        "semanticNameValid": {
+          "check": "Valid semantic name in header",
+          "passed": true,
+          "value": "chunkLoaderModule"
+        },
+        "contentValid": {
+          "check": "Substantive content (>15 non-comment lines)",
+          "passed": false,
+          "value": "9 substantive lines"
+        },
+        "headerPresent": {
+          "check": "Proper comment header with Module, Semantic, Confidence",
+          "passed": true,
+          "value": "Header found"
+        },
+        "semanticsApplied": {
+          "check": "Semantic variables applied (>=2 unique variables)",
+          "passed": true,
+          "value": "4 semantic variables found"
+        },
+        "exportsFound": {
+          "check": "Exports defined or used",
+          "passed": false,
+          "value": "No exports detected"
+        },
+        "noObviousErrors": {
+          "check": "No obvious syntax errors (braces balanced, no double undefined)",
+          "passed": false,
+          "value": "Braces mismatch: 4 vs 3"
+        },
+        "sizeReasonable": {
+          "check": "File size reasonable (100B - 500KB)",
+          "passed": true,
+          "value": "0.59 KB"
+        }
+      },
+      "passed": 5,
+      "total": 8,
+      "score": 62.5,
+      "quality": "NEEDS_REVIEW"
+    },
+    {
+      "moduleId": "7024",
+      "confidence": 0.44999999999999996,
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": false,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "details": {
+        "moduleIdValid": {
+          "check": "Numeric ID format",
+          "passed": true,
+          "value": "7024"
+        },
+        "semanticNameValid": {
+          "check": "Valid semantic name in header",
+          "passed": true,
+          "value": "chunkLoaderModule"
+        },
+        "contentValid": {
+          "check": "Substantive content (>15 non-comment lines)",
+          "passed": false,
+          "value": "9 substantive lines"
+        },
+        "headerPresent": {
+          "check": "Proper comment header with Module, Semantic, Confidence",
+          "passed": true,
+          "value": "Header found"
+        },
+        "semanticsApplied": {
+          "check": "Semantic variables applied (>=2 unique variables)",
+          "passed": true,
+          "value": "4 semantic variables found"
+        },
+        "exportsFound": {
+          "check": "Exports defined or used",
+          "passed": false,
+          "value": "No exports detected"
+        },
+        "noObviousErrors": {
+          "check": "No obvious syntax errors (braces balanced, no double undefined)",
+          "passed": false,
+          "value": "Braces mismatch: 4 vs 3"
+        },
+        "sizeReasonable": {
+          "check": "File size reasonable (100B - 500KB)",
+          "passed": true,
+          "value": "0.55 KB"
+        }
+      },
+      "passed": 5,
+      "total": 8,
+      "score": 62.5,
+      "quality": "NEEDS_REVIEW"
+    },
+    {
+      "moduleId": "12178",
+      "confidence": 0.44999999999999996,
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": false,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "details": {
+        "moduleIdValid": {
+          "check": "Numeric ID format",
+          "passed": true,
+          "value": "12178"
+        },
+        "semanticNameValid": {
+          "check": "Valid semantic name in header",
+          "passed": true,
+          "value": "timeInterval"
+        },
+        "contentValid": {
+          "check": "Substantive content (>15 non-comment lines)",
+          "passed": false,
+          "value": "9 substantive lines"
+        },
+        "headerPresent": {
+          "check": "Proper comment header with Module, Semantic, Confidence",
+          "passed": true,
+          "value": "Header found"
+        },
+        "semanticsApplied": {
+          "check": "Semantic variables applied (>=2 unique variables)",
+          "passed": true,
+          "value": "4 semantic variables found"
+        },
+        "exportsFound": {
+          "check": "Exports defined or used",
+          "passed": false,
+          "value": "No exports detected"
+        },
+        "noObviousErrors": {
+          "check": "No obvious syntax errors (braces balanced, no double undefined)",
+          "passed": false,
+          "value": "Braces mismatch: 3 vs 2"
+        },
+        "sizeReasonable": {
+          "check": "File size reasonable (100B - 500KB)",
+          "passed": true,
+          "value": "0.51 KB"
+        }
+      },
+      "passed": 5,
+      "total": 8,
+      "score": 62.5,
+      "quality": "NEEDS_REVIEW"
+    },
+    {
+      "moduleId": "13896",
+      "confidence": 0.4,
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": false,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "details": {
+        "moduleIdValid": {
+          "check": "Numeric ID format",
+          "passed": true,
+          "value": "13896"
+        },
+        "semanticNameValid": {
+          "check": "Valid semantic name in header",
+          "passed": true,
+          "value": "lineToolUtils"
+        },
+        "contentValid": {
+          "check": "Substantive content (>15 non-comment lines)",
+          "passed": false,
+          "value": "6 substantive lines"
+        },
+        "headerPresent": {
+          "check": "Proper comment header with Module, Semantic, Confidence",
+          "passed": true,
+          "value": "Header found"
+        },
+        "semanticsApplied": {
+          "check": "Semantic variables applied (>=2 unique variables)",
+          "passed": true,
+          "value": "3 semantic variables found"
+        },
+        "exportsFound": {
+          "check": "Exports defined or used",
+          "passed": false,
+          "value": "No exports detected"
+        },
+        "noObviousErrors": {
+          "check": "No obvious syntax errors (braces balanced, no double undefined)",
+          "passed": false,
+          "value": "Braces mismatch: 2 vs 1"
+        },
+        "sizeReasonable": {
+          "check": "File size reasonable (100B - 500KB)",
+          "passed": true,
+          "value": "0.43 KB"
+        }
+      },
+      "passed": 5,
+      "total": 8,
+      "score": 62.5,
+      "quality": "NEEDS_REVIEW"
+    },
+    {
+      "moduleId": "14881",
+      "confidence": 0.44999999999999996,
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": false,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "details": {
+        "moduleIdValid": {
+          "check": "Numeric ID format",
+          "passed": true,
+          "value": "14881"
+        },
+        "semanticNameValid": {
+          "check": "Valid semantic name in header",
+          "passed": true,
+          "value": "chunkLoaderModule"
+        },
+        "contentValid": {
+          "check": "Substantive content (>15 non-comment lines)",
+          "passed": false,
+          "value": "10 substantive lines"
+        },
+        "headerPresent": {
+          "check": "Proper comment header with Module, Semantic, Confidence",
+          "passed": true,
+          "value": "Header found"
+        },
+        "semanticsApplied": {
+          "check": "Semantic variables applied (>=2 unique variables)",
+          "passed": true,
+          "value": "6 semantic variables found"
+        },
+        "exportsFound": {
+          "check": "Exports defined or used",
+          "passed": false,
+          "value": "No exports detected"
+        },
+        "noObviousErrors": {
+          "check": "No obvious syntax errors (braces balanced, no double undefined)",
+          "passed": false,
+          "value": "Braces mismatch: 4 vs 3"
+        },
+        "sizeReasonable": {
+          "check": "File size reasonable (100B - 500KB)",
+          "passed": true,
+          "value": "0.64 KB"
+        }
+      },
+      "passed": 5,
+      "total": 8,
+      "score": 62.5,
+      "quality": "NEEDS_REVIEW"
+    },
+    {
+      "moduleId": "15574",
+      "confidence": 0.44999999999999996,
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": false,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "details": {
+        "moduleIdValid": {
+          "check": "Numeric ID format",
+          "passed": true,
+          "value": "15574"
+        },
+        "semanticNameValid": {
+          "check": "Valid semantic name in header",
+          "passed": true,
+          "value": "seriesBarFunction"
+        },
+        "contentValid": {
+          "check": "Substantive content (>15 non-comment lines)",
+          "passed": false,
+          "value": "9 substantive lines"
+        },
+        "headerPresent": {
+          "check": "Proper comment header with Module, Semantic, Confidence",
+          "passed": true,
+          "value": "Header found"
+        },
+        "semanticsApplied": {
+          "check": "Semantic variables applied (>=2 unique variables)",
+          "passed": true,
+          "value": "4 semantic variables found"
+        },
+        "exportsFound": {
+          "check": "Exports defined or used",
+          "passed": false,
+          "value": "No exports detected"
+        },
+        "noObviousErrors": {
+          "check": "No obvious syntax errors (braces balanced, no double undefined)",
+          "passed": false,
+          "value": "Braces mismatch: 3 vs 2"
+        },
+        "sizeReasonable": {
+          "check": "File size reasonable (100B - 500KB)",
+          "passed": true,
+          "value": "0.49 KB"
+        }
+      },
+      "passed": 5,
+      "total": 8,
+      "score": 62.5,
+      "quality": "NEEDS_REVIEW"
+    },
+    {
+      "moduleId": "18113",
+      "confidence": 0.44999999999999996,
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": false,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "details": {
+        "moduleIdValid": {
+          "check": "Numeric ID format",
+          "passed": true,
+          "value": "18113"
+        },
+        "semanticNameValid": {
+          "check": "Valid semantic name in header",
+          "passed": true,
+          "value": "seriesBarFunction"
+        },
+        "contentValid": {
+          "check": "Substantive content (>15 non-comment lines)",
+          "passed": false,
+          "value": "9 substantive lines"
+        },
+        "headerPresent": {
+          "check": "Proper comment header with Module, Semantic, Confidence",
+          "passed": true,
+          "value": "Header found"
+        },
+        "semanticsApplied": {
+          "check": "Semantic variables applied (>=2 unique variables)",
+          "passed": true,
+          "value": "4 semantic variables found"
+        },
+        "exportsFound": {
+          "check": "Exports defined or used",
+          "passed": false,
+          "value": "No exports detected"
+        },
+        "noObviousErrors": {
+          "check": "No obvious syntax errors (braces balanced, no double undefined)",
+          "passed": false,
+          "value": "Braces mismatch: 3 vs 2"
+        },
+        "sizeReasonable": {
+          "check": "File size reasonable (100B - 500KB)",
+          "passed": true,
+          "value": "0.46 KB"
+        }
+      },
+      "passed": 5,
+      "total": 8,
+      "score": 62.5,
+      "quality": "NEEDS_REVIEW"
+    },
+    {
+      "moduleId": "24633",
+      "confidence": 0.44999999999999996,
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": false,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "details": {
+        "moduleIdValid": {
+          "check": "Numeric ID format",
+          "passed": true,
+          "value": "24633"
+        },
+        "semanticNameValid": {
+          "check": "Valid semantic name in header",
+          "passed": true,
+          "value": "chunkLoaderModule"
+        },
+        "contentValid": {
+          "check": "Substantive content (>15 non-comment lines)",
+          "passed": false,
+          "value": "9 substantive lines"
+        },
+        "headerPresent": {
+          "check": "Proper comment header with Module, Semantic, Confidence",
+          "passed": true,
+          "value": "Header found"
+        },
+        "semanticsApplied": {
+          "check": "Semantic variables applied (>=2 unique variables)",
+          "passed": true,
+          "value": "4 semantic variables found"
+        },
+        "exportsFound": {
+          "check": "Exports defined or used",
+          "passed": false,
+          "value": "No exports detected"
+        },
+        "noObviousErrors": {
+          "check": "No obvious syntax errors (braces balanced, no double undefined)",
+          "passed": false,
+          "value": "Braces mismatch: 4 vs 3"
+        },
+        "sizeReasonable": {
+          "check": "File size reasonable (100B - 500KB)",
+          "passed": true,
+          "value": "0.51 KB"
+        }
+      },
+      "passed": 5,
+      "total": 8,
+      "score": 62.5,
+      "quality": "NEEDS_REVIEW"
+    },
+    {
+      "moduleId": "25672",
+      "confidence": 0.44999999999999996,
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": false,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "details": {
+        "moduleIdValid": {
+          "check": "Numeric ID format",
+          "passed": true,
+          "value": "25672"
+        },
+        "semanticNameValid": {
+          "check": "Valid semantic name in header",
+          "passed": true,
+          "value": "deleteLockedLineTools"
+        },
+        "contentValid": {
+          "check": "Substantive content (>15 non-comment lines)",
+          "passed": false,
+          "value": "9 substantive lines"
+        },
+        "headerPresent": {
+          "check": "Proper comment header with Module, Semantic, Confidence",
+          "passed": true,
+          "value": "Header found"
+        },
+        "semanticsApplied": {
+          "check": "Semantic variables applied (>=2 unique variables)",
+          "passed": true,
+          "value": "4 semantic variables found"
+        },
+        "exportsFound": {
+          "check": "Exports defined or used",
+          "passed": false,
+          "value": "No exports detected"
+        },
+        "noObviousErrors": {
+          "check": "No obvious syntax errors (braces balanced, no double undefined)",
+          "passed": false,
+          "value": "Braces mismatch: 4 vs 3"
+        },
+        "sizeReasonable": {
+          "check": "File size reasonable (100B - 500KB)",
+          "passed": true,
+          "value": "0.56 KB"
+        }
+      },
+      "passed": 5,
+      "total": 8,
+      "score": 62.5,
+      "quality": "NEEDS_REVIEW"
+    },
+    {
+      "moduleId": "30342",
+      "confidence": 0.44999999999999996,
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": false,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "details": {
+        "moduleIdValid": {
+          "check": "Numeric ID format",
+          "passed": true,
+          "value": "30342"
+        },
+        "semanticNameValid": {
+          "check": "Valid semantic name in header",
+          "passed": true,
+          "value": "chunkLoaderModule"
+        },
+        "contentValid": {
+          "check": "Substantive content (>15 non-comment lines)",
+          "passed": false,
+          "value": "9 substantive lines"
+        },
+        "headerPresent": {
+          "check": "Proper comment header with Module, Semantic, Confidence",
+          "passed": true,
+          "value": "Header found"
+        },
+        "semanticsApplied": {
+          "check": "Semantic variables applied (>=2 unique variables)",
+          "passed": true,
+          "value": "4 semantic variables found"
+        },
+        "exportsFound": {
+          "check": "Exports defined or used",
+          "passed": false,
+          "value": "No exports detected"
+        },
+        "noObviousErrors": {
+          "check": "No obvious syntax errors (braces balanced, no double undefined)",
+          "passed": false,
+          "value": "Braces mismatch: 4 vs 3"
+        },
+        "sizeReasonable": {
+          "check": "File size reasonable (100B - 500KB)",
+          "passed": true,
+          "value": "0.59 KB"
+        }
+      },
+      "passed": 5,
+      "total": 8,
+      "score": 62.5,
+      "quality": "NEEDS_REVIEW"
+    },
+    {
+      "moduleId": "33065",
+      "confidence": 0.44999999999999996,
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": false,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "details": {
+        "moduleIdValid": {
+          "check": "Numeric ID format",
+          "passed": true,
+          "value": "33065"
+        },
+        "semanticNameValid": {
+          "check": "Valid semantic name in header",
+          "passed": true,
+          "value": "seriesBarFunction"
+        },
+        "contentValid": {
+          "check": "Substantive content (>15 non-comment lines)",
+          "passed": false,
+          "value": "14 substantive lines"
+        },
+        "headerPresent": {
+          "check": "Proper comment header with Module, Semantic, Confidence",
+          "passed": true,
+          "value": "Header found"
+        },
+        "semanticsApplied": {
+          "check": "Semantic variables applied (>=2 unique variables)",
+          "passed": true,
+          "value": "4 semantic variables found"
+        },
+        "exportsFound": {
+          "check": "Exports defined or used",
+          "passed": false,
+          "value": "No exports detected"
+        },
+        "noObviousErrors": {
+          "check": "No obvious syntax errors (braces balanced, no double undefined)",
+          "passed": false,
+          "value": "Braces mismatch: 4 vs 3"
+        },
+        "sizeReasonable": {
+          "check": "File size reasonable (100B - 500KB)",
+          "passed": true,
+          "value": "0.69 KB"
+        }
+      },
+      "passed": 5,
+      "total": 8,
+      "score": 62.5,
+      "quality": "NEEDS_REVIEW"
+    },
+    {
+      "moduleId": "39058",
+      "confidence": 0.44999999999999996,
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": false,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "details": {
+        "moduleIdValid": {
+          "check": "Numeric ID format",
+          "passed": true,
+          "value": "39058"
+        },
+        "semanticNameValid": {
+          "check": "Valid semantic name in header",
+          "passed": true,
+          "value": "chunkLoaderModule"
+        },
+        "contentValid": {
+          "check": "Substantive content (>15 non-comment lines)",
+          "passed": false,
+          "value": "13 substantive lines"
+        },
+        "headerPresent": {
+          "check": "Proper comment header with Module, Semantic, Confidence",
+          "passed": true,
+          "value": "Header found"
+        },
+        "semanticsApplied": {
+          "check": "Semantic variables applied (>=2 unique variables)",
+          "passed": true,
+          "value": "3 semantic variables found"
+        },
+        "exportsFound": {
+          "check": "Exports defined or used",
+          "passed": false,
+          "value": "No exports detected"
+        },
+        "noObviousErrors": {
+          "check": "No obvious syntax errors (braces balanced, no double undefined)",
+          "passed": false,
+          "value": "Braces mismatch: 4 vs 3"
+        },
+        "sizeReasonable": {
+          "check": "File size reasonable (100B - 500KB)",
+          "passed": true,
+          "value": "0.67 KB"
+        }
+      },
+      "passed": 5,
+      "total": 8,
+      "score": 62.5,
+      "quality": "NEEDS_REVIEW"
+    },
+    {
+      "moduleId": "41072",
+      "confidence": 0.44999999999999996,
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": false,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "details": {
+        "moduleIdValid": {
+          "check": "Numeric ID format",
+          "passed": true,
+          "value": "41072"
+        },
+        "semanticNameValid": {
+          "check": "Valid semantic name in header",
+          "passed": true,
+          "value": "seriesBarFunction"
+        },
+        "contentValid": {
+          "check": "Substantive content (>15 non-comment lines)",
+          "passed": false,
+          "value": "9 substantive lines"
+        },
+        "headerPresent": {
+          "check": "Proper comment header with Module, Semantic, Confidence",
+          "passed": true,
+          "value": "Header found"
+        },
+        "semanticsApplied": {
+          "check": "Semantic variables applied (>=2 unique variables)",
+          "passed": true,
+          "value": "4 semantic variables found"
+        },
+        "exportsFound": {
+          "check": "Exports defined or used",
+          "passed": false,
+          "value": "No exports detected"
+        },
+        "noObviousErrors": {
+          "check": "No obvious syntax errors (braces balanced, no double undefined)",
+          "passed": false,
+          "value": "Braces mismatch: 3 vs 2"
+        },
+        "sizeReasonable": {
+          "check": "File size reasonable (100B - 500KB)",
+          "passed": true,
+          "value": "0.50 KB"
+        }
+      },
+      "passed": 5,
+      "total": 8,
+      "score": 62.5,
+      "quality": "NEEDS_REVIEW"
+    },
+    {
+      "moduleId": "43838",
+      "confidence": 0.44999999999999996,
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": false,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "details": {
+        "moduleIdValid": {
+          "check": "Numeric ID format",
+          "passed": true,
+          "value": "43838"
+        },
+        "semanticNameValid": {
+          "check": "Valid semantic name in header",
+          "passed": true,
+          "value": "chunkLoaderModule"
+        },
+        "contentValid": {
+          "check": "Substantive content (>15 non-comment lines)",
+          "passed": false,
+          "value": "13 substantive lines"
+        },
+        "headerPresent": {
+          "check": "Proper comment header with Module, Semantic, Confidence",
+          "passed": true,
+          "value": "Header found"
+        },
+        "semanticsApplied": {
+          "check": "Semantic variables applied (>=2 unique variables)",
+          "passed": true,
+          "value": "4 semantic variables found"
+        },
+        "exportsFound": {
+          "check": "Exports defined or used",
+          "passed": false,
+          "value": "No exports detected"
+        },
+        "noObviousErrors": {
+          "check": "No obvious syntax errors (braces balanced, no double undefined)",
+          "passed": false,
+          "value": "Braces mismatch: 4 vs 3"
+        },
+        "sizeReasonable": {
+          "check": "File size reasonable (100B - 500KB)",
+          "passed": true,
+          "value": "0.99 KB"
+        }
+      },
+      "passed": 5,
+      "total": 8,
+      "score": 62.5,
+      "quality": "NEEDS_REVIEW"
+    },
+    {
+      "moduleId": "51829",
+      "confidence": 0.44999999999999996,
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": false,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "details": {
+        "moduleIdValid": {
+          "check": "Numeric ID format",
+          "passed": true,
+          "value": "51829"
+        },
+        "semanticNameValid": {
+          "check": "Valid semantic name in header",
+          "passed": true,
+          "value": "chunkLoaderModule"
+        },
+        "contentValid": {
+          "check": "Substantive content (>15 non-comment lines)",
+          "passed": false,
+          "value": "11 substantive lines"
+        },
+        "headerPresent": {
+          "check": "Proper comment header with Module, Semantic, Confidence",
+          "passed": true,
+          "value": "Header found"
+        },
+        "semanticsApplied": {
+          "check": "Semantic variables applied (>=2 unique variables)",
+          "passed": true,
+          "value": "4 semantic variables found"
+        },
+        "exportsFound": {
+          "check": "Exports defined or used",
+          "passed": false,
+          "value": "No exports detected"
+        },
+        "noObviousErrors": {
+          "check": "No obvious syntax errors (braces balanced, no double undefined)",
+          "passed": false,
+          "value": "Braces mismatch: 4 vs 3"
+        },
+        "sizeReasonable": {
+          "check": "File size reasonable (100B - 500KB)",
+          "passed": true,
+          "value": "0.74 KB"
+        }
+      },
+      "passed": 5,
+      "total": 8,
+      "score": 62.5,
+      "quality": "NEEDS_REVIEW"
+    },
+    {
+      "moduleId": "52092",
+      "confidence": 0.44999999999999996,
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": false,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "details": {
+        "moduleIdValid": {
+          "check": "Numeric ID format",
+          "passed": true,
+          "value": "52092"
+        },
+        "semanticNameValid": {
+          "check": "Valid semantic name in header",
+          "passed": true,
+          "value": "chunkLoaderModule"
+        },
+        "contentValid": {
+          "check": "Substantive content (>15 non-comment lines)",
+          "passed": false,
+          "value": "12 substantive lines"
+        },
+        "headerPresent": {
+          "check": "Proper comment header with Module, Semantic, Confidence",
+          "passed": true,
+          "value": "Header found"
+        },
+        "semanticsApplied": {
+          "check": "Semantic variables applied (>=2 unique variables)",
+          "passed": true,
+          "value": "5 semantic variables found"
+        },
+        "exportsFound": {
+          "check": "Exports defined or used",
+          "passed": false,
+          "value": "No exports detected"
+        },
+        "noObviousErrors": {
+          "check": "No obvious syntax errors (braces balanced, no double undefined)",
+          "passed": false,
+          "value": "Braces mismatch: 4 vs 3"
+        },
+        "sizeReasonable": {
+          "check": "File size reasonable (100B - 500KB)",
+          "passed": true,
+          "value": "0.85 KB"
+        }
+      },
+      "passed": 5,
+      "total": 8,
+      "score": 62.5,
+      "quality": "NEEDS_REVIEW"
+    },
+    {
+      "moduleId": "54370",
+      "confidence": 0.44999999999999996,
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": false,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "details": {
+        "moduleIdValid": {
+          "check": "Numeric ID format",
+          "passed": true,
+          "value": "54370"
+        },
+        "semanticNameValid": {
+          "check": "Valid semantic name in header",
+          "passed": true,
+          "value": "seriesBarFunction"
+        },
+        "contentValid": {
+          "check": "Substantive content (>15 non-comment lines)",
+          "passed": false,
+          "value": "12 substantive lines"
+        },
+        "headerPresent": {
+          "check": "Proper comment header with Module, Semantic, Confidence",
+          "passed": true,
+          "value": "Header found"
+        },
+        "semanticsApplied": {
+          "check": "Semantic variables applied (>=2 unique variables)",
+          "passed": true,
+          "value": "4 semantic variables found"
+        },
+        "exportsFound": {
+          "check": "Exports defined or used",
+          "passed": false,
+          "value": "No exports detected"
+        },
+        "noObviousErrors": {
+          "check": "No obvious syntax errors (braces balanced, no double undefined)",
+          "passed": false,
+          "value": "Braces mismatch: 4 vs 3"
+        },
+        "sizeReasonable": {
+          "check": "File size reasonable (100B - 500KB)",
+          "passed": true,
+          "value": "0.68 KB"
+        }
+      },
+      "passed": 5,
+      "total": 8,
+      "score": 62.5,
+      "quality": "NEEDS_REVIEW"
+    },
+    {
+      "moduleId": "59613",
+      "confidence": 0.44999999999999996,
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": false,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "details": {
+        "moduleIdValid": {
+          "check": "Numeric ID format",
+          "passed": true,
+          "value": "59613"
+        },
+        "semanticNameValid": {
+          "check": "Valid semantic name in header",
+          "passed": true,
+          "value": "dialogManager"
+        },
+        "contentValid": {
+          "check": "Substantive content (>15 non-comment lines)",
+          "passed": false,
+          "value": "13 substantive lines"
+        },
+        "headerPresent": {
+          "check": "Proper comment header with Module, Semantic, Confidence",
+          "passed": true,
+          "value": "Header found"
+        },
+        "semanticsApplied": {
+          "check": "Semantic variables applied (>=2 unique variables)",
+          "passed": true,
+          "value": "5 semantic variables found"
+        },
+        "exportsFound": {
+          "check": "Exports defined or used",
+          "passed": false,
+          "value": "No exports detected"
+        },
+        "noObviousErrors": {
+          "check": "No obvious syntax errors (braces balanced, no double undefined)",
+          "passed": false,
+          "value": "Braces mismatch: 4 vs 3"
+        },
+        "sizeReasonable": {
+          "check": "File size reasonable (100B - 500KB)",
+          "passed": true,
+          "value": "0.66 KB"
+        }
+      },
+      "passed": 5,
+      "total": 8,
+      "score": 62.5,
+      "quality": "NEEDS_REVIEW"
+    },
+    {
+      "moduleId": "59672",
+      "confidence": 0.44999999999999996,
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": false,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "details": {
+        "moduleIdValid": {
+          "check": "Numeric ID format",
+          "passed": true,
+          "value": "59672"
+        },
+        "semanticNameValid": {
+          "check": "Valid semantic name in header",
+          "passed": true,
+          "value": "dialogManager"
+        },
+        "contentValid": {
+          "check": "Substantive content (>15 non-comment lines)",
+          "passed": false,
+          "value": "9 substantive lines"
+        },
+        "headerPresent": {
+          "check": "Proper comment header with Module, Semantic, Confidence",
+          "passed": true,
+          "value": "Header found"
+        },
+        "semanticsApplied": {
+          "check": "Semantic variables applied (>=2 unique variables)",
+          "passed": true,
+          "value": "3 semantic variables found"
+        },
+        "exportsFound": {
+          "check": "Exports defined or used",
+          "passed": false,
+          "value": "No exports detected"
+        },
+        "noObviousErrors": {
+          "check": "No obvious syntax errors (braces balanced, no double undefined)",
+          "passed": false,
+          "value": "Braces mismatch: 3 vs 2"
+        },
+        "sizeReasonable": {
+          "check": "File size reasonable (100B - 500KB)",
+          "passed": true,
+          "value": "0.62 KB"
+        }
+      },
+      "passed": 5,
+      "total": 8,
+      "score": 62.5,
+      "quality": "NEEDS_REVIEW"
+    },
+    {
+      "moduleId": "59883",
+      "confidence": 0.4,
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": false,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "details": {
+        "moduleIdValid": {
+          "check": "Numeric ID format",
+          "passed": true,
+          "value": "59883"
+        },
+        "semanticNameValid": {
+          "check": "Valid semantic name in header",
+          "passed": true,
+          "value": "lineToolUtils"
+        },
+        "contentValid": {
+          "check": "Substantive content (>15 non-comment lines)",
+          "passed": false,
+          "value": "6 substantive lines"
+        },
+        "headerPresent": {
+          "check": "Proper comment header with Module, Semantic, Confidence",
+          "passed": true,
+          "value": "Header found"
+        },
+        "semanticsApplied": {
+          "check": "Semantic variables applied (>=2 unique variables)",
+          "passed": true,
+          "value": "3 semantic variables found"
+        },
+        "exportsFound": {
+          "check": "Exports defined or used",
+          "passed": false,
+          "value": "No exports detected"
+        },
+        "noObviousErrors": {
+          "check": "No obvious syntax errors (braces balanced, no double undefined)",
+          "passed": false,
+          "value": "Braces mismatch: 2 vs 1"
+        },
+        "sizeReasonable": {
+          "check": "File size reasonable (100B - 500KB)",
+          "passed": true,
+          "value": "0.42 KB"
+        }
+      },
+      "passed": 5,
+      "total": 8,
+      "score": 62.5,
+      "quality": "NEEDS_REVIEW"
+    },
+    {
+      "moduleId": "62773",
+      "confidence": 0.44999999999999996,
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": false,
+        "headerPresent": true,
+        "semanticsApplied": false,
+        "exportsFound": true,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "details": {
+        "moduleIdValid": {
+          "check": "Numeric ID format",
+          "passed": true,
+          "value": "62773"
+        },
+        "semanticNameValid": {
+          "check": "Valid semantic name in header",
+          "passed": true,
+          "value": "watchedValue"
+        },
+        "contentValid": {
+          "check": "Substantive content (>15 non-comment lines)",
+          "passed": false,
+          "value": "6 substantive lines"
+        },
+        "headerPresent": {
+          "check": "Proper comment header with Module, Semantic, Confidence",
+          "passed": true,
+          "value": "Header found"
+        },
+        "semanticsApplied": {
+          "check": "Semantic variables applied (>=2 unique variables)",
+          "passed": false,
+          "value": "1 semantic variables found"
+        },
+        "exportsFound": {
+          "check": "Exports defined or used",
+          "passed": true,
+          "value": "Exports found"
+        },
+        "noObviousErrors": {
+          "check": "No obvious syntax errors (braces balanced, no double undefined)",
+          "passed": false,
+          "value": "Braces mismatch: 2 vs 1"
+        },
+        "sizeReasonable": {
+          "check": "File size reasonable (100B - 500KB)",
+          "passed": true,
+          "value": "0.41 KB"
+        }
+      },
+      "passed": 5,
+      "total": 8,
+      "score": 62.5,
+      "quality": "NEEDS_REVIEW"
+    },
+    {
+      "moduleId": "63681",
+      "confidence": 0.44999999999999996,
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": false,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "details": {
+        "moduleIdValid": {
+          "check": "Numeric ID format",
+          "passed": true,
+          "value": "63681"
+        },
+        "semanticNameValid": {
+          "check": "Valid semantic name in header",
+          "passed": true,
+          "value": "chunkLoaderModule"
+        },
+        "contentValid": {
+          "check": "Substantive content (>15 non-comment lines)",
+          "passed": false,
+          "value": "10 substantive lines"
+        },
+        "headerPresent": {
+          "check": "Proper comment header with Module, Semantic, Confidence",
+          "passed": true,
+          "value": "Header found"
+        },
+        "semanticsApplied": {
+          "check": "Semantic variables applied (>=2 unique variables)",
+          "passed": true,
+          "value": "4 semantic variables found"
+        },
+        "exportsFound": {
+          "check": "Exports defined or used",
+          "passed": false,
+          "value": "No exports detected"
+        },
+        "noObviousErrors": {
+          "check": "No obvious syntax errors (braces balanced, no double undefined)",
+          "passed": false,
+          "value": "Braces mismatch: 4 vs 3"
+        },
+        "sizeReasonable": {
+          "check": "File size reasonable (100B - 500KB)",
+          "passed": true,
+          "value": "0.62 KB"
+        }
+      },
+      "passed": 5,
+      "total": 8,
+      "score": 62.5,
+      "quality": "NEEDS_REVIEW"
+    },
+    {
+      "moduleId": "70002",
+      "confidence": 0.44999999999999996,
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": false,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "details": {
+        "moduleIdValid": {
+          "check": "Numeric ID format",
+          "passed": true,
+          "value": "70002"
+        },
+        "semanticNameValid": {
+          "check": "Valid semantic name in header",
+          "passed": true,
+          "value": "timeInterval"
+        },
+        "contentValid": {
+          "check": "Substantive content (>15 non-comment lines)",
+          "passed": false,
+          "value": "12 substantive lines"
+        },
+        "headerPresent": {
+          "check": "Proper comment header with Module, Semantic, Confidence",
+          "passed": true,
+          "value": "Header found"
+        },
+        "semanticsApplied": {
+          "check": "Semantic variables applied (>=2 unique variables)",
+          "passed": true,
+          "value": "4 semantic variables found"
+        },
+        "exportsFound": {
+          "check": "Exports defined or used",
+          "passed": false,
+          "value": "No exports detected"
+        },
+        "noObviousErrors": {
+          "check": "No obvious syntax errors (braces balanced, no double undefined)",
+          "passed": false,
+          "value": "Braces mismatch: 4 vs 3"
+        },
+        "sizeReasonable": {
+          "check": "File size reasonable (100B - 500KB)",
+          "passed": true,
+          "value": "0.97 KB"
+        }
+      },
+      "passed": 5,
+      "total": 8,
+      "score": 62.5,
+      "quality": "NEEDS_REVIEW"
+    },
+    {
+      "moduleId": "71382",
+      "confidence": 0.44999999999999996,
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": false,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "details": {
+        "moduleIdValid": {
+          "check": "Numeric ID format",
+          "passed": true,
+          "value": "71382"
+        },
+        "semanticNameValid": {
+          "check": "Valid semantic name in header",
+          "passed": true,
+          "value": "seriesBarFunction"
+        },
+        "contentValid": {
+          "check": "Substantive content (>15 non-comment lines)",
+          "passed": false,
+          "value": "11 substantive lines"
+        },
+        "headerPresent": {
+          "check": "Proper comment header with Module, Semantic, Confidence",
+          "passed": true,
+          "value": "Header found"
+        },
+        "semanticsApplied": {
+          "check": "Semantic variables applied (>=2 unique variables)",
+          "passed": true,
+          "value": "4 semantic variables found"
+        },
+        "exportsFound": {
+          "check": "Exports defined or used",
+          "passed": false,
+          "value": "No exports detected"
+        },
+        "noObviousErrors": {
+          "check": "No obvious syntax errors (braces balanced, no double undefined)",
+          "passed": false,
+          "value": "Braces mismatch: 3 vs 2"
+        },
+        "sizeReasonable": {
+          "check": "File size reasonable (100B - 500KB)",
+          "passed": true,
+          "value": "0.60 KB"
+        }
+      },
+      "passed": 5,
+      "total": 8,
+      "score": 62.5,
+      "quality": "NEEDS_REVIEW"
+    },
+    {
+      "moduleId": "75641",
+      "confidence": 0.44999999999999996,
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": false,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "details": {
+        "moduleIdValid": {
+          "check": "Numeric ID format",
+          "passed": true,
+          "value": "75641"
+        },
+        "semanticNameValid": {
+          "check": "Valid semantic name in header",
+          "passed": true,
+          "value": "timeInterval"
+        },
+        "contentValid": {
+          "check": "Substantive content (>15 non-comment lines)",
+          "passed": false,
+          "value": "10 substantive lines"
+        },
+        "headerPresent": {
+          "check": "Proper comment header with Module, Semantic, Confidence",
+          "passed": true,
+          "value": "Header found"
+        },
+        "semanticsApplied": {
+          "check": "Semantic variables applied (>=2 unique variables)",
+          "passed": true,
+          "value": "4 semantic variables found"
+        },
+        "exportsFound": {
+          "check": "Exports defined or used",
+          "passed": false,
+          "value": "No exports detected"
+        },
+        "noObviousErrors": {
+          "check": "No obvious syntax errors (braces balanced, no double undefined)",
+          "passed": false,
+          "value": "Braces mismatch: 3 vs 2"
+        },
+        "sizeReasonable": {
+          "check": "File size reasonable (100B - 500KB)",
+          "passed": true,
+          "value": "0.63 KB"
+        }
+      },
+      "passed": 5,
+      "total": 8,
+      "score": 62.5,
+      "quality": "NEEDS_REVIEW"
+    },
+    {
+      "moduleId": "84526",
+      "confidence": 0.44999999999999996,
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": false,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "details": {
+        "moduleIdValid": {
+          "check": "Numeric ID format",
+          "passed": true,
+          "value": "84526"
+        },
+        "semanticNameValid": {
+          "check": "Valid semantic name in header",
+          "passed": true,
+          "value": "dialogManager"
+        },
+        "contentValid": {
+          "check": "Substantive content (>15 non-comment lines)",
+          "passed": false,
+          "value": "14 substantive lines"
+        },
+        "headerPresent": {
+          "check": "Proper comment header with Module, Semantic, Confidence",
+          "passed": true,
+          "value": "Header found"
+        },
+        "semanticsApplied": {
+          "check": "Semantic variables applied (>=2 unique variables)",
+          "passed": true,
+          "value": "3 semantic variables found"
+        },
+        "exportsFound": {
+          "check": "Exports defined or used",
+          "passed": false,
+          "value": "No exports detected"
+        },
+        "noObviousErrors": {
+          "check": "No obvious syntax errors (braces balanced, no double undefined)",
+          "passed": false,
+          "value": "Braces mismatch: 5 vs 4"
+        },
+        "sizeReasonable": {
+          "check": "File size reasonable (100B - 500KB)",
+          "passed": true,
+          "value": "0.82 KB"
+        }
+      },
+      "passed": 5,
+      "total": 8,
+      "score": 62.5,
+      "quality": "NEEDS_REVIEW"
+    },
+    {
+      "moduleId": "91111",
+      "confidence": 0.4,
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": false,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "details": {
+        "moduleIdValid": {
+          "check": "Numeric ID format",
+          "passed": true,
+          "value": "91111"
+        },
+        "semanticNameValid": {
+          "check": "Valid semantic name in header",
+          "passed": true,
+          "value": "lineToolUtils"
+        },
+        "contentValid": {
+          "check": "Substantive content (>15 non-comment lines)",
+          "passed": false,
+          "value": "11 substantive lines"
+        },
+        "headerPresent": {
+          "check": "Proper comment header with Module, Semantic, Confidence",
+          "passed": true,
+          "value": "Header found"
+        },
+        "semanticsApplied": {
+          "check": "Semantic variables applied (>=2 unique variables)",
+          "passed": true,
+          "value": "3 semantic variables found"
+        },
+        "exportsFound": {
+          "check": "Exports defined or used",
+          "passed": false,
+          "value": "No exports detected"
+        },
+        "noObviousErrors": {
+          "check": "No obvious syntax errors (braces balanced, no double undefined)",
+          "passed": false,
+          "value": "Braces mismatch: 3 vs 2"
+        },
+        "sizeReasonable": {
+          "check": "File size reasonable (100B - 500KB)",
+          "passed": true,
+          "value": "0.65 KB"
+        }
+      },
+      "passed": 5,
+      "total": 8,
+      "score": 62.5,
+      "quality": "NEEDS_REVIEW"
+    },
+    {
+      "moduleId": "92211",
+      "confidence": 0.44999999999999996,
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": false,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "details": {
+        "moduleIdValid": {
+          "check": "Numeric ID format",
+          "passed": true,
+          "value": "92211"
+        },
+        "semanticNameValid": {
+          "check": "Valid semantic name in header",
+          "passed": true,
+          "value": "seriesBarFunction"
+        },
+        "contentValid": {
+          "check": "Substantive content (>15 non-comment lines)",
+          "passed": false,
+          "value": "14 substantive lines"
+        },
+        "headerPresent": {
+          "check": "Proper comment header with Module, Semantic, Confidence",
+          "passed": true,
+          "value": "Header found"
+        },
+        "semanticsApplied": {
+          "check": "Semantic variables applied (>=2 unique variables)",
+          "passed": true,
+          "value": "9 semantic variables found"
+        },
+        "exportsFound": {
+          "check": "Exports defined or used",
+          "passed": false,
+          "value": "No exports detected"
+        },
+        "noObviousErrors": {
+          "check": "No obvious syntax errors (braces balanced, no double undefined)",
+          "passed": false,
+          "value": "Braces mismatch: 3 vs 2"
+        },
+        "sizeReasonable": {
+          "check": "File size reasonable (100B - 500KB)",
+          "passed": true,
+          "value": "0.98 KB"
+        }
+      },
+      "passed": 5,
+      "total": 8,
+      "score": 62.5,
+      "quality": "NEEDS_REVIEW"
+    },
+    {
+      "moduleId": "92572",
+      "confidence": 0.44999999999999996,
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": false,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "details": {
+        "moduleIdValid": {
+          "check": "Numeric ID format",
+          "passed": true,
+          "value": "92572"
+        },
+        "semanticNameValid": {
+          "check": "Valid semantic name in header",
+          "passed": true,
+          "value": "dialogManager"
+        },
+        "contentValid": {
+          "check": "Substantive content (>15 non-comment lines)",
+          "passed": false,
+          "value": "11 substantive lines"
+        },
+        "headerPresent": {
+          "check": "Proper comment header with Module, Semantic, Confidence",
+          "passed": true,
+          "value": "Header found"
+        },
+        "semanticsApplied": {
+          "check": "Semantic variables applied (>=2 unique variables)",
+          "passed": true,
+          "value": "3 semantic variables found"
+        },
+        "exportsFound": {
+          "check": "Exports defined or used",
+          "passed": false,
+          "value": "No exports detected"
+        },
+        "noObviousErrors": {
+          "check": "No obvious syntax errors (braces balanced, no double undefined)",
+          "passed": false,
+          "value": "Braces mismatch: 3 vs 2"
+        },
+        "sizeReasonable": {
+          "check": "File size reasonable (100B - 500KB)",
+          "passed": true,
+          "value": "0.97 KB"
+        }
+      },
+      "passed": 5,
+      "total": 8,
+      "score": 62.5,
+      "quality": "NEEDS_REVIEW"
+    },
+    {
+      "moduleId": "93201",
+      "confidence": 0.44999999999999996,
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": false,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "details": {
+        "moduleIdValid": {
+          "check": "Numeric ID format",
+          "passed": true,
+          "value": "93201"
+        },
+        "semanticNameValid": {
+          "check": "Valid semantic name in header",
+          "passed": true,
+          "value": "chunkLoaderModule"
+        },
+        "contentValid": {
+          "check": "Substantive content (>15 non-comment lines)",
+          "passed": false,
+          "value": "9 substantive lines"
+        },
+        "headerPresent": {
+          "check": "Proper comment header with Module, Semantic, Confidence",
+          "passed": true,
+          "value": "Header found"
+        },
+        "semanticsApplied": {
+          "check": "Semantic variables applied (>=2 unique variables)",
+          "passed": true,
+          "value": "4 semantic variables found"
+        },
+        "exportsFound": {
+          "check": "Exports defined or used",
+          "passed": false,
+          "value": "No exports detected"
+        },
+        "noObviousErrors": {
+          "check": "No obvious syntax errors (braces balanced, no double undefined)",
+          "passed": false,
+          "value": "Braces mismatch: 4 vs 3"
+        },
+        "sizeReasonable": {
+          "check": "File size reasonable (100B - 500KB)",
+          "passed": true,
+          "value": "0.52 KB"
+        }
+      },
+      "passed": 5,
+      "total": 8,
+      "score": 62.5,
+      "quality": "NEEDS_REVIEW"
+    },
+    {
+      "moduleId": "97217",
+      "confidence": 0.44999999999999996,
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": false,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "details": {
+        "moduleIdValid": {
+          "check": "Numeric ID format",
+          "passed": true,
+          "value": "97217"
+        },
+        "semanticNameValid": {
+          "check": "Valid semantic name in header",
+          "passed": true,
+          "value": "seriesBarFunction"
+        },
+        "contentValid": {
+          "check": "Substantive content (>15 non-comment lines)",
+          "passed": false,
+          "value": "9 substantive lines"
+        },
+        "headerPresent": {
+          "check": "Proper comment header with Module, Semantic, Confidence",
+          "passed": true,
+          "value": "Header found"
+        },
+        "semanticsApplied": {
+          "check": "Semantic variables applied (>=2 unique variables)",
+          "passed": true,
+          "value": "4 semantic variables found"
+        },
+        "exportsFound": {
+          "check": "Exports defined or used",
+          "passed": false,
+          "value": "No exports detected"
+        },
+        "noObviousErrors": {
+          "check": "No obvious syntax errors (braces balanced, no double undefined)",
+          "passed": false,
+          "value": "Braces mismatch: 3 vs 2"
+        },
+        "sizeReasonable": {
+          "check": "File size reasonable (100B - 500KB)",
+          "passed": true,
+          "value": "0.53 KB"
+        }
+      },
+      "passed": 5,
+      "total": 8,
+      "score": 62.5,
+      "quality": "NEEDS_REVIEW"
+    },
+    {
+      "moduleId": "97760",
+      "confidence": 0.44999999999999996,
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": false,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "details": {
+        "moduleIdValid": {
+          "check": "Numeric ID format",
+          "passed": true,
+          "value": "97760"
+        },
+        "semanticNameValid": {
+          "check": "Valid semantic name in header",
+          "passed": true,
+          "value": "chunkLoaderModule"
+        },
+        "contentValid": {
+          "check": "Substantive content (>15 non-comment lines)",
+          "passed": false,
+          "value": "9 substantive lines"
+        },
+        "headerPresent": {
+          "check": "Proper comment header with Module, Semantic, Confidence",
+          "passed": true,
+          "value": "Header found"
+        },
+        "semanticsApplied": {
+          "check": "Semantic variables applied (>=2 unique variables)",
+          "passed": true,
+          "value": "4 semantic variables found"
+        },
+        "exportsFound": {
+          "check": "Exports defined or used",
+          "passed": false,
+          "value": "No exports detected"
+        },
+        "noObviousErrors": {
+          "check": "No obvious syntax errors (braces balanced, no double undefined)",
+          "passed": false,
+          "value": "Braces mismatch: 4 vs 3"
+        },
+        "sizeReasonable": {
+          "check": "File size reasonable (100B - 500KB)",
+          "passed": true,
+          "value": "0.59 KB"
+        }
+      },
+      "passed": 5,
+      "total": 8,
+      "score": 62.5,
+      "quality": "NEEDS_REVIEW"
+    },
+    {
+      "moduleId": "98155",
+      "confidence": 0.44999999999999996,
+      "checks": {
+        "moduleIdValid": true,
+        "semanticNameValid": true,
+        "contentValid": false,
+        "headerPresent": true,
+        "semanticsApplied": true,
+        "exportsFound": false,
+        "noObviousErrors": false,
+        "sizeReasonable": true
+      },
+      "details": {
+        "moduleIdValid": {
+          "check": "Numeric ID format",
+          "passed": true,
+          "value": "98155"
+        },
+        "semanticNameValid": {
+          "check": "Valid semantic name in header",
+          "passed": true,
+          "value": "chunkLoaderModule"
+        },
+        "contentValid": {
+          "check": "Substantive content (>15 non-comment lines)",
+          "passed": false,
+          "value": "13 substantive lines"
+        },
+        "headerPresent": {
+          "check": "Proper comment header with Module, Semantic, Confidence",
+          "passed": true,
+          "value": "Header found"
+        },
+        "semanticsApplied": {
+          "check": "Semantic variables applied (>=2 unique variables)",
+          "passed": true,
+          "value": "6 semantic variables found"
+        },
+        "exportsFound": {
+          "check": "Exports defined or used",
+          "passed": false,
+          "value": "No exports detected"
+        },
+        "noObviousErrors": {
+          "check": "No obvious syntax errors (braces balanced, no double undefined)",
+          "passed": false,
+          "value": "Braces mismatch: 4 vs 3"
+        },
+        "sizeReasonable": {
+          "check": "File size reasonable (100B - 500KB)",
+          "passed": true,
+          "value": "0.70 KB"
+        }
+      },
+      "passed": 5,
+      "total": 8,
+      "score": 62.5,
+      "quality": "NEEDS_REVIEW"
+    }
+  ]
+}

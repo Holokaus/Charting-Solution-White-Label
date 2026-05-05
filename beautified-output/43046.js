@@ -1,0 +1,219 @@
+/**
+ * Module 43046 - Beautified
+ * Auto-formatted from webpack bundle
+ * Semantic variable names applied
+ */
+
+43046: (e, t, i) => {
+    "use strict";
+    i.d(t, {
+      migrateMetaInfoAndPropState: () => p
+    });
+    var s = i(50151),
+      o = i(19844),
+      n = i(87465);
+    const r = ["Moving Average@tv-basicstudies", "Moving Average Exponential@tv-basicstudies"];
+    class a {
+      targetMetaInfoVersion() {
+        return 53
+      }
+      migrateMetaInfo(e) {
+        const t = e;
+        e._metainfoVersion = 53, r.includes(t.id)
+      }
+      migratePropState(e) {
+        r.includes(e.id) && (e.inputs.length = e.inputs.length ?? e.inputs.in_0, e.inputs.source = e.inputs.source ??
+          e.inputs.in_1, e.inputs.offset = e.inputs.offset ?? e.inputs.in_2, delete e.inputs.in_0, delete e.inputs
+          .in_1, delete e.inputs.in_2, e.plots[1] = {
+            id: "smoothedMA",
+            type: "line"
+          }, e.styles.smoothedMA = {
+            display: 0,
+            linestyle: 0,
+            linewidth: 1,
+            plottype: 0,
+            trackPrice: !1,
+            transparency: 0,
+            color: "#0496ff",
+            histogramBase: 0,
+            joinPoints: !1,
+            title: "Smoothed MA"
+          })
+      }
+    }
+    const l = ["Volume@tv-basicstudies"];
+    class c {
+      targetMetaInfoVersion() {
+        return 53
+      }
+      migrateMetaInfo(e) {
+        const t = e;
+        e._metainfoVersion = 53, l.includes(t.id)
+      }
+      migratePropState(e) {
+        l.includes(e.id) && (e.inputs.maLength = e.inputs.length ?? e.inputs.maLength, delete e.inputs.length,
+          delete e.inputs.offset, delete e.inputs.source, e.plots[1] = {
+            id: "smoothedMA",
+            type: "line"
+          }, e.styles.smoothedMA = {
+            display: 0,
+            linestyle: 0,
+            linewidth: 1,
+            plottype: 0,
+            trackPrice: !1,
+            transparency: 0,
+            color: "#0496ff",
+            histogramBase: 0,
+            joinPoints: !1,
+            title: "Smoothed MA"
+          })
+      }
+    }
+    const h = ["Relative Strength Index@tv-basicstudies", "Commodity Channel Index@tv-basicstudies",
+      "On Balance Volume@tv-basicstudies"
+    ];
+    class d {
+      targetMetaInfoVersion() {
+        return 53
+      }
+      migrateMetaInfo(e) {
+        const t = e,
+          i = e;
+        i._metainfoVersion = 53, h.includes(t.id) && (i.styles[t.id] = {
+          title: "Smoothed MA",
+          histogramBase: 0,
+          joinPoints: !1
+        })
+      }
+      migratePropState(e) {
+        h.includes(e.id) && (e.plots[1] = {
+          id: "smoothedMA",
+          type: "line"
+        }, e.styles.smoothedMA = {
+          display: 0,
+          linestyle: 0,
+          linewidth: 1,
+          plottype: 0,
+          trackPrice: !1,
+          transparency: 0,
+          color: "#0496ff"
+        })
+      }
+    }
+    var u;
+    ! function(e) {
+      e[e.InMetaInfoVersion = 52] = "InMetaInfoVersion", e[e.OutMetaInfoVersion = 53] = "OutMetaInfoVersion"
+    }(u || (u = {}));
+    const _ = [new class {
+      targetMetaInfoVersion() {
+        return 47
+      }
+      migrateMetaInfo(e) {
+        const t = e,
+          i = e;
+        if (i._metainfoVersion = 47, !t.defaults || void 0 === t.defaults.precision) return void(i.format = {
+          type: "inherit"
+        });
+        const s = t.defaults && t.defaults.precision,
+          o = (0, n.isNumber)(s) ? s : parseInt(s);
+        0 === o ? i.format = {
+          type: "volume"
+        } : isFinite(o) ? i.format = {
+          type: "price",
+          precision: o
+        } : i.format = {
+          type: "inherit"
+        }, delete t.defaults.precision
+      }
+      migratePropState(e) {}
+    }, new class {
+      targetMetaInfoVersion() {
+        return 50
+      }
+      migrateMetaInfo(e) {
+        const t = e,
+          i = e;
+        if (i._metainfoVersion = 50, void 0 === t.defaults || void 0 === t.defaults.ohlcPlots || void 0 === t
+          .ohlcPlots) return;
+        const o = t.ohlcPlots,
+          n = t.defaults.ohlcPlots,
+          r = (0, s.ensureDefined)((0, s.ensureDefined)(i.defaults).ohlcPlots);
+        for (const e of Object.keys(n)) {
+          const t = n[e];
+          if ("ohlc_candles" === t.plottype) {
+            let i = !1;
+            const s = o[e];
+            void 0 !== s && (i = !!s.drawBorder, delete s.drawBorder), r[e] = {
+              borderColor: "#000000",
+              drawBorder: i,
+              ...t
+            }
+          }
+        }
+      }
+      migratePropState(e) {}
+    }, new class {
+      targetMetaInfoVersion() {
+        return 53
+      }
+      migrateMetaInfo(e) {
+        const t = e,
+          i = e;
+        if (i._metainfoVersion = 53, void 0 !== t.defaults) {
+          if (void 0 !== t.defaults.ohlcPlots && void 0 !== t.ohlcPlots) {
+            const e = Object.keys(t.ohlcPlots),
+              o = t.defaults.ohlcPlots,
+              n = (0, s.ensureDefined)((0, s.ensureDefined)(i.defaults).ohlcPlots);
+            for (const t of e) {
+              const e = o[t];
+              if (void 0 === e || void 0 === e.visible) continue;
+              const i = e.visible ? 15 : 0;
+              delete e.visible, n[t] = {
+                display: i,
+                ...e
+              }
+            }
+          }
+          if (void 0 !== t.defaults.styles && void 0 !== t.plots) {
+            const e = t.plots.map((e => e.id)),
+              o = t.defaults.styles,
+              n = (0, s.ensureDefined)((0, s.ensureDefined)(i.defaults).styles);
+            for (const t of e) {
+              const e = o[t];
+              if (void 0 === e || void 0 === e.visible) continue;
+              const i = e.visible ? 15 : 0;
+              delete e.visible, n[t] = {
+                display: i,
+                ...e
+              }
+            }
+          }
+        }
+      }
+      migratePropState(e) {
+        if (e.ohlcPlots)
+          for (const t of Object.keys(e.ohlcPlots)) {
+            const i = (0, s.ensureDefined)(e.ohlcPlots[t]);
+            void 0 !== i.visible && (i.display = i.visible ? 15 : 0, delete i.visible)
+          }
+        if (e.styles)
+          for (const t of Object.keys(e.styles)) {
+            const i = (0, s.ensureDefined)(e.styles[t]);
+            void 0 !== i.visible && (i.display = i.visible ? 15 : 0, delete i.visible)
+          }
+      }
+    }];
+
+    function p(e, t) {
+      const i = o.StudyMetaInfo.versionOf(e),
+        n = e;
+      void 0 === n._serverMetaInfoVersion && (n._serverMetaInfoVersion = i);
+      const r = ["PennantCP@tv-basicstudies", "WedgeCP@tv-basicstudies"].includes(e.id);
+      _.forEach((o => {
+        (i < 0 || i >= o.targetMetaInfoVersion()) && !r || (o.migrateMetaInfo(e), void 0 !== t && o
+          .migratePropState(t), (0, s.assert)(e._metainfoVersion === o.targetMetaInfoVersion()))
+      }))
+    }
+    _.push(new a), _.push(new c), _.push(new d), _.sort((function(e, t) {
+      return e.targetMetaInfoVersion() - t.targetMetaInfoVersion()
+    }))

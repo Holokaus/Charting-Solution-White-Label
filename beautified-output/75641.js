@@ -1,0 +1,17 @@
+/**
+ * Module 75641 - Beautified
+ * Auto-formatted from webpack bundle
+ * Semantic variable names applied
+ */
+
+75641: (e, t, i) => {
+    "use strict";
+    i.d(t, {
+      translatedIntervalString: () => o
+    });
+    var s = i(87296);
+
+    function o(e) {
+      const t = (0, s.getTranslatedResolutionModel)(e, !0);
+      return null === t ? e : t.multiplier + (t.mayOmitShortKind ? "" : t.shortKind)
+    }
