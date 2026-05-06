@@ -1,0 +1,21 @@
+/**
+ * Module 92211 - Beautified
+ * Auto-formatted from webpack bundle
+ * Semantic variable names applied
+ */
+
+92211: (e, t, i) => {
+    "use strict";
+    i.d(t, {
+      extractSymbolNameFromSymbolInfo: () => l
+    });
+    var s = i(37103);
+    const o = s.enabled("pay_attention_to_ticker_not_symbol"),
+      n = s.enabled("charting_library_single_symbol_request"),
+      r = s.enabled("use_ticker_on_symbol_info_update"),
+      a = s.enabled("uppercase_instrument_names");
+
+    function l(e, t, i, s) {
+      let l = e && (i && e.pro_name || e.full_name || e.name);
+      return n && t ? l = t : (r || !s && o) && e && e.ticker && (l = e.ticker), a && l && (l = l.toUpperCase()), l
+    }

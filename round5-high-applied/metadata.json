@@ -1,0 +1,408 @@
+{
+  "timestamp": "2026-05-06T03:26:21.110Z",
+  "version": "Round 5 HIGH",
+  "applied": 50,
+  "totalReplacements": 144,
+  "results": [
+    {
+      "moduleId": "10544",
+      "semantic": "watchedValue",
+      "score": 90,
+      "keywords": 3,
+      "replacements": 3,
+      "status": "APPLIED"
+    },
+    {
+      "moduleId": "12362",
+      "semantic": "watchedValue",
+      "score": 90,
+      "keywords": 4,
+      "replacements": 3,
+      "status": "APPLIED"
+    },
+    {
+      "moduleId": "13823",
+      "semantic": "logger",
+      "score": 88,
+      "keywords": 4,
+      "replacements": 3,
+      "status": "APPLIED"
+    },
+    {
+      "moduleId": "14411",
+      "semantic": "watchedValue",
+      "score": 100,
+      "keywords": 5,
+      "replacements": 3,
+      "status": "APPLIED"
+    },
+    {
+      "moduleId": "19136",
+      "semantic": "series",
+      "score": 88,
+      "keywords": 4,
+      "replacements": 3,
+      "status": "APPLIED"
+    },
+    {
+      "moduleId": "2088",
+      "semantic": "series",
+      "score": 80,
+      "keywords": 3,
+      "replacements": 3,
+      "status": "APPLIED"
+    },
+    {
+      "moduleId": "2258",
+      "semantic": "series",
+      "score": 80,
+      "keywords": 4,
+      "replacements": 3,
+      "status": "APPLIED"
+    },
+    {
+      "moduleId": "23502",
+      "semantic": "logger",
+      "score": 100,
+      "keywords": 4,
+      "replacements": 3,
+      "status": "APPLIED"
+    },
+    {
+      "moduleId": "23752",
+      "semantic": "lineToolManager",
+      "score": 88,
+      "keywords": 3,
+      "replacements": 3,
+      "status": "APPLIED"
+    },
+    {
+      "moduleId": "24317",
+      "semantic": "seriesBarFunction",
+      "score": 88,
+      "keywords": 3,
+      "replacements": 3,
+      "status": "APPLIED"
+    },
+    {
+      "moduleId": "27593",
+      "semantic": "series",
+      "score": 88,
+      "keywords": 5,
+      "replacements": 3,
+      "status": "APPLIED"
+    },
+    {
+      "moduleId": "29063",
+      "semantic": "watchedValue",
+      "score": 80,
+      "keywords": 4,
+      "replacements": 3,
+      "status": "APPLIED"
+    },
+    {
+      "moduleId": "32399",
+      "semantic": "bitmapCoordinatesPane",
+      "score": 80,
+      "keywords": 3,
+      "replacements": 3,
+      "status": "APPLIED"
+    },
+    {
+      "moduleId": "33350",
+      "semantic": "lineToolManager",
+      "score": 100,
+      "keywords": 3,
+      "replacements": 3,
+      "status": "APPLIED"
+    },
+    {
+      "moduleId": "33505",
+      "semantic": "bitmapCoordinatesPane",
+      "score": 100,
+      "keywords": 3,
+      "replacements": 3,
+      "status": "APPLIED"
+    },
+    {
+      "moduleId": "39488",
+      "semantic": "logger",
+      "score": 88,
+      "keywords": 3,
+      "replacements": 3,
+      "status": "APPLIED"
+    },
+    {
+      "moduleId": "41414",
+      "semantic": "series",
+      "score": 88,
+      "keywords": 6,
+      "replacements": 3,
+      "status": "APPLIED"
+    },
+    {
+      "moduleId": "43337",
+      "semantic": "watchedValue",
+      "score": 88,
+      "keywords": 5,
+      "replacements": 3,
+      "status": "APPLIED"
+    },
+    {
+      "moduleId": "4359",
+      "semantic": "priceDataSource",
+      "score": 92,
+      "keywords": 3,
+      "replacements": 3,
+      "status": "APPLIED"
+    },
+    {
+      "moduleId": "45345",
+      "semantic": "watchedValue",
+      "score": 92,
+      "keywords": 3,
+      "replacements": 3,
+      "status": "APPLIED"
+    },
+    {
+      "moduleId": "4539",
+      "semantic": "seriesBarFunction",
+      "score": 88,
+      "keywords": 3,
+      "replacements": 3,
+      "status": "APPLIED"
+    },
+    {
+      "moduleId": "46340",
+      "semantic": "bitmapCoordinatesPane",
+      "score": 80,
+      "keywords": 3,
+      "replacements": 3,
+      "status": "APPLIED"
+    },
+    {
+      "moduleId": "48227",
+      "semantic": "seriesBarFunction",
+      "score": 80,
+      "keywords": 3,
+      "replacements": 3,
+      "status": "APPLIED"
+    },
+    {
+      "moduleId": "52974",
+      "semantic": "lineToolManager",
+      "score": 82,
+      "keywords": 3,
+      "replacements": 3,
+      "status": "APPLIED"
+    },
+    {
+      "moduleId": "55014",
+      "semantic": "seriesBarFunction",
+      "score": 100,
+      "keywords": 4,
+      "replacements": 3,
+      "status": "APPLIED"
+    },
+    {
+      "moduleId": "56876",
+      "semantic": "priceDataSource",
+      "score": 88,
+      "keywords": 3,
+      "replacements": 3,
+      "status": "APPLIED"
+    },
+    {
+      "moduleId": "57025",
+      "semantic": "watchedValue",
+      "score": 90,
+      "keywords": 3,
+      "replacements": 3,
+      "status": "APPLIED"
+    },
+    {
+      "moduleId": "57622",
+      "semantic": "seriesBarFunction",
+      "score": 80,
+      "keywords": 3,
+      "replacements": 3,
+      "status": "APPLIED"
+    },
+    {
+      "moduleId": "58978",
+      "semantic": "seriesBarFunction",
+      "score": 100,
+      "keywords": 4,
+      "replacements": 3,
+      "status": "APPLIED"
+    },
+    {
+      "moduleId": "62153",
+      "semantic": "watchedValue",
+      "score": 88,
+      "keywords": 4,
+      "replacements": 3,
+      "status": "APPLIED"
+    },
+    {
+      "moduleId": "64960",
+      "semantic": "bitmapCoordinatesPane",
+      "score": 100,
+      "keywords": 3,
+      "replacements": 3,
+      "status": "APPLIED"
+    },
+    {
+      "moduleId": "6652",
+      "semantic": "seriesBarFunction",
+      "score": 92,
+      "keywords": 3,
+      "replacements": 2,
+      "status": "APPLIED"
+    },
+    {
+      "moduleId": "67763",
+      "semantic": "watchedValue",
+      "score": 92,
+      "keywords": 3,
+      "replacements": 2,
+      "status": "APPLIED"
+    },
+    {
+      "moduleId": "69555",
+      "semantic": "bitmapCoordinatesPane",
+      "score": 80,
+      "keywords": 3,
+      "replacements": 3,
+      "status": "APPLIED"
+    },
+    {
+      "moduleId": "71843",
+      "semantic": "seriesBarFunction",
+      "score": 90,
+      "keywords": 3,
+      "replacements": 3,
+      "status": "APPLIED"
+    },
+    {
+      "moduleId": "72104",
+      "semantic": "seriesBarFunction",
+      "score": 92,
+      "keywords": 3,
+      "replacements": 2,
+      "status": "APPLIED"
+    },
+    {
+      "moduleId": "73773",
+      "semantic": "bitmapCoordinatesPane",
+      "score": 92,
+      "keywords": 3,
+      "replacements": 3,
+      "status": "APPLIED"
+    },
+    {
+      "moduleId": "78176",
+      "semantic": "watchedValue",
+      "score": 88,
+      "keywords": 5,
+      "replacements": 3,
+      "status": "APPLIED"
+    },
+    {
+      "moduleId": "79268",
+      "semantic": "bitmapCoordinatesPane",
+      "score": 88,
+      "keywords": 3,
+      "replacements": 3,
+      "status": "APPLIED"
+    },
+    {
+      "moduleId": "79603",
+      "semantic": "watchedValue",
+      "score": 88,
+      "keywords": 5,
+      "replacements": 2,
+      "status": "APPLIED"
+    },
+    {
+      "moduleId": "81360",
+      "semantic": "lineToolManager",
+      "score": 80,
+      "keywords": 3,
+      "replacements": 2,
+      "status": "APPLIED"
+    },
+    {
+      "moduleId": "82095",
+      "semantic": "seriesBarFunction",
+      "score": 92,
+      "keywords": 4,
+      "replacements": 3,
+      "status": "APPLIED"
+    },
+    {
+      "moduleId": "85630",
+      "semantic": "bitmapCoordinatesPane",
+      "score": 92,
+      "keywords": 4,
+      "replacements": 3,
+      "status": "APPLIED"
+    },
+    {
+      "moduleId": "8811",
+      "semantic": "watchedValue",
+      "score": 100,
+      "keywords": 3,
+      "replacements": 2,
+      "status": "APPLIED"
+    },
+    {
+      "moduleId": "90995",
+      "semantic": "watchedValue",
+      "score": 100,
+      "keywords": 3,
+      "replacements": 3,
+      "status": "APPLIED"
+    },
+    {
+      "moduleId": "93387",
+      "semantic": "bitmapCoordinatesPane",
+      "score": 88,
+      "keywords": 3,
+      "replacements": 3,
+      "status": "APPLIED"
+    },
+    {
+      "moduleId": "94119",
+      "semantic": "bitmapCoordinatesPane",
+      "score": 100,
+      "keywords": 3,
+      "replacements": 3,
+      "status": "APPLIED"
+    },
+    {
+      "moduleId": "95059",
+      "semantic": "watchedValue",
+      "score": 88,
+      "keywords": 4,
+      "replacements": 3,
+      "status": "APPLIED"
+    },
+    {
+      "moduleId": "95779",
+      "semantic": "watchedValue",
+      "score": 92,
+      "keywords": 3,
+      "replacements": 3,
+      "status": "APPLIED"
+    },
+    {
+      "moduleId": "96937",
+      "semantic": "watchedValue",
+      "score": 92,
+      "keywords": 3,
+      "replacements": 3,
+      "status": "APPLIED"
+    }
+  ]
+}

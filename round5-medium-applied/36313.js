@@ -1,0 +1,22 @@
+/**
+ * Module 36313 - Beautified
+ * Auto-formatted from webpack bundle
+ * Semantic variable names applied
+ */
+
+36313: (e, t, i) => {
+    "use strict";
+    var s, o, n;
+    i.d(t, {
+        TitleDisplayTarget: () => n
+      }),
+      function(e) {
+        e[e.AfterMainSeries = 0] = "AfterMainSeries"
+      }(s || (s = {})),
+      function(e) {
+        e[e.Idle = 0] = "Idle", e[e.Processing = 1] = "Processing", e[e.Active = 2] = "Active", e[e.Stopped = 3] =
+          "Stopped"
+      }(o || (o = {})),
+      function(e) {
+        e[e.DataWindow = 1] = "DataWindow", e[e.StatusLine = 2] = "StatusLine", e[e.Alerts = 3] = "Alerts"
+      }(n || (n = {}))

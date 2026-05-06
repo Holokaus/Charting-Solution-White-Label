@@ -1,0 +1,1086 @@
+{
+  "timestamp": "2026-05-06T04:06:38.589Z",
+  "version": "Complete Semantic Pass v1.0",
+  "standard": "Class 1 Quality",
+  "applied": 179,
+  "totalReplacements": 39077,
+  "variablesCovered": 26,
+  "semanticTypesCovered": 13,
+  "coverage": "100% (179 of 179 modules)",
+  "results": [
+    {
+      "moduleId": "10544",
+      "semantic": "watchedValue",
+      "replacements": 383,
+      "tier": "HIGH"
+    },
+    {
+      "moduleId": "10980",
+      "semantic": "watchedValue",
+      "replacements": 76,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "12362",
+      "semantic": "watchedValue",
+      "replacements": 281,
+      "tier": "HIGH"
+    },
+    {
+      "moduleId": "13607",
+      "semantic": "series",
+      "replacements": 358,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "13823",
+      "semantic": "logger",
+      "replacements": 125,
+      "tier": "HIGH"
+    },
+    {
+      "moduleId": "13896",
+      "semantic": "lineToolManager",
+      "replacements": 8,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "1395",
+      "semantic": "lineToolManager",
+      "replacements": 17,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "14411",
+      "semantic": "watchedValue",
+      "replacements": 46,
+      "tier": "HIGH"
+    },
+    {
+      "moduleId": "14881",
+      "semantic": "watchedValue",
+      "replacements": 19,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "15219",
+      "semantic": "watchedValue",
+      "replacements": 639,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "16329",
+      "semantic": "watchedValue",
+      "replacements": 1643,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "16659",
+      "semantic": "watchedValue",
+      "replacements": 113,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "18041",
+      "semantic": "series",
+      "replacements": 55,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "18330",
+      "semantic": "seriesBarFunction",
+      "replacements": 46,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "19136",
+      "semantic": "series",
+      "replacements": 204,
+      "tier": "HIGH"
+    },
+    {
+      "moduleId": "19844",
+      "semantic": "watchedValue",
+      "replacements": 395,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "19979",
+      "semantic": "watchedValue",
+      "replacements": 1752,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "2088",
+      "semantic": "series",
+      "replacements": 313,
+      "tier": "HIGH"
+    },
+    {
+      "moduleId": "21097",
+      "semantic": "watchedValue",
+      "replacements": 104,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "22033",
+      "semantic": "seriesBarFunction",
+      "replacements": 46,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "22455",
+      "semantic": "priceDataSource",
+      "replacements": 25,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "2258",
+      "semantic": "series",
+      "replacements": 109,
+      "tier": "HIGH"
+    },
+    {
+      "moduleId": "22613",
+      "semantic": "watchedValue",
+      "replacements": 9,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "23024",
+      "semantic": "seriesBarFunction",
+      "replacements": 31,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "23502",
+      "semantic": "logger",
+      "replacements": 368,
+      "tier": "HIGH"
+    },
+    {
+      "moduleId": "23752",
+      "semantic": "lineToolManager",
+      "replacements": 157,
+      "tier": "HIGH"
+    },
+    {
+      "moduleId": "2383",
+      "semantic": "lineToolManager",
+      "replacements": 146,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "24317",
+      "semantic": "seriesBarFunction",
+      "replacements": 108,
+      "tier": "HIGH"
+    },
+    {
+      "moduleId": "2433",
+      "semantic": "seriesBarFunction",
+      "replacements": 119,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "24437",
+      "semantic": "watchedValue",
+      "replacements": 324,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "26352",
+      "semantic": "seriesBarFunction",
+      "replacements": 2,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "27593",
+      "semantic": "series",
+      "replacements": 246,
+      "tier": "HIGH"
+    },
+    {
+      "moduleId": "27808",
+      "semantic": "bitmapCoordinatesPane",
+      "replacements": 66,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "28334",
+      "semantic": "bitmapCoordinatesPane",
+      "replacements": 51,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "29063",
+      "semantic": "watchedValue",
+      "replacements": 381,
+      "tier": "HIGH"
+    },
+    {
+      "moduleId": "29447",
+      "semantic": "seriesBarFunction",
+      "replacements": 26,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "29603",
+      "semantic": "lineToolManager",
+      "replacements": 55,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "29806",
+      "semantic": "series",
+      "replacements": 61,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "30798",
+      "semantic": "seriesBarFunction",
+      "replacements": 63,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "30947",
+      "semantic": "watchedValue",
+      "replacements": 60,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "31269",
+      "semantic": "seriesBarFunction",
+      "replacements": 140,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "32112",
+      "semantic": "seriesBarFunction",
+      "replacements": 61,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "32399",
+      "semantic": "bitmapCoordinatesPane",
+      "replacements": 227,
+      "tier": "HIGH"
+    },
+    {
+      "moduleId": "32503",
+      "semantic": "logger",
+      "replacements": 435,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "32853",
+      "semantic": "logger",
+      "replacements": 162,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "33350",
+      "semantic": "lineToolManager",
+      "replacements": 270,
+      "tier": "HIGH"
+    },
+    {
+      "moduleId": "33505",
+      "semantic": "bitmapCoordinatesPane",
+      "replacements": 116,
+      "tier": "HIGH"
+    },
+    {
+      "moduleId": "3354",
+      "semantic": "seriesBarFunction",
+      "replacements": 49,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "34378",
+      "semantic": "seriesBarFunction",
+      "replacements": 113,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "35727",
+      "semantic": "priceDataSource",
+      "replacements": 8,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "35990",
+      "semantic": "logger",
+      "replacements": 53,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "36281",
+      "semantic": "priceDataSource",
+      "replacements": 402,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "36313",
+      "semantic": "seriesBarFunction",
+      "replacements": 35,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "36597",
+      "semantic": "priceDataSource",
+      "replacements": 135,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "36947",
+      "semantic": "lineToolManager",
+      "replacements": 19,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "38780",
+      "semantic": "watchedValue",
+      "replacements": 681,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "3885",
+      "semantic": "watchedValue",
+      "replacements": 316,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "39488",
+      "semantic": "logger",
+      "replacements": 384,
+      "tier": "HIGH"
+    },
+    {
+      "moduleId": "39697",
+      "semantic": "lineToolManager",
+      "replacements": 108,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "40153",
+      "semantic": "watchedValue",
+      "replacements": 25,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "40472",
+      "semantic": "bitmapCoordinatesPane",
+      "replacements": 46,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "40738",
+      "semantic": "bitmapCoordinatesPane",
+      "replacements": 16,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "41414",
+      "semantic": "series",
+      "replacements": 1294,
+      "tier": "HIGH"
+    },
+    {
+      "moduleId": "41706",
+      "semantic": "watchedValue",
+      "replacements": 83,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "4249",
+      "semantic": "bitmapCoordinatesPane",
+      "replacements": 43,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "42516",
+      "semantic": "seriesBarFunction",
+      "replacements": 18,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "43046",
+      "semantic": "lineToolManager",
+      "replacements": 256,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "43337",
+      "semantic": "watchedValue",
+      "replacements": 289,
+      "tier": "HIGH"
+    },
+    {
+      "moduleId": "43501",
+      "semantic": "lineToolManager",
+      "replacements": 448,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "4359",
+      "semantic": "priceDataSource",
+      "replacements": 255,
+      "tier": "HIGH"
+    },
+    {
+      "moduleId": "44862",
+      "semantic": "watchedValue",
+      "replacements": 423,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "45",
+      "semantic": "seriesBarFunction",
+      "replacements": 213,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "45345",
+      "semantic": "watchedValue",
+      "replacements": 41,
+      "tier": "HIGH"
+    },
+    {
+      "moduleId": "4539",
+      "semantic": "seriesBarFunction",
+      "replacements": 236,
+      "tier": "HIGH"
+    },
+    {
+      "moduleId": "45580",
+      "semantic": "seriesBarFunction",
+      "replacements": 25,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "45801",
+      "semantic": "lineToolManager",
+      "replacements": 134,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "4622",
+      "semantic": "seriesBarFunction",
+      "replacements": 97,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "46340",
+      "semantic": "bitmapCoordinatesPane",
+      "replacements": 232,
+      "tier": "HIGH"
+    },
+    {
+      "moduleId": "4753",
+      "semantic": "lineToolManager",
+      "replacements": 1249,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "4783",
+      "semantic": "watchedValue",
+      "replacements": 4330,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "48227",
+      "semantic": "seriesBarFunction",
+      "replacements": 391,
+      "tier": "HIGH"
+    },
+    {
+      "moduleId": "51052",
+      "semantic": "priceDataSource",
+      "replacements": 50,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "51101",
+      "semantic": "watchedValue",
+      "replacements": 1296,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "51304",
+      "semantic": "watchedValue",
+      "replacements": 217,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "51768",
+      "semantic": "bitmapCoordinatesPane",
+      "replacements": 93,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "51829",
+      "semantic": "seriesBarFunction",
+      "replacements": 21,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "52499",
+      "semantic": "watchedValue",
+      "replacements": 10,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "52974",
+      "semantic": "lineToolManager",
+      "replacements": 53,
+      "tier": "HIGH"
+    },
+    {
+      "moduleId": "53690",
+      "semantic": "seriesBarFunction",
+      "replacements": 189,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "54370",
+      "semantic": "seriesBarFunction",
+      "replacements": 16,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "54405",
+      "semantic": "bitmapCoordinatesPane",
+      "replacements": 41,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "55014",
+      "semantic": "seriesBarFunction",
+      "replacements": 87,
+      "tier": "HIGH"
+    },
+    {
+      "moduleId": "55393",
+      "semantic": "watchedValue",
+      "replacements": 33,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "56876",
+      "semantic": "priceDataSource",
+      "replacements": 289,
+      "tier": "HIGH"
+    },
+    {
+      "moduleId": "57025",
+      "semantic": "watchedValue",
+      "replacements": 43,
+      "tier": "HIGH"
+    },
+    {
+      "moduleId": "57340",
+      "semantic": "seriesBarFunction",
+      "replacements": 21,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "57622",
+      "semantic": "seriesBarFunction",
+      "replacements": 248,
+      "tier": "HIGH"
+    },
+    {
+      "moduleId": "58221",
+      "semantic": "logger",
+      "replacements": 734,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "58554",
+      "semantic": "seriesBarFunction",
+      "replacements": 46,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "58570",
+      "semantic": "series",
+      "replacements": 765,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "58978",
+      "semantic": "seriesBarFunction",
+      "replacements": 74,
+      "tier": "HIGH"
+    },
+    {
+      "moduleId": "59064",
+      "semantic": "bitmapCoordinatesPane",
+      "replacements": 26,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "59149",
+      "semantic": "watchedValue",
+      "replacements": 494,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "59883",
+      "semantic": "lineToolManager",
+      "replacements": 8,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "60336",
+      "semantic": "logger",
+      "replacements": 50,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "60709",
+      "semantic": "seriesBarFunction",
+      "replacements": 22,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "60755",
+      "semantic": "priceDataSource",
+      "replacements": 21,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "60876",
+      "semantic": "lineToolManager",
+      "replacements": 541,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "62153",
+      "semantic": "watchedValue",
+      "replacements": 609,
+      "tier": "HIGH"
+    },
+    {
+      "moduleId": "62802",
+      "semantic": "bitmapCoordinatesPane",
+      "replacements": 41,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "64138",
+      "semantic": "seriesBarFunction",
+      "replacements": 153,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "64651",
+      "semantic": "bitmapCoordinatesPane",
+      "replacements": 35,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "64876",
+      "semantic": "watchedValue",
+      "replacements": 103,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "64960",
+      "semantic": "bitmapCoordinatesPane",
+      "replacements": 82,
+      "tier": "HIGH"
+    },
+    {
+      "moduleId": "66142",
+      "semantic": "seriesBarFunction",
+      "replacements": 75,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "6652",
+      "semantic": "seriesBarFunction",
+      "replacements": 67,
+      "tier": "HIGH"
+    },
+    {
+      "moduleId": "66786",
+      "semantic": "bitmapCoordinatesPane",
+      "replacements": 20,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "67763",
+      "semantic": "watchedValue",
+      "replacements": 35,
+      "tier": "HIGH"
+    },
+    {
+      "moduleId": "68659",
+      "semantic": "watchedValue",
+      "replacements": 44,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "69422",
+      "semantic": "watchedValue",
+      "replacements": 136,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "69455",
+      "semantic": "seriesBarFunction",
+      "replacements": 78,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "69555",
+      "semantic": "bitmapCoordinatesPane",
+      "replacements": 66,
+      "tier": "HIGH"
+    },
+    {
+      "moduleId": "69866",
+      "semantic": "seriesBarFunction",
+      "replacements": 69,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "70548",
+      "semantic": "watchedValue",
+      "replacements": 14,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "70680",
+      "semantic": "priceDataSource",
+      "replacements": 73,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "71843",
+      "semantic": "seriesBarFunction",
+      "replacements": 55,
+      "tier": "HIGH"
+    },
+    {
+      "moduleId": "72104",
+      "semantic": "seriesBarFunction",
+      "replacements": 13,
+      "tier": "HIGH"
+    },
+    {
+      "moduleId": "72187",
+      "semantic": "watchedValue",
+      "replacements": 731,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "72755",
+      "semantic": "seriesBarFunction",
+      "replacements": 96,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "72972",
+      "semantic": "series",
+      "replacements": 165,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "73041",
+      "semantic": "lineToolManager",
+      "replacements": 293,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "73773",
+      "semantic": "bitmapCoordinatesPane",
+      "replacements": 130,
+      "tier": "HIGH"
+    },
+    {
+      "moduleId": "74109",
+      "semantic": "watchedValue",
+      "replacements": 209,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "7543",
+      "semantic": "dataSource",
+      "replacements": 10,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "76220",
+      "semantic": "priceDataSource",
+      "replacements": 31,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "76422",
+      "semantic": "logger",
+      "replacements": 87,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "76559",
+      "semantic": "seriesBarFunction",
+      "replacements": 50,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "77914",
+      "semantic": "logger",
+      "replacements": 93,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "78176",
+      "semantic": "watchedValue",
+      "replacements": 498,
+      "tier": "HIGH"
+    },
+    {
+      "moduleId": "78966",
+      "semantic": "seriesBarFunction",
+      "replacements": 141,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "79268",
+      "semantic": "bitmapCoordinatesPane",
+      "replacements": 495,
+      "tier": "HIGH"
+    },
+    {
+      "moduleId": "79603",
+      "semantic": "watchedValue",
+      "replacements": 46,
+      "tier": "HIGH"
+    },
+    {
+      "moduleId": "79740",
+      "semantic": "lineToolManager",
+      "replacements": 22,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "80819",
+      "semantic": "lineToolManager",
+      "replacements": 251,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "81360",
+      "semantic": "lineToolManager",
+      "replacements": 19,
+      "tier": "HIGH"
+    },
+    {
+      "moduleId": "82095",
+      "semantic": "seriesBarFunction",
+      "replacements": 154,
+      "tier": "HIGH"
+    },
+    {
+      "moduleId": "82130",
+      "semantic": "seriesBarFunction",
+      "replacements": 67,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "84526",
+      "semantic": "logger",
+      "replacements": 42,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "84696",
+      "semantic": "seriesBarFunction",
+      "replacements": 108,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "85630",
+      "semantic": "bitmapCoordinatesPane",
+      "replacements": 136,
+      "tier": "HIGH"
+    },
+    {
+      "moduleId": "86228",
+      "semantic": "lineToolManager",
+      "replacements": 283,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "86252",
+      "semantic": "priceDataSource",
+      "replacements": 134,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "86572",
+      "semantic": "lineToolManager",
+      "replacements": 87,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "86821",
+      "semantic": "logger",
+      "replacements": 228,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "87296",
+      "semantic": "seriesBarFunction",
+      "replacements": 408,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "87347",
+      "semantic": "logger",
+      "replacements": 592,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "87911",
+      "semantic": "seriesBarFunction",
+      "replacements": 33,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "8811",
+      "semantic": "watchedValue",
+      "replacements": 24,
+      "tier": "HIGH"
+    },
+    {
+      "moduleId": "88732",
+      "semantic": "lineToolManager",
+      "replacements": 253,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "89837",
+      "semantic": "seriesBarFunction",
+      "replacements": 79,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "89959",
+      "semantic": "watchedValue",
+      "replacements": 38,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "90995",
+      "semantic": "watchedValue",
+      "replacements": 169,
+      "tier": "HIGH"
+    },
+    {
+      "moduleId": "91111",
+      "semantic": "lineToolManager",
+      "replacements": 8,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "91565",
+      "semantic": "watchedValue",
+      "replacements": 167,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "92211",
+      "semantic": "seriesBarFunction",
+      "replacements": 44,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "93387",
+      "semantic": "bitmapCoordinatesPane",
+      "replacements": 225,
+      "tier": "HIGH"
+    },
+    {
+      "moduleId": "93463",
+      "semantic": "bitmapCoordinatesPane",
+      "replacements": 167,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "94119",
+      "semantic": "bitmapCoordinatesPane",
+      "replacements": 82,
+      "tier": "HIGH"
+    },
+    {
+      "moduleId": "95059",
+      "semantic": "watchedValue",
+      "replacements": 514,
+      "tier": "HIGH"
+    },
+    {
+      "moduleId": "95603",
+      "semantic": "seriesBarFunction",
+      "replacements": 105,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "95779",
+      "semantic": "watchedValue",
+      "replacements": 71,
+      "tier": "HIGH"
+    },
+    {
+      "moduleId": "96777",
+      "semantic": "logger",
+      "replacements": 702,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "96937",
+      "semantic": "watchedValue",
+      "replacements": 86,
+      "tier": "HIGH"
+    },
+    {
+      "moduleId": "97126",
+      "semantic": "lineToolManager",
+      "replacements": 217,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "97217",
+      "semantic": "lineToolManager",
+      "replacements": 15,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "97995",
+      "semantic": "lineToolManager",
+      "replacements": 12,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "99247",
+      "semantic": "series",
+      "replacements": 73,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "99481",
+      "semantic": "seriesBarFunction",
+      "replacements": 101,
+      "tier": "MEDIUM"
+    },
+    {
+      "moduleId": "99955",
+      "semantic": "seriesBarFunction",
+      "replacements": 142,
+      "tier": "MEDIUM"
+    }
+  ]
+}

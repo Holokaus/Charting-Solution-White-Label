@@ -1,0 +1,19 @@
+/**
+ * Module 54370 - Beautified
+ * Auto-formatted from webpack bundle
+ * Semantic variable names applied
+ */
+
+54370: (e, t, i) => {
+    "use strict";
+    i.d(t, {
+      allChartStyles: () => o
+    });
+    var s = i(37103);
+
+    function o() {
+      return function() {
+        const e = [0, 1, 9, 13, 2, 14, 15, 3, 16, 10];
+        return s.enabled("chart_style_hilo") && e.push(12), e.push(21), e
+      }().concat((s.enabled("japanese_chart_styles"), [8]))
+    }

@@ -1,0 +1,32 @@
+/**
+ * Module 69455 - Beautified
+ * Auto-formatted from webpack bundle
+ * Semantic variable names applied
+ */
+
+69455: (e, t, i) => {
+    "use strict";
+    i.d(t, {
+      createFavoriteDrawingToolbar: () => a,
+      getFavoriteDrawingToolbarPromise: () => r
+    });
+    var constants = i(9753);
+    let o = null,
+      n = null;
+
+    function r() {
+      return n
+    }
+
+    function a() {
+      null === n && (n = Promise.all([i.e(7617), i.e(8185), i.e(1681), i.e(3439), i.e(8933), i.e(6032), i.e(3672), i.e(
+          2537), i.e(3359), i.e(3425), i.e(8260), i.e(1979), i.e(7780), i.e(7827), i.e(8220), i.e(9590), i.e(
+        1667), i.e(9836), i.e(3290), i.e(6178), i.e(7777), i.e(2227), i.e(3179), i.e(1890), i.e(6193), i.e(6376),
+        i.e(2306)
+      ]).then(i.bind(i, 63027)).then((({
+        FavoriteDrawingToolbar: e
+      }) => (o = null !== o ? o : new e({
+        left: window.innerWidth / 2,
+        top: constants.HEADER_TOOLBAR_HEIGHT_EXPANDED + 61
+      }), o))))
+    }

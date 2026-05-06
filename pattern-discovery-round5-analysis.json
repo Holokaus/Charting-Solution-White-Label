@@ -1,0 +1,1448 @@
+{
+  "timestamp": "2026-05-06T03:14:27.741Z",
+  "deployed": 331,
+  "analyzed": 393,
+  "discovered": 179,
+  "byTier": {
+    "high": 50,
+    "medium": 129
+  },
+  "projections": {
+    "highOnly": 381,
+    "highMedium": 510
+  },
+  "discoveries": [
+    {
+      "moduleId": "10544",
+      "tier": "HIGH",
+      "suggested": "watchedValue",
+      "score": 90,
+      "keywords": 3,
+      "verified": true
+    },
+    {
+      "moduleId": "10980",
+      "tier": "MEDIUM",
+      "suggested": "watchedValue",
+      "score": 82,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "12362",
+      "tier": "HIGH",
+      "suggested": "watchedValue",
+      "score": 90,
+      "keywords": 4,
+      "verified": true
+    },
+    {
+      "moduleId": "13607",
+      "tier": "MEDIUM",
+      "suggested": "series",
+      "score": 78,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "13823",
+      "tier": "HIGH",
+      "suggested": "logger",
+      "score": 88,
+      "keywords": 4,
+      "verified": true
+    },
+    {
+      "moduleId": "13896",
+      "tier": "MEDIUM",
+      "suggested": "lineToolManager",
+      "score": 80,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "1395",
+      "tier": "MEDIUM",
+      "suggested": "lineToolManager",
+      "score": 88,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "14411",
+      "tier": "HIGH",
+      "suggested": "watchedValue",
+      "score": 100,
+      "keywords": 5,
+      "verified": true
+    },
+    {
+      "moduleId": "14881",
+      "tier": "MEDIUM",
+      "suggested": "watchedValue",
+      "score": 92,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "15219",
+      "tier": "MEDIUM",
+      "suggested": "watchedValue",
+      "score": 100,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "16329",
+      "tier": "MEDIUM",
+      "suggested": "watchedValue",
+      "score": 88,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "16659",
+      "tier": "MEDIUM",
+      "suggested": "watchedValue",
+      "score": 100,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "18041",
+      "tier": "MEDIUM",
+      "suggested": "series",
+      "score": 70,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "18330",
+      "tier": "MEDIUM",
+      "suggested": "seriesBarFunction",
+      "score": 92,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "19136",
+      "tier": "HIGH",
+      "suggested": "series",
+      "score": 88,
+      "keywords": 4,
+      "verified": true
+    },
+    {
+      "moduleId": "19844",
+      "tier": "MEDIUM",
+      "suggested": "watchedValue",
+      "score": 88,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "19979",
+      "tier": "MEDIUM",
+      "suggested": "watchedValue",
+      "score": 88,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "2088",
+      "tier": "HIGH",
+      "suggested": "series",
+      "score": 80,
+      "keywords": 3,
+      "verified": true
+    },
+    {
+      "moduleId": "21097",
+      "tier": "MEDIUM",
+      "suggested": "watchedValue",
+      "score": 92,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "22033",
+      "tier": "MEDIUM",
+      "suggested": "seriesBarFunction",
+      "score": 92,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "22455",
+      "tier": "MEDIUM",
+      "suggested": "priceDataSource",
+      "score": 88,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "2258",
+      "tier": "HIGH",
+      "suggested": "series",
+      "score": 80,
+      "keywords": 4,
+      "verified": true
+    },
+    {
+      "moduleId": "22613",
+      "tier": "MEDIUM",
+      "suggested": "watchedValue",
+      "score": 100,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "23024",
+      "tier": "MEDIUM",
+      "suggested": "seriesBarFunction",
+      "score": 90,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "23502",
+      "tier": "HIGH",
+      "suggested": "logger",
+      "score": 100,
+      "keywords": 4,
+      "verified": true
+    },
+    {
+      "moduleId": "23752",
+      "tier": "HIGH",
+      "suggested": "lineToolManager",
+      "score": 88,
+      "keywords": 3,
+      "verified": true
+    },
+    {
+      "moduleId": "2383",
+      "tier": "MEDIUM",
+      "suggested": "lineToolManager",
+      "score": 88,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "24317",
+      "tier": "HIGH",
+      "suggested": "seriesBarFunction",
+      "score": 88,
+      "keywords": 3,
+      "verified": true
+    },
+    {
+      "moduleId": "2433",
+      "tier": "MEDIUM",
+      "suggested": "seriesBarFunction",
+      "score": 100,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "24437",
+      "tier": "MEDIUM",
+      "suggested": "watchedValue",
+      "score": 88,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "26352",
+      "tier": "MEDIUM",
+      "suggested": "seriesBarFunction",
+      "score": 90,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "27593",
+      "tier": "HIGH",
+      "suggested": "series",
+      "score": 88,
+      "keywords": 5,
+      "verified": true
+    },
+    {
+      "moduleId": "27808",
+      "tier": "MEDIUM",
+      "suggested": "bitmapCoordinatesPane",
+      "score": 92,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "28334",
+      "tier": "MEDIUM",
+      "suggested": "bitmapCoordinatesPane",
+      "score": 92,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "29063",
+      "tier": "HIGH",
+      "suggested": "watchedValue",
+      "score": 80,
+      "keywords": 4,
+      "verified": true
+    },
+    {
+      "moduleId": "29447",
+      "tier": "MEDIUM",
+      "suggested": "seriesBarFunction",
+      "score": 100,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "29603",
+      "tier": "MEDIUM",
+      "suggested": "lineToolManager",
+      "score": 80,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "29806",
+      "tier": "MEDIUM",
+      "suggested": "series",
+      "score": 88,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "30798",
+      "tier": "MEDIUM",
+      "suggested": "seriesBarFunction",
+      "score": 100,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "30947",
+      "tier": "MEDIUM",
+      "suggested": "watchedValue",
+      "score": 100,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "31269",
+      "tier": "MEDIUM",
+      "suggested": "seriesBarFunction",
+      "score": 70,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "32112",
+      "tier": "MEDIUM",
+      "suggested": "seriesBarFunction",
+      "score": 80,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "32399",
+      "tier": "HIGH",
+      "suggested": "bitmapCoordinatesPane",
+      "score": 80,
+      "keywords": 3,
+      "verified": true
+    },
+    {
+      "moduleId": "32503",
+      "tier": "MEDIUM",
+      "suggested": "logger",
+      "score": 100,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "32853",
+      "tier": "MEDIUM",
+      "suggested": "logger",
+      "score": 90,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "33350",
+      "tier": "HIGH",
+      "suggested": "lineToolManager",
+      "score": 100,
+      "keywords": 3,
+      "verified": true
+    },
+    {
+      "moduleId": "33505",
+      "tier": "HIGH",
+      "suggested": "bitmapCoordinatesPane",
+      "score": 100,
+      "keywords": 3,
+      "verified": true
+    },
+    {
+      "moduleId": "3354",
+      "tier": "MEDIUM",
+      "suggested": "seriesBarFunction",
+      "score": 100,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "34378",
+      "tier": "MEDIUM",
+      "suggested": "seriesBarFunction",
+      "score": 92,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "35727",
+      "tier": "MEDIUM",
+      "suggested": "priceDataSource",
+      "score": 88,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "35990",
+      "tier": "MEDIUM",
+      "suggested": "logger",
+      "score": 80,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "36281",
+      "tier": "MEDIUM",
+      "suggested": "priceDataSource",
+      "score": 92,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "36313",
+      "tier": "MEDIUM",
+      "suggested": "seriesBarFunction",
+      "score": 92,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "36597",
+      "tier": "MEDIUM",
+      "suggested": "priceDataSource",
+      "score": 80,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "36947",
+      "tier": "MEDIUM",
+      "suggested": "lineToolManager",
+      "score": 88,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "38780",
+      "tier": "MEDIUM",
+      "suggested": "watchedValue",
+      "score": 100,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "3885",
+      "tier": "MEDIUM",
+      "suggested": "watchedValue",
+      "score": 100,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "39488",
+      "tier": "HIGH",
+      "suggested": "logger",
+      "score": 88,
+      "keywords": 3,
+      "verified": true
+    },
+    {
+      "moduleId": "39697",
+      "tier": "MEDIUM",
+      "suggested": "lineToolManager",
+      "score": 80,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "40153",
+      "tier": "MEDIUM",
+      "suggested": "watchedValue",
+      "score": 100,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "40472",
+      "tier": "MEDIUM",
+      "suggested": "bitmapCoordinatesPane",
+      "score": 80,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "40738",
+      "tier": "MEDIUM",
+      "suggested": "bitmapCoordinatesPane",
+      "score": 100,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "41414",
+      "tier": "HIGH",
+      "suggested": "series",
+      "score": 88,
+      "keywords": 6,
+      "verified": true
+    },
+    {
+      "moduleId": "41706",
+      "tier": "MEDIUM",
+      "suggested": "watchedValue",
+      "score": 78,
+      "keywords": 3,
+      "verified": true
+    },
+    {
+      "moduleId": "4249",
+      "tier": "MEDIUM",
+      "suggested": "bitmapCoordinatesPane",
+      "score": 92,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "42516",
+      "tier": "MEDIUM",
+      "suggested": "seriesBarFunction",
+      "score": 100,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "43046",
+      "tier": "MEDIUM",
+      "suggested": "lineToolManager",
+      "score": 88,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "43337",
+      "tier": "HIGH",
+      "suggested": "watchedValue",
+      "score": 88,
+      "keywords": 5,
+      "verified": true
+    },
+    {
+      "moduleId": "43501",
+      "tier": "MEDIUM",
+      "suggested": "lineToolManager",
+      "score": 100,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "4359",
+      "tier": "HIGH",
+      "suggested": "priceDataSource",
+      "score": 92,
+      "keywords": 3,
+      "verified": true
+    },
+    {
+      "moduleId": "44862",
+      "tier": "MEDIUM",
+      "suggested": "watchedValue",
+      "score": 88,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "45",
+      "tier": "MEDIUM",
+      "suggested": "seriesBarFunction",
+      "score": 70,
+      "keywords": 3,
+      "verified": true
+    },
+    {
+      "moduleId": "45345",
+      "tier": "HIGH",
+      "suggested": "watchedValue",
+      "score": 92,
+      "keywords": 3,
+      "verified": true
+    },
+    {
+      "moduleId": "4539",
+      "tier": "HIGH",
+      "suggested": "seriesBarFunction",
+      "score": 88,
+      "keywords": 3,
+      "verified": true
+    },
+    {
+      "moduleId": "45580",
+      "tier": "MEDIUM",
+      "suggested": "seriesBarFunction",
+      "score": 92,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "45801",
+      "tier": "MEDIUM",
+      "suggested": "lineToolManager",
+      "score": 88,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "4622",
+      "tier": "MEDIUM",
+      "suggested": "seriesBarFunction",
+      "score": 100,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "46340",
+      "tier": "HIGH",
+      "suggested": "bitmapCoordinatesPane",
+      "score": 80,
+      "keywords": 3,
+      "verified": true
+    },
+    {
+      "moduleId": "4753",
+      "tier": "MEDIUM",
+      "suggested": "lineToolManager",
+      "score": 88,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "4783",
+      "tier": "MEDIUM",
+      "suggested": "watchedValue",
+      "score": 78,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "48227",
+      "tier": "HIGH",
+      "suggested": "seriesBarFunction",
+      "score": 80,
+      "keywords": 3,
+      "verified": true
+    },
+    {
+      "moduleId": "51052",
+      "tier": "MEDIUM",
+      "suggested": "priceDataSource",
+      "score": 88,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "51101",
+      "tier": "MEDIUM",
+      "suggested": "watchedValue",
+      "score": 88,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "51304",
+      "tier": "MEDIUM",
+      "suggested": "watchedValue",
+      "score": 88,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "51768",
+      "tier": "MEDIUM",
+      "suggested": "bitmapCoordinatesPane",
+      "score": 92,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "51829",
+      "tier": "MEDIUM",
+      "suggested": "seriesBarFunction",
+      "score": 92,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "52499",
+      "tier": "MEDIUM",
+      "suggested": "watchedValue",
+      "score": 100,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "52974",
+      "tier": "HIGH",
+      "suggested": "lineToolManager",
+      "score": 82,
+      "keywords": 3,
+      "verified": true
+    },
+    {
+      "moduleId": "53690",
+      "tier": "MEDIUM",
+      "suggested": "seriesBarFunction",
+      "score": 88,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "54370",
+      "tier": "MEDIUM",
+      "suggested": "seriesBarFunction",
+      "score": 92,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "54405",
+      "tier": "MEDIUM",
+      "suggested": "bitmapCoordinatesPane",
+      "score": 92,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "55014",
+      "tier": "HIGH",
+      "suggested": "seriesBarFunction",
+      "score": 100,
+      "keywords": 4,
+      "verified": true
+    },
+    {
+      "moduleId": "55393",
+      "tier": "MEDIUM",
+      "suggested": "watchedValue",
+      "score": 100,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "56876",
+      "tier": "HIGH",
+      "suggested": "priceDataSource",
+      "score": 88,
+      "keywords": 3,
+      "verified": true
+    },
+    {
+      "moduleId": "57025",
+      "tier": "HIGH",
+      "suggested": "watchedValue",
+      "score": 90,
+      "keywords": 3,
+      "verified": true
+    },
+    {
+      "moduleId": "57340",
+      "tier": "MEDIUM",
+      "suggested": "seriesBarFunction",
+      "score": 100,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "57622",
+      "tier": "HIGH",
+      "suggested": "seriesBarFunction",
+      "score": 80,
+      "keywords": 3,
+      "verified": true
+    },
+    {
+      "moduleId": "58221",
+      "tier": "MEDIUM",
+      "suggested": "logger",
+      "score": 80,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "58554",
+      "tier": "MEDIUM",
+      "suggested": "seriesBarFunction",
+      "score": 100,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "58570",
+      "tier": "MEDIUM",
+      "suggested": "series",
+      "score": 88,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "58978",
+      "tier": "HIGH",
+      "suggested": "seriesBarFunction",
+      "score": 100,
+      "keywords": 4,
+      "verified": true
+    },
+    {
+      "moduleId": "59064",
+      "tier": "MEDIUM",
+      "suggested": "bitmapCoordinatesPane",
+      "score": 100,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "59149",
+      "tier": "MEDIUM",
+      "suggested": "watchedValue",
+      "score": 78,
+      "keywords": 3,
+      "verified": true
+    },
+    {
+      "moduleId": "59883",
+      "tier": "MEDIUM",
+      "suggested": "lineToolManager",
+      "score": 80,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "60336",
+      "tier": "MEDIUM",
+      "suggested": "logger",
+      "score": 80,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "60709",
+      "tier": "MEDIUM",
+      "suggested": "seriesBarFunction",
+      "score": 92,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "60755",
+      "tier": "MEDIUM",
+      "suggested": "priceDataSource",
+      "score": 88,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "60876",
+      "tier": "MEDIUM",
+      "suggested": "lineToolManager",
+      "score": 88,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "62153",
+      "tier": "HIGH",
+      "suggested": "watchedValue",
+      "score": 88,
+      "keywords": 4,
+      "verified": true
+    },
+    {
+      "moduleId": "62802",
+      "tier": "MEDIUM",
+      "suggested": "bitmapCoordinatesPane",
+      "score": 92,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "64138",
+      "tier": "MEDIUM",
+      "suggested": "seriesBarFunction",
+      "score": 88,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "64651",
+      "tier": "MEDIUM",
+      "suggested": "bitmapCoordinatesPane",
+      "score": 100,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "64876",
+      "tier": "MEDIUM",
+      "suggested": "watchedValue",
+      "score": 100,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "64960",
+      "tier": "HIGH",
+      "suggested": "bitmapCoordinatesPane",
+      "score": 100,
+      "keywords": 3,
+      "verified": true
+    },
+    {
+      "moduleId": "66142",
+      "tier": "MEDIUM",
+      "suggested": "seriesBarFunction",
+      "score": 92,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "6652",
+      "tier": "HIGH",
+      "suggested": "seriesBarFunction",
+      "score": 92,
+      "keywords": 3,
+      "verified": true
+    },
+    {
+      "moduleId": "66786",
+      "tier": "MEDIUM",
+      "suggested": "bitmapCoordinatesPane",
+      "score": 88,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "67763",
+      "tier": "HIGH",
+      "suggested": "watchedValue",
+      "score": 92,
+      "keywords": 3,
+      "verified": true
+    },
+    {
+      "moduleId": "68659",
+      "tier": "MEDIUM",
+      "suggested": "watchedValue",
+      "score": 82,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "69422",
+      "tier": "MEDIUM",
+      "suggested": "watchedValue",
+      "score": 100,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "69455",
+      "tier": "MEDIUM",
+      "suggested": "seriesBarFunction",
+      "score": 90,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "69555",
+      "tier": "HIGH",
+      "suggested": "bitmapCoordinatesPane",
+      "score": 80,
+      "keywords": 3,
+      "verified": true
+    },
+    {
+      "moduleId": "69866",
+      "tier": "MEDIUM",
+      "suggested": "seriesBarFunction",
+      "score": 100,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "70548",
+      "tier": "MEDIUM",
+      "suggested": "watchedValue",
+      "score": 100,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "70680",
+      "tier": "MEDIUM",
+      "suggested": "priceDataSource",
+      "score": 80,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "71843",
+      "tier": "HIGH",
+      "suggested": "seriesBarFunction",
+      "score": 90,
+      "keywords": 3,
+      "verified": true
+    },
+    {
+      "moduleId": "72104",
+      "tier": "HIGH",
+      "suggested": "seriesBarFunction",
+      "score": 92,
+      "keywords": 3,
+      "verified": true
+    },
+    {
+      "moduleId": "72187",
+      "tier": "MEDIUM",
+      "suggested": "watchedValue",
+      "score": 88,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "72755",
+      "tier": "MEDIUM",
+      "suggested": "seriesBarFunction",
+      "score": 92,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "72972",
+      "tier": "MEDIUM",
+      "suggested": "series",
+      "score": 80,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "73041",
+      "tier": "MEDIUM",
+      "suggested": "lineToolManager",
+      "score": 88,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "73773",
+      "tier": "HIGH",
+      "suggested": "bitmapCoordinatesPane",
+      "score": 92,
+      "keywords": 3,
+      "verified": true
+    },
+    {
+      "moduleId": "74109",
+      "tier": "MEDIUM",
+      "suggested": "watchedValue",
+      "score": 92,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "7543",
+      "tier": "MEDIUM",
+      "suggested": "dataSource",
+      "score": 70,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "76220",
+      "tier": "MEDIUM",
+      "suggested": "priceDataSource",
+      "score": 80,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "76422",
+      "tier": "MEDIUM",
+      "suggested": "logger",
+      "score": 80,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "76559",
+      "tier": "MEDIUM",
+      "suggested": "seriesBarFunction",
+      "score": 80,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "77914",
+      "tier": "MEDIUM",
+      "suggested": "logger",
+      "score": 92,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "78176",
+      "tier": "HIGH",
+      "suggested": "watchedValue",
+      "score": 88,
+      "keywords": 5,
+      "verified": true
+    },
+    {
+      "moduleId": "78966",
+      "tier": "MEDIUM",
+      "suggested": "seriesBarFunction",
+      "score": 70,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "79268",
+      "tier": "HIGH",
+      "suggested": "bitmapCoordinatesPane",
+      "score": 88,
+      "keywords": 3,
+      "verified": true
+    },
+    {
+      "moduleId": "79603",
+      "tier": "HIGH",
+      "suggested": "watchedValue",
+      "score": 88,
+      "keywords": 5,
+      "verified": true
+    },
+    {
+      "moduleId": "79740",
+      "tier": "MEDIUM",
+      "suggested": "lineToolManager",
+      "score": 88,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "80819",
+      "tier": "MEDIUM",
+      "suggested": "lineToolManager",
+      "score": 80,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "81360",
+      "tier": "HIGH",
+      "suggested": "lineToolManager",
+      "score": 80,
+      "keywords": 3,
+      "verified": true
+    },
+    {
+      "moduleId": "82095",
+      "tier": "HIGH",
+      "suggested": "seriesBarFunction",
+      "score": 92,
+      "keywords": 4,
+      "verified": true
+    },
+    {
+      "moduleId": "82130",
+      "tier": "MEDIUM",
+      "suggested": "seriesBarFunction",
+      "score": 100,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "84526",
+      "tier": "MEDIUM",
+      "suggested": "logger",
+      "score": 70,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "84696",
+      "tier": "MEDIUM",
+      "suggested": "seriesBarFunction",
+      "score": 92,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "85630",
+      "tier": "HIGH",
+      "suggested": "bitmapCoordinatesPane",
+      "score": 92,
+      "keywords": 4,
+      "verified": true
+    },
+    {
+      "moduleId": "86228",
+      "tier": "MEDIUM",
+      "suggested": "lineToolManager",
+      "score": 88,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "86252",
+      "tier": "MEDIUM",
+      "suggested": "priceDataSource",
+      "score": 80,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "86572",
+      "tier": "MEDIUM",
+      "suggested": "lineToolManager",
+      "score": 88,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "86821",
+      "tier": "MEDIUM",
+      "suggested": "logger",
+      "score": 90,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "87296",
+      "tier": "MEDIUM",
+      "suggested": "seriesBarFunction",
+      "score": 80,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "87347",
+      "tier": "MEDIUM",
+      "suggested": "logger",
+      "score": 88,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "87911",
+      "tier": "MEDIUM",
+      "suggested": "seriesBarFunction",
+      "score": 100,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "8811",
+      "tier": "HIGH",
+      "suggested": "watchedValue",
+      "score": 100,
+      "keywords": 3,
+      "verified": true
+    },
+    {
+      "moduleId": "88732",
+      "tier": "MEDIUM",
+      "suggested": "lineToolManager",
+      "score": 100,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "89837",
+      "tier": "MEDIUM",
+      "suggested": "seriesBarFunction",
+      "score": 100,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "89959",
+      "tier": "MEDIUM",
+      "suggested": "watchedValue",
+      "score": 100,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "90995",
+      "tier": "HIGH",
+      "suggested": "watchedValue",
+      "score": 100,
+      "keywords": 3,
+      "verified": true
+    },
+    {
+      "moduleId": "91111",
+      "tier": "MEDIUM",
+      "suggested": "lineToolManager",
+      "score": 80,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "91565",
+      "tier": "MEDIUM",
+      "suggested": "watchedValue",
+      "score": 100,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "92211",
+      "tier": "MEDIUM",
+      "suggested": "seriesBarFunction",
+      "score": 100,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "93387",
+      "tier": "HIGH",
+      "suggested": "bitmapCoordinatesPane",
+      "score": 88,
+      "keywords": 3,
+      "verified": true
+    },
+    {
+      "moduleId": "93463",
+      "tier": "MEDIUM",
+      "suggested": "bitmapCoordinatesPane",
+      "score": 100,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "94119",
+      "tier": "HIGH",
+      "suggested": "bitmapCoordinatesPane",
+      "score": 100,
+      "keywords": 3,
+      "verified": true
+    },
+    {
+      "moduleId": "95059",
+      "tier": "HIGH",
+      "suggested": "watchedValue",
+      "score": 88,
+      "keywords": 4,
+      "verified": true
+    },
+    {
+      "moduleId": "95603",
+      "tier": "MEDIUM",
+      "suggested": "seriesBarFunction",
+      "score": 100,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "95779",
+      "tier": "HIGH",
+      "suggested": "watchedValue",
+      "score": 92,
+      "keywords": 3,
+      "verified": true
+    },
+    {
+      "moduleId": "96777",
+      "tier": "MEDIUM",
+      "suggested": "logger",
+      "score": 88,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "96937",
+      "tier": "HIGH",
+      "suggested": "watchedValue",
+      "score": 92,
+      "keywords": 3,
+      "verified": true
+    },
+    {
+      "moduleId": "97126",
+      "tier": "MEDIUM",
+      "suggested": "lineToolManager",
+      "score": 100,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "97217",
+      "tier": "MEDIUM",
+      "suggested": "lineToolManager",
+      "score": 80,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "97995",
+      "tier": "MEDIUM",
+      "suggested": "lineToolManager",
+      "score": 80,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "99247",
+      "tier": "MEDIUM",
+      "suggested": "series",
+      "score": 78,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "99481",
+      "tier": "MEDIUM",
+      "suggested": "seriesBarFunction",
+      "score": 80,
+      "keywords": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "99955",
+      "tier": "MEDIUM",
+      "suggested": "seriesBarFunction",
+      "score": 100,
+      "keywords": 2,
+      "verified": true
+    }
+  ]
+}

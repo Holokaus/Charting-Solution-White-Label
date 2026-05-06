@@ -1,0 +1,44 @@
+/**
+ * Module 69866 - Beautified
+ * Auto-formatted from webpack bundle
+ * Semantic variable names applied
+ */
+
+69866: (e, t, i) => {
+    "use strict";
+    i.d(t, {
+      containsBackgroundTimePointIndexes: () => r,
+      dematerializeBackground: () => l,
+      isBackgroundInBarsRange: () => c,
+      materializeBackground: () => a
+    });
+    var assertionUtils = i(50151),
+      o = i(82284),
+      n = i(33952);
+    const r = !0;
+
+    function a(e, t) {
+      if (e.start >= t.length || e.stop >= t.length) return null;
+      const i = t[e.start],
+        n = t[e.stop];
+      return n === o.INVALID_TIME_POINT_INDEX ? null : ((0, assertionUtils.assert)(i === o.INVALID_TIME_POINT_INDEX ||
+        i <= n, "start should not exceed stop"), {
+        start: i === o.INVALID_TIME_POINT_INDEX ? null : i,
+        stop: n
+      })
+    }
+
+    function l(e, t, i) {
+      return {
+        id: t,
+        start: (0, n.ensureTimePointIndexIndex)(i.indexOf(null !== e.start ? e.start : o.INVALID_TIME_POINT_INDEX)),
+        stop: (0, n.ensureTimePointIndexIndex)(i.indexOf(e.stop))
+      }
+    }
+
+    function c(e, t) {
+      if (null === e.start) return t.firstBar() <= e.stop;
+      const i = Math.min(e.start, e.stop),
+        assertionUtils = Math.max(e.start, e.stop);
+      return t.contains(i) || t.contains(assertionUtils) || i < t.firstBar() && assertionUtils > t.lastBar()
+    }

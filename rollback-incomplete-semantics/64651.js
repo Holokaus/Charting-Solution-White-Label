@@ -1,0 +1,35 @@
+/**
+ * Module 64651 - Beautified
+ * Auto-formatted from webpack bundle
+ * Semantic variable names applied
+ */
+
+64651: (e, t, i) => {
+    "use strict";
+    i.d(t, {
+      SeriesWaterlinePaneView: () => a
+    });
+    var s = i(40738),
+      o = i(43838),
+      n = i(2383),
+      r = i(69558);
+    class a extends s.HorizontalLinePaneView {
+      constructor(e) {
+        super(), this._getters = e;
+        const t = {
+          cursorType: o.PaneCursorType.VerticalResize,
+          activeItem: 0,
+          areaName: n.AreaName.SourceItemMove
+        };
+        this._lineRenderer.setHitTest(new n.HitTestResult(n.HitTarget.MovePoint, t)), this._lineRendererData
+          .visible = !0, this._lineRendererData.linestyle = r.LINESTYLE_SPARSE_DOTTED
+      }
+      _updateImpl() {
+        const {
+          baseLevelPercentage: e,
+          paneHeight: t,
+          color: i
+        } = this._getters, s = Math.abs(100 - e());
+        this._lineRendererData.y = Math.round(t() * (s / 100)), this._lineRendererData.color = i()
+      }
+    }
