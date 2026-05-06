@@ -1,0 +1,330 @@
+{
+  "timestamp": "2026-05-06T05:26:21.428Z",
+  "totalApplied": 22,
+  "totalFailed": 0,
+  "totalReplacements": 48,
+  "modules": [
+    {
+      "moduleId": "22613",
+      "semanticName": "watchedValue",
+      "confidence": 100,
+      "keywords": 2,
+      "replacements": 2
+    },
+    {
+      "moduleId": "42516",
+      "semanticName": "seriesBarFunction",
+      "confidence": 100,
+      "keywords": 2,
+      "replacements": 2
+    },
+    {
+      "moduleId": "52499",
+      "semanticName": "watchedValue",
+      "confidence": 100,
+      "keywords": 2,
+      "replacements": 1
+    },
+    {
+      "moduleId": "92211",
+      "semanticName": "seriesBarFunction",
+      "confidence": 100,
+      "keywords": 2,
+      "replacements": 3
+    },
+    {
+      "moduleId": "14881",
+      "semanticName": "watchedValue",
+      "confidence": 92,
+      "keywords": 2,
+      "replacements": 3
+    },
+    {
+      "moduleId": "45580",
+      "semanticName": "seriesBarFunction",
+      "confidence": 92,
+      "keywords": 2,
+      "replacements": 2
+    },
+    {
+      "moduleId": "51829",
+      "semanticName": "seriesBarFunction",
+      "confidence": 92,
+      "keywords": 2,
+      "replacements": 2
+    },
+    {
+      "moduleId": "54370",
+      "semanticName": "seriesBarFunction",
+      "confidence": 92,
+      "keywords": 2,
+      "replacements": 2
+    },
+    {
+      "moduleId": "84696",
+      "semanticName": "seriesBarFunction",
+      "confidence": 92,
+      "keywords": 2,
+      "replacements": 3
+    },
+    {
+      "moduleId": "26352",
+      "semanticName": "seriesBarFunction",
+      "confidence": 90,
+      "keywords": 2,
+      "replacements": 1
+    },
+    {
+      "moduleId": "1395",
+      "semanticName": "lineToolManager",
+      "confidence": 88,
+      "keywords": 2,
+      "replacements": 2
+    },
+    {
+      "moduleId": "35727",
+      "semanticName": "priceDataSource",
+      "confidence": 88,
+      "keywords": 2,
+      "replacements": 3
+    },
+    {
+      "moduleId": "36947",
+      "semanticName": "lineToolManager",
+      "confidence": 88,
+      "keywords": 2,
+      "replacements": 2
+    },
+    {
+      "moduleId": "51052",
+      "semanticName": "priceDataSource",
+      "confidence": 88,
+      "keywords": 2,
+      "replacements": 3
+    },
+    {
+      "moduleId": "68659",
+      "semanticName": "watchedValue",
+      "confidence": 82,
+      "keywords": 2,
+      "replacements": 2
+    },
+    {
+      "moduleId": "13896",
+      "semanticName": "lineToolManager",
+      "confidence": 80,
+      "keywords": 2,
+      "replacements": 2
+    },
+    {
+      "moduleId": "59883",
+      "semanticName": "lineToolManager",
+      "confidence": 80,
+      "keywords": 2,
+      "replacements": 2
+    },
+    {
+      "moduleId": "91111",
+      "semanticName": "lineToolManager",
+      "confidence": 80,
+      "keywords": 2,
+      "replacements": 2
+    },
+    {
+      "moduleId": "97217",
+      "semanticName": "lineToolManager",
+      "confidence": 80,
+      "keywords": 2,
+      "replacements": 2
+    },
+    {
+      "moduleId": "97995",
+      "semanticName": "lineToolManager",
+      "confidence": 80,
+      "keywords": 2,
+      "replacements": 2
+    },
+    {
+      "moduleId": "7543",
+      "semanticName": "dataSource",
+      "confidence": 70,
+      "keywords": 2,
+      "replacements": 3
+    },
+    {
+      "moduleId": "84526",
+      "semanticName": "logger",
+      "confidence": 70,
+      "keywords": 2,
+      "replacements": 2
+    }
+  ],
+  "bySemanticName": {
+    "lineToolManager": [
+      {
+        "moduleId": "13896",
+        "semanticName": "lineToolManager",
+        "confidence": 80,
+        "keywords": 2,
+        "replacements": 2
+      },
+      {
+        "moduleId": "1395",
+        "semanticName": "lineToolManager",
+        "confidence": 88,
+        "keywords": 2,
+        "replacements": 2
+      },
+      {
+        "moduleId": "36947",
+        "semanticName": "lineToolManager",
+        "confidence": 88,
+        "keywords": 2,
+        "replacements": 2
+      },
+      {
+        "moduleId": "59883",
+        "semanticName": "lineToolManager",
+        "confidence": 80,
+        "keywords": 2,
+        "replacements": 2
+      },
+      {
+        "moduleId": "91111",
+        "semanticName": "lineToolManager",
+        "confidence": 80,
+        "keywords": 2,
+        "replacements": 2
+      },
+      {
+        "moduleId": "97217",
+        "semanticName": "lineToolManager",
+        "confidence": 80,
+        "keywords": 2,
+        "replacements": 2
+      },
+      {
+        "moduleId": "97995",
+        "semanticName": "lineToolManager",
+        "confidence": 80,
+        "keywords": 2,
+        "replacements": 2
+      }
+    ],
+    "watchedValue": [
+      {
+        "moduleId": "14881",
+        "semanticName": "watchedValue",
+        "confidence": 92,
+        "keywords": 2,
+        "replacements": 3
+      },
+      {
+        "moduleId": "22613",
+        "semanticName": "watchedValue",
+        "confidence": 100,
+        "keywords": 2,
+        "replacements": 2
+      },
+      {
+        "moduleId": "52499",
+        "semanticName": "watchedValue",
+        "confidence": 100,
+        "keywords": 2,
+        "replacements": 1
+      },
+      {
+        "moduleId": "68659",
+        "semanticName": "watchedValue",
+        "confidence": 82,
+        "keywords": 2,
+        "replacements": 2
+      }
+    ],
+    "seriesBarFunction": [
+      {
+        "moduleId": "26352",
+        "semanticName": "seriesBarFunction",
+        "confidence": 90,
+        "keywords": 2,
+        "replacements": 1
+      },
+      {
+        "moduleId": "42516",
+        "semanticName": "seriesBarFunction",
+        "confidence": 100,
+        "keywords": 2,
+        "replacements": 2
+      },
+      {
+        "moduleId": "45580",
+        "semanticName": "seriesBarFunction",
+        "confidence": 92,
+        "keywords": 2,
+        "replacements": 2
+      },
+      {
+        "moduleId": "51829",
+        "semanticName": "seriesBarFunction",
+        "confidence": 92,
+        "keywords": 2,
+        "replacements": 2
+      },
+      {
+        "moduleId": "54370",
+        "semanticName": "seriesBarFunction",
+        "confidence": 92,
+        "keywords": 2,
+        "replacements": 2
+      },
+      {
+        "moduleId": "84696",
+        "semanticName": "seriesBarFunction",
+        "confidence": 92,
+        "keywords": 2,
+        "replacements": 3
+      },
+      {
+        "moduleId": "92211",
+        "semanticName": "seriesBarFunction",
+        "confidence": 100,
+        "keywords": 2,
+        "replacements": 3
+      }
+    ],
+    "priceDataSource": [
+      {
+        "moduleId": "35727",
+        "semanticName": "priceDataSource",
+        "confidence": 88,
+        "keywords": 2,
+        "replacements": 3
+      },
+      {
+        "moduleId": "51052",
+        "semanticName": "priceDataSource",
+        "confidence": 88,
+        "keywords": 2,
+        "replacements": 3
+      }
+    ],
+    "dataSource": [
+      {
+        "moduleId": "7543",
+        "semanticName": "dataSource",
+        "confidence": 70,
+        "keywords": 2,
+        "replacements": 3
+      }
+    ],
+    "logger": [
+      {
+        "moduleId": "84526",
+        "semanticName": "logger",
+        "confidence": 70,
+        "keywords": 2,
+        "replacements": 2
+      }
+    ]
+  }
+}
