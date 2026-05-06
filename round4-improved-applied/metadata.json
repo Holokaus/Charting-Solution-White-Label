@@ -1,11 +1,43 @@
 {
-  "timestamp": "2026-05-05T16:03:26.260Z",
+  "timestamp": "2026-05-06T04:59:27.381Z",
   "version": "Round 4 Improved V2",
-  "applied": 1,
-  "totalReplacements": 2,
+  "applied": 5,
+  "totalReplacements": 11,
   "results": [
     {
       "moduleId": "11751",
+      "semantic": "watchedValue",
+      "score": 100,
+      "keywords": 3,
+      "replacements": 2,
+      "status": "APPLIED"
+    },
+    {
+      "moduleId": "55014",
+      "semantic": "seriesBarFunction",
+      "score": 100,
+      "keywords": 4,
+      "replacements": 3,
+      "status": "APPLIED"
+    },
+    {
+      "moduleId": "57340",
+      "semantic": "watchedValue",
+      "score": 100,
+      "keywords": 3,
+      "replacements": 2,
+      "status": "APPLIED"
+    },
+    {
+      "moduleId": "72104",
+      "semantic": "seriesBarFunction",
+      "score": 92,
+      "keywords": 3,
+      "replacements": 2,
+      "status": "APPLIED"
+    },
+    {
+      "moduleId": "8811",
       "semantic": "watchedValue",
       "score": 100,
       "keywords": 3,

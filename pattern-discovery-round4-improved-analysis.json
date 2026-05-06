@@ -1,7 +1,7 @@
 {
-  "timestamp": "2026-05-05T16:02:47.533Z",
+  "timestamp": "2026-05-06T04:58:46.325Z",
   "version": "Round 4 Improved V2",
-  "baseline": 330,
+  "baseline": 306,
   "discoveries": [
     {
       "moduleId": "11751",
@@ -94,6 +94,15 @@
       "verified": true
     },
     {
+      "moduleId": "51052",
+      "tier": "MEDIUM",
+      "suggested": "priceDataSource",
+      "score": 88,
+      "keywords": 2,
+      "minRequired": 2,
+      "verified": true
+    },
+    {
       "moduleId": "51829",
       "tier": "MEDIUM",
       "suggested": "seriesBarFunction",
@@ -121,12 +130,48 @@
       "verified": true
     },
     {
+      "moduleId": "55014",
+      "tier": "HIGH",
+      "suggested": "seriesBarFunction",
+      "score": 100,
+      "keywords": 4,
+      "minRequired": 3,
+      "verified": true
+    },
+    {
+      "moduleId": "57340",
+      "tier": "HIGH",
+      "suggested": "watchedValue",
+      "score": 100,
+      "keywords": 3,
+      "minRequired": 3,
+      "verified": true
+    },
+    {
       "moduleId": "59883",
       "tier": "MEDIUM",
       "suggested": "lineToolManager",
       "score": 80,
       "keywords": 2,
       "minRequired": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "68659",
+      "tier": "MEDIUM",
+      "suggested": "watchedValue",
+      "score": 82,
+      "keywords": 2,
+      "minRequired": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "72104",
+      "tier": "HIGH",
+      "suggested": "seriesBarFunction",
+      "score": 92,
+      "keywords": 3,
+      "minRequired": 3,
       "verified": true
     },
     {
@@ -145,6 +190,24 @@
       "score": 70,
       "keywords": 2,
       "minRequired": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "84696",
+      "tier": "MEDIUM",
+      "suggested": "seriesBarFunction",
+      "score": 92,
+      "keywords": 2,
+      "minRequired": 2,
+      "verified": true
+    },
+    {
+      "moduleId": "8811",
+      "tier": "HIGH",
+      "suggested": "watchedValue",
+      "score": 100,
+      "keywords": 3,
+      "minRequired": 3,
       "verified": true
     },
     {
@@ -185,15 +248,15 @@
     }
   ],
   "byTier": {
-    "high": 1,
-    "medium": 19
+    "high": 5,
+    "medium": 22
   },
   "rejections": {
     "noKeywordsHigh": 0,
     "lowScoreHigh": 0,
     "noKeywordsMedium": 0,
     "lowScoreMedium": 0,
-    "ambiguous": 119
+    "ambiguous": 136
   },
   "improvements": {
     "keywordWeighting": "60% (was 40%)",
