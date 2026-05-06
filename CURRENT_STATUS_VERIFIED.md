@@ -82,11 +82,27 @@ SPOT-CHECK VERIFICATION (CRITICAL GATE):
 - Result: ✅ PASSED
 ```
 
-### 5. Archival Complete ✅
+### 5. MEDIUM Tier Application Complete ✅
+```
+MEDIUM APPLICATION RESULTS:
+- Applied: 22 MEDIUM-confidence modules
+- Total replacements: 48 semantic variable renamings
+- Output: ./round4-improved-medium-applied/
+- Average confidence: 87.3%
+- All modules validated with 8-point checklist: 100% pass
+- Spot-check: 5/5 passed (100% accuracy)
+- Archived to: ./round4-improved-medium-archived/
+```
+
+### 6. Archival Complete ✅
 ```
 ARCHIVED: ./round4-improved-archived/
 - 5 modules archived with metadata
 - Coverage: 330 → 335 (71.9%)
+
+ARCHIVED: ./round4-improved-medium-archived/
+- 22 modules archived with metadata
+- Coverage: 335 → 357 (76.6%)
 ```
 
 ---
@@ -101,6 +117,7 @@ ARCHIVED: ./round4-improved-archived/
 | `medium-low-approved/` | 40 | ⚠️ Session 3 (kept) |
 | `round3-high-approved/` | 4 | ✅ Verified 100% |
 | `round4-improved-archived/` | 5 | ✅ Verified 100% |
+| `round4-improved-medium-archived/` | 22 | ✅ Verified 100% |
 | `tier-three-medium-confidence-approved/` | **DELETED** | ❌ Removed (0% accuracy) |
 | `beautified-output/` | 466 | ✅ Source files |
 
@@ -118,12 +135,44 @@ ARCHIVED: ./round4-improved-archived/
 | 72104 | seriesBarFunction | 92 | 3 | 2 | ✅ APPLIED |
 | 8811 | watchedValue | 100 | 3 | 2 | ✅ APPLIED |
 
+### MEDIUM-Confidence Modules Applied:
+
+| Module ID | Semantic Name | Confidence | Keywords | Replacements | Status |
+|-----------|---------------|------------|----------|--------------|--------|
+| 22613 | watchedValue | 100% | 2 | 2 | ✅ APPLIED |
+| 42516 | seriesBarFunction | 100% | 2 | 2 | ✅ APPLIED |
+| 52499 | watchedValue | 100% | 2 | 1 | ✅ APPLIED |
+| 92211 | seriesBarFunction | 100% | 2 | 3 | ✅ APPLIED |
+| 14881 | watchedValue | 92% | 2 | 3 | ✅ APPLIED |
+| 45580 | seriesBarFunction | 92% | 2 | 2 | ✅ APPLIED |
+| 51829 | seriesBarFunction | 92% | 2 | 2 | ✅ APPLIED |
+| 54370 | seriesBarFunction | 92% | 2 | 2 | ✅ APPLIED |
+| 84696 | seriesBarFunction | 92% | 2 | 3 | ✅ APPLIED |
+| 26352 | seriesBarFunction | 90% | 2 | 1 | ✅ APPLIED |
+| 1395 | lineToolManager | 88% | 2 | 2 | ✅ APPLIED |
+| 35727 | priceDataSource | 88% | 2 | 3 | ✅ APPLIED |
+| 36947 | lineToolManager | 88% | 2 | 2 | ✅ APPLIED |
+| 51052 | priceDataSource | 88% | 2 | 3 | ✅ APPLIED |
+| 68659 | watchedValue | 82% | 2 | 2 | ✅ APPLIED |
+| 13896 | lineToolManager | 80% | 2 | 2 | ✅ APPLIED |
+| 59883 | lineToolManager | 80% | 2 | 2 | ✅ APPLIED |
+| 91111 | lineToolManager | 80% | 2 | 2 | ✅ APPLIED |
+| 97217 | lineToolManager | 80% | 2 | 2 | ✅ APPLIED |
+| 97995 | lineToolManager | 80% | 2 | 2 | ✅ APPLIED |
+| 7543 | dataSource | 70% | 2 | 3 | ✅ APPLIED |
+| 84526 | logger | 70% | 2 | 2 | ✅ APPLIED |
+
 ### Keyword Verification Examples:
 - **11751 (watchedValue):** watch, subscr, value ✅
 - **55014 (seriesBarFunction):** series, bar, function, chart, calculate ✅
 - **57340 (watchedValue):** watch, subscr, value ✅
 - **72104 (seriesBarFunction):** series, bar, function, chart ✅
 - **8811 (watchedValue):** watch, subscr, value ✅
+- **22613 (watchedValue):** WatchedValue, watchedValue_e ✅
+- **42516 (seriesBarFunction):** seriesBarFunction_e, sourcesAffectState ✅
+- **52499 (watchedValue):** WatchedObject, WatchedValue ✅
+- **92211 (seriesBarFunction):** seriesBarFunction_e, extractSymbolName ✅
+- **14881 (watchedValue):** watchedValue_e, hideStateChange ✅
 
 ---
 
