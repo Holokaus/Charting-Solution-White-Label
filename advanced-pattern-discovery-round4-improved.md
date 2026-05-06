@@ -1,7 +1,7 @@
 # Advanced Pattern Discovery - Round 4 IMPROVED (V2)
 
-Generated: 2026-05-05T16:02:47.528Z
-Baseline: 330 verified modules
+Generated: 2026-05-06T07:00:47.856Z
+Baseline: 306 verified modules
 
 ## Improvements from Round 4 Failure Analysis
 
@@ -30,9 +30,9 @@ Baseline: 330 verified modules
 
 ## Discovery Results
 
-- **High-Confidence (80%+, 3+ keywords):** 1 modules ✅
-- **Medium-Confidence (65%+, 2+ keywords):** 19 modules 🟡
-- **Total New Discoveries:** 20 modules
+- **High-Confidence (80%+, 3+ keywords):** 5 modules ✅
+- **Medium-Confidence (65%+, 2+ keywords):** 22 modules 🟡
+- **Total New Discoveries:** 27 modules
 
 ## Rejections (Quality Gate Enforcement)
 
@@ -40,13 +40,13 @@ Baseline: 330 verified modules
 - **Below confidence (HIGH tier):** 0
 - **Insufficient keywords (MEDIUM tier):** 0
 - **Below confidence (MEDIUM tier):** 0
-- **Ambiguous/No matches:** 119
+- **Ambiguous/No matches:** 136
 
 ## Coverage Projections
 
 - **Current:** 330 modules (70.8%)
-- **If High Applied:** 331 (71.0%)
-- **If High+Medium Applied:** 350 (75.1%)
+- **If High Applied:** 335 (71.9%)
+- **If High+Medium Applied:** 357 (76.6%)
 
 ## Recommendations
 

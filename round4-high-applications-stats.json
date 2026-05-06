@@ -1,0 +1,108 @@
+{
+  "modules": 15,
+  "totalReplacements": 253,
+  "byCategory": {
+    "watchedValue": {
+      "modules": 4,
+      "replacements": 65
+    },
+    "series": {
+      "modules": 3,
+      "replacements": 51
+    },
+    "seriesBarFunction": {
+      "modules": 4,
+      "replacements": 83
+    },
+    "lineToolManager": {
+      "modules": 2,
+      "replacements": 36
+    },
+    "priceDataSource": {
+      "modules": 1,
+      "replacements": 8
+    },
+    "dataSource": {
+      "modules": 1,
+      "replacements": 10
+    }
+  },
+  "errors": [],
+  "applied": [
+    {
+      "moduleId": "11751",
+      "semantic": "watchedValue",
+      "replacements": 27
+    },
+    {
+      "moduleId": "22613",
+      "semantic": "watchedValue",
+      "replacements": 9
+    },
+    {
+      "moduleId": "42516",
+      "semantic": "series",
+      "replacements": 18
+    },
+    {
+      "moduleId": "52499",
+      "semantic": "watchedValue",
+      "replacements": 10
+    },
+    {
+      "moduleId": "92211",
+      "semantic": "seriesBarFunction",
+      "replacements": 44
+    },
+    {
+      "moduleId": "14881",
+      "semantic": "watchedValue",
+      "replacements": 19
+    },
+    {
+      "moduleId": "45580",
+      "semantic": "series",
+      "replacements": 25
+    },
+    {
+      "moduleId": "51829",
+      "semantic": "seriesBarFunction",
+      "replacements": 21
+    },
+    {
+      "moduleId": "54370",
+      "semantic": "seriesBarFunction",
+      "replacements": 16
+    },
+    {
+      "moduleId": "26352",
+      "semantic": "seriesBarFunction",
+      "replacements": 2
+    },
+    {
+      "moduleId": "13896",
+      "semantic": "series",
+      "replacements": 8
+    },
+    {
+      "moduleId": "1395",
+      "semantic": "lineToolManager",
+      "replacements": 17
+    },
+    {
+      "moduleId": "35727",
+      "semantic": "priceDataSource",
+      "replacements": 8
+    },
+    {
+      "moduleId": "36947",
+      "semantic": "lineToolManager",
+      "replacements": 19
+    },
+    {
+      "moduleId": "7543",
+      "semantic": "dataSource",
+      "replacements": 10
+    }
+  ]
+}
