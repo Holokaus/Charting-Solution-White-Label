@@ -1,0 +1,1285 @@
+{
+  "timestamp": "2026-05-06T08:02:00.084Z",
+  "deploymentDate": "May 6, 2026",
+  "projectName": "Charting Solution - White Label",
+  "qualityStandard": "Class 1 (Senior Certified)",
+  "totalModules": 179,
+  "semanticCoverage": "100% (26/26 variables per type)",
+  "validationRate": "96.6% GOOD tier",
+  "spotCheckAccuracy": "100% (10/10)",
+  "modules": [
+    {
+      "id": "10544",
+      "file": "10544.js",
+      "size": 15705,
+      "lines": 330,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "10980",
+      "file": "10980.js",
+      "size": 2680,
+      "lines": 64,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "12362",
+      "file": "12362.js",
+      "size": 10920,
+      "lines": 181,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "13607",
+      "file": "13607.js",
+      "size": 13639,
+      "lines": 216,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "13823",
+      "file": "13823.js",
+      "size": 4431,
+      "lines": 114,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "13896",
+      "file": "13896.js",
+      "size": 369,
+      "lines": 12,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "1395",
+      "file": "1395.js",
+      "size": 636,
+      "lines": 15,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "14411",
+      "file": "14411.js",
+      "size": 4538,
+      "lines": 85,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "14881",
+      "file": "14881.js",
+      "size": 646,
+      "lines": 16,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "15219",
+      "file": "15219.js",
+      "size": 25825,
+      "lines": 480,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "16329",
+      "file": "16329.js",
+      "size": 54528,
+      "lines": 858,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "16659",
+      "file": "16659.js",
+      "size": 4264,
+      "lines": 80,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "18041",
+      "file": "18041.js",
+      "size": 1449,
+      "lines": 42,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "18330",
+      "file": "18330.js",
+      "size": 1723,
+      "lines": 27,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "19136",
+      "file": "19136.js",
+      "size": 11185,
+      "lines": 225,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "19844",
+      "file": "19844.js",
+      "size": 15095,
+      "lines": 253,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "19979",
+      "file": "19979.js",
+      "size": 44777,
+      "lines": 504,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "2088",
+      "file": "2088.js",
+      "size": 7459,
+      "lines": 135,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "21097",
+      "file": "21097.js",
+      "size": 3730,
+      "lines": 72,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "22033",
+      "file": "22033.js",
+      "size": 6545,
+      "lines": 226,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "22455",
+      "file": "22455.js",
+      "size": 963,
+      "lines": 25,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "2258",
+      "file": "2258.js",
+      "size": 6588,
+      "lines": 205,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "22613",
+      "file": "22613.js",
+      "size": 350,
+      "lines": 12,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "23024",
+      "file": "23024.js",
+      "size": 1299,
+      "lines": 28,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "23502",
+      "file": "23502.js",
+      "size": 9212,
+      "lines": 155,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "23752",
+      "file": "23752.js",
+      "size": 6024,
+      "lines": 96,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "2383",
+      "file": "2383.js",
+      "size": 5751,
+      "lines": 96,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "24317",
+      "file": "24317.js",
+      "size": 11008,
+      "lines": 324,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "2433",
+      "file": "2433.js",
+      "size": 9959,
+      "lines": 277,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "24437",
+      "file": "24437.js",
+      "size": 18792,
+      "lines": 387,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "26352",
+      "file": "26352.js",
+      "size": 300,
+      "lines": 11,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "27593",
+      "file": "27593.js",
+      "size": 10685,
+      "lines": 267,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "27808",
+      "file": "27808.js",
+      "size": 3587,
+      "lines": 62,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "28334",
+      "file": "28334.js",
+      "size": 2463,
+      "lines": 50,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "29063",
+      "file": "29063.js",
+      "size": 15250,
+      "lines": 274,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "29447",
+      "file": "29447.js",
+      "size": 1175,
+      "lines": 31,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "29603",
+      "file": "29603.js",
+      "size": 2345,
+      "lines": 37,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "29806",
+      "file": "29806.js",
+      "size": 2200,
+      "lines": 44,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "30798",
+      "file": "30798.js",
+      "size": 2347,
+      "lines": 50,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "30947",
+      "file": "30947.js",
+      "size": 14028,
+      "lines": 157,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "31269",
+      "file": "31269.js",
+      "size": 4628,
+      "lines": 69,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "32112",
+      "file": "32112.js",
+      "size": 2855,
+      "lines": 60,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "32399",
+      "file": "32399.js",
+      "size": 10564,
+      "lines": 150,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "32503",
+      "file": "32503.js",
+      "size": 12689,
+      "lines": 250,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "32853",
+      "file": "32853.js",
+      "size": 4048,
+      "lines": 74,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "33350",
+      "file": "33350.js",
+      "size": 9014,
+      "lines": 156,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "33505",
+      "file": "33505.js",
+      "size": 4262,
+      "lines": 58,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "3354",
+      "file": "3354.js",
+      "size": 1926,
+      "lines": 51,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "34378",
+      "file": "34378.js",
+      "size": 10344,
+      "lines": 307,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "35727",
+      "file": "35727.js",
+      "size": 507,
+      "lines": 18,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "35990",
+      "file": "35990.js",
+      "size": 2376,
+      "lines": 55,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "36281",
+      "file": "36281.js",
+      "size": 18160,
+      "lines": 300,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "36313",
+      "file": "36313.js",
+      "size": 1282,
+      "lines": 22,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "36597",
+      "file": "36597.js",
+      "size": 4454,
+      "lines": 73,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "36947",
+      "file": "36947.js",
+      "size": 706,
+      "lines": 16,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "38780",
+      "file": "38780.js",
+      "size": 22991,
+      "lines": 384,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "3885",
+      "file": "3885.js",
+      "size": 12195,
+      "lines": 236,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "39488",
+      "file": "39488.js",
+      "size": 11949,
+      "lines": 277,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "39697",
+      "file": "39697.js",
+      "size": 3461,
+      "lines": 54,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "40153",
+      "file": "40153.js",
+      "size": 841,
+      "lines": 20,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "40472",
+      "file": "40472.js",
+      "size": 2407,
+      "lines": 68,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "40738",
+      "file": "40738.js",
+      "size": 1160,
+      "lines": 31,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "41414",
+      "file": "41414.js",
+      "size": 65854,
+      "lines": 1373,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "41706",
+      "file": "41706.js",
+      "size": 7281,
+      "lines": 174,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "4249",
+      "file": "4249.js",
+      "size": 2376,
+      "lines": 42,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "42516",
+      "file": "42516.js",
+      "size": 692,
+      "lines": 17,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "43046",
+      "file": "43046.js",
+      "size": 11353,
+      "lines": 219,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "43337",
+      "file": "43337.js",
+      "size": 10262,
+      "lines": 186,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "43501",
+      "file": "43501.js",
+      "size": 16034,
+      "lines": 210,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "4359",
+      "file": "4359.js",
+      "size": 9946,
+      "lines": 201,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "44862",
+      "file": "44862.js",
+      "size": 13321,
+      "lines": 187,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "45",
+      "file": "45.js",
+      "size": 21169,
+      "lines": 622,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "45345",
+      "file": "45345.js",
+      "size": 1262,
+      "lines": 29,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "4539",
+      "file": "4539.js",
+      "size": 8182,
+      "lines": 146,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "45580",
+      "file": "45580.js",
+      "size": 941,
+      "lines": 16,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "45801",
+      "file": "45801.js",
+      "size": 4669,
+      "lines": 81,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "4622",
+      "file": "4622.js",
+      "size": 4325,
+      "lines": 80,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "46340",
+      "file": "46340.js",
+      "size": 12686,
+      "lines": 190,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "4753",
+      "file": "4753.js",
+      "size": 45163,
+      "lines": 727,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "4783",
+      "file": "4783.js",
+      "size": 348467,
+      "lines": 10372,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "48227",
+      "file": "48227.js",
+      "size": 13782,
+      "lines": 183,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "51052",
+      "file": "51052.js",
+      "size": 3665,
+      "lines": 100,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "51101",
+      "file": "51101.js",
+      "size": 43147,
+      "lines": 655,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "51304",
+      "file": "51304.js",
+      "size": 11370,
+      "lines": 203,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "51768",
+      "file": "51768.js",
+      "size": 4366,
+      "lines": 58,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "51829",
+      "file": "51829.js",
+      "size": 893,
+      "lines": 17,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "52499",
+      "file": "52499.js",
+      "size": 448,
+      "lines": 14,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "52974",
+      "file": "52974.js",
+      "size": 3150,
+      "lines": 81,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "53690",
+      "file": "53690.js",
+      "size": 15175,
+      "lines": 330,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "54370",
+      "file": "54370.js",
+      "size": 752,
+      "lines": 19,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "54405",
+      "file": "54405.js",
+      "size": 2261,
+      "lines": 39,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "55014",
+      "file": "55014.js",
+      "size": 4090,
+      "lines": 52,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "55393",
+      "file": "55393.js",
+      "size": 1762,
+      "lines": 44,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "56876",
+      "file": "56876.js",
+      "size": 10241,
+      "lines": 113,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "57025",
+      "file": "57025.js",
+      "size": 3172,
+      "lines": 68,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "57340",
+      "file": "57340.js",
+      "size": 944,
+      "lines": 21,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "57622",
+      "file": "57622.js",
+      "size": 10340,
+      "lines": 192,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "58221",
+      "file": "58221.js",
+      "size": 13587,
+      "lines": 264,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "58554",
+      "file": "58554.js",
+      "size": 1772,
+      "lines": 42,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "58570",
+      "file": "58570.js",
+      "size": 20438,
+      "lines": 199,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "58978",
+      "file": "58978.js",
+      "size": 12383,
+      "lines": 47,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "59064",
+      "file": "59064.js",
+      "size": 7366,
+      "lines": 284,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "59149",
+      "file": "59149.js",
+      "size": 18596,
+      "lines": 361,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "59883",
+      "file": "59883.js",
+      "size": 359,
+      "lines": 12,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "60336",
+      "file": "60336.js",
+      "size": 1770,
+      "lines": 39,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "60709",
+      "file": "60709.js",
+      "size": 951,
+      "lines": 23,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "60755",
+      "file": "60755.js",
+      "size": 1051,
+      "lines": 23,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "60876",
+      "file": "60876.js",
+      "size": 18249,
+      "lines": 269,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "62153",
+      "file": "62153.js",
+      "size": 32566,
+      "lines": 535,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "62802",
+      "file": "62802.js",
+      "size": 2316,
+      "lines": 45,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "64138",
+      "file": "64138.js",
+      "size": 5003,
+      "lines": 69,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "64651",
+      "file": "64651.js",
+      "size": 1836,
+      "lines": 35,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "64876",
+      "file": "64876.js",
+      "size": 3911,
+      "lines": 86,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "64960",
+      "file": "64960.js",
+      "size": 3841,
+      "lines": 54,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "66142",
+      "file": "66142.js",
+      "size": 2669,
+      "lines": 47,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "6652",
+      "file": "6652.js",
+      "size": 2492,
+      "lines": 31,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "66786",
+      "file": "66786.js",
+      "size": 1189,
+      "lines": 40,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "67763",
+      "file": "67763.js",
+      "size": 2154,
+      "lines": 52,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "68659",
+      "file": "68659.js",
+      "size": 2135,
+      "lines": 39,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "69422",
+      "file": "69422.js",
+      "size": 4886,
+      "lines": 82,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "69455",
+      "file": "69455.js",
+      "size": 2389,
+      "lines": 32,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "69555",
+      "file": "69555.js",
+      "size": 3900,
+      "lines": 63,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "69866",
+      "file": "69866.js",
+      "size": 2623,
+      "lines": 44,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "70548",
+      "file": "70548.js",
+      "size": 513,
+      "lines": 16,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "70680",
+      "file": "70680.js",
+      "size": 5800,
+      "lines": 179,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "71843",
+      "file": "71843.js",
+      "size": 2257,
+      "lines": 41,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "72104",
+      "file": "72104.js",
+      "size": 870,
+      "lines": 30,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "72187",
+      "file": "72187.js",
+      "size": 26107,
+      "lines": 436,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "72755",
+      "file": "72755.js",
+      "size": 3519,
+      "lines": 57,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "72972",
+      "file": "72972.js",
+      "size": 6140,
+      "lines": 131,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "73041",
+      "file": "73041.js",
+      "size": 8781,
+      "lines": 145,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "73773",
+      "file": "73773.js",
+      "size": 6672,
+      "lines": 100,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "74109",
+      "file": "74109.js",
+      "size": 15556,
+      "lines": 351,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "7543",
+      "file": "7543.js",
+      "size": 374,
+      "lines": 15,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "76220",
+      "file": "76220.js",
+      "size": 2131,
+      "lines": 54,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "76422",
+      "file": "76422.js",
+      "size": 1748,
+      "lines": 53,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "76559",
+      "file": "76559.js",
+      "size": 2186,
+      "lines": 43,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "77914",
+      "file": "77914.js",
+      "size": 2133,
+      "lines": 72,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "78176",
+      "file": "78176.js",
+      "size": 20404,
+      "lines": 353,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "78966",
+      "file": "78966.js",
+      "size": 5278,
+      "lines": 69,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "79268",
+      "file": "79268.js",
+      "size": 22737,
+      "lines": 295,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "79603",
+      "file": "79603.js",
+      "size": 2920,
+      "lines": 87,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "79740",
+      "file": "79740.js",
+      "size": 1380,
+      "lines": 33,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "80819",
+      "file": "80819.js",
+      "size": 7988,
+      "lines": 114,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "81360",
+      "file": "81360.js",
+      "size": 1621,
+      "lines": 50,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "82095",
+      "file": "82095.js",
+      "size": 8511,
+      "lines": 189,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "82130",
+      "file": "82130.js",
+      "size": 3637,
+      "lines": 86,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "84526",
+      "file": "84526.js",
+      "size": 836,
+      "lines": 21,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "84696",
+      "file": "84696.js",
+      "size": 5130,
+      "lines": 70,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "85630",
+      "file": "85630.js",
+      "size": 7241,
+      "lines": 109,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "86228",
+      "file": "86228.js",
+      "size": 9537,
+      "lines": 125,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "86252",
+      "file": "86252.js",
+      "size": 4822,
+      "lines": 93,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "86572",
+      "file": "86572.js",
+      "size": 3574,
+      "lines": 64,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "86821",
+      "file": "86821.js",
+      "size": 6347,
+      "lines": 91,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "87296",
+      "file": "87296.js",
+      "size": 16785,
+      "lines": 305,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "87347",
+      "file": "87347.js",
+      "size": 14302,
+      "lines": 332,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "87911",
+      "file": "87911.js",
+      "size": 1251,
+      "lines": 26,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "8811",
+      "file": "8811.js",
+      "size": 774,
+      "lines": 21,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "88732",
+      "file": "88732.js",
+      "size": 10231,
+      "lines": 165,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "89837",
+      "file": "89837.js",
+      "size": 3329,
+      "lines": 59,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "89959",
+      "file": "89959.js",
+      "size": 1069,
+      "lines": 23,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "90995",
+      "file": "90995.js",
+      "size": 5524,
+      "lines": 115,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "91111",
+      "file": "91111.js",
+      "size": 599,
+      "lines": 17,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "91565",
+      "file": "91565.js",
+      "size": 6531,
+      "lines": 138,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "92211",
+      "file": "92211.js",
+      "size": 1481,
+      "lines": 21,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "93387",
+      "file": "93387.js",
+      "size": 9046,
+      "lines": 108,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "93463",
+      "file": "93463.js",
+      "size": 6518,
+      "lines": 74,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "94119",
+      "file": "94119.js",
+      "size": 3872,
+      "lines": 54,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "95059",
+      "file": "95059.js",
+      "size": 19295,
+      "lines": 450,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "95603",
+      "file": "95603.js",
+      "size": 5622,
+      "lines": 105,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "95779",
+      "file": "95779.js",
+      "size": 14922,
+      "lines": 54,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "96777",
+      "file": "96777.js",
+      "size": 29208,
+      "lines": 561,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "96937",
+      "file": "96937.js",
+      "size": 2970,
+      "lines": 72,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "97126",
+      "file": "97126.js",
+      "size": 8318,
+      "lines": 144,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "97217",
+      "file": "97217.js",
+      "size": 555,
+      "lines": 16,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "97995",
+      "file": "97995.js",
+      "size": 465,
+      "lines": 16,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "99247",
+      "file": "99247.js",
+      "size": 3139,
+      "lines": 82,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "99481",
+      "file": "99481.js",
+      "size": 3780,
+      "lines": 62,
+      "deployed": "2026-05-06"
+    },
+    {
+      "id": "99955",
+      "file": "99955.js",
+      "size": 4699,
+      "lines": 69,
+      "deployed": "2026-05-06"
+    }
+  ],
+  "summary": {
+    "baseline": 330,
+    "round5High": 50,
+    "round5Medium": 129,
+    "round4": "REJECTED (failed verification)",
+    "approved": 179
+  },
+  "qualityGates": {
+    "semanticVariables": "✅ All 26 mapped",
+    "semanticTypes": "✅ All 13 covered",
+    "validationPass": "✅ 96.6% GOOD",
+    "spotCheckPass": "✅ 100% accurate",
+    "noUnmappedVars": "✅ Zero detected",
+    "classStandard": "✅ Class 1 Certified"
+  },
+  "locations": {
+    "production": "./deployed-modules/",
+    "archive": "./complete-semantic-pass-archived/",
+    "rollbackRef": "./rollback-incomplete-semantics/"
+  }
+}

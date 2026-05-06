@@ -1,0 +1,82 @@
+/**
+ * @module 1866 - TV Logo SVG Icon
+ * @description Contains the SVG path data for the TradingView logo icon.
+ * This module exports a raw SVG string used throughout the application
+ * for branding and identification purposes.
+ */
+
+/**
+ * TradingView Logo SVG
+ * 
+ * A scalable vector graphic representation of the TradingView logo.
+ * The SVG contains multiple path elements forming the distinctive
+ * "TV" lettering with proper viewBox and dimensions.
+ * 
+ * @type {string}
+ * @constant
+ * 
+ * @svg_properties
+ * - xmlns: http://www.w3.org/2000/svg
+ * - viewBox: 0 0 162 28
+ * - width: 162px
+ * - height: 28px
+ * 
+ * @usage
+ * // Import the logo SVG
+ * import { tvLogoSvg } from '1866-tv-logo-svg';
+ * 
+ * // Use in HTML
+ * const logoElement = document.createElement('div');
+ * logoElement.innerHTML = tvLogoSvg;
+ * 
+ * // Use in React component
+ * const LogoComponent = () => (
+ *   <div dangerouslySetInnerHTML={{ __html: tvLogoSvg }} />
+ * );
+ */
+export const tvLogoSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 162 28" width="162" height="28">
+  <path fill="currentColor" d="M130.37 7.21c0 .99-.83 1.78-1.87 1.78-1 0-1.84-.8-1.84-1.78s.85-1.77 1.84-1.77c1.04 0 1.87.8 1.87 1.77M130 21h-3V10h3zM84.54 9.02c1.04 0 1.87-.8 1.87-1.77 0-.99-.83-1.78-1.87-1.78-1 0-1.84.8-1.84 1.78s.85 1.77 1.84 1.77M83 21h3V10h-3zM46 21h-3V9h-4V6h11v3h-4zM53 21l-3 .02V10h3v1.88c.36-1 1.34-1.75 2.53-1.75h.03c.3 0 .6 0 .94.1v2.84a4 4 0 0 0-1.31-.2c-1.38 0-2.19 1-2.19 2.7zM91 21h-3V10.01l3-.01v1q.85-1.22 2.9-1.21c2.57 0 4.1 1.8 4.1 4.45V21h-3v-6c0-1.47-.56-2.66-1.77-2.66-1.36 0-2.23.93-2.23 2.89zM120 21l6-15h-3.5l-4 10.5L114 6h-3.5l6.5 15zM156.45 21h-2.93l-2.02-6.25-2 6.25h-2.93L143 10h3.14l2.05 7.04 2.17-7.04h2.26l2.2 7.04 2.02-7.04H160zM61.92 21.24c1.52 0 2.57-.77 3.08-1.47V21h3V10h-3v1.23a3.8 3.8 0 0 0-3.08-1.47c-2.93 0-5.17 2.64-5.17 5.74s2.24 5.74 5.17 5.74m.64-2.75c-1.68 0-2.78-1.25-2.78-2.99s1.1-3 2.78-3 2.77 1.26 2.77 3-1.1 3-2.77 3M78 19.77c-.5.7-1.56 1.47-3.08 1.47-2.93 0-5.17-2.64-5.17-5.74s2.24-5.74 5.17-5.74c1.52 0 2.57.77 3.08 1.47V6h3v15h-3zm-5.22-4.27c0 1.74 1.1 3 2.78 3s2.77-1.26 2.77-3-1.1-3-2.77-3c-1.68 0-2.78 1.26-2.78 3M105.23 25.82c3.36 0 5.77-1.72 5.77-5.68V10h-3v1.23a3.6 3.6 0 0 0-3.06-1.47c-2.88 0-5.2 2.46-5.2 5.56 0 3.08 2.32 5.68 5.2 5.68a3.8 3.8 0 0 0 3.06-1.58v.74c0 1.76-1.04 3.02-2.82 3.02a4.8 4.8 0 0 1-3.43-1.37l-1.65 2.25c1.25 1.2 3.21 1.76 5.13 1.76m.35-7.68a2.75 2.75 0 0 1-2.8-2.82c0-1.69 1.28-2.81 2.8-2.81s2.8 1.12 2.8 2.81a2.75 2.75 0 0 1-2.8 2.82M142.78 18.72a6 6 0 0 1-5.1 2.47c-3.28 0-5.83-2.27-5.83-5.74a5.6 5.6 0 0 1 5.78-5.75c2.89 0 5.42 1.83 5.42 5.42v.16c0 .25 0 .6-.05.97h-8.23c.18 1.47 1.48 2.19 2.93 2.19 1.39 0 2.33-.62 2.84-1.39zm-5.23-6.53c-1.13 0-2.38.57-2.67 1.91h5.15c-.26-1.32-1.36-1.91-2.48-1.91M14 6H2v6h6v9h6zm12 15h-7l6-15h7zm-7-9a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+</svg>`;
+
+/**
+ * Get the TV logo as an HTML image element
+ * 
+ * @param {Object} options - Configuration options
+ * @param {string} [options.className=''] - CSS class to apply to the image container
+ * @param {string} [options.width='162'] - Width of the logo
+ * @param {string} [options.height='28'] - Height of the logo
+ * @returns {HTMLDivElement} A div element containing the SVG logo
+ */
+export function createTvLogoElement(options = {}) {
+  const { className = '', width = '162', height = '28' } = options;
+  
+  const container = document.createElement('div');
+  if (className) {
+    container.className = className;
+  }
+  container.innerHTML = tvLogoSvg;
+  
+  const svg = container.querySelector('svg');
+  if (svg) {
+    svg.setAttribute('width', width);
+    svg.setAttribute('height', height);
+  }
+  
+  return container;
+}
+
+/**
+ * Get logo dimensions
+ * 
+ * @returns {Object} Object containing width and height
+ */
+export function getLogoDimensions() {
+  return {
+    width: 162,
+    height: 28,
+    aspectRatio: 162 / 28 // approximately 5.79:1
+  };
+}
+
+// Default export
+export default tvLogoSvg;

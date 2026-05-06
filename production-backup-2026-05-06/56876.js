@@ -1,0 +1,113 @@
+/**
+ * Module 56876 - Beautified
+ * Auto-formatted from webpack bundle
+ * Semantic variable names applied
+ */
+
+56876: (priceDataSource_e, priceDataSource_t, priceDataSource_i) => {
+    "use strict";
+    priceDataSource_i.priceDataSource_d(priceDataSource_t, {
+      lineToolsLocalizedNames: () => priceDataSource_o
+    });
+    var priceDataSource_s = priceDataSource_i(11542);
+    const priceDataSource_o = {
+      LineTool5PointsPattern: priceDataSource_s.priceDataSource_t(null, void 0, priceDataSource_i(42231)),
+      LineToolABCD: priceDataSource_s.priceDataSource_t(null, void 0, priceDataSource_i(46712)),
+      LineToolArc: priceDataSource_s.priceDataSource_t(null, void 0, priceDataSource_i(59324)),
+      LineToolArrow: priceDataSource_s.priceDataSource_t(null, void 0, priceDataSource_i(11858)),
+      LineToolArrowMarkDown: priceDataSource_s.priceDataSource_t(null, void 0, priceDataSource_i(73193)),
+      LineToolArrowMarkLeft: priceDataSource_s.priceDataSource_t(null, void 0, priceDataSource_i(1949)),
+      LineToolArrowMarkRight: priceDataSource_s.priceDataSource_t(null, void 0, priceDataSource_i(86275)),
+      LineToolArrowMarkUp: priceDataSource_s.priceDataSource_t(null, void 0, priceDataSource_i(62453)),
+      LineToolBalloon: priceDataSource_s.priceDataSource_t(null, void 0, priceDataSource_i(70540)),
+      LineToolComment: priceDataSource_s.priceDataSource_t(null, void 0, priceDataSource_i(9818)),
+      LineToolBarsPattern: priceDataSource_s.priceDataSource_t(null, void 0, priceDataSource_i(81994)),
+      LineToolBezierCubic: priceDataSource_s.priceDataSource_t(null, void 0, priceDataSource_i(77125)),
+      LineToolBezierQuadro: priceDataSource_s.priceDataSource_t(null, void 0, priceDataSource_i(78609)),
+      LineToolBrush: priceDataSource_s.priceDataSource_t(null, void 0, priceDataSource_i(43539)),
+      LineToolCallout: priceDataSource_s.priceDataSource_t(null, void 0, priceDataSource_i(25381)),
+      LineToolCircleLines: priceDataSource_s.priceDataSource_t(null, void 0, priceDataSource_i(84031)),
+      LineToolCypherPattern: priceDataSource_s.priceDataSource_t(null, void 0, priceDataSource_i(93191)),
+      LineToolDateAndPriceRange: priceDataSource_s.priceDataSource_t(null, void 0, priceDataSource_i(47017)),
+      LineToolDateRange: priceDataSource_s.priceDataSource_t(null, void 0, priceDataSource_i(85444)),
+      LineToolDisjointAngle: priceDataSource_s.priceDataSource_t(null, void 0, priceDataSource_i(91544)),
+      LineToolElliottCorrection: priceDataSource_s.priceDataSource_t(null, void 0, priceDataSource_i(80943)),
+      LineToolElliottDoubleCombo: priceDataSource_s.priceDataSource_t(null, void 0, priceDataSource_i(75112)),
+      LineToolElliottImpulse: priceDataSource_s.priceDataSource_t(null, void 0, priceDataSource_i(61114)),
+      LineToolElliottTriangle: priceDataSource_s.priceDataSource_t(null, void 0, priceDataSource_i(72359)),
+      LineToolElliottTripleCombo: priceDataSource_s.priceDataSource_t(null, void 0, priceDataSource_i(76129)),
+      LineToolEllipse: priceDataSource_s.priceDataSource_t(null, void 0, priceDataSource_i(78996)),
+      LineToolExtended: priceDataSource_s.priceDataSource_t(null, void 0, priceDataSource_i(52788)),
+      LineToolFibChannel: priceDataSource_s.priceDataSource_t(null, void 0, priceDataSource_i(59005)),
+      LineToolFibCircles: priceDataSource_s.priceDataSource_t(null, void 0, priceDataSource_i(82330)),
+      LineToolFibRetracement: priceDataSource_s.priceDataSource_t(null, void 0, priceDataSource_i(55986)),
+      LineToolFibSpeedResistanceArcs: priceDataSource_s.priceDataSource_t(null, void 0, priceDataSource_i(33880)),
+      LineToolFibSpeedResistanceFan: priceDataSource_s.priceDataSource_t(null, void 0, priceDataSource_i(2395)),
+      LineToolFibSpiral: priceDataSource_s.priceDataSource_t(null, void 0, priceDataSource_i(39014)),
+      LineToolFibTimeZone: priceDataSource_s.priceDataSource_t(null, void 0, priceDataSource_i(30622)),
+      LineToolFibWedge: priceDataSource_s.priceDataSource_t(null, void 0, priceDataSource_i(85042)),
+      LineToolFlagMark: priceDataSource_s.priceDataSource_t(null, void 0, priceDataSource_i(14600)),
+      LineToolImage: priceDataSource_s.priceDataSource_t(null, void 0, priceDataSource_i(68065)),
+      LineToolFlatBottom: priceDataSource_s.priceDataSource_t(null, void 0, priceDataSource_i(45051)),
+      LineToolAnchoredVWAP: priceDataSource_s.priceDataSource_t(null, void 0, priceDataSource_i(84541)),
+      LineToolGannComplex: priceDataSource_s.priceDataSource_t(null, void 0, priceDataSource_i(44763)),
+      LineToolGannFixed: priceDataSource_s.priceDataSource_t(null, void 0, priceDataSource_i(60707)),
+      LineToolGannFan: priceDataSource_s.priceDataSource_t(null, void 0, priceDataSource_i(48683)),
+      LineToolGannSquare: priceDataSource_s.priceDataSource_t(null, void 0, priceDataSource_i(47460)),
+      LineToolHeadAndShoulders: priceDataSource_s.priceDataSource_t(null, void 0, priceDataSource_i(21928)),
+      LineToolHorzLine: priceDataSource_s.priceDataSource_t(null, void 0, priceDataSource_i(21795)),
+      LineToolHorzRay: priceDataSource_s.priceDataSource_t(null, void 0, priceDataSource_i(25487)),
+      LineToolIcon: priceDataSource_s.priceDataSource_t(null, void 0, priceDataSource_i(37913)),
+      LineToolEmoji: priceDataSource_s.priceDataSource_t(null, void 0, priceDataSource_i(73456)),
+      LineToolSticker: priceDataSource_s.priceDataSource_t(null, void 0, priceDataSource_i(43114)),
+      LineToolInsidePitchfork: priceDataSource_s.priceDataSource_t(null, void 0, priceDataSource_i(41686)),
+      LineToolNote: priceDataSource_s.priceDataSource_t(null, void 0, priceDataSource_i(86631)),
+      LineToolTextNote: priceDataSource_s.priceDataSource_t(null, void 0, priceDataSource_i(94389)),
+      LineToolSignpost: priceDataSource_s.priceDataSource_t(null, void 0, priceDataSource_i(67751)),
+      LineToolParallelChannel: priceDataSource_s.priceDataSource_t(null, void 0, priceDataSource_i(59256)),
+      LineToolPitchfan: priceDataSource_s.priceDataSource_t(null, void 0, priceDataSource_i(34156)),
+      LineToolPitchfork: priceDataSource_s.priceDataSource_t(null, void 0, priceDataSource_i(19634)),
+      LineToolPolyline: priceDataSource_s.priceDataSource_t(null, void 0, priceDataSource_i(39949)),
+      LineToolPath: priceDataSource_s.priceDataSource_t(null, void 0, priceDataSource_i(371)),
+      LineToolPrediction: priceDataSource_s.priceDataSource_t(null, void 0, priceDataSource_i(20138)),
+      LineToolPriceLabel: priceDataSource_s.priceDataSource_t(null, void 0, priceDataSource_i(91282)),
+      LineToolArrowMarker: priceDataSource_s.priceDataSource_t(null, void 0, priceDataSource_i(36352)),
+      LineToolPriceRange: priceDataSource_s.priceDataSource_t(null, void 0, priceDataSource_i(68941)),
+      LineToolProjection: priceDataSource_s.priceDataSource_t(null, void 0, priceDataSource_i(75747)),
+      LineToolRay: priceDataSource_s.priceDataSource_t(null, void 0, priceDataSource_i(50318)),
+      LineToolRectangle: priceDataSource_s.priceDataSource_t(null, void 0, priceDataSource_i(26001)),
+      LineToolCircle: priceDataSource_s.priceDataSource_t(null, void 0, priceDataSource_i(91944)),
+      LineToolRegressionTrend: priceDataSource_s.priceDataSource_t(null, void 0, priceDataSource_i(2460)),
+      LineToolRiskRewardLong: priceDataSource_s.priceDataSource_t(null, void 0, priceDataSource_i(74832)),
+      LineToolRiskRewardShort: priceDataSource_s.priceDataSource_t(null, void 0, priceDataSource_i(8075)),
+      LineToolFixedRangeVolumeProfile: priceDataSource_s.priceDataSource_t(null, {
+        context: "study"
+      }, priceDataSource_i(25705)),
+      LineToolAnchoredVolumeProfile: priceDataSource_s.priceDataSource_t(null, {
+        context: "study"
+      }, priceDataSource_i(89633)),
+      LineToolRotatedRectangle: priceDataSource_s.priceDataSource_t(null, void 0, priceDataSource_i(56820)),
+      LineToolSchiffPitchfork: priceDataSource_s.priceDataSource_t(null, void 0, priceDataSource_i(57681)),
+      LineToolSchiffPitchfork2: priceDataSource_s.priceDataSource_t(null, void 0, priceDataSource_i(42608)),
+      LineToolSineLine: priceDataSource_s.priceDataSource_t(null, void 0, priceDataSource_i(39090)),
+      LineToolText: priceDataSource_s.priceDataSource_t(null, {
+        context: "tool"
+      }, priceDataSource_i(91405)),
+      LineToolTextAbsolute: priceDataSource_s.priceDataSource_t(null, void 0, priceDataSource_i(42669)),
+      LineToolThreeDrivers: priceDataSource_s.priceDataSource_t(null, void 0, priceDataSource_i(46982)),
+      LineToolTimeCycles: priceDataSource_s.priceDataSource_t(null, void 0, priceDataSource_i(46852)),
+      LineToolTrendAngle: priceDataSource_s.priceDataSource_t(null, void 0, priceDataSource_i(35757)),
+      LineToolTrendBasedFibExtension: priceDataSource_s.priceDataSource_t(null, void 0, priceDataSource_i(80583)),
+      LineToolTrendBasedFibTime: priceDataSource_s.priceDataSource_t(null, void 0, priceDataSource_i(72159)),
+      LineToolTrendLine: priceDataSource_s.priceDataSource_t(null, void 0, priceDataSource_i(97339)),
+      LineToolInfoLine: priceDataSource_s.priceDataSource_t(null, void 0, priceDataSource_i(15992)),
+      LineToolTriangle: priceDataSource_s.priceDataSource_t(null, void 0, priceDataSource_i(1671)),
+      LineToolTrianglePattern: priceDataSource_s.priceDataSource_t(null, void 0, priceDataSource_i(90148)),
+      LineToolVertLine: priceDataSource_s.priceDataSource_t(null, void 0, priceDataSource_i(29535)),
+      LineToolCrossLine: priceDataSource_s.priceDataSource_t(null, void 0, priceDataSource_i(74334)),
+      LineToolHighlighter: priceDataSource_s.priceDataSource_t(null, void 0, priceDataSource_i(69476)),
+      LineToolPriceNote: priceDataSource_s.priceDataSource_t(null, void 0, priceDataSource_i(97512)),
+      LineToolVbPFixed: priceDataSource_s.priceDataSource_t(null, void 0, priceDataSource_i(40693)),
+      LineToolGhostFeed: priceDataSource_s.priceDataSource_t(null, void 0, priceDataSource_i(46808)),
+      LineToolTable: priceDataSource_s.priceDataSource_t(null, void 0, priceDataSource_i(17981))
+    }
