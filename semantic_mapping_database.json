@@ -1,0 +1,273 @@
+{
+  "version": "1.0.0",
+  "generated": "2026-05-07",
+  "description": "Semantic mapping database for Tier B remediation - mechanical prefixes to semantic names",
+  "total_modules": 180,
+  "processed_modules": 1,
+  "categories": {
+    "drawing_tools": {
+      "description": "Line drawing tools, Elliott waves, shapes",
+      "modules": ["10544", "41414", "24437"],
+      "tier_a_reference": "41414-line-drawing-source.js",
+      "mechanical_prefixes": ["watchedValue_", "series_"],
+      "variable_mappings": {
+        "module_parameters": {
+          "watchedValue_e": {
+            "semantic_name": "chartModel",
+            "type": "ChartModel",
+            "confidence": 95,
+            "evidence": [".backgroundTheme()", ".spawnOwnership()", ".updateSource()"],
+            "alternative_names": ["drawingController", "lineTool", "dataSource"]
+          },
+          "watchedValue_t": {
+            "semantic_name": "properties",
+            "type": "Property|DefaultProperty",
+            "confidence": 90,
+            "evidence": [".createProperties()", ".childs()", ".value()"],
+            "alternative_names": ["model", "state"]
+          },
+          "watchedValue_i": {
+            "semantic_name": "moduleRequire",
+            "type": "function",
+            "confidence": 100,
+            "evidence": ["i(11542)", "i.d()", "i.r()"],
+            "alternative_names": ["require"]
+          }
+        },
+        "common_imports": {
+          "watchedValue_n": {
+            "semantic_name": "i18n",
+            "module_id": "11542",
+            "type": "TranslationModule",
+            "confidence": 100,
+            "evidence": [".t()", "translated strings"]
+          },
+          "watchedValue_s": {
+            "semantic_name": "ElliottDegree",
+            "type": "enum",
+            "confidence": 95,
+            "evidence": ["Supermillennium", "Millennium", "Cycle"]
+          },
+          "r": {
+            "semantic_name": "TranslatedString",
+            "module_id": "95804",
+            "type": "class",
+            "confidence": 90,
+            "evidence": ["new r.TranslatedString()"]
+          },
+          "a": {
+            "semantic_name": "LineDataSource",
+            "module_id": "41414",
+            "type": "class",
+            "confidence": 100,
+            "evidence": ["extends a.LineDataSource"]
+          }
+        },
+        "method_parameters": {
+          "constructor_watchedValue_e": {
+            "semantic_name": "chartModel",
+            "context": "LineToolElliott constructor",
+            "confidence": 95
+          },
+          "constructor_t": {
+            "semantic_name": "properties",
+            "context": "LineToolElliott constructor",
+            "confidence": 90
+          },
+          "migrateVersion_watchedValue_e": {
+            "semantic_name": "fromVersion",
+            "context": "migrateVersion method",
+            "confidence": 95
+          },
+          "label_watchedValue_e": {
+            "semantic_name": "waveIndex",
+            "context": "label method",
+            "confidence": 90
+          }
+        }
+      }
+    },
+    "chart_rendering": {
+      "description": "Canvas rendering, step lines, price axis",
+      "modules": ["60876", "33350", "36281"],
+      "tier_a_reference": "60876-step-line-renderer.js",
+      "mechanical_prefixes": ["watchedValue_"],
+      "variable_mappings": {
+        "module_parameters": {
+          "watchedValue_e": {
+            "semantic_name": "renderer",
+            "type": "Renderer",
+            "confidence": 90,
+            "evidence": [".render()", ".graphics()", ".context()"]
+          },
+          "watchedValue_t": {
+            "semantic_name": "graphics",
+            "type": "Graphics",
+            "confidence": 90,
+            "evidence": [".drawLine()", ".fill()", ".stroke()"]
+          },
+          "watchedValue_i": {
+            "semantic_name": "moduleRequire",
+            "type": "function",
+            "confidence": 100
+          }
+        },
+        "common_variables": {
+          "watchedValue_o": {
+            "semantic_name": "context",
+            "type": "CanvasRenderingContext2D",
+            "confidence": 85
+          },
+          "watchedValue_n": {
+            "semantic_name": "index",
+            "type": "number",
+            "confidence": 80
+          }
+        }
+      }
+    },
+    "properties_config": {
+      "description": "Property definitions, themes, configuration",
+      "modules": ["59064", "60973", "49156"],
+      "tier_a_reference": "59064-series-properties-partial.js",
+      "mechanical_prefixes": ["property_", "config_"],
+      "variable_mappings": {
+        "module_parameters": {
+          "property_e": {
+            "semantic_name": "property",
+            "type": "Property",
+            "confidence": 95
+          },
+          "property_t": {
+            "semantic_name": "series",
+            "type": "Series",
+            "confidence": 90
+          }
+        }
+      }
+    },
+    "indicators_math": {
+      "description": "Technical indicators, mathematical operations",
+      "modules": ["4783", "19979"],
+      "tier_a_reference": "4783-indicators.js",
+      "mechanical_prefixes": ["study_", "indicator_"],
+      "variable_mappings": {
+        "module_parameters": {
+          "study_e": {
+            "semantic_name": "stdLib",
+            "type": "StdLibrary",
+            "confidence": 95,
+            "evidence": [".close()", ".ema()", ".rsi()", ".sma()"]
+          },
+          "study_t": {
+            "semantic_name": "context",
+            "type": "StudyContext",
+            "confidence": 90
+          }
+        }
+      }
+    },
+    "ui_components": {
+      "description": "Status views, legends, data windows",
+      "modules": ["2115", "13651"],
+      "tier_a_reference": "2115-series.js",
+      "mechanical_prefixes": ["status_", "view_"],
+      "variable_mappings": {
+        "module_parameters": {
+          "status_e": {
+            "semantic_name": "series",
+            "type": "Series",
+            "confidence": 95
+          },
+          "status_t": {
+            "semantic_name": "statusViewProperties",
+            "type": "StatusViewProperties",
+            "confidence": 90
+          }
+        }
+      }
+    },
+    "utilities": {
+      "description": "Helper utilities, formatting, color utils",
+      "modules": ["11542", "95059", "30342"],
+      "tier_a_reference": "49156-colors-partial.js",
+      "mechanical_prefixes": ["util_", "helper_"],
+      "variable_mappings": {
+        "module_parameters": {
+          "util_e": {
+            "semantic_name": "color",
+            "type": "string|Color",
+            "confidence": 85
+          },
+          "util_t": {
+            "semantic_name": "opacity",
+            "type": "number",
+            "confidence": 80
+          }
+        }
+      }
+    }
+  },
+  "module_entries": {
+    "10544": {
+      "file": "10544-elliott-wave-tools.js",
+      "category": "drawing_tools",
+      "mechanical_prefix": "watchedValue_",
+      "tier_a_reference": "41414-line-drawing-source.js",
+      "confidence_score": 95,
+      "status": "completed",
+      "processed_date": "2026-05-07",
+      "semantic_classes": {
+        "m": "LineToolElliottBase",
+        "g": "LineToolElliott6Point",
+        "y": "LineToolElliottImpulse",
+        "S": "LineToolElliottTriangle",
+        "w": "LineToolElliottTripleCombo",
+        "C": "LineToolElliott4Point",
+        "P": "LineToolElliottCorrection",
+        "M": "LineToolElliottDoubleCombo"
+      },
+      "semantic_variables": {
+        "watchedValue_e": {
+          "module_param": "chartModel",
+          "method_params": {
+            "constructor": "chartModel",
+            "migrateVersion": "fromVersion",
+            "applyTemplate": "template",
+            "additionalActions": "actionDispatcher",
+            "label": "waveIndex",
+            "createProperties": "theme",
+            "migrateState": "state"
+          }
+        },
+        "watchedValue_n": "i18n",
+        "watchedValue_s": "ElliottDegree",
+        "u": "allDegreeValues",
+        "_": "changeDegreeUndoText",
+        "p": "degreeOptions",
+        "f": "impulseLabels",
+        "v": "triangleLabels",
+        "b": "tripleComboLabels",
+        "T": "correctionLabels",
+        "x": "doubleComboLabels"
+      },
+      "evidence_urls": [
+        "renamed-modules/41414-line-drawing-source.js"
+      ]
+    }
+  },
+  "confidence_thresholds": {
+    "auto_remediate": 90,
+    "semi_automated": 70,
+    "manual_review": 0
+  },
+  "statistics": {
+    "total_mechanical_patterns": 6086,
+    "processed": 1,
+    "remaining": 179,
+    "high_confidence": 1,
+    "medium_confidence": 0,
+    "low_confidence": 0,
+    "flagged_for_review": 0
+  }
+}

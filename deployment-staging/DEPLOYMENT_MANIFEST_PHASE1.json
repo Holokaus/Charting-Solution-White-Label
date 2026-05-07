@@ -1,0 +1,221 @@
+{
+  "deployment_id": "TIER_A_PHASE1_1778151375495",
+  "timestamp": "2026-05-07T10:56:15.497Z",
+  "phase": "Phase 1 - Initial Deployment",
+  "modules_count": 41,
+  "modules": [
+    {
+      "filename": "1457-copy-icon.js",
+      "status": "READY_FOR_DEPLOYMENT",
+      "size_kb": "1.04"
+    },
+    {
+      "filename": "1866-tv-logo-svg.js",
+      "status": "READY_FOR_DEPLOYMENT",
+      "size_kb": "3.93"
+    },
+    {
+      "filename": "2072-watched-value.js",
+      "status": "READY_FOR_DEPLOYMENT",
+      "size_kb": "8.82"
+    },
+    {
+      "filename": "2088-study-factory.js",
+      "status": "READY_FOR_DEPLOYMENT",
+      "size_kb": "11.08"
+    },
+    {
+      "filename": "2258-study-stub.js",
+      "status": "READY_FOR_DEPLOYMENT",
+      "size_kb": "12.85"
+    },
+    {
+      "filename": "2383-hit-test-result.js",
+      "status": "READY_FOR_DEPLOYMENT",
+      "size_kb": "7.93"
+    },
+    {
+      "filename": "2433-light-theme.js",
+      "status": "READY_FOR_DEPLOYMENT",
+      "size_kb": "11.68"
+    },
+    {
+      "filename": "2872-lock-icon.js",
+      "status": "READY_FOR_DEPLOYMENT",
+      "size_kb": "1.10"
+    },
+    {
+      "filename": "3186-graphics-list-collection.js",
+      "status": "READY_FOR_DEPLOYMENT",
+      "size_kb": "4.43"
+    },
+    {
+      "filename": "3190-time-hours-format.js",
+      "status": "READY_FOR_DEPLOYMENT",
+      "size_kb": "2.64"
+    },
+    {
+      "filename": "3343-keyboard-modifiers.js",
+      "status": "READY_FOR_DEPLOYMENT",
+      "size_kb": "5.43"
+    },
+    {
+      "filename": "3354-chart-layouts.js",
+      "status": "READY_FOR_DEPLOYMENT",
+      "size_kb": "4.31"
+    },
+    {
+      "filename": "3615-dialog-utilities.js",
+      "status": "READY_FOR_DEPLOYMENT",
+      "size_kb": "5.61"
+    },
+    {
+      "filename": "3618-input-title-translations.js",
+      "status": "READY_FOR_DEPLOYMENT",
+      "size_kb": "1.15"
+    },
+    {
+      "filename": "3885-series-values-provider.js",
+      "status": "READY_FOR_DEPLOYMENT",
+      "size_kb": "13.50"
+    },
+    {
+      "filename": "10307-bitmap-coordinates-pane-renderer.js",
+      "status": "READY_FOR_DEPLOYMENT",
+      "size_kb": "4.24"
+    },
+    {
+      "filename": "10341-too-many-studies-notice.js",
+      "status": "READY_FOR_DEPLOYMENT",
+      "size_kb": "4.61"
+    },
+    {
+      "filename": "10544-elliott-wave-tools.js",
+      "status": "READY_FOR_DEPLOYMENT",
+      "size_kb": "26.47"
+    },
+    {
+      "filename": "10845-timezone-utilities.js",
+      "status": "READY_FOR_DEPLOYMENT",
+      "size_kb": "14.73"
+    },
+    {
+      "filename": "10980-image-upload-utils.js",
+      "status": "READY_FOR_DEPLOYMENT",
+      "size_kb": "5.18"
+    },
+    {
+      "filename": "10980-time-scale-utils.js",
+      "status": "READY_FOR_DEPLOYMENT",
+      "size_kb": "5.81"
+    },
+    {
+      "filename": "11063-drawing-tool-properties.js",
+      "status": "READY_FOR_DEPLOYMENT",
+      "size_kb": "7.67"
+    },
+    {
+      "filename": "11245-symbol-search-source.js",
+      "status": "READY_FOR_DEPLOYMENT",
+      "size_kb": "7.75"
+    },
+    {
+      "filename": "11388-chart-event-dispatcher.js",
+      "status": "READY_FOR_DEPLOYMENT",
+      "size_kb": "7.91"
+    },
+    {
+      "filename": "11502-pane-manager.js",
+      "status": "READY_FOR_DEPLOYMENT",
+      "size_kb": "9.78"
+    },
+    {
+      "filename": "13896-line-tools-constants.js",
+      "status": "READY_FOR_DEPLOYMENT",
+      "size_kb": "0.65"
+    },
+    {
+      "filename": "14411-chart-changes-watcher.js",
+      "status": "READY_FOR_DEPLOYMENT",
+      "size_kb": "3.63"
+    },
+    {
+      "filename": "14881-hide-state-change.js",
+      "status": "READY_FOR_DEPLOYMENT",
+      "size_kb": "1.77"
+    },
+    {
+      "filename": "15219-study-versioning.js",
+      "status": "READY_FOR_DEPLOYMENT",
+      "size_kb": "2.39"
+    },
+    {
+      "filename": "16329-sessions-spec.js",
+      "status": "READY_FOR_DEPLOYMENT",
+      "size_kb": "2.50"
+    },
+    {
+      "filename": "32399-series-line-pane-view.js",
+      "status": "READY_FOR_DEPLOYMENT",
+      "size_kb": "4.09"
+    },
+    {
+      "filename": "32925-fetch-wrapper.js",
+      "status": "READY_FOR_DEPLOYMENT",
+      "size_kb": "1.22"
+    },
+    {
+      "filename": "33505-series-base-renderer.js",
+      "status": "READY_FOR_DEPLOYMENT",
+      "size_kb": "4.07"
+    },
+    {
+      "filename": "43501-baseline-pane-view.js",
+      "status": "READY_FOR_DEPLOYMENT",
+      "size_kb": "15.99"
+    },
+    {
+      "filename": "48096-delegate.js",
+      "status": "READY_FOR_DEPLOYMENT",
+      "size_kb": "3.76"
+    },
+    {
+      "filename": "50151-assertion-utils.js",
+      "status": "READY_FOR_DEPLOYMENT",
+      "size_kb": "2.25"
+    },
+    {
+      "filename": "52746-series-data.js",
+      "status": "READY_FOR_DEPLOYMENT",
+      "size_kb": "11.03"
+    },
+    {
+      "filename": "67135-price-data-source.js",
+      "status": "READY_FOR_DEPLOYMENT",
+      "size_kb": "9.95"
+    },
+    {
+      "filename": "72187-plot-list.js",
+      "status": "READY_FOR_DEPLOYMENT",
+      "size_kb": "15.79"
+    },
+    {
+      "filename": "72207-data-source.js",
+      "status": "READY_FOR_DEPLOYMENT",
+      "size_kb": "16.15"
+    },
+    {
+      "filename": "86228-rectangle-renderer.js",
+      "status": "READY_FOR_DEPLOYMENT",
+      "size_kb": "10.57"
+    }
+  ],
+  "total_size_kb": "295.45",
+  "instructions": [
+    "1. Extract deployment-staging folder contents",
+    "2. Run smoke tests on all 41 modules",
+    "3. Deploy to production",
+    "4. Monitor for any issues",
+    "5. Alert if any failures occur"
+  ]
+}

@@ -119,41 +119,50 @@
 // Size: 38.9 KB
 // Purpose: Auto-extracted webpack module from TradingView library
 
-(e, t, i) => {
-  "use strict";
-  i.d(t, {
-    LineDataSource: () => U,
-    changePointUndoText: () => z
-  });
-  const geometryUtils = require(89880),
-    undoManager = require(10555),
-    assertionUtils = require(50151),
-    objectUtils = require(87465),
-    globalEmitter = require(76422),
-    loggerModule = require(9343),
-    featureFlags = require(37103),
-    coordConverter = require(32955),
-    hitTestConstants = require(99955),
-    lineToolTypes = require(48943),
-    delegateEvent = require(48096),
-    priceScaleUtils = require(58043),
-    timeScaleUtils = require(22613),
-    pointSearch = require(51304),
-    mathHelpers = require(12178),
-    selectionUtils = require(81922),
-    snapConstants = require(37293),
-    symbolUtils = require(95059),
-    propertyInterfaces = require(36597),
-    lineProperties = require(46082),
-    propertyModule = require(43337),
-    textRendering = require(78861),
-    graphicsContext = require(72207),
-    canvasHelpers = require(97719),
-    renderState = require(40472),
-    interactionModes = require(22455),
-    toolOptions = require(95804),
-    validationHelpers = require(75550);
-  class PointProperty extends propertyModule.Property {
+"use strict";
+
+const geometryUtils = require(89880);
+const undoManager = require(10555);
+const assertionUtils = require(50151);
+const objectUtils = require(87465);
+const globalEmitter = require(76422);
+const loggerModule = require(9343);
+const featureFlags = require(37103);
+const coordConverter = require(32955);
+const hitTestConstants = require(99955);
+const lineToolTypes = require(48943);
+const delegateEvent = require(48096);
+const priceScaleUtils = require(58043);
+const timeScaleUtils = require(22613);
+const pointSearch = require(51304);
+const mathHelpers = require(12178);
+const selectionUtils = require(81922);
+const snapConstants = require(37293);
+const symbolUtils = require(95059);
+const propertyInterfaces = require(36597);
+const lineProperties = require(46082);
+const propertyModule = require(43337);
+const textRendering = require(78861);
+const graphicsContext = require(72207);
+const canvasHelpers = require(97719);
+const renderState = require(40472);
+const interactionModes = require(22455);
+const toolOptions = require(95804);
+const validationHelpers = require(75550);
+
+// Additional imports
+const E = require(79740);
+const D = require(47432);
+const B = require(65045);
+const V = require(56876);
+const R = require(60973);
+const N = require(76559);
+const A = require(76660); // Translation module
+
+const logger = loggerModule.getLogger("Chart.LineDataSource");
+const copyPasteEnabled = featureFlags.enabled("datasource_copypaste");
+
+class PointProperty extends propertyModule.Property {
     constructor(e, t) {
       super(), this._lineSource = e, this._pointIndex = t, e.pointAdded()
         .subscribe(this, (e => {
@@ -183,15 +192,7 @@
       this._lineSource.syncMultichartState(i)
     }
   }
-  var E = i(79740),
-    D = i(47432),
-    B = i(65045),
-    V = i(56876),
-    R = i(60973),
-    N = i(76559);
-  const O = (0, l.getLogger)("Chart.LineDataSource"),
-    F = c.enabled("datasource_copypaste");
-  class W {
+class ChangeStateStack {
     constructor() {
       this._states = []
     }
@@ -199,7 +200,7 @@
       this._states.push(e)
     }
     finish(e) {
-      const t = (0, n.ensureDefined)(this._states.pop());
+      const t = assertionUtils.ensureDefined(this._states.pop());
       return s = t, (i = e)
         .length !== s.length ? {
           indexesChanged: !0,
@@ -217,10 +218,10 @@
     isEmpty() {
       return 0 === this._states.length
     }
-  }
-  let H = 0;
-  const z = new A.TranslatedString("change point", s.t(null, void 0, i(76660)));
-  class U extends P.DataSource {
+}
+let instanceCounter = 0;
+const changePointUndoText = new A.TranslatedString("change point", A.t(null, void 0, 76660));
+class LineDataSource extends propertyModule.DataSource {
     constructor(e, t, i, s) {
       if (super(s), this.isLineTool = !0, this.version = 1, this.toolname = "", this.customization = {
           forcePriceAxisLabel: !1,
@@ -292,10 +293,10 @@
     priceScale() {
       return this._ownerSource ? this._ownerSource.priceScale() : null
     }
-    createPriceAxisView(e) {
-      return new D.LineToolPriceAxisView(this, {
-        pointIndex: e
-      })
+    createPriceAxisView(pointIndex) {
+        return new D.LineToolPriceAxisView(this, {
+          pointIndex: pointIndex
+        })
     }
     model() {
       return this._model
@@ -1578,7 +1579,7 @@
           return void(await getChartAlertsFacade())
             .removeAlertFromAllChartsSilently(this.id(), (0, n.ensureDefined)(this._alertId))
         }
-        O.logError("Failed to set alert, alert will not be saved with drawing in chart")
+        logger.logError("Failed to set alert, alert will not be saved with drawing in chart")
       }
     }
     async _awaitForPointset() {
@@ -1601,4 +1602,9 @@
 
 
 // Export for module system
-module.exports = { LineDataSource, changePointUndoText };
+module.exports = {
+    LineDataSource: LineDataSource,
+    changePointUndoText: changePointUndoText,
+    PointProperty: PointProperty,
+    ChangeStateStack: ChangeStateStack
+};

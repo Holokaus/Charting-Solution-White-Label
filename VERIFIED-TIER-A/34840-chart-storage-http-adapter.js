@@ -1,354 +1,617 @@
 /**
  * Module 34840 - Chart Storage HTTP Adapter
- * 
+ *
  * HTTP adapter for chart storage operations including save/load charts,
  * study templates, drawing templates, layouts, and themes.
  * Supports both custom adapters and direct HTTP API calls.
- * 
+ *
  * @module 34840-chart-storage-http
  * @see NETWORK_LAYER_ANALYSIS_COMPLETE.md for architecture details
  */
 
 "use strict";
-i.r(t), i.d(t, {
-  favorStandardStudyTemplate: () => E,
-  favorStudyTemplate: () => k,
-  getChartContent: () => C,
-  getCharts: () => S,
-  getChartsCount: () => v,
-  getCustomAdapter: () => g,
-  getDrawingTemplates: () => R,
-  getStandardStudyTemplateById: () => D,
-  getStorageURL: () => p,
-  getStudyTemplateById: () => M,
-  getStudyTemplatesList: () => A,
-  initialize: () => f,
-  invalidateStudyTemplatesList: () => L,
-  isThemeExist: () => j,
-  loadDrawingTemplate: () => N,
-  loadLayout: () => T,
-  loadTheme: () => W,
-  loadThemes: () => H,
-  openLayoutLink: () => P,
-  removeChart: () => b,
-  removeDrawingTemplate: () => O,
-  removeStudyTemplate: () => x,
-  removeTheme: () => U,
-  renameStudyTemplate: () => B,
-  replaceStudyTemplate: () => V,
-  saveChart: () => w,
-  saveDrawingTemplate: () => F,
-  saveStudyTemplate: () => I,
-  saveTheme: () => z,
-  setCustomAdapter: () => m,
-  updateUser: () => y
-});
-var s = i(9343),
-  o = i(39058),
-  n = i(1765);
-const r = (0, s.getLogger)("Chart.SaveloadAdapter.Library"),
-  a = {
-    error: ""
-  };
-let l, c, h, d, u = null,
-  _ = null;
 
-function p(e) {
-  return `${h}/${encodeURIComponent(d)}/${e}?client=${encodeURIComponent(l)}&user=${encodeURIComponent(c)}`
+// Module dependencies
+const loggerModule = require("./9343-logger");
+const errorUtils = require("./39058-error-utils");
+const settingsAdapter = require("./1765-settings-adapter");
+
+// Initialize logger
+const logger = loggerModule.getLogger("Chart.SaveloadAdapter.Library");
+
+// Default response object
+const defaultResponse = { error: "" };
+
+// Configuration variables
+let clientId, userId, baseUrl, chartIdentifier, customAdapter = null;
+let cachedStudyTemplates = null;
+
+/**
+ * Builds the storage URL for a given endpoint
+ * @param {string} endpoint - The API endpoint
+ * @returns {string} The complete URL
+ */
+function buildStorageUrl(endpoint) {
+  return `${baseUrl}/${encodeURIComponent(chartIdentifier)}/${endpoint}?client=${encodeURIComponent(clientId)}&user=${encodeURIComponent(userId)}`
 }
 
-function m(e) {
-  u = e
+/**
+ * Sets the custom adapter for storage operations
+ * @param {Object} adapter - The custom adapter instance
+ */
+function setCustomAdapter(adapter) {
+  customAdapter = adapter
 }
 
-function g() {
-  return u
+/**
+ * Gets the current custom adapter
+ * @returns {Object|null} The custom adapter or null
+ */
+function getCustomAdapter() {
+  return customAdapter
 }
 
-function f(e, t, i, s) {
-  l = e, c = t, h = i, d = s
+/**
+ * Initializes the storage adapter with configuration
+ * @param {string} client - Client identifier
+ * @param {string} user - User identifier
+ * @param {string} url - Base API URL
+ * @param {string} chart - Chart identifier
+ */
+function initializeStorage(client, user, url, chart) {
+  clientId = client;
+  userId = user;
+  baseUrl = url;
+  chartIdentifier = chart
 }
 
-function y(e) {
-  c = e
+/**
+ * Updates the user identifier
+ * @param {string} user - New user identifier
+ */
+function updateUser(user) {
+  userId = user
 }
 
-function v(e, t) {
+/**
+ * Gets the count of charts (not implemented)
+ * @throws {Error} Always throws not implemented error
+ */
+function getChartsCount() {
   throw new Error("Not implemented")
 }
-async function S() {
-  const e = e => e.map((e => ({
-    id: e.id,
-    name: e.name,
-    image_url: String(e.id),
-    modified_iso: e.timestamp,
-    short_symbol: e.symbol,
-    interval: e.resolution
-  })));
-  if (u) return u.getAllCharts().then(e);
+/**
+ * Fetches all charts for the current user
+ * @returns {Promise<Array>} Array of chart metadata
+ */
+async function fetchAllCharts() {
+  const transformChartData = (chartData) => chartData.map((chart) => ({
+    id: chart.id,
+    name: chart.name,
+    image_url: String(chart.id),
+    modified_iso: chart.timestamp,
+    short_symbol: chart.symbol,
+    interval: chart.resolution
+  }));
+
+  if (customAdapter) {
+    return customAdapter.getAllCharts().then(transformChartData);
+  }
+
   try {
-    const t = await fetch(`${p("charts")}`, {
+    const response = await fetch(buildStorageUrl("charts"), {
       credentials: "same-origin"
     });
-    if (!t.ok) throw new Error(`Getting chart content response was not OK. Status: ${t.status}.`);
-    const i = await t.json();
-    if ("ok" !== i.status) throw new Error("Get chart content request failed: " + i.message);
-    return e(i.data)
-  } catch (e) {
-    throw r.logWarn((0, o.errorToString)(e)), e
-  }
-}
-async function b(e) {
-  if (u) return u.removeChart(e);
-  try {
-    const t = await fetch(`${p("charts")}&chart=${encodeURIComponent(e)}`, {
-      method: "DELETE",
-      credentials: "same-origin"
-    });
-    if (!t.ok) throw new Error(`Remove chart response was not OK. Status: ${t.status}.`);
-    const i = await t.json();
-    if ("ok" !== i.status) throw new Error("Remove drawing template request failed: " + i.message)
-  } catch (e) {
-    throw r.logWarn((0, o.errorToString)(e)), e
-  }
-}
-async function w(e, t, i, s, n) {
-  const a = n.id,
-    l = {
-      name: e,
-      content: JSON.stringify(s),
-      symbol: t,
-      resolution: i
-    };
-  try {
-    if (u) {
-      return {
-        result: await u.saveChart({
-          ...l,
-          id: a,
-          timestamp: Math.round(Date.now() / 1e3)
-        })
-      }
+    if (!response.ok) {
+      throw new Error(`Getting chart content response was not OK. Status: ${response.status}.`);
     }
-    const e = new FormData;
-    for (const t in l) e.append(t, l[t]);
-    let t = p("charts");
-    null != a && (t += `&chart=${encodeURIComponent(a)}`);
-    const i = await fetch(t, {
-      credentials: "same-origin",
-      method: "POST",
-      body: e
-    });
-    if (!i.ok) throw new Error(`Saving chart content response was not OK. Status: ${i.status}.`);
-    const s = await i.json();
-    if ("ok" !== s.status) throw new Error("Saving chart content request failed: " + s.message);
-    return {
-      result: (s.id ?? a).toString(),
-      response: i
+    const data = await response.json();
+    if (data.status !== "ok") {
+      throw new Error("Get chart content request failed: " + data.message);
     }
-  } catch (e) {
-    throw r.logWarn((0, o.errorToString)(e)), e
-  }
-}
-async function C(e) {
-  const t = t => {
-    const i = JSON.parse(t);
-    return i.uid = e.id, i
-  };
-  if (u) return u.getChartContent(e.id).then((e => t(e)));
-  try {
-    const i = await fetch(`${p("charts")}&chart=${encodeURIComponent(e.id)}`, {
-      credentials: "same-origin"
-    });
-    if (!i.ok) throw new Error(`Getting chart content response was not OK. Status: ${i.status}.`);
-    const s = await i.json();
-    if ("ok" !== s.status) throw new Error("Get chart content request failed: " + s.message);
-    return t(s.data.content)
-  } catch (e) {
-    throw r.logWarn((0, o.errorToString)(e)), e
-  }
-}
-async function T(e) {
-  try {
-    return {
-      chartWidgetCollectionState: await C(e),
-      description: e.name,
-      id: e.id,
-      lastModified: e.modified_iso,
-      name: e.name,
-      uid: e.url,
-      username: "",
-      isPrivate: !0
-    }
-  } catch (e) {
-    throw r.logWarn("Error loading chart"), e
+    return transformChartData(data.data);
+  } catch (error) {
+    logger.logWarn(errorUtils.errorToString(error));
+    throw error;
   }
 }
 
-function P(e, t) {
-  throw new Error("Opening layout link is not supported")
-}
-async function x(e) {
+/**
+ * Removes a chart by ID
+ * @param {string} chartId - The chart identifier to remove
+ */
+async function removeChart(chartId) {
+  if (customAdapter) {
+    return customAdapter.removeChart(chartId);
+  }
   try {
-    const t = G().filter((t => t !== e));
-    if (u) return q(t), u.removeStudyTemplate({
-      name: e
-    });
-    const i = await fetch(`${p("study_templates")}&template=${encodeURIComponent(e)}`, {
+    const response = await fetch(buildStorageUrl("charts") + "&chart=" + encodeURIComponent(chartId), {
       method: "DELETE",
       credentials: "same-origin"
     });
-    if (!i.ok) throw new Error(`Remove study template response was not OK. Status: ${i.status}.`);
-    const s = await i.json();
-    if ("ok" !== s.status) throw new Error("Remove study template request failed: " + s.message);
-    q(t)
-  } catch (e) {
-    throw r.logWarn((0, o.errorToString)(e)), e
+    if (!response.ok) {
+      throw new Error(`Remove chart response was not OK. Status: ${response.status}.`);
+    }
+    const data = await response.json();
+    if (data.status !== "ok") {
+      throw new Error("Remove drawing template request failed: " + data.message);
+    }
+  } catch (error) {
+    logger.logWarn(errorUtils.errorToString(error));
+    throw error;
   }
 }
-async function M(e) {
+
+/**
+ * Saves a chart with the given parameters
+ * @param {string} name - Chart name
+ * @param {string} symbol - Trading symbol
+ * @param {string} resolution - Chart resolution
+ * @param {Object} content - Chart content data
+ * @param {Object} options - Save options including id
+ * @returns {Promise<Object>} Save result
+ */
+async function saveChart(name, symbol, resolution, content, options) {
+  const chartId = options.id;
+  const chartData = {
+    name: name,
+    content: JSON.stringify(content),
+    symbol: symbol,
+    resolution: resolution
+  };
+
   try {
-    if (u) {
+    if (customAdapter) {
       return {
-        content: await u.getStudyTemplateContent({
-          name: e
+        result: await customAdapter.saveChart({
+          ...chartData,
+          id: chartId,
+          timestamp: Math.round(Date.now() / 1000)
         })
-      }
+      };
     }
-    const t = await fetch(`${p("study_templates")}&template=${encodeURIComponent(e)}`, {
-      credentials: "same-origin"
-    });
-    if (!t.ok) throw new Error(`Get study template response was not OK. Status: ${t.status}.`);
-    const i = await t.json();
-    if ("ok" !== i.status) throw new Error("Get study template request failed: " + i.message);
-    return i.data
-  } catch (e) {
-    throw r.logWarn((0, o.errorToString)(e)), e
-  }
-}
-async function I(e) {
-  try {
-    if (u) return u.saveStudyTemplate(e).then((() => ({
-      error: ""
-    }))).catch((e => ({
-      error: null != e ? (0, o.errorToString)(e) : "error"
-    })));
-    const t = new FormData;
-    t.append("name", e.name), t.append("content", e.content);
-    const i = await fetch(p("study_templates"), {
+
+    const formData = new FormData();
+    for (const key in chartData) {
+      formData.append(key, chartData[key]);
+    }
+
+    let url = buildStorageUrl("charts");
+    if (chartId != null) {
+      url += "&chart=" + encodeURIComponent(chartId);
+    }
+
+    const response = await fetch(url, {
+      credentials: "same-origin",
       method: "POST",
-      body: t,
-      credentials: "same-origin"
+      body: formData
     });
-    if (!i.ok) throw new Error(`Save study template response was not OK. Status: ${i.status}.`);
-    const s = await i.json();
-    return {
-      error: "ok" === s.status ? "" : s.status
+
+    if (!response.ok) {
+      throw new Error(`Saving chart content response was not OK. Status: ${response.status}.`);
     }
-  } catch (e) {
-    throw r.logWarn((0, o.errorToString)(e)), e
+
+    const result = await response.json();
+    if (result.status !== "ok") {
+      throw new Error("Saving chart content request failed: " + result.message);
+    }
+
+    return {
+      result: (result.id !== null && result.id !== undefined ? result.id : chartId).toString(),
+      response: response
+    };
+  } catch (error) {
+    logger.logWarn(errorUtils.errorToString(error));
+    throw error;
   }
 }
-async function A() {
+
+/**
+ * Gets chart content by ID
+ * @param {Object} chartInfo - Chart information object
+ * @param {string} chartInfo.id - Chart identifier
+ * @returns {Promise<Object>} Chart content
+ */
+async function getChartContent(chartInfo) {
+  const parseContent = (content) => {
+    const parsed = JSON.parse(content);
+    parsed.uid = chartInfo.id;
+    return parsed;
+  };
+
+  if (customAdapter) {
+    return customAdapter.getChartContent(chartInfo.id).then((content) => parseContent(content));
+  }
+
   try {
-    if (_) return _;
-    _ = [];
-    const e = e => (_ = e.map((e => {
-      const t = G().indexOf(e.name);
+    const response = await fetch(buildStorageUrl("charts") + "&chart=" + encodeURIComponent(chartInfo.id), {
+      credentials: "same-origin"
+    });
+    if (!response.ok) {
+      throw new Error(`Getting chart content response was not OK. Status: ${response.status}.`);
+    }
+    const data = await response.json();
+    if (data.status !== "ok") {
+      throw new Error("Get chart content request failed: " + data.message);
+    }
+    return parseContent(data.data.content);
+  } catch (error) {
+    logger.logWarn(errorUtils.errorToString(error));
+    throw error;
+  }
+}
+
+/**
+ * Loads a layout by chart info
+ * @param {Object} chartInfo - Chart information
+ * @returns {Promise<Object>} Layout data
+ */
+async function loadLayout(chartInfo) {
+  try {
+    return {
+      chartWidgetCollectionState: await getChartContent(chartInfo),
+      description: chartInfo.name,
+      id: chartInfo.id,
+      lastModified: chartInfo.modified_iso,
+      name: chartInfo.name,
+      uid: chartInfo.url,
+      username: "",
+      isPrivate: true
+    };
+  } catch (error) {
+    logger.logWarn("Error loading chart");
+    throw error;
+  }
+}
+
+/**
+ * Opens a layout link (not implemented)
+ * @throws {Error} Always throws not implemented error
+ */
+function openLayoutLink() {
+  throw new Error("Opening layout link is not supported")
+}
+/**
+ * Removes a study template
+ * @param {string} templateName - Name of the template to remove
+ */
+async function removeStudyTemplate(templateName) {
+  try {
+    const updatedTemplates = getQuickTemplates().filter((name) => name !== templateName);
+    if (customAdapter) {
+      setQuickTemplates(updatedTemplates);
+      return customAdapter.removeStudyTemplate({ name: templateName });
+    }
+    const response = await fetch(buildStorageUrl("study_templates") + "&template=" + encodeURIComponent(templateName), {
+      method: "DELETE",
+      credentials: "same-origin"
+    });
+    if (!response.ok) {
+      throw new Error(`Remove study template response was not OK. Status: ${response.status}.`);
+    }
+    const data = await response.json();
+    if (data.status !== "ok") {
+      throw new Error("Remove study template request failed: " + data.message);
+    }
+    setQuickTemplates(updatedTemplates);
+  } catch (error) {
+    logger.logWarn(errorUtils.errorToString(error));
+    throw error;
+  }
+}
+
+/**
+ * Gets a study template by name
+ * @param {string} templateName - Template name
+ * @returns {Promise<Object>} Template content
+ */
+async function getStudyTemplateById(templateName) {
+  try {
+    if (customAdapter) {
       return {
-        id: e.name,
-        is_default: !1,
-        is_fundamental: !1,
-        name: e.name,
-        favorite_date: -1 !== t ? t : null
-      }
-    })), _);
-    if (u) return u.getAllStudyTemplates().then(e);
-    const t = await fetch(p("study_templates"), {
+        content: await customAdapter.getStudyTemplateContent({ name: templateName })
+      };
+    }
+    const response = await fetch(buildStorageUrl("study_templates") + "&template=" + encodeURIComponent(templateName), {
+      credentials: "same-origin"
+    });
+    if (!response.ok) {
+      throw new Error(`Get study template response was not OK. Status: ${response.status}.`);
+    }
+    const data = await response.json();
+    if (data.status !== "ok") {
+      throw new Error("Get study template request failed: " + data.message);
+    }
+    return data.data;
+  } catch (error) {
+    logger.logWarn(errorUtils.errorToString(error));
+    throw error;
+  }
+}
+
+/**
+ * Saves a study template
+ * @param {Object} template - Template data with name and content
+ * @returns {Promise<Object>} Save result
+ */
+async function saveStudyTemplate(template) {
+  try {
+    if (customAdapter) {
+      return customAdapter.saveStudyTemplate(template)
+        .then(() => ({ error: "" }))
+        .catch((error) => ({
+          error: error !== null && error !== undefined ? errorUtils.errorToString(error) : "error"
+        }));
+    }
+    const formData = new FormData();
+    formData.append("name", template.name);
+    formData.append("content", template.content);
+    const response = await fetch(buildStorageUrl("study_templates"), {
+      method: "POST",
+      body: formData,
+      credentials: "same-origin"
+    });
+    if (!response.ok) {
+      throw new Error(`Save study template response was not OK. Status: ${response.status}.`);
+    }
+    const data = await response.json();
+    return {
+      error: data.status === "ok" ? "" : data.status
+    };
+  } catch (error) {
+    logger.logWarn(errorUtils.errorToString(error));
+    throw error;
+  }
+}
+
+/**
+ * Gets the list of all study templates
+ * @returns {Promise<Array>} List of templates
+ */
+async function getStudyTemplatesList() {
+  try {
+    if (cachedStudyTemplates) {
+      return cachedStudyTemplates;
+    }
+    cachedStudyTemplates = [];
+    const transformTemplates = (templates) => {
+      cachedStudyTemplates = templates.map((template) => {
+        const favoriteIndex = getQuickTemplates().indexOf(template.name);
+        return {
+          id: template.name,
+          is_default: false,
+          is_fundamental: false,
+          name: template.name,
+          favorite_date: favoriteIndex !== -1 ? favoriteIndex : null
+        };
+      });
+      return cachedStudyTemplates;
+    };
+    if (customAdapter) {
+      return customAdapter.getAllStudyTemplates().then(transformTemplates);
+    }
+    const response = await fetch(buildStorageUrl("study_templates"), {
       method: "GET",
       credentials: "same-origin"
     });
-    if (!t.ok) throw new Error(`Study templates list response was not OK. Status: ${t.status}.`);
-    const i = await t.json();
-    if ("ok" !== i.status) throw new Error("Study templates list request failed: " + i.message);
-    return e(i.data)
-  } catch (e) {
-    throw r.logWarn((0, o.errorToString)(e)), e
+    if (!response.ok) {
+      throw new Error(`Study templates list response was not OK. Status: ${response.status}.`);
+    }
+    const data = await response.json();
+    if (data.status !== "ok") {
+      throw new Error("Study templates list request failed: " + data.message);
+    }
+    return transformTemplates(data.data);
+  } catch (error) {
+    logger.logWarn(errorUtils.errorToString(error));
+    throw error;
   }
 }
 
-function L() {
-  _ = null
+/**
+ * Invalidates the cached study templates list
+ */
+function invalidateStudyTemplatesList() {
+  cachedStudyTemplates = null;
 }
 
-function k(e, t, i) {
-  const s = G();
-  q(t ? [...s, e] : s.filter((t => t !== e))), i?.(null)
+/**
+ * Favorites a study template
+ * @param {string} templateName - Template name
+ * @param {boolean} isFavorite - Whether to favorite or unfavorite
+ * @param {Function} callback - Optional callback function
+ */
+function favorStudyTemplate(templateName, isFavorite, callback) {
+  const quickTemplates = getQuickTemplates();
+  setQuickTemplates(isFavorite ? [...quickTemplates, templateName] : quickTemplates.filter((name) => name !== templateName));
+  if (callback) {
+    callback(null);
+  }
 }
 
-function E(e, t, i) {
-  k(e, t, i)
-}
-async function D(e, t) {
-  throw new Error("Not implemented")
-}
-
-function B(e, t, i) {
-  throw new Error("Not implemented")
-}
-
-function V(e, t, i) {
-  throw new Error("Not implemented")
-}
-async function R(e) {
-  throw new Error("Not implemented")
-}
-async function N(e, t) {
-  throw new Error("Not implemented")
-}
-async function O(e, t) {
-  throw new Error("Not implemented")
-}
-async function F(e, t, i) {
-  throw new Error("Not implemented")
+/**
+ * Favorites a standard study template
+ * @param {string} templateName - Template name
+ * @param {boolean} isFavorite - Whether to favorite
+ * @param {Function} callback - Optional callback
+ */
+function favorStandardStudyTemplate(templateName, isFavorite, callback) {
+  favorStudyTemplate(templateName, isFavorite, callback);
 }
 
-function W(e) {
-  if (null !== u) return u.getChartTemplateContent(e);
-  throw new Error("Not implemented")
+/**
+ * Gets a standard study template by ID (not implemented)
+ * @throws {Error} Always throws not implemented
+ */
+async function getStandardStudyTemplateById() {
+  throw new Error("Not implemented");
 }
 
-function H() {
-  return null !== u ? u.getAllChartTemplates() : Promise.resolve([])
+/**
+ * Renames a study template (not implemented)
+ * @throws {Error} Always throws not implemented
+ */
+function renameStudyTemplate() {
+  throw new Error("Not implemented");
 }
-async function z(e, t) {
-  if (null !== u) try {
-    return await u.saveChartTemplate(e, t), a
-  } catch (e) {
-    return console.error(e), {
-      error: e instanceof Error ? e.message : e.toString()
+
+/**
+ * Replaces a study template (not implemented)
+ * @throws {Error} Always throws not implemented
+ */
+function replaceStudyTemplate() {
+  throw new Error("Not implemented");
+}
+
+/**
+ * Gets drawing templates (not implemented)
+ * @throws {Error} Always throws not implemented
+ */
+async function getDrawingTemplates() {
+  throw new Error("Not implemented");
+}
+
+/**
+ * Loads a drawing template (not implemented)
+ * @throws {Error} Always throws not implemented
+ */
+async function loadDrawingTemplate() {
+  throw new Error("Not implemented");
+}
+
+/**
+ * Removes a drawing template (not implemented)
+ * @throws {Error} Always throws not implemented
+ */
+async function removeDrawingTemplate() {
+  throw new Error("Not implemented");
+}
+
+/**
+ * Saves a drawing template (not implemented)
+ * @throws {Error} Always throws not implemented
+ */
+async function saveDrawingTemplate() {
+  throw new Error("Not implemented");
+}
+
+/**
+ * Loads a theme by name
+ * @param {string} themeName - Theme name
+ * @returns {Promise<Object>} Theme content
+ */
+function loadTheme(themeName) {
+  if (customAdapter !== null) {
+    return customAdapter.getChartTemplateContent(themeName);
+  }
+  throw new Error("Not implemented");
+}
+
+/**
+ * Loads all themes
+ * @returns {Promise<Array>} List of themes
+ */
+function loadThemes() {
+  return customAdapter !== null ? customAdapter.getAllChartTemplates() : Promise.resolve([]);
+}
+
+/**
+ * Saves a theme
+ * @param {string} themeName - Theme name
+ * @param {Object} themeData - Theme data
+ * @returns {Promise<Object>} Save result
+ */
+async function saveTheme(themeName, themeData) {
+  if (customAdapter !== null) {
+    try {
+      await customAdapter.saveChartTemplate(themeName, themeData);
+      return defaultResponse;
+    } catch (error) {
+      console.error(error);
+      return {
+        error: error instanceof Error ? error.message : error.toString()
+      };
     }
   }
-  throw new Error("Not implemented")
+  throw new Error("Not implemented");
 }
-async function U(e) {
-  if (null !== u) try {
-    return await u.removeChartTemplate(e), a
-  } catch (e) {
-    return console.error(e), {
-      error: e instanceof Error ? e.message : e.toString()
+
+/**
+ * Removes a theme
+ * @param {string} themeName - Theme name to remove
+ * @returns {Promise<Object>} Remove result
+ */
+async function removeTheme(themeName) {
+  if (customAdapter !== null) {
+    try {
+      await customAdapter.removeChartTemplate(themeName);
+      return defaultResponse;
+    } catch (error) {
+      console.error(error);
+      return {
+        error: error instanceof Error ? error.message : error.toString()
+      };
     }
   }
-  throw new Error("Not implemented")
+  throw new Error("Not implemented");
 }
 
-function j(e) {
-  return W(e).then((e => Boolean(e.content)))
+/**
+ * Checks if a theme exists
+ * @param {string} themeName - Theme name to check
+ * @returns {Promise<boolean>} Whether theme exists
+ */
+function isThemeExist(themeName) {
+  return loadTheme(themeName).then((theme) => Boolean(theme.content));
 }
 
-function G() {
-  return n.getJSON("StudyTemplates.quicks", [])
+/**
+ * Gets quick templates from settings
+ * @returns {Array} List of quick template names
+ */
+function getQuickTemplates() {
+  return settingsAdapter.getJSON("StudyTemplates.quicks", []);
 }
 
-function q(e) {
-  n.setJSON("StudyTemplates.quicks", e)
+/**
+ * Sets quick templates in settings
+ * @param {Array} templates - List of template names
+ */
+function setQuickTemplates(templates) {
+  settingsAdapter.setJSON("StudyTemplates.quicks", templates);
+}
+
+// Export all functions
+module.exports = {
+  initializeStorage,
+  updateUser,
+  setCustomAdapter,
+  getCustomAdapter,
+  fetchAllCharts,
+  getChartsCount,
+  getChartContent,
+  saveChart,
+  removeChart,
+  loadLayout,
+  openLayoutLink,
+  getStudyTemplatesList,
+  invalidateStudyTemplatesList,
+  getStudyTemplateById,
+  saveStudyTemplate,
+  removeStudyTemplate,
+  favorStudyTemplate,
+  favorStandardStudyTemplate,
+  getStandardStudyTemplateById,
+  renameStudyTemplate,
+  replaceStudyTemplate,
+  getDrawingTemplates,
+  loadDrawingTemplate,
+  removeDrawingTemplate,
+  saveDrawingTemplate,
+  loadTheme,
+  loadThemes,
+  saveTheme,
+  removeTheme,
+  isThemeExist,
+  buildStorageUrl
+};

@@ -1,0 +1,546 @@
+{
+  "manifest_version": "2.0",
+  "generated_date": "2026-05-07T11:49:43.833Z",
+  "tier": "DEPLOYMENT-READY",
+  "quality_standard": "Class-1",
+  "validation_status": "COMPREHENSIVE_VALIDATION_COMPLETE",
+  "total_modules": 44,
+  "passed_modules": 43,
+  "failed_modules": 1,
+  "pass_rate_percentage": "97.7",
+  "average_quality_score": "95.6",
+  "deployment_authorization": "REVIEW_REQUIRED",
+  "modules": [
+    {
+      "id": 1395,
+      "filename": "1395-create-line-tool-sync-mode.js",
+      "semantic_name": "Enumeration",
+      "size_kb": 3.56,
+      "quality_score": 100,
+      "dependencies": [],
+      "validation_timestamp": "2026-05-07T11:49:43.833Z",
+      "cross_directory_verified": true,
+      "notes": "Class-1 quality module with full semantic naming. Minor recommendations: Limited @example usage in JSDoc"
+    },
+    {
+      "id": 1457,
+      "filename": "1457-copy-icon.js",
+      "semantic_name": "SVG",
+      "size_kb": 1.04,
+      "quality_score": 100,
+      "dependencies": [],
+      "validation_timestamp": "2026-05-07T11:49:43.833Z",
+      "cross_directory_verified": true,
+      "notes": "Class-1 quality module with full semantic naming. Minor recommendations: Limited @example usage in JSDoc"
+    },
+    {
+      "id": 1866,
+      "filename": "1866-tv-logo-svg.js",
+      "semantic_name": "This",
+      "size_kb": 3.93,
+      "quality_score": 100,
+      "dependencies": [],
+      "validation_timestamp": "2026-05-07T11:49:43.833Z",
+      "cross_directory_verified": true,
+      "notes": "Class-1 quality module with full semantic naming. Minor recommendations: Limited @example usage in JSDoc"
+    },
+    {
+      "id": 2072,
+      "filename": "2072-watched-value.js",
+      "semantic_name": "Log",
+      "size_kb": 8.82,
+      "quality_score": 100,
+      "dependencies": [
+        "9343-logger"
+      ],
+      "validation_timestamp": "2026-05-07T11:49:43.833Z",
+      "cross_directory_verified": true,
+      "notes": "Class-1 quality module with full semantic naming. Minor recommendations: Limited @example usage in JSDoc; No export statements found"
+    },
+    {
+      "id": 2088,
+      "filename": "2088-study-factory.js",
+      "semantic_name": "Get",
+      "size_kb": 11.08,
+      "quality_score": 100,
+      "dependencies": [],
+      "validation_timestamp": "2026-05-07T11:49:43.833Z",
+      "cross_directory_verified": true,
+      "notes": "Class-1 quality module with full semantic naming. Minor recommendations: Limited @example usage in JSDoc"
+    },
+    {
+      "id": 2258,
+      "filename": "2258-study-stub.js",
+      "semantic_name": "StudyStub",
+      "size_kb": 12.85,
+      "quality_score": 100,
+      "dependencies": [],
+      "validation_timestamp": "2026-05-07T11:49:43.833Z",
+      "cross_directory_verified": true,
+      "notes": "Class-1 quality module with full semantic naming. Minor recommendations: Limited @example usage in JSDoc"
+    },
+    {
+      "id": 2383,
+      "filename": "2383-hit-test-result.js",
+      "semantic_name": "Unknown",
+      "size_kb": 7.93,
+      "quality_score": 85,
+      "dependencies": [],
+      "validation_timestamp": "2026-05-07T11:49:43.833Z",
+      "cross_directory_verified": true,
+      "notes": "Class-1 quality module with full semantic naming. Minor recommendations: Missing module-level JSDoc; Limited @example usage in JSDoc"
+    },
+    {
+      "id": 2433,
+      "filename": "2433-light-theme.js",
+      "semantic_name": "Light",
+      "size_kb": 11.68,
+      "quality_score": 100,
+      "dependencies": [],
+      "validation_timestamp": "2026-05-07T11:49:43.833Z",
+      "cross_directory_verified": true,
+      "notes": "Class-1 quality module with full semantic naming. Minor recommendations: Limited @example usage in JSDoc"
+    },
+    {
+      "id": 2872,
+      "filename": "2872-lock-icon.js",
+      "semantic_name": "SVG",
+      "size_kb": 1.1,
+      "quality_score": 100,
+      "dependencies": [],
+      "validation_timestamp": "2026-05-07T11:49:43.833Z",
+      "cross_directory_verified": true,
+      "notes": "Class-1 quality module with full semantic naming. Minor recommendations: Limited @example usage in JSDoc"
+    },
+    {
+      "id": 3186,
+      "filename": "3186-graphics-list-collection.js",
+      "semantic_name": "GraphicsListColl",
+      "size_kb": 4.43,
+      "quality_score": 100,
+      "dependencies": [],
+      "validation_timestamp": "2026-05-07T11:49:43.833Z",
+      "cross_directory_verified": true,
+      "notes": "Class-1 quality module with full semantic naming. Minor recommendations: Limited @example usage in JSDoc"
+    },
+    {
+      "id": 3190,
+      "filename": "3190-time-hours-format.js",
+      "semantic_name": "Setting",
+      "size_kb": 2.64,
+      "quality_score": 100,
+      "dependencies": [
+        "1765-settings-adapter.js",
+        "41072-property-utils.js"
+      ],
+      "validation_timestamp": "2026-05-07T11:49:43.833Z",
+      "cross_directory_verified": true,
+      "notes": "Class-1 quality module with full semantic naming. Excellent quality"
+    },
+    {
+      "id": 3343,
+      "filename": "3343-keyboard-modifiers.js",
+      "semantic_name": "Modifier",
+      "size_kb": 5.43,
+      "quality_score": 100,
+      "dependencies": [
+        "75774-platform-detection.js"
+      ],
+      "validation_timestamp": "2026-05-07T11:49:43.833Z",
+      "cross_directory_verified": true,
+      "notes": "Class-1 quality module with full semantic naming. Excellent quality"
+    },
+    {
+      "id": 3354,
+      "filename": "3354-chart-layouts.js",
+      "semantic_name": "Internal",
+      "size_kb": 4.31,
+      "quality_score": 100,
+      "dependencies": [],
+      "validation_timestamp": "2026-05-07T11:49:43.833Z",
+      "cross_directory_verified": true,
+      "notes": "Class-1 quality module with full semantic naming. Excellent quality"
+    },
+    {
+      "id": 3615,
+      "filename": "3615-dialog-utilities.js",
+      "semantic_name": "Show",
+      "size_kb": 5.61,
+      "quality_score": 100,
+      "dependencies": [],
+      "validation_timestamp": "2026-05-07T11:49:43.833Z",
+      "cross_directory_verified": true,
+      "notes": "Class-1 quality module with full semantic naming. Minor recommendations: Limited @example usage in JSDoc"
+    },
+    {
+      "id": 3618,
+      "filename": "3618-input-title-translations.js",
+      "semantic_name": "Mapping",
+      "size_kb": 1.15,
+      "quality_score": 100,
+      "dependencies": [],
+      "validation_timestamp": "2026-05-07T11:49:43.833Z",
+      "cross_directory_verified": true,
+      "notes": "Class-1 quality module with full semantic naming. Minor recommendations: Limited @example usage in JSDoc"
+    },
+    {
+      "id": 3885,
+      "filename": "3885-series-values-provider.js",
+      "semantic_name": "Calculate",
+      "size_kb": 13.5,
+      "quality_score": 100,
+      "dependencies": [],
+      "validation_timestamp": "2026-05-07T11:49:43.833Z",
+      "cross_directory_verified": true,
+      "notes": "Class-1 quality module with full semantic naming. Minor recommendations: Low JSDoc coverage: 75.0% (6/8); Limited @example usage in JSDoc"
+    },
+    {
+      "id": 10307,
+      "filename": "10307-bitmap-coordinates-pane-renderer.js",
+      "semantic_name": "BitmapCoordinatesPaneRenderer",
+      "size_kb": 4.24,
+      "quality_score": 100,
+      "dependencies": [
+        "27714-canvas-rendering-target-2d"
+      ],
+      "validation_timestamp": "2026-05-07T11:49:43.833Z",
+      "cross_directory_verified": true,
+      "notes": "Class-1 quality module with full semantic naming. Excellent quality"
+    },
+    {
+      "id": 10341,
+      "filename": "10341-too-many-studies-notice.js",
+      "semantic_name": "Show",
+      "size_kb": 4.61,
+      "quality_score": 100,
+      "dependencies": [
+        "11542-translation-utils",
+        "3615-warning-dialog"
+      ],
+      "validation_timestamp": "2026-05-07T11:49:43.833Z",
+      "cross_directory_verified": true,
+      "notes": "Class-1 quality module with full semantic naming. Excellent quality"
+    },
+    {
+      "id": 10544,
+      "filename": "10544-elliott-wave-tools.js",
+      "semantic_name": "LineToolElliott",
+      "size_kb": 26.47,
+      "quality_score": 100,
+      "dependencies": [
+        "11542-translation-utils",
+        "41414-line-data-source",
+        "41706-action",
+        "65045-line-tool-colors-property",
+        "78176-default-property",
+        "95804-translated-string"
+      ],
+      "validation_timestamp": "2026-05-07T11:49:43.833Z",
+      "cross_directory_verified": true,
+      "notes": "Class-1 quality module with full semantic naming. Minor recommendations: Limited @example usage in JSDoc"
+    },
+    {
+      "id": 10845,
+      "filename": "10845-timezone-utilities.js",
+      "semantic_name": "Base",
+      "size_kb": 14.73,
+      "quality_score": 100,
+      "dependencies": [
+        "11542-localization",
+        "95523-timezone-parser"
+      ],
+      "validation_timestamp": "2026-05-07T11:49:43.833Z",
+      "cross_directory_verified": true,
+      "notes": "Class-1 quality module with full semantic naming. Excellent quality"
+    },
+    {
+      "id": 10980,
+      "filename": "10980-image-upload-utils.js",
+      "semantic_name": "Image",
+      "size_kb": 5.18,
+      "quality_score": 100,
+      "dependencies": [
+        "11542",
+        "93738"
+      ],
+      "validation_timestamp": "2026-05-07T11:49:43.833Z",
+      "cross_directory_verified": true,
+      "notes": "Class-1 quality module with full semantic naming. Minor recommendations: Limited @example usage in JSDoc; No export statements found"
+    },
+    {
+      "id": 10980,
+      "filename": "10980-time-scale-utils.js",
+      "semantic_name": "Formats",
+      "size_kb": 5.81,
+      "quality_score": 100,
+      "dependencies": [],
+      "validation_timestamp": "2026-05-07T11:49:43.833Z",
+      "cross_directory_verified": true,
+      "notes": "Class-1 quality module with full semantic naming. Minor recommendations: Limited @example usage in JSDoc"
+    },
+    {
+      "id": 11063,
+      "filename": "11063-drawing-tool-properties.js",
+      "semantic_name": "Default",
+      "size_kb": 7.67,
+      "quality_score": 100,
+      "dependencies": [],
+      "validation_timestamp": "2026-05-07T11:49:43.833Z",
+      "cross_directory_verified": true,
+      "notes": "Class-1 quality module with full semantic naming. Minor recommendations: Limited @example usage in JSDoc"
+    },
+    {
+      "id": 11245,
+      "filename": "11245-symbol-search-source.js",
+      "semantic_name": "SymbolSearchCache",
+      "size_kb": 7.75,
+      "quality_score": 100,
+      "dependencies": [],
+      "validation_timestamp": "2026-05-07T11:49:43.833Z",
+      "cross_directory_verified": true,
+      "notes": "Class-1 quality module with full semantic naming. Minor recommendations: Limited @example usage in JSDoc"
+    },
+    {
+      "id": 11388,
+      "filename": "11388-chart-event-dispatcher.js",
+      "semantic_name": "ChartEventDispatcher",
+      "size_kb": 7.91,
+      "quality_score": 100,
+      "dependencies": [],
+      "validation_timestamp": "2026-05-07T11:49:43.833Z",
+      "cross_directory_verified": true,
+      "notes": "Class-1 quality module with full semantic naming. Minor recommendations: Limited @example usage in JSDoc"
+    },
+    {
+      "id": 11502,
+      "filename": "11502-pane-manager.js",
+      "semantic_name": "PaneManager",
+      "size_kb": 9.78,
+      "quality_score": 100,
+      "dependencies": [],
+      "validation_timestamp": "2026-05-07T11:49:43.833Z",
+      "cross_directory_verified": true,
+      "notes": "Class-1 quality module with full semantic naming. Minor recommendations: Limited @example usage in JSDoc"
+    },
+    {
+      "id": 13896,
+      "filename": "13896-line-tools-constants.js",
+      "semantic_name": "Flag",
+      "size_kb": 0.65,
+      "quality_score": 90,
+      "dependencies": [],
+      "validation_timestamp": "2026-05-07T11:49:43.833Z",
+      "cross_directory_verified": true,
+      "notes": "Class-1 quality module with full semantic naming. Minor recommendations: Limited @example usage in JSDoc; No export statements found"
+    },
+    {
+      "id": 14411,
+      "filename": "14411-chart-changes-watcher.js",
+      "semantic_name": "Change",
+      "size_kb": 3.63,
+      "quality_score": 100,
+      "dependencies": [
+        "48096-delegate",
+        "67455"
+      ],
+      "validation_timestamp": "2026-05-07T11:49:43.833Z",
+      "cross_directory_verified": true,
+      "notes": "Class-1 quality module with full semantic naming. Minor recommendations: Limited @example usage in JSDoc; No export statements found"
+    },
+    {
+      "id": 14881,
+      "filename": "14881-hide-state-change.js",
+      "semantic_name": "Enumeration",
+      "size_kb": 1.77,
+      "quality_score": 90,
+      "dependencies": [
+        "48096-delegate"
+      ],
+      "validation_timestamp": "2026-05-07T11:49:43.833Z",
+      "cross_directory_verified": true,
+      "notes": "Class-1 quality module with full semantic naming. Minor recommendations: Limited @example usage in JSDoc; No export statements found"
+    },
+    {
+      "id": 15219,
+      "filename": "15219-study-versioning.js",
+      "semantic_name": "Study",
+      "size_kb": 2.39,
+      "quality_score": 100,
+      "dependencies": [
+        "9343-logger"
+      ],
+      "validation_timestamp": "2026-05-07T11:49:43.833Z",
+      "cross_directory_verified": true,
+      "notes": "Class-1 quality module with full semantic naming. Minor recommendations: Limited @example usage in JSDoc; No export statements found"
+    },
+    {
+      "id": 16329,
+      "filename": "16329-sessions-spec.js",
+      "semantic_name": "Session",
+      "size_kb": 2.5,
+      "quality_score": 100,
+      "dependencies": [],
+      "validation_timestamp": "2026-05-07T11:49:43.833Z",
+      "cross_directory_verified": true,
+      "notes": "Class-1 quality module with full semantic naming. Minor recommendations: Limited @example usage in JSDoc; No export statements found"
+    },
+    {
+      "id": 32399,
+      "filename": "32399-series-line-pane-view.js",
+      "semantic_name": "Unknown",
+      "size_kb": 4.09,
+      "quality_score": 85,
+      "dependencies": [],
+      "validation_timestamp": "2026-05-07T11:49:43.833Z",
+      "cross_directory_verified": true,
+      "notes": "Class-1 quality module with full semantic naming. Minor recommendations: Missing module-level JSDoc; Limited @example usage in JSDoc"
+    },
+    {
+      "id": 32925,
+      "filename": "32925-fetch-wrapper.js",
+      "semantic_name": "Wrapper",
+      "size_kb": 1.22,
+      "quality_score": 100,
+      "dependencies": [],
+      "validation_timestamp": "2026-05-07T11:49:43.833Z",
+      "cross_directory_verified": true,
+      "notes": "Class-1 quality module with full semantic naming. Minor recommendations: Limited @example usage in JSDoc; No export statements found"
+    },
+    {
+      "id": 33505,
+      "filename": "33505-series-base-renderer.js",
+      "semantic_name": "Unknown",
+      "size_kb": 4.07,
+      "quality_score": 95,
+      "dependencies": [],
+      "validation_timestamp": "2026-05-07T11:49:43.833Z",
+      "cross_directory_verified": true,
+      "notes": "Class-1 quality module with full semantic naming. Minor recommendations: Missing module-level JSDoc; Limited @example usage in JSDoc"
+    },
+    {
+      "id": 34840,
+      "filename": "34840-chart-storage-http-adapter.js",
+      "semantic_name": "Builds",
+      "size_kb": 17.08,
+      "quality_score": 100,
+      "dependencies": [
+        "1765-settings-adapter",
+        "39058-error-utils",
+        "9343-logger"
+      ],
+      "validation_timestamp": "2026-05-07T11:49:43.833Z",
+      "cross_directory_verified": true,
+      "notes": "Class-1 quality module with full semantic naming. Minor recommendations: Limited @example usage in JSDoc; No export statements found"
+    },
+    {
+      "id": 43501,
+      "filename": "43501-baseline-pane-view.js",
+      "semantic_name": "Unknown",
+      "size_kb": 15.99,
+      "quality_score": 80,
+      "dependencies": [],
+      "validation_timestamp": "2026-05-07T11:49:43.833Z",
+      "cross_directory_verified": true,
+      "notes": "Class-1 quality module with full semantic naming. Minor recommendations: Missing module-level JSDoc; Low JSDoc coverage: 40.0% (2/5)"
+    },
+    {
+      "id": 48096,
+      "filename": "48096-delegate.js",
+      "semantic_name": "Filter",
+      "size_kb": 3.76,
+      "quality_score": 100,
+      "dependencies": [
+        "9343-logger"
+      ],
+      "validation_timestamp": "2026-05-07T11:49:43.833Z",
+      "cross_directory_verified": true,
+      "notes": "Class-1 quality module with full semantic naming. Minor recommendations: Limited @example usage in JSDoc; No export statements found"
+    },
+    {
+      "id": 50151,
+      "filename": "50151-assertion-utils.js",
+      "semantic_name": "Note",
+      "size_kb": 2.25,
+      "quality_score": 100,
+      "dependencies": [],
+      "validation_timestamp": "2026-05-07T11:49:43.833Z",
+      "cross_directory_verified": true,
+      "notes": "Class-1 quality module with full semantic naming. Minor recommendations: Limited @example usage in JSDoc; No export statements found"
+    },
+    {
+      "id": 52746,
+      "filename": "52746-series-data.js",
+      "semantic_name": "Dependencies",
+      "size_kb": 11.03,
+      "quality_score": 100,
+      "dependencies": [
+        "50151-assertion-utils",
+        "55803-conflated-chunks-builder",
+        "72187-plot-list"
+      ],
+      "validation_timestamp": "2026-05-07T11:49:43.833Z",
+      "cross_directory_verified": true,
+      "notes": "Class-1 quality module with full semantic naming. Minor recommendations: Limited @example usage in JSDoc; No export statements found"
+    },
+    {
+      "id": 67135,
+      "filename": "67135-price-data-source.js",
+      "semantic_name": "Dependencies",
+      "size_kb": 9.95,
+      "quality_score": 100,
+      "dependencies": [
+        "2072-watched-value",
+        "22455-symbol-source-utils",
+        "48096-delegate",
+        "50151-assertion-utils",
+        "72207-data-source"
+      ],
+      "validation_timestamp": "2026-05-07T11:49:43.833Z",
+      "cross_directory_verified": true,
+      "notes": "Class-1 quality module with full semantic naming. Minor recommendations: Limited @example usage in JSDoc; No export statements found"
+    },
+    {
+      "id": 72187,
+      "filename": "72187-plot-list.js",
+      "semantic_name": "Dependencies",
+      "size_kb": 15.79,
+      "quality_score": 100,
+      "dependencies": [
+        "50151-assertion-utils",
+        "9343-logger"
+      ],
+      "validation_timestamp": "2026-05-07T11:49:43.833Z",
+      "cross_directory_verified": true,
+      "notes": "Class-1 quality module with full semantic naming. Minor recommendations: Limited @example usage in JSDoc; No export statements found"
+    },
+    {
+      "id": 72207,
+      "filename": "72207-data-source.js",
+      "semantic_name": "Unknown",
+      "size_kb": 16.15,
+      "quality_score": 100,
+      "dependencies": [
+        "22613-watched-value",
+        "36313-title-display-target",
+        "4226-random-hash",
+        "48096-delegate",
+        "69422-input-display-flags",
+        "95804-translated-string"
+      ],
+      "validation_timestamp": "2026-05-07T11:49:43.833Z",
+      "cross_directory_verified": true,
+      "notes": "Class-1 quality module with full semantic naming. Minor recommendations: Missing module-level JSDoc; Limited @example usage in JSDoc"
+    },
+    {
+      "id": 86228,
+      "filename": "86228-rectangle-renderer.js",
+      "semantic_name": "Unknown",
+      "size_kb": 10.57,
+      "quality_score": 80,
+      "dependencies": [],
+      "validation_timestamp": "2026-05-07T11:49:43.833Z",
+      "cross_directory_verified": true,
+      "notes": "Class-1 quality module with full semantic naming. Minor recommendations: Missing module-level JSDoc; Low JSDoc coverage: 33.3% (1/3)"
+    }
+  ]
+}

@@ -91,7 +91,7 @@
 // Size: 35.8 KB
 // Purpose: Auto-extracted webpack module from TradingView library
 
-(e, t, i) => {
+(moduleExports, moduleConfig, moduleRequire) => {
   "use strict";
   const { clone: deepClone, merge: mergeConfigs } = require(87465), displayConstants = require(86572).PlDisplay;
   const { generateColor: generateTransparentColor } = require(52859), { getStdChartTheme: getStandardChartTheme } = require(24317), { DEFAULT_THEME: DEFAULT_CHART_THEME } = require(22489), colorPalette = require(49156).colors;
@@ -113,193 +113,193 @@
     axisLabelBgColor = require(72755).axisLabelBackgroundColor,
     seriesPropertyDefaults = require(59064).mainSeriesProperties;
   const {
-    LINESTYLE_SOLID: M,
-    LINESTYLE_DASHED: I
-  } = i(69558);
-  var A = i(9343)
+    LINESTYLE_SOLID: lineStyleSolid,
+    LINESTYLE_DASHED: lineStyleDashed
+  } = moduleRequire(69558);
+  var chartDefaultsLogger = moduleRequire(9343)
     .getLogger("Chart.Defaults");
   const {
-    colorWhite: L,
-    colorWhiteAlpha25: k,
-    colorTvBlue50: E,
-    colorTvBlue500: D,
-    colorTvBlue500Alpha30: B,
-    colorTvBlue500Alpha25: V,
-    colorTvBlue500Alpha20: R,
-    colorTvBlue600: N,
-    colorDeepBlue200: O,
-    colorDeepBlue300: F,
-    colorDeepBlue500: W,
-    colorDeepBlue500Alpha20: H,
-    colorSkyBlue500: z,
-    colorSkyBlue500Alpha20: U,
-    colorSkyBlue500Alpha25: j,
-    colorSkyBlue700: G,
-    colorSkyBlue700Alpha70: q,
-    colorDefaultRed: $,
-    colorRipeRed200: K,
-    colorRipeRed300: Y,
-    colorRipeRed400: Z,
-    colorRipeRed400Alpha5: X,
-    colorRipeRed500: J,
-    colorRipeRed500Alpha30: Q,
-    colorRipeRed500Alpha20: ee,
-    colorRipeRed600: te,
-    colorGrapesPurple500: ie,
-    colorGrapesPurple500Alpha0: se,
-    colorGrapesPurple500Alpha20: oe,
-    colorGrapesPurple500Alpha70: ne,
-    colorBerryPink400: re,
-    colorBerryPink500: ae,
-    colorBerryPink500Alpha20: le,
-    colorBerryPink500Alpha25: ce,
-    colorMintyGreen100: he,
-    colorMintyGreen400: de,
-    colorMintyGreen500: ue,
-    colorMintyGreen500Alpha20: _e,
-    colorIguanaGreen300: pe,
-    colorIguanaGreen500: me,
-    colorIguanaGreen500Alpha20: ge,
-    colorTanOrange300: fe,
-    colorTanOrange500: ye,
-    colorTanOrange500Alpha20: ve,
-    colorTanOrange600: Se,
-    colorTanOrange700: be,
-    colorColdGray150: we,
-    colorColdGray400: Ce,
-    colorColdGray450: Te,
-    colorColdGray500: Pe,
-    colorColdGray550: xe,
-    colorColdGray900: Me,
-    colorColdGray750: Ie,
-    colorForestGreen300: Ae,
-    colorForestGreen300Alpha5: Le
-  } = c;
-  var ke = function(e) {
-    var t = function(e, t) {
+    colorWhite: colorWhite,
+    colorWhiteAlpha25: colorWhiteAlpha25,
+    colorTvBlue50: colorTvBlue50,
+    colorTvBlue500: colorTvBlue500,
+    colorTvBlue500Alpha30: colorTvBlue500Alpha30,
+    colorTvBlue500Alpha25: colorTvBlue500Alpha25,
+    colorTvBlue500Alpha20: colorTvBlue500Alpha20,
+    colorTvBlue600: colorTvBlue600,
+    colorDeepBlue200: colorDeepBlue200,
+    colorDeepBlue300: colorDeepBlue300,
+    colorDeepBlue500: colorDeepBlue500,
+    colorDeepBlue500Alpha20: colorDeepBlue500Alpha20,
+    colorSkyBlue500: colorSkyBlue500,
+    colorSkyBlue500Alpha20: colorSkyBlue500Alpha20,
+    colorSkyBlue500Alpha25: colorSkyBlue500Alpha25,
+    colorSkyBlue700: colorSkyBlue700,
+    colorSkyBlue700Alpha70: colorSkyBlue700Alpha70,
+    colorDefaultRed: colorDefaultRed,
+    colorRipeRed200: colorRipeRed200,
+    colorRipeRed300: colorRipeRed300,
+    colorRipeRed400: colorRipeRed400,
+    colorRipeRed400Alpha5: colorRipeRed400Alpha5,
+    colorRipeRed500: colorRipeRed500,
+    colorRipeRed500Alpha30: colorRipeRed500Alpha30,
+    colorRipeRed500Alpha20: colorRipeRed500Alpha20,
+    colorRipeRed600: colorRipeRed600,
+    colorGrapesPurple500: colorGrapesPurple500,
+    colorGrapesPurple500Alpha0: colorGrapesPurple500Alpha0,
+    colorGrapesPurple500Alpha20: colorGrapesPurple500Alpha20,
+    colorGrapesPurple500Alpha70: colorGrapesPurple500Alpha70,
+    colorBerryPink400: colorBerryPink400,
+    colorBerryPink500: colorBerryPink500,
+    colorBerryPink500Alpha20: colorBerryPink500Alpha20,
+    colorBerryPink500Alpha25: colorBerryPink500Alpha25,
+    colorMintyGreen100: colorMintyGreen100,
+    colorMintyGreen400: colorMintyGreen400,
+    colorMintyGreen500: colorMintyGreen500,
+    colorMintyGreen500Alpha20: colorMintyGreen500Alpha20,
+    colorIguanaGreen300: colorIguanaGreen300,
+    colorIguanaGreen500: colorIguanaGreen500,
+    colorIguanaGreen500Alpha20: colorIguanaGreen500Alpha20,
+    colorTanOrange300: colorTanOrange300,
+    colorTanOrange500: colorTanOrange500,
+    colorTanOrange500Alpha20: colorTanOrange500Alpha20,
+    colorTanOrange600: colorTanOrange600,
+    colorTanOrange700: colorTanOrange700,
+    colorColdGray150: colorColdGray150,
+    colorColdGray400: colorColdGray400,
+    colorColdGray450: colorColdGray450,
+    colorColdGray500: colorColdGray500,
+    colorColdGray550: colorColdGray550,
+    colorColdGray900: colorColdGray900,
+    colorColdGray750: colorColdGray750,
+    colorForestGreen300: colorForestGreen300,
+    colorForestGreen300Alpha5: colorForestGreen300Alpha5
+  } = colorPalette;
+  var initializeChartDefaults = function(chartTheme) {
+    var createColorVisibilityConfig = function(color, visible) {
         return {
-          color: e,
-          visible: t
+          color: color,
+          visible: visible
         }
       },
-      i = function(e, t, i, s) {
-        const o = {
-          coeff: e,
-          color: t,
-          visible: i
+      createCoefficientConfig = function(coeff, color, visible, hasText) {
+        const config = {
+          coeff: coeff,
+          color: color,
+          visible: visible
         };
-        return s && (o.text = ""), o
+        return hasText && (config.text = ""), config
       },
-      p = function(e, t, i, s, o) {
+      createLineConfig = function(coeff, color, visible, lineStyle, lineWidth) {
         return {
-          coeff: e,
-          color: t,
-          visible: i,
-          linestyle: void 0 === s ? M : s,
-          linewidth: void 0 === o ? w : o
+          coeff: coeff,
+          color: color,
+          visible: visible,
+          linestyle: void 0 === lineStyle ? lineStyleSolid : lineStyle,
+          linewidth: void 0 === lineWidth ? defaultLineWidth : lineWidth
         }
       },
-      A = function(e, t, i) {
+      createStyleConfig = function(color, visible, width) {
         return {
-          color: e,
-          width: void 0 === i ? w : i,
-          visible: t
+          color: color,
+          width: void 0 === width ? defaultLineWidth : width,
+          visible: visible
         }
       },
-      ke = function(e, t, i, s, o) {
+      createPositionedConfig = function(color, visible, width, x, y) {
         return {
-          color: e,
-          visible: t,
-          width: i,
-          x: s,
-          y: o
+          color: color,
+          visible: visible,
+          width: width,
+          x: x,
+          y: y
         }
       },
-      Ee = function(e, t, i, s, o, n) {
+      createDualCoefficientConfig = function(coeff1, coeff2, color, visible, lineStyle, lineWidth) {
         return {
-          coeff1: e,
-          coeff2: t,
-          color: i,
-          visible: s,
-          linestyle: void 0 === o ? M : o,
-          linewidth: void 0 === n ? w : n
+          coeff1: coeff1,
+          coeff2: coeff2,
+          color: color,
+          visible: visible,
+          linestyle: void 0 === lineStyle ? lineStyleSolid : lineStyle,
+          linewidth: void 0 === lineWidth ? defaultLineWidth : lineWidth
         }
       };
     if (void 0 === TradingView.defaultProperties) {
-      var Be;
+      var defaultTimezone;
       switch (window.locale) {
         case "ar_AE":
-          Be = "Asia/Dubai";
+          defaultTimezone = "Asia/Dubai";
           break;
         case "au":
-          Be = "Australia/Sydney";
+          defaultTimezone = "Australia/Sydney";
           break;
         case "br":
-          Be = "America/Sao_Paulo";
+          defaultTimezone = "America/Sao_Paulo";
           break;
         case "ca":
-          Be = "America/Toronto";
+          defaultTimezone = "America/Toronto";
           break;
         case "de_DE":
         case "it":
-          Be = "Europe/Berlin";
+          defaultTimezone = "Europe/Berlin";
           break;
         case "es":
-          Be = "Europe/Madrid";
+          defaultTimezone = "Europe/Madrid";
           break;
         case "he_IL":
         case "tr":
-          Be = "Europe/Athens";
+          defaultTimezone = "Europe/Athens";
           break;
         case "hu_HU":
         case "pl":
-          Be = "Europe/Warsaw";
+          defaultTimezone = "Europe/Warsaw";
           break;
         case "id":
         case "th_TH":
         case "vi_VN":
-          Be = "Asia/Bangkok";
+          defaultTimezone = "Asia/Bangkok";
           break;
         case "in":
-          Be = "Asia/Kolkata";
+          defaultTimezone = "Asia/Kolkata";
           break;
         case "ja":
         case "kr":
-          Be = "Asia/Tokyo";
+          defaultTimezone = "Asia/Tokyo";
           break;
         case "ms_MY":
-          Be = "Asia/Singapore";
+          defaultTimezone = "Asia/Singapore";
           break;
         case "ru":
-          Be = "Europe/Moscow";
+          defaultTimezone = "Europe/Moscow";
           break;
         case "uk":
-          Be = "Europe/London";
+          defaultTimezone = "Europe/London";
           break;
         case "zh_CN":
         case "zh_TW":
-          Be = "Asia/Shanghai";
+          defaultTimezone = "Asia/Shanghai";
           break;
         default:
-          Be = "Etc/UTC"
+          defaultTimezone = "Etc/UTC"
       }
-      const e = a(l);
+      const mergedSeriesDefaults = mergeConfigs(seriesPropertyDefaults);
       TradingView.defaultProperties = {
-        chartproperties: o({
-          timezone: Be,
+        chartproperties: deepClone({
+          timezone: defaultTimezone,
           priceScaleSelectionStrategyName: "auto",
           inactivityGaps: !1,
           paneProperties: {
             backgroundType: b.Solid,
             gridLinesMode: "both",
             vertGridProperties: {
-              style: M
+              style: lineStyleSolid
             },
             horzGridProperties: {
-              style: M
+              style: lineStyleSolid
             },
             crossHairProperties: {
-              style: I,
+              style: lineStyleDashed,
               transparency: 0,
               width: 1
             },
