@@ -1,59 +1,49 @@
-# Logs and temp files
-*.log
-*.tmp
-*.swp
-
-# Environment
-.env
-.env.local
-*.env.*
-
-# Editors
-.vscode/
-.idea/
+```
+# Build artifacts and compiled files
+*.pyc
+__pycache__/
+*.o
+*.obj
+*.out
+*.exe
+*.dll
+*.so
+*.a
 
 # Dependencies
 node_modules/
-.jest/
-.nyc_output/
-coverage/
-.npm/
-.yarn/
+venv/
+.venv/
+.env
+.env.local
+.env.*
 
-# Build artifacts
+# Logs and temporary files
+*.log
+*.tmp
+*.swp
+*.swo
+
+# Coverage reports
+coverage/
+htmlcov/
+.coverage
+
+# IDE and editor files
+.vscode/
+.idea/
+
+# Distribution and build directories
 dist/
 build/
-*.js.map
-*.cjs.map
-*.mjs.map
+target/
+.gradle/
 
-# Python
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
-.Python
-*.so
-.coverage
-htmlcov/
-.pytest_cache/
+# Python specific
 .mypy_cache/
-.tox/
-.eggs/
-*.egg-info/
-.installed.cfg
-*.egg
+.pytest_cache/
 
-# Node.js
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-node_modules/
-.pnp
-.pnp.js
-.npmrc
-.yarnrc
-*.tgz
-
-# Original rules preserved
-*.log
+# System files
+.DS_Store
+Thumbs.db
+```
