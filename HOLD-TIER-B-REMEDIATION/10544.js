@@ -1,20 +1,59 @@
 /**
- * Module 10544 - Beautified
- * Auto-formatted from webpack bundle
- * Semantic variable names applied
+ * ============================================================================
+ * TRADINGVIEW MODULE 10544 - ELLIOTT WAVE DRAWING TOOLS
+ * ============================================================================
+ *
+ * Purpose: Elliott Wave pattern drawing tools for technical analysis
+ *
+ * Size: ~13 KB
+ *
+ * Key Responsibilities:
+ *   1. Elliott Wave Pattern Drawing
+ *      - Impulse waves (5-wave patterns: 1-2-3-4-5)
+ *      - Correction waves (3-wave patterns: A-B-C)
+ *      - Triangle waves (5-wave patterns: A-B-C-D-E)
+ *      - Double combo (W-X-Y)
+ *      - Triple combo (W-X-Y-X-Z)
+ *
+ *   2. Wave Degree System
+ *      - 15 degrees from Supermillennium to Minuscule
+ *      - Visual hierarchy based on wave degree
+ *
+ * Dependencies:
+ *   - 11542: Translation utilities
+ *   - 95804: Elliott wave utilities
+ *   - 41414: Line drawing source
+ *
+ * Exports:
+ *   - LineToolElliott: Elliott wave line tool
+ *   - LineToolElliottCorrection: Elliott correction tool
+ *   - LineToolElliottDegree: Wave degree enumeration
+ *   - LineToolElliottDoubleCombo: Double combo tool
+ *   - LineToolElliottImpulse: Impulse wave tool
+ *   - LineToolElliottTriangle: Triangle wave tool
+ *   - LineToolElliottTripleCombo: Triple combo tool
+ *
+ * @module 10544
+ * @category Drawing Tools
+ * @subcategory Elliott Waves
+ * ============================================================================
  */
 
-10544: (watchedValue_e, watchedValue_t, watchedValue_i) => {
-    "use strict";
-    watchedValue_i.watchedValue_r(watchedValue_t), watchedValue_i.watchedValue_d(watchedValue_t, {
-      LineToolElliott: () => watchedValue_m,
-      LineToolElliottCorrection: () => P,
-      LineToolElliottDegree: () => watchedValue_s,
-      LineToolElliottDoubleCombo: () => M,
-      LineToolElliottImpulse: () => watchedValue_y,
-      LineToolElliottTriangle: () => S,
-      LineToolElliottTripleCombo: () => watchedValue_w
-    });
+(moduleExports, moduleConfig, moduleRequire) => {
+  "use strict";
+  moduleRequire.watchedValue_r(moduleConfig, {
+    LineToolElliott: () => LineToolElliott,
+    LineToolElliottCorrection: () => LineToolElliottCorrection,
+    LineToolElliottDegree: () => LineToolElliottDegree,
+    LineToolElliottDoubleCombo: () => LineToolElliottDoubleCombo,
+    LineToolElliottImpulse: () => LineToolElliottImpulse,
+    LineToolElliottTriangle: () => LineToolElliottTriangle,
+    LineToolElliottTripleCombo: () => LineToolElliottTripleCombo
+  });
+
+  const TranslationUtils = moduleRequire(11542),
+    ElliottWaveUtils = moduleRequire(95804),
+    LineDrawingSource = moduleRequire(41414);
     var watchedValue_s, watchedValue_o, watchedValue_n = watchedValue_i(11542),
       watchedValue_r = watchedValue_i(95804),
       watchedValue_a = watchedValue_i(41414),
@@ -24,13 +63,21 @@
       watchedValue_d = watchedValue_i(13896);
     ! function(watchedValue_e) {
       watchedValue_e[watchedValue_e.Supermillennium = 0] = "Supermillennium", watchedValue_e[watchedValue_e.Millennium = 1] = "Millennium", watchedValue_e[watchedValue_e.Submillennium = 2] =
-        "Submillennium", watchedValue_e[watchedValue_e.GrandSupercycle = 3] = "GrandSupercycle", watchedValue_e[watchedValue_e.Supercycle = 4] = "Supercycle", watchedValue_e[watchedValue_e.Cycle =
-          5] = "Cycle", watchedValue_e[watchedValue_e.Primary = 6] = "Primary", watchedValue_e[watchedValue_e.Intermediate = 7] = "Intermediate", watchedValue_e[watchedValue_e.Minor = 8] = "Minor",
-        watchedValue_e[watchedValue_e.Minute = 9] = "Minute", watchedValue_e[watchedValue_e.Minuette = 10] = "Minuette", watchedValue_e[watchedValue_e.Subminuette = 11] = "Subminuette", watchedValue_e[watchedValue_e.Micro =
-          12] = "Micro", watchedValue_e[watchedValue_e.Submicro = 13] = "Submicro", watchedValue_e[watchedValue_e.Minuscule = 14] = "Minuscule"
-    }(watchedValue_s || (watchedValue_s = {})),
-    function(watchedValue_e) {
-      watchedValue_e[watchedValue_e.Current = 4] = "Current"
+        "Submillennium", watchedValue_e[watchedValue_e.GrandSupercycle = 3] = "GrandSupercycle", watchedValue_e[watchedValue_e.Supercycle = 4] = "Supercycle", watchedValue_e[watchedValue_e.Cycle = 5] = "Cycle";
+    }
+          watchedValue_e[watchedValue_e.Primary = 6] = "Primary";
+          watchedValue_e[watchedValue_e.Intermediate = 7] = "Intermediate";
+          watchedValue_e[watchedValue_e.Minor = 8] = "Minor";
+          watchedValue_e[watchedValue_e.Minute = 9] = "Minute";
+          watchedValue_e[watchedValue_e.Minuette = 10] = "Minuette";
+          watchedValue_e[watchedValue_e.Subminuette = 11] = "Subminuette";
+          watchedValue_e[watchedValue_e.Micro = 12] = "Micro";
+          watchedValue_e[watchedValue_e.Submicro = 13] = "Submicro";
+          watchedValue_e[watchedValue_e.Minuscule = 14] = "Minuscule";
+    }(watchedValue_s || (watchedValue_s = {}));
+    
+    function setDegreeCurrent(watchedValue_e) {
+      watchedValue_e[watchedValue_e.Current = 4] = "Current";
     }(watchedValue_o || (watchedValue_o = {}));
     const watchedValue_u = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14],
       _ = new watchedValue_r.TranslatedString("change Elliott degree", watchedValue_n.watchedValue_t(null, void 0, watchedValue_i(47977))),

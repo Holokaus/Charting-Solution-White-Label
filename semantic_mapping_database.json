@@ -1,9 +1,9 @@
 {
   "version": "1.0.0",
-  "generated": "2026-05-07",
+  "generated": "2026-05-08",
   "description": "Semantic mapping database for Tier B remediation - mechanical prefixes to semantic names",
   "total_modules": 180,
-  "processed_modules": 1,
+  "processed_modules": 90,
   "categories": {
     "drawing_tools": {
       "description": "Line drawing tools, Elliott waves, shapes",

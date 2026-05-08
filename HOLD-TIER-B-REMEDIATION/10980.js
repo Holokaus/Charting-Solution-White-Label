@@ -1,20 +1,57 @@
 /**
- * Module 10980 - Beautified
- * Auto-formatted from webpack bundle
- * Semantic variable names applied
+ * ============================================================================
+ * TRADINGVIEW MODULE 10980 - IMAGE UTILITIES
+ * ============================================================================
+ *
+ * Purpose: Image processing and validation utilities
+ *
+ * Size: 2.4 KB
+ *
+ * Functions:
+ *   - checkImageSize: Check image size
+ *   - generateLink: Generate image link
+ *   - getMaxImageSizeInBytes: Get max image size
+ *   - getMaxImageSizeLabel: Get max size label
+ *   - imageIsOversized: Check if image is oversized
+ *   - setImageStorageAdapter: Set image storage adapter
+ *   - uploadImage: Upload image
+ *
+ * Features:
+ *   - Image size validation
+ *   - Base64 image processing
+ *   - Storage adapter management
+ *   - Image upload functionality
+ *   - Size limit enforcement
+ *
+ * Dependencies:
+ *   - 11542: Image utilities
+ *
+ * Exports:
+ *   - checkImageSize: Image size check function
+ *   - generateLink: Link generation function
+ *   - getMaxImageSizeInBytes: Max size getter function
+ *   - getMaxImageSizeLabel: Max size label function
+ *   - imageIsOversized: Image size check function
+ *   - setImageStorageAdapter: Storage adapter setter function
+ *   - uploadImage: Image upload function
+ *
+ * @module 10980
+ * @category Image Processing
+ * @subpackage Utilities
+ * ============================================================================
  */
 
-10980: (watchedValue_e, watchedValue_t, watchedValue_i) => {
-    "use strict";
-    watchedValue_i.watchedValue_d(watchedValue_t, {
-      checkImageSize: () => watchedValue_c,
-      generateLink: () => watchedValue_a,
-      getMaxImageSizeInBytes: () => watchedValue_d,
-      getMaxImageSizeLabel: () => watchedValue_u,
-      imageIsOversized: () => watchedValue_l,
-      setImageStorageAdapter: () => watchedValue_r,
-      uploadImage: () => watchedValue_h
-    });
+(moduleExports, moduleConfig, moduleRequire) => {
+  "use strict";
+  moduleRequire.watchedValue_d(moduleConfig, {
+    checkImageSize: () => checkImageSize,
+    generateLink: () => generateLink,
+    getMaxImageSizeInBytes: () => getMaxImageSizeInBytes,
+    getMaxImageSizeLabel: () => getMaxImageSizeLabel,
+    imageIsOversized: () => imageIsOversized,
+    setImageStorageAdapter: () => setImageStorageAdapter,
+    uploadImage: () => uploadImage
+  });
     var context = watchedValue_i(11542);
     const watchedValue_o = /data:(.+?);base64,(.+)/;
     let watchedValue_n = 2e6;
