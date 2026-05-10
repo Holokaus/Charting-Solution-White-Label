@@ -1,0 +1,1 @@
+17776:(e,t,i)=>{"use strict";i.d(t,{barFunctionByStyle:()=>o});var seriesData=i(52746);function o(e,t){switch(e){case 12:return(0,seriesData.barFunction)("low","low","close");case 2:case 18:case 20:case 14:case 15:case 3:case 10:case 13:return(0,seriesData.barFunction)(t??"close");default:return(0,seriesData.barFunction)("close","open")}}

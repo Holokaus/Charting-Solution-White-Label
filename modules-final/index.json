@@ -1,0 +1,3292 @@
+{
+  "45": {
+    "file": "45-basic-studies-library.js",
+    "category": "utils",
+    "source": "renamed-modules",
+    "quality": 117.7138671875,
+    "path": "modules-final/utils/45-basic-studies-library.js"
+  },
+  "1395": {
+    "file": "1395-create-line-tool-sync-mode.js",
+    "category": "utils",
+    "source": "VERIFIED-TIER-A",
+    "quality": 93.5556640625,
+    "path": "modules-final/utils/1395-create-line-tool-sync-mode.js"
+  },
+  "1457": {
+    "file": "1457-copy-icon.js",
+    "category": "utils",
+    "source": "VERIFIED-TIER-A",
+    "quality": 91.04296875,
+    "path": "modules-final/utils/1457-copy-icon.js"
+  },
+  "1765": {
+    "file": "1765-settings-adapter.js",
+    "category": "utils",
+    "source": "renamed-modules",
+    "quality": 40.982421875,
+    "path": "modules-final/utils/1765-settings-adapter.js"
+  },
+  "1866": {
+    "file": "1866-tv-logo-svg.js",
+    "category": "utils",
+    "source": "VERIFIED-TIER-A",
+    "quality": 118.9345703125,
+    "path": "modules-final/utils/1866-tv-logo-svg.js"
+  },
+  "2072": {
+    "file": "2072-watched-value.js",
+    "category": "utils",
+    "source": "VERIFIED-TIER-A",
+    "quality": 83.8173828125,
+    "path": "modules-final/utils/2072-watched-value.js"
+  },
+  "2088": {
+    "file": "2088-study-factory.js",
+    "category": "indicators",
+    "source": "VERIFIED-TIER-A",
+    "quality": 126.0830078125,
+    "path": "modules-final/indicators/2088-study-factory.js"
+  },
+  "2115": {
+    "file": "2115-series.js",
+    "category": "charting",
+    "source": "renamed-modules",
+    "quality": 145,
+    "path": "modules-final/charting/2115-series.js"
+  },
+  "2258": {
+    "file": "2258-study-stub.js",
+    "category": "indicators",
+    "source": "VERIFIED-TIER-A",
+    "quality": 127.8505859375,
+    "path": "modules-final/indicators/2258-study-stub.js"
+  },
+  "2383": {
+    "file": "2383-line-tool-management.js",
+    "category": "utils",
+    "source": "HOLD-TIER-B-REMEDIATION",
+    "quality": 80.8193359375,
+    "path": "modules-final/utils/2383-line-tool-management.js"
+  },
+  "2433": {
+    "file": "2433-light-theme.js",
+    "category": "utils",
+    "source": "VERIFIED-TIER-A",
+    "quality": 116.6767578125,
+    "path": "modules-final/utils/2433-light-theme.js"
+  },
+  "2872": {
+    "file": "2872-lock-icon.js",
+    "category": "utils",
+    "source": "VERIFIED-TIER-A",
+    "quality": 91.1025390625,
+    "path": "modules-final/utils/2872-lock-icon.js"
+  },
+  "3186": {
+    "file": "3186-graphics-list-collection.js",
+    "category": "utils",
+    "source": "VERIFIED-TIER-A",
+    "quality": 104.4287109375,
+    "path": "modules-final/utils/3186-graphics-list-collection.js"
+  },
+  "3190": {
+    "file": "3190-time-hours-format.js",
+    "category": "utils",
+    "source": "VERIFIED-TIER-A",
+    "quality": 97.64453125,
+    "path": "modules-final/utils/3190-time-hours-format.js"
+  },
+  "3343": {
+    "file": "3343-keyboard-modifiers.js",
+    "category": "utils",
+    "source": "VERIFIED-TIER-A",
+    "quality": 110.43359375,
+    "path": "modules-final/utils/3343-keyboard-modifiers.js"
+  },
+  "3354": {
+    "file": "3354-chart-layouts.js",
+    "category": "charting",
+    "source": "VERIFIED-TIER-A",
+    "quality": 109.3095703125,
+    "path": "modules-final/charting/3354-chart-layouts.js"
+  },
+  "3615": {
+    "file": "3615-dialog-utilities.js",
+    "category": "utils",
+    "source": "VERIFIED-TIER-A",
+    "quality": 110.6142578125,
+    "path": "modules-final/utils/3615-dialog-utilities.js"
+  },
+  "3618": {
+    "file": "3618-input-title-translations.js",
+    "category": "utils",
+    "source": "VERIFIED-TIER-A",
+    "quality": 106.1513671875,
+    "path": "modules-final/utils/3618-input-title-translations.js"
+  },
+  "3885": {
+    "file": "3885-series-values-provider.js",
+    "category": "charting",
+    "source": "VERIFIED-TIER-A",
+    "quality": 128.5009765625,
+    "path": "modules-final/charting/3885-series-values-provider.js"
+  },
+  "3980": {
+    "file": "3980.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 0.0205078125,
+    "path": "modules-final/utils/3980.js"
+  },
+  "4148": {
+    "file": "4148.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 0.1142578125,
+    "path": "modules-final/utils/4148.js"
+  },
+  "4168": {
+    "file": "4168-uuid-generator.js",
+    "category": "ui",
+    "source": "HOLD-TIER-B-REMEDIATION",
+    "quality": 51.259765625,
+    "path": "modules-final/ui/4168-uuid-generator.js"
+  },
+  "4226": {
+    "file": "4226.js",
+    "category": "utils",
+    "source": "tier-three-identified-modules",
+    "quality": 26.0419921875,
+    "path": "modules-final/utils/4226.js"
+  },
+  "4249": {
+    "file": "4249.js",
+    "category": "utils",
+    "source": "deployed-modules",
+    "quality": 32.3603515625,
+    "path": "modules-final/utils/4249.js"
+  },
+  "4359": {
+    "file": "4359-price-data-source-utils.js",
+    "category": "data",
+    "source": "HOLD-TIER-B-REMEDIATION",
+    "quality": 68.341796875,
+    "path": "modules-final/data/4359-price-data-source-utils.js"
+  },
+  "4539": {
+    "file": "4539-coordinate-utilities.js",
+    "category": "utils",
+    "source": "HOLD-TIER-B-REMEDIATION",
+    "quality": 73.1064453125,
+    "path": "modules-final/utils/4539-coordinate-utilities.js"
+  },
+  "4622": {
+    "file": "4622-resolution-builder.js",
+    "category": "ui",
+    "source": "HOLD-TIER-B-REMEDIATION",
+    "quality": 67.0478515625,
+    "path": "modules-final/ui/4622-resolution-builder.js"
+  },
+  "4659": {
+    "file": "4659.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 11.033203125,
+    "path": "modules-final/utils/4659.js"
+  },
+  "4699": {
+    "file": "4699.js",
+    "category": "utils",
+    "source": "tier-three-identified-modules",
+    "quality": 26.7236328125,
+    "path": "modules-final/utils/4699.js"
+  },
+  "4745": {
+    "file": "4745.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 5.3896484375,
+    "path": "modules-final/utils/4745.js"
+  },
+  "4753": {
+    "file": "4753.js",
+    "category": "utils",
+    "source": "deployed-modules",
+    "quality": 79.1103515625,
+    "path": "modules-final/utils/4753.js"
+  },
+  "4783": {
+    "file": "4783-indicators.js",
+    "category": "indicators",
+    "source": "renamed-modules",
+    "quality": 130,
+    "path": "modules-final/indicators/4783-indicators.js"
+  },
+  "5471": {
+    "file": "5471.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 0.17578125,
+    "path": "modules-final/utils/5471.js"
+  },
+  "5734": {
+    "file": "5734.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 5.412109375,
+    "path": "modules-final/utils/5734.js"
+  },
+  "5845": {
+    "file": "5845.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 0.1875,
+    "path": "modules-final/utils/5845.js"
+  },
+  "5992": {
+    "file": "5992.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 0.0205078125,
+    "path": "modules-final/utils/5992.js"
+  },
+  "6652": {
+    "file": "6652.js",
+    "category": "utils",
+    "source": "round5-high-applied",
+    "quality": 47.2373046875,
+    "path": "modules-final/utils/6652.js"
+  },
+  "6862": {
+    "file": "6862.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 0.3828125,
+    "path": "modules-final/utils/6862.js"
+  },
+  "7024": {
+    "file": "7024.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 0.1455078125,
+    "path": "modules-final/utils/7024.js"
+  },
+  "7304": {
+    "file": "7304.js",
+    "category": "utils",
+    "source": "tier-three-identified-modules",
+    "quality": 21.15625,
+    "path": "modules-final/utils/7304.js"
+  },
+  "7543": {
+    "file": "7543-data-source-utils.js",
+    "category": "data",
+    "source": "HOLD-TIER-B-REMEDIATION",
+    "quality": 66.1884765625,
+    "path": "modules-final/data/7543-data-source-utils.js"
+  },
+  "7793": {
+    "file": "7793.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 11.5947265625,
+    "path": "modules-final/utils/7793.js"
+  },
+  "7983": {
+    "file": "7983.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 0.3251953125,
+    "path": "modules-final/utils/7983.js"
+  },
+  "8686": {
+    "file": "8686.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 5.3583984375,
+    "path": "modules-final/utils/8686.js"
+  },
+  "8811": {
+    "file": "8811-watched-value-factory.js",
+    "category": "utils",
+    "source": "HOLD-TIER-B-REMEDIATION",
+    "quality": 67.0888671875,
+    "path": "modules-final/utils/8811-watched-value-factory.js"
+  },
+  "9343": {
+    "file": "9343.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 7.029296875,
+    "path": "modules-final/utils/9343.js"
+  },
+  "9753": {
+    "file": "9753.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 0.1806640625,
+    "path": "modules-final/utils/9753.js"
+  },
+  "9787": {
+    "file": "9787.js",
+    "category": "utils",
+    "source": "tier-three-identified-modules",
+    "quality": 32.4736328125,
+    "path": "modules-final/utils/9787.js"
+  },
+  "9860": {
+    "file": "9860.js",
+    "category": "utils",
+    "source": "tier-three-identified-modules",
+    "quality": 31.197265625,
+    "path": "modules-final/utils/9860.js"
+  },
+  "10307": {
+    "file": "10307-bitmap-coordinates-pane-renderer.js",
+    "category": "rendering",
+    "source": "VERIFIED-TIER-A",
+    "quality": 104.388671875,
+    "path": "modules-final/rendering/10307-bitmap-coordinates-pane-renderer.js"
+  },
+  "10341": {
+    "file": "10341-too-many-studies-notice.js",
+    "category": "utils",
+    "source": "VERIFIED-TIER-A",
+    "quality": 99.60546875,
+    "path": "modules-final/utils/10341-too-many-studies-notice.js"
+  },
+  "10544": {
+    "file": "10544-elliott-wave-tools.js",
+    "category": "utils",
+    "source": "VERIFIED-TIER-A",
+    "quality": 126.466796875,
+    "path": "modules-final/utils/10544-elliott-wave-tools.js"
+  },
+  "10718": {
+    "file": "10718-date-format-utilities.js",
+    "category": "utils",
+    "source": "renamed-modules",
+    "quality": 104.3115234375,
+    "path": "modules-final/utils/10718-date-format-utilities.js"
+  },
+  "10845": {
+    "file": "10845-timezone-utilities.js",
+    "category": "utils",
+    "source": "VERIFIED-TIER-A",
+    "quality": 109.7275390625,
+    "path": "modules-final/utils/10845-timezone-utilities.js"
+  },
+  "10892": {
+    "file": "10892-interval-utilities.js",
+    "category": "utils",
+    "source": "renamed-modules",
+    "quality": 107.2275390625,
+    "path": "modules-final/utils/10892-interval-utilities.js"
+  },
+  "10980": {
+    "file": "10980-time-scale-utils.js",
+    "category": "utils",
+    "source": "VERIFIED-TIER-A",
+    "quality": 95.8125,
+    "path": "modules-final/utils/10980-time-scale-utils.js"
+  },
+  "11044": {
+    "file": "11044.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 0.09765625,
+    "path": "modules-final/utils/11044.js"
+  },
+  "11063": {
+    "file": "11063-drawing-tool-properties.js",
+    "category": "utils",
+    "source": "VERIFIED-TIER-A",
+    "quality": 97.66796875,
+    "path": "modules-final/utils/11063-drawing-tool-properties.js"
+  },
+  "11245": {
+    "file": "11245-symbol-search-source.js",
+    "category": "utils",
+    "source": "VERIFIED-TIER-A",
+    "quality": 107.7529296875,
+    "path": "modules-final/utils/11245-symbol-search-source.js"
+  },
+  "11388": {
+    "file": "11388-chart-event-dispatcher.js",
+    "category": "charting",
+    "source": "VERIFIED-TIER-A",
+    "quality": 107.9052734375,
+    "path": "modules-final/charting/11388-chart-event-dispatcher.js"
+  },
+  "11417": {
+    "file": "11417.js",
+    "category": "utils",
+    "source": "tier-three-identified-modules",
+    "quality": 23.130859375,
+    "path": "modules-final/utils/11417.js"
+  },
+  "11502": {
+    "file": "11502-pane-manager.js",
+    "category": "ui",
+    "source": "VERIFIED-TIER-A",
+    "quality": 109.78125,
+    "path": "modules-final/ui/11502-pane-manager.js"
+  },
+  "11751": {
+    "file": "11751-multi-subscription-watched-value.js",
+    "category": "utils",
+    "source": "HOLD-TIER-B-REMEDIATION",
+    "quality": 67.1455078125,
+    "path": "modules-final/utils/11751-multi-subscription-watched-value.js"
+  },
+  "11768": {
+    "file": "11768.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 16.056640625,
+    "path": "modules-final/utils/11768.js"
+  },
+  "11890": {
+    "file": "11890.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 0.408203125,
+    "path": "modules-final/utils/11890.js"
+  },
+  "11946": {
+    "file": "11946.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 7.9345703125,
+    "path": "modules-final/utils/11946.js"
+  },
+  "12178": {
+    "file": "12178.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 5.125,
+    "path": "modules-final/utils/12178.js"
+  },
+  "12217": {
+    "file": "12217-state-utilities.js",
+    "category": "utils",
+    "source": "HOLD-TIER-B-REMEDIATION",
+    "quality": 53.07421875,
+    "path": "modules-final/utils/12217-state-utilities.js"
+  },
+  "12362": {
+    "file": "12362-chart-saver-base.js",
+    "category": "charting",
+    "source": "HOLD-TIER-B-REMEDIATION",
+    "quality": 87.81640625,
+    "path": "modules-final/charting/12362-chart-saver-base.js"
+  },
+  "13173": {
+    "file": "13173.js",
+    "category": "utils",
+    "source": "tier-three-identified-modules",
+    "quality": 31.9228515625,
+    "path": "modules-final/utils/13173.js"
+  },
+  "13421": {
+    "file": "13421.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 18.6826171875,
+    "path": "modules-final/utils/13421.js"
+  },
+  "13607": {
+    "file": "13607-quote-session-multiplexer.js",
+    "category": "utils",
+    "source": "HOLD-TIER-B-REMEDIATION",
+    "quality": 87.419921875,
+    "path": "modules-final/utils/13607-quote-session-multiplexer.js"
+  },
+  "13651": {
+    "file": "13651.js",
+    "category": "utils",
+    "source": "tier-three-identified-modules",
+    "quality": 30.884765625,
+    "path": "modules-final/utils/13651.js"
+  },
+  "13823": {
+    "file": "13823-volume-profile-base.js",
+    "category": "utils",
+    "source": "HOLD-TIER-B-REMEDIATION",
+    "quality": 83.37109375,
+    "path": "modules-final/utils/13823-volume-profile-base.js"
+  },
+  "13896": {
+    "file": "13896-chart-invalidation-constants.js",
+    "category": "charting",
+    "source": "HOLD-TIER-B-REMEDIATION",
+    "quality": 50.8857421875,
+    "path": "modules-final/charting/13896-chart-invalidation-constants.js"
+  },
+  "14411": {
+    "file": "14411-chart-changes-enhanced.js",
+    "category": "charting",
+    "source": "HOLD-TIER-B-REMEDIATION",
+    "quality": 82.3720703125,
+    "path": "modules-final/charting/14411-chart-changes-enhanced.js"
+  },
+  "14429": {
+    "file": "14429.js",
+    "category": "utils",
+    "source": "tier-three-identified-modules",
+    "quality": 30.751953125,
+    "path": "modules-final/utils/14429.js"
+  },
+  "14715": {
+    "file": "14715.js",
+    "category": "utils",
+    "source": "tier-three-identified-modules",
+    "quality": 26.4072265625,
+    "path": "modules-final/utils/14715.js"
+  },
+  "14881": {
+    "file": "14881-hide-state-enhanced.js",
+    "category": "utils",
+    "source": "HOLD-TIER-B-REMEDIATION",
+    "quality": 81.794921875,
+    "path": "modules-final/utils/14881-hide-state-enhanced.js"
+  },
+  "15219": {
+    "file": "15219-study-versioning.js",
+    "category": "indicators",
+    "source": "HOLD-TIER-B-REMEDIATION",
+    "quality": 97.4208984375,
+    "path": "modules-final/indicators/15219-study-versioning.js"
+  },
+  "15266": {
+    "file": "15266.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 0.1865234375,
+    "path": "modules-final/utils/15266.js"
+  },
+  "15574": {
+    "file": "15574.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 5.1201171875,
+    "path": "modules-final/utils/15574.js"
+  },
+  "15754": {
+    "file": "15754.js",
+    "category": "utils",
+    "source": "tier-three-identified-modules",
+    "quality": 26.6376953125,
+    "path": "modules-final/utils/15754.js"
+  },
+  "16216": {
+    "file": "16216.js",
+    "category": "utils",
+    "source": "tier-three-identified-modules",
+    "quality": 26.0185546875,
+    "path": "modules-final/utils/16216.js"
+  },
+  "16329": {
+    "file": "16329-sessions-spec.js",
+    "category": "utils",
+    "source": "HOLD-TIER-B-REMEDIATION",
+    "quality": 124.353515625,
+    "path": "modules-final/utils/16329-sessions-spec.js"
+  },
+  "16659": {
+    "file": "16659-circular-cache-buffer.js",
+    "category": "utils",
+    "source": "HOLD-TIER-B-REMEDIATION",
+    "quality": 77.2919921875,
+    "path": "modules-final/utils/16659-circular-cache-buffer.js"
+  },
+  "16708": {
+    "file": "16708.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 6.1376953125,
+    "path": "modules-final/utils/16708.js"
+  },
+  "16879": {
+    "file": "16879.js",
+    "category": "utils",
+    "source": "tier-three-identified-modules",
+    "quality": 29.5302734375,
+    "path": "modules-final/utils/16879.js"
+  },
+  "16911": {
+    "file": "16911.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 0.3115234375,
+    "path": "modules-final/utils/16911.js"
+  },
+  "17161": {
+    "file": "17161.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 0.1298828125,
+    "path": "modules-final/utils/17161.js"
+  },
+  "17776": {
+    "file": "17776.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 5.33203125,
+    "path": "modules-final/utils/17776.js"
+  },
+  "18041": {
+    "file": "18041-study-template-utils.js",
+    "category": "indicators",
+    "source": "HOLD-TIER-B-REMEDIATION",
+    "quality": 68.3876953125,
+    "path": "modules-final/indicators/18041-study-template-utils.js"
+  },
+  "18113": {
+    "file": "18113.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 5.0947265625,
+    "path": "modules-final/utils/18113.js"
+  },
+  "18185": {
+    "file": "18185.js",
+    "category": "utils",
+    "source": "tier-three-identified-modules",
+    "quality": 31.4189453125,
+    "path": "modules-final/utils/18185.js"
+  },
+  "18330": {
+    "file": "18330-style-enums.js",
+    "category": "utils",
+    "source": "HOLD-TIER-B-REMEDIATION",
+    "quality": 52.2236328125,
+    "path": "modules-final/utils/18330-style-enums.js"
+  },
+  "18712": {
+    "file": "18712.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 5.3291015625,
+    "path": "modules-final/utils/18712.js"
+  },
+  "19136": {
+    "file": "19136-study-data-source.js",
+    "category": "indicators",
+    "source": "HOLD-TIER-B-REMEDIATION",
+    "quality": 87.6943359375,
+    "path": "modules-final/indicators/19136-study-data-source.js"
+  },
+  "19233": {
+    "file": "19233.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 10.8642578125,
+    "path": "modules-final/utils/19233.js"
+  },
+  "19334": {
+    "file": "19334.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 5.5419921875,
+    "path": "modules-final/utils/19334.js"
+  },
+  "19679": {
+    "file": "19679.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 0.251953125,
+    "path": "modules-final/utils/19679.js"
+  },
+  "19844": {
+    "file": "19844-study-meta-info.js",
+    "category": "indicators",
+    "source": "HOLD-TIER-B-REMEDIATION",
+    "quality": 83.564453125,
+    "path": "modules-final/indicators/19844-study-meta-info.js"
+  },
+  "19979": {
+    "file": "19979.js",
+    "category": "utils",
+    "source": "deployed-modules",
+    "quality": 78.7333984375,
+    "path": "modules-final/utils/19979.js"
+  },
+  "20512": {
+    "file": "20512.js",
+    "category": "utils",
+    "source": "tier-three-identified-modules",
+    "quality": 26.1455078125,
+    "path": "modules-final/utils/20512.js"
+  },
+  "20715": {
+    "file": "20715.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 0.021484375,
+    "path": "modules-final/utils/20715.js"
+  },
+  "20820": {
+    "file": "20820.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 10.4052734375,
+    "path": "modules-final/utils/20820.js"
+  },
+  "21097": {
+    "file": "21097-xwindow-events.js",
+    "category": "utils",
+    "source": "HOLD-TIER-B-REMEDIATION",
+    "quality": 79.876953125,
+    "path": "modules-final/utils/21097-xwindow-events.js"
+  },
+  "22033": {
+    "file": "22033-chart-style-preferences.js",
+    "category": "charting",
+    "source": "HOLD-TIER-B-REMEDIATION",
+    "quality": 68.5830078125,
+    "path": "modules-final/charting/22033-chart-style-preferences.js"
+  },
+  "22455": {
+    "file": "22455-price-data-source-utils.js",
+    "category": "data",
+    "source": "HOLD-TIER-B-REMEDIATION",
+    "quality": 67.5517578125,
+    "path": "modules-final/data/22455-price-data-source-utils.js"
+  },
+  "22489": {
+    "file": "22489.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 15.4365234375,
+    "path": "modules-final/utils/22489.js"
+  },
+  "22613": {
+    "file": "22613-watched-value.js",
+    "category": "utils",
+    "source": "HOLD-TIER-B-REMEDIATION",
+    "quality": 72.7685546875,
+    "path": "modules-final/utils/22613-watched-value.js"
+  },
+  "22961": {
+    "file": "22961.js",
+    "category": "utils",
+    "source": "tier-three-identified-modules",
+    "quality": 36.76171875,
+    "path": "modules-final/utils/22961.js"
+  },
+  "23024": {
+    "file": "23024-chart-storage.js",
+    "category": "charting",
+    "source": "HOLD-TIER-B-REMEDIATION",
+    "quality": 57.0673828125,
+    "path": "modules-final/charting/23024-chart-storage.js"
+  },
+  "23502": {
+    "file": "23502-study-properties.js",
+    "category": "indicators",
+    "source": "HOLD-TIER-B-REMEDIATION",
+    "quality": 73.3046875,
+    "path": "modules-final/indicators/23502-study-properties.js"
+  },
+  "23714": {
+    "file": "23714.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 0.337890625,
+    "path": "modules-final/utils/23714.js"
+  },
+  "23745": {
+    "file": "23745.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 5.2314453125,
+    "path": "modules-final/utils/23745.js"
+  },
+  "23752": {
+    "file": "23752-time-axis-view.js",
+    "category": "utils",
+    "source": "HOLD-TIER-B-REMEDIATION",
+    "quality": 74.2880859375,
+    "path": "modules-final/utils/23752-time-axis-view.js"
+  },
+  "24062": {
+    "file": "24062.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 11.8642578125,
+    "path": "modules-final/utils/24062.js"
+  },
+  "24317": {
+    "file": "24317-theme-manager.js",
+    "category": "utils",
+    "source": "HOLD-TIER-B-REMEDIATION",
+    "quality": 71.0439453125,
+    "path": "modules-final/utils/24317-theme-manager.js"
+  },
+  "24437": {
+    "file": "24437-live-study-graphics.js",
+    "category": "indicators",
+    "source": "renamed-modules",
+    "quality": 88.9951171875,
+    "path": "modules-final/indicators/24437-live-study-graphics.js"
+  },
+  "24451": {
+    "file": "24451.js",
+    "category": "utils",
+    "source": "tier-three-identified-modules",
+    "quality": 31.1767578125,
+    "path": "modules-final/utils/24451.js"
+  },
+  "24633": {
+    "file": "24633.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 0.109375,
+    "path": "modules-final/utils/24633.js"
+  },
+  "24640": {
+    "file": "24640.js",
+    "category": "utils",
+    "source": "tier-three-identified-modules",
+    "quality": 27.3447265625,
+    "path": "modules-final/utils/24640.js"
+  },
+  "25191": {
+    "file": "25191.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 0.3671875,
+    "path": "modules-final/utils/25191.js"
+  },
+  "25246": {
+    "file": "25246.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 0.4306640625,
+    "path": "modules-final/utils/25246.js"
+  },
+  "25338": {
+    "file": "25338.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 5.1220703125,
+    "path": "modules-final/utils/25338.js"
+  },
+  "25672": {
+    "file": "25672.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 0.14453125,
+    "path": "modules-final/utils/25672.js"
+  },
+  "26010": {
+    "file": "26010.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 5.6650390625,
+    "path": "modules-final/utils/26010.js"
+  },
+  "26352": {
+    "file": "26352-css-values.js",
+    "category": "utils",
+    "source": "HOLD-TIER-B-REMEDIATION",
+    "quality": 51.4306640625,
+    "path": "modules-final/utils/26352-css-values.js"
+  },
+  "26610": {
+    "file": "26610.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 20.23046875,
+    "path": "modules-final/utils/26610.js"
+  },
+  "26709": {
+    "file": "26709.js",
+    "category": "utils",
+    "source": "tier-three-identified-modules",
+    "quality": 20.828125,
+    "path": "modules-final/utils/26709.js"
+  },
+  "26743": {
+    "file": "26743.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 1.7451171875,
+    "path": "modules-final/utils/26743.js"
+  },
+  "26867": {
+    "file": "26867.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 5.4365234375,
+    "path": "modules-final/utils/26867.js"
+  },
+  "27593": {
+    "file": "27593-study-migration.js",
+    "category": "indicators",
+    "source": "HOLD-TIER-B-REMEDIATION",
+    "quality": 76.1640625,
+    "path": "modules-final/indicators/27593-study-migration.js"
+  },
+  "27808": {
+    "file": "27808-series-candles-pane-view.js",
+    "category": "charting",
+    "source": "HOLD-TIER-B-REMEDIATION",
+    "quality": 74.6318359375,
+    "path": "modules-final/charting/27808-series-candles-pane-view.js"
+  },
+  "28001": {
+    "file": "28001.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 10.6552734375,
+    "path": "modules-final/utils/28001.js"
+  },
+  "28056": {
+    "file": "28056.js",
+    "category": "utils",
+    "source": "tier-three-identified-modules",
+    "quality": 31.87890625,
+    "path": "modules-final/utils/28056.js"
+  },
+  "28334": {
+    "file": "28334-series-hlc-bars-pane-view.js",
+    "category": "charting",
+    "source": "HOLD-TIER-B-REMEDIATION",
+    "quality": 74.78125,
+    "path": "modules-final/charting/28334-series-hlc-bars-pane-view.js"
+  },
+  "28450": {
+    "file": "28450.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 19.091796875,
+    "path": "modules-final/utils/28450.js"
+  },
+  "28477": {
+    "file": "28477.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 10.306640625,
+    "path": "modules-final/utils/28477.js"
+  },
+  "29063": {
+    "file": "29063-overflow-tooltip.js",
+    "category": "utils",
+    "source": "HOLD-TIER-B-REMEDIATION",
+    "quality": 69.7548828125,
+    "path": "modules-final/utils/29063-overflow-tooltip.js"
+  },
+  "29242": {
+    "file": "29242.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 5.0849609375,
+    "path": "modules-final/utils/29242.js"
+  },
+  "29447": {
+    "file": "29447-line-tool-utils.js",
+    "category": "utils",
+    "source": "HOLD-TIER-B-REMEDIATION",
+    "quality": 67.93359375,
+    "path": "modules-final/utils/29447-line-tool-utils.js"
+  },
+  "29453": {
+    "file": "29453.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 0.435546875,
+    "path": "modules-final/utils/29453.js"
+  },
+  "29603": {
+    "file": "29603-group-undo-command.js",
+    "category": "utils",
+    "source": "HOLD-TIER-B-REMEDIATION",
+    "quality": 73.8486328125,
+    "path": "modules-final/utils/29603-group-undo-command.js"
+  },
+  "29803": {
+    "file": "29803.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 28.0068359375,
+    "path": "modules-final/utils/29803.js"
+  },
+  "29806": {
+    "file": "29806-series-data-unpacker.js",
+    "category": "charting",
+    "source": "HOLD-TIER-B-REMEDIATION",
+    "quality": 68.736328125,
+    "path": "modules-final/charting/29806-series-data-unpacker.js"
+  },
+  "29970": {
+    "file": "29970.js",
+    "category": "utils",
+    "source": "tier-three-identified-modules",
+    "quality": 28.8486328125,
+    "path": "modules-final/utils/29970.js"
+  },
+  "30342": {
+    "file": "30342.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 0.173828125,
+    "path": "modules-final/utils/30342.js"
+  },
+  "30376": {
+    "file": "30376.js",
+    "category": "utils",
+    "source": "tier-three-identified-modules",
+    "quality": 32.5908203125,
+    "path": "modules-final/utils/30376.js"
+  },
+  "30693": {
+    "file": "30693.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 12.4521484375,
+    "path": "modules-final/utils/30693.js"
+  },
+  "30714": {
+    "file": "30714.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 26.240234375,
+    "path": "modules-final/utils/30714.js"
+  },
+  "30798": {
+    "file": "30798-polygon-utilities.js",
+    "category": "utils",
+    "source": "HOLD-TIER-B-REMEDIATION",
+    "quality": 69.1171875,
+    "path": "modules-final/utils/30798-polygon-utilities.js"
+  },
+  "30947": {
+    "file": "30947-quote-cache.js",
+    "category": "utils",
+    "source": "HOLD-TIER-B-REMEDIATION",
+    "quality": 79.837890625,
+    "path": "modules-final/utils/30947-quote-cache.js"
+  },
+  "31237": {
+    "file": "31237.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 5.646484375,
+    "path": "modules-final/utils/31237.js"
+  },
+  "31269": {
+    "file": "31269-context-menu-manager.js",
+    "category": "utils",
+    "source": "HOLD-TIER-B-REMEDIATION",
+    "quality": 74.56640625,
+    "path": "modules-final/utils/31269-context-menu-manager.js"
+  },
+  "31645": {
+    "file": "31645.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 5.0888671875,
+    "path": "modules-final/utils/31645.js"
+  },
+  "31789": {
+    "file": "31789.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 0.517578125,
+    "path": "modules-final/utils/31789.js"
+  },
+  "31932": {
+    "file": "31932.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 5.177734375,
+    "path": "modules-final/utils/31932.js"
+  },
+  "32112": {
+    "file": "32112-selection-api.js",
+    "category": "utils",
+    "source": "HOLD-TIER-B-REMEDIATION",
+    "quality": 74.4951171875,
+    "path": "modules-final/utils/32112-selection-api.js"
+  },
+  "32399": {
+    "file": "32399-series-line-pane-view.js",
+    "category": "charting",
+    "source": "HOLD-TIER-B-REMEDIATION",
+    "quality": 63.76953125,
+    "path": "modules-final/charting/32399-series-line-pane-view.js"
+  },
+  "32503": {
+    "file": "32503-pivot-points.js",
+    "category": "utils",
+    "source": "HOLD-TIER-B-REMEDIATION",
+    "quality": 69.04296875,
+    "path": "modules-final/utils/32503-pivot-points.js"
+  },
+  "32517": {
+    "file": "32517.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 0.021484375,
+    "path": "modules-final/utils/32517.js"
+  },
+  "32544": {
+    "file": "32544.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 5.2978515625,
+    "path": "modules-final/utils/32544.js"
+  },
+  "32853": {
+    "file": "32853-text-renderer.js",
+    "category": "rendering",
+    "source": "HOLD-TIER-B-REMEDIATION",
+    "quality": 54.8076171875,
+    "path": "modules-final/rendering/32853-text-renderer.js"
+  },
+  "32925": {
+    "file": "32925-fetch-wrapper.js",
+    "category": "utils",
+    "source": "VERIFIED-TIER-A",
+    "quality": 76.216796875,
+    "path": "modules-final/utils/32925-fetch-wrapper.js"
+  },
+  "33065": {
+    "file": "33065.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 5.2587890625,
+    "path": "modules-final/utils/33065.js"
+  },
+  "33350": {
+    "file": "33350-canvas-utilities.js",
+    "category": "utils",
+    "source": "HOLD-TIER-B-REMEDIATION",
+    "quality": 68.8369140625,
+    "path": "modules-final/utils/33350-canvas-utilities.js"
+  },
+  "33505": {
+    "file": "33505-series-pane-renderer.js",
+    "category": "rendering",
+    "source": "HOLD-TIER-B-REMEDIATION",
+    "quality": 73.7783203125,
+    "path": "modules-final/rendering/33505-series-pane-renderer.js"
+  },
+  "33718": {
+    "file": "33718.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 5.8603515625,
+    "path": "modules-final/utils/33718.js"
+  },
+  "33952": {
+    "file": "33952.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 5.1650390625,
+    "path": "modules-final/utils/33952.js"
+  },
+  "34369": {
+    "file": "34369.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 0.3330078125,
+    "path": "modules-final/utils/34369.js"
+  },
+  "34378": {
+    "file": "34378-anchored-vwap-study.js",
+    "category": "indicators",
+    "source": "HOLD-TIER-B-REMEDIATION",
+    "quality": 69.048828125,
+    "path": "modules-final/indicators/34378-anchored-vwap-study.js"
+  },
+  "34487": {
+    "file": "34487.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 0.33984375,
+    "path": "modules-final/utils/34487.js"
+  },
+  "34811": {
+    "file": "34811.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 0.0927734375,
+    "path": "modules-final/utils/34811.js"
+  },
+  "34840": {
+    "file": "34840-chart-storage-http-adapter.js",
+    "category": "charting",
+    "source": "VERIFIED-TIER-A",
+    "quality": 82.0830078125,
+    "path": "modules-final/charting/34840-chart-storage-http-adapter.js"
+  },
+  "34907": {
+    "file": "34907.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 0.021484375,
+    "path": "modules-final/utils/34907.js"
+  },
+  "35107": {
+    "file": "35107.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 24.13671875,
+    "path": "modules-final/utils/35107.js"
+  },
+  "35727": {
+    "file": "35727-custom-formatters.js",
+    "category": "utils",
+    "source": "HOLD-TIER-B-REMEDIATION",
+    "quality": 56.3623046875,
+    "path": "modules-final/utils/35727-custom-formatters.js"
+  },
+  "35749": {
+    "file": "35749.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 0.142578125,
+    "path": "modules-final/utils/35749.js"
+  },
+  "35990": {
+    "file": "35990-study-status-provider.js",
+    "category": "indicators",
+    "source": "HOLD-TIER-B-REMEDIATION",
+    "quality": 75.48828125,
+    "path": "modules-final/indicators/35990-study-status-provider.js"
+  },
+  "36281": {
+    "file": "36281-price-axis-view.js",
+    "category": "utils",
+    "source": "HOLD-TIER-B-REMEDIATION",
+    "quality": 74.59375,
+    "path": "modules-final/utils/36281-price-axis-view.js"
+  },
+  "36313": {
+    "file": "36313-study-status-manager.js",
+    "category": "indicators",
+    "source": "HOLD-TIER-B-REMEDIATION",
+    "quality": 73.79296875,
+    "path": "modules-final/indicators/36313-study-status-manager.js"
+  },
+  "36597": {
+    "file": "36597-symbol-utils.js",
+    "category": "utils",
+    "source": "HOLD-TIER-B-REMEDIATION",
+    "quality": 67.71484375,
+    "path": "modules-final/utils/36597-symbol-utils.js"
+  },
+  "36947": {
+    "file": "36947-pitchfork-styles.js",
+    "category": "utils",
+    "source": "HOLD-TIER-B-REMEDIATION",
+    "quality": 51.3828125,
+    "path": "modules-final/utils/36947-pitchfork-styles.js"
+  },
+  "37150": {
+    "file": "37150-fully-renamed.js",
+    "category": "utils",
+    "source": "renamed-modules",
+    "quality": 130,
+    "path": "modules-final/utils/37150-fully-renamed.js"
+  },
+  "37236": {
+    "file": "37236.js",
+    "category": "utils",
+    "source": "tier-three-identified-modules",
+    "quality": 43.76171875,
+    "path": "modules-final/utils/37236.js"
+  },
+  "37293": {
+    "file": "37293.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 0.2998046875,
+    "path": "modules-final/utils/37293.js"
+  },
+  "38414": {
+    "file": "38414.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 10.2939453125,
+    "path": "modules-final/utils/38414.js"
+  },
+  "38486": {
+    "file": "38486.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 5.2275390625,
+    "path": "modules-final/utils/38486.js"
+  },
+  "38780": {
+    "file": "38780-tooltip-manager.js",
+    "category": "utils",
+    "source": "HOLD-TIER-B-REMEDIATION",
+    "quality": 68.7607421875,
+    "path": "modules-final/utils/38780-tooltip-manager.js"
+  },
+  "38881": {
+    "file": "38881.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 10.39453125,
+    "path": "modules-final/utils/38881.js"
+  },
+  "38888": {
+    "file": "38888.js",
+    "category": "utils",
+    "source": "tier-three-identified-modules",
+    "quality": 31.2841796875,
+    "path": "modules-final/utils/38888.js"
+  },
+  "39058": {
+    "file": "39058.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 5.21875,
+    "path": "modules-final/utils/39058.js"
+  },
+  "39267": {
+    "file": "39267.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 0.2216796875,
+    "path": "modules-final/utils/39267.js"
+  },
+  "39488": {
+    "file": "39488-study-graphics.js",
+    "category": "indicators",
+    "source": "HOLD-TIER-B-REMEDIATION",
+    "quality": 81.8330078125,
+    "path": "modules-final/indicators/39488-study-graphics.js"
+  },
+  "39527": {
+    "file": "39527.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 5.6240234375,
+    "path": "modules-final/utils/39527.js"
+  },
+  "39612": {
+    "file": "39612.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 5.2587890625,
+    "path": "modules-final/utils/39612.js"
+  },
+  "39697": {
+    "file": "39697-circle-renderer.js",
+    "category": "rendering",
+    "source": "HOLD-TIER-B-REMEDIATION",
+    "quality": 73.8115234375,
+    "path": "modules-final/rendering/39697-circle-renderer.js"
+  },
+  "40080": {
+    "file": "40080.js",
+    "category": "utils",
+    "source": "tier-three-identified-modules",
+    "quality": 20.7919921875,
+    "path": "modules-final/utils/40080.js"
+  },
+  "40137": {
+    "file": "40137.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 10.66796875,
+    "path": "modules-final/utils/40137.js"
+  },
+  "40153": {
+    "file": "40153-date-format-weekday-property.js",
+    "category": "utils",
+    "source": "VERIFIED-TIER-A",
+    "quality": 47.0576171875,
+    "path": "modules-final/utils/40153-date-format-weekday-property.js"
+  },
+  "40472": {
+    "file": "40472.js",
+    "category": "utils",
+    "source": "deployed-modules",
+    "quality": 27.416015625,
+    "path": "modules-final/utils/40472.js"
+  },
+  "40738": {
+    "file": "40738.js",
+    "category": "utils",
+    "source": "deployed-modules",
+    "quality": 31.162109375,
+    "path": "modules-final/utils/40738.js"
+  },
+  "40987": {
+    "file": "40987.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 0.08984375,
+    "path": "modules-final/utils/40987.js"
+  },
+  "41072": {
+    "file": "41072.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 5.119140625,
+    "path": "modules-final/utils/41072.js"
+  },
+  "41183": {
+    "file": "41183.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 0.060546875,
+    "path": "modules-final/utils/41183.js"
+  },
+  "41414": {
+    "file": "41414-line-drawing-source.js",
+    "category": "utils",
+    "source": "renamed-modules",
+    "quality": 124.08984375,
+    "path": "modules-final/utils/41414-line-drawing-source.js"
+  },
+  "41706": {
+    "file": "41706.js",
+    "category": "utils",
+    "source": "deployed-modules",
+    "quality": 37.1162109375,
+    "path": "modules-final/utils/41706.js"
+  },
+  "42516": {
+    "file": "42516-state-affect-sources.js",
+    "category": "utils",
+    "source": "HOLD-TIER-B-REMEDIATION",
+    "quality": 66.53125,
+    "path": "modules-final/utils/42516-state-affect-sources.js"
+  },
+  "43046": {
+    "file": "43046.js",
+    "category": "utils",
+    "source": "deployed-modules",
+    "quality": 46.0927734375,
+    "path": "modules-final/utils/43046.js"
+  },
+  "43222": {
+    "file": "43222.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 17.8681640625,
+    "path": "modules-final/utils/43222.js"
+  },
+  "43229": {
+    "file": "43229.js",
+    "category": "utils",
+    "source": "tier-three-identified-modules",
+    "quality": 31.49609375,
+    "path": "modules-final/utils/43229.js"
+  },
+  "43337": {
+    "file": "43337.js",
+    "category": "utils",
+    "source": "round5-high-applied",
+    "quality": 63.037109375,
+    "path": "modules-final/utils/43337.js"
+  },
+  "43501": {
+    "file": "43501-baseline-pane-view.js",
+    "category": "ui",
+    "source": "VERIFIED-TIER-A",
+    "quality": 65.9931640625,
+    "path": "modules-final/ui/43501-baseline-pane-view.js"
+  },
+  "43838": {
+    "file": "43838.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 0.435546875,
+    "path": "modules-final/utils/43838.js"
+  },
+  "44862": {
+    "file": "44862.js",
+    "category": "utils",
+    "source": "deployed-modules",
+    "quality": 38.0146484375,
+    "path": "modules-final/utils/44862.js"
+  },
+  "45345": {
+    "file": "45345-theme-manager.js",
+    "category": "utils",
+    "source": "HOLD-TIER-B-REMEDIATION",
+    "quality": 77.4912109375,
+    "path": "modules-final/utils/45345-theme-manager.js"
+  },
+  "45530": {
+    "file": "45530.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 17.7744140625,
+    "path": "modules-final/utils/45530.js"
+  },
+  "45580": {
+    "file": "45580-bars-pattern-modes.js",
+    "category": "utils",
+    "source": "HOLD-TIER-B-REMEDIATION",
+    "quality": 51.7001953125,
+    "path": "modules-final/utils/45580-bars-pattern-modes.js"
+  },
+  "45591": {
+    "file": "45591.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 11.279296875,
+    "path": "modules-final/utils/45591.js"
+  },
+  "45720": {
+    "file": "45720.js",
+    "category": "utils",
+    "source": "tier-three-identified-modules",
+    "quality": 36.330078125,
+    "path": "modules-final/utils/45720.js"
+  },
+  "45801": {
+    "file": "45801.js",
+    "category": "utils",
+    "source": "deployed-modules",
+    "quality": 39.6376953125,
+    "path": "modules-final/utils/45801.js"
+  },
+  "46021": {
+    "file": "46021.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 1.8466796875,
+    "path": "modules-final/utils/46021.js"
+  },
+  "46082": {
+    "file": "46082.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 0.177734375,
+    "path": "modules-final/utils/46082.js"
+  },
+  "46340": {
+    "file": "46340.js",
+    "category": "utils",
+    "source": "round5-high-applied",
+    "quality": 58.9169921875,
+    "path": "modules-final/utils/46340.js"
+  },
+  "47132": {
+    "file": "47132.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 5.1953125,
+    "path": "modules-final/utils/47132.js"
+  },
+  "47312": {
+    "file": "47312.js",
+    "category": "utils",
+    "source": "tier-three-identified-modules",
+    "quality": 31.68359375,
+    "path": "modules-final/utils/47312.js"
+  },
+  "47432": {
+    "file": "47432.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 11.4501953125,
+    "path": "modules-final/utils/47432.js"
+  },
+  "48096": {
+    "file": "48096-delegate.js",
+    "category": "utils",
+    "source": "VERIFIED-TIER-A",
+    "quality": 78.7568359375,
+    "path": "modules-final/utils/48096-delegate.js"
+  },
+  "48227": {
+    "file": "48227-candle-renderer.js",
+    "category": "rendering",
+    "source": "HOLD-TIER-B-REMEDIATION",
+    "quality": 69.216796875,
+    "path": "modules-final/rendering/48227-candle-renderer.js"
+  },
+  "48480": {
+    "file": "48480.js",
+    "category": "utils",
+    "source": "tier-three-identified-modules",
+    "quality": 20.787109375,
+    "path": "modules-final/utils/48480.js"
+  },
+  "48943": {
+    "file": "48943.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 6.01171875,
+    "path": "modules-final/utils/48943.js"
+  },
+  "48961": {
+    "file": "48961.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 5.2236328125,
+    "path": "modules-final/utils/48961.js"
+  },
+  "49156": {
+    "file": "49156-colors.js",
+    "category": "utils",
+    "source": "renamed-modules",
+    "quality": 81.453125,
+    "path": "modules-final/utils/49156-colors.js"
+  },
+  "49251": {
+    "file": "49251.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 5.3212890625,
+    "path": "modules-final/utils/49251.js"
+  },
+  "49470": {
+    "file": "49470.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 5.1611328125,
+    "path": "modules-final/utils/49470.js"
+  },
+  "50151": {
+    "file": "50151-assertion-utils.js",
+    "category": "utils",
+    "source": "VERIFIED-TIER-A",
+    "quality": 67.248046875,
+    "path": "modules-final/utils/50151-assertion-utils.js"
+  },
+  "50470": {
+    "file": "50470.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 5.478515625,
+    "path": "modules-final/utils/50470.js"
+  },
+  "50605": {
+    "file": "50605.js",
+    "category": "utils",
+    "source": "tier-three-identified-modules",
+    "quality": 20.7333984375,
+    "path": "modules-final/utils/50605.js"
+  },
+  "50888": {
+    "file": "50888.js",
+    "category": "utils",
+    "source": "tier-three-identified-modules",
+    "quality": 26.3408203125,
+    "path": "modules-final/utils/50888.js"
+  },
+  "50946": {
+    "file": "50946.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 0.2080078125,
+    "path": "modules-final/utils/50946.js"
+  },
+  "51052": {
+    "file": "51052.js",
+    "category": "utils",
+    "source": "deployed-modules",
+    "quality": 33.5849609375,
+    "path": "modules-final/utils/51052.js"
+  },
+  "51101": {
+    "file": "51101.js",
+    "category": "utils",
+    "source": "deployed-modules",
+    "quality": 77.1416015625,
+    "path": "modules-final/utils/51101.js"
+  },
+  "51304": {
+    "file": "51304.js",
+    "category": "utils",
+    "source": "deployed-modules",
+    "quality": 41.109375,
+    "path": "modules-final/utils/51304.js"
+  },
+  "51768": {
+    "file": "51768.js",
+    "category": "utils",
+    "source": "deployed-modules",
+    "quality": 29.26953125,
+    "path": "modules-final/utils/51768.js"
+  },
+  "51829": {
+    "file": "51829-session-stages.js",
+    "category": "utils",
+    "source": "HOLD-TIER-B-REMEDIATION",
+    "quality": 51.4541015625,
+    "path": "modules-final/utils/51829-session-stages.js"
+  },
+  "52092": {
+    "file": "52092.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 0.3662109375,
+    "path": "modules-final/utils/52092.js"
+  },
+  "52479": {
+    "file": "52479.js",
+    "category": "utils",
+    "source": "tier-three-identified-modules",
+    "quality": 30.5390625,
+    "path": "modules-final/utils/52479.js"
+  },
+  "52499": {
+    "file": "52499-watched-objects.js",
+    "category": "utils",
+    "source": "HOLD-TIER-B-REMEDIATION",
+    "quality": 51.05859375,
+    "path": "modules-final/utils/52499-watched-objects.js"
+  },
+  "52691": {
+    "file": "52691.js",
+    "category": "utils",
+    "source": "tier-three-identified-modules",
+    "quality": 31.078125,
+    "path": "modules-final/utils/52691.js"
+  },
+  "52706": {
+    "file": "52706.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 5.33984375,
+    "path": "modules-final/utils/52706.js"
+  },
+  "52746": {
+    "file": "52746-series-data.js",
+    "category": "charting",
+    "source": "VERIFIED-TIER-A",
+    "quality": 86.0341796875,
+    "path": "modules-final/charting/52746-series-data.js"
+  },
+  "52859": {
+    "file": "52859.js",
+    "category": "utils",
+    "source": "tier-three-identified-modules",
+    "quality": 28.6796875,
+    "path": "modules-final/utils/52859.js"
+  },
+  "52945": {
+    "file": "52945.js",
+    "category": "utils",
+    "source": "tier-three-identified-modules",
+    "quality": 27.8076171875,
+    "path": "modules-final/utils/52945.js"
+  },
+  "52959": {
+    "file": "52959.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 5.185546875,
+    "path": "modules-final/utils/52959.js"
+  },
+  "52974": {
+    "file": "52974.js",
+    "category": "utils",
+    "source": "round5-high-applied",
+    "quality": 52.7666015625,
+    "path": "modules-final/utils/52974.js"
+  },
+  "53107": {
+    "file": "53107.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 19.416015625,
+    "path": "modules-final/utils/53107.js"
+  },
+  "53470": {
+    "file": "53470.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 5.1376953125,
+    "path": "modules-final/utils/53470.js"
+  },
+  "53573": {
+    "file": "53573.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 0.36328125,
+    "path": "modules-final/utils/53573.js"
+  },
+  "53660": {
+    "file": "53660.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 0.177734375,
+    "path": "modules-final/utils/53660.js"
+  },
+  "53690": {
+    "file": "53690-volume-profile-utilities.js",
+    "category": "utils",
+    "source": "HOLD-TIER-B-REMEDIATION",
+    "quality": 79.3466796875,
+    "path": "modules-final/utils/53690-volume-profile-utilities.js"
+  },
+  "54190": {
+    "file": "54190.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 0.3271484375,
+    "path": "modules-final/utils/54190.js"
+  },
+  "54370": {
+    "file": "54370-chart-styles.js",
+    "category": "charting",
+    "source": "HOLD-TIER-B-REMEDIATION",
+    "quality": 56.779296875,
+    "path": "modules-final/charting/54370-chart-styles.js"
+  },
+  "54405": {
+    "file": "54405.js",
+    "category": "utils",
+    "source": "deployed-modules",
+    "quality": 32.2451171875,
+    "path": "modules-final/utils/54405.js"
+  },
+  "54717": {
+    "file": "54717.js",
+    "category": "utils",
+    "source": "tier-three-identified-modules",
+    "quality": 27.0810546875,
+    "path": "modules-final/utils/54717.js"
+  },
+  "55014": {
+    "file": "55014-error-formatting.js",
+    "category": "utils",
+    "source": "HOLD-TIER-B-REMEDIATION",
+    "quality": 68.3564453125,
+    "path": "modules-final/utils/55014-error-formatting.js"
+  },
+  "55114": {
+    "file": "55114.js",
+    "category": "utils",
+    "source": "tier-three-identified-modules",
+    "quality": 28.0087890625,
+    "path": "modules-final/utils/55114.js"
+  },
+  "55279": {
+    "file": "55279.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 5.1552734375,
+    "path": "modules-final/utils/55279.js"
+  },
+  "55308": {
+    "file": "55308.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 0.2509765625,
+    "path": "modules-final/utils/55308.js"
+  },
+  "55393": {
+    "file": "55393.js",
+    "category": "utils",
+    "source": "deployed-modules",
+    "quality": 31.7265625,
+    "path": "modules-final/utils/55393.js"
+  },
+  "55396": {
+    "file": "55396.js",
+    "category": "utils",
+    "source": "tier-three-identified-modules",
+    "quality": 20.8447265625,
+    "path": "modules-final/utils/55396.js"
+  },
+  "55803": {
+    "file": "55803.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 12.5986328125,
+    "path": "modules-final/utils/55803.js"
+  },
+  "55824": {
+    "file": "55824.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 0.185546875,
+    "path": "modules-final/utils/55824.js"
+  },
+  "56186": {
+    "file": "56186.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 6.2119140625,
+    "path": "modules-final/utils/56186.js"
+  },
+  "56265": {
+    "file": "56265.js",
+    "category": "utils",
+    "source": "tier-three-identified-modules",
+    "quality": 37.767578125,
+    "path": "modules-final/utils/56265.js"
+  },
+  "56616": {
+    "file": "56616.js",
+    "category": "utils",
+    "source": "tier-three-identified-modules",
+    "quality": 27.646484375,
+    "path": "modules-final/utils/56616.js"
+  },
+  "56876": {
+    "file": "56876.js",
+    "category": "utils",
+    "source": "round5-high-applied",
+    "quality": 48.462890625,
+    "path": "modules-final/utils/56876.js"
+  },
+  "57025": {
+    "file": "57025-quotes-provider.js",
+    "category": "utils",
+    "source": "HOLD-TIER-B-REMEDIATION",
+    "quality": 75.21484375,
+    "path": "modules-final/utils/57025-quotes-provider.js"
+  },
+  "57340": {
+    "file": "57340-floating-tooltip-settings.js",
+    "category": "utils",
+    "source": "HOLD-TIER-B-REMEDIATION",
+    "quality": 56.8369140625,
+    "path": "modules-final/utils/57340-floating-tooltip-settings.js"
+  },
+  "57511": {
+    "file": "57511.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 0.447265625,
+    "path": "modules-final/utils/57511.js"
+  },
+  "57622": {
+    "file": "57622-regression-trend.js",
+    "category": "utils",
+    "source": "HOLD-TIER-B-REMEDIATION",
+    "quality": 69.419921875,
+    "path": "modules-final/utils/57622-regression-trend.js"
+  },
+  "57658": {
+    "file": "57658.js",
+    "category": "utils",
+    "source": "tier-three-identified-modules",
+    "quality": 36.794921875,
+    "path": "modules-final/utils/57658.js"
+  },
+  "58043": {
+    "file": "58043.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 5.3974609375,
+    "path": "modules-final/utils/58043.js"
+  },
+  "58096": {
+    "file": "58096.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 0.1845703125,
+    "path": "modules-final/utils/58096.js"
+  },
+  "58221": {
+    "file": "58221-drawing-utilities.js",
+    "category": "utils",
+    "source": "HOLD-TIER-B-REMEDIATION",
+    "quality": 80.82421875,
+    "path": "modules-final/utils/58221-drawing-utilities.js"
+  },
+  "58554": {
+    "file": "58554.js",
+    "category": "utils",
+    "source": "deployed-modules",
+    "quality": 26.7705078125,
+    "path": "modules-final/utils/58554.js"
+  },
+  "58570": {
+    "file": "58570.js",
+    "category": "utils",
+    "source": "deployed-modules",
+    "quality": 44.96484375,
+    "path": "modules-final/utils/58570.js"
+  },
+  "58978": {
+    "file": "58978.js",
+    "category": "utils",
+    "source": "round5-high-applied",
+    "quality": 56.240234375,
+    "path": "modules-final/utils/58978.js"
+  },
+  "59064": {
+    "file": "59064-series-properties.js",
+    "category": "charting",
+    "source": "renamed-modules",
+    "quality": 65.431640625,
+    "path": "modules-final/charting/59064-series-properties.js"
+  },
+  "59149": {
+    "file": "59149-market-indices.js",
+    "category": "utils",
+    "source": "HOLD-TIER-B-REMEDIATION",
+    "quality": 70.0244140625,
+    "path": "modules-final/utils/59149-market-indices.js"
+  },
+  "59239": {
+    "file": "59239.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 5.1484375,
+    "path": "modules-final/utils/59239.js"
+  },
+  "59449": {
+    "file": "59449.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 0.021484375,
+    "path": "modules-final/utils/59449.js"
+  },
+  "59613": {
+    "file": "59613.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 5.2109375,
+    "path": "modules-final/utils/59613.js"
+  },
+  "59672": {
+    "file": "59672.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 5.19921875,
+    "path": "modules-final/utils/59672.js"
+  },
+  "59883": {
+    "file": "59883-line-width-constants.js",
+    "category": "utils",
+    "source": "HOLD-TIER-B-REMEDIATION",
+    "quality": 50.7470703125,
+    "path": "modules-final/utils/59883-line-width-constants.js"
+  },
+  "59998": {
+    "file": "59998.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 15.2744140625,
+    "path": "modules-final/utils/59998.js"
+  },
+  "60336": {
+    "file": "60336.js",
+    "category": "utils",
+    "source": "deployed-modules",
+    "quality": 36.765625,
+    "path": "modules-final/utils/60336.js"
+  },
+  "60661": {
+    "file": "60661.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 6.1181640625,
+    "path": "modules-final/utils/60661.js"
+  },
+  "60709": {
+    "file": "60709.js",
+    "category": "utils",
+    "source": "deployed-modules",
+    "quality": 25.9501953125,
+    "path": "modules-final/utils/60709.js"
+  },
+  "60755": {
+    "file": "60755-volume-checker.js",
+    "category": "utils",
+    "source": "HOLD-TIER-B-REMEDIATION",
+    "quality": 72.189453125,
+    "path": "modules-final/utils/60755-volume-checker.js"
+  },
+  "60876": {
+    "file": "60876-step-line-renderer.js",
+    "category": "rendering",
+    "source": "renamed-modules",
+    "quality": 80.7685546875,
+    "path": "modules-final/rendering/60876-step-line-renderer.js"
+  },
+  "60911": {
+    "file": "60911.js",
+    "category": "utils",
+    "source": "tier-three-identified-modules",
+    "quality": 26.8017578125,
+    "path": "modules-final/utils/60911.js"
+  },
+  "60973": {
+    "file": "60973-chart-config-defaults.js",
+    "category": "charting",
+    "source": "VERIFIED-TIER-A",
+    "quality": 126.7998046875,
+    "path": "modules-final/charting/60973-chart-config-defaults.js"
+  },
+  "61710": {
+    "file": "61710.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 10.3896484375,
+    "path": "modules-final/utils/61710.js"
+  },
+  "61786": {
+    "file": "61786.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 0.328125,
+    "path": "modules-final/utils/61786.js"
+  },
+  "61814": {
+    "file": "61814.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 5.2109375,
+    "path": "modules-final/utils/61814.js"
+  },
+  "62153": {
+    "file": "62153.js",
+    "category": "utils",
+    "source": "round5-high-applied",
+    "quality": 82.2919921875,
+    "path": "modules-final/utils/62153.js"
+  },
+  "62301": {
+    "file": "62301.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 5.15625,
+    "path": "modules-final/utils/62301.js"
+  },
+  "62312": {
+    "file": "62312.js",
+    "category": "utils",
+    "source": "tier-three-identified-modules",
+    "quality": 26.03125,
+    "path": "modules-final/utils/62312.js"
+  },
+  "62548": {
+    "file": "62548.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 5.2294921875,
+    "path": "modules-final/utils/62548.js"
+  },
+  "62773": {
+    "file": "62773.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 0.083984375,
+    "path": "modules-final/utils/62773.js"
+  },
+  "62802": {
+    "file": "62802.js",
+    "category": "utils",
+    "source": "deployed-modules",
+    "quality": 32.267578125,
+    "path": "modules-final/utils/62802.js"
+  },
+  "63681": {
+    "file": "63681.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 0.1884765625,
+    "path": "modules-final/utils/63681.js"
+  },
+  "63903": {
+    "file": "63903.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 5.859375,
+    "path": "modules-final/utils/63903.js"
+  },
+  "64138": {
+    "file": "64138-bar-renderer.js",
+    "category": "rendering",
+    "source": "HOLD-TIER-B-REMEDIATION",
+    "quality": 73.6982421875,
+    "path": "modules-final/rendering/64138-bar-renderer.js"
+  },
+  "64236": {
+    "file": "64236.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 16.5166015625,
+    "path": "modules-final/utils/64236.js"
+  },
+  "64651": {
+    "file": "64651-bitmap-coordinates-pane.js",
+    "category": "ui",
+    "source": "HOLD-TIER-B-REMEDIATION",
+    "quality": 72.779296875,
+    "path": "modules-final/ui/64651-bitmap-coordinates-pane.js"
+  },
+  "64717": {
+    "file": "64717.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 5.220703125,
+    "path": "modules-final/utils/64717.js"
+  },
+  "64876": {
+    "file": "64876-visibility-controller.js",
+    "category": "utils",
+    "source": "HOLD-TIER-B-REMEDIATION",
+    "quality": 69.4306640625,
+    "path": "modules-final/utils/64876-visibility-controller.js"
+  },
+  "64960": {
+    "file": "64960.js",
+    "category": "utils",
+    "source": "round5-high-applied",
+    "quality": 52.7314453125,
+    "path": "modules-final/utils/64960.js"
+  },
+  "64971": {
+    "file": "64971.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 5.3251953125,
+    "path": "modules-final/utils/64971.js"
+  },
+  "65045": {
+    "file": "65045.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 11.79296875,
+    "path": "modules-final/utils/65045.js"
+  },
+  "65810": {
+    "file": "65810.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 0.021484375,
+    "path": "modules-final/utils/65810.js"
+  },
+  "66142": {
+    "file": "66142-scale-utilities.js",
+    "category": "utils",
+    "source": "HOLD-TIER-B-REMEDIATION",
+    "quality": 68.0712890625,
+    "path": "modules-final/utils/66142-scale-utilities.js"
+  },
+  "66593": {
+    "file": "66593.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 0.1083984375,
+    "path": "modules-final/utils/66593.js"
+  },
+  "66786": {
+    "file": "66786.js",
+    "category": "utils",
+    "source": "deployed-modules",
+    "quality": 31.19921875,
+    "path": "modules-final/utils/66786.js"
+  },
+  "67135": {
+    "file": "67135-price-data-source.js",
+    "category": "data",
+    "source": "VERIFIED-TIER-A",
+    "quality": 84.9482421875,
+    "path": "modules-final/data/67135-price-data-source.js"
+  },
+  "67225": {
+    "file": "67225.js",
+    "category": "utils",
+    "source": "tier-three-identified-modules",
+    "quality": 31.0087890625,
+    "path": "modules-final/utils/67225.js"
+  },
+  "67455": {
+    "file": "67455.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 0.3251953125,
+    "path": "modules-final/utils/67455.js"
+  },
+  "67563": {
+    "file": "67563.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 24.708984375,
+    "path": "modules-final/utils/67563.js"
+  },
+  "67763": {
+    "file": "67763-json-store-service.js",
+    "category": "utils",
+    "source": "HOLD-TIER-B-REMEDIATION",
+    "quality": 74.2275390625,
+    "path": "modules-final/utils/67763-json-store-service.js"
+  },
+  "67777": {
+    "file": "67777.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 6.0517578125,
+    "path": "modules-final/utils/67777.js"
+  },
+  "68028": {
+    "file": "68028.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 11,
+    "path": "modules-final/utils/68028.js"
+  },
+  "68335": {
+    "file": "68335.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 0.2763671875,
+    "path": "modules-final/utils/68335.js"
+  },
+  "68659": {
+    "file": "68659-logger-config.js",
+    "category": "utils",
+    "source": "HOLD-TIER-B-REMEDIATION",
+    "quality": 67.578125,
+    "path": "modules-final/utils/68659-logger-config.js"
+  },
+  "69109": {
+    "file": "69109.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 5.1318359375,
+    "path": "modules-final/utils/69109.js"
+  },
+  "69422": {
+    "file": "69422-study-input-utils.js",
+    "category": "indicators",
+    "source": "HOLD-TIER-B-REMEDIATION",
+    "quality": 69.1455078125,
+    "path": "modules-final/indicators/69422-study-input-utils.js"
+  },
+  "69455": {
+    "file": "69455-favorite-drawing-toolbar.js",
+    "category": "utils",
+    "source": "HOLD-TIER-B-REMEDIATION",
+    "quality": 68.7548828125,
+    "path": "modules-final/utils/69455-favorite-drawing-toolbar.js"
+  },
+  "69555": {
+    "file": "69555.js",
+    "category": "utils",
+    "source": "round5-high-applied",
+    "quality": 53.4423828125,
+    "path": "modules-final/utils/69555.js"
+  },
+  "69558": {
+    "file": "69558.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 0.224609375,
+    "path": "modules-final/utils/69558.js"
+  },
+  "69600": {
+    "file": "69600.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 0.0869140625,
+    "path": "modules-final/utils/69600.js"
+  },
+  "69866": {
+    "file": "69866.js",
+    "category": "utils",
+    "source": "deployed-modules",
+    "quality": 27.603515625,
+    "path": "modules-final/utils/69866.js"
+  },
+  "70002": {
+    "file": "70002.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 0.423828125,
+    "path": "modules-final/utils/70002.js"
+  },
+  "70347": {
+    "file": "70347.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 0.1279296875,
+    "path": "modules-final/utils/70347.js"
+  },
+  "70548": {
+    "file": "70548-property-watched-value.js",
+    "category": "utils",
+    "source": "HOLD-TIER-B-REMEDIATION",
+    "quality": 66.4072265625,
+    "path": "modules-final/utils/70548-property-watched-value.js"
+  },
+  "70680": {
+    "file": "70680.js",
+    "category": "utils",
+    "source": "deployed-modules",
+    "quality": 35.669921875,
+    "path": "modules-final/utils/70680.js"
+  },
+  "70859": {
+    "file": "70859.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 22.9990234375,
+    "path": "modules-final/utils/70859.js"
+  },
+  "70893": {
+    "file": "70893.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 2.8955078125,
+    "path": "modules-final/utils/70893.js"
+  },
+  "71149": {
+    "file": "71149.js",
+    "category": "utils",
+    "source": "tier-three-identified-modules",
+    "quality": 31.9580078125,
+    "path": "modules-final/utils/71149.js"
+  },
+  "71382": {
+    "file": "71382.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 5.171875,
+    "path": "modules-final/utils/71382.js"
+  },
+  "71843": {
+    "file": "71843.js",
+    "category": "utils",
+    "source": "round5-high-applied",
+    "quality": 46.38671875,
+    "path": "modules-final/utils/71843.js"
+  },
+  "71846": {
+    "file": "71846.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 15.84765625,
+    "path": "modules-final/utils/71846.js"
+  },
+  "72104": {
+    "file": "72104-chart-widget-actions-options.js",
+    "category": "charting",
+    "source": "VERIFIED-TIER-A",
+    "quality": 42.60546875,
+    "path": "modules-final/charting/72104-chart-widget-actions-options.js"
+  },
+  "72187": {
+    "file": "72187-plot-list.js",
+    "category": "utils",
+    "source": "VERIFIED-TIER-A",
+    "quality": 90.78515625,
+    "path": "modules-final/utils/72187-plot-list.js"
+  },
+  "72207": {
+    "file": "72207-data-source.js",
+    "category": "data",
+    "source": "VERIFIED-TIER-A",
+    "quality": 111.1474609375,
+    "path": "modules-final/data/72207-data-source.js"
+  },
+  "72270": {
+    "file": "72270.js",
+    "category": "utils",
+    "source": "tier-three-identified-modules",
+    "quality": 30.9619140625,
+    "path": "modules-final/utils/72270.js"
+  },
+  "72755": {
+    "file": "72755-axis-label-background.js",
+    "category": "utils",
+    "source": "HOLD-TIER-B-REMEDIATION",
+    "quality": 66.6943359375,
+    "path": "modules-final/utils/72755-axis-label-background.js"
+  },
+  "72877": {
+    "file": "72877.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 0.4130859375,
+    "path": "modules-final/utils/72877.js"
+  },
+  "72972": {
+    "file": "72972.js",
+    "category": "utils",
+    "source": "deployed-modules",
+    "quality": 41.001953125,
+    "path": "modules-final/utils/72972.js"
+  },
+  "73041": {
+    "file": "73041.js",
+    "category": "utils",
+    "source": "deployed-modules",
+    "quality": 33.7158203125,
+    "path": "modules-final/utils/73041.js"
+  },
+  "73773": {
+    "file": "73773.js",
+    "category": "utils",
+    "source": "round5-high-applied",
+    "quality": 54.8916015625,
+    "path": "modules-final/utils/73773.js"
+  },
+  "74109": {
+    "file": "74109.js",
+    "category": "utils",
+    "source": "deployed-modules",
+    "quality": 50.197265625,
+    "path": "modules-final/utils/74109.js"
+  },
+  "74991": {
+    "file": "74991.js",
+    "category": "utils",
+    "source": "tier-three-identified-modules",
+    "quality": 32.3134765625,
+    "path": "modules-final/utils/74991.js"
+  },
+  "75550": {
+    "file": "75550.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 11.009765625,
+    "path": "modules-final/utils/75550.js"
+  },
+  "75579": {
+    "file": "75579.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 18.5634765625,
+    "path": "modules-final/utils/75579.js"
+  },
+  "75641": {
+    "file": "75641.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 5.2109375,
+    "path": "modules-final/utils/75641.js"
+  },
+  "75774": {
+    "file": "75774.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 1.1328125,
+    "path": "modules-final/utils/75774.js"
+  },
+  "76003": {
+    "file": "76003.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 0.021484375,
+    "path": "modules-final/utils/76003.js"
+  },
+  "76220": {
+    "file": "76220.js",
+    "category": "utils",
+    "source": "deployed-modules",
+    "quality": 32.1328125,
+    "path": "modules-final/utils/76220.js"
+  },
+  "76422": {
+    "file": "76422.js",
+    "category": "utils",
+    "source": "deployed-modules",
+    "quality": 26.7578125,
+    "path": "modules-final/utils/76422.js"
+  },
+  "76460": {
+    "file": "76460.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 5.0908203125,
+    "path": "modules-final/utils/76460.js"
+  },
+  "76559": {
+    "file": "76559.js",
+    "category": "utils",
+    "source": "deployed-modules",
+    "quality": 27.17578125,
+    "path": "modules-final/utils/76559.js"
+  },
+  "76662": {
+    "file": "76662-bezier-animation.js",
+    "category": "utils",
+    "source": "HOLD-TIER-B-REMEDIATION",
+    "quality": 56.22265625,
+    "path": "modules-final/utils/76662-bezier-animation.js"
+  },
+  "77380": {
+    "file": "77380.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 5.099609375,
+    "path": "modules-final/utils/77380.js"
+  },
+  "77914": {
+    "file": "77914.js",
+    "category": "utils",
+    "source": "deployed-modules",
+    "quality": 27.0888671875,
+    "path": "modules-final/utils/77914.js"
+  },
+  "78136": {
+    "file": "78136.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 5.1357421875,
+    "path": "modules-final/utils/78136.js"
+  },
+  "78176": {
+    "file": "78176.js",
+    "category": "utils",
+    "source": "round5-high-applied",
+    "quality": 70.9736328125,
+    "path": "modules-final/utils/78176.js"
+  },
+  "78861": {
+    "file": "78861.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 8.9765625,
+    "path": "modules-final/utils/78861.js"
+  },
+  "78966": {
+    "file": "78966-quote-session-manager.js",
+    "category": "utils",
+    "source": "HOLD-TIER-B-REMEDIATION",
+    "quality": 76.9453125,
+    "path": "modules-final/utils/78966-quote-session-manager.js"
+  },
+  "79268": {
+    "file": "79268.js",
+    "category": "utils",
+    "source": "round5-high-applied",
+    "quality": 70.509765625,
+    "path": "modules-final/utils/79268.js"
+  },
+  "79603": {
+    "file": "79603.js",
+    "category": "utils",
+    "source": "round5-high-applied",
+    "quality": 52.7353515625,
+    "path": "modules-final/utils/79603.js"
+  },
+  "79740": {
+    "file": "79740.js",
+    "category": "utils",
+    "source": "deployed-modules",
+    "quality": 31.37890625,
+    "path": "modules-final/utils/79740.js"
+  },
+  "80007": {
+    "file": "80007.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 5.1708984375,
+    "path": "modules-final/utils/80007.js"
+  },
+  "80671": {
+    "file": "80671.js",
+    "category": "utils",
+    "source": "tier-three-identified-modules",
+    "quality": 30.8896484375,
+    "path": "modules-final/utils/80671.js"
+  },
+  "80819": {
+    "file": "80819.js",
+    "category": "utils",
+    "source": "deployed-modules",
+    "quality": 42.806640625,
+    "path": "modules-final/utils/80819.js"
+  },
+  "81360": {
+    "file": "81360.js",
+    "category": "utils",
+    "source": "round5-high-applied",
+    "quality": 41.4931640625,
+    "path": "modules-final/utils/81360.js"
+  },
+  "81593": {
+    "file": "81593.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 0.095703125,
+    "path": "modules-final/utils/81593.js"
+  },
+  "81922": {
+    "file": "81922.js",
+    "category": "utils",
+    "source": "tier-three-identified-modules",
+    "quality": 32.064453125,
+    "path": "modules-final/utils/81922.js"
+  },
+  "82087": {
+    "file": "82087.js",
+    "category": "utils",
+    "source": "tier-three-identified-modules",
+    "quality": 34.1044921875,
+    "path": "modules-final/utils/82087.js"
+  },
+  "82095": {
+    "file": "82095.js",
+    "category": "utils",
+    "source": "round5-high-applied",
+    "quality": 47.212890625,
+    "path": "modules-final/utils/82095.js"
+  },
+  "82130": {
+    "file": "82130-primitive-names.js",
+    "category": "utils",
+    "source": "HOLD-TIER-B-REMEDIATION",
+    "quality": 70.1318359375,
+    "path": "modules-final/utils/82130-primitive-names.js"
+  },
+  "82284": {
+    "file": "82284.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 0.1201171875,
+    "path": "modules-final/utils/82284.js"
+  },
+  "84015": {
+    "file": "84015.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 5.142578125,
+    "path": "modules-final/utils/84015.js"
+  },
+  "84526": {
+    "file": "84526-symbol-info-dialog.js",
+    "category": "utils",
+    "source": "VERIFIED-TIER-A",
+    "quality": 57.5400390625,
+    "path": "modules-final/utils/84526-symbol-info-dialog.js"
+  },
+  "84617": {
+    "file": "84617.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 5.2001953125,
+    "path": "modules-final/utils/84617.js"
+  },
+  "84696": {
+    "file": "84696-icon-manager.js",
+    "category": "utils",
+    "source": "HOLD-TIER-B-REMEDIATION",
+    "quality": 75.5224609375,
+    "path": "modules-final/utils/84696-icon-manager.js"
+  },
+  "84959": {
+    "file": "84959.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 0.9345703125,
+    "path": "modules-final/utils/84959.js"
+  },
+  "85552": {
+    "file": "85552.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 0.0595703125,
+    "path": "modules-final/utils/85552.js"
+  },
+  "85565": {
+    "file": "85565.js",
+    "category": "utils",
+    "source": "tier-three-identified-modules",
+    "quality": 32.759765625,
+    "path": "modules-final/utils/85565.js"
+  },
+  "85630": {
+    "file": "85630.js",
+    "category": "utils",
+    "source": "round5-high-applied",
+    "quality": 55.25390625,
+    "path": "modules-final/utils/85630.js"
+  },
+  "86228": {
+    "file": "86228-rectangle-renderer.js",
+    "category": "rendering",
+    "source": "VERIFIED-TIER-A",
+    "quality": 65.5673828125,
+    "path": "modules-final/rendering/86228-rectangle-renderer.js"
+  },
+  "86252": {
+    "file": "86252.js",
+    "category": "utils",
+    "source": "deployed-modules",
+    "quality": 29.71484375,
+    "path": "modules-final/utils/86252.js"
+  },
+  "86572": {
+    "file": "86572.js",
+    "category": "utils",
+    "source": "deployed-modules",
+    "quality": 23.49609375,
+    "path": "modules-final/utils/86572.js"
+  },
+  "86811": {
+    "file": "86811.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 11.8486328125,
+    "path": "modules-final/utils/86811.js"
+  },
+  "86821": {
+    "file": "86821.js",
+    "category": "utils",
+    "source": "deployed-modules",
+    "quality": 31.2041015625,
+    "path": "modules-final/utils/86821.js"
+  },
+  "86957": {
+    "file": "86957.js",
+    "category": "utils",
+    "source": "tier-three-identified-modules",
+    "quality": 31.3759765625,
+    "path": "modules-final/utils/86957.js"
+  },
+  "87163": {
+    "file": "87163.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 5.158203125,
+    "path": "modules-final/utils/87163.js"
+  },
+  "87296": {
+    "file": "87296-resolution-utilities.js",
+    "category": "utils",
+    "source": "HOLD-TIER-B-REMEDIATION",
+    "quality": 74.8466796875,
+    "path": "modules-final/utils/87296-resolution-utilities.js"
+  },
+  "87347": {
+    "file": "87347.js",
+    "category": "utils",
+    "source": "deployed-modules",
+    "quality": 48.97265625,
+    "path": "modules-final/utils/87347.js"
+  },
+  "87453": {
+    "file": "87453.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 100,
+    "path": "modules-final/utils/87453.js"
+  },
+  "87457": {
+    "file": "87457.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 0.021484375,
+    "path": "modules-final/utils/87457.js"
+  },
+  "87465": {
+    "file": "87465.js",
+    "category": "utils",
+    "source": "tier-three-identified-modules",
+    "quality": 29.8623046875,
+    "path": "modules-final/utils/87465.js"
+  },
+  "87713": {
+    "file": "87713.js",
+    "category": "utils",
+    "source": "tier-three-identified-modules",
+    "quality": 25.51953125,
+    "path": "modules-final/utils/87713.js"
+  },
+  "87911": {
+    "file": "87911.js",
+    "category": "utils",
+    "source": "deployed-modules",
+    "quality": 26.2275390625,
+    "path": "modules-final/utils/87911.js"
+  },
+  "88145": {
+    "file": "88145.js",
+    "category": "utils",
+    "source": "tier-three-identified-modules",
+    "quality": 26.1142578125,
+    "path": "modules-final/utils/88145.js"
+  },
+  "88723": {
+    "file": "88723.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 5.1513671875,
+    "path": "modules-final/utils/88723.js"
+  },
+  "88732": {
+    "file": "88732.js",
+    "category": "utils",
+    "source": "deployed-modules",
+    "quality": 39.9970703125,
+    "path": "modules-final/utils/88732.js"
+  },
+  "89837": {
+    "file": "89837.js",
+    "category": "utils",
+    "source": "deployed-modules",
+    "quality": 28.3076171875,
+    "path": "modules-final/utils/89837.js"
+  },
+  "89880": {
+    "file": "89880.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 0.0615234375,
+    "path": "modules-final/utils/89880.js"
+  },
+  "89947": {
+    "file": "89947.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 5.55078125,
+    "path": "modules-final/utils/89947.js"
+  },
+  "89959": {
+    "file": "89959-combine-property.js",
+    "category": "utils",
+    "source": "HOLD-TIER-B-REMEDIATION",
+    "quality": 67.3818359375,
+    "path": "modules-final/utils/89959-combine-property.js"
+  },
+  "90995": {
+    "file": "90995.js",
+    "category": "utils",
+    "source": "round5-high-applied",
+    "quality": 48.943359375,
+    "path": "modules-final/utils/90995.js"
+  },
+  "91106": {
+    "file": "91106.js",
+    "category": "utils",
+    "source": "tier-three-identified-modules",
+    "quality": 26.185546875,
+    "path": "modules-final/utils/91106.js"
+  },
+  "91111": {
+    "file": "91111-line-tool-study-ids.js",
+    "category": "indicators",
+    "source": "VERIFIED-TIER-A",
+    "quality": 40.9404296875,
+    "path": "modules-final/indicators/91111-line-tool-study-ids.js"
+  },
+  "91565": {
+    "file": "91565.js",
+    "category": "utils",
+    "source": "deployed-modules",
+    "quality": 41.3837890625,
+    "path": "modules-final/utils/91565.js"
+  },
+  "91682": {
+    "file": "91682.js",
+    "category": "utils",
+    "source": "tier-three-identified-modules",
+    "quality": 27.1220703125,
+    "path": "modules-final/utils/91682.js"
+  },
+  "91799": {
+    "file": "91799.js",
+    "category": "utils",
+    "source": "tier-three-identified-modules",
+    "quality": 27.478515625,
+    "path": "modules-final/utils/91799.js"
+  },
+  "92211": {
+    "file": "92211.js",
+    "category": "utils",
+    "source": "deployed-modules",
+    "quality": 26.4658203125,
+    "path": "modules-final/utils/92211.js"
+  },
+  "92572": {
+    "file": "92572.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 5.39453125,
+    "path": "modules-final/utils/92572.js"
+  },
+  "92848": {
+    "file": "92848.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 5.7470703125,
+    "path": "modules-final/utils/92848.js"
+  },
+  "93201": {
+    "file": "93201.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 0.1181640625,
+    "path": "modules-final/utils/93201.js"
+  },
+  "93379": {
+    "file": "93379.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 0.380859375,
+    "path": "modules-final/utils/93379.js"
+  },
+  "93387": {
+    "file": "93387.js",
+    "category": "utils",
+    "source": "round5-high-applied",
+    "quality": 56.126953125,
+    "path": "modules-final/utils/93387.js"
+  },
+  "93463": {
+    "file": "93463.js",
+    "category": "utils",
+    "source": "deployed-modules",
+    "quality": 36.37109375,
+    "path": "modules-final/utils/93463.js"
+  },
+  "93544": {
+    "file": "93544.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 0.3759765625,
+    "path": "modules-final/utils/93544.js"
+  },
+  "93688": {
+    "file": "93688.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 0.5009765625,
+    "path": "modules-final/utils/93688.js"
+  },
+  "93946": {
+    "file": "93946.js",
+    "category": "utils",
+    "source": "tier-three-identified-modules",
+    "quality": 31.5263671875,
+    "path": "modules-final/utils/93946.js"
+  },
+  "94078": {
+    "file": "94078.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 0.1689453125,
+    "path": "modules-final/utils/94078.js"
+  },
+  "94119": {
+    "file": "94119.js",
+    "category": "utils",
+    "source": "round5-high-applied",
+    "quality": 52.740234375,
+    "path": "modules-final/utils/94119.js"
+  },
+  "94194": {
+    "file": "94194.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 5.3095703125,
+    "path": "modules-final/utils/94194.js"
+  },
+  "94322": {
+    "file": "94322.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 6.8203125,
+    "path": "modules-final/utils/94322.js"
+  },
+  "94602": {
+    "file": "94602.js",
+    "category": "utils",
+    "source": "tier-three-identified-modules",
+    "quality": 31.89453125,
+    "path": "modules-final/utils/94602.js"
+  },
+  "94839": {
+    "file": "94839.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 0.189453125,
+    "path": "modules-final/utils/94839.js"
+  },
+  "95059": {
+    "file": "95059-chart-data-utilities.js",
+    "category": "charting",
+    "source": "HOLD-TIER-B-REMEDIATION",
+    "quality": 77.927734375,
+    "path": "modules-final/charting/95059-chart-data-utilities.js"
+  },
+  "95322": {
+    "file": "95322.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 5.455078125,
+    "path": "modules-final/utils/95322.js"
+  },
+  "95406": {
+    "file": "95406.js",
+    "category": "utils",
+    "source": "tier-three-identified-modules",
+    "quality": 26.3583984375,
+    "path": "modules-final/utils/95406.js"
+  },
+  "95523": {
+    "file": "95523.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 5.3212890625,
+    "path": "modules-final/utils/95523.js"
+  },
+  "95603": {
+    "file": "95603.js",
+    "category": "utils",
+    "source": "deployed-modules",
+    "quality": 35.49609375,
+    "path": "modules-final/utils/95603.js"
+  },
+  "95772": {
+    "file": "95772.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 6.07421875,
+    "path": "modules-final/utils/95772.js"
+  },
+  "95779": {
+    "file": "95779.js",
+    "category": "utils",
+    "source": "round5-high-applied",
+    "quality": 58.958984375,
+    "path": "modules-final/utils/95779.js"
+  },
+  "95804": {
+    "file": "95804.js",
+    "category": "utils",
+    "source": "tier-three-identified-modules",
+    "quality": 31.150390625,
+    "path": "modules-final/utils/95804.js"
+  },
+  "96708": {
+    "file": "96708.js",
+    "category": "utils",
+    "source": "tier-three-identified-modules",
+    "quality": 35.80078125,
+    "path": "modules-final/utils/96708.js"
+  },
+  "96777": {
+    "file": "96777.js",
+    "category": "utils",
+    "source": "deployed-modules",
+    "quality": 58.529296875,
+    "path": "modules-final/utils/96777.js"
+  },
+  "96937": {
+    "file": "96937.js",
+    "category": "utils",
+    "source": "round5-high-applied",
+    "quality": 47.185546875,
+    "path": "modules-final/utils/96937.js"
+  },
+  "97126": {
+    "file": "97126.js",
+    "category": "utils",
+    "source": "deployed-modules",
+    "quality": 38.12890625,
+    "path": "modules-final/utils/97126.js"
+  },
+  "97217": {
+    "file": "97217-line-tool-utils.js",
+    "category": "utils",
+    "source": "HOLD-TIER-B-REMEDIATION",
+    "quality": 66.3037109375,
+    "path": "modules-final/utils/97217-line-tool-utils.js"
+  },
+  "97363": {
+    "file": "97363.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 5.4765625,
+    "path": "modules-final/utils/97363.js"
+  },
+  "97719": {
+    "file": "97719.js",
+    "category": "utils",
+    "source": "tier-three-identified-modules",
+    "quality": 30.6328125,
+    "path": "modules-final/utils/97719.js"
+  },
+  "97725": {
+    "file": "97725.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 5.185546875,
+    "path": "modules-final/utils/97725.js"
+  },
+  "97760": {
+    "file": "97760.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 0.1650390625,
+    "path": "modules-final/utils/97760.js"
+  },
+  "97874": {
+    "file": "97874.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 0.3271484375,
+    "path": "modules-final/utils/97874.js"
+  },
+  "97902": {
+    "file": "97902.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 0.216796875,
+    "path": "modules-final/utils/97902.js"
+  },
+  "97906": {
+    "file": "97906.js",
+    "category": "utils",
+    "source": "tier-three-identified-modules",
+    "quality": 31.7724609375,
+    "path": "modules-final/utils/97906.js"
+  },
+  "97995": {
+    "file": "97995-drawing-tool-tracker.js",
+    "category": "utils",
+    "source": "HOLD-TIER-B-REMEDIATION",
+    "quality": 66.48046875,
+    "path": "modules-final/utils/97995-drawing-tool-tracker.js"
+  },
+  "98155": {
+    "file": "98155.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 0.2353515625,
+    "path": "modules-final/utils/98155.js"
+  },
+  "98422": {
+    "file": "98422.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 5.142578125,
+    "path": "modules-final/utils/98422.js"
+  },
+  "99247": {
+    "file": "99247.js",
+    "category": "utils",
+    "source": "deployed-modules",
+    "quality": 38.0712890625,
+    "path": "modules-final/utils/99247.js"
+  },
+  "99481": {
+    "file": "99481-hhist-constants.js",
+    "category": "utils",
+    "source": "HOLD-TIER-B-REMEDIATION",
+    "quality": 70.5458984375,
+    "path": "modules-final/utils/99481-hhist-constants.js"
+  },
+  "99875": {
+    "file": "99875.js",
+    "category": "utils",
+    "source": "modules-v2",
+    "quality": 0.5126953125,
+    "path": "modules-final/utils/99875.js"
+  },
+  "99955": {
+    "file": "99955-bar-extrapolation.js",
+    "category": "utils",
+    "source": "HOLD-TIER-B-REMEDIATION",
+    "quality": 68.865234375,
+    "path": "modules-final/utils/99955-bar-extrapolation.js"
+  }
+}

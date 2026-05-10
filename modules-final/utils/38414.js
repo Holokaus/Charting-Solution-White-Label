@@ -1,0 +1,2 @@
+38414:(e,t,i)=>{"use strict";i.d(t,{DialogRenderer:()=>o});var s=i(22613);class o{constructor(){this._container=document.createElement("div"),this._visibility=new s.WatchedValue(!1),this._rootInstance=null}visible(){
+return this._visibility.readonly()}_setVisibility(e){this._visibility.setValue(e)}}
