@@ -328,3 +328,4 @@
         return this._configureProperties(i), i
       }
     }
+}

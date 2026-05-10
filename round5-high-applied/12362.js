@@ -179,3 +179,4 @@
         this._chartSavedDelegate.fire(!0), t(c, watchedValue_e(d))
       }
     }
+}

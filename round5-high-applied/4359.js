@@ -199,3 +199,4 @@
       function(priceDataSource_e) {
         priceDataSource_e.Auto = "auto", priceDataSource_e.Tiny = "tiny", priceDataSource_e.Small = "small", priceDataSource_e.Normal = "normal", priceDataSource_e.Large = "large", priceDataSource_e.Huge = "huge"
       }(c || (c = {}))
+}

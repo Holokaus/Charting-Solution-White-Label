@@ -27,3 +27,4 @@
         watchedValue_s.add(i), t.document.documentElement.dataset.theme = watchedValue_e
       }(watchedValue_e, window)
     }))
+}

@@ -52,3 +52,4 @@
         void 0 !== u && (0, a.addExclusionAreaByScope)(bitmapCoordinatesPane_e, u), (0, o.drawHorizontalLine)(bitmapCoordinatesPane_t, c, h, d)
       }
     }
+}

@@ -56,3 +56,4 @@
         return bitmapCoordinatesPane_s - i <= bitmapCoordinatesPane_t && bitmapCoordinatesPane_t <= o + i
       }
     }
+}

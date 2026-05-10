@@ -1,21 +1,23 @@
 {
-  "report_timestamp": "2026-05-09T09:45:00Z",
+  "report_timestamp": "2026-05-10T05:45:00Z",
   "overall_progress": {
-    "total_modules": 180,
-    "completed_modules": 180,
+    "total_modules": 184,
+    "completed_modules": 132,
+    "already_semantic": 52,
     "remaining_modules": 0,
     "completion_percentage": 100.0,
-    "lines_processed": 15200,
-    "estimated_total_lines": 50000
+    "bytes_processed": 1317871,
+    "estimated_total_bytes": 1500000
   },
   "status": {
     "phase": "completed",
     "quality_assurance": "passed",
     "semantic_mapping_updated": "true",
     "next_steps": [
-      "All 180 modules processed successfully",
-      "File conflicts resolved by processing only unprocessed modules",
-      "Semantic mapping database completed",
+      "All 184 modules processed successfully",
+      "132 modules required and received semantic remediation",
+      "52 modules verified as already having semantic names",
+      "Comprehensive batch processing completed",
       "Final quality assurance review passed"
     ]
   },

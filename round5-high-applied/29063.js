@@ -272,3 +272,4 @@
     }, window.onLoginStateChange = L, window.TradingView.setTrialAvailiable = watchedValue_e => {
       m.TVLocalStorage.setItem("trial_availiable", watchedValue_e ? "1" : "0")
     }, window.TradingView.notificationsChanged = new p.Delegate, M(), (0, I.initMouseClickAutoBlurHandler)()
+}

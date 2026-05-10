@@ -79,3 +79,4 @@
       }
     }
     a.POINTS_COUNT = 1, lineToolManager_e.exports.LineToolTrading = a
+}

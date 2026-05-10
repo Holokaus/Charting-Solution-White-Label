@@ -153,3 +153,4 @@
       const l = a.StudyMetaInfo.versionOf(logger_e);
       return r.hasChild("version") ? r.childs().version?.setValue(l) : r.addProperty("version", l), r
     }
+}

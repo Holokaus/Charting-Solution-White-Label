@@ -112,3 +112,4 @@
         return "Number Of Rows" === logger_e ? new a(t) : new l(t)
       }
     }
+}

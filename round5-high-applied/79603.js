@@ -85,3 +85,4 @@
         this.listeners().unsubscribeAll(watchedValue_e)
       }
     }
+}

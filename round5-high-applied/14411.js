@@ -83,3 +83,4 @@
         watchedValue_e && this._setUndoHistoryHasChanges(!1)
       }
     }
+}

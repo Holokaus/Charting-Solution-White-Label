@@ -2237,3 +2237,4 @@
 
 // Export for module system
 module.exports = { chartConfigDefaults };
+}

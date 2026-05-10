@@ -203,3 +203,4 @@
     function w(series_e) {
       return (0, o.isObject)(series_e) && "descriptor" in series_e && (0, y.isStudyDescriptor)(series_e.descriptor)
     }
+}

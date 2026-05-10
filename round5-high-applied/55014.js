@@ -50,3 +50,4 @@
       ["The Bar Magnifier feature is only available to Premium users", seriesBarFunction_s.t(null, void 0, i(45328))],
       ["The bar magnifier is only available to the Premium plan or higher.", seriesBarFunction_s.t(null, void 0, i(35601))]
     ])
+}

@@ -117,3 +117,10 @@ export class BitmapCoordinatesPaneRenderer {
  * @property {Function} scale - Scale coordinate system
  * @property {Function} rotate - Rotate coordinate system
  */
+
+/**
+ * Export the BitmapCoordinatesPaneRenderer class
+ * 
+ * @exports BitmapCoordinatesPaneRenderer
+ */
+export { BitmapCoordinatesPaneRenderer };

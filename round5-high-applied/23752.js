@@ -94,3 +94,4 @@
           ._getText(t), this._invalidated = !1)
       }
     }
+}

@@ -275,3 +275,4 @@
           r.dematerializeHHist), c.backgrounds = m(logger_e.backgrounds(), d, i, l.isBackgroundInBarsRange, t, l
           .dematerializeBackground), c
     }
+}

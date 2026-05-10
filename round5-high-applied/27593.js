@@ -265,3 +265,4 @@
         return this._model.properties().childs().tradingProperties.childs().showExecutions.value()
       }
     }
+}
