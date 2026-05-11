@@ -172,3 +172,4 @@
         return this._hint
       }
     }
+}

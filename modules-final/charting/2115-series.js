@@ -4102,3 +4102,5 @@
       this.getChartStyle() === e && this.restartDataStream()
     }
   }
+
+}

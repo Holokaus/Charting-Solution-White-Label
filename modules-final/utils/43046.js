@@ -217,3 +217,4 @@
     _.push(new lineToolManager_a), _.push(new lineToolManager_c), _.push(new lineToolManager_d), _.sort((function(lineToolManager_e, lineToolManager_t) {
       return lineToolManager_e.targetMetaInfoVersion() - lineToolManager_t.targetMetaInfoVersion()
     }))
+}

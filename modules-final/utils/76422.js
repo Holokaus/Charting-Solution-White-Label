@@ -51,3 +51,4 @@
       logger_r[logger_e] && console.warn(`Something went wrong: emitOnce called multiple times with same event (${logger_e})`), logger_r[logger_e] = !0, logger_u
         .apply(null, arguments)
     }
+}

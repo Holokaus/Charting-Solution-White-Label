@@ -1,13 +1,17 @@
 /**
- * Module 35749 - Beautified
- * Auto-formatted from webpack bundle
- * Semantic variable names applied
+ * Module 35749 - Restored
+ * Auto-converted from webpack module to ES6
+ * 
+ * @module Module35749
  */
 
-35749: (e, t, i) => {
-    "use strict";
-    i.d(t, {
-      isNativeUIInteraction: () => s.isNativeUIInteraction,
-      isTextEditingField: () => s.isTextEditingField
-    });
-    var s = i(54717)
+import { isNativeUIInteraction, isTextEditingField } from './54717.js';
+
+export { isNativeUIInteraction as isNativeUIInteraction };
+export { isTextEditingField as isTextEditingField };
+
+export default { isNativeUIInteraction, isTextEditingField };
+
+// ============================================================================
+// RESTORATION COMPLETE - TIER A+
+// ============================================================================

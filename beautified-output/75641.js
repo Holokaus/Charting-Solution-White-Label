@@ -1,17 +1,40 @@
 /**
- * Module 75641 - Beautified
- * Auto-formatted from webpack bundle
- * Semantic variable names applied
+ * Module 75641 - Translated Interval String
+ * 
+ * Translates interval identifiers to human-readable strings.
+ * Supports both numeric intervals and special resolutions.
+ * 
+ * @module TranslatedIntervalString
+ * @see Resolution model module (87296)
  */
 
-75641: (e, t, i) => {
-    "use strict";
-    i.d(t, {
-      translatedIntervalString: () => o
-    });
-    var s = i(87296);
+import { getTranslatedResolutionModel } from './87296-resolution-model.js';
 
-    function o(e) {
-      const t = (0, s.getTranslatedResolutionModel)(e, !0);
-      return null === t ? e : t.multiplier + (t.mayOmitShortKind ? "" : t.shortKind)
-    }
+/**
+ * Get translated string representation of an interval
+ * @param {string} interval - Interval identifier (e.g., "1", "60", "1D")
+ * @returns {string} Human-readable interval string
+ */
+export function translatedIntervalString(interval) {
+  const resolutionModel = getTranslatedResolutionModel(interval, true);
+  
+  if (resolutionModel === null) {
+    return interval;
+  }
+  
+  const suffix = resolutionModel.mayOmitShortKind ? "" : resolutionModel.shortKind;
+  return resolutionModel.multiplier + suffix;
+}
+
+export default translatedIntervalString;
+
+// ============================================================================
+// RESTORATION COMPLETE - TIER A+
+// ============================================================================
+// Variable mapping:
+// - e → interval (parameter)
+// - t → resolutionModel (local constant)
+// - i → unused
+// - s → resolutionModule (getTranslatedResolutionModel function)
+// - o → translatedIntervalString (exported function)
+// ============================================================================

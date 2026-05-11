@@ -24,3 +24,4 @@
     function(exports) {
       e[exports.InfoBox = 0] = "InfoBox", e[exports.Table = 1] = "Table"
     }(n || (nextValue = {}))
+}

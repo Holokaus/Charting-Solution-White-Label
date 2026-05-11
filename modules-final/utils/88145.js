@@ -51,3 +51,4 @@
       isSymbolDelisted: () => config,
       isYield: () => l
     })
+}

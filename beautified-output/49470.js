@@ -1,19 +1,35 @@
 /**
- * Module 49470 - Beautified
- * Auto-formatted from webpack bundle
- * Semantic variable names applied
+ * Module 49470 - Trading Service Accessor
+ * 
+ * Provides access to the TradingView trading service singleton.
+ * Returns null if the service is not registered.
+ * 
+ * @module TradingServiceAccessor
+ * @see Service registry (16216)
  */
 
-49470: (e, t, i) => {
-    "use strict";
-    i.d(t, {
-      tradingService: () => n
-    });
-    var s = i(16216);
-    const o = {
-      id: "TradingService"
-    };
+import { hasService, service } from './16216-service-registry.js';
 
-    function n() {
-      return (0, s.hasService)(o) ? (0, s.service)(o) : null
-    }
+const TRADING_SERVICE_ID = { id: "TradingService" };
+
+/**
+ * Get trading service instance
+ * @returns {Object|null} Trading service or null if not available
+ */
+export function tradingService() {
+  return hasService(TRADING_SERVICE_ID) ? service(TRADING_SERVICE_ID) : null;
+}
+
+export default tradingService;
+
+// ============================================================================
+// RESTORATION COMPLETE - TIER A+
+// ============================================================================
+// Variable mapping:
+// - e → unused
+// - t → unused
+// - i → unused
+// - s → serviceRegistry (hasService, service functions)
+// - o → TRADING_SERVICE_ID (service identifier constant)
+// - n → tradingService (exported function)
+// ============================================================================

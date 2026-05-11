@@ -48,3 +48,4 @@
         this._offsetInBar = null, this._offsetInTime = null, this._baseIndex = null, this._barsBetweenPoints = null
       }
     }
+}

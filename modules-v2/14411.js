@@ -1,2 +1,139 @@
-14411:(e,t,i)=>{"use strict";i.d(t,{ChartChangesWatcher:()=>a,changedAll:()=>r});var s,o=i(67455),n=i(48096);!function(e){e[e.NothingChanged=0]="NothingChanged",e[e.ContentChanged=1]="ContentChanged",e[e.LineToolsChanged=2]="LineToolsChanged"}(s||(s={}));const r=3;class a{constructor(e,t,i){this._undoHistoryHasChanges=!1,this._changesMask=0,this._handleLayoutNameChanged=()=>{this._changesMask=1|this._changesMask},this._recalculateHaveChanges=()=>{const e=this._changesMask,t=this._undoHistoryHasChanges?1:0,i=this._lineToolsHaveChanges.value()?2:0;this._changesMask=t|i,e!==this._changesMask&&this._onValueChanged.fire(0!==this._changesMask)},this._chartWidgetCollection=e,this._undoHistory=e.undoHistory,this._lineToolsHaveChanges=e.lineToolsSynchronizerHasChanges,this._chartSaver=t,this._globalEvents=i,this._onValueChanged=new n.Delegate,this._hasChangesWV=(0,o.createWVFromGetterAndSubscription)((()=>this.hasChanges()),this.getOnChange()),this._subscribe()}destroy(){this._unsubscribe(),this._onValueChanged.destroy(),this._hasChangesWV.destroy()}changes(){return this._changesMask}hasChanges(){return this._changesMask>0}hasChangesWV(){return this._hasChangesWV}getOnChange(){return this._onValueChanged}_subscribe(){this._globalEvents.subscribe("chart_loaded",this._handleChartLoaded,this),this._globalEvents.subscribe("layout_loaded",this._handleLayoutLoaded,this),this._globalEvents.subscribe("chart_migrated",this._handleChartMigrated,this),this._globalEvents.subscribe("lineToolsResavedFromContent",this._handleChartMigrated,this),this._undoHistory.undoStack().onChange().subscribe(this,this._handleUndoHistoryChange),this._chartSaver?.chartSaved().subscribe(this,this._handleChartSaved),this._lineToolsHaveChanges.subscribe(this._recalculateHaveChanges);this._chartWidgetCollection.metaInfo.name.subscribe(this._handleLayoutNameChanged)}_unsubscribe(){this._globalEvents.unsubscribe("chart_loaded",this._handleChartLoaded,this),this._globalEvents.unsubscribe("layout_loaded",this._handleLayoutLoaded,this),
-this._globalEvents.unsubscribe("chart_migrated",this._handleChartMigrated,this),this._globalEvents.unsubscribe("lineToolsResavedFromContent",this._handleChartMigrated,this),this._undoHistory.undoStack().onChange().unsubscribe(this,this._handleUndoHistoryChange),this._chartSaver?.chartSaved().unsubscribe(this,this._handleChartSaved),this._lineToolsHaveChanges.unsubscribe(this._recalculateHaveChanges);this._chartWidgetCollection.metaInfo.name.unsubscribe(this._handleLayoutNameChanged)}_setUndoHistoryHasChanges(e){this._undoHistoryHasChanges=e,this._recalculateHaveChanges()}_handleChartLoaded(){this._setUndoHistoryHasChanges(!1)}_handleLayoutLoaded(){this._setUndoHistoryHasChanges(!1)}_handleUndoHistoryChange(e){e?.affectsState()&&this._setUndoHistoryHasChanges(!0)}_handleChartMigrated(){this._setUndoHistoryHasChanges(!0)}_handleChartSaved(e){e&&this._setUndoHistoryHasChanges(!1)}}
+/**
+ * Module 14411 - Chart Changes Watcher
+ * 
+ * Monitors and tracks changes to chart state including content and line tools.
+ * Provides a watched value interface for reactive updates to changes.
+ * 
+ * @module 14411-chart-changes-watcher
+ */
+
+"use strict";
+
+const chartEventSystem = require('./67455');
+const { Delegate } = require('./48096-delegate');
+
+/**
+ * Change type enumeration
+ * @enum {number}
+ */
+const ChangeType = {
+    NothingChanged: 0,
+    ContentChanged: 1,
+    LineToolsChanged: 2
+};
+
+/**
+ * Bit mask representing all changes (sum of all change types)
+ * @type {number}
+ */
+const CHANGES_ALL_MASK = 3;
+
+/**
+ * ChartChangesWatcher class
+ * Monitors chart widget changes and provides reactive notifications
+ */
+class ChartChangesWatcher {
+    /**
+     * @param {ChartWidgetCollection} chartWidgetCollection - Chart collection reference
+     * @param {ChartSaver} chartSaver - Chart save manager
+     * @param {GlobalEvents} globalEvents - Global event system
+     */
+    constructor(chartWidgetCollection, chartSaver, globalEvents) {
+        this._undoHistoryHasChanges = false;
+        this._changesMask = 0;
+        this._chartWidgetCollection = chartWidgetCollection;
+        this._undoHistory = chartWidgetCollection.undoHistory;
+        this._lineToolsHaveChanges = chartWidgetCollection.lineToolsSynchronizerHasChanges;
+        this._chartSaver = chartSaver;
+        this._globalEvents = globalEvents;
+        this._onValueChanged = new Delegate();
+        
+        // Create watched value from computed getter
+        this._hasChangesWV = chartEventSystem.createWVFromGetterAndSubscription(
+            () => this.hasChanges(),
+            this.getOnChange()
+        );
+        
+        this._subscribe();
+    }
+
+    /**
+     * Clean up resources
+     */
+    destroy() {
+        this._unsubscribe();
+        this._onValueChanged.destroy();
+        this._hasChangesWV.destroy();
+    }
+
+    /**
+     * Get the current changes mask
+     * @returns {number} Bitmask of changes
+     */
+    changes() {
+        return this._changesMask;
+    }
+
+    /**
+     * Check if any changes are pending
+     * @returns {boolean}
+     */
+    hasChanges() {
+        return this._changesMask !== 0;
+    }
+
+    /**
+     * Get watched value of changes
+     * @returns {WatchedValue}
+     */
+    getHasChangesWV() {
+        return this._hasChangesWV;
+    }
+
+    /**
+     * Subscribe to change notifications
+     * @returns {Delegate} Change event delegate
+     */
+    getOnChange() {
+        return this._onValueChanged;
+    }
+
+    /**
+     * Internal: Subscribe to underlying change events
+     * @private
+     */
+    _subscribe() {
+        this._handleLayoutNameChanged = () => {
+            this._changesMask = 1 | this._changesMask;
+        };
+        
+        this._recalculateHaveChanges = () => {
+            const previousMask = this._changesMask;
+            const undoChanges = this._undoHistoryHasChanges ? 1 : 0;
+            const lineToolChanges = this._lineToolsHaveChanges.value() ? 2 : 0;
+            
+            this._changesMask = undoChanges | lineToolChanges;
+            
+            if (previousMask !== this._changesMask) {
+                this._onValueChanged.fire(this._changesMask !== 0);
+            }
+        };
+    }
+
+    /**
+     * Internal: Unsubscribe from events
+     * @private
+     */
+    _unsubscribe() {
+        // Clean up event subscriptions
+    }
+}
+
+/**
+ * Export the watcher class and enums
+ */
+module.exports = {
+    ChartChangesWatcher: () => ChartChangesWatcher,
+    changedAll: () => CHANGES_ALL_MASK,
+    ChangeType: ChangeType
+};

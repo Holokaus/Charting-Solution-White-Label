@@ -40,3 +40,4 @@
           ._isMarkersEnabled && this._selectionData && bitmapCoordinatesPane_l.append(new bitmapCoordinatesPane_r.SelectionRenderer(this._selectionData)), bitmapCoordinatesPane_l
       }
     }
+}

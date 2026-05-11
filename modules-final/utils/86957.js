@@ -40,3 +40,4 @@
         return `${this._dateFormatter.formatLocal(exports)}${i}${this._timeFormatter.formatLocal(exports)}`
       }
     }
+}

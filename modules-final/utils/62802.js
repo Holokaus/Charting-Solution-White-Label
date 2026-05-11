@@ -43,3 +43,4 @@
         return (0, bitmapCoordinatesPane_n.baseBarCandlesUpdater)(bitmapCoordinatesPane_t, bitmapCoordinatesPane_s) ? bitmapCoordinatesPane_s : null
       }
     }
+}

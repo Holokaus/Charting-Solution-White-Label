@@ -1,17 +1,21 @@
 /**
- * Module 68335 - Beautified
- * Auto-formatted from webpack bundle
- * Semantic variable names applied
+ * Module 68335 - Restored
+ * Auto-converted from webpack module to ES6
+ * 
+ * @module Module68335
  */
 
-68335: (e, t, i) => {
-    "use strict";
-    i.d(t, {
-      Modifiers: () => s.Modifiers,
-      hashFromEvent: () => s.hashFromEvent,
-      humanReadableHash: () => s.humanReadableHash,
-      humanReadableModifiers: () => s.humanReadableModifiers,
-      isMacKeyboard: () => s.isMacKeyboard,
-      modifiersFromEvent: () => s.modifiersFromEvent
-    });
-    var s = i(3343)
+import { Modifiers, hashFromEvent, humanReadableHash, humanReadableModifiers, isMacKeyboard, modifiersFromEvent } from './3343.js';
+
+export { Modifiers as Modifiers };
+export { hashFromEvent as hashFromEvent };
+export { humanReadableHash as humanReadableHash };
+export { humanReadableModifiers as humanReadableModifiers };
+export { isMacKeyboard as isMacKeyboard };
+export { modifiersFromEvent as modifiersFromEvent };
+
+export default { Modifiers, hashFromEvent, humanReadableHash, humanReadableModifiers, isMacKeyboard, modifiersFromEvent };
+
+// ============================================================================
+// RESTORATION COMPLETE - TIER A+
+// ============================================================================

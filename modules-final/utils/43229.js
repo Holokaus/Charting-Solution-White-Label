@@ -46,3 +46,4 @@
         return this._resource.pendingResource
       }
     }
+}

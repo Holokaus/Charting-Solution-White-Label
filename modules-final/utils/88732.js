@@ -163,3 +163,4 @@
         return lineToolManager_e && lineToolManager_t > 5
       }
     }
+}

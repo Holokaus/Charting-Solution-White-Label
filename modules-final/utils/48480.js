@@ -30,3 +30,4 @@
     }, TradingView.Pro.prototype.getStudiesOrder = function() {
       return []
     }
+}

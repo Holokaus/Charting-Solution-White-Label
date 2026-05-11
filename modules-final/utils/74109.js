@@ -349,3 +349,4 @@
         description: "Fixed Range",
         is_hidden_study: !0
       })
+}

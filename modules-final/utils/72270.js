@@ -38,3 +38,4 @@
         throw new Error("Should be re-implemented in child classes")
       }
     }
+}

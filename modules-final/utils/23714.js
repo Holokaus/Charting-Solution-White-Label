@@ -1,1 +1,2 @@
 23714:(e,t,i)=>{"use strict";i.d(t,{actualBehavior:()=>a,availableValues:()=>r,navigationButtonsVisibilityKey:()=>o,property:()=>n,restoreNavigationButtonsVisibilitySettingsValue:()=>l});var s=i(64876);const o="NavigationButtons.visibility",{property:n,availableValues:r,actualBehavior:a,restoreDefaultValue:l}=(0,s.createVisibilityController)(o)
+}

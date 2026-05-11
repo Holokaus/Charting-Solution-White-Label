@@ -1,1 +1,2 @@
 55308:(e,t,i)=>{"use strict";i.d(t,{isDrawingToolbarVisible:()=>l});var settingsAdapter=i(1765),o=i(37103),n=i(22613);const r=!o.enabled("hide_left_toolbar_by_default"),a=settingsAdapter.getBool("ChartDrawingToolbarWidget.visible",r),l=new n.WatchedValue(a)
+}

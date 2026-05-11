@@ -1,0 +1,114 @@
+{
+  "timestamp": "2026-05-10T08:55:57.886Z",
+  "testResults": [
+    {
+      "name": "File exists: charting_library.standalone.js",
+      "passed": true,
+      "details": "3862.55 KB"
+    },
+    {
+      "name": "File exists: charting_library.standalone.beautified.js",
+      "passed": true,
+      "details": "72.52 KB"
+    },
+    {
+      "name": "File exists: charting_library.standalone.simple.js",
+      "passed": true,
+      "details": "1184.34 KB"
+    },
+    {
+      "name": "File exists: charting_library.standalone.reminified.js",
+      "passed": true,
+      "details": "735.71 KB"
+    },
+    {
+      "name": "File exists: charting_library.js",
+      "passed": true,
+      "details": "54.48 KB"
+    },
+    {
+      "name": "File exists: charting_library.d.ts",
+      "passed": true,
+      "details": "1086.23 KB"
+    },
+    {
+      "name": "Syntax valid: charting_library.standalone.simple.js",
+      "passed": false,
+      "details": "{\"No unclosed braces\":false,\"No unclosed parentheses\":false,\"No unclosed brackets\":true,\"Contains valid exports\":true,\"Not obviously broken\":true}"
+    },
+    {
+      "name": "Syntax valid: charting_library.standalone.beautified.js",
+      "passed": false,
+      "details": "{\"No unclosed braces\":true,\"No unclosed parentheses\":true,\"No unclosed brackets\":true,\"Contains valid exports\":false,\"Not obviously broken\":true}"
+    },
+    {
+      "name": "Syntax valid: charting_library.standalone.reminified.js",
+      "passed": false,
+      "details": "{\"No unclosed braces\":false,\"No unclosed parentheses\":false,\"No unclosed brackets\":true,\"Contains valid exports\":true,\"Not obviously broken\":true}"
+    },
+    {
+      "name": "Semantic names present",
+      "passed": true,
+      "details": "1/6"
+    },
+    {
+      "name": "No mechanical prefixing",
+      "passed": false,
+      "details": "Found"
+    },
+    {
+      "name": "Tier A modules validation",
+      "passed": false,
+      "details": "1/10 passed"
+    },
+    {
+      "name": "Library exports",
+      "passed": false,
+      "details": "{\"Has module.exports\":false,\"Imports library files\":true,\"Reasonable file size\":true,\"No obvious errors\":true}"
+    },
+    {
+      "name": "Deployment structure",
+      "passed": true,
+      "details": "6 present, 0 missing"
+    },
+    {
+      "name": "Production check: Library files minified versions exist",
+      "passed": true,
+      "details": "Pass"
+    },
+    {
+      "name": "Production check: TypeScript definitions available",
+      "passed": true,
+      "details": "Pass"
+    },
+    {
+      "name": "Production check: Deployment documentation complete",
+      "passed": true,
+      "details": "Pass"
+    },
+    {
+      "name": "Production check: Tier A modules directory exists",
+      "passed": true,
+      "details": "Pass"
+    },
+    {
+      "name": "Production check: Backup created",
+      "passed": true,
+      "details": "Pass"
+    },
+    {
+      "name": "Production check: Performance optimization applied",
+      "passed": true,
+      "details": "Pass"
+    },
+    {
+      "name": "Production check: No obvious syntax errors in main files",
+      "passed": true,
+      "details": "Pass"
+    }
+  ],
+  "warnings": [],
+  "errors": [],
+  "passCount": 15,
+  "failCount": 6
+}

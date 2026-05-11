@@ -74,3 +74,4 @@
     }, nextValue.prototype.clear = function() {
       this.isAvailable ? this.localStorage.clear() : this.localStorage = {}, this._updateLength()
     }, window.TVLocalStorage = new nextValue, exports.exports.TVLocalStorage = window.TVLocalStorage
+}

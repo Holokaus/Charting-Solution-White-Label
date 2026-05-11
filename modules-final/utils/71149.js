@@ -55,3 +55,4 @@
         return new n((0, series.get_year)(exports), (0, series.get_month)(exports) + 1, (0, series.get_day_of_month)(exports))
       }
     }
+}

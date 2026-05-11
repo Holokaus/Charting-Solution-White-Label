@@ -72,3 +72,4 @@
         bitmapCoordinatesPane_c.lineWidth = bitmapCoordinatesPane_t.lineWidth, bitmapCoordinatesPane_c.restore(), super._drawImpl(bitmapCoordinatesPane_e)
       }
     }
+}

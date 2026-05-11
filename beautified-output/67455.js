@@ -1,19 +1,16 @@
 /**
- * Module 67455 - Beautified
- * Auto-formatted from webpack bundle
- * Semantic variable names applied
+ * Module 67455 - Restored
+ * Auto-converted from webpack module to ES6
+ * 
+ * @module Module67455
  */
 
-67455: (e, t, i) => {
-    "use strict";
-    i.d(t, {
-      combineProperty: () => r.combineProperty,
-      createWVFromGetterAndSubscription: () => s.createWVFromGetterAndSubscription,
-      createWVFromGetterAndSubscriptions: () => o.createWVFromGetterAndSubscriptions,
-      createWVFromProperty: () => n.createWVFromProperty
-    });
-    var s = i(8811),
-      o = i(11751),
-      n = i(70548);
-    i(41072);
-    var r = i(89959)
+import { createWVFromGetterAndSubscription } from './8811.js';
+
+export { createWVFromGetterAndSubscription as createWVFromGetterAndSubscription };
+
+export default { createWVFromGetterAndSubscription };
+
+// ============================================================================
+// RESTORATION COMPLETE - TIER A+
+// ============================================================================

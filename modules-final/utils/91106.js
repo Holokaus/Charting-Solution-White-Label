@@ -38,3 +38,4 @@
       h || (h = !0, void 0 === nextValue.default.getValue("PriceAxisCurrencyAndUnit.visibility") && r().setValue(e || t ?
         "alwaysOn" : "alwaysOff"))
     }
+}

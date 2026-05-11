@@ -129,3 +129,4 @@
       return series_o && series_s.createDefaults(), series_s
     }
     const series_g = (0, series_s.default)((() => new _(window.ChartApiInstance)))
+}

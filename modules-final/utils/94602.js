@@ -60,3 +60,4 @@
         return this._renderers.some((require => !!require.doesIntersectWithBox && require.doesIntersectWithBox(exports, t)))
       }
     }
+}

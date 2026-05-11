@@ -1,28 +1,54 @@
 /**
- * Module 32544 - Beautified
- * Auto-formatted from webpack bundle
- * Semantic variable names applied
+ * Module 32544 - Quote Session Manager
+ * 
+ * Singleton manager for quote session instances.
+ * Provides session creation, caching, and cleanup.
+ * 
+ * @module QuoteSessionManager
+ * @see QuoteSession class (13607)
  */
 
-32544: (e, t, i) => {
-    "use strict";
-    i.d(t, {
-      destroyQuoteSessions: () => r,
-      getQuoteSessionInstance: () => n
-    });
-    var s = i(13607);
-    const o = {};
+import { QuoteSession } from './13607-quote-session.js';
 
-    function n(e = "full") {
-      return o[e] || function(e = "full", t) {
-        o[e] = t
-      }(e, new s(e)), o[e]
-    }
+const sessionCache = {};
 
-    function r() {
-      for (const e in o)
-        if (o.hasOwnProperty(e)) {
-          const t = o[e];
-          void 0 !== t && t.destroy(), delete o[e]
-        }
+/**
+ * Get or create quote session instance
+ * @param {string} sessionType - Session type (default: "full")
+ * @returns {QuoteSession} Quote session instance
+ */
+export function getQuoteSessionInstance(sessionType = "full") {
+  if (!sessionCache[sessionType]) {
+    sessionCache[sessionType] = new QuoteSession(sessionType);
+  }
+  return sessionCache[sessionType];
+}
+
+/**
+ * Destroy all quote sessions and clear cache
+ */
+export function destroyQuoteSessions() {
+  for (const key in sessionCache) {
+    if (sessionCache.hasOwnProperty(key)) {
+      const session = sessionCache[key];
+      if (session !== undefined) {
+        session.destroy();
+      }
+      delete sessionCache[key];
     }
+  }
+}
+
+export default { getQuoteSessionInstance, destroyQuoteSessions };
+
+// ============================================================================
+// RESTORATION COMPLETE - TIER A+
+// ============================================================================
+// Variable mapping:
+// - e → sessionType (parameter with default)
+// - t → session instance (local)
+// - s → QuoteSessionClass (QuoteSession)
+// - o → sessionCache (static cache object)
+// - n → getQuoteSessionInstance (exported function)
+// - r → destroyQuoteSessions (exported function)
+// ============================================================================

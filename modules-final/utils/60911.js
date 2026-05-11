@@ -76,3 +76,4 @@
       for (; !r(require.symbol);) require = require.symbol;
       require.symbol = t
     }
+}

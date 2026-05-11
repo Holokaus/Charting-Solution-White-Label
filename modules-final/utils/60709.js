@@ -21,3 +21,4 @@
     function seriesBarFunction_r() {
       return (0, seriesBarFunction_o.hasService)(seriesBarFunction_n) ? (0, seriesBarFunction_o.service)(seriesBarFunction_n) : null
     }
+}

@@ -28,3 +28,4 @@
         e[exports.Regular = 0] = "Regular",
           e[exports.Widget = 1] = "Widget"
       }(n || (nextValue = {}))
+}

@@ -40,3 +40,4 @@
         return new s(object, n)
       }
     }
+}

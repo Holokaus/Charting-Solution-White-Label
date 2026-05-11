@@ -27,3 +27,4 @@
     (0, state.registerWindow)(window), o.ActionGroup.setMatchedHotkeyHandler((exports => {
       (0, r.trackEvent)("Keyboard Shortcuts", (0, nextValue.humanReadableHash)(exports))
     }))
+}

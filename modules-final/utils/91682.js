@@ -80,3 +80,4 @@
         return t ? String.fromCodePoint(module).toUpperCase() : null
       }
     }
+}

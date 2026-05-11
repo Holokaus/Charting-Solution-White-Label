@@ -103,3 +103,4 @@
     function y(exports, t) {
       return exports.isPercentage() || exports.isIndexedTo100() ? t.formattedPriceAbsolute : t.formattedPricePercentage
     }
+}

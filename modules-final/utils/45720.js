@@ -52,3 +52,4 @@
         this._map.clear(), this._size = 0
       }
     }
+}

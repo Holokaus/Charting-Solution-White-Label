@@ -57,3 +57,4 @@
     function h() {
       return state.getMaxImageSizeLabel()
     }
+}

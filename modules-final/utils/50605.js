@@ -25,3 +25,4 @@
       function(exports) {
         exports.Top = "top", exports.Bottom = "bottom", exports.Middle = "middle"
       }(o || (object = {}))
+}

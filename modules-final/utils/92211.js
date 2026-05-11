@@ -19,3 +19,4 @@
       let seriesBarFunction_l = seriesBarFunction_e && (seriesBarFunction_i && seriesBarFunction_e.pro_name || seriesBarFunction_e.full_name || seriesBarFunction_e.name);
       return seriesBarFunction_n && seriesBarFunction_t ? seriesBarFunction_l = seriesBarFunction_t : (seriesBarFunction_r || !seriesBarFunction_s && seriesBarFunction_o) && seriesBarFunction_e && seriesBarFunction_e.ticker && (seriesBarFunction_l = seriesBarFunction_e.ticker), seriesBarFunction_a && seriesBarFunction_l && (seriesBarFunction_l = seriesBarFunction_l.toUpperCase()), seriesBarFunction_l
     }
+}

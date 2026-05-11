@@ -143,3 +143,4 @@
     function lineToolManager_a(lineToolManager_e, lineToolManager_t) {
       return (0, lineToolManager_o.measureText)(lineToolManager_e, lineToolManager_t).width
     }
+}

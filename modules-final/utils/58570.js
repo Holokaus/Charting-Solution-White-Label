@@ -197,3 +197,4 @@
       return series_u(series_e) ? (0, series_s.ensureDefined)(series_c.get(series_e), `Study line tool ${series_e}`) : (0, series_s.ensureDefined)(series_r.get(series_e),
         `Line tool ${series_e}`)
     }
+}

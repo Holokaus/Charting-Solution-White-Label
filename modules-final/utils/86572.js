@@ -62,3 +62,4 @@
     function(lineToolManager_e) {
       lineToolManager_e[lineToolManager_e.Chart = 0] = "Chart"
     }(lineToolManager_h || (lineToolManager_h = {}))
+}

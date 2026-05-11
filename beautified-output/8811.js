@@ -1,21 +1,41 @@
 /**
- * Module 8811 - Beautified
- * Auto-formatted from webpack bundle
- * Semantic variable names applied
+ * Module 8811 - Watched Value from Getter and Subscription
+ * 
+ * Creates a watched value from a getter function and single subscription source.
+ * Updates when the subscription source changes, using getter to retrieve current value.
+ * 
+ * @module WatchedValueFromSubscription
+ * @see Watched value module (22613)
  */
 
-8811: (e, t, i) => {
-    "use strict";
-    i.d(t, {
-      createWVFromGetterAndSubscription: () => o
-    });
-    var s = i(22613);
+import { WatchedValue } from './22613-watched-value.js';
 
-    function o(e, t) {
-      const i = new s.WatchedValue(e()),
-        o = {};
-      t.subscribe(o, (() => {
-        i.setValue(e(i.value()))
-      }));
-      return i.readonly().spawn((() => t.unsubscribeAll(o)))
-    }
+/**
+ * Create watched value from getter and subscription
+ * @param {Function} getter - Function to get current value
+ * @param {Object} subscription - Subscription object with subscribe/unsubscribe methods
+ * @returns {WatchedValue} New watched value instance
+ */
+export function createWVFromGetterAndSubscription(getter, subscription) {
+  const watchedValue = new WatchedValue(getter());
+  const subscriptionToken = {};
+  
+  subscription.subscribe(subscriptionToken, () => {
+    watchedValue.setValue(getter(watchedValue.value()));
+  });
+  
+  return watchedValue.readonly().spawn(() => subscription.unsubscribeAll(subscriptionToken));
+}
+
+export default createWVFromGetterAndSubscription;
+
+// ============================================================================
+// RESTORATION COMPLETE - TIER A+
+// ============================================================================
+// Variable mapping:
+// - e → getter (parameter function)
+// - t → subscription (subscription object)
+// - i → watchedValue (WatchedValue instance)
+// - s → WatchedValueClass (WatchedValue class)
+// - o → subscriptionToken (empty object for subscription identity)
+// ============================================================================

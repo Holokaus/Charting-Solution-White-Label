@@ -158,3 +158,4 @@
     Number.isNaN = Number.isNaN || function(exports) {
       return e != e
     }
+}

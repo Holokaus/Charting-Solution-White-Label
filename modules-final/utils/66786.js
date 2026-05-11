@@ -38,3 +38,4 @@
         bitmapCoordinatesPane_e.containsMainSeries() && this.updateAllViews(bitmapCoordinatesPane_t)
       }
     }
+}

@@ -66,3 +66,4 @@
     function bitmapCoordinatesPane_m() {
       return bitmapCoordinatesPane_p
     }
+}

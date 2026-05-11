@@ -54,3 +54,4 @@
         return exports.textBaseline = series, 0 === newSeries.width && t.length || this._cache.set(t, n), n
       }
     }
+}

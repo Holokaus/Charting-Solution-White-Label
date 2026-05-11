@@ -62,3 +62,4 @@
       return i && (exports = exports.replace(require, "")), exports = exports.replace(module.decimalSign, "."), /^(\+|-)?\d+(\.\d+|\.)?(e(\+|-)?\d+)?$/
         .test(exports) ? parseFloat(exports) : NaN
     }
+}

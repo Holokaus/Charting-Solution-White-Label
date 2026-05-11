@@ -37,3 +37,4 @@
           ._isMarkersEnabled && this._selectionData && bitmapCoordinatesPane_l.append(new bitmapCoordinatesPane_n.SelectionRenderer(this._selectionData)), bitmapCoordinatesPane_l
       }
     }
+}

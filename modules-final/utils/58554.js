@@ -40,3 +40,4 @@
     function seriesBarFunction_l(seriesBarFunction_e, seriesBarFunction_t) {
       return seriesBarFunction_t.contains(seriesBarFunction_e.index)
     }
+}

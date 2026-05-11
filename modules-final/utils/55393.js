@@ -42,3 +42,4 @@
         super.restorePoints(watchedValue_e, watchedValue_t, watchedValue_i), this._finished = !0
       }
     }
+}

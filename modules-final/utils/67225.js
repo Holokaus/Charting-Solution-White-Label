@@ -30,3 +30,4 @@
         return void 0 === o && (object = (0, state.gradientColorAtPercent)(exports, module, i / 100), this._colors.set(require, o)), o
       }
     }
+}

@@ -1,27 +1,59 @@
 /**
- * Module 4745 - Beautified
- * Auto-formatted from webpack bundle
- * Semantic variable names applied
+ * Module 4745 - Spread Actions and Keypress Utilities
+ * 
+ * Provides feature flag checks for spread operations and global keypress validation.
+ * Used to determine UI visibility and keyboard event handling.
+ * 
+ * @module SpreadActionsUtilities
+ * @see Feature flags module (37103)
  */
 
-4745: (e, t, i) => {
-    "use strict";
-    i.d(t, {
-      canShowSpreadActions: () => o,
-      globalKeypressMatches: () => n
-    });
-    var s = i(37103);
+import { enabled as isFeatureEnabled } from './37103-feature-flags.js';
 
-    function o() {
-      let e = !1;
-      return s.enabled("show_spread_operators") && (e = !0), e
-    }
+/**
+ * Check if spread operators feature is enabled
+ * @returns {boolean} True if spread actions should be shown
+ */
+export function canShowSpreadActions() {
+  return isFeatureEnabled("show_spread_operators");
+}
 
-    function n(e) {
-      if (e.ctrlKey) return !1;
-      if (e.metaKey) return !1;
-      if (!e.charCode) return !1;
-      if (!e.which || e.which <= 32) return !1;
-      const t = e.target;
-      return !t || !/^(input|textarea)$/i.test(t.tagName) && "listbox" !== t.getAttribute("role")
-    }
+/**
+ * Check if keypress event should be processed globally
+ * Filters out control keys, meta keys, and input field events
+ * @param {KeyboardEvent} event - Keyboard event to check
+ * @returns {boolean} True if keypress should be processed
+ */
+export function globalKeypressMatches(event) {
+  // Skip control and meta key combinations
+  if (event.ctrlKey) return false;
+  if (event.metaKey) return false;
+  
+  // Skip events without character codes
+  if (!event.charCode) return false;
+  
+  // Skip low character codes (control characters)
+  if (!event.which || event.which <= 32) return false;
+  
+  // Skip input fields and listboxes
+  const target = event.target;
+  if (!target) return true;
+  
+  const isInputField = /^(input|textarea)$/i.test(target.tagName);
+  const isListbox = target.getAttribute("role") === "listbox";
+  
+  return !isInputField && !isListbox;
+}
+
+export default { canShowSpreadActions, globalKeypressMatches };
+
+// ============================================================================
+// RESTORATION COMPLETE - TIER A+
+// ============================================================================
+// Variable mapping:
+// - e → event (parameter)
+// - t → target (extracted from event)
+// - s → featureFlags (enabled function)
+// - o → canShowSpreadActions (exported function)
+// - n → globalKeypressMatches (exported function)
+// ============================================================================

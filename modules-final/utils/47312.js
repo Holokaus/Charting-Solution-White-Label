@@ -55,3 +55,4 @@
           .startOfBar(module)
       }
     }
+}

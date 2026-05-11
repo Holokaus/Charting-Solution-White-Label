@@ -35,3 +35,4 @@
         this._text = this._statusProvider.text()
       }
     }
+}

@@ -52,3 +52,4 @@
         this._chartApi.quoteHibernateAll(this._sessionid)
       }
     }
+}

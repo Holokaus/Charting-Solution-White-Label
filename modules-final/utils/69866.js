@@ -42,3 +42,4 @@
         assertionUtils = Math.max(seriesBarFunction_e.start, seriesBarFunction_e.stop);
       return seriesBarFunction_t.contains(seriesBarFunction_i) || seriesBarFunction_t.contains(assertionUtils) || seriesBarFunction_i < seriesBarFunction_t.firstBar() && assertionUtils > seriesBarFunction_t.lastBar()
     }
+}

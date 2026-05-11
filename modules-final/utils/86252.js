@@ -91,3 +91,4 @@
       priceDataSource_e[priceDataSource_e.Undefined = 0] = "Undefined", priceDataSource_e[priceDataSource_e.Loading = 1] = "Loading", priceDataSource_e[priceDataSource_e.Completed = 2] = "Completed", priceDataSource_e[priceDataSource_e.Error = 3] =
         "Error"
     }(priceDataSource_h || (priceDataSource_h = {}))
+}

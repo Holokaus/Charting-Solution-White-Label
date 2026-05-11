@@ -41,3 +41,4 @@
     function seriesBarFunction_a(seriesBarFunction_e) {
       return seriesBarFunction_e.startsWith("charts.")
     }
+}

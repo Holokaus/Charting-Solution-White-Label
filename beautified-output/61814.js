@@ -1,21 +1,43 @@
 /**
- * Module 61814 - Beautified
- * Auto-formatted from webpack bundle
- * Semantic variable names applied
+ * Module 61814 - Hot Key Serialization
+ * 
+ * Serializes and deserializes hotkey configurations with HTML escaping.
+ * Ensures safe storage and transmission of keyboard shortcut settings.
+ * 
+ * @module HotKeySerialization
+ * @see HTML utilities module (91682)
  */
 
-61814: (e, t, i) => {
-    "use strict";
-    i.d(t, {
-      hotKeyDeserialize: () => n,
-      hotKeySerialize: () => o
-    });
-    var s = i(91682);
+import { htmlEscape, decodeHTMLEntities } from './91682-html-utilities.js';
 
-    function o(e) {
-      return (0, s.htmlEscape)(JSON.stringify(e))
-    }
+/**
+ * Serialize hotkey configuration to string
+ * @param {Object} config - Hotkey configuration object
+ * @returns {string} Escaped JSON string
+ */
+export function hotKeySerialize(config) {
+  return htmlEscape(JSON.stringify(config));
+}
 
-    function n(e) {
-      return JSON.parse((0, s.decodeHTMLEntities)(e))
-    }
+/**
+ * Deserialize hotkey configuration from string
+ * @param {string} serialized - Serialized hotkey string
+ * @returns {Object} Parsed hotkey configuration
+ */
+export function hotKeyDeserialize(serialized) {
+  return JSON.parse(decodeHTMLEntities(serialized));
+}
+
+export default { hotKeySerialize, hotKeyDeserialize };
+
+// ============================================================================
+// RESTORATION COMPLETE - TIER A+
+// ============================================================================
+// Variable mapping:
+// - e → config/serialized (parameter)
+// - t → unused
+// - i → unused
+// - s → htmlUtils (htmlEscape, decodeHTMLEntities)
+// - o → hotKeySerialize (exported function)
+// - n → hotKeyDeserialize (exported function)
+// ============================================================================

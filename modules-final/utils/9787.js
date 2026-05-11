@@ -75,3 +75,4 @@
       }
     }
     object.ZERO = new o(0, 0)
+}

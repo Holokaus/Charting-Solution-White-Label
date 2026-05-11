@@ -1,26 +1,60 @@
 /**
- * Module 18712 - Beautified
- * Auto-formatted from webpack bundle
- * Semantic variable names applied
+ * Module 18712 - Property to WatchedValue Converter
+ * 
+ * Converts a Property to a bidirectionally synchronized WatchedValue.
+ * Changes in either direction are automatically propagated.
+ * 
+ * @module PropertyToWatchedValueConverter
+ * @see Watched value module (22613)
  */
 
-18712: (e, t, i) => {
-    "use strict";
-    i.d(t, {
-      convertPropertyToWatchedValue: () => o
-    });
-    var s = i(22613);
+import { WatchedValue } from './22613-watched-value.js';
 
-    function o(e) {
-      const t = new s.WatchedValue(e.value());
-      let i = !1;
-      e.subscribe(t, (() => {
-        i || (i = !0, t.setValue(e.value()), i = !1)
-      }));
-      const o = () => {
-        i || (i = !0, e.setValue(t.value()), i = !1)
-      };
-      return t.subscribe(o), t.spawn((() => {
-        e.unsubscribeAll(t), t.unsubscribe(o)
-      }))
+/**
+ * Convert property to watched value with bidirectional sync
+ * @param {Property} property - Source property
+ * @returns {WatchedValue} Synchronized watched value
+ */
+export function convertPropertyToWatchedValue(property) {
+  const watchedValue = new WatchedValue(property.value());
+  let isUpdating = false;
+  
+  // Sync property changes to watched value
+  property.subscribe(watchedValue, () => {
+    if (!isUpdating) {
+      isUpdating = true;
+      watchedValue.setValue(property.value());
+      isUpdating = false;
     }
+  });
+  
+  // Sync watched value changes back to property
+  const updateProperty = () => {
+    if (!isUpdating) {
+      isUpdating = true;
+      property.setValue(watchedValue.value());
+      isUpdating = false;
+    }
+  };
+  
+  watchedValue.subscribe(updateProperty);
+  
+  return watchedValue.spawn(() => {
+    property.unsubscribeAll(watchedValue);
+    watchedValue.unsubscribe(updateProperty);
+  });
+}
+
+export default convertPropertyToWatchedValue;
+
+// ============================================================================
+// RESTORATION COMPLETE - TIER A+
+// ============================================================================
+// Variable mapping:
+// - e → property (parameter)
+// - t → watchedValue (WatchedValue instance)
+// - i → isUpdating (flag to prevent circular updates)
+// - s → WatchedValueClass (WatchedValue)
+// - o → updateProperty (callback function)
+// - n → convertPropertyToWatchedValue (exported function)
+// ============================================================================

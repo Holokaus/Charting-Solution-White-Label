@@ -56,3 +56,4 @@
           .SwitchChartLayout = "Switch chart layout", bitmapCoordinatesPane_e.DeleteChartLayout = "Delete chart layout", bitmapCoordinatesPane_e.LoadChartLayout =
           "Load chart layout", bitmapCoordinatesPane_e.AddToFavorites = "Add to favorites", bitmapCoordinatesPane_e.Sort = "Sort"
       }(bitmapCoordinatesPane_h || (bitmapCoordinatesPane_h = {}))
+}

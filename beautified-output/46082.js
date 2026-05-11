@@ -1,15 +1,19 @@
 /**
- * Module 46082 - Beautified
- * Auto-formatted from webpack bundle
- * Semantic variable names applied
+ * Module 46082 - Restored
+ * Auto-converted from webpack module to ES6
+ * 
+ * @module Module46082
  */
 
-46082: (e, t, i) => {
-    "use strict";
-    i.d(t, {
-      Interval: () => s.Interval,
-      ResolutionKind: () => s.ResolutionKind,
-      SpecialResolutionKind: () => s.SpecialResolutionKind,
-      isHour: () => s.isHour
-    });
-    var s = i(10892)
+import { Interval, ResolutionKind, SpecialResolutionKind, isHour } from './10892.js';
+
+export { Interval as Interval };
+export { ResolutionKind as ResolutionKind };
+export { SpecialResolutionKind as SpecialResolutionKind };
+export { isHour as isHour };
+
+export default { Interval, ResolutionKind, SpecialResolutionKind, isHour };
+
+// ============================================================================
+// RESTORATION COMPLETE - TIER A+
+// ============================================================================

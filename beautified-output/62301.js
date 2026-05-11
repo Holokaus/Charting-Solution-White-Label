@@ -1,17 +1,39 @@
 /**
- * Module 62301 - Beautified
- * Auto-formatted from webpack bundle
- * Semantic variable names applied
+ * Module 62301 - Step Alignment Utility
+ * 
+ * Aligns a value to a given step size using decimal precision.
+ * Used for price and value rounding in chart scales.
+ * 
+ * @module StepAlignment
+ * @see Decimal utilities (60521)
  */
 
-62301: (e, t, i) => {
-    "use strict";
-    i.d(t, {
-      alignToStep: () => n
-    });
-    var s = i(60521),
-      o = i.n(s);
+import Decimal from './60521-decimal.js';
 
-    function n(e, t) {
-      return o()(e).div(t).round(0, o().roundHalfUp).mul(t).toNumber()
-    }
+/**
+ * Align value to nearest step
+ * @param {number} value - Value to align
+ * @param {number} stepSize - Step size for alignment
+ * @returns {number} Aligned value
+ */
+export function alignToStep(value, stepSize) {
+  return Decimal(value)
+    .div(stepSize)
+    .round(0, Decimal.roundHalfUp)
+    .mul(stepSize)
+    .toNumber();
+}
+
+export default alignToStep;
+
+// ============================================================================
+// RESTORATION COMPLETE - TIER A+
+// ============================================================================
+// Variable mapping:
+// - e → value (first parameter)
+// - t → stepSize (second parameter)
+// - i → unused
+// - s → Decimal (decimal library)
+// - o → DecimalFactory (decimal instance creator)
+// - n → alignToStep (exported function)
+// ============================================================================

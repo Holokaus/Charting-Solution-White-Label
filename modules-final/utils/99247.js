@@ -80,3 +80,4 @@
     }! function(series_e) {
       series_e.BlockPrev = "blockPrev", series_e.BlockNext = "blockNext", series_e.InlinePrev = "inlinePrev", series_e.InlineNext = "inlineNext"
     }(series_s || (series_s = {}))
+}

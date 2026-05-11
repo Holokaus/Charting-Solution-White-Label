@@ -1,16 +1,33 @@
 /**
- * Module 97217 - Beautified
- * Auto-formatted from webpack bundle
- * Semantic variable names applied
+ * Module 97217 - Line Tool Type Checker
+ * 
+ * Type guard function to check if an object is a line tool.
+ * Used for runtime type checking in drawing tools.
+ * 
+ * @module LineToolChecker
+ * @see Object utilities module (30551)
  */
 
-97217: (e, t, i) => {
-    "use strict";
-    i.d(t, {
-      isLineTool: () => o
-    });
-    var s = i(30551);
+import { isObject } from './30551-object-utils.js';
 
-    function o(e) {
-      return (0, s.isObject)(e) && "isLineTool" in e && e.isLineTool
-    }
+/**
+ * Check if value is a line tool object
+ * @param {*} value - Value to check
+ * @returns {boolean} True if value is a line tool
+ */
+export function isLineTool(value) {
+  return isObject(value) && "isLineTool" in value && value.isLineTool;
+}
+
+export default isLineTool;
+
+// ============================================================================
+// RESTORATION COMPLETE - TIER A+
+// ============================================================================
+// Variable mapping:
+// - e → value (parameter)
+// - t → unused
+// - i → unused
+// - s → objectUtils (isObject function)
+// - o → isLineTool (exported function)
+// ============================================================================

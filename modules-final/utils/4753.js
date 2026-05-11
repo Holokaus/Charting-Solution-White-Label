@@ -725,3 +725,4 @@
         return (0, lineToolManager_s.point)(lineToolManager_c, lineToolManager_h)
       }
     }
+}

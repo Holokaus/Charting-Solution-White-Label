@@ -24,3 +24,4 @@
       seriesBarFunction_l.setValue(seriesBarFunction_r), seriesBarFunction_o.remove(seriesBarFunction_n)
     }
     seriesBarFunction_o.onSync.subscribe(null, (() => seriesBarFunction_l.setValue(seriesBarFunction_a()))), seriesBarFunction_l.subscribe(null, (() => seriesBarFunction_o.setValue(seriesBarFunction_n, seriesBarFunction_l.value())))
+}

@@ -29,3 +29,4 @@
         return this._invalidated && (this._updateImpl(), this._invalidated = !1), this._lineRenderer
       }
     }
+}

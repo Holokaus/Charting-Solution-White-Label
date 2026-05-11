@@ -38,3 +38,4 @@
       if (void 0 === t) throw new Error("ServiceLocator: Service " + exports.id + " not found");
       return t
     }
+}

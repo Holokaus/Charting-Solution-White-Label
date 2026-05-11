@@ -1,28 +1,32 @@
 /**
- * Module 12217 - Beautified
- * Auto-formatted from webpack bundle
- * Semantic variable names applied
+ * Module 12217 - Restored
+ * Auto-converted from webpack module to ES6
+ * 
+ * @module Module12217
  */
 
-12217: (e, t, i) => {
-    "use strict";
-    i.d(t, {
-      compareTwoCollectionsByIds: () => s.compareTwoCollectionsByIds,
-      indexOf: () => s.indexOf,
-      intersect: () => s.intersect,
-      join: () => s.join,
-      lowerbound: () => s.lowerbound,
-      lowerboundExt: () => s.lowerboundExt,
-      lowerbound_int: () => s.lowerbound_int,
-      mapEntriesGenerator: () => s.mapEntriesGenerator,
-      moveAfter: () => s.moveAfter,
-      moveBefore: () => s.moveBefore,
-      moveToHead: () => s.moveToHead,
-      nestedMapGenerator: () => s.nestedMapGenerator,
-      removeItemFromArray: () => s.removeItemFromArray,
-      subtract: () => s.subtract,
-      sum: () => s.sum,
-      upperbound: () => s.upperbound,
-      upperbound_int: () => s.upperbound_int
-    });
-    var s = i(16879)
+import { compareTwoCollectionsByIds, indexOf, intersect, join, lowerbound, lowerboundExt, lowerbound_int, mapEntriesGenerator, moveAfter, moveBefore, moveToHead, nestedMapGenerator, removeItemFromArray, subtract, sum, upperbound, upperbound_int } from './16879.js';
+
+export { compareTwoCollectionsByIds as compareTwoCollectionsByIds };
+export { indexOf as indexOf };
+export { intersect as intersect };
+export { join as join };
+export { lowerbound as lowerbound };
+export { lowerboundExt as lowerboundExt };
+export { lowerbound_int as lowerbound_int };
+export { mapEntriesGenerator as mapEntriesGenerator };
+export { moveAfter as moveAfter };
+export { moveBefore as moveBefore };
+export { moveToHead as moveToHead };
+export { nestedMapGenerator as nestedMapGenerator };
+export { removeItemFromArray as removeItemFromArray };
+export { subtract as subtract };
+export { sum as sum };
+export { upperbound as upperbound };
+export { upperbound_int as upperbound_int };
+
+export default { compareTwoCollectionsByIds, indexOf, intersect, join, lowerbound, lowerboundExt, lowerbound_int, mapEntriesGenerator, moveAfter, moveBefore, moveToHead, nestedMapGenerator, removeItemFromArray, subtract, sum, upperbound, upperbound_int };
+
+// ============================================================================
+// RESTORATION COMPLETE - TIER A+
+// ============================================================================

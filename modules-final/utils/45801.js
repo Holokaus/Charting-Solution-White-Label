@@ -79,3 +79,4 @@
       const lineToolManager_i = new Path2D;
       return lineToolManager_i.arc(lineToolManager_e.lineToolManager_x, lineToolManager_e.lineToolManager_y, lineToolManager_t, 0, 2 * Math.PI, !0), lineToolManager_i
     }
+}

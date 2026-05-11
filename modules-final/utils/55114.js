@@ -109,3 +109,4 @@
       exports.STRING = "string", exports.NUMBER = "number", exports.BOOLEAN = "boolean", exports.OBJECT = "object", exports.ARRAY = "array", e
         .UNKNOWN = "unknown"
     }(s || (s = {}))
+}

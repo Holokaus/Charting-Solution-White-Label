@@ -36,3 +36,4 @@
       if (exports.isTicks()) return state.hourMinuteSecondMillisecFormat;
       return exports.isSeconds() || exports.isTicks() ? n(module) : o(module)
     }
+}

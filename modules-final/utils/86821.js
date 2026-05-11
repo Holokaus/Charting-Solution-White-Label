@@ -89,3 +89,4 @@
       return logger_t.options.indexOf(logger_i) < 0 && (logger_e[logger_t.inputId] = logger_t.defVal, logger_n.logNormal("Input " + logger_t.inputId + "=" + logger_i +
         " reset to default value " + logger_t.defVal)), logger_e
     }, logger_e.exports = logger_r
+}

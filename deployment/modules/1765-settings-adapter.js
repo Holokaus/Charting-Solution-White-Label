@@ -1,0 +1,198 @@
+/**
+ * Module 1765 - Settings Adapter
+ *
+ * Auto-beautified from minified webpack source.
+ * Variable renaming still needed.
+ *
+ * @module 1765
+ */
+
+1765: (e, t, i) => {
+    "use strict";
+    i.r(t), i.d(t, {
+      default: () => z,
+      getBool: () => T,
+      getFloat: () => P,
+      getInt: () => x,
+      getJSON: () => w,
+      getValue: () => b,
+      keys: () => A,
+      keysMask: () => L,
+      loaded: () => F,
+      loadedModel: () => W,
+      onSync: () => R,
+      remove: () => C,
+      setJSON: () => I,
+      setSettingsAdapter: () => O,
+      setValue: () => M,
+      sync: () => N
+    });
+    i(49483), i(32925);
+    var s = i(21097),
+      o = i(11417),
+      n = i(48096),
+      r = i(37103);
+    window.TradingView = window.TradingView || {};
+    const a = ["s.tradingview.com", "betacdn.tradingview.com"],
+      l = r.enabled("use_localstorage_for_settings"),
+      c = (window.environment, 10),
+      h = window.TradingView.onWidget?.() ? "tradingview-widget" : "tradingview",
+      d = h + ".";
+    let u, _ = !1,
+      p = null,
+      m = {};
+    const g = [/^widgetbar\.widget\.watchlist.+/, /.+quicks$/, /^widgetbar\.layout-settings$/, /^ChartSideToolbarWidget\.visible$/, /^onwidget\.watchlist$/, /^chart\.favoriteDrawings$/, /^chart\.favoriteDrawingsPosition$/, /^chart\.favoriteLibraryIndicators$/, /^loadChartDialog.favorites$/, /^ChartFavoriteDrawingToolbarWidget\.visible/, /^trading\.chart\.proterty$/, /^trading_floating_toolbar\.position$/, /^trading\.orderWidgetMode\./, /^symbolWatermark$/, /^pinereference\.size$/, /^pinereference\.position$/, /^hint\.+/, /^ChartDrawingToolbarWidget\.visible/];
+    g.push(/^savedwatch\..+/);
+    const f = () => !p && l,
+      y = e => d + e,
+      v = e => {},
+      S = (e, t = {}) => {
+        if (p) null == m[e] ? p.removeValue(e) : p.setValue(e, m[e]);
+        else if (f()) try {
+          null == m[e] ? o.TVLocalStorage.removeItem(y(e)) : o.TVLocalStorage.setItem(y(e), m[e])
+        } catch (e) {} else 0;
+        t.skipCrossWindowEvent || s.TVXWindowEvents.emit("settings", JSON.stringify({
+          key: e,
+          value: m[e]
+        }))
+      };
+
+    function b(e, t) {
+      const i = m[e];
+      return i ?? t
+    }
+
+    function w(e, t) {
+      const i = b(e);
+      if (null == i) return t;
+      try {
+        return JSON.parse(i)
+      } catch (i) {
+        return C(e), t
+      }
+    }
+
+    function C(e, t = {}) {
+      return null != m[e] && (delete m[e], S(e)), t.forceFlush && v(), H
+    }
+
+    function T(e, t) {
+      const i = b(e);
+      return null == i ? t : !(!i || "false" === i || 0 == +i)
+    }
+
+    function P(e, t) {
+      const i = b(e);
+      if (null == i) return t;
+      const s = parseFloat(i);
+      if (!isFinite(s)) throw new TypeError('"' + i + '" is not float (key: "' + e + '")');
+      return s
+    }
+
+    function x(e, t) {
+      const i = b(e);
+      if (null == i) return t;
+      const s = parseInt(i, 10);
+      if (!isFinite(s)) throw new TypeError('"' + i + '" is not int (key: "' + e + '")');
+      return s
+    }
+
+    function M(e, t, i = {}) {
+      const s = "" + t;
+      return m[e] !== s && (m[e] = s, S(e, i)), i.forceFlush && !u && (u = setTimeout((() => {
+        u = void 0, v()
+      }), c)), H
+    }
+
+    function I(e, t, i) {
+      return M(e, JSON.stringify(t), i), H
+    }
+
+    function A() {
+      return Object.keys(m)
+    }
+
+    function L(e) {
+      const t = A(),
+        i = [],
+        s = new RegExp("^" + (o = e, o.replace(/[-/\\^$*+?.()|[\]{}]/g, "\\$&")).replace(/\\\*\\\*/gi, ".+").replace(/\\\*/gi, "[^.]+") + "$", "gi");
+      var o;
+      for (let e = t.length - 1; e >= 0; e--) s.test(t[e]) && i.push(t[e]), s.lastIndex = 0;
+      return i
+    }
+    s.TVXWindowEvents.on("settings", (e => {
+      const t = JSON.parse(e);
+      null == t.value ? delete m[t.key] : m[t.key] = t.value
+    }));
+    const k = e => {
+        for (let t = 0; t < g.length; ++t)
+          if (g[t].exec(e)) return !0;
+        return !1
+      },
+      E = e => e.substring(0, d.length) === d,
+      D = () => {
+        m = {};
+        const e = !r.enabled("save_chart_properties_to_local_storage");
+        for (let t = o.TVLocalStorage.length; t--;) {
+          const i = o.TVLocalStorage.key(t);
+          if (!i || !E(i)) continue;
+          const s = i.substring(d.length);
+          e && !k(s) || (m[s] = o.TVLocalStorage.getItem(i))
+        }
+      },
+      B = e => {
+        m = {};
+        const t = 0 === Object.keys(e).length;
+        t || (e => {
+          Object.keys(e).forEach((t => {
+            m[t] = e[t] + ""
+          }))
+        })(e), (e => {
+          for (let t = o.TVLocalStorage.length; t--;) {
+            const i = o.TVLocalStorage.key(t);
+            i && E(i) && (e && M(i.substring(d.length), o.TVLocalStorage.getItem(i)),
+              o.TVLocalStorage.removeItem(i))
+          }
+        })(t)
+      },
+      V = () => {
+        if (!window.TradingView.onWidget?.() || !a.includes(window.location.host)) return;
+        const e = "tradingview.";
+        for (let t = o.TVLocalStorage.length; t--;) {
+          const i = o.TVLocalStorage.key(t);
+          if (0 === i.indexOf(e)) {
+            const t = i.replace(e, h + ".");
+            o.TVLocalStorage.setItem(t, o.TVLocalStorage.getItem(i)), o.TVLocalStorage.removeItem(i)
+          }
+        }
+      },
+      R = new n.Delegate;
+
+    function N(e) {
+      null !== e ? (p ? B(p.initialSettings || {}) : f() ? (V(), D()) : B(e || {}), R.fire()) : _ = !0
+    }
+
+    function O(e) {
+      p = e
+    }
+    const F = !1,
+      W = !1,
+      H = {
+        loaded: F,
+        loadedModel: W,
+        getValue: b,
+        getJSON: w,
+        getBool: T,
+        getFloat: P,
+        getInt: x,
+        setValue: M,
+        setJSON: I,
+        remove: C,
+        keys: A,
+        keysMask: L,
+        sync: N,
+        onSync: R,
+        setSettingsAdapter: O
+      },
+      z = H;
+    window.TVSettings = H

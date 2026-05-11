@@ -502,3 +502,4 @@
         watchedValue_p = Math.sqrt(_);
       return [watchedValue_c, watchedValue_c + watchedValue_p * watchedValue_i, watchedValue_c - watchedValue_p * watchedValue_i]
     }
+}

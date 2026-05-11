@@ -48,3 +48,4 @@
     function(exports) {
       e[exports.Media = 0] = "Media", e[exports.Bitmap = 1] = "Bitmap"
     }(l || (logger = {}))
+}
