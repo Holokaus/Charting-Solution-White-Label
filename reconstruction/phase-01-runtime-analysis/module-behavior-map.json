@@ -1,0 +1,173 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "phase": "01-runtime-analysis",
+    "task": "1.4-module-id-to-behavior-mapping",
+    "generated": "2026-05-17",
+    "note": "Preliminary map based on expected behavior. Actual module IDs will be captured via runtime hooks."
+  },
+  "features": {
+    "initialization": {
+      "description": "Widget initialization and chart rendering",
+      "expected_modules": [
+        "TradingView.widget",
+        "MockDatafeed.onReady",
+        "MockDatafeed.resolveSymbol",
+        "MockDatafeed.getBars"
+      ],
+      "expected_network_requests": [],
+      "expected_script_loads": [
+        "charting_library.standalone.js"
+      ],
+      "trigger_method": "Automatic on page load",
+      "status": "observable"
+    },
+    "change_symbol": {
+      "description": "Change chart symbol (e.g., AAPL to MSFT)",
+      "expected_modules": [
+        "widget.setSymbol",
+        "datafeed.resolveSymbol",
+        "datafeed.getBars"
+      ],
+      "expected_network_requests": [],
+      "expected_script_loads": [],
+      "trigger_method": "widget.setSymbol(symbol, interval)",
+      "status": "observable"
+    },
+    "change_interval": {
+      "description": "Change chart time interval (e.g., 1D to 5)",
+      "expected_modules": [
+        "widget.setResolution",
+        "datafeed.getBars"
+      ],
+      "expected_network_requests": [],
+      "expected_script_loads": [],
+      "trigger_method": "widget.setResolution(resolution, callback)",
+      "status": "observable"
+    },
+    "change_theme": {
+      "description": "Change chart theme (light/dark)",
+      "expected_modules": [
+        "widget.changeTheme"
+      ],
+      "expected_network_requests": [],
+      "expected_script_loads": [],
+      "trigger_method": "widget.changeTheme(themeName)",
+      "status": "observable"
+    },
+    "change_chart_type": {
+      "description": "Change chart type (candle, line, bar, etc.)",
+      "expected_modules": [
+        "widget.setChartType"
+      ],
+      "expected_network_requests": [],
+      "expected_script_loads": [],
+      "trigger_method": "widget.setChartType(chartType)",
+      "status": "observable"
+    },
+    "time_scale_scroll": {
+      "description": "Scroll the time scale",
+      "expected_modules": [
+        "widget.chart().scrollToPosition"
+      ],
+      "expected_network_requests": [],
+      "expected_script_loads": [],
+      "trigger_method": "widget.chart().scrollToPosition(position, animated)",
+      "status": "observable"
+    },
+    "fit_content": {
+      "description": "Fit chart content to view",
+      "expected_modules": [
+        "widget.chart().resetDataScale"
+      ],
+      "expected_network_requests": [],
+      "expected_script_loads": [],
+      "trigger_method": "widget.chart().resetDataScale()",
+      "status": "observable"
+    },
+    "add_indicator": {
+      "description": "Add technical indicator to chart",
+      "expected_modules": [
+        "widget.chart().createStudy"
+      ],
+      "expected_network_requests": [],
+      "expected_script_loads": [
+        "Dynamic chunk loads for indicator calculations"
+      ],
+      "trigger_method": "widget.chart().createStudy(studyId)",
+      "status": "observable"
+    },
+    "remove_indicator": {
+      "description": "Remove technical indicator from chart",
+      "expected_modules": [
+        "widget.chart().removeEntity"
+      ],
+      "expected_network_requests": [],
+      "expected_script_loads": [],
+      "trigger_method": "widget.chart().removeEntity(entityId)",
+      "status": "observable"
+    },
+    "draw_trendline": {
+      "description": "Draw trendline on chart",
+      "expected_modules": [
+        "widget.chart().createShape"
+      ],
+      "expected_network_requests": [],
+      "expected_script_loads": [
+        "Dynamic chunk loads for drawing tools"
+      ],
+      "trigger_method": "widget.chart().createShape(shapeId)",
+      "status": "observable"
+    },
+    "drawing_tool_selection": {
+      "description": "Select drawing tool from toolbar",
+      "expected_modules": [
+        "widget.activeChart().setDrawingTool"
+      ],
+      "expected_network_requests": [],
+      "expected_script_loads": [],
+      "trigger_method": "widget.activeChart().setDrawingTool(toolId)",
+      "status": "observable"
+    }
+  },
+  "module_registry_structure": {
+    "type": "custom_bundler",
+    "note": "Library does not use standard webpack patterns. Module registry is embedded in the main bundle.",
+    "entry_point": "TradingView.widget",
+    "module_format": "object-based namespace",
+    "chunk_loading": "dynamic via script tag injection",
+    "public_path_config": "library_path widget option"
+  },
+  "runtime_observation_plan": {
+    "hook_targets": [
+      "Function.prototype.call",
+      "Function.prototype.apply",
+      "XMLHttpRequest",
+      "fetch",
+      "document.createElement",
+      "console.error",
+      "window.onerror"
+    ],
+    "data_collection": {
+      "function_calls": "Track all function calls with stack traces",
+      "network_requests": "Correlate network requests with features",
+      "script_loads": "Track dynamic chunk loads",
+      "errors": "Capture errors during feature execution"
+    },
+    "correlation_method": "Use window.startFeatureTracking() and window.endFeatureTracking() to mark feature boundaries"
+  },
+  "next_steps": {
+    "immediate": [
+      "Load feature-trigger-test.html in browser",
+      "Trigger each feature using the control buttons",
+      "Export module-behavior-map.json via exportModuleBehaviorMap()",
+      "Analyze captured function calls and stack traces"
+    ],
+    "analysis": [
+      "Identify unique function signatures for each feature",
+      "Map function names to module IDs where possible",
+      "Correlate dynamic chunk loads with features",
+      "Build comprehensive module-to-feature mapping"
+    ]
+  }
+}

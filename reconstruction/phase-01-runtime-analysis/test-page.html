@@ -1,0 +1,179 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Phase 1: Runtime Analysis Test Page</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+    
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        #tv_chart_container {
+            width: 100%;
+            height: 600px;
+        }
+        #status {
+            padding: 10px;
+            background: #f0f0f0;
+            border-bottom: 1px solid #ccc;
+            font-size: 12px;
+        }
+        .status-ok { color: green; }
+        .status-error { color: red; }
+    </style>
+
+    <!-- Load the charting library from local path -->
+    <script type="text/javascript" src="../../charting_library/charting_library.standalone.js"></script>
+    
+    <!-- Load hook injection script BEFORE initialization -->
+    <script type="text/javascript" src="hook-injection.js"></script>
+
+    <script type="text/javascript">
+        // Minimal Mock Datafeed Implementation
+        // This provides the minimum required interface for the widget to initialize
+        var MockDatafeed = (function() {
+            'use strict';
+
+            function MockDatafeed() {
+                this._listeners = [];
+            }
+
+            MockDatafeed.prototype.onReady = function(callback) {
+                console.log('[MockDatafeed] onReady called');
+                setTimeout(function() {
+                    callback({
+                        supported_resolutions: ['1', '5', '15', '30', '60', '1D', '1W', '1M'],
+                        supports_marks: false,
+                        supports_time: true,
+                        supports_timescale_marks: false
+                    });
+                }, 0);
+            };
+
+            MockDatafeed.prototype.resolveSymbol = function(symbolName, onSymbolResolvedCallback, onResolveErrorCallback) {
+                console.log('[MockDatafeed] resolveSymbol called for:', symbolName);
+                setTimeout(function() {
+                    onSymbolResolvedCallback({
+                        name: symbolName,
+                        description: symbolName + ' Mock Data',
+                        type: 'stock',
+                        session: '24x7',
+                        timezone: 'UTC',
+                        ticker: symbolName,
+                        exchange: 'MOCK',
+                        minmov: 1,
+                        pricescale: 100,
+                        has_intraday: true,
+                        has_no_volume: false,
+                        supported_resolutions: ['1', '5', '15', '30', '60', '1D', '1W', '1M'],
+                        volume_precision: 2,
+                        data_status: 'streaming'
+                    });
+                }, 0);
+            };
+
+            MockDatafeed.prototype.getBars = function(symbolInfo, resolution, periodParams, onHistoryCallback, onErrorCallback) {
+                console.log('[MockDatafeed] getBars called:', symbolInfo.name, resolution, periodParams);
+                
+                var bars = [];
+                var time = Math.floor(Date.now() / 1000) - 86400 * 30; // Start 30 days ago
+                var basePrice = 150.0;
+                
+                // Generate 100 mock bars
+                for (var i = 0; i < 100; i++) {
+                    var open = basePrice + Math.random() * 10 - 5;
+                    var close = open + Math.random() * 5 - 2.5;
+                    var high = Math.max(open, close) + Math.random() * 2;
+                    var low = Math.min(open, close) - Math.random() * 2;
+                    var volume = Math.floor(Math.random() * 1000000);
+                    
+                    bars.push({
+                        time: time,
+                        open: open,
+                        high: high,
+                        low: low,
+                        close: close,
+                        volume: volume
+                    });
+                    
+                    time += 86400; // Add 1 day
+                    basePrice = close;
+                }
+                
+                setTimeout(function() {
+                    onHistoryCallback(bars, { noData: false });
+                }, 0);
+            };
+
+            MockDatafeed.prototype.subscribeBars = function(symbolInfo, resolution, onRealtimeCallback, listenerGUID) {
+                console.log('[MockDatafeed] subscribeBars called:', symbolInfo.name, resolution, listenerGUID);
+                this._listeners.push({
+                    listenerGUID: listenerGUID,
+                    callback: onRealtimeCallback
+                });
+            };
+
+            MockDatafeed.prototype.unsubscribeBars = function(listenerGUID) {
+                console.log('[MockDatafeed] unsubscribeBars called:', listenerGUID);
+                this._listeners = this._listeners.filter(function(l) {
+                    return l.listenerGUID !== listenerGUID;
+                });
+            };
+
+            return MockDatafeed;
+        })();
+
+        // Initialize widget when DOM is ready
+        function initWidget() {
+            console.log('[Test Page] Initializing widget...');
+            
+            var statusEl = document.getElementById('status');
+            
+            try {
+                var widget = window.tvWidget = new TradingView.widget({
+                    debug: true,
+                    fullscreen: false,
+                    width: '100%',
+                    height: 600,
+                    symbol: 'AAPL',
+                    interval: '1D',
+                    container: "tv_chart_container",
+                    datafeed: new MockDatafeed(),
+                    library_path: "../../charting_library/",
+                    locale: "en",
+                    disabled_features: [
+                        "use_localstorage_for_settings",
+                        "study_templates",
+                        "header_screenshot",
+                        "header_symbol_search",
+                        "header_compare",
+                        "header_saveload"
+                    ],
+                    enabled_features: [],
+                    charts_storage_url: '',
+                    charts_storage_api_version: "",
+                    client_id: '',
+                    user_id: '',
+                    theme: 'light'
+                });
+
+                statusEl.innerHTML = '<span class="status-ok">✓ Widget initialization started</span>';
+                console.log('[Test Page] Widget object created:', widget);
+            } catch (error) {
+                statusEl.innerHTML = '<span class="status-error">✗ Error: ' + error.message + '</span>';
+                console.error('[Test Page] Initialization error:', error);
+            }
+        }
+
+        window.addEventListener('DOMContentLoaded', initWidget, false);
+    </script>
+</head>
+
+<body>
+    <div id="status">Initializing...</div>
+    <div id="tv_chart_container"></div>
+</body>
+
+</html>
