@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Hook Load Test</title>
+</head>
+<body>
+    <h1>Hook Load Test</h1>
+    <div id="status">Loading...</div>
+    <script type="text/javascript">
+        // Inline test - log immediately
+        console.log('[TEST] Inline script 1 executed');
+        window.inlineTest1 = true;
+        document.getElementById('status').innerHTML = 'Inline 1 loaded';
+    </script>
+    
+    <!-- External hook script -->
+    <script type="text/javascript" src="hook-injection-simple.js"></script>
+    
+    <script type="text/javascript">
+        // Check if hook executed
+        console.log('[TEST] Inline script 2 - checking for hook');
+        window.inlineTest2 = true;
+        
+        const hasHookLogs = typeof window.hookLogs !== 'undefined';
+        const hasStartTracking = typeof window.startFeatureTracking === 'function';
+        
+        const status = document.getElementById('status');
+        status.innerHTML = `
+            Inline 1: ${window.inlineTest1}<br/>
+            Inline 2: ${window.inlineTest2}<br/>
+            Hook Logs: ${hasHookLogs}<br/>
+            Start Tracking: ${hasStartTracking}<br/>
+            _callHookStats: ${typeof window._callHookStats}<br/>
+            <br/>
+            Console check: Open DevTools Console to see logs
+        `;
+        
+        console.log('[TEST] Final status:', {
+            hasHookLogs,
+            hasStartTracking,
+            hasCallStats: !!window._callHookStats,
+            hookLogsKeys: Object.keys(window.hookLogs || {}).slice(0, 5)
+        });
+    </script>
+</body>
+</html>

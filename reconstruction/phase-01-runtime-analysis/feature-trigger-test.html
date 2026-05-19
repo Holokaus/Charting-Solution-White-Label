@@ -38,105 +38,18 @@
         status-error { color: red; }
     </style>
 
+    <!-- CRITICAL: Load hook FIRST, BEFORE the charting library -->
+    <script type="text/javascript" src="hook-injection-simple.js"></script>
+
     <!-- Load the charting library from local path -->
     <script type="text/javascript" src="../../charting_library/charting_library.standalone.js"></script>
     
-    <!-- Load simple hook injection script -->
-    <script type="text/javascript" src="hook-injection-simple.js"></script>
+    <!-- Load UDF Datafeed from TradingView -->
+    <script type="text/javascript" src="../../datafeeds/udf/dist/bundle.js"></script>
 
     <script type="text/javascript">
-        // Minimal Mock Datafeed Implementation
-        var MockDatafeed = (function() {
-            'use strict';
-
-            function MockDatafeed() {
-                this._listeners = [];
-            }
-
-            MockDatafeed.prototype.onReady = function(callback) {
-                console.log('[MockDatafeed] onReady called');
-                setTimeout(function() {
-                    callback({
-                        supported_resolutions: ['1', '5', '15', '30', '60', '1D', '1W', '1M'],
-                        supports_marks: false,
-                        supports_time: true,
-                        supports_timescale_marks: false
-                    });
-                }, 0);
-            };
-
-            MockDatafeed.prototype.resolveSymbol = function(symbolName, onSymbolResolvedCallback, onResolveErrorCallback) {
-                console.log('[MockDatafeed] resolveSymbol called for:', symbolName);
-                setTimeout(function() {
-                    onSymbolResolvedCallback({
-                        name: symbolName,
-                        description: symbolName + ' Mock Data',
-                        type: 'stock',
-                        session: '24x7',
-                        timezone: 'UTC',
-                        ticker: symbolName,
-                        exchange: 'MOCK',
-                        minmov: 1,
-                        pricescale: 100,
-                        has_intraday: true,
-                        has_no_volume: false,
-                        supported_resolutions: ['1', '5', '15', '30', '60', '1D', '1W', '1M'],
-                        volume_precision: 2,
-                        data_status: 'streaming'
-                    });
-                }, 0);
-            };
-
-            MockDatafeed.prototype.getBars = function(symbolInfo, resolution, periodParams, onHistoryCallback, onErrorCallback) {
-                console.log('[MockDatafeed] getBars called:', symbolInfo.name, resolution, periodParams);
-                
-                var bars = [];
-                var time = Math.floor(Date.now() / 1000) - 86400 * 30;
-                var basePrice = 150.0;
-                
-                for (var i = 0; i < 100; i++) {
-                    var open = basePrice + Math.random() * 10 - 5;
-                    var close = open + Math.random() * 5 - 2.5;
-                    var high = Math.max(open, close) + Math.random() * 2;
-                    var low = Math.min(open, close) - Math.random() * 2;
-                    var volume = Math.floor(Math.random() * 1000000);
-                    
-                    bars.push({
-                        time: time,
-                        open: open,
-                        high: high,
-                        low: low,
-                        close: close,
-                        volume: volume
-                    });
-                    
-                    time += 86400;
-                    basePrice = close;
-                }
-                
-                setTimeout(function() {
-                    onHistoryCallback(bars, { noData: false });
-                }, 0);
-            };
-
-            MockDatafeed.subscribeBars = function(symbolInfo, resolution, onRealtimeCallback, listenerGUID) {
-                console.log('[MockDatafeed] subscribeBars called:', symbolInfo.name, resolution, listenerGUID);
-                this._listeners.push({
-                    listenerGUID: listenerGUID,
-                    callback: onRealtimeCallback
-                });
-            };
-
-            MockDatafeed.unsubscribeBars = function(listenerGUID) {
-                console.log('[MockDatafeed] unsubscribeBars called:', listenerGUID);
-                this._listeners = this._listeners.filter(function(l) {
-                    return l.listenerGUID !== listenerGUID;
-                });
-            };
-
-            return MockDatafeed;
-        })();
-
+        // Use TradingView's default UDF datafeed with demo data
+        
         // Initialize widget when DOM is ready
         function initWidget() {
             console.log('[Test Page] Initializing widget...');
@@ -152,7 +65,10 @@
                     symbol: 'AAPL',
                     interval: '1D',
                     container: "tv_chart_container",
-                    datafeed: new MockDatafeed(),
+                    datafeed: new Datafeeds.UDFCompatibleDatafeed('https://demo-feed-data.tradingview.com', undefined, {
+                        maxResponseLength: 1000,
+                        expectedOrder: 'latestFirst',
+                    }),
                     library_path: "../../charting_library/",
                     locale: "en",
                     disabled_features: [
@@ -190,8 +106,8 @@
 
         function triggerIntervalChange() {
             window.startFeatureTracking('change_interval');
-            if (window.tvWidget) {
-                window.tvWidget.setResolution('5', function() {});
+            if (window.tvWidget && window.tvWidget.chart) {
+                window.tvWidget.chart().setResolution('5', function() {});
             }
             setTimeout(window.endFeatureTracking, 1000);
         }
@@ -205,9 +121,9 @@
         }
 
         function triggerChartTypeChange() {
-            window.startFeatureChange('change_chart_type');
-            if (window.tvWidget) {
-                window.tvWidget.setChartType(3); // 3 = line chart
+            window.startFeatureTracking('change_chart_type');
+            if (window.tvWidget && window.tvWidget.chart) {
+                window.tvWidget.chart().setChartType(3); // 3 = line chart
             }
             setTimeout(window.endFeatureTracking, 1000);
         }

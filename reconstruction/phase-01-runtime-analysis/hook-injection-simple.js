@@ -177,9 +177,195 @@ window.addEventListener('unhandledrejection', function(event) {
     }));
 });
 
+// === WEBPACK MODULE EXECUTION TRACER ===
+// DISABLED: Causes stack overflow with UDF datafeed
+// CRITICAL: Save originals BEFORE hooking to avoid recursion
+/*
+const originalArraySlice = Array.prototype.slice;
+const OriginalError = Error;
+const originalCall = Function.prototype.call;
+const originalApply = Function.prototype.apply;
+
+(function() {
+    'use strict';
+    
+    let inHook = false;
+    
+    // Module factory detection: webpack factories have exactly 3 params
+    function isWebpackModuleFactory(fn) {
+        try {
+            if (typeof fn !== 'function') return false;
+            // Webpack modules: function(exports, require, module) or function(e, t, i)
+            return fn.length === 3;
+        } catch (e) {
+            return false;
+        }
+    }
+    
+    // Hook both .call() and .apply()
+    Function.prototype.call = function(thisArg) {
+        if (inHook) {
+            return originalCall.call(this, thisArg);
+        }
+        
+        inHook = true;
+        try {
+            const fnLength = this.length;
+            
+            if (!window._callHookStats) {
+                window._callHookStats = {
+                    totalCalls: 0,
+                    totalApplies: 0,
+                    totalSize: 0,
+                    by_length: {},
+                    webpack_candidates: [],
+                    all_calls: []  // Log first 100 calls
+                };
+            }
+            window._callHookStats.totalCalls++;
+            window._callHookStats.totalSize++;
+            
+            if (!window._callHookStats.by_length[fnLength]) {
+                window._callHookStats.by_length[fnLength] = 0;
+            }
+            window._callHookStats.by_length[fnLength]++;
+            
+            // Log first 100 calls to understand pattern
+            if (window._callHookStats.all_calls.length < 100) {
+                window._callHookStats.all_calls.push({
+                    fnName: this.name || 'anonymous',
+                    fnLength: fnLength,
+                    argCount: arguments.length,
+                    thisArg: typeof thisArg
+                });
+            }
+            
+            if (fnLength === 3) {
+                let moduleId = 'unknown';
+                try {
+                    const stack = new OriginalError().stack || '';
+                    const lines = stack.split('\n');
+                    if (lines.length > 2) {
+                        const callerLine = lines[2];
+                        let match = callerLine.match(/\[\s*(\d+)\s*\]/);
+                        if (!match) {
+                            match = callerLine.match(/\((\d+)\)/);
+                        }
+                        if (match && match[1]) {
+                            moduleId = parseInt(match[1], 10);
+                        }
+                    }
+                } catch (e) {
+                    // Ignore
+                }
+                
+                if (!window._hookLogs) {
+                    window._hookLogs = {};
+                }
+                if (!window._hookLogs.moduleExecutions) {
+                    window._hookLogs.moduleExecutions = [];
+                }
+                
+                if (window._hookLogs.moduleExecutions.length < 10000) {
+                    const exec = {
+                        type: 'module_execution',
+                        method: 'call',
+                        timestamp: Date.now(),
+                        moduleId: moduleId,
+                        fnName: this.name || 'anonymous',
+                        feature: window._currentFeature || 'unknown'
+                    };
+                    window._hookLogs.moduleExecutions[window._hookLogs.moduleExecutions.length] = exec;
+                }
+            }
+        } catch (e) {
+            // Never let the hook throw
+        } finally {
+            inHook = false;
+        }
+        
+        const args = originalArraySlice.call(arguments);
+        return originalCall.apply(this, args);
+    };
+    
+    Function.prototype.apply = function(thisArg, argsArray) {
+        if (inHook) {
+            return originalApply.call(this, thisArg, argsArray);
+        }
+        
+        inHook = true;
+        try {
+            const fnLength = this.length;
+            const argsLen = argsArray ? argsArray.length : 0;
+            
+            if (!window._callHookStats) {
+                window._callHookStats = {
+                    totalCalls: 0,
+                    totalApplies: 0,
+                    by_length: {},
+                    webpack_candidates: []
+                };
+            }
+            window._callHookStats.totalApplies++;
+            
+            if (!window._callHookStats.by_length[fnLength]) {
+                window._callHookStats.by_length[fnLength] = 0;
+            }
+            window._callHookStats.by_length[fnLength]++;
+            
+            // Check both fn.length === 3 AND argsArray.length === 3 (for .apply with array)
+            if (fnLength === 3 || argsLen === 3) {
+                let moduleId = 'unknown';
+                try {
+                    const stack = new OriginalError().stack || '';
+                    const lines = stack.split('\n');
+                    if (lines.length > 2) {
+                        const callerLine = lines[2];
+                        let match = callerLine.match(/\[\s*(\d+)\s*\]/);
+                        if (!match) {
+                            match = callerLine.match(/\((\d+)\)/);
+                        }
+                        if (match && match[1]) {
+                            moduleId = parseInt(match[1], 10);
+                        }
+                    }
+                } catch (e) {
+                    // Ignore
+                }
+                
+                if (!window._hookLogs) {
+                    window._hookLogs = {};
+                }
+                if (!window._hookLogs.moduleExecutions) {
+                    window._hookLogs.moduleExecutions = [];
+                }
+                
+                const exec = {
+                    type: 'module_execution',
+                    method: 'apply',
+                    timestamp: Date.now(),
+                    moduleId: moduleId,
+                    fnName: this.name || 'anonymous',
+                    argsLength: argsLen,
+                    feature: window._currentFeature || 'unknown'
+                };
+                window._hookLogs.moduleExecutions[window._hookLogs.moduleExecutions.length] = exec;
+            }
+        } catch (e) {
+            // Never let the hook throw
+        } finally {
+            inHook = false;
+        }
+        
+        return originalApply.call(this, thisArg, argsArray);
+    };
+})();
+*/
+
 // Feature trigger tracking functions
 window.startFeatureTracking = function(featureName) {
     currentFeature = featureName;
+    window._currentFeature = featureName;  // For the Function.prototype.call hook
     featureStack.push({
         name: featureName,
         startTime: Date.now()
@@ -197,19 +383,26 @@ window.endFeatureTracking = function() {
         console.log('[Hook] Feature tracking ended:', feature.name, 'duration:', Date.now() - feature.startTime);
     }
     currentFeature = featureStack.length > 0 ? featureStack[featureStack.length - 1].name : null;
+    window._currentFeature = currentFeature;  // Update for the hook
 };
 
-// Export logs to JSON file
+// Export logs to JSON file - includes moduleExecutions from Function.prototype.call hook
 window.exportHookLogs = function() {
+    // Merge module executions into the main logs object
+    if (window._hookLogs && window._hookLogs.moduleExecutions) {
+        logs.moduleExecutions = window._hookLogs.moduleExecutions;
+    }
+    
     var dataStr = JSON.stringify(logs, null, 2);
     var dataBlob = new Blob([dataStr], {type: 'application/json'});
     var url = URL.createObjectURL(dataBlob);
     var link = document.createElement('a');
     link.href = url;
-    link.download = 'hook-logs.json';
+    link.download = 'hook-logs-v2.json';
     link.click();
     URL.revokeObjectURL(url);
-    console.log('[Hook] Logs exported to hook-logs.json. Total requests:', logs.networkRequests.length);
+    console.log('[Hook] Logs exported to hook-logs-v2.json.');
+    console.log('[Hook] Module executions captured:', (window._hookLogs && window._hookLogs.moduleExecutions) ? window._hookLogs.moduleExecutions.length : 0);
 };
 
 // Export module behavior map

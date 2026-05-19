@@ -24,106 +24,135 @@
         .status-error { color: red; }
     </style>
 
+    <!-- CRITICAL: Load hook BEFORE the charting library -->
+    <script type="text/javascript" src="hook-injection-simple.js"></script>
+    
     <!-- Load the charting library from local path -->
     <script type="text/javascript" src="../../charting_library/charting_library.standalone.js"></script>
-    
-    <!-- Load hook injection script BEFORE initialization -->
-    <script type="text/javascript" src="hook-injection.js"></script>
 
     <script type="text/javascript">
-        // Minimal Mock Datafeed Implementation
-        // This provides the minimum required interface for the widget to initialize
-        var MockDatafeed = (function() {
-            'use strict';
-
-            function MockDatafeed() {
-                this._listeners = [];
+        // Mock Datafeed - EXACT implementation with proper OHLCV data
+        class MockDatafeed {
+            constructor() {
+                this.subscribers = {};
+                this.lastBar = null;
             }
-
-            MockDatafeed.prototype.onReady = function(callback) {
-                console.log('[MockDatafeed] onReady called');
-                setTimeout(function() {
-                    callback({
-                        supported_resolutions: ['1', '5', '15', '30', '60', '1D', '1W', '1M'],
-                        supports_marks: false,
-                        supports_time: true,
-                        supports_timescale_marks: false
-                    });
-                }, 0);
-            };
-
-            MockDatafeed.prototype.resolveSymbol = function(symbolName, onSymbolResolvedCallback, onResolveErrorCallback) {
-                console.log('[MockDatafeed] resolveSymbol called for:', symbolName);
-                setTimeout(function() {
-                    onSymbolResolvedCallback({
+            
+            onReady(callback) {
+                setTimeout(() => callback({
+                    supported_resolutions: ["1", "5", "15", "30", "60", "240", "1D", "1W", "1M"],
+                    currency_codes: ["USD"],
+                    units: { "AAPL": "shares", "MSFT": "shares" }
+                }), 0);
+            }
+            
+            resolveSymbol(symbolName, onResolve, onError) {
+                setTimeout(() => {
+                    onResolve({
                         name: symbolName,
-                        description: symbolName + ' Mock Data',
-                        type: 'stock',
-                        session: '24x7',
-                        timezone: 'UTC',
+                        full_name: symbolName,
                         ticker: symbolName,
-                        exchange: 'MOCK',
-                        minmov: 1,
+                        description: symbolName + " Mock Data",
+                        type: "stock",
+                        session: "0900-1600",
+                        exchange: "MOCK",
+                        listed_exchange: "MOCK",
+                        timezone: "America/New_York",
                         pricescale: 100,
+                        minmov: 1,
+                        minmov2: 0,
+                        fractional: false,
                         has_intraday: true,
+                        intraday_multipliers: ["1", "5", "15", "30", "60", "240"],
+                        supported_resolutions: ["1", "5", "15", "30", "60", "240", "1D", "1W", "1M"],
+                        has_daily: true,
+                        has_weekly_and_monthly: true,
+                        has_empty_bars: false,
+                        force_session_rebuild: true,
                         has_no_volume: false,
-                        supported_resolutions: ['1', '5', '15', '30', '60', '1D', '1W', '1M'],
-                        volume_precision: 2,
-                        data_status: 'streaming'
+                        volume_precision: 0,
+                        data_status: "streaming",
+                        expired: false
                     });
                 }, 0);
-            };
-
-            MockDatafeed.prototype.getBars = function(symbolInfo, resolution, periodParams, onHistoryCallback, onErrorCallback) {
-                console.log('[MockDatafeed] getBars called:', symbolInfo.name, resolution, periodParams);
+            }
+            
+            getBars(symbolInfo, resolution, from, to, onHistoryCallback, onError, firstDataRequest) {
+                const bars = [];
+                const rangeDays = Math.ceil((to - from) / 86400);
+                const points = Math.min(rangeDays, 300); // Cap at 300 bars
                 
-                var bars = [];
-                var time = Math.floor(Date.now() / 1000) - 86400 * 30; // Start 30 days ago
-                var basePrice = 150.0;
+                let basePrice = 150.0;
+                let time = from * 1000;
+                const intervalMs = this._resolutionToMs(resolution);
                 
-                // Generate 100 mock bars
-                for (var i = 0; i < 100; i++) {
-                    var open = basePrice + Math.random() * 10 - 5;
-                    var close = open + Math.random() * 5 - 2.5;
-                    var high = Math.max(open, close) + Math.random() * 2;
-                    var low = Math.min(open, close) - Math.random() * 2;
-                    var volume = Math.floor(Math.random() * 1000000);
+                for (let i = 0; i < points; i++) {
+                    const open = basePrice + (Math.random() - 0.5) * 2;
+                    const close = open + (Math.random() - 0.5) * 3;
+                    const high = Math.max(open, close) + Math.random() * 1.5;
+                    const low = Math.min(open, close) - Math.random() * 1.5;
+                    const volume = Math.floor(Math.random() * 1000000) + 500000;
                     
                     bars.push({
-                        time: time,
-                        open: open,
-                        high: high,
-                        low: low,
-                        close: close,
+                        time: Math.floor(time / 1000),
+                        open: parseFloat(open.toFixed(2)),
+                        high: parseFloat(high.toFixed(2)),
+                        low: parseFloat(low.toFixed(2)),
+                        close: parseFloat(close.toFixed(2)),
                         volume: volume
                     });
                     
-                    time += 86400; // Add 1 day
                     basePrice = close;
+                    time += intervalMs;
                 }
                 
-                setTimeout(function() {
-                    onHistoryCallback(bars, { noData: false });
-                }, 0);
-            };
-
-            MockDatafeed.prototype.subscribeBars = function(symbolInfo, resolution, onRealtimeCallback, listenerGUID) {
-                console.log('[MockDatafeed] subscribeBars called:', symbolInfo.name, resolution, listenerGUID);
-                this._listeners.push({
-                    listenerGUID: listenerGUID,
-                    callback: onRealtimeCallback
-                });
-            };
-
-            MockDatafeed.prototype.unsubscribeBars = function(listenerGUID) {
-                console.log('[MockDatafeed] unsubscribeBars called:', listenerGUID);
-                this._listeners = this._listeners.filter(function(l) {
-                    return l.listenerGUID !== listenerGUID;
-                });
-            };
-
-            return MockDatafeed;
-        })();
+                this.lastBar = bars[bars.length - 1];
+                
+                setTimeout(() => {
+                    onHistoryCallback(bars, { noData: false, nextTime: false });
+                }, 100);
+            }
+            
+            subscribeBars(symbolInfo, resolution, onRealtimeCallback, subscriberUID, onResetCacheNeededCallback) {
+                this.subscribers[subscriberUID] = {
+                    symbolInfo, resolution, onRealtimeCallback
+                };
+                
+                // Simulate a tick every 5 seconds
+                const interval = setInterval(() => {
+                    if (!this.lastBar) return;
+                    
+                    const last = this.lastBar;
+                    const change = (Math.random() - 0.5) * 0.5;
+                    const newClose = Math.max(last.low, Math.min(last.high, last.close + change));
+                    
+                    const newBar = {
+                        time: last.time,
+                        open: last.open,
+                        high: Math.max(last.high, newClose),
+                        low: Math.min(last.low, newClose),
+                        close: parseFloat(newClose.toFixed(2)),
+                        volume: last.volume + Math.floor(Math.random() * 1000)
+                    };
+                    
+                    this.lastBar = newBar;
+                    onRealtimeCallback(newBar);
+                }, 5000);
+                
+                return () => clearInterval(interval);
+            }
+            
+            unsubscribeBars(subscriberUID) {
+                delete this.subscribers[subscriberUID];
+            }
+            
+            _resolutionToMs(resolution) {
+                if (resolution.endsWith('D')) return 86400000;
+                if (resolution.endsWith('W')) return 604800000;
+                if (resolution.endsWith('M')) return 2592000000;
+                return parseInt(resolution) * 60000;
+            }
+        }
 
         // Initialize widget when DOM is ready
         function initWidget() {
