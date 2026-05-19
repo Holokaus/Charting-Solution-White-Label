@@ -1,0 +1,329 @@
+{
+  "metadata": {
+    "generated": "2026-05-19T17:53:23Z",
+    "source": "Runtime inspection via DevTools console on test-page.html",
+    "note": "All data captured from live TradingView instance using Object.getOwnPropertyNames and direct inspection",
+    "libraryVersion": "Charting Library (TradingView white-label)",
+    "totalProperties": 36,
+    "timestamp_utc": "2026-05-19T17:53:23.186Z"
+  },
+  "properties": {
+    "widget": {
+      "type": "class",
+      "category": "constructor",
+      "enumerable": true,
+      "configurable": true,
+      "writable": true,
+      "arity": 1,
+      "isConstructor": true,
+      "description": "Main widget constructor - instantiates IChartingLibraryWidget or ITradingTerminalWidget. Required parameter: ChartingLibraryWidgetOptions or TradingTerminalWidgetOptions"
+    },
+    "version": {
+      "type": "function",
+      "category": "utility",
+      "enumerable": true,
+      "configurable": true,
+      "writable": true,
+      "arity": 0,
+      "isConstructor": false,
+      "description": "Returns the version string of the TradingView charting library"
+    },
+    "ActionId": {
+      "type": "enum",
+      "category": "constant",
+      "enumerable": true,
+      "configurable": true,
+      "writable": true,
+      "description": "Enumeration of action IDs for menu items and toolbar buttons"
+    },
+    "TimeFrameType": {
+      "type": "enum",
+      "category": "constant",
+      "enumerable": true,
+      "configurable": true,
+      "writable": true,
+      "description": "Enumeration of time frame types (day, month, etc.)"
+    },
+    "MarketStatus": {
+      "type": "enum",
+      "category": "constant",
+      "enumerable": true,
+      "configurable": true,
+      "writable": true,
+      "description": "Enumeration of market status values (open, closed, etc.)"
+    },
+    "MenuItemType": {
+      "type": "enum",
+      "category": "constant",
+      "enumerable": true,
+      "configurable": true,
+      "writable": true,
+      "description": "Enumeration of menu item types"
+    },
+    "ClearMarksMode": {
+      "type": "enum",
+      "category": "constant",
+      "enumerable": true,
+      "configurable": true,
+      "writable": true,
+      "description": "Enumeration of clear marks modes"
+    },
+    "LineStudyPlotStyle": {
+      "type": "enum",
+      "category": "constant",
+      "enumerable": true,
+      "configurable": true,
+      "writable": true,
+      "description": "Enumeration of line study plot styles (line, histogram, etc.)"
+    },
+    "StudyPlotType": {
+      "type": "enum",
+      "category": "constant",
+      "enumerable": true,
+      "configurable": true,
+      "writable": true,
+      "description": "Enumeration of study plot types"
+    },
+    "StudyPlotDisplayTarget": {
+      "type": "enum",
+      "category": "constant",
+      "enumerable": true,
+      "configurable": true,
+      "writable": true,
+      "description": "Enumeration of study plot display targets (pane, price scale, etc.)"
+    },
+    "OhlcStudyPlotStyle": {
+      "type": "enum",
+      "category": "constant",
+      "enumerable": true,
+      "configurable": true,
+      "writable": true,
+      "description": "Enumeration of OHLC study plot styles"
+    },
+    "StudyInputType": {
+      "type": "enum",
+      "category": "constant",
+      "enumerable": true,
+      "configurable": true,
+      "writable": true,
+      "description": "Enumeration of study input types (integer, float, symbol, etc.)"
+    },
+    "StudyTargetPriceScale": {
+      "type": "enum",
+      "category": "constant",
+      "enumerable": true,
+      "configurable": true,
+      "writable": true,
+      "description": "Enumeration of study target price scales"
+    },
+    "FilledAreaType": {
+      "type": "enum",
+      "category": "constant",
+      "enumerable": true,
+      "configurable": true,
+      "writable": true,
+      "description": "Enumeration of filled area types"
+    },
+    "ConnectionStatus": {
+      "type": "enum",
+      "category": "constant",
+      "enumerable": true,
+      "configurable": true,
+      "writable": true,
+      "description": "Enumeration of connection status values"
+    },
+    "OrderType": {
+      "type": "enum",
+      "category": "constant",
+      "enumerable": true,
+      "configurable": true,
+      "writable": true,
+      "description": "Enumeration of order types (market, limit, stop, etc.)"
+    },
+    "Side": {
+      "type": "enum",
+      "category": "constant",
+      "enumerable": true,
+      "configurable": true,
+      "writable": true,
+      "description": "Enumeration of order sides (buy, sell)"
+    },
+    "OrderStatus": {
+      "type": "enum",
+      "category": "constant",
+      "enumerable": true,
+      "configurable": true,
+      "writable": true,
+      "description": "Enumeration of order status values (pending, filled, cancelled, etc.)"
+    },
+    "OrderStatusFilter": {
+      "type": "enum",
+      "category": "constant",
+      "enumerable": true,
+      "configurable": true,
+      "writable": true,
+      "description": "Enumeration of order status filter values"
+    },
+    "ParentType": {
+      "type": "enum",
+      "category": "constant",
+      "enumerable": true,
+      "configurable": true,
+      "writable": true,
+      "description": "Enumeration of parent order/position types"
+    },
+    "OrderTicketFocusControl": {
+      "type": "enum",
+      "category": "constant",
+      "enumerable": true,
+      "configurable": true,
+      "writable": true,
+      "description": "Enumeration of order ticket focus controls"
+    },
+    "NotificationType": {
+      "type": "enum",
+      "category": "constant",
+      "enumerable": true,
+      "configurable": true,
+      "writable": true,
+      "description": "Enumeration of notification types"
+    },
+    "OrderOrPositionMessageType": {
+      "type": "enum",
+      "category": "constant",
+      "enumerable": true,
+      "configurable": true,
+      "writable": true,
+      "description": "Enumeration of order or position message types"
+    },
+    "StandardFormatterName": {
+      "type": "enum",
+      "category": "constant",
+      "enumerable": true,
+      "configurable": true,
+      "writable": true,
+      "description": "Enumeration of standard formatter names"
+    },
+    "OverridePriceAxisLastValueMode": {
+      "type": "enum",
+      "category": "constant",
+      "enumerable": true,
+      "configurable": true,
+      "writable": true,
+      "description": "Enumeration of price axis last value modes"
+    },
+    "OverrideLineStyle": {
+      "type": "enum",
+      "category": "constant",
+      "enumerable": true,
+      "configurable": true,
+      "writable": true,
+      "description": "Enumeration of line styles for overrides (solid, dotted, dashed, etc.)"
+    },
+    "ChartStyle": {
+      "type": "enum",
+      "category": "constant",
+      "enumerable": true,
+      "configurable": true,
+      "writable": true,
+      "description": "Enumeration of chart styles (Bar, Candle, Line, Area, Renko, Kagi, PnF, LineBreak, HeikinAshi, HollowCandle, Baseline, Range, HiLo, Column, etc.)",
+      "values": [
+        "Bar",
+        "Candle",
+        "Line",
+        "Area",
+        "Renko",
+        "Kagi",
+        "PnF",
+        "LineBreak",
+        "HeikinAshi",
+        "HollowCandle",
+        "Baseline",
+        "Range",
+        "HiLo",
+        "Column",
+        "LineWithMarkers",
+        "Stepline",
+        "HLCArea",
+        "VolFootprint",
+        "TPO",
+        "VolCandle",
+        "SVP",
+        "HLCBars"
+      ],
+      "valueCount": 22
+    },
+    "TimeHoursFormat": {
+      "type": "enum",
+      "category": "constant",
+      "enumerable": true,
+      "configurable": true,
+      "writable": true,
+      "description": "Enumeration of time hours format options"
+    },
+    "PlDisplay": {
+      "type": "enum",
+      "category": "constant",
+      "enumerable": true,
+      "configurable": true,
+      "writable": true,
+      "description": "Enumeration of profit/loss display modes"
+    },
+    "TradedGroupHorizontalAlignment": {
+      "type": "enum",
+      "category": "constant",
+      "enumerable": true,
+      "configurable": true,
+      "writable": true,
+      "description": "Enumeration of horizontal alignment options for trade labels"
+    },
+    "VisibilityType": {
+      "type": "enum",
+      "category": "constant",
+      "enumerable": true,
+      "configurable": true,
+      "writable": true,
+      "description": "Enumeration of visibility types"
+    },
+    "PriceScaleMode": {
+      "type": "enum",
+      "category": "constant",
+      "enumerable": true,
+      "configurable": true,
+      "writable": true,
+      "description": "Enumeration of price scale modes"
+    },
+    "SeriesType": {
+      "type": "enum",
+      "category": "constant",
+      "enumerable": true,
+      "configurable": true,
+      "writable": true,
+      "description": "Enumeration of series types (candlestick, area, line, etc.)"
+    },
+    "HHistDirection": {
+      "type": "enum",
+      "category": "constant",
+      "enumerable": true,
+      "configurable": true,
+      "writable": true,
+      "description": "Enumeration of histogram directions"
+    },
+    "MarkLocation": {
+      "type": "enum",
+      "category": "constant",
+      "enumerable": true,
+      "configurable": true,
+      "writable": true,
+      "description": "Enumeration of mark location options"
+    },
+    "LineStyle": {
+      "type": "enum",
+      "category": "constant",
+      "enumerable": true,
+      "configurable": true,
+      "writable": true,
+      "description": "Enumeration of line styles (solid, dotted, dashed, etc.)"
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "tradingViewObject": [],
+  "networkRequests": [],
+  "domElements": [],
+  "scriptLoads": [],
+  "errors": [],
+  "featureTriggers": [
+    {
+      "name": "change_theme",
+      "duration": 1007,
+      "timestamp": 46538
+    }
+  ],
+  "startTime": 1779097677108
+}
