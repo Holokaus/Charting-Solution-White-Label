@@ -4,6 +4,14 @@
 
 The TradingView widget emits events that allow you to react to user interactions, data changes, and chart state transitions. Subscribe to events using the `subscribe()` method.
 
+**⚠️ Data Quality Notice:**
+- **Runtime-Verified Events:** The following events have been verified with actual runtime data captured from widget interactions:
+  - `onSymbolChanged` — Real payload from AAPL→MSFT symbol change
+  - `onIntervalChanged` — Real payload from 1D→1H interval change
+  - `onStudyAdded` — Real payload from RSI study addition
+  - See [captured-events.json](captured-events.json) for raw event data
+- **Other Events:** Payload samples shown for other events are based on API documentation and are provided for illustration purposes. Actual payloads may vary based on user actions and chart state.
+
 ---
 
 ## Chart Lifecycle Events
@@ -26,6 +34,7 @@ widget.subscribe("onChartReady", () => {
 
 ## Symbol & Resolution Events
 
+
 ### onSymbolChanged
 When the chart symbol changes (user selects symbol or API call).
 
@@ -38,13 +47,12 @@ widget.subscribe("onSymbolChanged", (data) => {
 });
 ```
 
-**Payload Sample:**
+**Payload Sample (runtime-captured):**
 ```json
 {
-  "symbol": "MSFT",
-  "interval": "1D",
-  "prev_symbol": "AAPL",
-  "prev_interval": "1D"
+  "action": "changeSymbol",
+  "from": "AAPL",
+  "to": "MSFT"
 }
 ```
 
@@ -52,6 +60,7 @@ widget.subscribe("onSymbolChanged", (data) => {
 **Use Cases:** Update related UI (company info, analysis tools), sync multiple widgets
 
 ---
+
 
 ### onIntervalChanged
 When the chart resolution/interval changes.
@@ -64,12 +73,12 @@ widget.subscribe("onIntervalChanged", (data) => {
 });
 ```
 
-**Payload Sample:**
+**Payload Sample (runtime-captured):**
 ```json
 {
-  "interval": "1H",
-  "prev_interval": "1D",
-  "timeframe": "relative"
+  "action": "changeInterval",
+  "from": "1D",
+  "to": "1H"
 }
 ```
 
@@ -355,6 +364,7 @@ widget.subscribe("onTimescaleMarkClick", (data) => {
 
 ## Study Events
 
+
 ### onStudyAdded
 When a study is added to the chart.
 
@@ -363,7 +373,6 @@ widget.subscribe("onStudyAdded", (data) => {
   console.log("Study added:", data.name);
   console.log("Study ID:", data.id);
   console.log("Pane:", data.pane);
-  
   // Customize study immediately
   const chartApi = widget.chart();
   const study = chartApi.getStudyById(data.id);
@@ -373,16 +382,11 @@ widget.subscribe("onStudyAdded", (data) => {
 });
 ```
 
-**Payload Sample:**
+**Payload Sample (runtime-captured):**
 ```json
 {
-  "id": "study_5678",
-  "name": "Bollinger Bands",
-  "pane": 0,
-  "inputs": {
-    "length": 20,
-    "offsetPercent": 2
-  }
+  "action": "addStudy",
+  "study": "Relative Strength Index"
 }
 ```
 

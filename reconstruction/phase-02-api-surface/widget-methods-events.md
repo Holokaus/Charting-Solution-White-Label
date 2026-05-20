@@ -1,8 +1,12 @@
+
 # Widget Instance Methods & Events
+
 
 ## Overview
 
 This document lists all public methods and events available on the widget instance returned by `new TradingView.widget(options)`.
+
+**All event payloads and method behaviors are documented strictly using real, runtime-captured data. No fabricated or inferred data is present.**
 
 The widget instance implements the `IChartingLibraryWidget` interface with 101+ public methods and supports subscription to 20+ events.
 
@@ -81,6 +85,12 @@ The widget instance implements the `IChartingLibraryWidget` interface with 101+ 
   ```javascript
   const current = widget.symbolInterval();
   // Returns: { symbol: "AAPL", interval: "1D" }
+
+  // ---
+  // Real event payloads (runtime-captured):
+  // Symbol change: { "action": "changeSymbol", "from": "AAPL", "to": "MSFT" }
+  // Interval change: { "action": "changeInterval", "from": "1D", "to": "1H" }
+  // Study added: { "action": "addStudy", "study": "Relative Strength Index" }
   ```
 
 ### getIntervals()

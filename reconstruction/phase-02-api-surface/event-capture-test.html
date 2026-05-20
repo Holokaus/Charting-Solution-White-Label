@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Payload Capture</title>
+    <script src="../phase-01-runtime-analysis/hook-injection-simple.js"></script>
+    <script src="../../charting_library/charting_library.standalone.js"></script>
+    <style>
+        body { font-family: monospace; padding: 20px; background: #f9f9f9; }
+        #log { white-space: pre-wrap; background: #f5f5f5; padding: 10px; height: 400px; overflow: auto; font-size: 12px; border: 1px solid #ccc; margin: 10px 0; }
+        button { margin: 5px; padding: 10px; background: #0078d4; color: white; border: none; cursor: pointer; border-radius: 3px; }
+        button:hover { background: #106ebe; }
+        h2 { color: #333; }
+        .info { background: #e7f3ff; padding: 10px; margin: 10px 0; border-radius: 3px; }
+    </style>
+</head>
+<body>
+    <h1>Event Payload Capture</h1>
+    <div class="info">
+        <strong>Instructions:</strong> Click the control buttons to trigger various events, then click "Export Captured Events" to download the data.
+    </div>
+    
+    <div id="tv_chart_container" style="width:900px;height:500px;border:1px solid #ccc;"></div>
+    
+    <h2>Controls</h2>
+    <button onclick="changeSymbol()">1. Change Symbol (AAPL→MSFT)</button>
+    <button onclick="changeInterval()">2. Change Interval (1D→1H)</button>
+    <button onclick="addStudy()">3. Add Study (RSI)</button>
+    <button onclick="removeStudy()">4. Remove Study</button>
+    <button onclick="exportEvents()">Export Captured Events</button>
+    <button onclick="checkStatus()">Check Status</button>
+    
+    <h2>Captured Events Log</h2>
+    <div id="log">Waiting for chart ready...</div>
+
+    <script>
+        // Mock datafeed (same as test-page.html)
+        class MockDatafeed {
+            onReady(cb) { 
+                setTimeout(() => cb({
+                    supported_resolutions:["1D","1H","5","15","30","60"],
+                    intraday_multipliers: ["1","5","15","30","60"]
+                }), 0); 
+            }
+            
+            resolveSymbol(name, onResolve) {
+                setTimeout(() => onResolve({
+                    name: name, 
+                    full_name: name, 
+                    ticker: name,
+                    type: "stock", 
+                    session: "0900-1600", 
+                    timezone: "America/New_York",
+                    pricescale: 100, 
+                    minmov: 1, 
+                    has_intraday: true,
+                    supported_resolutions: ["1D","1H","5","15","30","60"]
+                }), 0);
+            }
+            
+            getBars(symbol, resolution, from, to, onHistoryCallback) {
+                const bars = [];
+                let price = 150;
+                for (let i = 0; i < 100; i++) {
+                    const o = price + (Math.random()-0.5)*2;
+                    const c = o + (Math.random()-0.5)*3;
+                    bars.push({
+                        time: from + i*86400,
+                        open: o, 
+                        high: Math.max(o,c)+1, 
+                        low: Math.min(o,c)-1, 
+                        close: c,
+                        volume: Math.floor(Math.random()*1000000)
+                    });
+                    price = c;
+                }
+                setTimeout(() => onHistoryCallback(bars, {noData: false}), 100);
+            }
+            
+            subscribeBars() { return () => {}; }
+            unsubscribeBars() {}
+        }
+
+        // Capture events
+        const capturedEvents = {};
+        let studyId = null;
+        
+        function logEvent(name, data) {
+            if (!capturedEvents[name]) capturedEvents[name] = [];
+            capturedEvents[name].push({
+                timestamp: new Date().toISOString(),
+                payload: data
+            });
+            const logDiv = document.getElementById('log');
+            const message = `[${new Date().toLocaleTimeString()}] ${name}: ${JSON.stringify(data, null, 2).substring(0, 300)}...`;
+            logDiv.innerHTML += message + '\n\n';
+            logDiv.scrollTop = logDiv.scrollHeight;
+            console.log(`[Event] ${name}`, data);
+        }
+
+        // Initialize widget
+        const widget = new TradingView.widget({
+            container: "tv_chart_container",
+            datafeed: new MockDatafeed(),
+            symbol: "AAPL",
+            interval: "1D",
+            library_path: "../../charting_library/",
+            width: 900,
+            height: 500,
+            timezone: "America/New_York"
+        });
+
+        // Subscribe to ALL events
+        const events = [
+            "onChartReady", "onSymbolChanged", "onIntervalChanged",
+            "onAutoSaveNeeded", "onMarkClick", "onTimescaleMarkClick",
+            "onDrawObjectClick", "onDrawObjectEdit", "onDrawObjectDelete",
+            "onMouseDown", "onMouseUp", "onMouseMove",
+            "onStudyAdded", "onStudyRemoved", "onStudyInputChanged",
+            "onContextMenu", "onShortcut", "onGrayedObjectClicked",
+            "onStudyInputChanged"
+        ];
+
+        widget.onChartReady(() => {
+            logEvent('initialization', {status: 'Chart Ready', timestamp: Date.now()});
+            
+            events.forEach(evt => {
+                try {
+                    widget.subscribe(evt, (data) => logEvent(evt, data));
+                } catch(e) {
+                    console.log(`Event ${evt} not available:`, e.message);
+                }
+            });
+            
+            logEvent('initialization', {
+                status: 'All events subscribed',
+                events_subscribed: events.length,
+                timestamp: Date.now()
+            });
+        });
+
+        function changeSymbol() {
+            logEvent('user_action', {action: 'changeSymbol', from: 'AAPL', to: 'MSFT'});
+            widget.setSymbol("MSFT", () => {});
+        }
+
+        function changeInterval() {
+            logEvent('user_action', {action: 'changeInterval', from: '1D', to: '1H'});
+            const chart = widget.chart();
+            if (chart && chart.setResolution) {
+                chart.setResolution("1H", () => {});
+            }
+        }
+
+        function addStudy() {
+            logEvent('user_action', {action: 'addStudy', study: 'Relative Strength Index'});
+            const chart = widget.chart();
+            if (chart && chart.createStudy) {
+                chart.createStudy("Relative Strength Index", false, false, (study_id) => {
+                    studyId = study_id;
+                    logEvent('user_action', {action: 'studyCreated', study_id: study_id});
+                });
+            }
+        }
+
+        function removeStudy() {
+            if (studyId) {
+                logEvent('user_action', {action: 'removeStudy', study_id: studyId});
+                const chart = widget.chart();
+                if (chart && chart.removeEntity) {
+                    chart.removeEntity(studyId);
+                }
+            } else {
+                logEvent('user_action', {action: 'removeStudy', error: 'No study to remove'});
+            }
+        }
+
+        function checkStatus() {
+            const status = {
+                events_captured: Object.keys(capturedEvents).length,
+                total_payloads: Object.values(capturedEvents).reduce((sum, arr) => sum + arr.length, 0),
+                events: Object.keys(capturedEvents)
+            };
+            logEvent('status_check', status);
+        }
+
+        function exportEvents() {
+            const dataStr = JSON.stringify(capturedEvents, null, 2);
+            const blob = new Blob([dataStr], {type: 'application/json'});
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = 'captured-events.json';
+            link.click();
+            URL.revokeObjectURL(url);
+            
+            logEvent('export', {
+                action: 'exportEvents',
+                events_exported: Object.keys(capturedEvents),
+                total_payloads: Object.values(capturedEvents).reduce((sum, arr) => sum + arr.length, 0)
+            });
+            
+            console.log('Events exported:', Object.keys(capturedEvents));
+            alert('Events exported to captured-events.json');
+        }
+
+        window.capturedEvents = capturedEvents;
+        window.getStatus = function() {
+            return {
+                events_captured: Object.keys(capturedEvents).length,
+                total_payloads: Object.values(capturedEvents).reduce((sum, arr) => sum + arr.length, 0),
+                details: capturedEvents
+            };
+        };
+    </script>
+</body>
+</html>

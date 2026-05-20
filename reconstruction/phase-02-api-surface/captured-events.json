@@ -1,0 +1,27 @@
+{
+  "user_action": [
+    {
+      "timestamp": "2026-05-19T20:54:27.180Z",
+      "payload": {
+        "action": "changeSymbol",
+        "from": "AAPL",
+        "to": "MSFT"
+      }
+    },
+    {
+      "timestamp": "2026-05-19T20:54:41.594Z",
+      "payload": {
+        "action": "changeInterval",
+        "from": "1D",
+        "to": "1H"
+      }
+    },
+    {
+      "timestamp": "2026-05-19T20:54:42.212Z",
+      "payload": {
+        "action": "addStudy",
+        "study": "Relative Strength Index"
+      }
+    }
+  ]
+}

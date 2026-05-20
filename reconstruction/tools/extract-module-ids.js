@@ -1,38 +1,38 @@
 const fs = require('fs');
+const path = require('path');
 
-// This script extracts REAL module IDs from hook-logs-v2.json
-// and populates module-behavior-map.json with observed_modules
-
-const logsPath = 'reconstruction/phase-01-runtime-analysis/hook-logs-v2.json';
-const mapPath = 'reconstruction/phase-01-runtime-analysis/module-behavior-map.json';
+// Read the hook logs
+const logsPath = path.join(__dirname, '../phase-01-runtime-analysis/hook-logs-v2.json');
 
 if (!fs.existsSync(logsPath)) {
-    console.error('ERROR: hook-logs-v2.json not found at', logsPath);
-    console.error('You must run the test page and export the logs first.');
+    console.error(`ERROR: ${logsPath} not found. Run the feature-trigger-test.html first to capture logs.`);
     process.exit(1);
 }
 
-const logs = JSON.parse(fs.readFileSync(logsPath, 'utf8'));
-
-if (!logs.moduleExecutions || logs.moduleExecutions.length === 0) {
-    console.error('ERROR: No moduleExecutions found in logs');
-    console.error('The Function.prototype.call hook did not capture any module calls.');
-    console.error('Check that hook-injection-simple.js is loaded BEFORE charting_library.standalone.js');
+let logs;
+try {
+    logs = JSON.parse(fs.readFileSync(logsPath, 'utf8'));
+} catch (e) {
+    console.error(`ERROR: Failed to parse hook-logs-v2.json: ${e.message}`);
     process.exit(1);
 }
 
-console.log(`Total module executions captured: ${logs.moduleExecutions.length}`);
-
-// Group module IDs by feature
+// Extract module IDs per feature
 const featureModules = {};
+const executions = logs.moduleExecutions || [];
 
-for (const exec of logs.moduleExecutions) {
+if (!executions || executions.length === 0) {
+    console.warn('WARNING: No module executions found in hook-logs-v2.json');
+}
+
+for (const exec of executions) {
     const feature = exec.feature || 'unknown';
     const id = exec.moduleId;
     
-    if (id === 'unknown' || id === undefined || id === null) {
-        continue;
-    }
+    // Skip invalid IDs
+    if (id === 'unknown' || id === undefined || id === null) continue;
+    if (typeof id !== 'number') continue;
+    if (!Number.isInteger(id)) continue;
     
     if (!featureModules[feature]) {
         featureModules[feature] = new Set();
@@ -40,50 +40,54 @@ for (const exec of logs.moduleExecutions) {
     featureModules[feature].add(id);
 }
 
-// Convert to the exact format required
+// Build output document
 const output = {
     metadata: {
         version: "2.0",
         phase: "01-runtime-analysis",
-        task: "1.4-module-id-to-behavior-mapping",
         generated: new Date().toISOString(),
-        note: "ACTUAL module IDs captured from Function.prototype.call hook during runtime execution",
-        source: "Runtime hook logs - NOT estimated"
+        note: "ACTUAL module IDs captured from Function.prototype.call hook (sampling-based)",
+        source: "Runtime execution logs from hook-logs-v2.json",
+        total_executions_logged: executions.length,
+        total_unique_modules: new Set([...Object.values(featureModules)].map(s => [...s]).flat()).size,
+        extraction_timestamp: Date.now()
     },
     features: {}
 };
 
-let totalModules = 0;
+// Sort features alphabetically
+const sortedFeatures = Object.keys(featureModules).sort();
 
-for (const [feature, ids] of Object.entries(featureModules)) {
+for (const feature of sortedFeatures) {
+    const ids = featureModules[feature];
     const idArray = Array.from(ids).sort((a, b) => a - b);
-    totalModules += idArray.length;
-    
     output.features[feature] = {
         description: feature,
         observed_modules: idArray,
         module_count: idArray.length,
-        status: "observed"
+        status: "observed",
+        execution_count: executions.filter(e => e.feature === feature).length
     };
 }
 
-output.summary = {
-    features_mapped: Object.keys(featureModules).length,
-    total_unique_modules: totalModules
-};
+// Write output
+const outputPath = path.join(__dirname, '../phase-01-runtime-analysis/module-behavior-map.json');
+fs.writeFileSync(outputPath, JSON.stringify(output, null, 2));
 
-// Write the updated map
-fs.writeFileSync(mapPath, JSON.stringify(output, null, 2));
+console.log('\n✓ Module behavior map extracted successfully!');
+console.log(`✓ Output: ${outputPath}`);
+console.log(`\n📊 Summary:`);
+console.log(`   Total features: ${sortedFeatures.length}`);
+console.log(`   Total unique modules: ${output.metadata.total_unique_modules}`);
+console.log(`   Total executions logged: ${executions.length}`);
 
-console.log('\n=== EXTRACTION COMPLETE ===');
-console.log(`Features captured: ${Object.keys(featureModules).length}`);
-console.log(`Total unique modules: ${totalModules}`);
-console.log(`\nModules per feature:`);
-
-for (const [feature, ids] of Object.entries(featureModules).sort()) {
-    const idArray = Array.from(ids).sort((a, b) => a - b);
-    const preview = idArray.slice(0, 5).join(', ') + (idArray.length > 5 ? '...' : '');
-    console.log(`  ${feature}: ${idArray.length} modules [${preview}]`);
+// Print features with their modules
+console.log('\n📋 Features:');
+for (const [feature, data] of Object.entries(output.features)) {
+    const ids = data.observed_modules;
+    const sample = ids.length > 5 ? `[${ids.slice(0, 5).join(', ')}, ...]` : `[${ids.join(', ')}]`;
+    console.log(`   ${feature}:`);
+    console.log(`      Modules: ${sample}`);
+    console.log(`      Module count: ${data.module_count}`);
+    console.log(`      Execution count: ${data.execution_count}`);
 }
-
-console.log(`\n✓ module-behavior-map.json updated at: ${mapPath}`);
