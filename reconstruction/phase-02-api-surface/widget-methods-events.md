@@ -6,7 +6,7 @@
 
 This document lists all public methods and events available on the widget instance returned by `new TradingView.widget(options)`.
 
-**All event payloads and method behaviors are documented strictly using real, runtime-captured data. No fabricated or inferred data is present.**
+**⚠️ NOT RUNTIME-VERIFIED: All method behaviors and event payloads in this document are based on TradingView's TypeScript type definitions (`IChartingLibraryWidget` interface), NOT from actual runtime method calls. Methods marked with `[NOT VERIFIED]` were never called at runtime.**
 
 The widget instance implements the `IChartingLibraryWidget` interface with 101+ public methods and supports subscription to 20+ events.
 
@@ -14,7 +14,7 @@ The widget instance implements the `IChartingLibraryWidget` interface with 101+ 
 
 ## Core Chart Control Methods
 
-### save(callback?, options?)
+### save(callback?, options?) `[NOT VERIFIED]`
 - **Arguments:** Optional callback function, optional options object
 - **Returns:** object (chart state serialized)
 - **Side effects:** Serializes all chart configuration, studies, drawings, layout
@@ -25,7 +25,7 @@ The widget instance implements the `IChartingLibraryWidget` interface with 101+ 
   // State contains: chart properties, symbol, interval, studies, drawings, layout
   ```
 
-### load(state, options?, callback?)
+### load(state, options?, callback?) `[NOT VERIFIED]`
 - **Arguments:** Saved chart state object, optional options, optional callback
 - **Returns:** undefined
 - **Side effects:** Loads all chart configuration from saved state
@@ -37,7 +37,7 @@ The widget instance implements the `IChartingLibraryWidget` interface with 101+ 
   });
   ```
 
-### setSymbol(symbol, interval, onChartReady?)
+### setSymbol(symbol, interval, onChartReady?) `[NOT VERIFIED]`
 - **Arguments:** 
   - symbol: string (e.g., "AAPL")
   - interval: string (e.g., "1D")
@@ -52,7 +52,7 @@ The widget instance implements the `IChartingLibraryWidget` interface with 101+ 
   });
   ```
 
-### chart(index?)
+### chart(index?) `[NOT VERIFIED]`
 - **Arguments:** Optional chart index (for multi-chart layouts, defaults to 0)
 - **Returns:** IChartWidgetApi (advanced chart API)
 - **Side effects:** None
@@ -62,7 +62,7 @@ The widget instance implements the `IChartingLibraryWidget` interface with 101+ 
   const chartApi = widget.chart();
   ```
 
-### remove()
+### remove() `[NOT VERIFIED]`
 - **Arguments:** None
 - **Returns:** undefined
 - **Side effects:** Destroys widget, removes DOM elements, cleans up resources
@@ -76,7 +76,7 @@ The widget instance implements the `IChartingLibraryWidget` interface with 101+ 
 
 ## Symbol & Resolution Methods
 
-### symbolInterval()
+### symbolInterval() `[NOT VERIFIED]`
 - **Arguments:** None
 - **Returns:** object { symbol: string, interval: string }
 - **Side effects:** None
@@ -93,7 +93,7 @@ The widget instance implements the `IChartingLibraryWidget` interface with 101+ 
   // Study added: { "action": "addStudy", "study": "Relative Strength Index" }
   ```
 
-### getIntervals()
+### getIntervals() `[NOT VERIFIED]`
 - **Arguments:** None
 - **Returns:** string array of supported intervals
 - **Side effects:** None
@@ -104,7 +104,7 @@ The widget instance implements the `IChartingLibraryWidget` interface with 101+ 
   // Returns: ["1", "5", "15", "30", "60", "240", "1D", "1W", "1M"]
   ```
 
-### setTimeFrame(timeframe)
+### setTimeFrame(timeframe) `[NOT VERIFIED]`
 - **Arguments:** TimeframeOption (e.g., "3M", "1D" or {from: timestamp, to: timestamp})
 - **Returns:** undefined
 - **Side effects:** Changes visible time range on chart
@@ -119,7 +119,7 @@ The widget instance implements the `IChartingLibraryWidget` interface with 101+ 
 
 ## Study & Indicator Methods
 
-### getStudiesList()
+### getStudiesList() `[NOT VERIFIED]`
 - **Arguments:** None
 - **Returns:** string array of study names (107 built-in studies)
 - **Side effects:** None
@@ -130,7 +130,7 @@ The widget instance implements the `IChartingLibraryWidget` interface with 101+ 
   // Contains: "Bollinger Bands", "MACD", "RSI", "Stochastic", etc.
   ```
 
-### getStudyInputs(studyName)
+### getStudyInputs(studyName) `[NOT VERIFIED]`
 - **Arguments:** studyName: string (e.g., "Bollinger Bands")
 - **Returns:** array of input definitions with type, default, min, max, etc.
 - **Side effects:** None
@@ -141,7 +141,7 @@ The widget instance implements the `IChartingLibraryWidget` interface with 101+ 
   // Returns array: [{ name: "length", type: "integer", min: 1, max: 100 }, ...]
   ```
 
-### getStudyStyles(studyName)
+### getStudyStyles(studyName) `[NOT VERIFIED]`
 - **Arguments:** studyName: string
 - **Returns:** array of style definitions (colors, line widths, etc.)
 - **Side effects:** None
@@ -151,7 +151,7 @@ The widget instance implements the `IChartingLibraryWidget` interface with 101+ 
   const styles = widget.getStudyStyles("Moving Average");
   ```
 
-### addCustomCSSFile(filePath)
+### addCustomCSSFile(filePath) `[NOT VERIFIED]`
 - **Arguments:** filePath: string (URL to CSS file)
 - **Returns:** undefined
 - **Side effects:** Injects custom CSS into chart
@@ -165,7 +165,7 @@ The widget instance implements the `IChartingLibraryWidget` interface with 101+ 
 
 ## Layout & Theme Methods
 
-### layout()
+### layout() `[NOT VERIFIED]`
 - **Arguments:** None
 - **Returns:** string (current layout ID/name)
 - **Side effects:** None
@@ -175,7 +175,7 @@ The widget instance implements the `IChartingLibraryWidget` interface with 101+ 
   const layout = widget.layout();  // e.g., "layout_1"
   ```
 
-### setLayout(id)
+### setLayout(id) `[NOT VERIFIED]`
 - **Arguments:** id: string (layout ID)
 - **Returns:** undefined
 - **Side effects:** Changes chart layout
@@ -185,7 +185,7 @@ The widget instance implements the `IChartingLibraryWidget` interface with 101+ 
   widget.setLayout("layout_1");
   ```
 
-### layoutName()
+### layoutName() `[NOT VERIFIED]`
 - **Arguments:** None
 - **Returns:** string (human-readable layout name)
 - **Side effects:** None
@@ -195,7 +195,7 @@ The widget instance implements the `IChartingLibraryWidget` interface with 101+ 
   const name = widget.layoutName();
   ```
 
-### resetLayoutSizes(paneIndex)
+### resetLayoutSizes(paneIndex) `[NOT VERIFIED]`
 - **Arguments:** paneIndex: number
 - **Returns:** undefined
 - **Side effects:** Resets pane sizes to defaults
@@ -205,7 +205,7 @@ The widget instance implements the `IChartingLibraryWidget` interface with 101+ 
   widget.resetLayoutSizes(0);
   ```
 
-### setLayoutSizes(sizes)
+### setLayoutSizes(sizes) `[NOT VERIFIED]`
 - **Arguments:** sizes: object with pane dimensions
 - **Returns:** undefined
 - **Side effects:** Resizes chart panes
@@ -215,7 +215,7 @@ The widget instance implements the `IChartingLibraryWidget` interface with 101+ 
   widget.setLayoutSizes({ mainPane: 700, studyPane: 200 });
   ```
 
-### changeTheme(theme, disableUndo?)
+### changeTheme(theme, disableUndo?) `[NOT VERIFIED]`
 - **Arguments:** theme: "light" | "dark", disableUndo: optional boolean
 - **Returns:** undefined
 - **Side effects:** Changes chart theme immediately
@@ -225,7 +225,7 @@ The widget instance implements the `IChartingLibraryWidget` interface with 101+ 
   widget.changeTheme("dark");
   ```
 
-### getTheme()
+### getTheme() `[NOT VERIFIED]`
 - **Arguments:** None
 - **Returns:** string ("light" | "dark")
 - **Side effects:** None
@@ -239,7 +239,7 @@ The widget instance implements the `IChartingLibraryWidget` interface with 101+ 
 
 ## Multi-Chart Methods
 
-### activeChart()
+### activeChart() `[NOT VERIFIED]`
 - **Arguments:** None
 - **Returns:** IChartWidgetApi for active (focused) chart
 - **Side effects:** None
@@ -249,7 +249,7 @@ The widget instance implements the `IChartingLibraryWidget` interface with 101+ 
   const active = widget.activeChart();
   ```
 
-### activeChartIndex()
+### activeChartIndex() `[NOT VERIFIED]`
 - **Arguments:** None
 - **Returns:** number (0-based index)
 - **Side effects:** None
@@ -259,7 +259,7 @@ The widget instance implements the `IChartingLibraryWidget` interface with 101+ 
   const index = widget.activeChartIndex();
   ```
 
-### chartsCount()
+### chartsCount() `[NOT VERIFIED]`
 - **Arguments:** None
 - **Returns:** number of charts in layout
 - **Side effects:** None
@@ -269,7 +269,7 @@ The widget instance implements the `IChartingLibraryWidget` interface with 101+ 
   const count = widget.chartsCount();
   ```
 
-### setActiveChart(index)
+### setActiveChart(index) `[NOT VERIFIED]`
 - **Arguments:** index: number (0-based)
 - **Returns:** undefined
 - **Side effects:** Focuses specified chart
@@ -279,7 +279,7 @@ The widget instance implements the `IChartingLibraryWidget` interface with 101+ 
   widget.setActiveChart(1);  // Focus second chart
   ```
 
-### unloadUnusedCharts()
+### unloadUnusedCharts() `[NOT VERIFIED]`
 - **Arguments:** None
 - **Returns:** undefined
 - **Side effects:** Unloads charts not currently visible
@@ -293,7 +293,7 @@ The widget instance implements the `IChartingLibraryWidget` interface with 101+ 
 
 ## Drawing Tool Methods
 
-### selectLineTool(toolName, skipIfSameToolSelected?)
+### selectLineTool(toolName, skipIfSameToolSelected?) `[NOT VERIFIED]`
 - **Arguments:** toolName: string, optional skipIfSameToolSelected: boolean
 - **Returns:** undefined
 - **Side effects:** Activates drawing tool
@@ -303,7 +303,7 @@ The widget instance implements the `IChartingLibraryWidget` interface with 101+ 
   widget.selectLineTool("LineToolTrendline");
   ```
 
-### selectedLineTool()
+### selectedLineTool() `[NOT VERIFIED]`
 - **Arguments:** None
 - **Returns:** string (name of active drawing tool)
 - **Side effects:** None
@@ -313,7 +313,7 @@ The widget instance implements the `IChartingLibraryWidget` interface with 101+ 
   const tool = widget.selectedLineTool();  // "LineToolTrendline"
   ```
 
-### hideAllDrawingTools()
+### hideAllDrawingTools() `[NOT VERIFIED]`
 - **Arguments:** None
 - **Returns:** undefined
 - **Side effects:** Hides all drawing toolbar buttons
@@ -323,7 +323,7 @@ The widget instance implements the `IChartingLibraryWidget` interface with 101+ 
   widget.hideAllDrawingTools();
   ```
 
-### lockAllDrawingTools()
+### lockAllDrawingTools() `[NOT VERIFIED]`
 - **Arguments:** None
 - **Returns:** undefined
 - **Side effects:** Disables all drawing tools (grayed out)
@@ -333,7 +333,7 @@ The widget instance implements the `IChartingLibraryWidget` interface with 101+ 
   widget.lockAllDrawingTools();
   ```
 
-### drawOnAllCharts(enabled)
+### drawOnAllCharts(enabled) `[NOT VERIFIED]`
 - **Arguments:** enabled: boolean
 - **Returns:** undefined
 - **Side effects:** Enables/disables drawing on all charts in layout
@@ -343,7 +343,7 @@ The widget instance implements the `IChartingLibraryWidget` interface with 101+ 
   widget.drawOnAllCharts(true);
   ```
 
-### drawOnAllChartsEnabled()
+### drawOnAllChartsEnabled() `[NOT VERIFIED]`
 - **Arguments:** None
 - **Returns:** boolean
 - **Side effects:** None
@@ -357,7 +357,7 @@ The widget instance implements the `IChartingLibraryWidget` interface with 101+ 
 
 ## Undo/Redo Methods
 
-### undo()
+### undo() `[NOT VERIFIED]`
 - **Arguments:** None
 - **Returns:** undefined
 - **Side effects:** Reverts last action
@@ -367,7 +367,7 @@ The widget instance implements the `IChartingLibraryWidget` interface with 101+ 
   widget.undo();
   ```
 
-### redo()
+### redo() `[NOT VERIFIED]`
 - **Arguments:** None
 - **Returns:** undefined
 - **Side effects:** Repeats last undone action
@@ -377,7 +377,7 @@ The widget instance implements the `IChartingLibraryWidget` interface with 101+ 
   widget.redo();
   ```
 
-### clearUndoHistory()
+### clearUndoHistory() `[NOT VERIFIED]`
 - **Arguments:** None
 - **Returns:** undefined
 - **Side effects:** Clears undo/redo history
@@ -387,7 +387,7 @@ The widget instance implements the `IChartingLibraryWidget` interface with 101+ 
   widget.clearUndoHistory();
   ```
 
-### undoRedoState()
+### undoRedoState() `[NOT VERIFIED]`
 - **Arguments:** None
 - **Returns:** object { undo: boolean, redo: boolean }
 - **Side effects:** None
@@ -402,7 +402,7 @@ The widget instance implements the `IChartingLibraryWidget` interface with 101+ 
 
 ## Toolbar & UI Methods
 
-### createButton(options)
+### createButton(options) `[NOT VERIFIED]`
 - **Arguments:** options: object { title, class, onclick }
 - **Returns:** button object
 - **Side effects:** Adds custom button to toolbar
@@ -415,7 +415,7 @@ The widget instance implements the `IChartingLibraryWidget` interface with 101+ 
   });
   ```
 
-### createDropdown(options)
+### createDropdown(options) `[NOT VERIFIED]`
 - **Arguments:** options: object with items array
 - **Returns:** dropdown object
 - **Side effects:** Adds custom dropdown to toolbar
@@ -428,7 +428,7 @@ The widget instance implements the `IChartingLibraryWidget` interface with 101+ 
   });
   ```
 
-### removeButton(buttonId)
+### removeButton(buttonId) `[NOT VERIFIED]`
 - **Arguments:** buttonId: string
 - **Returns:** undefined
 - **Side effects:** Removes custom button from toolbar
@@ -438,7 +438,7 @@ The widget instance implements the `IChartingLibraryWidget` interface with 101+ 
   widget.removeButton(buttonId);
   ```
 
-### navigationButtonsVisibility()
+### navigationButtonsVisibility() `[NOT VERIFIED]`
 - **Arguments:** None
 - **Returns:** object { back: boolean, forward: boolean }
 - **Side effects:** None
@@ -448,7 +448,7 @@ The widget instance implements the `IChartingLibraryWidget` interface with 101+ 
   const nav = widget.navigationButtonsVisibility();
   ```
 
-### paneButtonsVisibility()
+### paneButtonsVisibility() `[NOT VERIFIED]`
 - **Arguments:** None
 - **Returns:** object { indicators: boolean, ...}
 - **Side effects:** None
@@ -462,7 +462,7 @@ The widget instance implements the `IChartingLibraryWidget` interface with 101+ 
 
 ## Dialog Methods
 
-### showLoadChartDialog()
+### showLoadChartDialog() `[NOT VERIFIED]`
 - **Arguments:** None
 - **Returns:** undefined
 - **Side effects:** Opens Load Chart dialog
@@ -472,7 +472,7 @@ The widget instance implements the `IChartingLibraryWidget` interface with 101+ 
   widget.showLoadChartDialog();
   ```
 
-### showSaveAsChartDialog()
+### showSaveAsChartDialog() `[NOT VERIFIED]`
 - **Arguments:** None
 - **Returns:** undefined
 - **Side effects:** Opens Save As Chart dialog
@@ -482,7 +482,7 @@ The widget instance implements the `IChartingLibraryWidget` interface with 101+ 
   widget.showSaveAsChartDialog();
   ```
 
-### showNoticeDialog(options)
+### showNoticeDialog(options) `[NOT VERIFIED]`
 - **Arguments:** options: object { title, body, callback }
 - **Returns:** undefined
 - **Side effects:** Shows notice/info dialog
@@ -495,7 +495,7 @@ The widget instance implements the `IChartingLibraryWidget` interface with 101+ 
   });
   ```
 
-### showConfirmDialog(options)
+### showConfirmDialog(options) `[NOT VERIFIED]`
 - **Arguments:** options: object { title, body, onConfirm, onCancel }
 - **Returns:** undefined
 - **Side effects:** Shows confirmation dialog
@@ -509,7 +509,7 @@ The widget instance implements the `IChartingLibraryWidget` interface with 101+ 
   });
   ```
 
-### closePopupsAndDialogs()
+### closePopupsAndDialogs() `[NOT VERIFIED]`
 - **Arguments:** None
 - **Returns:** undefined
 - **Side effects:** Closes all open popups and dialogs
@@ -523,7 +523,7 @@ The widget instance implements the `IChartingLibraryWidget` interface with 101+ 
 
 ## Screenshots & Export
 
-### takeScreenshot()
+### takeScreenshot() `[NOT VERIFIED]`
 - **Arguments:** None
 - **Returns:** undefined
 - **Side effects:** Opens screenshot dialog (if snapshot_url configured, saves to server)
@@ -533,7 +533,7 @@ The widget instance implements the `IChartingLibraryWidget` interface with 101+ 
   widget.takeScreenshot();
   ```
 
-### takeClientScreenshot(callback)
+### takeClientScreenshot(callback) `[NOT VERIFIED]`
 - **Arguments:** callback: function(canvas)
 - **Returns:** undefined
 - **Side effects:** Renders chart to canvas
@@ -549,7 +549,7 @@ The widget instance implements the `IChartingLibraryWidget` interface with 101+ 
 
 ## Sync Methods
 
-### symbolSync()
+### symbolSync() `[NOT VERIFIED]`
 - **Arguments:** None
 - **Returns:** object with sync config
 - **Side effects:** None
@@ -559,7 +559,7 @@ The widget instance implements the `IChartingLibraryWidget` interface with 101+ 
   const syncConfig = widget.symbolSync();
   ```
 
-### intervalSync()
+### intervalSync() `[NOT VERIFIED]`
 - **Arguments:** None
 - **Returns:** object with sync config
 - **Side effects:** None
@@ -569,7 +569,7 @@ The widget instance implements the `IChartingLibraryWidget` interface with 101+ 
   const syncConfig = widget.intervalSync();
   ```
 
-### timeSync()
+### timeSync() `[NOT VERIFIED]`
 - **Arguments:** None
 - **Returns:** object with sync config
 - **Side effects:** None
@@ -579,7 +579,7 @@ The widget instance implements the `IChartingLibraryWidget` interface with 101+ 
   const syncConfig = widget.timeSync();
   ```
 
-### crosshairSync()
+### crosshairSync() `[NOT VERIFIED]`
 - **Arguments:** None
 - **Returns:** object with sync config
 - **Side effects:** None
@@ -589,7 +589,7 @@ The widget instance implements the `IChartingLibraryWidget` interface with 101+ 
   const syncConfig = widget.crosshairSync();
   ```
 
-### dateRangeSync()
+### dateRangeSync() `[NOT VERIFIED]`
 - **Arguments:** None
 - **Returns:** object with sync config
 - **Side effects:** None
@@ -599,7 +599,7 @@ The widget instance implements the `IChartingLibraryWidget` interface with 101+ 
   const syncConfig = widget.dateRangeSync();
   ```
 
-### setIntervalLinkingEnabled(enabled)
+### setIntervalLinkingEnabled(enabled) `[NOT VERIFIED]`
 - **Arguments:** enabled: boolean
 - **Returns:** undefined
 - **Side effects:** Enables/disables interval syncing between charts
@@ -609,7 +609,7 @@ The widget instance implements the `IChartingLibraryWidget` interface with 101+ 
   widget.setIntervalLinkingEnabled(true);
   ```
 
-### setDateRangeLinkingEnabled(enabled)
+### setDateRangeLinkingEnabled(enabled) `[NOT VERIFIED]`
 - **Arguments:** enabled: boolean
 - **Returns:** undefined
 - **Side effects:** Enables/disables date range syncing between charts
@@ -623,7 +623,7 @@ The widget instance implements the `IChartingLibraryWidget` interface with 101+ 
 
 ## Formatting Methods
 
-### mainSeriesPriceFormatter()
+### mainSeriesPriceFormatter() `[NOT VERIFIED]`
 - **Arguments:** None
 - **Returns:** ISymbolValueFormatter object
 - **Side effects:** None
@@ -633,7 +633,7 @@ The widget instance implements the `IChartingLibraryWidget` interface with 101+ 
   const formatter = widget.mainSeriesPriceFormatter();
   ```
 
-### dateFormat()
+### dateFormat() `[NOT VERIFIED]`
 - **Arguments:** None
 - **Returns:** object with format settings
 - **Side effects:** None
@@ -643,7 +643,7 @@ The widget instance implements the `IChartingLibraryWidget` interface with 101+ 
   const format = widget.dateFormat();
   ```
 
-### timeHoursFormat()
+### timeHoursFormat() `[NOT VERIFIED]`
 - **Arguments:** None
 - **Returns:** object with time format settings
 - **Side effects:** None
@@ -653,7 +653,7 @@ The widget instance implements the `IChartingLibraryWidget` interface with 101+ 
   const format = widget.timeHoursFormat();
   ```
 
-### currencyAndUnitVisibility()
+### currencyAndUnitVisibility() `[NOT VERIFIED]`
 - **Arguments:** None
 - **Returns:** object { currency: boolean, unit: boolean }
 - **Side effects:** None
@@ -667,7 +667,7 @@ The widget instance implements the `IChartingLibraryWidget` interface with 101+ 
 
 ## Server-Based Chart Methods
 
-### getSavedCharts(callback)
+### getSavedCharts(callback) `[NOT VERIFIED]`
 - **Arguments:** callback: function(charts: ChartMetaInfo[])
 - **Returns:** undefined
 - **Side effects:** Fetches list of saved charts from server
@@ -679,7 +679,7 @@ The widget instance implements the `IChartingLibraryWidget` interface with 101+ 
   });
   ```
 
-### loadChartFromServer(id)
+### loadChartFromServer(id) `[NOT VERIFIED]`
 - **Arguments:** id: string or number (chart ID)
 - **Returns:** undefined
 - **Side effects:** Loads chart from server
@@ -689,7 +689,7 @@ The widget instance implements the `IChartingLibraryWidget` interface with 101+ 
   widget.loadChartFromServer(123);
   ```
 
-### saveChartToServer(showDialog?, onSuccess?, onFail?)
+### saveChartToServer(showDialog?, onSuccess?, onFail?) `[NOT VERIFIED]`
 - **Arguments:** showDialog: boolean, success/fail callbacks
 - **Returns:** undefined
 - **Side effects:** Saves current chart to server
@@ -701,7 +701,7 @@ The widget instance implements the `IChartingLibraryWidget` interface with 101+ 
   });
   ```
 
-### removeChartFromServer(id, onSuccess?)
+### removeChartFromServer(id, onSuccess?) `[NOT VERIFIED]`
 - **Arguments:** id: string or number, optional success callback
 - **Returns:** undefined
 - **Side effects:** Deletes chart from server
@@ -717,7 +717,7 @@ The widget instance implements the `IChartingLibraryWidget` interface with 101+ 
 
 ## Additional UI Methods
 
-### getLanguage()
+### getLanguage() `[NOT VERIFIED]`
 - **Arguments:** None
 - **Returns:** string (language code, e.g., "en")
 - **Side effects:** None
@@ -727,7 +727,7 @@ The widget instance implements the `IChartingLibraryWidget` interface with 101+ 
   const lang = widget.getLanguage();  // "en"
   ```
 
-### watchList()
+### watchList() `[NOT VERIFIED]`
 - **Arguments:** None
 - **Returns:** IWatchListApi object
 - **Side effects:** None
@@ -737,7 +737,7 @@ The widget instance implements the `IChartingLibraryWidget` interface with 101+ 
   const watchList = widget.watchList();
   ```
 
-### news()
+### news() `[NOT VERIFIED]`
 - **Arguments:** None
 - **Returns:** INewsApi object (if enabled)
 - **Side effects:** None
@@ -747,7 +747,7 @@ The widget instance implements the `IChartingLibraryWidget` interface with 101+ 
   const news = widget.news();
   ```
 
-### widgetbar()
+### widgetbar() `[NOT VERIFIED]`
 - **Arguments:** None
 - **Returns:** IWidgetbarApi object
 - **Side effects:** None
@@ -757,7 +757,7 @@ The widget instance implements the `IChartingLibraryWidget` interface with 101+ 
   const widgetbar = widget.widgetbar();
   ```
 
-### setDebugMode(enabled)
+### setDebugMode(enabled) `[NOT VERIFIED]`
 - **Arguments:** enabled: boolean
 - **Returns:** undefined
 - **Side effects:** Enables/disables detailed console logging
@@ -767,7 +767,7 @@ The widget instance implements the `IChartingLibraryWidget` interface with 101+ 
   widget.setDebugMode(true);
   ```
 
-### onChartReady(callback)
+### onChartReady `[NOT VERIFIED]`(callback) `[NOT VERIFIED]`
 - **Arguments:** callback: function()
 - **Returns:** undefined
 - **Side effects:** Executes callback when chart initialization is complete
@@ -779,7 +779,7 @@ The widget instance implements the `IChartingLibraryWidget` interface with 101+ 
   });
   ```
 
-### headerReady()
+### headerReady() `[NOT VERIFIED]`
 - **Arguments:** None
 - **Returns:** Promise that resolves when header is ready
 - **Side effects:** None
@@ -795,7 +795,7 @@ The widget instance implements the `IChartingLibraryWidget` interface with 101+ 
 
 ## Event System
 
-### subscribe(eventName, callback)
+### subscribe(eventName, callback) `[NOT VERIFIED]`
 - **Arguments:** eventName: string, callback: function(data)
 - **Returns:** unsubscribe function or void
 - **Side effects:** Registers event listener
@@ -807,7 +807,7 @@ The widget instance implements the `IChartingLibraryWidget` interface with 101+ 
   });
   ```
 
-### unsubscribe(eventName, callback)
+### unsubscribe(eventName, callback) `[NOT VERIFIED]`
 - **Arguments:** eventName: string, callback: function
 - **Returns:** undefined
 - **Side effects:** Removes event listener
@@ -823,7 +823,7 @@ The widget instance implements the `IChartingLibraryWidget` interface with 101+ 
 
 The widget emits the following events (via subscribe):
 
-### onSymbolChanged
+### onSymbolChanged `[NOT VERIFIED]`
 - **Trigger:** User or API changes symbol via setSymbol()
 - **Payload:** { symbol: string, interval: string }
 - **Example:**
@@ -833,7 +833,7 @@ The widget emits the following events (via subscribe):
   });
   ```
 
-### onIntervalChanged
+### onIntervalChanged `[NOT VERIFIED]`
 - **Trigger:** User or API changes interval
 - **Payload:** { interval: string }
 - **Example:**
@@ -843,7 +843,7 @@ The widget emits the following events (via subscribe):
   });
   ```
 
-### onChartReady
+### onChartReady `[NOT VERIFIED]`
 - **Trigger:** Chart data and UI fully loaded
 - **Payload:** (no data parameter)
 - **Example:**
@@ -853,7 +853,7 @@ The widget emits the following events (via subscribe):
   });
   ```
 
-### onAutoSaveNeeded
+### onAutoSaveNeeded `[NOT VERIFIED]`
 - **Trigger:** User makes changes to chart (auto-save throttled by auto_save_delay)
 - **Payload:** { state: object }
 - **Example:**
@@ -863,7 +863,7 @@ The widget emits the following events (via subscribe):
   });
   ```
 
-### onMarkClick
+### onMarkClick `[NOT VERIFIED]`
 - **Trigger:** User clicks on a mark on time scale
 - **Payload:** { clickedObject: object }
 - **Example:**
@@ -873,7 +873,7 @@ The widget emits the following events (via subscribe):
   });
   ```
 
-### onTimescaleMarkClick
+### onTimescaleMarkClick `[NOT VERIFIED]`
 - **Trigger:** User clicks on timescale mark
 - **Payload:** { time: number }
 - **Example:**
@@ -883,7 +883,7 @@ The widget emits the following events (via subscribe):
   });
   ```
 
-### onDrawObjectClick
+### onDrawObjectClick `[NOT VERIFIED]`
 - **Trigger:** User clicks on a drawing
 - **Payload:** { drawingId: string }
 - **Example:**
@@ -893,7 +893,7 @@ The widget emits the following events (via subscribe):
   });
   ```
 
-### onDrawObjectEdit
+### onDrawObjectEdit `[NOT VERIFIED]`
 - **Trigger:** User edits a drawing
 - **Payload:** { drawingId: string, drawingData: object }
 - **Example:**
@@ -903,7 +903,7 @@ The widget emits the following events (via subscribe):
   });
   ```
 
-### onDrawObjectDelete
+### onDrawObjectDelete `[NOT VERIFIED]`
 - **Trigger:** User deletes a drawing
 - **Payload:** { drawingId: string }
 - **Example:**
@@ -913,7 +913,7 @@ The widget emits the following events (via subscribe):
   });
   ```
 
-### onMouseDown
+### onMouseDown `[NOT VERIFIED]`
 - **Trigger:** User mouse down on chart
 - **Payload:** { timeframe: TimeframeOption }
 - **Example:**
@@ -923,7 +923,7 @@ The widget emits the following events (via subscribe):
   });
   ```
 
-### onMouseUp
+### onMouseUp `[NOT VERIFIED]`
 - **Trigger:** User mouse up on chart
 - **Payload:** (varies based on context)
 - **Example:**
@@ -933,7 +933,7 @@ The widget emits the following events (via subscribe):
   });
   ```
 
-### onMouseMove
+### onMouseMove `[NOT VERIFIED]`
 - **Trigger:** User moves mouse on chart
 - **Payload:** { price: number, time: number }
 - **Example:**
@@ -943,7 +943,7 @@ The widget emits the following events (via subscribe):
   });
   ```
 
-### onActiveOrderRequest
+### onActiveOrderRequest `[NOT VERIFIED]`
 - **Trigger:** Trading order placement request
 - **Payload:** { order: Order }
 - **Example:**
@@ -953,7 +953,7 @@ The widget emits the following events (via subscribe):
   });
   ```
 
-### onStudyAdded
+### onStudyAdded `[NOT VERIFIED]`
 - **Trigger:** User or API adds a study
 - **Payload:** { id: string, studyName: string }
 - **Example:**
@@ -963,7 +963,7 @@ The widget emits the following events (via subscribe):
   });
   ```
 
-### onStudyRemoved
+### onStudyRemoved `[NOT VERIFIED]`
 - **Trigger:** User removes a study
 - **Payload:** { id: string }
 - **Example:**
@@ -973,7 +973,7 @@ The widget emits the following events (via subscribe):
   });
   ```
 
-### onContextMenu
+### onContextMenu `[NOT VERIFIED]`
 - **Trigger:** User right-clicks on chart
 - **Payload:** { clientX: number, clientY: number }
 - **Example:**
@@ -983,7 +983,7 @@ The widget emits the following events (via subscribe):
   });
   ```
 
-### onShortcut
+### onShortcut `[NOT VERIFIED]`
 - **Trigger:** User presses keyboard shortcut
 - **Payload:** { key: string, modifier: string }
 - **Example:**
@@ -993,7 +993,7 @@ The widget emits the following events (via subscribe):
   });
   ```
 
-### onGrayedObjectClicked
+### onGrayedObjectClicked `[NOT VERIFIED]`
 - **Trigger:** User clicks on disabled/grayed object
 - **Payload:** (varies)
 - **Example:**

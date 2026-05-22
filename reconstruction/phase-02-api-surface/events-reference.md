@@ -5,12 +5,9 @@
 The TradingView widget emits events that allow you to react to user interactions, data changes, and chart state transitions. Subscribe to events using the `subscribe()` method.
 
 **⚠️ Data Quality Notice:**
-- **Runtime-Verified Events:** The following events have been verified with actual runtime data captured from widget interactions:
-  - `onSymbolChanged` — Real payload from AAPL→MSFT symbol change
-  - `onIntervalChanged` — Real payload from 1D→1H interval change
-  - `onStudyAdded` — Real payload from RSI study addition
-  - See [captured-events.json](captured-events.json) for raw event data
-- **Other Events:** Payload samples shown for other events are based on API documentation and are provided for illustration purposes. Actual payloads may vary based on user actions and chart state.
+- **All events in this document are NOT RUNTIME-VERIFIED.** The automated event capture test (`event-capture-test.html`) was unable to trigger any widget subscription callbacks, despite the widget initializing successfully.
+- See [captured-events.json](captured-events.json) for the full capture attempt log.
+- Payload samples shown below are based on TradingView's API documentation and are provided for illustration purposes. Actual payloads may vary based on user actions and chart state.
 
 ---
 

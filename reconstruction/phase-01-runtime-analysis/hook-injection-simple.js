@@ -177,14 +177,76 @@ window.addEventListener('unhandledrejection', function(event) {
     }));
 });
 
-// === WEBPACK MODULE EXECUTION TRACER (DISABLED - RECURSION ISSUE) ===
-// Module execution tracing via Function.prototype.call causes recursive issues
-// that cannot be solved without access to native binding context.
-// Using sampling and guards are insufficient due to JavaScript's method invocation semantics.
-// 
-// WORKAROUND: Capture module behavior from event payloads and webpack bundle inspection instead.
-// See phase-02-api-surface/captured-events.json for actual runtime behavior data.
-
+// === WEBPACK MODULE TRACER (ARRAY PUSH HOOK) ===
+// Intercepts Array.prototype.push globally and checks if arguments look like
+// webpack chunk registrations. This avoids property accessor issues.
+(function() {
+    'use strict';
+    
+    if (!window._hookLogs) window._hookLogs = {};
+    if (!window._hookLogs.moduleExecutions) window._hookLogs.moduleExecutions = [];
+    
+    const MAX_LOGS = 10000;
+    const _push = Array.prototype.push;
+    const _slice = Array.prototype.slice;
+    
+    // Check if an argument looks like a webpack chunk registration array:
+    // [chunkIds: number[], modules: {[id: string]: Function}]
+    function isWebpackChunk(arg) {
+        if (!Array.isArray(arg) || arg.length < 2) return false;
+        // first element should be array of numbers
+        var ids = arg[0];
+        if (!Array.isArray(ids)) return false;
+        if (ids.length > 0 && typeof ids[0] !== 'number') return false;
+        // second element should be an object (modules dict)
+        if (typeof arg[1] !== 'object' || arg[1] === null) return false;
+        return true;
+    }
+    
+    // Capture module IDs from a webpack chunk
+    function captureChunk(chunk) {
+        var modules = chunk[1];
+        var feature = window._currentFeature || 'initialization';
+        var now = Date.now();
+        var moduleIds = Object.keys(modules);
+        for (var i = 0; i < moduleIds.length; i++) {
+            var id = parseInt(moduleIds[i], 10);
+            if (isNaN(id)) continue;
+            if (window._hookLogs.moduleExecutions.length >= MAX_LOGS) {
+                window._hookLogs.moduleExecutions =
+                    window._hookLogs.moduleExecutions.slice(-MAX_LOGS / 2);
+            }
+            window._hookLogs.moduleExecutions.push({
+                type: 'chunk_module',
+                timestamp: now,
+                moduleId: id,
+                feature: feature,
+                method: 'chunk'
+            });
+        }
+    }
+    
+    // Hook Array.prototype.push
+    var pushCallCount = 0;
+    Array.prototype.push = function() {
+        pushCallCount++;
+        if (pushCallCount <= 5) {
+            var argInfo = arguments.length > 0 ? (Array.isArray(arguments[0]) ? 'array[' + arguments[0].length + ']' : typeof arguments[0]) : 'empty';
+            console.log('[HookDBG] push #' + pushCallCount + ' args=' + arguments.length + ' first=' + argInfo);
+        }
+        if ((pushCallCount % 500) === 0) {
+            console.log('[HookDBG] push count: ' + pushCallCount);
+        }
+        for (var i = 0; i < arguments.length; i++) {
+            if (isWebpackChunk(arguments[i])) {
+                captureChunk(arguments[i]);
+            }
+        }
+        return _push.apply(this, arguments);
+    };
+    
+    console.log('[Hook] Webpack module tracer (array push hook) active');
+})();
 
 // Feature trigger tracking functions
 window.startFeatureTracking = function(featureName) {

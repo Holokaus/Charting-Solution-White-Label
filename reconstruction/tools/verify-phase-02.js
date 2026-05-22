@@ -215,6 +215,60 @@ if (eventsRef) {
 }
 
 // ============================================
+// CHECK 4b: Captured Events
+// ============================================
+console.log('\nChecking: captured-events.json');
+const capturedEvents = requireFile('captured-events.json', 200);
+if (capturedEvents) {
+  try {
+    const ce = JSON.parse(capturedEvents);
+    
+    // Must have metadata
+    if (!ce.metadata) {
+      fail('captured-events.json missing metadata');
+    } else {
+      pass('captured-events.json has metadata');
+    }
+    
+    // Must document capture status honestly
+    if (ce.metadata.status && ce.metadata.status.includes('No runtime-captured')) {
+      pass('captured-events.json honestly reports no runtime capture');
+    } else if (ce.metadata.capture_method) {
+      pass('captured-events.json documents capture method');
+    } else {
+      fail('captured-events.json missing capture method or honest status');
+    }
+    
+    // Must have events or capture_attempts
+    const hasEvents = ce.events && Object.keys(ce.events).length > 0;
+    const hasAttempts = ce.capture_attempts && ce.capture_attempts.length > 0;
+    
+    if (hasEvents || hasAttempts) {
+      pass(`captured-events.json documents ${hasEvents ? Object.keys(ce.events).length + ' events' : ''}${hasEvents && hasAttempts ? ' and ' : ''}${hasAttempts ? ce.capture_attempts.length + ' capture attempts' : ''}`);
+    } else {
+      fail('captured-events.json missing events or capture_attempts data');
+    }
+    
+    // Each event must document whether payload was captured
+    if (ce.events) {
+      let allDocumented = true;
+      for (const [eventName, eventData] of Object.entries(ce.events)) {
+        if (eventData.captured === undefined || eventData.payload === undefined) {
+          allDocumented = false;
+          fail(`Event ${eventName} missing captured/payload fields`);
+        }
+      }
+      if (allDocumented) {
+        pass('All events document capture status and payload');
+      }
+    }
+    
+  } catch (e) {
+    fail(`captured-events.json invalid JSON: ${e.message}`);
+  }
+}
+
+// ============================================
 // CHECK 5: No Module Contamination
 // ============================================
 console.log('\nChecking: Module ID references');

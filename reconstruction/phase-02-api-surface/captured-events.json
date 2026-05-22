@@ -1,27 +1,102 @@
 {
-  "user_action": [
+  "metadata": {
+    "generated": "2026-05-23T12:00:00Z",
+    "capture_method": "Event-capture-test.html with Array.prototype.push hook and widget.subscribe() listeners",
+    "status": "No runtime-captured widget events",
+    "note": "The widget.subscribe() callbacks were never triggered during automated testing. All payloads below are inferred from API documentation, NOT captured at runtime.",
+    "capture_attempts": [
+      "Subscribed to onChartReady - callback never invoked",
+      "Subscribed to onSymbolChanged - callback never invoked",
+      "Subscribed to onIntervalChanged - callback never invoked",
+      "Subscribed to onStudyAdded - callback never invoked",
+      "Subscribed to onStudyRemoved - callback never invoked",
+      "Subscribed to onDrawingToolClick - callback never invoked",
+      "Subscribed to onPineStudyCreated - callback never invoked",
+      "Subscribed to onTradeViewCreated - callback never invoked"
+    ],
+    "blocker": "Widget initialization succeeds (widget object created) but subscribe callbacks are never triggered. Likely because the mock UDF datafeed does not fully initialize the chart engine."
+  },
+  "events": {
+    "onChartReady": {
+      "captured": false,
+      "attempts": 3,
+      "payload": null,
+      "notes": "Callback registered but never called within 30s timeout"
+    },
+    "onSymbolChanged": {
+      "captured": false,
+      "attempts": 2,
+      "payload": null,
+      "notes": "Subscription registered. Symbol changed via chart.setSymbol() but event did not fire"
+    },
+    "onIntervalChanged": {
+      "captured": false,
+      "attempts": 2,
+      "payload": null,
+      "notes": "Subscription registered. Interval changed via chart.setResolution() but event did not fire"
+    },
+    "onStudyAdded": {
+      "captured": false,
+      "attempts": 2,
+      "payload": null,
+      "notes": "Subscription registered. Study created via chart.createStudy() but event did not fire"
+    }
+  },
+  "subscribe_attempts": [
     {
-      "timestamp": "2026-05-19T20:54:27.180Z",
-      "payload": {
-        "action": "changeSymbol",
-        "from": "AAPL",
-        "to": "MSFT"
-      }
+      "timestamp": 100,
+      "event": "onChartReady",
+      "action": "subscribe",
+      "result": "callback registered"
     },
     {
-      "timestamp": "2026-05-19T20:54:41.594Z",
-      "payload": {
-        "action": "changeInterval",
-        "from": "1D",
-        "to": "1H"
-      }
+      "timestamp": 200,
+      "event": "onSymbolChanged",
+      "action": "subscribe",
+      "result": "callback registered"
     },
     {
-      "timestamp": "2026-05-19T20:54:42.212Z",
-      "payload": {
-        "action": "addStudy",
-        "study": "Relative Strength Index"
-      }
+      "timestamp": 300,
+      "event": "onIntervalChanged",
+      "action": "subscribe",
+      "result": "callback registered"
+    },
+    {
+      "timestamp": 400,
+      "event": "onStudyAdded",
+      "action": "subscribe",
+      "result": "callback registered"
+    },
+    {
+      "timestamp": 500,
+      "event": "onChartReady",
+      "action": "trigger_check",
+      "result": "NOT TRIGGERED"
+    },
+    {
+      "timestamp": 15000,
+      "event": "onChartReady",
+      "action": "trigger_check",
+      "result": "NOT TRIGGERED (15s timeout)"
+    }
+  ],
+  "user_actions_triggered": [
+    {
+      "action": "changeSymbol",
+      "from": "AAPL",
+      "to": "MSFT",
+      "subscribe_event_fired": false
+    },
+    {
+      "action": "changeInterval",
+      "from": "1D",
+      "to": "1H",
+      "subscribe_event_fired": false
+    },
+    {
+      "action": "addStudy",
+      "study": "Relative Strength Index",
+      "subscribe_event_fired": false
     }
   ]
 }
