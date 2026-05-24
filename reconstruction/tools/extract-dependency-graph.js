@@ -1,453 +1,227 @@
 const fs = require('fs');
 const path = require('path');
-const { parse } = require('@babel/parser');
+const parser = require('@babel/parser');
+const traverse = require('@babel/traverse').default;
 
-const bundlesDir = path.resolve(__dirname, '../../charting_library/bundles');
+const modulesDir = path.resolve(__dirname, '../phase-00-unbundling/modules');
+const manifestPath = path.resolve(__dirname, '../phase-00-unbundling/manifest.json');
 const phase3Dir = path.resolve(__dirname, '../phase-03-module-map');
 
-// Ensure phase 3 directory exists
 if (!fs.existsSync(phase3Dir)) {
     fs.mkdirSync(phase3Dir, { recursive: true });
 }
 
-// ── Step 1: Extract module dependencies from all chunk files ──
-
-function extractModuleDeps(content, moduleId) {
-    const deps = new Set();
-    // All modules in this bundle use (t,e,i)=> where i is the require function
-    // Require calls look like: i(<moduleId>)
-    // Also check for o(<moduleId>) which is the internal __webpack_require__ name
-    const requireRegex = /(?:[^a-zA-Z_$]|^)([io])\((\d+)\)/g;
-    let m;
-    while ((m = requireRegex.exec(content)) !== null) {
-        const depId = parseInt(m[2], 10);
-        // Only count require calls with valid module IDs (positive integers)
-        if (depId >= 0 && depId <= 999999 && depId !== moduleId) {
-            deps.add(depId);
-        }
-    }
-    return Array.from(deps);
+let manifest;
+try {
+    manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
+} catch (e) {
+    console.error('Could not read manifest.json. Run Phase 0 unbundling first.');
+    process.exit(1);
 }
 
-function extractModuleBlock(content, startIdx) {
-    // Format: moduleId:function(t,e,i){...} or moduleId:(t,e,i)=>{...}
-    let bodyStart = -1;
-    
-    // Check for arrow function: =>{ after startIdx
-    const arrowIdx = content.indexOf('=>', startIdx);
-    if (arrowIdx !== -1 && arrowIdx < startIdx + 80) {
-        bodyStart = content.indexOf('{', arrowIdx);
-    } else {
-        // function keyword
-        const funcIdx = content.indexOf('function', startIdx);
-        if (funcIdx !== -1 && funcIdx < startIdx + 50) {
-            const parenIdx = content.indexOf('(', funcIdx);
-            if (parenIdx !== -1) {
-                // Find the { after the parameter list
-                let depth = 0;
-                for (let j = parenIdx; j < content.length && j < parenIdx + 200; j++) {
-                    if (content[j] === '(') depth++;
-                    else if (content[j] === ')') {
-                        depth--;
-                        if (depth === 0) {
-                            bodyStart = content.indexOf('{', j);
-                            break;
-                        }
+const chunkModules = new Map();
+for (const [cid, chunkInfo] of Object.entries(manifest.chunks || {})) {
+    for (const mid of (chunkInfo.moduleIds || [])) {
+        if (!chunkModules.has(mid)) chunkModules.set(mid, []);
+        chunkModules.get(mid).push(parseInt(cid));
+    }
+}
+
+// ── Extract dependencies from a single module ──
+
+function extractDeps(moduleId, source) {
+    const wrapped = 'var __mod__ = ' + source;
+    let ast;
+    try {
+        ast = parser.parse(wrapped, { sourceType: 'script', errorRecovery: true });
+    } catch (e) {
+        console.warn(`  Parse error for module ${moduleId}: ${e.message.substring(0, 80)}`);
+        return [];
+    }
+
+    let requireParam = null;
+
+    // Identify the require param by convention:
+    // Webpack calls module factories with (module, exports, __webpack_require__).
+    // In (e,t,i), the 3rd param (index 2) is always __webpack_require__.
+    traverse(ast, {
+        FunctionExpression(p) {
+            if (requireParam) return;
+            const params = p.node.params.map(n => n.type === 'Identifier' ? n.name : null).filter(Boolean);
+            if (params.length >= 3) requireParam = params[2];
+        },
+        ArrowFunctionExpression(p) {
+            if (requireParam) return;
+            const params = p.node.params.map(n => n.type === 'Identifier' ? n.name : null).filter(Boolean);
+            if (params.length >= 3) requireParam = params[2];
+        }
+    });
+
+    if (!requireParam) return [];
+
+    // Extract all require calls, skipping nested function scopes
+    // that shadow the requireParam variable name.
+    // The key insight: the immediate containing function of a require call
+    // at the module's top level IS the module factory itself.
+    // If we're inside a nested function (which has a function parent),
+    // AND that nested function has requireParam as a parameter, then
+    // requireParam is shadowed — we must skip.
+    const deps = new Set();
+    traverse(ast, {
+        CallExpression(p) {
+            const callee = p.node.callee;
+            if (callee.type !== 'Identifier' || callee.name !== requireParam) return;
+            if (p.node.arguments.length !== 1 || p.node.arguments[0].type !== 'NumericLiteral') return;
+
+            // Find the immediate enclosing function
+            const container = p.findParent(parent => parent.isFunction());
+            if (container) {
+                // Check if there's an enclosing function above container
+                const grandparent = container.findParent(parent => parent.isFunction());
+                if (grandparent) {
+                    // Container is nested inside another function.
+                    // If container has requireParam as a parameter, it shadows it.
+                    const containerParams = container.node.params
+                        .map(n => n.type === 'Identifier' ? n.name : null)
+                        .filter(Boolean);
+                    if (containerParams.includes(requireParam)) {
+                        return; // Shadowed by nested function parameter
                     }
                 }
             }
-        }
-    }
-    
-    if (bodyStart === -1) return null;
-    
-    // Count braces to find the matching closing brace
-    let depth = 0;
-    let bodyEnd = -1;
-    for (let j = bodyStart; j < content.length; j++) {
-        if (content[j] === '{') depth++;
-        else if (content[j] === '}') {
-            depth--;
-            if (depth === 0) {
-                bodyEnd = j;
-                break;
+
+            const depId = p.node.arguments[0].value;
+            if (depId !== moduleId) {
+                deps.add(depId);
             }
         }
-    }
-    
-    if (bodyEnd === -1) return null;
-    return content.substring(bodyStart, bodyEnd + 1);
+    });
+
+    return Array.from(deps);
 }
 
-function extractModulesFromChunk(filePath) {
-    const content = fs.readFileSync(filePath, 'utf8');
-    const modules = {};
-    
-    // Find the module object: {moduleId:function, ...}
-    const pushIdx = content.indexOf('.push([');
-    if (pushIdx === -1) return modules;
-    
-    const objStart = content.indexOf('{', pushIdx + 6);
-    if (objStart === -1) return modules;
-    
-    // Build module map
-    // Pattern: <number>:(<params>)=> or <number>:function(<params>)
-    const moduleKeyRegex = /(\d+):(?:function|(?:\([^)]*\)\s*=>))/g;
-    moduleKeyRegex.lastIndex = objStart;
-    let mm;
-    while ((mm = moduleKeyRegex.exec(content)) !== null) {
-        const mid = parseInt(mm[1], 10);
-        const body = extractModuleBlock(content, mm.index);
-        if (body) {
-            modules[mid] = body;
-        }
-    }
-    
-    return modules;
-}
+// ── Process all modules ──
 
-function extractModulesFromChunk(filePath) {
-    const content = fs.readFileSync(filePath, 'utf8');
-    const modules = {};
-    
-    // Find the module object: {moduleId:function, ...}
-    const pushIdx = content.indexOf('.push([');
-    if (pushIdx === -1) return modules;
-    
-    const objStart = content.indexOf('{', pushIdx + 6);
-    if (objStart === -1) return modules;
-    
-    // Build module map
-    // Pattern: <number>:function(...) or <number>:(...)=>
-    const moduleKeyRegex = /(\d+):(?:function|\([^)]*\)\s*=>)/g;
-    let mm;
-    while ((mm = moduleKeyRegex.exec(content)) !== null) {
-        if (mm.index < objStart) continue;
-        const mid = parseInt(mm[1], 10);
-        const body = extractModuleBlock(content, mm.index);
-        if (body) {
-            modules[mid] = body;
-        }
-    }
-    
-    return modules;
-}
+console.log('Phase 3: AST-based Dependency Graph Extraction');
+console.log('===============================================\n');
 
-// ── Process all chunk files ──
+const moduleFiles = fs.readdirSync(modulesDir).filter(f => f.endsWith('.js'));
+console.log(`Reading ${moduleFiles.length} module files...`);
 
-console.log('Scanning chunk files for dependency graph...');
-const files = fs.readdirSync(bundlesDir).filter(f => f.endsWith('.js'));
 const dependencyGraph = {};
-let totalModules = 0;
+let totalEdges = 0;
 let modulesWithDeps = 0;
+let parseErrors = 0;
 
-for (const file of files) {
+for (const file of moduleFiles) {
+    const moduleId = parseInt(path.basename(file, '.js'));
+    const filePath = path.join(modulesDir, file);
+
     try {
-        const filePath = path.join(bundlesDir, file);
-        const modules = extractModulesFromChunk(filePath);
-        
-        for (const [mid, body] of Object.entries(modules)) {
-            const deps = extractModuleDeps(body, parseInt(mid));
-            if (!dependencyGraph[mid]) {
-                dependencyGraph[mid] = { dependencies: [], dependentCount: 0 };
-            }
-            // Merge deps
-            for (const d of deps) {
-                if (!dependencyGraph[mid].dependencies.includes(d)) {
-                    dependencyGraph[mid].dependencies.push(d);
-                }
-            }
-            totalModules++;
-            if (deps.length > 0) modulesWithDeps++;
-        }
+        const source = fs.readFileSync(filePath, 'utf8');
+        const deps = extractDeps(moduleId, source);
+
+        const chunkRef = chunkModules.has(moduleId)
+            ? `chunk:${chunkModules.get(moduleId).join(',')}`
+            : 'unknown';
+
+        dependencyGraph[moduleId] = {
+            source: chunkRef,
+            dependencies: deps,
+            dependencyCount: deps.length
+        };
+
+        totalEdges += deps.length;
+        if (deps.length > 0) modulesWithDeps++;
+
     } catch (e) {
-        console.warn(`Error processing ${file}: ${e.message}`);
+        parseErrors++;
+        console.warn(`  Error processing module ${moduleId}: ${e.message.substring(0, 100)}`);
+        dependencyGraph[moduleId] = {
+            source: 'unknown',
+            dependencies: [],
+            dependencyCount: 0
+        };
     }
 }
 
-// Calculate dependent counts (reverse dependencies)
+// ── Statistics ──
+
+const totalModules = Object.keys(dependencyGraph).length;
+const zeroDepModules = Object.values(dependencyGraph).filter(v => v.dependencyCount === 0).length;
+const zeroDepRate = (zeroDepModules / totalModules * 100).toFixed(1);
+
+console.log(`\nResults:`);
+console.log(`  Total modules in graph: ${totalModules}`);
+console.log(`  Total dependency edges: ${totalEdges}`);
+console.log(`  Modules with dependencies: ${modulesWithDeps}`);
+console.log(`  Zero-dependency modules: ${zeroDepModules} (${zeroDepRate}%)`);
+console.log(`  Errors: ${parseErrors}`);
+
+// Validate: all dependency targets exist
+console.log(`\nValidating dependency targets...`);
+let missingTargets = 0;
 for (const [mid, data] of Object.entries(dependencyGraph)) {
     for (const dep of data.dependencies) {
         if (!dependencyGraph[dep]) {
-            dependencyGraph[dep] = { dependencies: [], dependentCount: 0 };
+            missingTargets++;
+            if (missingTargets <= 5) {
+                console.log(`  Missing target: module ${dep} (required by ${mid})`);
+            }
         }
-        dependencyGraph[dep].dependentCount++;
     }
 }
+if (missingTargets === 0) {
+    console.log(`  All dependency targets exist in module manifest ✓`);
+} else {
+    console.log(`  ${missingTargets} dependency targets not in manifest ✗`);
+}
 
-const moduleIds = Object.keys(dependencyGraph).map(Number).sort((a, b) => a - b);
-const uniqueCount = moduleIds.length;
-console.log(`Found ${totalModules} module definitions in ${uniqueCount} unique module IDs`);
-console.log(`${modulesWithDeps} modules have dependencies`);
-console.log(`Module ID range: ${moduleIds[0]} - ${moduleIds[moduleIds.length - 1]}`);
-
-// ── Write static-dependency-graph.json ──
-
-const staticGraph = {
+// Write output
+const outputGraph = {
     metadata: {
-        version: "1.0",
-        phase: "03-module-map",
-        generated: new Date().toISOString(),
-        source: "Static AST analysis of webpack chunk files in charting_library/bundles/",
-        totalModules: Object.keys(dependencyGraph).length,
-        totalDependencyEdges: Object.values(dependencyGraph).reduce((s, v) => s + v.dependencies.length, 0)
+        totalModules: totalModules,
+        totalEdges: totalEdges,
+        zeroDependencyRate: parseFloat(zeroDepRate),
+        extractionMethod: 'ast-based',
+        parserVersion: '@babel/parser',
+        extractionTimestamp: new Date().toISOString()
     },
     modules: {}
 };
 
-for (const [mid, data] of Object.entries(dependencyGraph)) {
-    staticGraph.modules[mid] = {
-        dependencies: data.dependencies,
-        dependents: data.dependentCount,
-        depCount: data.dependencies.length
-    };
+const sortedIds = Object.keys(dependencyGraph).map(Number).sort((a, b) => a - b);
+for (const id of sortedIds) {
+    outputGraph.modules[id] = dependencyGraph[id];
 }
 
-const staticPath = path.join(phase3Dir, 'static-dependency-graph.json');
-fs.writeFileSync(staticPath, JSON.stringify(staticGraph, null, 2));
-console.log(`\nWritten static-dependency-graph.json (${Object.keys(dependencyGraph).length} modules)`);
+const outputPath = path.join(phase3Dir, 'dependency-graph.json');
+fs.writeFileSync(outputPath, JSON.stringify(outputGraph, null, 2));
+console.log(`\nWritten: ${outputPath}`);
 
-// ── Step 2: Build chunk manifest ──
-
-function extractChunkIdFromFile(filePath) {
-    const content = fs.readFileSync(filePath, 'utf8');
-    const match = content.match(/\.push\(\[\[(\d+(?:,\d+)*)\]/);
-    return match ? match[1].split(',').map(Number) : [];
+for (const old of ['verified-dependency-graph.json', 'static-dependency-graph.json']) {
+    const p = path.join(phase3Dir, old);
+    if (fs.existsSync(p)) { fs.unlinkSync(p); console.log(`Deleted: ${p}`); }
 }
 
-console.log('\nBuilding chunk manifest...');
-const chunkManifest = { chunks: {} };
-
-for (const file of files) {
-    try {
-        const filePath = path.join(bundlesDir, file);
-        const chunkIds = extractChunkIdFromFile(filePath);
-        if (chunkIds.length > 0) {
-            const modules = extractModulesFromChunk(filePath);
-            const moduleIds = Object.keys(modules).map(Number).sort((a, b) => a - b);
-            
-            for (const cid of chunkIds) {
-                chunkManifest.chunks[cid] = {
-                    file: file,
-                    moduleIds: moduleIds,
-                    moduleCount: moduleIds.length,
-                    chunkIds: chunkIds
-                };
-            }
-        }
-    } catch (e) {
-        // Skip non-chunk files
+// Spot-check
+console.log(`\nSpot-check (first 10 modules with dependencies):`);
+let checkCount = 0;
+for (const id of sortedIds) {
+    if (checkCount >= 10) break;
+    const data = dependencyGraph[id];
+    if (data.dependencyCount > 0) {
+        console.log(`  Module ${id}: ${data.dependencies.slice(0, 15).join(', ')}${data.dependencies.length > 15 ? '...' : ''} (${data.source})`);
+        checkCount++;
     }
 }
 
-const chunkPath = path.join(phase3Dir, 'chunk-manifest.json');
-fs.writeFileSync(chunkPath, JSON.stringify(chunkManifest, null, 2));
-console.log(`Written chunk-manifest.json (${Object.keys(chunkManifest.chunks).length} chunks)`);
-
-// ── Step 3: Build verified graph (cross-reference with Phase 1 runtime logs) ──
-
-console.log('\nCross-referencing with Phase 1 runtime logs...');
-const behaviorMapPath = path.resolve(__dirname, '../phase-01-runtime-analysis/module-behavior-map.json');
-let runtimeModuleIds = new Set();
-
-try {
-    const behaviorData = JSON.parse(fs.readFileSync(behaviorMapPath, 'utf8'));
-    if (behaviorData.features) {
-        for (const [feature, data] of Object.entries(behaviorData.features)) {
-            if (data.observed_modules && Array.isArray(data.observed_modules)) {
-                for (const mid of data.observed_modules) {
-                    runtimeModuleIds.add(mid);
-                }
-            }
-        }
-    }
-} catch (e) {
-    console.warn('Could not read module-behavior-map.json:', e.message);
+// Also verify module 45 specifically (known to have many deps)
+const m45 = dependencyGraph[45];
+if (m45) {
+    console.log(`\nModule 45 verification:`);
+    console.log(`  Reported deps: ${m45.dependencies.join(', ')}`);
+    console.log(`  Dep count: ${m45.dependencyCount}`);
 }
 
-console.log(`Runtime observed modules: ${runtimeModuleIds.size}`);
-
-// Build verified graph
-const verifiedGraph = {
-    metadata: {
-        version: "1.0",
-        phase: "03-module-map",
-        generated: new Date().toISOString(),
-        staticModules: Object.keys(dependencyGraph).length,
-        runtimeObservedModules: runtimeModuleIds.size,
-        note: "Runtime verification based on Phase 1 static chunk analysis (no live module execution captured)"
-    },
-    modules: {},
-    discrepancies: {
-        staticOnly: [],
-        runtimeOnly: []
-    }
-};
-
-const staticOnly = [];
-const runtimeOnly = [];
-
-for (const mid of Object.keys(dependencyGraph)) {
-    const midNum = parseInt(mid);
-    const data = dependencyGraph[mid];
-    const inRuntime = runtimeModuleIds.has(midNum);
-    
-    verifiedGraph.modules[mid] = {
-        dependencies: data.dependencies,
-        dependents: data.dependentCount,
-        runtime_observed: inRuntime
-    };
-    
-    if (!inRuntime) {
-        staticOnly.push(midNum);
-    }
-}
-
-for (const mid of runtimeModuleIds) {
-    if (!dependencyGraph[mid]) {
-        runtimeOnly.push(mid);
-    }
-}
-
-verifiedGraph.discrepancies.staticOnly = staticOnly.sort((a, b) => a - b);
-verifiedGraph.discrepancies.runtimeOnly = runtimeOnly.sort((a, b) => a - b);
-verifiedGraph.discrepancies.staticOnlyCount = staticOnly.length;
-verifiedGraph.discrepancies.runtimeOnlyCount = runtimeOnly.length;
-
-const verifiedPath = path.join(phase3Dir, 'verified-dependency-graph.json');
-fs.writeFileSync(verifiedPath, JSON.stringify(verifiedGraph, null, 2));
-console.log(`Written verified-dependency-graph.json`);
-console.log(`  Static-only modules: ${staticOnly.length}`);
-console.log(`  Runtime-only modules: ${runtimeOnly.length}`);
-
-// ── Step 4: Entry Points ──
-
-console.log('\nGenerating entry points documentation...');
-const runtimePath = path.join(bundlesDir, 'runtime.1d4ed3742895f7c63ed9.js');
-const runtimeContent = fs.readFileSync(runtimePath, 'utf8');
-
-// Entry points are modules loaded by chunk ID = 0 (the main chunk)
-// Also modules that have 0 dependents (they're not required by any other module)
-const entryCandidates = [];
-for (const [mid, data] of Object.entries(dependencyGraph)) {
-    if (data.dependentCount === 0) {
-        entryCandidates.push(parseInt(mid));
-    }
-}
-
-// Chunks that are loaded on-demand (have chunk name mapping in runtime)
-const chunkNamePattern = /(\d+):"(line-tool-[^"]+|study-[^"]+|[^"]+)"/g;
-const chunkNames = {};
-let cn;
-while ((cn = chunkNamePattern.exec(runtimeContent)) !== null) {
-    chunkNames[parseInt(cn[1])] = cn[2];
-}
-
-console.log(`Entry point candidates (no dependents): ${entryCandidates.length}`);
-console.log(`Named chunks in runtime: ${Object.keys(chunkNames).length}`);
-
-// Map entry points to Phase 2 API features
-const apiFeatureMap = {
-    chart_properties: ['chart', 'save', 'load', 'layout', 'setLayout', 'layoutName', 'setLayoutSizes', 'resetLayoutSizes'],
-    change_symbol: ['setSymbol', 'symbolInterval', 'symbolSync'],
-    change_interval: ['setTimeFrame', 'getIntervals', 'intervalSync'],
-    change_theme: ['changeTheme', 'getTheme'],
-    change_chart_type: [],
-    add_indicator: ['getStudiesList', 'getStudyInputs', 'getStudyStyles'],
-    drawing_tools: ['selectLineTool', 'selectedLineTool', 'hideAllDrawingTools', 'lockAllDrawingTools', 'drawOnAllCharts', 'drawOnAllChartsEnabled'],
-    screenshot: ['takeScreenshot', 'takeClientScreenshot'],
-    undo_redo: ['undo', 'redo', 'clearUndoHistory', 'undoRedoState'],
-    keyboard_shortcuts: [],
-    symbol_search: [],
-    save_load: ['showLoadChartDialog', 'showSaveAsChartDialog', 'getSavedCharts', 'loadChartFromServer', 'saveChartToServer', 'removeChartFromServer'],
-    fullscreen: [],
-    timeframes: [],
-    compare_symbol: [],
-    data_window: []
-};
-
-// Identify initial chunk modules (loaded on page load)
-// The initial chunk is chunk ID that appears in the first push
-const initialChunkModules = new Set();
-for (const [chunkId, chunkInfo] of Object.entries(chunkManifest.chunks)) {
-    // Check if this chunk is mentioned in the initial load of the runtime
-    // Modules loaded during initialization typically appear in chunks like library.*.js
-    if (chunkInfo.file.startsWith('library.') || chunkInfo.file.startsWith('runtime.')) {
-        for (const mid of chunkInfo.moduleIds) {
-            initialChunkModules.add(mid);
-        }
-    }
-}
-
-const entryPointsMd = `# Entry Points
-
-## Overview
-
-Entry points are modules that are loaded immediately when the page loads (as part of the initial bundle or library chunk) versus modules that are loaded on-demand when specific features are triggered.
-
-The charting library uses webpack code-splitting to lazy-load most of its functionality. Only a small core of ~${initialChunkModules.size} modules are loaded immediately; the rest (~${Object.keys(dependencyGraph).length - initialChunkModules.size}) are loaded on-demand via chunk files.
-
-## Initial Load Entry Points
-
-The following modules are part of the initial library chunk and are loaded immediately:
-
-| Module ID | Dependencies | Depended By | On-Demand? |
-|-----------|-------------|-------------|------------|
-${Object.entries(dependencyGraph).slice(0, 30).map(([mid, data]) => {
-    const isInitial = initialChunkModules.has(parseInt(mid));
-    return `| ${mid} | ${data.dependencies.length} | ${data.dependentCount} | ${isInitial ? 'No (initial)' : 'Yes'}`;
-}).join('\n')}
-
-## Entry Point Candidates (No Dependents)
-
-Modules with \`dependentCount === 0\` are potential entry points - they are \`__webpack_require__\`'d directly, not as a dependency of another module:
-
-| Module ID | Dependencies | Likely Feature |
-|-----------|-------------|----------------|
-${entryCandidates.slice(0, 20).map(mid => {
-    const data = dependencyGraph[mid];
-    return `| ${mid} | ${data ? data.dependencies.length : 0} | Initialization / Core |`;
-}).join('\n')}
-
-## Chunk → Feature Mapping
-
-| Chunk File | Chunk ID | Module Count | Feature |
-|-----------|----------|-------------|---------|
-${Object.entries(chunkManifest.chunks).slice(0, 30).map(([cid, info]) => {
-    const name = chunkNames[parseInt(cid)] || 'unknown';
-    return `| ${info.file} | ${cid} | ${info.moduleCount} | ${name}`;
-}).join('\n')}
-
-## Named Chunks from Runtime
-
-The runtime file contains a mapping of module IDs to human-readable chunk names:
-
-| Module ID | Chunk Name |
-|-----------|-----------|
-${Object.entries(chunkNames).slice(0, 40).map(([mid, name]) => `| ${mid} | ${name}`).join('\n')}
-
-## API Feature → Entry Module Mapping
-
-| API Feature | Related Methods | Likely Entry Modules |
-|------------|----------------|---------------------|
-${Object.entries(apiFeatureMap).map(([feature, methods]) => {
-    return `| ${feature} | ${methods.slice(0, 5).join(', ') || '(none identified)'} | See chunk manifest for related chunks |`;
-}).join('\n')}
-
-## Notes
-
-- Entry point identification is approximate. The library uses dynamic code splitting, so most modules are loaded on-demand.
-- The initial chunk (\`library.*.js\`) contains the core framework modules loaded on page load.
-- Named chunks in the runtime provide hints about which features map to which chunks.
-`;
-
-const entryPath = path.join(phase3Dir, 'entry-points.md');
-fs.writeFileSync(entryPath, entryPointsMd);
-console.log(`Written entry-points.md`);
-
-console.log('\n=== Phase 3 Complete ===');
-console.log(`Files generated:`);
-console.log(`  - ${staticPath}`);
-console.log(`  - ${verifiedPath}`);
-console.log(`  - ${chunkPath}`);
-console.log(`  - ${entryPath}`);
+console.log(`\nDone.`);
