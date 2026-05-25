@@ -3,7 +3,7 @@
     "generated": "2026-05-23T12:00:00Z",
     "capture_method": "Event-capture-test.html with Array.prototype.push hook and widget.subscribe() listeners",
     "status": "No runtime-captured widget events",
-    "note": "The widget.subscribe() callbacks were never triggered during automated testing. All payloads below are inferred from API documentation, NOT captured at runtime.",
+    "note": "This file contains TEST HARNESS BUTTON CLICKS, NOT widget.subscribe() payloads. No widget events were successfully captured.",
     "capture_attempts": [
       "Subscribed to onChartReady - callback never invoked",
       "Subscribed to onSymbolChanged - callback never invoked",

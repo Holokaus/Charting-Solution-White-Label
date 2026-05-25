@@ -1,3 +1,10 @@
+---
+⚠️ DATA QUALITY WARNING: This document contains NO INFERRED FROM .d.ts — NOT VERIFIED event payloads.
+The widget.subscribe() callbacks could not be triggered in testing. All payload samples
+are inferred from TradingView TypeScript definitions. Events marked [NOT VERIFIED]
+were never observed firing.
+---
+
 # Widget Events Reference
 
 ## Complete Event System Documentation
@@ -44,7 +51,7 @@ widget.subscribe("onSymbolChanged", (data) => {
 });
 ```
 
-**Payload Sample (runtime-captured):**
+**Payload Sample (INFERRED FROM .d.ts — NOT VERIFIED):**
 ```json
 {
   "action": "changeSymbol",
@@ -70,7 +77,7 @@ widget.subscribe("onIntervalChanged", (data) => {
 });
 ```
 
-**Payload Sample (runtime-captured):**
+**Payload Sample (INFERRED FROM .d.ts — NOT VERIFIED):**
 ```json
 {
   "action": "changeInterval",
@@ -379,7 +386,7 @@ widget.subscribe("onStudyAdded", (data) => {
 });
 ```
 
-**Payload Sample (runtime-captured):**
+**Payload Sample (INFERRED FROM .d.ts — NOT VERIFIED):**
 ```json
 {
   "action": "addStudy",

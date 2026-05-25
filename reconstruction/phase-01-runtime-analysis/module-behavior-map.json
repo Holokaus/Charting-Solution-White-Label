@@ -3,8 +3,8 @@
     "version": "2.0",
     "phase": "01-runtime-analysis",
     "generated": "2026-05-22T21:46:54.871Z",
-    "note": "Module IDs extracted from webpack chunk files in charting_library/bundles/",
-    "source": "Static analysis of chunk files",
+    "note": "Module IDs extracted from webpack chunk files via Array.prototype.push hook. These are chunk-loaded module IDs, NOT necessarily executed module IDs. Feature mapping is approximate based on which chunks loaded during feature triggers.",
+    "source": "Static analysis of chunk files + feature trigger timing",
     "totalExecutionsLogged": 1808,
     "extraction_timestamp": 1779486414836
   },

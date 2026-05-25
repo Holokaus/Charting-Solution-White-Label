@@ -1,4 +1,11 @@
 
+---
+⚠️ DATA QUALITY WARNING: No widget methods were successfully called at runtime.
+The test harness initialized the widget object but chart engine methods threw errors.
+All method signatures are from TypeScript definitions (IChartingLibraryWidget interface).
+Every method in this document is marked [NOT VERIFIED] unless explicitly noted.
+---
+
 # Widget Instance Methods & Events
 
 
@@ -87,7 +94,7 @@ The widget instance implements the `IChartingLibraryWidget` interface with 101+ 
   // Returns: { symbol: "AAPL", interval: "1D" }
 
   // ---
-  // Real event payloads (runtime-captured):
+  // [NOT VERIFIED] Payloads below are inferred from TypeScript definitions, not captured at runtime:
   // Symbol change: { "action": "changeSymbol", "from": "AAPL", "to": "MSFT" }
   // Interval change: { "action": "changeInterval", "from": "1D", "to": "1H" }
   // Study added: { "action": "addStudy", "study": "Relative Strength Index" }
@@ -767,7 +774,7 @@ The widget instance implements the `IChartingLibraryWidget` interface with 101+ 
   widget.setDebugMode(true);
   ```
 
-### onChartReady `[NOT VERIFIED]`(callback) `[NOT VERIFIED]`
+### onChartReady(callback) `[NOT VERIFIED]`
 - **Arguments:** callback: function()
 - **Returns:** undefined
 - **Side effects:** Executes callback when chart initialization is complete
