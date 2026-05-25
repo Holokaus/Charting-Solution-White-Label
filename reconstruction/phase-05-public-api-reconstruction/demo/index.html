@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reconstructed Charting Library Demo</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: #1a1a2e; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+    #tv-chart { margin: 20px auto; width: 960px; height: 580px; background: #131722; border: 1px solid #2a2a3e; border-radius: 4px; overflow: hidden; }
+    #status { text-align: center; padding: 12px; color: #d1d4dc; font-size: 13px; }
+    #status .ok { color: #4caf50; }
+    #status .err { color: #f44336; }
+    .controls { text-align: center; margin: 10px auto; }
+    .controls button { margin: 4px; padding: 6px 14px; background: #2a2a3e; color: #d1d4dc; border: 1px solid #3a3a5e; border-radius: 4px; cursor: pointer; font-size: 12px; }
+    .controls button:hover { background: #3a3a5e; }
+    pre { margin: 20px auto; width: 960px; padding: 16px; background: #0a0a1e; color: #a0a0c0; border-radius: 4px; font-size: 12px; overflow: auto; max-height: 300px; border: 1px solid #2a2a3e; }
+  </style>
+</head>
+<body>
+  <div id="tv-chart"></div>
+  <div id="status">Initializing...</div>
+  <div class="controls">
+    <button onclick="testMethods()">Test API Methods</button>
+    <button onclick="getStatus()">Get Status</button>
+    <button onclick="changeTheme()">Toggle Theme</button>
+    <button onclick="removeWidget()">Remove Widget</button>
+  </div>
+  <pre id="log">// Log output will appear here</pre>
+
+  <script type="module">
+    import TradingView from '../src/api/TradingView.js';
+    import { MockDatafeed } from '../src/datafeed/MockDatafeed.js';
+    import { WidgetOptionsValidator } from '../src/utils/Validator.js';
+
+    const log = document.getElementById('log');
+    const status = document.getElementById('status');
+
+    function appendLog(msg) {
+      const text = log.textContent;
+      log.textContent = text + '\n' + msg;
+      log.scrollTop = log.scrollHeight;
+    }
+
+    // Test validation
+    appendLog('// Testing WidgetOptionsValidator...');
+    const validator = new WidgetOptionsValidator();
+    const badResult = validator.validate({});
+    appendLog(`// Missing all required: ${JSON.stringify(badResult)}`);
+
+    // Create widget
+    appendLog('// Creating TradingView.widget...');
+    window.widget = new TradingView.widget({
+      container: '#tv-chart',
+      symbol: 'AAPL',
+      interval: '1D',
+      datafeed: new MockDatafeed(),
+      library_path: '/charting_library/',
+      width: 960,
+      height: 580,
+      theme: 'dark',
+      autosize: false,
+    });
+
+    window.TradingViewObj = TradingView;
+
+    window.widget.onChartReady(() => {
+      status.innerHTML = 'Widget: <span class="ok">READY</span> | Symbol: AAPL | Interval: 1D';
+      appendLog('// Widget ready!');
+      appendLog(`// version: ${TradingView.version()}`);
+      appendLog(`// ChartStyle.CANDLES: ${TradingView.ChartStyle.CANDLES}`);
+      appendLog(`// symbolInterval: ${JSON.stringify(window.widget.symbolInterval())}`);
+      appendLog(`// getIntervals: ${window.widget.getIntervals().join(', ')}`);
+      appendLog(`// getTheme: ${window.widget.getTheme()}`);
+      appendLog(`// chartsCount: ${window.widget.chartsCount()}`);
+      appendLog('// Widget initialized without errors');
+    });
+
+    setTimeout(() => {
+      if (!window.widget._ready) {
+        status.innerHTML = 'Widget: <span class="err">TIMEOUT</span>';
+        appendLog('// ERROR: Widget did not become ready');
+      }
+    }, 3000);
+
+    // Expose for console
+    window.testMethods = function() {
+      appendLog('// Testing API methods...');
+      const state = window.widget.save();
+      appendLog(`// save(): ${JSON.stringify(state).slice(0, 200)}`);
+      
+      const si = window.widget.symbolInterval();
+      appendLog(`// symbolInterval(): ${JSON.stringify(si)}`);
+      
+      const studies = window.widget.getStudiesList();
+      appendLog(`// getStudiesList(): ${studies.length} studies`);
+      
+      const chartApi = window.widget.chart();
+      appendLog(`// chart(): ${typeof chartApi}`);
+      
+      const theme = window.widget.getTheme();
+      appendLog(`// getTheme(): ${theme}`);
+      
+      const undoRedo = window.widget.undoRedoState();
+      appendLog(`// undoRedoState(): ${JSON.stringify(undoRedo)}`);
+      
+      appendLog('// All method calls completed');
+    };
+
+    window.getStatus = function() {
+      const s = window.widget.symbolInterval();
+      status.innerHTML = `Symbol: ${s.symbol} | Interval: ${s.interval} | Ready: ${window.widget._ready}`;
+    };
+
+    window.changeTheme = function() {
+      const current = window.widget.getTheme();
+      const next = current === 'dark' ? 'light' : 'dark';
+      window.widget.changeTheme(next);
+      appendLog(`// Theme changed to: ${next}`);
+      status.innerHTML = `Theme: ${next}`;
+    };
+
+    window.removeWidget = function() {
+      window.widget.remove();
+      appendLog('// Widget removed');
+      status.innerHTML = 'Widget: <span class="err">DESTROYED</span>';
+    };
+
+    appendLog('// Demo initialized');
+  </script>
+</body>
+</html>

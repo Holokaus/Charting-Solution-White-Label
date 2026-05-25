@@ -1,0 +1,12 @@
+{
+  "name": "tradingview-charting-reconstruction",
+  "version": "30.0.0-reconstructed",
+  "type": "module",
+  "description": "Clean-room reconstruction of TradingView Charting Library public API skeleton",
+  "main": "src/api/TradingView.js",
+  "scripts": {
+    "test": "node tests/api-signature-tests/run.js"
+  },
+  "license": "UNLICENSED",
+  "private": true
+}
