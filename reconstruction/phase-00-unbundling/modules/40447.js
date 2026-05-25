@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Chart style Step line"],ar:["الخط المتدرج لنمط الرسم البياني"]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Data error"],ar:["مشكلة في البيانات"]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Temporary glitch"],ar:["خلل مؤقت"]}}

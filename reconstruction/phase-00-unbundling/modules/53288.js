@@ -1,0 +1,1 @@
+e=>{e.exports={en:["animals & nature"],ar:["الحيوانات والطبيعة"]}}

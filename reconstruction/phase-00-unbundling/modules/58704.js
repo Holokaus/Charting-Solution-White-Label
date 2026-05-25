@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change {toolName} text border visibility"],ar:["تغيير وضوح حدود النص {toolName}"]}}

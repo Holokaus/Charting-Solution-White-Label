@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change {title} text alignment"],ar:["تغيير محاذاة نص {title}"]}}

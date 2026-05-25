@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Open Object Tree"],ar:["افتح شجرة الكائن"]}}

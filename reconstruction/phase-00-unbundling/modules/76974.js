@@ -1,0 +1,1 @@
+(e,t,n)=>{"use strict";n.d(t,{useIsMounted:()=>r});var o=n(50959);const r=()=>{const e=(0,o.useRef)(!1);return(0,o.useEffect)((()=>(e.current=!0,()=>{e.current=!1})),[]),e}}

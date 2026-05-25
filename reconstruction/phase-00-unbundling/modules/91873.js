@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change legend background transparency"],ar:["تغيير شفافية خلفية المفتاح التوضيحي"]}}

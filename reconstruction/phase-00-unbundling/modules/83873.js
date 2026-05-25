@@ -1,0 +1,1 @@
+(t,e,n)=>{"use strict";n.d(e,{default:()=>u});var r=n(89572),i=n(56052),o=n(13795);const u=function(t){return"string"==typeof t||!(0,i.default)(t)&&(0,o.default)(t)&&"[object String]"==(0,r.default)(t)}}

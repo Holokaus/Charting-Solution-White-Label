@@ -1,0 +1,2 @@
+(t,e,n)=>{"use strict";n.d(e,{default:()=>c});var r=n(61572),i=n(31434),o=n(99313),u=n(82433),a=n(13383);const s=function(t,e,n,s){if(!(0,u.default)(t))return t;for(var c=-1,f=(e=(0,i.default)(e,t)).length,l=f-1,d=t;null!=d&&++c<f;){var h=(0,a.default)(e[c]),v=n;if("__proto__"===h||"constructor"===h||"prototype"===h)return t;if(c!=l){var p=d[h];void 0===(v=s?s(p,h,d):void 0)&&(v=(0,
+u.default)(p)?p:(0,o.default)(e[c+1])?[]:{})}(0,r.default)(d,h,v),d=d[h]}return t};const c=function(t,e,n){return null==t?t:s(t,e,n)}}

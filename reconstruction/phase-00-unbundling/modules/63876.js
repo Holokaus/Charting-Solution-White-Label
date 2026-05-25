@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Heikin Ashi"],ar:["هايكين آشي"]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change study overlay min tick"],ar:["تغيير تراكب أدنى تيك في الدراسة"]}}

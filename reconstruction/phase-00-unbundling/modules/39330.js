@@ -1,0 +1,1 @@
+(e,t,r)=>{"use strict";r.d(t,{getBlockStyleClasses:()=>i,getLogoStyleClasses:()=>c});var n=r(97754),o=r.n(n),a=r(52292),l=r(37643),s=r.n(l);function i(e,t){return o()(s().pair,s()[e],t)}function c(e,t=2,r=!0){return o()(s().logo,s()[e],s().skeleton,a.skeletonTheme.wrapper,!r&&s().empty,1===t&&o()(a.skeletonTheme.animated))}}

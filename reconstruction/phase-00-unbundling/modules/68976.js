@@ -1,0 +1,1 @@
+(e,t,n)=>{"use strict";n.d(t,{RegistryProvider:()=>l,registryContextType:()=>c,validateRegistry:()=>r});var s=n(50959),i=n(19036),a=n.n(i);const o=s.createContext({});function r(e,t){a().checkPropTypes(t,e,"context","RegistryContext")}function l(e){const{validation:t,value:n}=e;return r(n,t),s.createElement(o.Provider,{value:n},e.children)}function c(){return o}}

@@ -1,0 +1,1 @@
+(e,t,i)=>{var r;i.d(t,{RiskDisplayMode:()=>r}),function(e){e.Percentage="percents",e.Money="money"}(r||(r={}))}

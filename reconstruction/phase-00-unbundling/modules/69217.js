@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Step line"],ar:["خط متدرج"]}}

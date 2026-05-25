@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Previous day close"],ar:["إغلاق اليوم السابق"]}}

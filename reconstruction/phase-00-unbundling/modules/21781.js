@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change {toolName} text font size"],ar:["تغيير حجم خط نص {toolName}"]}}

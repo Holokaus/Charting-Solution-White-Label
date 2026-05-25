@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Show ideas of followed users"],ar:["عرض جميع الأفكار للمستخدمين الذين يتم متابعتهم"]}}

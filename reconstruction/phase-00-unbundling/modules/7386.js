@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Open chart layout"],ar:["افتح تنسيق الرسم"]}}

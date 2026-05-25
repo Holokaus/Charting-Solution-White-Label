@@ -1,0 +1,1 @@
+e=>{e.exports={wrap:"wrap-GPY6iGF_",title:"title-GPY6iGF_",content:"content-GPY6iGF_",mob:"mob-GPY6iGF_",subtitle:"subtitle-GPY6iGF_",group:"group-GPY6iGF_",text:"text-GPY6iGF_",mini:"mini-GPY6iGF_",anchor:"anchor-GPY6iGF_"}}

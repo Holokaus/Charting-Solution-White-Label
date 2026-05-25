@@ -1,0 +1,1 @@
+e=>{e.exports={optionalTwoColors:"optionalTwoColors-LDRcAXEV",colorPicker:"colorPicker-LDRcAXEV",dropdown:"dropdown-LDRcAXEV",dropdownMenu:"dropdownMenu-LDRcAXEV"}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Opened in detached editor"],ar:["تم فتحه في محرر منفصل"]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change currency label visibility"],ar:["تغيير وضوح ملصقات العملة"]}}

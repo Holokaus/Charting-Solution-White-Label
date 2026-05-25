@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Chart style Baseline"],ar:["الخط الأساسي لنمط الرسم البياني"]}}

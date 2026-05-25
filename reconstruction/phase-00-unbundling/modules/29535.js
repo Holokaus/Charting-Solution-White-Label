@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Vertical Line"],ar:["خط رأسي"]}}

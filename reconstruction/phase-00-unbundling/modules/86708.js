@@ -1,0 +1,1 @@
+e=>{e.exports={en:["apply toolbars theme"],ar:["تطبيق مظهر أشرطة الأدوات"]}}

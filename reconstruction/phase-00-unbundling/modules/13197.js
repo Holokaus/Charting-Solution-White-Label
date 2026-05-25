@@ -1,0 +1,1 @@
+e=>{e.exports={en:["1/{minmove2} of 1/{pricescale}"],ar:["1/{minmove2} من 1/{pricescale}"]}}

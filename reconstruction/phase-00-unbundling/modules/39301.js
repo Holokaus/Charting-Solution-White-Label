@@ -1,0 +1,1 @@
+e=>{e.exports={en:["All good things must come to an end - this contract has reached expiry!"],ar:["كما كل الأشياء الجيدة — لقد انتهت صلاحية هذا العقد!"]}}

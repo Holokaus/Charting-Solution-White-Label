@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Next month"],ar:["الشهر القادم"]}}

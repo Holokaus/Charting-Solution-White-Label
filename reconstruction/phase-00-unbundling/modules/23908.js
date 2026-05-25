@@ -1,0 +1,1 @@
+(e,t,n)=>{"use strict";n.d(t,{INTERVALS:()=>l});var o=n(11542);const l=[{name:"",label:o.t(null,{context:"interval"},n(79930))},{name:"H",label:o.t(null,{context:"interval"},n(35157))},{name:"D",label:o.t(null,{context:"interval"},n(23970))},{name:"W",label:o.t(null,{context:"interval"},n(7938))},{name:"M",label:o.t(null,{context:"interval"},n(18193))}]}

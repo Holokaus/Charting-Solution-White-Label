@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Style"],ar:["نمط"]}}

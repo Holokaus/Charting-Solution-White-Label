@@ -1,0 +1,1 @@
+(e,t,i)=>{"use strict";i.d(t,{axisLabelBackgroundColor:()=>o});var s=i(58978);const o={common:s.colorsPalette["color-tv-blue-500"],active:s.colorsPalette["color-tv-blue-800"]};var n;!function(e){e.BorderColor="#2E84A6"}(n||(n={}))}

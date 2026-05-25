@@ -1,0 +1,1 @@
+e=>{e.exports={en:["It seems there's an error in this script. Try reaching out to the script's author for help."],ar:["يبدو أن هناك خطأ في هذا البرنامج النصي. حاول الوصول إلى مؤلف البرنامج النصي للحصول على المساعدة."]}}

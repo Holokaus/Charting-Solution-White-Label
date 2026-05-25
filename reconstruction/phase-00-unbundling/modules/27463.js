@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Type to search for drawings, functions and settings"],ar:["اكتب للبحث عن الرسومات والوظائف والإعدادات"]}}

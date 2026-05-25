@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change {inputName} property"],ar:["تغيير خاصية {inputName}"]}}

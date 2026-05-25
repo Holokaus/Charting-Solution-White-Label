@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Gann Square Fixed"],ar:["مربع جان ثابت"]}}

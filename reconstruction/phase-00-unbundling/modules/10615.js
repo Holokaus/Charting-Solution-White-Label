@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Couldn't cut"],ar:["تعذر القطع"]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["toggle lock scale"],ar:["تبديل قفل المقياس"]}}

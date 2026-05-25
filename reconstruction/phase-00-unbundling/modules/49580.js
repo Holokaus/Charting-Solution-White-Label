@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Image is required"],ar:["الصورة مطلوبة"]}}

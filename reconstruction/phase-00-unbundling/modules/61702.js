@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Add row below"],ar:["أضف صفًا أدناه"]}}

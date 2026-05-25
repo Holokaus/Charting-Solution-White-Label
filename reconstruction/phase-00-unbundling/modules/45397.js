@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change extended hours color"],ar:["تغيير لون الساعات الممددة"]}}

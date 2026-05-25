@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Fundamental studies are no longer available on charts"],ar:["لم تعد الدراسات الأساسية متوفرة على الرسوم البيانية"]}}

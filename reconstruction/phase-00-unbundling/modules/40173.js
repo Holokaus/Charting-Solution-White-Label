@@ -1,0 +1,1 @@
+(d,e,u)=>{"use strict";function t(d,e,u={}){return Object.assign({},d,function(d,e,u={}){const t=Object.assign({},e);for(const n of Object.keys(e)){const c=u[n]||n;c in d&&(t[n]=[d[c],e[n]].join(" "))}return t}(d,e,u))}u.d(e,{mergeThemes:()=>t})}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change {title} failure background color"],ar:["تغيير لون خلفية عدم نجاح {title}"]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Show all ideas"],ar:["عرض جميع الأفكار"]}}

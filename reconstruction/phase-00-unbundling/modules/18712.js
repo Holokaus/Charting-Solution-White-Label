@@ -1,0 +1,1 @@
+(e,t,i)=>{"use strict";i.d(t,{convertPropertyToWatchedValue:()=>o});var s=i(22613);function o(e){const t=new s.WatchedValue(e.value());let i=!1;e.subscribe(t,(()=>{i||(i=!0,t.setValue(e.value()),i=!1)}));const o=()=>{i||(i=!0,e.setValue(t.value()),i=!1)};return t.subscribe(o),t.spawn((()=>{e.unsubscribeAll(t),t.unsubscribe(o)}))}}

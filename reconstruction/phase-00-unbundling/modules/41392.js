@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Market is currently on holiday. Lucky them."],ar:["السوق في عطلة حالياً. من حسن حظهم!"]}}

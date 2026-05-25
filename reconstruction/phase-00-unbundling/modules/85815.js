@@ -1,0 +1,1 @@
+e=>{e.exports={en:["restore defaults"],ar:["استعادة الإعدادات الافتراضية"]}}

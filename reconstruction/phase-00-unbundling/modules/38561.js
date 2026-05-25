@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Kuala Lumpur"],ar:["كوالا لمبور"]}}

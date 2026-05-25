@@ -1,0 +1,1 @@
+(t,e,n)=>{"use strict";n.d(e,{default:()=>a});var r=n(56052),i=n(98111),o=/\.|\[(?:[^[\]]*|(["'])(?:(?!\1)[^\\]|\\.)*?\1)\]/,u=/^\w*$/;const a=function(t,e){if((0,r.default)(t))return!1;var n=typeof t;return!("number"!=n&&"symbol"!=n&&"boolean"!=n&&null!=t&&!(0,i.default)(t))||(u.test(t)||!o.test(t)||null!=e&&t in Object(e))}}

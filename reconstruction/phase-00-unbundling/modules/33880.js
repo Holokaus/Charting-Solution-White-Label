@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Fib Speed Resistance Arcs"],ar:["أقواس فيبوناتشي المقاومة للسرعة"]}}

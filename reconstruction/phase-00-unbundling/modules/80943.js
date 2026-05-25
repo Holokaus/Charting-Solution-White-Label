@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Elliott Correction Wave (ABC)"],ar:["موجة إليوت التصحيحية (ABC)"]}}

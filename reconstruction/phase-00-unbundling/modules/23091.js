@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Up color"],ar:["لون الإرتفاع"]}}

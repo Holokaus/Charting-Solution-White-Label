@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change high-low labels color"],ar:["تغيير لون ملصقات أعلى-أدنى"]}}

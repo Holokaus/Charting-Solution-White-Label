@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Account size"],ar:["حجم الحساب"]}}

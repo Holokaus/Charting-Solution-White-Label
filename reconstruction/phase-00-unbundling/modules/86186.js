@@ -1,0 +1,1 @@
+e=>{e.exports={icon:"icon-WB2y0EnP",dropped:"dropped-WB2y0EnP"}}

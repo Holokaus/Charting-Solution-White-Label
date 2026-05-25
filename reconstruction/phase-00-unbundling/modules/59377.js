@@ -1,0 +1,2 @@
+e=>{e.exports={
+en:["New drawings are replicated to all charts in the layout and shown when the same ticker is selected"],ar:["يتم تطبيق ونسخ ما قمت به من رسومات جديدة إلى جميع الرسوم البيانية في التنسيق المختار وتظهر عند اختيار نفس الرمز أو الأداة المالية"]}}

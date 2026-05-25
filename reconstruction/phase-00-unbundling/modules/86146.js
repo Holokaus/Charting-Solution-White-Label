@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Studies limit exceeded: {number} studies per layout.\nPlease, remove some studies."],ar:["تم تجاوز الحد الأقصى للدراسات : ‎{number}‎ دراسة لكل نسق\nبرجاء حذب البعض"]}}

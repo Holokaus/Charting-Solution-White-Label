@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Price Range"],ar:["المدى السعري"]}}

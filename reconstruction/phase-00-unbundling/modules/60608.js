@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change {candleType} body visibility"],ar:["تغيير وضوح الجسم {candleType}"]}}

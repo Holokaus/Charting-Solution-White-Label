@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change renko wick up color"],ar:["تغيير لون ذيل الرينكو الصاعد"]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["{amount} indicator","{amount} indicators"],ar:["{amount} من المؤشرات","{amount} من المؤشرات","{amount} من المؤشرات","{amount} من المؤشرات","{amount} من المؤشرات","{amount} من المؤشرات"]}}

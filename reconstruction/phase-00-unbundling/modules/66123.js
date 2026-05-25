@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Price format is invalid."],ar:["صيغة السعر غير صحيحة"]}}

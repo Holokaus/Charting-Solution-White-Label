@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change series style"],ar:["تغيير نمط السلسلة"]}}

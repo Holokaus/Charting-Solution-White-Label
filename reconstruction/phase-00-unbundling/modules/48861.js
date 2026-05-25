@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Hong Kong"],ar:["هونج كونج"]}}

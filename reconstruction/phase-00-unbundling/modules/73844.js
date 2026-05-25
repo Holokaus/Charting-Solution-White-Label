@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change grid lines visibility"],ar:["تغيير وضوح خطوط الشبكة"]}}

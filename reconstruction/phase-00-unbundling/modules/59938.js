@@ -1,0 +1,1 @@
+e=>{e.exports={en:["less than 1 minute"],ar:["أقل من دقيقة واحدة"]}}

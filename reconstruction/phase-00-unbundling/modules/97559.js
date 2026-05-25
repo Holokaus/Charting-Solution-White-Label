@@ -1,0 +1,1 @@
+e=>{e.exports={en:["{title} copy"],ar:["نسخة ‎{title}‎"]}}

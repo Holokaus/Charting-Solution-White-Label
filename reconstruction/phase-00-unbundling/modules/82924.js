@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change study overlay style"],ar:["تغيير نمط تراكب الدراسة"]}}

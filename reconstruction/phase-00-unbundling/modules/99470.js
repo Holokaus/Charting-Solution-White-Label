@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Calendar is currently on {month}"],ar:["الأجندة حاليًا في شهر {month}"]}}

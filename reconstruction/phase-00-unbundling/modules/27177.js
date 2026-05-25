@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Ranges and ratio"],ar:["نطاقات ونِسب"]}}

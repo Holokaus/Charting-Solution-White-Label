@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change earnings visibility"],ar:["تغيير وضوح الأرباح"]}}

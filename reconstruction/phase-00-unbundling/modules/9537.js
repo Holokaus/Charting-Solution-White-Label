@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Chart style Area"],ar:["منطقة نمط الرسم البياني"]}}

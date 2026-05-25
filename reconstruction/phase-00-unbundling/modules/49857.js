@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Label Up"],ar:["إشارة لأعلى"]}}

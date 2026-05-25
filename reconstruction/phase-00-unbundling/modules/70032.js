@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Buy real-time data"],ar:["شراء البيانات اللحظية"]}}

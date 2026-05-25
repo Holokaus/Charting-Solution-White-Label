@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Parallel Channel"],ar:["قناة متوازية"]}}

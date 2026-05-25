@@ -1,0 +1,1 @@
+(e,t,o)=>{"use strict";o.d(t,{Measure:()=>a});var n=o(67842);function a(e){const{children:t,onResize:o}=e;return t((0,n.useResizeObserver)(o||(()=>{}),[null===o]))}}

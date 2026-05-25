@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Load Chart Layout"],ar:["تحميل تصميم رسم بياني"]}}

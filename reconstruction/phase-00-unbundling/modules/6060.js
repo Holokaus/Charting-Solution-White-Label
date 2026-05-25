@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Add text"],ar:["إضافة نص"]}}

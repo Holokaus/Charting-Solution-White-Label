@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Open market status"],ar:["حالة الأسواق المفتوحة"]}}

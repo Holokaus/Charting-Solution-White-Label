@@ -1,0 +1,1 @@
+e=>{e.exports={en:['Set the price for "{studyShortDescription}"'],ar:['تعيين سعر "{studyShortDescription}"']}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Inputs in status line"],ar:["المدخلات في سطر الحالة"]}}

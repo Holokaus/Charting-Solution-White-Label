@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Center"],ar:["مركز"]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Sort by layout name, date changed"],ar:["تصنيف حسب اسم التنسيق، وتاريخ التعديل"]}}

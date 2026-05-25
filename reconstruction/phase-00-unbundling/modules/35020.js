@@ -1,0 +1,1 @@
+(e,t,n)=>{"use strict";n.d(t,{useMobileTouchState:()=>i});var o=n(50959),r=n(75774);function i(){const[e,t]=(0,o.useState)(!1);return(0,o.useEffect)((()=>{t(r.mobiletouch)}),[]),e}}

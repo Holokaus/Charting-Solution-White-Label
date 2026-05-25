@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Symbol name label"],ar:["ملصق اسم الرمز"]}}

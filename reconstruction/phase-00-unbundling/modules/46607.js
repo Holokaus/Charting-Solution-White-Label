@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Sync in layout"],ar:["مزامنة مع كل الرسوم البيانية"]}}

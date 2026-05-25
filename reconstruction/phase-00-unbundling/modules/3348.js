@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Supermillennium"],ar:["موجة الألفية العظمى"]}}

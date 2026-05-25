@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Target: {profitChange} ({profitChangePercent}) {profitChangePip}, Amount: {amount}"],ar:["هدف:{profitChange} ({profitChangePercent}) {profitChangePip}، الكمية:‎{amount}‎"]}}

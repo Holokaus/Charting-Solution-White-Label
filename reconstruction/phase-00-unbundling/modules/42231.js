@@ -1,0 +1,1 @@
+e=>{e.exports={en:["XABCD Pattern"],ar:["XABCD نموذج"]}}

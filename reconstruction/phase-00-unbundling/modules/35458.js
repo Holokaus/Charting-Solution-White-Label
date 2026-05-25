@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Chart style Line with markers"],ar:["خط نمط الرسم البياني مع علامات"]}}

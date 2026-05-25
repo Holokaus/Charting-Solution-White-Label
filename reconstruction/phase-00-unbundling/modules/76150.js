@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Pin to scale (now {label})"],ar:["ثبت على مقياس (‎{label}‎ جديد)"]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Can't apply this indicator"],ar:["لا يمكن تطبيق هذا المؤشر"]}}

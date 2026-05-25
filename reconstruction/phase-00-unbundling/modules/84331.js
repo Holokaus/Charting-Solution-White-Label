@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change visibility at current interval"],ar:["تغيير وضوح الفاصل الزمني الحالي"]}}

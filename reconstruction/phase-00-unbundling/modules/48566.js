@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Change scale currency"],ar:["تغيير عملة المقياس"]}}

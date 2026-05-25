@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Show all positions & orders"],ar:["إظهار المراكز والأوامر"]}}

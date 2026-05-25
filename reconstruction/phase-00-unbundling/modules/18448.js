@@ -1,0 +1,1 @@
+e=>{e.exports={en:["You have no Favorites Indicators yet"],ar:["ليس لديك أية مؤشرات مفضلة بعد"]}}

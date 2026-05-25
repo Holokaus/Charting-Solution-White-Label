@@ -1,0 +1,1 @@
+e=>{e.exports={en:["stop syncing line tool(s)"],ar:["وقف أداة (أدوات) مزامنة الخط"]}}

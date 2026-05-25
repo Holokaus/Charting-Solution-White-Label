@@ -1,0 +1,1 @@
+e=>{e.exports={en:["This file is too big. Max size is {value}."],ar:["هذا الملف كبير جدًا. الحد الأقصى للحجم هو {value}."]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["The request took too long to process. Ensure you have a stable internet connection. If the issue persists, try decreasing the length of the requested time interval."],ar:["استغرقت معالجة الطلب وقتًا طويلاً. تأكد من أن لديك اتصال إنترنت مستقر. إذا استمرت المشكلة، حاول تقليل طول الفاصل الزمني المطلوب."]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Short Position"],ar:["صفقة بيع على المكشوف"]}}

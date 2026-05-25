@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Switch to years"],ar:["التحول إلى السنوات"]}}

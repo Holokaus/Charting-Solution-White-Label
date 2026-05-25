@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Hide marks on bars"],ar:["إخفاء العلامات على الأعمدة"]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change baseline top line style"],ar:["تغيير نمط الخط العلوي الأساسي"]}}

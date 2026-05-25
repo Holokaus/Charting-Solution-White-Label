@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change save chart left edge position when changing interval"],ar:["تغيير موضع الحافة اليسرى لمخطط الحفظ عند تغيير الفاصل الزمني"]}}

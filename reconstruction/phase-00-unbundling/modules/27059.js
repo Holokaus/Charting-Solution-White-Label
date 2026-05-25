@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change area line visibility"],ar:["تغيير رؤية خط المنطقة"]}}

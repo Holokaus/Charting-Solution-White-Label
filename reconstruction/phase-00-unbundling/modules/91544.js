@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Disjoint Channel"],ar:["قناة منفصلة"]}}

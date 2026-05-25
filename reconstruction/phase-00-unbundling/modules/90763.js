@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Hide all drawings and indicators"],ar:["إخفاء كل الرسومات والمؤشرات"]}}

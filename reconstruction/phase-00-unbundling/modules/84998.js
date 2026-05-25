@@ -1,0 +1,1 @@
+(e,i,r)=>{r.d(i,{LineToolVertLineTimeAxisView:()=>s});var t=r(79740);class s extends t.LineDataSourceTimeAxisView{constructor(e){super(e,0)}_getBgColor(){return this._source.properties().linecolor.value()}_getAlwaysInViewPort(){return!1}_getIndex(){const e=this._source.points();return 0===e.length?null:e[0].index}}}

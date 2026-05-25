@@ -1,0 +1,1 @@
+e=>{e.exports={en:["{hotKey_0} — drawing a straight line at angles of 45"],ar:["{hotKey_0} - رسم خط مستقيم بزوايا 45 درجة"]}}

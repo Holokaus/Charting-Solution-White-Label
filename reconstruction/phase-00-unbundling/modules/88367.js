@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Projection down bars"],ar:["إسقاط الأعمدة الهابطة"]}}

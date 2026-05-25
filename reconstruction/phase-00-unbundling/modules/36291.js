@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Unfavorite all"],ar:["الكل غير المفضل"]}}

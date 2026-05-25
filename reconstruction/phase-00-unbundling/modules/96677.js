@@ -1,0 +1,1 @@
+e=>{e.exports={en:["add this indicator to entire layout"],ar:["أضف هذا المؤشر إلى التنسيق بالكامل"]}}

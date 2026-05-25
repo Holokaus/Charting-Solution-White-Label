@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change {title} compact stats mode"],ar:["تغيير الوضع المدمج لإحصائيات {title}"]}}

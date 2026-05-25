@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Remove selected emoji"],ar:["إزالة الرموز التعبيرية المحددة"]}}

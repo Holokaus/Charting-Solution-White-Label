@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Metric error"],ar:["خطأ في المقياس"]}}

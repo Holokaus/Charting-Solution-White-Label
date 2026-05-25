@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Lock price to bar ratio"],ar:["قفل نسبة السعر للعمود البياني"]}}

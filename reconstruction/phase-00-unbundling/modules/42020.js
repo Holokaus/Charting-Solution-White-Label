@@ -1,0 +1,1 @@
+e=>{e.exports={button:"button-b3Cgff6l",group:"group-b3Cgff6l",menu:"menu-b3Cgff6l",betaBadge:"betaBadge-b3Cgff6l",newBadge:"newBadge-b3Cgff6l",label:"label-b3Cgff6l"}}

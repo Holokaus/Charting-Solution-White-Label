@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Elliott Triangle Wave (ABCDE)"],ar:["موجة إليوت المثلثة (ABCDE)"]}}

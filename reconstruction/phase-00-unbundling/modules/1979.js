@@ -1,0 +1,1 @@
+e=>{e.exports={en:["bring group {title} forward"],ar:["جلب المجموعة {title} إلى الأمام"]}}

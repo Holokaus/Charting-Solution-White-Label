@@ -1,0 +1,1 @@
+(e,t,o)=>{"use strict";o.d(t,{menuItemSwitcherMobileTheme:()=>l});var n=o(40173),i=o(74302),a=o(16284);const l=(0,n.mergeThemes)(i.DEFAULT_MENU_ITEM_SWITCHER_THEME,a)}

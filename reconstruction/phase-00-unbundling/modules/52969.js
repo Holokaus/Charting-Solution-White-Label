@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Invalid symbol"],ar:["رمز غير صحيح"]}}

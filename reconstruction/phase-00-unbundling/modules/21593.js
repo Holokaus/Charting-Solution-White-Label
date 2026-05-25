@@ -1,0 +1,1 @@
+(e,t,i)=>{"use strict";i.d(t,{CustomComponentDefaultLink:()=>o});var s=i(50959),n=i(38952);function o(e){return s.createElement("a",{...(0,n.renameRef)(e)})}s.PureComponent}

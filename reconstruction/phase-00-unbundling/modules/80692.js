@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change high and low price lines visibility"],ar:["تغيير وضوح خطوط أعلى سعر وأدنى سعر"]}}

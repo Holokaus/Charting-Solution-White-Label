@@ -1,0 +1,1 @@
+(e,t,n)=>{"use strict";n.d(t,{useAutoSelect:()=>s});var o=n(50959),r=n(49483);function s(){const e=(0,o.useRef)(null);return(0,o.useLayoutEffect)((()=>{r.CheckMobile.iOS()||e.current&&(e.current.focus(),e.current.select())}),[]),e}}

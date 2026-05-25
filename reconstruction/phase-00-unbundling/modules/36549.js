@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Chatham Islands"],ar:["جزر تشاتام"]}}

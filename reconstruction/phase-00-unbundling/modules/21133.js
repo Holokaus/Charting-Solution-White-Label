@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change horz grid lines color"],ar:["تغيير لون خطوط الشبكة الأفقية"]}}

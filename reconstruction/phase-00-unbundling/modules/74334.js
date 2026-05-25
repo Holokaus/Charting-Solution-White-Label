@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Cross Line"],ar:["الخط المتقاطع"]}}

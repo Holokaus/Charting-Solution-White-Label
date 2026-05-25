@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Callout"],ar:["نص تفسيري"]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={twoColors:"twoColors-C2hZXnYv",colorPicker:"colorPicker-C2hZXnYv"}}

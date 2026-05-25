@@ -1,0 +1,1 @@
+e=>{e.exports={en:["B-ADJ"],ar:["b-adj"]}}

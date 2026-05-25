@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Triangle Up"],ar:["مثلث صاعد"]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Oops. Something has gone wrong with one or more of your indicators. Resize the panes to see the details."],ar:["عفوًا. حدث خطأ ما في واحد أو أكثر من المؤشرات الخاصة بك. قم بتغيير حجم الأجزاء لرؤية التفاصيل."]}}

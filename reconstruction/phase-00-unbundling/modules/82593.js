@@ -1,0 +1,1 @@
+(t,e,n)=>{"use strict";n.d(e,{default:()=>r});const r=function(t){var e=null==t?0:t.length;return e?t[e-1]:void 0}}

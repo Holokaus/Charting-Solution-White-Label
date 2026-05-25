@@ -1,0 +1,1 @@
+e=>{e.exports={en:["resize the cell"],ar:["تغيير حجم الخلية"]}}

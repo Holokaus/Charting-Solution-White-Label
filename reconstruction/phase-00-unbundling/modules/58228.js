@@ -1,0 +1,1 @@
+e=>{e.exports={en:["move {title} to new left scale"],ar:["انقل ‎{title}‎ إلى مقياس يسار جديد"]}}

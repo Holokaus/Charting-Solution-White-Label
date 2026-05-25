@@ -1,0 +1,1 @@
+e=>{e.exports={"tablet-normal-breakpoint":"(max-width: 768px)","tooltip-offset":"20px",dialog:"dialog-qyCw0PaN",dragging:"dragging-qyCw0PaN",mobile:"mobile-qyCw0PaN",fullscreen:"fullscreen-qyCw0PaN",dialogAnimatedAppearance:"dialogAnimatedAppearance-qyCw0PaN",dialogAnimation:"dialogAnimation-qyCw0PaN",dialogTooltip:"dialogTooltip-qyCw0PaN"}}

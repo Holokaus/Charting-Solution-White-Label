@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Create a free account"],ar:["أنشئ حساباً مجاناً"]}}

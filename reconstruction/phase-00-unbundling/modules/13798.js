@@ -1,0 +1,1 @@
+e=>{e.exports={en:["{hotKey_0} — circle"],ar:["{hotKey_0} - دائرة"]}}

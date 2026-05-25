@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Override min tick"],ar:["تجاوز الحد الأدنى للتيك"]}}

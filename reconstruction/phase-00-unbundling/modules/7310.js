@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Move pane up"],ar:["تحريك جزء لأعلى"]}}

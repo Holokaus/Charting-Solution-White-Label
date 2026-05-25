@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Move chart forward"],ar:["تحريك الرسم البياني للأمام"]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change line tool(s) line style"],ar:["تغيير نمط أداة (أدوات) الخط"]}}

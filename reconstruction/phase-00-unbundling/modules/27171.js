@@ -1,0 +1,1 @@
+e=>{e.exports={en:["remove deselected empty line tools"],ar:["إزالة أدوات الخط الفارغة غير المحددة"]}}

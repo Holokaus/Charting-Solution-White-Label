@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change chart layout to {title}"],ar:["تغيير تنسيق الرسم البياني إلى {title}"]}}

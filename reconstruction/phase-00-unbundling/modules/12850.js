@@ -1,0 +1,1 @@
+(e,t,a)=>{"use strict";function n(e){return"https://www.tradingview.com/x/"+e+"/"}a.d(t,{convertImageNameToUrl:()=>n})}

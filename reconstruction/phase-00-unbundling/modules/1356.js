@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Let it snow"],ar:["دعها تثلج"]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Arrow Mark Left"],ar:["علامة السهم تُشير لليسار"]}}

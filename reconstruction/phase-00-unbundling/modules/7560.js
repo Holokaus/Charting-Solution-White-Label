@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Text wrap"],ar:["التفاف النص"]}}

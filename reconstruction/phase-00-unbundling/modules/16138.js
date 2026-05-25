@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Average close price line"],ar:["خط متوسط سعر الإغلاق"]}}

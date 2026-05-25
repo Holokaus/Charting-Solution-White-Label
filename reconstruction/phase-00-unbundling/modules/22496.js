@@ -1,0 +1,1 @@
+e=>{e.exports={container:"container-kfvcmk8t",centerElement:"centerElement-kfvcmk8t",text:"text-kfvcmk8t"}}

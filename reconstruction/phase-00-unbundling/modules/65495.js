@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Collapse pane"],ar:["طي الجزء"]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Add to favorites"],ar:["اضف إلى القائمة التفضيلات"]}}

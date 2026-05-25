@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Save as"],ar:["حفظ باسم"]}}

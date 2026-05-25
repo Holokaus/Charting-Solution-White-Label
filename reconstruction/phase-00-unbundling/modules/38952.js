@@ -1,0 +1,1 @@
+(e,t,i)=>{"use strict";function s(e){const{reference:t,...i}=e;return{...i,ref:t}}i.d(t,{renameRef:()=>s})}

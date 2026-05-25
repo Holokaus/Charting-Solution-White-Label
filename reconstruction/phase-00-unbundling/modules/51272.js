@@ -1,0 +1,1 @@
+(e,t,i)=>{"use strict";i.r(t),i.d(t,{StudyLineDataSourceAnchorsPaneView:()=>s});var n=i(54707),r=i(73914);class s extends n.LineSourcePaneView{renderer(e){return this._invalidated&&(this._updateImpl(e),this._invalidated=!1),this.createLineAnchor({points:this._getPoints().map(r.mapLineSourcePaneViewPointToLineAnchorPoint)},0)}}}

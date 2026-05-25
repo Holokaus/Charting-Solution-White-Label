@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Right Shoulder"],ar:["الكتف الأيمن"]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Trend Angle"],ar:["زاوية الإتجاه"]}}

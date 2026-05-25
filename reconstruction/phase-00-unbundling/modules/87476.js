@@ -1,0 +1,1 @@
+e=>{e.exports={en:["#1 (vertical position %, bar)"],ar:["# 1 (الوضع العمودي، عمود)"]}}

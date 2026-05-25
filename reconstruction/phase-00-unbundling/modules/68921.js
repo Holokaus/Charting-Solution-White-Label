@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Adjust for contract changes"],ar:["ضبط لتغييرات العقود"]}}

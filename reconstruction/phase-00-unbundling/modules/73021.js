@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change high-low body visibility"],ar:["تغيير وضوح جسم أعلى-أدنى"]}}

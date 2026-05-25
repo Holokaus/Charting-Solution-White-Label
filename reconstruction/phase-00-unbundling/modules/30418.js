@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change day of week on labels"],ar:["يوم التغير من الأسبوع على الملصقات"]}}

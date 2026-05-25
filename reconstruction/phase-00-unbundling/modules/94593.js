@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Strong Magnet"],ar:["مغناطيس قوي"]}}

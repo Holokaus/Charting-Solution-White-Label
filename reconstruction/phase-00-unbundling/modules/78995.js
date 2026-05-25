@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change symbol watermark color"],ar:["تغيير لون علامة الرمز"]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Bar change values"],ar:["قيمة التغير للعمود"]}}

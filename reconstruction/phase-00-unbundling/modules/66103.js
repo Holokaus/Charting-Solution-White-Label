@@ -1,0 +1,1 @@
+e=>{e.exports={en:["New Zealand"],ar:["نيوزلندا"]}}

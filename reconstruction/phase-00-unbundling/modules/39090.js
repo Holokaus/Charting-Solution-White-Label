@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Sine Line"],ar:["منحنى الجيب"]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Symbol Error"],ar:["خطأ في الرمز"]}}

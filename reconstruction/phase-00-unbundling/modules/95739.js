@@ -1,0 +1,1 @@
+r=>{r.exports={en:["Main symbol data is adjusted for splits only"],ar:["يتم ضبط بيانات الرمز الرئيسي للتقسيمات فقط"]}}

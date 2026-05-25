@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change latest news and Minds visibility"],ar:["تغيير عرض آخر الأخبار والأفكار"]}}

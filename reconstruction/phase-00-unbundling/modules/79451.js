@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Lock all drawings"],ar:["غلق كل أدوات الرسم"]}}

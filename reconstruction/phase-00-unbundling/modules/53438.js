@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Chart template"],ar:["قالب الرسم البياني"]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Long Description"],ar:["وصف مطوّل"]}}

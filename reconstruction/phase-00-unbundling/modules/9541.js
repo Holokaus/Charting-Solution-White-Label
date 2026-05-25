@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Enter a new chart layout name"],ar:["ادخل اسم تصميم الرسم البياني الجديد"]}}

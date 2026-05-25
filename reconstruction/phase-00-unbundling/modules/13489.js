@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change ideas visibility on chart"],ar:["تغيير وضوح تحليل على الرسم البياني"]}}

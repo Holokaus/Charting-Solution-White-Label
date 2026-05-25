@@ -1,0 +1,1 @@
+(e,t,r)=>{"use strict";r.d(t,{ToolWidgetMenuSummary:()=>l});var n=r(50959),o=r(97754),a=r(79619);function l(e){return n.createElement("div",{className:o(e.className,a.title)},e.children)}}

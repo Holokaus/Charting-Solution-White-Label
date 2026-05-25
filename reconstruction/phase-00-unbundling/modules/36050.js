@@ -1,0 +1,1 @@
+e=>{e.exports={en:["One update every {amount} second","One update every {amount} seconds"],ar:["تحديث واحد كل {amount} ثانية","تحديث واحد كل {amount} ثانية","تحديث واحد كل {amount} ثانية","تحديث واحد كل {amount} ثانية","تحديث واحد كل {amount} ثانية","تحديث واحد كل {amount} ثانية"]}}

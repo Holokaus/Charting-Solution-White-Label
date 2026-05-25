@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Sync drawings to all charts"],ar:["ربط مابين الرسوم في كل الرسوم البيانية"]}}

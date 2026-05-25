@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Add custom interval"],ar:["إضافة فترة زمنية مخصصة"]}}

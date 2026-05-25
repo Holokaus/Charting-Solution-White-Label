@@ -1,0 +1,1 @@
+(e,t,r)=>{"use strict";r.d(t,{ToolWidgetCaret:()=>i});var n=r(50959),o=r(97754),a=r(9745),l=r(86186),s=r(578);function i(e){const{dropped:t,className:r}=e;return n.createElement(a.Icon,{className:o(r,l.icon,{[l.dropped]:t}),icon:s})}}

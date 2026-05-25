@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change pre/post market price label visibility"],ar:["تغيير وضوح ملصق أسعار ما قبل/بعد الجلسة"]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change right margin percentage"],ar:["تغيير نسبة الهامش الأيمن"]}}

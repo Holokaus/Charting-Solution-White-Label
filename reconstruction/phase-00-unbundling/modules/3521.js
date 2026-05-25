@@ -1,0 +1,1 @@
+e=>{e.exports={en:["New drawings will sync globally"],ar:["ستتم مزامنة الرسومات الجديدة بشكل شامل"]}}

@@ -1,0 +1,1 @@
+h=>{h.exports='<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M22 2.67 19.33 18l-9.3 3.33L2 18l.82-3.95h3.41l-.33 1.7 4.85 1.84 5.59-1.85.78-4.04H3.22l.68-3.42h13.9l.44-2.2H4.34l.69-3.41H22Z"/></svg>'}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Time hours format"],ar:["تنسيق الساعات"]}}

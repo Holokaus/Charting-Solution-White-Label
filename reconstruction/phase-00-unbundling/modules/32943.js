@@ -1,0 +1,1 @@
+e=>{e.exports={en:["clone line tools"],ar:["أدوات نسخ الخط"]}}

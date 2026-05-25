@@ -1,0 +1,1 @@
+e=>{e.exports={en:["smiles & people"],ar:["الابتسامات والأشخاص"]}}

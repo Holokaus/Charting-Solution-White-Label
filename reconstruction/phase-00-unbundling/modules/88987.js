@@ -1,0 +1,1 @@
+(t,e,n)=>{"use strict";n.d(e,{default:()=>o});var r=n(89572),i=n(82433);const o=function(t){if(!(0,i.default)(t))return!1;var e=(0,r.default)(t);return"[object Function]"==e||"[object GeneratorFunction]"==e||"[object AsyncFunction]"==e||"[object Proxy]"==e}}

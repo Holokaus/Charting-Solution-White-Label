@@ -1,0 +1,1 @@
+(e,t,i)=>{"use strict";i.d(t,{fetch:()=>o});var s=i(9343);new class{constructor(e,t){this._test=e[t]={}}provide(e,t){this._test[e]=t}}(window,"qaGlobals"),(0,s.getLogger)("Fetch");function o(e,t,i={}){return window.fetch(e,t)}}

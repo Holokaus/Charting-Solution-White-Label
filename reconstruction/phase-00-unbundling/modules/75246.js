@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Reset chart view"],ar:["إعادة تعيين عرض الرسم البياني"]}}

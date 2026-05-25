@@ -1,0 +1,1 @@
+(e,t,r)=>{"use strict";r.d(t,{useCollectedProps:()=>i});var n=r(71690),o=r(52541);function i(e,t,r){return function(e,t,r){const[i,s]=(0,n.useCollector)(e,t,r);return(0,o.useIsomorphicLayoutEffect)((function(){const t=e.getHandlerId();if(null!=t)return e.subscribeToStateChange(s,{handlerIds:[t]})}),[e,s]),i}(t,e||(()=>({})),(()=>r.reconnect()))}}

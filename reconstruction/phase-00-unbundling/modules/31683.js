@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Delisted alert"],ar:["تنبيه محذوف"]}}

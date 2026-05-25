@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Line tool widths"],ar:["عرض أداة الخطوط"]}}

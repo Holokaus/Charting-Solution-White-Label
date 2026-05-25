@@ -1,0 +1,1 @@
+e=>{e.exports={en:["No volume data"],ar:["بيانات الحجم غير موجودة"]}}

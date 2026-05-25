@@ -1,0 +1,1 @@
+r=>{r.exports={en:["Sessions"],ar:["الجلسات"]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Save as default"],ar:["حفظ كافتراضي"]}}

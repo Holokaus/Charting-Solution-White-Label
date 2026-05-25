@@ -1,0 +1,1 @@
+e=>{e.exports={en:['Set the time for "{studyShortDescription}"'],ar:['نعيين وقت "{studyShortDescription}"']}}

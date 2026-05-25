@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Symbol price source"],ar:["مصدر سعر الرمز"]}}

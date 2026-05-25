@@ -1,0 +1,1 @@
+e=>{e.exports={en:["No results found"],ar:["لا توجد نتائج"]}}

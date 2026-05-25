@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Obligation not paid. Issuer payments are over a month late, this is due to coupon or principal debt."],ar:["لم يتم دفع الالتزام. تأخرت مدفوعات المُصدر لأكثر من شهر، ويرجع ذلك إلى الكوبون أو الدين الرئيسي."]}}

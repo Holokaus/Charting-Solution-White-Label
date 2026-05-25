@@ -1,0 +1,1 @@
+(t,e,n)=>{"use strict";n.d(e,{default:()=>i});var r=n(16299);const i=function(t){var e=new t.constructor(t.byteLength);return new r.default(e).set(new r.default(t)),e}}

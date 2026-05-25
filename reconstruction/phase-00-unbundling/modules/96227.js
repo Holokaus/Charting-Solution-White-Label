@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change open market status visibility"],ar:["تغيير وضوح حالة السوق المفتوحة"]}}

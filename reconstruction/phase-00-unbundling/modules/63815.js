@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Last day change"],ar:["تغيير اليوم الأخير"]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change {title} candle border down color"],ar:["تغيير لون حدود ‎{title}‎ الهابطة"]}}

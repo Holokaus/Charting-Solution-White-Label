@@ -1,0 +1,1 @@
+e=>{e.exports={en:["To calculate the VWAP indicator, more data is needed. Zoom out or scroll left to load more historical data."],ar:["لحساب مؤشر VWAP، هناك حاجة إلى مزيد من البيانات. قم بالتصغير أو التمرير لليسار لتحميل المزيد من البيانات التاريخية."]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Save New Chart Layout"],ar:["حفظ التنسيق الجديد للرسم البياني"]}}

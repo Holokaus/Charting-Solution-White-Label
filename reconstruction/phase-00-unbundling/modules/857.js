@@ -1,0 +1,1 @@
+(t,e,n)=>{"use strict";n.d(e,{default:()=>i});var r=n(55136);const i=function(t,e,n){"__proto__"==e&&r.default?(0,r.default)(t,e,{configurable:!0,enumerable:!0,value:n,writable:!0}):t[e]=n}}

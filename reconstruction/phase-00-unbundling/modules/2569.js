@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Change interval"],ar:["تغيير الفترة"]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Background #1"],ar:["الخلفية #1"]}}

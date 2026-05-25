@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Redo {hint}"],ar:["إعادة {hint}"]}}

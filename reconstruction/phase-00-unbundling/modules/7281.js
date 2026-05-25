@@ -1,0 +1,1 @@
+e=>{e.exports={en:["To get real-time data for {description}, please buy the real-time data package."],ar:["للحصول على البيانات اللحظية لـ ‎{description}‎، يرجى شراء حزمة البيانات اللحظية."]}}

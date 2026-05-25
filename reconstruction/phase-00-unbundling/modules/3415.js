@@ -1,0 +1,1 @@
+(d,u,e)=>{"use strict";e.d(u,{getTwemojiUrl:()=>f});var t=e(18438);function f(d,u){let e="";return t.default.parse(d,(d=>(e=t.default.base+("svg"===u?`svg/${d}.svg`:`72x72/${d}.png`),!1))),e}t.default.base="https://cdnjs.cloudflare.com/ajax/libs/twemoji/13.0.1/"}

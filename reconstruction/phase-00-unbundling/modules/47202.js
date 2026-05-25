@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Nothing matches your criteria"],ar:["لا شيء يطابق معاييرك"]}}

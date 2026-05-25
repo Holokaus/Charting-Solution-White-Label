@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change {title} show pearson's r"],ar:["تغيير عرض {title} pearson's r"]}}

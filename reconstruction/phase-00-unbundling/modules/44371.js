@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change pre market color"],ar:["تغيير لون ما قبل الجلسة"]}}

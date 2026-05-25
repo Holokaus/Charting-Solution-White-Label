@@ -1,0 +1,1 @@
+r=>{r.exports={en:["Toggle Auto Scale"],ar:["نطاق قياس تلقائي"]}}

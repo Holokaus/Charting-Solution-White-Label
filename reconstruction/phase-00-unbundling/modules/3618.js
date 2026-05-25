@@ -1,0 +1,1 @@
+(e,t,i)=>{"use strict";i.d(t,{getTranslatedInputTitle:()=>n});var s=i(11542);const o={PercentageLTP:"Percentage LTP",Labels:"Pane labels",LineFills:"Line fills"};function n(e){return s.t(o[e]??e,{context:"input"},i(32856))}}

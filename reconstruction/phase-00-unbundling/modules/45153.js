@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change {title} distance visibility"],ar:["تغيير وضوح المسافة {title}"]}}

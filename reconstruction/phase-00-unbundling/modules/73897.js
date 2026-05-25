@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Post-market"],ar:["ما بعد الجلسة"]}}

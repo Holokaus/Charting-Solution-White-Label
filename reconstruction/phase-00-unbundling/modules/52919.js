@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change bid and ask lines visibility"],ar:["تغيير وضوح خط سعري البيع والشراء"]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Show Hidden Tools"],ar:["عرض الأدوات المخفاه"]}}

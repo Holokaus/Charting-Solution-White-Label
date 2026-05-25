@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Labels font"],ar:["خط العناوين"]}}

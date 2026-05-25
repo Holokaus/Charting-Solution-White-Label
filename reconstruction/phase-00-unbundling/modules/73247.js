@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change {title} emoji"],ar:["تغيير الرمز التعبيري {title}"]}}

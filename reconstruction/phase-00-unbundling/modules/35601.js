@@ -1,0 +1,1 @@
+e=>{e.exports={en:["The bar magnifier is only available to the Premium plan or higher."]}}

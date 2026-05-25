@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Reset settings"],ar:["إعادة ضبط الإعدادات"]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Protect Position"],ar:["حماية المركز"]}}

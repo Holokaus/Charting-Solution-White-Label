@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Indexed to 100"],ar:["مدرجة إلى 100"]}}

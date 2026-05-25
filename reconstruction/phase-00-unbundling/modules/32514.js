@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Settings"],ar:["إعدادات"]}}

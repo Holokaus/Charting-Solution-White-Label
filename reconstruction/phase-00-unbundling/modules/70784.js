@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Second fraction part is invalid."],ar:["الجزء الثاني غير صحيح."]}}

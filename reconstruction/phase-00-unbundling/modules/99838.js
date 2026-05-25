@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Hide Drawings Toolbar"],ar:["إخفاء شريط أدوات الرسوم"]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Magnet Mode snaps drawings placed near price bars to the closest OHLC value"],ar:["وضع المغناطيس يجذب الرسومات الموجودة بجوار أعمدة السعر عند أقرب قيمة سعر إغلاق أو افتتاح أو أعلى وأقل سعر"]}}

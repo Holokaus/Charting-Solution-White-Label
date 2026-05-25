@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Change Symbol"],ar:["تغيير الرمز"]}}

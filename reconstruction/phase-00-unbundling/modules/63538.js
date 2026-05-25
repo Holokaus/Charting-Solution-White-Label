@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Exchange timezone"],ar:["المنطقة الزمنية للبورصة"]}}

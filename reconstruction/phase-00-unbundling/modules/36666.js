@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change {toolName} text border color"],ar:["تغيير لون حدود النص {toolName}"]}}

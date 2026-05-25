@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Template name"],ar:["أسم القالب"]}}

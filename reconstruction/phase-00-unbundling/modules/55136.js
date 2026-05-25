@@ -1,0 +1,1 @@
+(t,e,n)=>{"use strict";n.d(e,{default:()=>i});var r=n(52494);const i=function(){try{var t=(0,r.default)(Object,"defineProperty");return t({},"",{}),t}catch(t){}}()}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Paid plans feature faster data updates."],ar:["تتمتع العضويات المدفوعة بتحديثات أسرع للبيانات."]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["exclude line tools from group {group}"],ar:["استثناء أدوات الخطوط من المجموعة {group}"]}}

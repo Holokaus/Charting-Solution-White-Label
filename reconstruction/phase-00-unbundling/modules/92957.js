@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Add this indicator to favorites"],ar:["أضف هذا المؤشر إلى المفضلة"]}}

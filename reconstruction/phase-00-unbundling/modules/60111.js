@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change {title} width"],ar:["تغيير عرض  {title}"]}}

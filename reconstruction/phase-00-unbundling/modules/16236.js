@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Label background"],ar:["خلفية العنوان"]}}

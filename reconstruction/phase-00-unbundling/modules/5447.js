@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Fill out Exchange Agreements"],ar:["ملء اتفاقية البورصة"]}}

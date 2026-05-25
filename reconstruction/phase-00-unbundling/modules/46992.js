@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Toggle log scale"],ar:["نطاق قياس لوغاريتمي"]}}

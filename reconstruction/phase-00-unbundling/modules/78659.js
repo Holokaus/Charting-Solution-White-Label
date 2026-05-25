@@ -1,0 +1,1 @@
+e=>{e.exports={en:["You're changing the user interface to the {name} theme. Would you like to switch the chart template's theme too?"],ar:["أنت تقوم بتغيير واجهة المستخدم إلى المظهر {name}. هل ترغب في تبديل مظهر قالب الرسم البياني أيضًا؟"]}}

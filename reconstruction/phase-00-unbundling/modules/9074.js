@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Change price offset"],ar:["تغيير تعويض السعر"]}}

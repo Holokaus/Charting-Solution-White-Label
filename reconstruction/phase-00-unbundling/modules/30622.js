@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Fib Time Zone"],ar:["منطقة فيبوناتشي الزمنية"]}}

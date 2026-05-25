@@ -1,0 +1,1 @@
+(t,e,n)=>{"use strict";n.d(e,{mobiletouch:()=>i,setClasses:()=>u,touch:()=>o});var r=n(75774);const i=r.mobiletouch,o=r.touch;function u(){document.documentElement.classList.add(r.touch?"feature-touch":"feature-no-touch",r.mobiletouch?"feature-mobiletouch":"feature-no-mobiletouch")}}

@@ -1,0 +1,1 @@
+(e,t,i)=>{"use strict";i.d(t,{StatusView:()=>s});class s{constructor(e){this._text="",this._color="",this._size="13px",this._bold=!1,this._statusProvider=e}text(){return this._text}getSplitTitle(){return[this._text]}getInputsTitles(){return null}titleTooltip(){return this._statusProvider.titleTooltip()}bold(){return this._bold}size(){return this._size}}}

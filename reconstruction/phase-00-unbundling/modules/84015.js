@@ -1,0 +1,1 @@
+(e,t,i)=>{"use strict";function s(e,t=!1){return!1}function o(e,t=!1){return e}i.d(t,{isOnMobileAppPage:()=>s,urlWithMobileAppParams:()=>o})}

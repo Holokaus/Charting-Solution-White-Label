@@ -1,0 +1,1 @@
+(e,t,n)=>{"use strict";n.d(t,{DEFAULT_TOOLBAR_BUTTON_THEME:()=>o,ToolbarButton:()=>r});var s=n(50959),i=n(46003),a=n(50238);const o=i.DEFAULT_TOOL_WIDGET_BUTTON_THEME,r=(0,s.forwardRef)((function(e,t){const{tooltip:n,...o}=e,[r,l]=(0,a.useRovingTabindexElement)(t);return s.createElement(i.ToolWidgetButton,{"aria-label":n,...o,tag:"button",ref:r,tabIndex:l,"data-tooltip":n})}))}

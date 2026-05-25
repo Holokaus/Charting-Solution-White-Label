@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Pitchfork"],ar:["بيتش فورك"]}}

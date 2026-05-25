@@ -1,0 +1,1 @@
+e=>{e.exports={en:["There's no data for your selected period and chart timeframe."],ar:["لا توجد بيانات للفترة المحددة والإطار الزمني للرسم البياني."]}}

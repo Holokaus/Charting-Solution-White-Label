@@ -1,0 +1,1 @@
+e=>{e.exports={wrap:"wrap-_psvpUP2",icon:"icon-_psvpUP2"}}

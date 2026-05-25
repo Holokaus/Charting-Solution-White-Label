@@ -1,0 +1,1 @@
+e=>{e.exports={en:["date range lock"],ar:["تجميد النطاق الزمني"]}}

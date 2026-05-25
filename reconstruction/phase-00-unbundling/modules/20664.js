@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change {title} grid visibility"],ar:["تغيير وضوح شبكة {title}"]}}

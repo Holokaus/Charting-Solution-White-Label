@@ -1,0 +1,1 @@
+e=>{e.exports={label:"label-ou2KkVr5",text:"text-ou2KkVr5",icon:"icon-ou2KkVr5"}}

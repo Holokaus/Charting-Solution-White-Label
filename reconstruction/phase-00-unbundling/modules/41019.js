@@ -1,0 +1,1 @@
+e=>{e.exports={en:["You have locked drawings on this symbol. Do you want to remove the locked drawings too?"],ar:["لقد قمت بإغلاق الرسومات على هذا الرمز. هل تريد إزالة الرسومات المقفلة أيضًا؟"]}}

@@ -1,0 +1,1 @@
+(e,t,n)=>{"use strict";n.d(t,{shouldShowFullscreen:()=>s});var o=n(37103);function s(){return o.enabled("header_fullscreen_button")}}

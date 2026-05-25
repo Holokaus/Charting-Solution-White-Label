@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change thin bars"],ar:["تغيير الأعمدة الرقيقة"]}}

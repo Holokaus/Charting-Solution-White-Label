@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Scale price chart only"],ar:["نطاق الرسم البياني للسعر فقط"]}}

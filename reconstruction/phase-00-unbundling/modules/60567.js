@@ -1,0 +1,1 @@
+(e,t,i)=>{i.r(t),i.d(t,{createPropertyPage:()=>o});var r=i(22613);function o(e,t,i,o=null){const n={id:t,title:i,definitions:new r.WatchedValue(e.definitions),visible:e.visible??new r.WatchedValue(!0).readonly()};return null!==o&&(n.icon=o),n}}

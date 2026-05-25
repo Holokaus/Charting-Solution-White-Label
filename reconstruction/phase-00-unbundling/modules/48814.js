@@ -1,0 +1,1 @@
+e=>{e.exports={toolButtonMagnet:"toolButtonMagnet-wg76fIbD",toolButtonMagnet__menuItem:"toolButtonMagnet__menuItem-wg76fIbD",toolButtonMagnet__hintPlaceholder:"toolButtonMagnet__hintPlaceholder-wg76fIbD",switcherLabel:"switcherLabel-wg76fIbD"}}

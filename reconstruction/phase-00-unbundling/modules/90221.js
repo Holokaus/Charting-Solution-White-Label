@@ -1,0 +1,1 @@
+e=>{e.exports={en:["share line tools in layout"],ar:["مشاركة أدوات الخط في التنسيق"]}}

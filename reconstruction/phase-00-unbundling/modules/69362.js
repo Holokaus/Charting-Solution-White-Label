@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change bid and ask labels visibility"],ar:["تغيير وضوح ملصقات سعري البيع والشراء"]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Minuette"],ar:["موجة إليوت الذرية"]}}

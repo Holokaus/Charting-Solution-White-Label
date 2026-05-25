@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Selecting this option will set the {interval} interval on the chart when this template is applied"],ar:["سيؤدي تحديد هذا الخيار إلى تعيين الفاصل الزمني‎{interval} ‎ على الرسم البياني عند تطبيق هذا القالب"]}}

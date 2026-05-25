@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Modified: {modificationDate}"],ar:["تم التعديل: {modificationDate}"]}}

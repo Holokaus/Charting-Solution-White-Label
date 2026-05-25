@@ -1,0 +1,1 @@
+e=>{"use strict";e.exports=JSON.parse('{"size-header-height":"64px","media-phone-vertical":"all and (max-width: 479px)","media-show-drawer":"all and (max-width: 567px)","media-mf-phone-landscape":"all and (min-width: 568px)"}')}

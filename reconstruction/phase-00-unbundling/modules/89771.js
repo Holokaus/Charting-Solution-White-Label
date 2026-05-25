@@ -1,0 +1,1 @@
+e=>{e.exports={en:["All changes saved"],ar:["تم حفظ جميع التغييرات"]}}

@@ -1,0 +1,1 @@
+(t,e,n)=>{"use strict";n.d(e,{default:()=>s});var r=n(99615);const i=function(){return!1};var o="object"==typeof exports&&exports&&!exports.nodeType&&exports,u=o&&"object"==typeof module&&module&&!module.nodeType&&module,a=u&&u.exports===o?r.default.Buffer:void 0;const s=(a?a.isBuffer:void 0)||i}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change baseline top line width"],ar:["تغيير عرض أعلى الخط الأساسي"]}}

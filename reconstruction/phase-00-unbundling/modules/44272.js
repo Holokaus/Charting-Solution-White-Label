@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Displacement (price, bar)"],ar:["النزوح (السعر، العمود)"]}}

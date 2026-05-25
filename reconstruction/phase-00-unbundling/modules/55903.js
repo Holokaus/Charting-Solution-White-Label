@@ -1,0 +1,1 @@
+e=>{e.exports={dialogWrapper:"dialogWrapper-P_IVoUsZ",dialogWrapperSmall:"dialogWrapperSmall-P_IVoUsZ",tabs:"tabs-P_IVoUsZ",content:"content-P_IVoUsZ",contentMobile:"contentMobile-P_IVoUsZ",bodyWrapper:"bodyWrapper-P_IVoUsZ"}}

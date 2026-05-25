@@ -1,0 +1,1 @@
+e=>{e.exports={en:["toggle indexed to 100 scale"],ar:["تبديل الفهرس إلى مقياس 100"]}}

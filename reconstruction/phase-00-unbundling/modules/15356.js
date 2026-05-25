@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Save all charts for all symbols and intervals on your layout"],ar:["احفظ جميع الرسوم البيانية لكل الرموز والفترات الزمنية في نموذج التصميم الخاص بك"]}}

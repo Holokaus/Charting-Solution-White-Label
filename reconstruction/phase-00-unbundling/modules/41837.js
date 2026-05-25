@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change line price source"],ar:["تغيير مصدر سعر الخط"]}}

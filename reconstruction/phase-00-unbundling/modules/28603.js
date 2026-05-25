@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Line style"],ar:["نمط الخط"]}}

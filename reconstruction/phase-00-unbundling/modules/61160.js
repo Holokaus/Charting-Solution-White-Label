@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change {toolName} labels direction"],ar:["تغيير اِتِّجاه ملصقات {toolName}"]}}

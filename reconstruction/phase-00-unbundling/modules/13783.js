@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change {title} background transparency"],ar:["تغيير وضوح الخلفية {title}"]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["is provided by {exchange} exchange."],ar:["يتم توفيره من خلال بورصة {exchange}."]}}

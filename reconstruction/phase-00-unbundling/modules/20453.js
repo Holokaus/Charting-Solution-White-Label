@@ -1,0 +1,1 @@
+e=>{e.exports={en:["lock group {group}"],ar:["غلق المجموعة ‎{group}‎"]}}

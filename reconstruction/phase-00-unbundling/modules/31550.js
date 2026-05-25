@@ -1,0 +1,1 @@
+e=>{e.exports={en:["and {nameCount} more indicator.","and {nameCount} more indicators."],ar:["و{nameCount} مؤشر آخر.","و{nameCount} مؤشر آخر.","و{nameCount} مؤشر آخر.","و{nameCount} مؤشر آخر.","و{nameCount} مؤشر آخر.","و{nameCount} مؤشر آخر."]}}

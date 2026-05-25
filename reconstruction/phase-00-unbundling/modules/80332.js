@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Line - open"],ar:["خط - افتتاح"]}}

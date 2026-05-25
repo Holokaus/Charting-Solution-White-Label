@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Copy link to the chart image"],ar:["نسخ رابط صورة الرسم البياني"]}}

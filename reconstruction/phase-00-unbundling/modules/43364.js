@@ -1,0 +1,1 @@
+e=>{e.exports={en:["load default drawing template"],ar:["تحميل قالب الرسم الافتراضي"]}}

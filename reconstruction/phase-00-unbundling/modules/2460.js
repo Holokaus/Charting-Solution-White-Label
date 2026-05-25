@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Regression Trend"],ar:["إتجاه الإنحدار"]}}

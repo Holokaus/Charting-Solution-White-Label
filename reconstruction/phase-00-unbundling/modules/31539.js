@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Real-time data for {symbolName} is provided by {exchange} exchange."],ar:["البيانات اللحظية لـ ‎{symbolName}‎ مقدمة من بورصة ‎.‎ {exchange}‎"]}}

@@ -1,0 +1,2 @@
+()=>{"use strict"
+;TradingView.Pro=function(){this.hasPackage=function(){return!1}},window.user={is_pro:!1,settings:{}},TradingView.Pro.prototype.isPaidPro=function(){return!1},TradingView.Pro.prototype.isSupportAvailable=function(){return!1},TradingView.Pro.prototype.getProduct=function(){return{}},TradingView.Pro.prototype.getStudiesOrder=function(){return[]}}

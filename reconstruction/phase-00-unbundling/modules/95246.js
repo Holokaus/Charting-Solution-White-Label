@@ -1,0 +1,1 @@
+e=>{e.exports={en:["The main, or first, stock exchange where a company's stock is listed and traded."],ar:["البورصة الرئيسية أو الأولى التي يتم فيها إدراج أسهم الشركة وتداولها."]}}

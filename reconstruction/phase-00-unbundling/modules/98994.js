@@ -1,0 +1,1 @@
+e=>{e.exports={en:["toggle percentage scale"],ar:["تبديل مقياس النسبة المئوية"]}}

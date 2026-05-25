@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Featured broker providing live trading on {shortName} pairs and more."],ar:["وسيط مميز يوفر التداول المباشر على {shortName} الأزواج والمزيد."]}}

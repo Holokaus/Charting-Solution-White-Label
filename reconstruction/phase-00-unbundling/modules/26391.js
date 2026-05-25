@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change the column width"],ar:["تغيير عرض العمود"]}}

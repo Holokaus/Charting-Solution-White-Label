@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change line tool(s) background color"],ar:["تغيير لون الخلفية لأداة (أدوات) الخط"]}}

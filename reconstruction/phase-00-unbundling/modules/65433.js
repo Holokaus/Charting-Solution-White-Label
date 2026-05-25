@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Open layout"],ar:["تنسيق مفتوح"]}}

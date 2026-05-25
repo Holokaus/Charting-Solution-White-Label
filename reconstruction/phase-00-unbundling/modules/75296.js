@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Double-click to finish Path"],ar:["انقر مرتيين لإنهاء المسار"]}}

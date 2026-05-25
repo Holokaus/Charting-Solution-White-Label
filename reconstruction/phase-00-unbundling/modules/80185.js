@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Intervals less than {resolution} are not supported for {ticker}."],ar:["لا يتم دعم الفواصل الزمنية الأقل من {resolution} لـ {ticker}."]}}

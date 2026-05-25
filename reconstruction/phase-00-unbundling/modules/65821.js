@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change range thin bars"],ar:["تغيير نطاق الأعمدة الرقيقة"]}}

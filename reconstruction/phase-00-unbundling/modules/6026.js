@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change high-low body color"],ar:["تغيير لون جسم أعلى-أدنى"]}}

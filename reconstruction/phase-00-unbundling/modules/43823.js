@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change {toolName} line extending right"],ar:["تغيير خط {toolName} الممتد إلى اليمين"]}}

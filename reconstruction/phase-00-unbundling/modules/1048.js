@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Allow extend time scale"],ar:["السماح بتمديد النطاق الزمني"]}}

@@ -1,0 +1,1 @@
+(d,e,u)=>{"use strict";u.d(e,{IconItem:()=>a});var t=u(50959),n=u(97754),c=u.n(n),o=u(9745),r=u(96780);function a(d){return t.createElement("div",{className:c()(r.wrapper,d.className)},t.createElement(o.Icon,{icon:d.icon}))}}

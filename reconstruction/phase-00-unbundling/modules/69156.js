@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Volume data is not provided in BIST MIXED data plan."],ar:["لا يتم توفير بيانات الحجم في بيانات BIST MIXED."]}}

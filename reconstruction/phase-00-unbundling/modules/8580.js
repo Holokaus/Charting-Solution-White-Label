@@ -1,0 +1,1 @@
+e=>{e.exports={en:["User-defined error"],ar:["خطأ معرّف من قبل المستخدم"]}}

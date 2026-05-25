@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change {title} fib levels based on log scale"],ar:["تغيير مستويات فيبوناتشي {title} على أساس المقياس اللوغاريتمي"]}}

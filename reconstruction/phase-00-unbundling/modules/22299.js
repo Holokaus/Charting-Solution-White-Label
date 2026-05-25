@@ -1,0 +1,1 @@
+e=>{e.exports={en:["{amount} drawing","{amount} drawings"],ar:["{amount} من الرسوم ","{amount} من الرسوم ","{amount} من الرسوم ","{amount} من الرسوم ","{amount} من الرسوم ","{amount} من الرسوم "]}}

@@ -1,0 +1,2 @@
+e=>{e.exports={en:["This data is real-time, but it may be slightly different to its official counterpart coming from {exchange}."],
+ar:["هذه البيانات لحظية، لكنها قد تختلف قليلاً عن نظيرتها الرسمية الواردة من بورصة {exchange}."]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change range bars style"],ar:["تغيير نمط أعمدة النطاق"]}}

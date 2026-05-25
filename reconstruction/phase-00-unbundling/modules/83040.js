@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Scroll to the most recent bar"],ar:["التمرير إلى أخر عمود"]}}

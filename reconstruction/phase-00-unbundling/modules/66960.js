@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change {title} time label visibility"],ar:["تغيير وضوح ملصقات وقت {title}"]}}

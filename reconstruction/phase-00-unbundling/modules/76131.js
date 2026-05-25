@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change scales text color"],ar:["تغيير لون نص المقاييس"]}}

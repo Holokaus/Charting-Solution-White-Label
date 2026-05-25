@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Fraction part is invalid."],ar:["جزء الكسر غير صحيح"]}}

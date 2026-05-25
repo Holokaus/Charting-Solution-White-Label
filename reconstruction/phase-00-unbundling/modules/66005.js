@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Lock vertical cursor line by time"],ar:["قفل خط المؤشر العمودي بمرور الوقت"]}}

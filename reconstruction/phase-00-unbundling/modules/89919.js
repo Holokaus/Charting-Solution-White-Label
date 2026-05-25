@@ -1,0 +1,1 @@
+e=>{e.exports={en:["days to"],ar:["أيام لـ"]}}

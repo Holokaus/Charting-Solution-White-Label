@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change interval watermark visibility"],ar:["تغيير رؤية العلامة المائية للفاصل الزمني"]}}

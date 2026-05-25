@@ -1,0 +1,1 @@
+e=>{e.exports={en:["add line tool(s) to group {group}"],ar:["إضافة أداة (أدوات) الخط إلى المجموعة {group}"]}}

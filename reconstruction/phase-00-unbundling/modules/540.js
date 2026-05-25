@@ -1,0 +1,1 @@
+(t,e,n)=>{"use strict";function r(t,e,n,r){return{role:r,"aria-labelledby":e,"aria-multiselectable":n,id:t}}n.d(e,{contentProps:()=>r})}

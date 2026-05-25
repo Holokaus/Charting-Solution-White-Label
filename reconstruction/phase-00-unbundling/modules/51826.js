@@ -1,0 +1,1 @@
+(e,t,n)=>{"use strict";n.d(t,{DialogsOpenerManager:()=>s,dialogsOpenerManager:()=>a});class s{constructor(){this._storage=new Map}setAsOpened(e,t){this._storage.set(e,t)}setAsClosed(e){this._storage.delete(e)}isOpened(e){return this._storage.has(e)}getDialogPayload(e){return this._storage.get(e)}}const a=new s}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change bar change visibility"],ar:["تغيير وضوح تغييرات الأعمدة"]}}

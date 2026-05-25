@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Hide all drawings, indicators, positions & orders"],ar:["إخفاء كافة الرسومات والمؤشرات والمراكز والأوامر"]}}

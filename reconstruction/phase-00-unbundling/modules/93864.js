@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Drawings toolbar"],ar:["شريط أدوات الرسم"]}}

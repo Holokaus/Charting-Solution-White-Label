@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Chart style Session volume profile"],ar:["نمط بروفايل أحجام التداول للجلسة"]}}

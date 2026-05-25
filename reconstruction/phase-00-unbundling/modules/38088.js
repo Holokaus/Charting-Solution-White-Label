@@ -1,0 +1,1 @@
+(e,t,r)=>{"use strict";r.d(t,{useOptionalFactory:()=>o});var n=r(50959);function o(e,t){const r=[...t||[]];return null==t&&"function"!=typeof e&&r.push(e),(0,n.useMemo)((()=>"function"==typeof e?e():e),r)}}

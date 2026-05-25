@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Trend line tools"],ar:["أدوات خط الاتجاه"]}}

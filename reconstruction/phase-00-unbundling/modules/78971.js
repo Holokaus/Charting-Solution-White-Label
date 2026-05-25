@@ -1,0 +1,1 @@
+r=>{r.exports={en:["{str} year intervals","{str} years intervals"],ar:["فترات ‎{str}‎ سنة","فترات ‎{str}‎ سنة","فترات ‎{str}‎ سنة","فترات ‎{str}‎ سنة","فترات ‎{str}‎ سنة","فترات ‎{str}‎ سنة"]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Chart style HLC area"],ar:["نمط الرسم البياني HLC"]}}

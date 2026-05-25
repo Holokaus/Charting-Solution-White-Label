@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Reset points"],ar:["نقاط إعادة الضبط"]}}

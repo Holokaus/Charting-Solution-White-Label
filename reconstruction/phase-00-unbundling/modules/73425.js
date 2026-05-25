@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Percentage LTP({percentageLTPValue}%)"],ar:["النسبة المئوية LTP ({percentageLTPValue}%)"]}}

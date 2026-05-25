@@ -1,0 +1,1 @@
+e=>{e.exports={en:["This symbol is calculated by TradingView using the rate from other exchanges."],ar:["يتم حساب هذا الرمز بواسطة TradingView باستخدام السعر من البورصات الأخرى."]}}

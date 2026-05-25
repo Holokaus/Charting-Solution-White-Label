@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Chart style Time Price Opportunity"],ar:["نمط الرسم البياني: الوقت والسعر والفرص"]}}

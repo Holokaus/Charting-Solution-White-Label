@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Apply to all"],ar:["تفعيل على الكل"]}}

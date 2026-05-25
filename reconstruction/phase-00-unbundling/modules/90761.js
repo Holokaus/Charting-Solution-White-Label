@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Scroll to the left"],ar:["التمرير إلى اليسار"]}}

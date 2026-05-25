@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Status line"],ar:["خط الحالة"]}}

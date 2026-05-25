@@ -1,0 +1,2 @@
+e=>{e.exports={
+en:["Heads up — the Anchored Text tool will be removed soon. Use the Text tool with the Anchor option switched on to get the same results."],ar:["تنبيه - ستتم إزالة أداة النص المرتبط قريبًا. استخدم أداة النص مع تشغيل خيار Anchor للحصول على نفس النتائج."]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Undo {hint}"],ar:["تراجع {hint}"]}}

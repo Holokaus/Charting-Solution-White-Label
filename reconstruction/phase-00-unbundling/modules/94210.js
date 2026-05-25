@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Pin to scale (now no scale)"],ar:["تثبيت مقياس الرسم (الأن لا مقياس محدد)"]}}

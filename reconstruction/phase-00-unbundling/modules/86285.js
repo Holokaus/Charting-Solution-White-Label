@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Remove {drawings}"],ar:["إزالة ‎{drawings}‎"]}}

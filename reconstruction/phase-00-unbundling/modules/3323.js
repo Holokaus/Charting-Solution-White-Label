@@ -1,0 +1,1 @@
+e=>{e.exports={en:["reset scales"],ar:["إعادة تعيين المقاييس"]}}

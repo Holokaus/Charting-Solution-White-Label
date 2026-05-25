@@ -1,0 +1,1 @@
+e=>{e.exports={en:["gestures & smileys"],ar:["الإيماءات والوجوه الضاحكة"]}}

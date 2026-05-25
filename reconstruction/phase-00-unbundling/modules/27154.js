@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change {title} level {index} line coeff"],ar:["تغيير معامل خط مستوى {title} {index}"]}}

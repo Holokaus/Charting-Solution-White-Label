@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Current contract"],ar:["العقد الحالي"]}}

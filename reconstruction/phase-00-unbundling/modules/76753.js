@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Recent search"],ar:["البحث الأخير"]}}

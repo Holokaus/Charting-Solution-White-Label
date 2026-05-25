@@ -1,0 +1,1 @@
+(e,t,n)=>{"use strict";n.d(t,{useFocus:()=>r});var o=n(50959);function r(e,t){const[n,r]=(0,o.useState)(!1);(0,o.useEffect)((()=>{t&&n&&r(!1)}),[t,n]);const i={onFocus:(0,o.useCallback)((function(t){void 0!==e&&e.current!==t.target||r(!0)}),[e]),onBlur:(0,o.useCallback)((function(t){void 0!==e&&e.current!==t.target||r(!1)}),[e])};return[n,i]}}

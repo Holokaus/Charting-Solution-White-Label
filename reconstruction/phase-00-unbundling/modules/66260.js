@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Delete pane"],ar:["حذف جزء"]}}

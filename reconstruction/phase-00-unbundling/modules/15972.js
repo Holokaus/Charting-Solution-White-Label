@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change {title} fans visibility"],ar:["تغيير وضوح المراوح {title}"]}}

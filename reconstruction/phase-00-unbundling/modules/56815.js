@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Unexpected error in Deep Backtesting mode. Contact support for more information."],ar:["خطأ غير متوقع في وضع الاختبار الخلفي العميق. اتصل بالدعم للحصول على مزيد من المعلومات."]}}

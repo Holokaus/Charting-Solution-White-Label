@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Access error"],ar:["خطأ في الوصول"]}}

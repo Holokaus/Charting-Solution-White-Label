@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change symbol tiker watermark visibility"],ar:["تغيير رؤية العلامة المائية للرمز"]}}

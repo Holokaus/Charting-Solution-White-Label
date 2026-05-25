@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Base level"],ar:["مستوى الأساس"]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change scale modes buttons visibility"],ar:["تغيير وضوح أزرار أوضاع المقياس"]}}

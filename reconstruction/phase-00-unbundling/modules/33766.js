@@ -1,0 +1,1 @@
+e=>{e.exports={en:["High and low price lines"],ar:["خطوط أعلى وأدنى سعر"]}}

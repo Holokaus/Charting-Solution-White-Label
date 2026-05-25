@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change indicators value labels visibility"],ar:["وضوح ملصقات تغيير المؤشرات"]}}

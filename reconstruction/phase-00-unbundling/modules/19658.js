@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change {title} labels font size"],ar:["تغيير حجم خط الملصقات {title}"]}}

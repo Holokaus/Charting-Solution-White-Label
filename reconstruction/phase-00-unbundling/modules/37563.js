@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change {title} date/time range visibility"],ar:["تغيير وضوح نطاق التاريخ/الوقت {title}"]}}

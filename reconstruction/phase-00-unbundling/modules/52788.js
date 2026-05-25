@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Extended Line"],ar:["خط ممتد"]}}

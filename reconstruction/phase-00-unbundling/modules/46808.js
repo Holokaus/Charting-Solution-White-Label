@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Ghost Feed"],ar:["مسار تخيّلي"]}}

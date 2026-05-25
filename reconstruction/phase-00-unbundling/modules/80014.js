@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Drawing is hidden on current interval"],ar:["الرسم مخفي على الفاصل الزمني الحالي"]}}

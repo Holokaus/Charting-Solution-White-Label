@@ -1,0 +1,1 @@
+(t,e,n)=>{"use strict";n.d(e,{default:()=>s});var r=n(82433),i=Object.create;const o=function(){function t(){}return function(e){if(!(0,r.default)(e))return{};if(i)return i(e);t.prototype=e;var n=new t;return t.prototype=void 0,n}}();var u=n(10964),a=n(5196);const s=function(t){return"function"!=typeof t.constructor||(0,a.default)(t)?{}:o((0,u.default)(t))}}

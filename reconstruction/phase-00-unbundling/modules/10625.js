@@ -1,0 +1,1 @@
+e=>{e.exports={en:["make {title} no scale (Full screen)"],ar:["اجعل ‎{title}‎ بدون مقياس محدد (ملء الشاشة)"]}}

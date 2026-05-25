@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Add this strategy to entire layout"],ar:["أضف هذه الاستراتيجية إلى التنسيق بالكامل"]}}

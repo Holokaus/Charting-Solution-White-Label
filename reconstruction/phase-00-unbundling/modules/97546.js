@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change {candleType} wick up color"],ar:["تغيير لون ذيل {candleType} الصاعد"]}}

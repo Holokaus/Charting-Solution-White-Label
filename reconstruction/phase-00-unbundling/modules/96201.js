@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change volume values visibility"],ar:["تغيير وضوح قيم الحجم"]}}

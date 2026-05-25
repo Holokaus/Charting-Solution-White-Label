@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change average close price line width"],ar:["تغيير عرض خط متوسط سعر الإغلاق"]}}

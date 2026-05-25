@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Middle line"],ar:["خط الوسط"]}}

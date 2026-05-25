@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change location"],ar:["تغيير الموقع"]}}

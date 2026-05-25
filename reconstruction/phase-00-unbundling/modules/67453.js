@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change symbol last value visibility"],ar:["تغيير وضوح آخر قيمة للرمز"]}}

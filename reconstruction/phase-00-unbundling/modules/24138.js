@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change {title} target border color"],ar:["تغيير لون إطارات الهدف {title}"]}}

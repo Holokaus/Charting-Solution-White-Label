@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Script may be not updated if you leave the page."],ar:["يمكن أن لا يتم تحديث النص البرمجي المكتوب إذا غادرت الصفحة."]}}

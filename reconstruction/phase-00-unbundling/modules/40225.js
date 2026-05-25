@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Continuous futures contracts"],ar:["العقود الآجلة المستمرة"]}}

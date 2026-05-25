@@ -1,0 +1,1 @@
+e=>{e.exports={en:["make group {group} visible"],ar:["اجعل المجموعة ‎{group}‎ مرئية"]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change time hours format"],ar:["تغيير تنسيق الساعات"]}}

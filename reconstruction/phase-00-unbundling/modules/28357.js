@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Failure background"],ar:["خلفية الإخفاق"]}}

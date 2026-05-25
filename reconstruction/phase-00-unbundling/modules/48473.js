@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Real-time data for {symbolName}"],ar:["البيانات الفورية لـ {symbolName}"]}}

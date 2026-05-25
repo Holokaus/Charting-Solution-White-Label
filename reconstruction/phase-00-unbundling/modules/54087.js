@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change {title} lot size"],ar:["تغيير حجم اللوت {title}"]}}

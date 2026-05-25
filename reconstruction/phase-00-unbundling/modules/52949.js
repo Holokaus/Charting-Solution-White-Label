@@ -1,0 +1,1 @@
+(t,e,n)=>{"use strict";n.d(e,{default:()=>o});var r=n(61572),i=n(857);const o=function(t,e,n,o){var u=!n;n||(n={});for(var a=-1,s=e.length;++a<s;){var c=e[a],f=o?o(n[c],t[c],c,n,t):void 0;void 0===f&&(f=t[c]),u?(0,i.default)(n,c,f):(0,r.default)(n,c,f)}return n}}

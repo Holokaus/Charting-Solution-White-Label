@@ -1,0 +1,1 @@
+t=>{t.exports={"small-height-breakpoint":"(max-height: 360px)",footer:"footer-PhMf7PhQ",submitButton:"submitButton-PhMf7PhQ",buttons:"buttons-PhMf7PhQ"}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["paste drawing"],ar:["لصق الرسم"]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Bar Replay isn't available for this time interval. Want to exit Bar Replay?"],ar:["إعادة تشغيل الشريط غير متاح لهذه الفترة الزمنية. هل تريد الخروج من Bar Replay؟"]}}

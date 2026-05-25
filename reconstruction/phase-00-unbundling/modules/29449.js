@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Show dividends"],ar:["عرض توزيعات الأرباح"]}}

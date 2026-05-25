@@ -1,0 +1,1 @@
+r=>{r.exports={en:["{str} hour","{str} hours"],ar:["{str} ساعة","{str} ساعة","{str} ساعة","{str} ساعة","{str} ساعة","{str} ساعة"]}}

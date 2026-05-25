@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Qty: {qty}"],ar:["كمية:‎{qty}‎"]}}

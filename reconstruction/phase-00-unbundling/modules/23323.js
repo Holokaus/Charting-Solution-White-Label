@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Interval value is too big, please try again"],ar:["قيمة الفاصل الزمني كبيرة جدًا، يرجى المحاولة مرة أخرى"]}}

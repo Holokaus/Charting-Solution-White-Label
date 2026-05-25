@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Switch to months"],ar:["قم بالتبديل إلى الأشهر"]}}

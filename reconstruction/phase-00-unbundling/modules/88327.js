@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Pre/post market hours background"],ar:["خلفية ما قبل/بعد الجلسة"]}}

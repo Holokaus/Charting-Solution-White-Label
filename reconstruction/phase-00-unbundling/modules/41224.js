@@ -1,0 +1,1 @@
+e=>{e.exports={"tablet-small-breakpoint":"(max-width: 440px)",stickerRow:"stickerRow-KUOIljqV"}}

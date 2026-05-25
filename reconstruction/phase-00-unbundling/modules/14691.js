@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change pane height"],ar:["تغيير ارتفاع الجزء"]}}

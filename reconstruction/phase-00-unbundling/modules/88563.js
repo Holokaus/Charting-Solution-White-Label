@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Uh-oh! Something's not working right"],ar:["عفواً! هناك شيء لا يعمل بشكل صحيح"]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Price and percentage value"],ar:["السعر وقيمة النسبة المئوية"]}}

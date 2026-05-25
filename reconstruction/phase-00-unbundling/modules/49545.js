@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Use settlement as close on daily interval"],ar:["استخدم التسوية في أقرب وقت على الفاصل الزمني اليومي"]}}

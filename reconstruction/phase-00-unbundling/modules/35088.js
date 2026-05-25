@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Add indicator/strategy on {studyTitle}"],ar:["إضافة مؤشر/إستراتيجية على {studyTitle}"]}}

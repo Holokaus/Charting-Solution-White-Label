@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change {title} success text color"],ar:["تغيير لون نص نجاح {title}"]}}

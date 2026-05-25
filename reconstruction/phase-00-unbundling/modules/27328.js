@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Don't show again"],ar:["لا تظهر هذه الرسالة مرة آخرى"]}}

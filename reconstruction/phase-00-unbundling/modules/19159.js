@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Open in new tab"],ar:["فتح في تبويبة جديدة"]}}

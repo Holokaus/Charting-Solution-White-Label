@@ -1,0 +1,1 @@
+e=>{e.exports={en:["lock {title}"],ar:["تثبيت ‎{title}‎"]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Highlighter"],ar:["لون مُميِز"]}}

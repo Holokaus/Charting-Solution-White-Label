@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Money"],ar:["أموال"]}}

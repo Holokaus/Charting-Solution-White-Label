@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Not applicable"],ar:["لا يمكن تطبيقه"]}}

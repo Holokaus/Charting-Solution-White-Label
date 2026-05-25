@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Object tree"],ar:["شجرة الكائنات"]}}

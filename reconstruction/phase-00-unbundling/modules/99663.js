@@ -1,0 +1,2 @@
+(e,t,n)=>{"use strict";n.d(t,{Slot:()=>r,SlotContext:()=>i});var s=n(50959);class r extends s.Component{shouldComponentUpdate(){return!1}
+render(){return s.createElement("div",{style:{position:"fixed",zIndex:150,left:0,top:0},ref:this.props.reference})}}const i=s.createContext(null)}

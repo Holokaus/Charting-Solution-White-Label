@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Date modified (newest first)"],ar:["تاريخ التعديل (الأحدث أولاً)"]}}

@@ -1,0 +1,1 @@
+(e,t,n)=>{"use strict";n.d(t,{Hint:()=>r});var s=n(50959),o=n(97754),i=n.n(o),a=n(47429);function r(e){const{text:t="",className:n}=e;return s.createElement("span",{className:i()(a.shortcut,n)},t)}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change {title} VWAP line width"],ar:["تغيير عرض خط VWAP {title}"]}}

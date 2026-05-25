@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change baseline fill bottom area color"],ar:["تغيير لون المنطقة السفلية لخط الأساس"]}}

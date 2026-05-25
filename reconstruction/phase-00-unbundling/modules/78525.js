@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Hide all indicators"],ar:["إخفاء كل المؤشرات"]}}

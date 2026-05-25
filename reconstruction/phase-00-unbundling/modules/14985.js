@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Click to set a point"],ar:["انقر لتحديد نقطة"]}}

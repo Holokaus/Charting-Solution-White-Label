@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Regular session"],ar:["الجلسة العادية"]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["End of day data"],ar:["بيانات نهاية اليوم"]}}

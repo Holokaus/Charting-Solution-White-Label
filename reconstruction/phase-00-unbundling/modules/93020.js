@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Adjust data for dividends"],ar:["تعديل البيانات لأرباح الأسهم"]}}

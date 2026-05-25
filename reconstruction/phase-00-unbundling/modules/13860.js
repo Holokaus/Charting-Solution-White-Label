@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Selecting this option will set the {symbol} symbol on the chart when this template is applied"],ar:["سيؤدي تحديد هذا الخيار إلى تعيين الرمز ‎{symbol}‎ على الرسم البياني عند تطبيق هذا القالب"]}}

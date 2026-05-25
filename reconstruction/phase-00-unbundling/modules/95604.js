@@ -1,0 +1,1 @@
+(e,n,t)=>{"use strict";function o(e){let n=0;return e.isTop&&e.isLeft||(n+=1),e.isTop&&e.isRight||(n+=2),e.isBottom&&e.isLeft||(n+=8),e.isBottom&&e.isRight||(n+=4),n}t.d(n,{getGroupCellRemoveRoundBorders:()=>o})}

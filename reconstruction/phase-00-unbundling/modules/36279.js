@@ -1,0 +1,2 @@
+(e,t,r)=>{"use strict";var n;r.d(t,{LogoSize:()=>n,getLogoUrlResolver:()=>l}),function(e){e[e.Medium=0]="Medium",
+e[e.Large=1]="Large"}(n||(n={}));class o{getSymbolLogoUrl(e){return e}collectSymbolLogoUrls(e,t){return[]}getCountryFlagUrl(){return""}getCryptoLogoUrl(e){return e}getProviderLogoUrl(e){return e}getSourceLogoUrl(e){return e}getBlockchainContractLogoUrl(e){return e}}let a;function l(){return a||(a=new o),a}}

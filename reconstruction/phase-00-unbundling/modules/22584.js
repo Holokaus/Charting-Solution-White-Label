@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Rename Chart Layout"],ar:["إعادة تسمية الرسم البياني"]}}

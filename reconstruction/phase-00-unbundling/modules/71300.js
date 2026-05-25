@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Number format is invalid."],ar:["تنسيق الرقم غير صالح."]}}

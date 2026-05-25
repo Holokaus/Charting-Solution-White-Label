@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change {title} grid line style"],ar:["تغيير نمط خط الشبكة {title}"]}}

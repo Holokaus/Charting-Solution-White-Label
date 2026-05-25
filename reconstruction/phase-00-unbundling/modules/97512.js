@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Price Note"],ar:["بطاقة السعر"]}}

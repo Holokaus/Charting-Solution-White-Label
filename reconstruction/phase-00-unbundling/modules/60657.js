@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Contract expired"],ar:["انتهاء صلاحية العقد"]}}

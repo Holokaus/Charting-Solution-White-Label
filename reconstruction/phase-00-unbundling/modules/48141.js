@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Confirm Inputs"],ar:["تأكيد المدخلات"]}}

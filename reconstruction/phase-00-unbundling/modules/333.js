@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Borders"],ar:["إطارات"]}}

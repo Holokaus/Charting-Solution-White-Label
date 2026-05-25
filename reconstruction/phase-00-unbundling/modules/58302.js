@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Visible on tap"],ar:["مرئي عند النقر"]}}

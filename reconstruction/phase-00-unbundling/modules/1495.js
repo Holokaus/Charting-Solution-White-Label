@@ -1,0 +1,1 @@
+r=>{r.exports={en:["All data"],ar:["كافة البيانات"]}}

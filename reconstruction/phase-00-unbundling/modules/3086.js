@@ -1,0 +1,2 @@
+(e,t,i)=>{i.r(t),i.d(t,{EllipseCircleDefinitionsViewModel:()=>l})
+;var n=i(95804),r=i(91445),o=i(27877);class l extends o.GeneralFiguresDefinitionsViewModelBase{_textPropertyDefinitions(){const e=this._source.properties().childs();return{definitions:[(0,r.createTextStyleDefinition)(this._propertyApplier,{textColor:e.textColor,text:e.text,bold:e.bold,italic:e.italic,fontSize:e.fontSize},new n.TranslatedString(this._source.name(),this._source.translatedType()),{isEditable:!0,isMultiLine:!0})]}}}}

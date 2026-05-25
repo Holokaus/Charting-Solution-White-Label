@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change color bars based on previous close"],ar:["تغيير لون الأعمدة بناءً على الإغلاق السابق"]}}

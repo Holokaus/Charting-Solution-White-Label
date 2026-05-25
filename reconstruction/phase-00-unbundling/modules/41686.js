@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Inside Pitchfork"],ar:["داخل الرسم البياني بيتش فورك"]}}

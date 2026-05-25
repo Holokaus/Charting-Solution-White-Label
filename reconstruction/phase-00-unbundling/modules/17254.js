@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Text copied to clipboard"],ar:["تم نسخ النص إلى الحافظة"]}}

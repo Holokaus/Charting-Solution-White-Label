@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Symbol & description"],ar:["الرمز والوصف"]}}

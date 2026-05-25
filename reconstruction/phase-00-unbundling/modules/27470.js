@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change {title} middle point visibility"],ar:["تغيير وضوح نقطة المنتصف {title}"]}}

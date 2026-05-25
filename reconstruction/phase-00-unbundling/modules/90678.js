@@ -1,0 +1,1 @@
+e=>{e.exports={en:["food & drink"],ar:["الطعام والشراب"]}}

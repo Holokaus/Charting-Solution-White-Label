@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Fib Speed Resistance Fan"],ar:["مروحة فيبوناتشي المقاومة للسرعة"]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["merge down"],ar:["دمج لأسفل"]}}

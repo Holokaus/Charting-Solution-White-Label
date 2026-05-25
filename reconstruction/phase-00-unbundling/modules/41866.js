@@ -1,0 +1,1 @@
+e=>{e.exports={en:["merge to pane"],ar:["دمج في جزء"]}}

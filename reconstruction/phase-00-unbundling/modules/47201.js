@@ -1,0 +1,1 @@
+(e,t,n)=>{"use strict";function o(...e){return t=>{for(const n of e)void 0!==n&&n(t)}}n.d(t,{createSafeMulticastEventHandler:()=>o})}

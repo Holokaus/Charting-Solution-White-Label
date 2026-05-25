@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Runtime error"],ar:["خطأ وقت التشغيل"]}}

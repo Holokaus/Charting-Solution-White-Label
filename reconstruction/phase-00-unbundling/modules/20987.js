@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Real-time data for this symbol is not supported right now. We may support it in the future."],ar:["البيانات اللحظية لهذا الرمز غير مدعومة في الوقت الحالي. قد نقدمها في المستقبل."]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Change interval. Press number or comma"],ar:["تغيير النطاق الزمني اضغط على الرقم أو الفاصلة"]}}

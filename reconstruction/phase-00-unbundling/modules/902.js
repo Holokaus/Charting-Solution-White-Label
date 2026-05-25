@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change symbol legend format"],ar:["تغيير تنسيق مفتاح التوضيح الرمز"]}}

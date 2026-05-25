@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Point & figure"],ar:["النقطة والرقم"]}}

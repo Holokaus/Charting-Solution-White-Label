@@ -1,0 +1,1 @@
+e=>{e.exports={en:["A layout with that name already exists"],ar:["يوجد بالفعل تنسيق بهذا الاسم"]}}

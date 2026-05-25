@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Grand supercycle"],ar:["الموجة الدورية العظمى"]}}

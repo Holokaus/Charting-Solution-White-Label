@@ -1,0 +1,1 @@
+r=>{r.exports={en:["mirror bars pattern"],ar:["نسخ أنماط الأعمدة"]}}

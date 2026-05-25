@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change futures contract expiration visibility"],ar:["تغيير وضوح انتهاء صلاحية العقود الآجلة"]}}

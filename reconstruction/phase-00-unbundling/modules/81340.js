@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change {title} change in pips visibility"],ar:["تغيير وضوح نقاط تغير {title}"]}}

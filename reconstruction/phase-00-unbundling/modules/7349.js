@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Area with breaks"],ar:["مساحة يتخللها فواصل"]}}

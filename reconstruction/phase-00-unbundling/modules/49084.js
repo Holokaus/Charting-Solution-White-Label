@@ -1,0 +1,1 @@
+(t,e,n)=>{"use strict";n.d(e,{default:()=>o});var r=n(31434),i=n(13383);const o=function(t,e){for(var n=0,o=(e=(0,r.default)(e,t)).length;null!=t&&n<o;)t=t[(0,i.default)(e[n++])];return n&&n==o?t:void 0}}

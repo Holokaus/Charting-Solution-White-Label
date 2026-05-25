@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Study Error"],ar:["خطأ في الدراسة"]}}

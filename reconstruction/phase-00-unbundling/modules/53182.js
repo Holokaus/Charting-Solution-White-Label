@@ -1,0 +1,1 @@
+e=>{e.exports={en:["No exchanges match your criteria"],ar:["لا توجد أسواق تطابق المعايير التي عينتها"]}}

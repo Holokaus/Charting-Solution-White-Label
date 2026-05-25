@@ -1,0 +1,1 @@
+e=>{e.exports={en:["(O + H + L + C)/4"]}}

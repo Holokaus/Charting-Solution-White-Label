@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Path"],ar:["مسار"]}}

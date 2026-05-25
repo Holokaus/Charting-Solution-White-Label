@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Everyone with the link can view and copy"],ar:["كل شخص لديه هذا الرابط يمكنه المشاهدة والنسخ"]}}

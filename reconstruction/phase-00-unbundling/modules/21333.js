@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change value"],ar:["تغيير القيمة"]}}

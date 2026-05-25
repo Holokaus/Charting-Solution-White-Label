@@ -1,0 +1,1 @@
+e=>{e.exports={en:["{status} P&L: {pnl}"],ar:["‎{status}‎ الهدف والخسارة:‎{pnl}‎"]}}

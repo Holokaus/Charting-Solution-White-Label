@@ -1,0 +1,1 @@
+(e,t,n)=>{"use strict";n.d(t,{LineStyleSelect:()=>a});var o=n(50959),i=n(53598),r=n(45560);function a(e){const{property:t}=e,[n,a]=(0,r.useDefinitionProperty)({property:t});return o.createElement(i.LineStyleSelect,{...e,lineStyle:n,lineStyleChange:a})}}

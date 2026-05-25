@@ -1,0 +1,1 @@
+e=>{e.exports={en:["San Salvador"],ar:["سان سلفادور"]}}

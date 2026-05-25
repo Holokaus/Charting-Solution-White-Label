@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Stop: {stopChange} ({stopChangePercent}) {stopChangePip}, Amount: {amount}"],ar:["وقف:{stopChange} ({stopChangePercent}) {stopChangePip}، الكمية:‎{amount}‎"]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change {title} mirrored"],ar:["تغيير {title} المعكوس"]}}

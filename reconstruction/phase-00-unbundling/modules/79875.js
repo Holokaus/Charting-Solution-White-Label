@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change {title} risk"],ar:["تغيير مخاطرة {title}"]}}

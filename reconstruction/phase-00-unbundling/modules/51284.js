@@ -1,0 +1,1 @@
+e=>{e.exports={"tablet-normal-breakpoint":"(max-width: 768px)","small-height-breakpoint":"(max-height: 360px)","tablet-small-breakpoint":"(max-width: 440px)"}}

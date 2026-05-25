@@ -1,0 +1,1 @@
+(t,e,n)=>{"use strict";n.d(e,{default:()=>i});var r=/^(?:0|[1-9]\d*)$/;const i=function(t,e){var n=typeof t;return!!(e=e??9007199254740991)&&("number"==n||"symbol"!=n&&r.test(t))&&t>-1&&t%1==0&&t<e}}

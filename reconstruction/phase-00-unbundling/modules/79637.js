@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change chart values visibility"],ar:["تغيير رؤية قيم الرسم"]}}

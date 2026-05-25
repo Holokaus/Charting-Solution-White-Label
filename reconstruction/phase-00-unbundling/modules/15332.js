@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Reset price scale"],ar:["إعادة تعيين مقياس السعر"]}}

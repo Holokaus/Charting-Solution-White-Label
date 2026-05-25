@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Show contract expiration"],ar:["إظهار انتهاء صلاحية العقد"]}}

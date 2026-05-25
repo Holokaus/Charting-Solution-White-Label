@@ -1,0 +1,1 @@
+e=>{e.exports={en:["toggle collapsed pane state"],ar:["تبديل حالة اللوحة المطوية"]}}

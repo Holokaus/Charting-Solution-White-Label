@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change linking group"],ar:["تغيير مجموعة الربط"]}}

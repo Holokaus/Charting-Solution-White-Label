@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Rotated Rectangle"],ar:["مستطيل مائل"]}}

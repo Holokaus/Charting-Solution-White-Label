@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Do you really want to delete Chart Template '{name}' ?"],ar:['هل تريد حقًا حذف قالب الرسم البياني "{name}"؟']}}

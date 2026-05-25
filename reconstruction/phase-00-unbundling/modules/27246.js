@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Bar's style"],ar:["تصميم الأعمدة"]}}

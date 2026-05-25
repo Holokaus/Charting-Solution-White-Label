@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Data modification"],ar:["تعديل البيانات"]}}

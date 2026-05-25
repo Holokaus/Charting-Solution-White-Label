@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Coeffs as percents"],ar:["مُعامِلات كنسب مئوية"]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["TradingView is interactive and has commands to use with a screen reader. The following is a list of keyboard commands available to interact on the platform"],ar:["TradingView تفاعلية ولديها أوامر لاستخدامها مع قارئ الشاشة. فيما يلي قائمة بأوامر لوحة المفاتيح المتاحة للتفاعل على المنصة"]}}

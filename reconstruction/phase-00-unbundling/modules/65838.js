@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change symbol description watermark visibility"],ar:["تغيير الرمز والوصف ورؤية العلامة المائية"]}}

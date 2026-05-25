@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change previous close price line width"],ar:["تغيير عرض خط سعر الإغلاق السابق"]}}

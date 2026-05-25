@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change percent width"],ar:["تغيير نسبة العرض"]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Shapes"],ar:["الأشكال"]}}

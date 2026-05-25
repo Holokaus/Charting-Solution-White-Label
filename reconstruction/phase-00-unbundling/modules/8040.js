@@ -1,0 +1,1 @@
+e=>{e.exports={en:["turn line tools sharing off"],ar:["وقف تشغيل مشاركة أدوات الخط"]}}

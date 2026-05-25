@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Chart image embed code copied to clipboard {emoji}"],ar:["تم نسخ رمز تضمين صورة الرسم البياني إلى الحافظة {emoji}"]}}

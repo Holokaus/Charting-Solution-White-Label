@@ -1,0 +1,1 @@
+e=>{e.exports={en:["stay in drawing mode"],ar:["البقاء في وضع الرسم"]}}

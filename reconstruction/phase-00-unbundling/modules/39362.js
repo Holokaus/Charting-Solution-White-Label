@@ -1,0 +1,1 @@
+(e,t,o)=>{"use strict";o.d(t,{SymbolSearchDialogFooter:()=>i});var n=o(50959),a=o(97754),r=o.n(a),l=o(1560);function i(e){const{className:t,children:o}=e;return n.createElement("div",{className:r()(l.footer,t)},o)}}

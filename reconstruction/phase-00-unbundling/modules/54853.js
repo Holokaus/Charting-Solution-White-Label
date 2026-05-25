@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Visibility on intervals"],ar:["الوضوح على الفواصل الزمنية"]}}

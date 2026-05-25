@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Apply default"],ar:["تطبيق الوضع الافتراضي"]}}

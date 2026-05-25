@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Values tooltip on long press"],ar:["تلميح أداة القيم عند الضغط لفترة طويلة"]}}

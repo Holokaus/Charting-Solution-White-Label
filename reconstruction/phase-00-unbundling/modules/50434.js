@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Postmarket"],ar:["ما بعد الإغلاق"]}}

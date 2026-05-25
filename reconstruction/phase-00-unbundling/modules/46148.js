@@ -1,0 +1,1 @@
+(e,t,o)=>{"use strict";var n;o.d(t,{CompareOption:()=>n}),function(e){e[e.SamePctScale=0]="SamePctScale",e[e.NewPriceScale=1]="NewPriceScale",e[e.NewPane=2]="NewPane",e[e.SameScale=3]="SameScale"}(n||(n={}))}

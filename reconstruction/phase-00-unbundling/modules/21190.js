@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Chart style Volume footprint"],ar:["بصمة حجم نمط الرسم البياني"]}}

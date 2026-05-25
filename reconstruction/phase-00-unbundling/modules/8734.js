@@ -1,0 +1,1 @@
+(e,t,n)=>{"use strict";function o(e,t,n,o,r,i,s,a){return{id:e,label:t,icon:n,description:o,isActive:r,onClick:i,isFavorite:s,onFavoriteClick:a}}n.d(t,{createAction:()=>o})}

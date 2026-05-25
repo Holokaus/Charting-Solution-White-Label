@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Chart style Bars"],ar:["أعمدة نمط الرسم البياني"]}}

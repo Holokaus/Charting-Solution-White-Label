@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change indicator values visibility"],ar:["تغيير وضوح قيم المؤشر"]}}

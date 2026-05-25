@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change {title} candle wick visibility"],ar:["تغيير وضوح ظلال شموع {title}"]}}

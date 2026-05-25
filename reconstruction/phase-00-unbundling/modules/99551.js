@@ -1,0 +1,1 @@
+e=>{e.exports={en:["apply all chart properties"],ar:["تطبيق كافة خصائص الرسم البياني"]}}

@@ -1,0 +1,1 @@
+(t,e,n)=>{"use strict";n.d(e,{default:()=>i});var r=Object.prototype;const i=function(t){var e=t&&t.constructor;return t===("function"==typeof e&&e.prototype||r)}}

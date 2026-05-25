@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Move the point to position the anchor then tap to place"],ar:["حرّك النقطة لتغيير موضع المُثبّت ثم اضغط لوضعه"]}}

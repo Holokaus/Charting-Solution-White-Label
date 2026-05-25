@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change min tick"],ar:["تغيير أدنى تيك"]}}

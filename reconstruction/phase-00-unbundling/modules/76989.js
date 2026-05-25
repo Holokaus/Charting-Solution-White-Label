@@ -1,0 +1,1 @@
+e=>{e.exports={en:["This script is invite-only. To request access, please contact its author."],ar:["هذا النص البرمجي هو بدعوة فقط. لطلب الوصول، يرجى الاتصال بالمؤلف."]}}

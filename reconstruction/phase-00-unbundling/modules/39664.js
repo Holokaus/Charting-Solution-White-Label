@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Opened in editor"],ar:["تم فتحه في المحرر"]}}

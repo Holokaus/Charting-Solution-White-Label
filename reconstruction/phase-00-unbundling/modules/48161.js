@@ -1,0 +1,1 @@
+e=>{e.exports={en:["View Only Mode"],ar:["وضع العرض فقط"]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["At close"],ar:["عند الإغلاق"]}}

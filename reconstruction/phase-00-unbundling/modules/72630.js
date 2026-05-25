@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Closed"],ar:["أغلقت"]}}

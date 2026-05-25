@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Step line with breaks"],ar:["خط خطوة مع فواصل"]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["{studyTitle} added to chart"],ar:["تمت إضافة ‎{studyTitle}‎ إلى الرسم البياني"]}}

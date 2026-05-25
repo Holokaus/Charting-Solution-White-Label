@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Upload a valid image. The file you uploaded was either not an image or a corrupted image."],ar:["برجاء تحميل صورة صالحة، الملف الذي حملته لم يكن صورة أو ربما كانت الصورة تالفة."]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Quick Search"],ar:["البحث السريع"]}}

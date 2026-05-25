@@ -1,0 +1,2 @@
+(e,t,r)=>{"use strict";r.d(t,{useWatchedValueReadonly:()=>o});var n=r(50959)
+;const o=(e,t=!1,r=[])=>{const o="watchedValue"in e?e.watchedValue:void 0,a="defaultValue"in e?e.defaultValue:e.watchedValue.value(),[l,s]=(0,n.useState)(o?o.value():a);return(t?n.useLayoutEffect:n.useEffect)((()=>{if(o){s(o.value());const e=e=>s(e);return o.subscribe(e),()=>o.unsubscribe(e)}return()=>{}}),[o,...r]),l}}

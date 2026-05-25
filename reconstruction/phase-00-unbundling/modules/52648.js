@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Avg HL in minticks"],ar:["متوسط أعلى-أدنى لأقل تيك"]}}

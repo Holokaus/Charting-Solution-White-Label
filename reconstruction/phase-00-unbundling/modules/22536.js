@@ -1,0 +1,1 @@
+e=>{e.exports={wrapper:"wrapper-K4u4Ng3Z",title:"title-K4u4Ng3Z",additionalButton:"additionalButton-K4u4Ng3Z",buttons:"buttons-K4u4Ng3Z",text:"text-K4u4Ng3Z",button:"button-K4u4Ng3Z"}}

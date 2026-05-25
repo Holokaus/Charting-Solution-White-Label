@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Data Provided by"],ar:["البيانات مقدمة من قبل"]}}

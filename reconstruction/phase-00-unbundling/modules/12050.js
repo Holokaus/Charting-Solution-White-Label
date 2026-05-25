@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change symbol field visibility"],ar:["تغيير وضوح حقل الرمز"]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["toggle auto scale"],ar:["تبديل المقياس التلقائي"]}}

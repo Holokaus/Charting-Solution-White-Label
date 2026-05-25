@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Recent symbols"],ar:["الرموز الحديثة"]}}

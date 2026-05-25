@@ -1,0 +1,1 @@
+e=>{e.exports={en:["It'll close in {remainingTime}."],ar:["سيغلق المكان {remainingTime}."]}}

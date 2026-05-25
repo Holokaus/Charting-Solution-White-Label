@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Always visible"],ar:["ظاهر وموجود دائمًا"]}}

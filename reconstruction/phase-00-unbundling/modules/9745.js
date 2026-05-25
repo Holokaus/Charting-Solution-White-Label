@@ -1,0 +1,1 @@
+(e,t,n)=>{"use strict";n.d(t,{Icon:()=>r});var s=n(50959);const r=s.forwardRef(((e,t)=>{const{icon:n="",title:r,ariaLabel:i,ariaLabelledby:o,ariaHidden:a,...l}=e,u=!!(r||i||o);return s.createElement("span",{role:"img",...l,ref:t,"aria-label":i,"aria-labelledby":o,"aria-hidden":a||!u,title:r,dangerouslySetInnerHTML:{__html:n}})}))}

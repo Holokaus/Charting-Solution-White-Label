@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Hide all positions & orders"],ar:["إخفاء كل المراكز والأوامر"]}}

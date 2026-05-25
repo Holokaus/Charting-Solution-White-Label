@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Gann and Fibonacci tools"],ar:["أدوات فيبوناتشي و جان"]}}

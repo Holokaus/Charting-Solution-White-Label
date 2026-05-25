@@ -1,0 +1,1 @@
+e=>{e.exports={en:["All intervals"],ar:["كل الفواصل الزمنية"]}}

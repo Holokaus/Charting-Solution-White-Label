@@ -1,0 +1,1 @@
+r=>{r.exports={en:["{timePeriod} in {timeInterval}"],ar:["{timePeriod} في {timeInterval}"]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change {title} grid line color"],ar:["تغيير وضوح الملصقات العليا {title}"]}}

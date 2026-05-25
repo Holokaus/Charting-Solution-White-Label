@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Specified value is less than the instrument minimum of {min}."],ar:["القيمة المحددة أقل من الحد الأدنى للأداة والتي تبلغ {min}."]}}

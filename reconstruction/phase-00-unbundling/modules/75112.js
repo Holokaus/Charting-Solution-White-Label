@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Elliott Double Combo Wave (WXY)"],ar:["موجة إليوت الثنائية المركبة (WXY)"]}}

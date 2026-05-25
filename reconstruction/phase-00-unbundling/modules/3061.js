@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Remove this financial metric from favorites"],ar:["أزل هذا المقياس المالي من المفضلة"]}}

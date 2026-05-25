@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Select source"],ar:["اختر مصدراً"]}}

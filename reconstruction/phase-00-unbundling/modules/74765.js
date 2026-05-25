@@ -1,0 +1,1 @@
+e=>{e.exports={section:"section-Og4Rg_SK",heading:"heading-Og4Rg_SK"}}

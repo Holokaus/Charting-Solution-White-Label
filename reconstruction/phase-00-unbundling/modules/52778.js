@@ -1,0 +1,1 @@
+(e,t,i)=>{"use strict";i.d(t,{OutsideEvent:()=>n});var s=i(36383);function n(e){const{children:t,...i}=e;return t((0,s.useOutsideEvent)(i))}}

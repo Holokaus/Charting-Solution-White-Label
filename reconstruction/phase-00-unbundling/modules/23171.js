@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change {title} variance value"],ar:["تغيير قيمة التباين {title}"]}}

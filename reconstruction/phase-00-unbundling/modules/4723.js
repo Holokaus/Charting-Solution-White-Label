@@ -1,0 +1,1 @@
+e=>{e.exports={en:["futures"],ar:["العقود الآجلة"]}}

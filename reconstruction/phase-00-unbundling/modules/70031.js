@@ -1,0 +1,1 @@
+(e,t,i)=>{i.d(t,{factoryDefaultsForCurrentTheme:()=>a});var n=i(16738),r=i(90054),o=i(50151),s=i(45345),l=i(24633);function a(e,t){const i=s.watchedTheme.value()??l.StdTheme.Light,a=(0,r.default)(e);return(0,n.default)(a,(0,o.ensureDefined)(t.get(i))),a}}

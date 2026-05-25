@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Defaulted bond"],ar:["السندات المتعثرة"]}}

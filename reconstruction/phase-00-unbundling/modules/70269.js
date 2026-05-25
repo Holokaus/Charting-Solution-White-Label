@@ -1,0 +1,1 @@
+e=>{e.exports={en:["No indicators matched your criteria"],ar:["لا توجد مؤشرات تتوافق مع معاييرك."]}}

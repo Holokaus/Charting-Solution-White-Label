@@ -1,0 +1,1 @@
+(t,e,i)=>{i.d(e,{LineToolTradingPriceAxisView:()=>r});var o=i(47432);class r extends o.LineToolPriceAxisView{_formatPrice(t,e){return this._source.formatter().format(t)}}}

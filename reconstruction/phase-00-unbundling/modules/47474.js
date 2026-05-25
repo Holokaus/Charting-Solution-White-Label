@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change splits visibility"],ar:["تغيير وضوح تقسيمات الأسهم"]}}

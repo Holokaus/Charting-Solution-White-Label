@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Cursors"],ar:["المؤشرات"]}}

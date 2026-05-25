@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change plot type"],ar:["تغيير نمط الرسم"]}}

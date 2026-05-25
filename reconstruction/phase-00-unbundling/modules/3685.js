@@ -1,0 +1,1 @@
+(e,t,r)=>{"use strict";function n(){return window.configurationData?.exchanges?.map((e=>({...e,country:"",providerId:"",flag:""})))??[]}r.d(t,{getExchanges:()=>n})}

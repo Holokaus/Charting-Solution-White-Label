@@ -1,0 +1,1 @@
+e=>{e.exports={en:["No access to this script"],ar:["لا يمكن الوصول إلى هذا النص البرمجي"]}}

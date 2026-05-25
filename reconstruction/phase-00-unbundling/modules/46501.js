@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Add Symbol"],ar:["إضافة رمز"]}}

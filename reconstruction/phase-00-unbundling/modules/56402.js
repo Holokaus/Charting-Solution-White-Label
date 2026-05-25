@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change {title} visibility on days"],ar:["تغيير وضوح {title} على الأيام"]}}

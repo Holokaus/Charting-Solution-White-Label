@@ -1,0 +1,1 @@
+e=>{e.exports={en:["sync time"],ar:["وقت المزامنة"]}}

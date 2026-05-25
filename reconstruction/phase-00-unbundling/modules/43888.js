@@ -1,0 +1,1 @@
+(t,e,n)=>{"use strict";n.d(e,{default:()=>c});var r=n(81296),i=n(13795);const o=function(t){return(0,i.default)(t)&&"[object Map]"==(0,r.default)(t)};var u=n(5467),a=n(92350),s=a.default&&a.default.isMap;const c=s?(0,u.default)(s):o}

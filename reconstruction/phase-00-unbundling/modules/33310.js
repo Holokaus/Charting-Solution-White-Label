@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Stop color"],ar:["لون وقف الخسارة"]}}

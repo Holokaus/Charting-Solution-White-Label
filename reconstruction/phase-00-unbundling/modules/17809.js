@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Time Price Opportunity"],ar:["فرص الوقت والأسعار"]}}

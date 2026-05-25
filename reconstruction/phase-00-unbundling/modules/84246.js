@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Regular trading hours"],ar:["ساعات التداول العادية"]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Date Range"],ar:["المدى الزمني"]}}

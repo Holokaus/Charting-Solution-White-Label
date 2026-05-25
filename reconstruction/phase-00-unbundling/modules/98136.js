@@ -1,0 +1,1 @@
+e=>{e.exports={en:["OC bars"],ar:["أعمدة OC"]}}

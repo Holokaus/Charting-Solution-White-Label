@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Compilation error"],ar:["خطأ في التحويل."]}}

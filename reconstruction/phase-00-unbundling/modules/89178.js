@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change {title} up line color"],ar:["تغيير لون الخط العلوي {title}"]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Interval already exists, please use a different value"],ar:["الفاصل الزمني موجود بالفعل، يرجى استخدام قيمة مختلفة"]}}

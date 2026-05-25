@@ -1,0 +1,1 @@
+e=>{e.exports={menu:"menu-Tx5xMZww"}}

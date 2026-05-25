@@ -1,0 +1,1 @@
+(e,t,i)=>{"use strict";function s(e){return 0===e.detail}i.d(t,{isKeyboardClick:()=>s})}

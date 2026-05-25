@@ -1,0 +1,1 @@
+e=>{e.exports={en:["move drawings"],ar:["نقل الرسومات"]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Flag Symbol"],ar:["وضع علامة على الرمز"]}}

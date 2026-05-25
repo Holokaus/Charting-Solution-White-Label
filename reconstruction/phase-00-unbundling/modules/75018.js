@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Manage panes"],ar:["إدارة العناصر"]}}

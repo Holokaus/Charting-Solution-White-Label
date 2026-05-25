@@ -1,0 +1,1 @@
+e=>{e.exports={en:["pin to left scale"],ar:["ثبت على المقياس الأيسر"]}}

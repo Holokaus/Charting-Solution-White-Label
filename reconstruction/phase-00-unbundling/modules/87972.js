@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Take a snapshot"],ar:["التقط صورة الشاشة"]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={checkbox:"checkbox-aOSYFxuH"}}

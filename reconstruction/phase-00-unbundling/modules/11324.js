@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Layout name (Z to A)"],ar:["اسم التنسيق (Z إلى A)"]}}

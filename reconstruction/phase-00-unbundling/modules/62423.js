@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Chart style Heikin Ashi"],ar:["نمط الرسم البياني هيكين آشي"]}}

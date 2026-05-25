@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change area line width"],ar:["تغيير عرض خط المنطقة"]}}

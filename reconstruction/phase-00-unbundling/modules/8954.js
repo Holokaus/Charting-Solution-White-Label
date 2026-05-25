@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Selected Drawings"],ar:["الرسومات المختارة"]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change symbol previous close value visibility"],ar:["تغيير وضوح قيمة الإغلاق للرمز"]}}

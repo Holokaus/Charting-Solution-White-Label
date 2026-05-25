@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Editors' picks"],ar:["مختارات المحرر"]}}

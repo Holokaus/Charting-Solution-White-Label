@@ -1,0 +1,1 @@
+e=>{e.exports={en:["{number} day","{number} days"],ar:["‎{number}‎ يوم","‎{number}‎ يوم","‎{number}‎ يوم","‎{number}‎ يوم","‎{number}‎ يوم","‎{number}‎ يوم"]}}

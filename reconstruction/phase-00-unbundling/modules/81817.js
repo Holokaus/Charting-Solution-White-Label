@@ -1,0 +1,1 @@
+(e,t,i)=>{i.r(t),i.d(t,{LineToolArrow:()=>s});var n=i(42150);class s extends n.LineToolTrendLine{constructor(e,t,i,n){super(e,t??s.createProperties(e.backgroundTheme().spawnOwnership()),i,n)}name(){return"Arrow"}static createProperties(e,t){const i=n.LineToolTrendLine._createPropertiesImpl("linetoolarrow",e,t);return s._configureProperties(i),i}}}

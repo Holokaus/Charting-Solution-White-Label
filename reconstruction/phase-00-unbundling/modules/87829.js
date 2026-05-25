@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Insert indicator"],ar:["إدخال مؤشر"]}}

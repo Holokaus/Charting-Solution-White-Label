@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change {title} angle visibility"],ar:["تغيير وضوح زاوية {title}"]}}

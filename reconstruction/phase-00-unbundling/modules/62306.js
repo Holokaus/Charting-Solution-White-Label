@@ -1,0 +1,1 @@
+e=>{e.exports={en:["add this symbol to entire layout"],ar:["أضف هذا الرمز إلى التنسيق بالكامل"]}}

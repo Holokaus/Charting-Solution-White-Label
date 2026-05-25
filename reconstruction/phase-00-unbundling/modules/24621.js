@@ -1,0 +1,1 @@
+e=>{e.exports={en:["lines color"],ar:["لون الخط"]}}

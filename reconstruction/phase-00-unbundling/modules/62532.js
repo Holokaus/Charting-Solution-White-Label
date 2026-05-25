@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Right Margin"],ar:["الهامش الأيمن"]}}

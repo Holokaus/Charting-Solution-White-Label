@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Press and hold to see detailed chart values"],ar:["اضغط مع الاستمرار لرؤية قيم الرسم البياني التفصيلية"]}}

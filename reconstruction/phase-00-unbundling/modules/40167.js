@@ -1,0 +1,1 @@
+(t,e,n)=>{"use strict";n.r(e);var r=n(87465);const i=/{(\w+)}/g,o=/{(\d+)}/g;String.prototype.format=function(...t){const e=(0,r.isObject)(t[0]),n=e?i:o,u=e?(e,n)=>{const r=t[0];return void 0!==r[n]?r[n]:e}:(e,n)=>{const r=parseInt(n,10),i=t[r];return void 0!==i?i:e};return this.replace(n,u)}}

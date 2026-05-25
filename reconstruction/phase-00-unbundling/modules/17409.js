@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Double-click to finish Polyline"],ar:["انقر مرتيين لإنهاء الشكل متعدد الخطوط"]}}

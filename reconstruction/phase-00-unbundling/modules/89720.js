@@ -1,0 +1,1 @@
+e=>{e.exports={en:["apply drawing template"],ar:["تطبيق قالب الرسم"]}}

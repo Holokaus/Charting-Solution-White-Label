@@ -1,0 +1,1 @@
+e=>{e.exports={en:["On the left"],ar:["على اليسار"]}}

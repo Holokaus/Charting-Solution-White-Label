@@ -1,0 +1,1 @@
+e=>{e.exports={en:["You need to update one or more of your indicators. Resize the panes or the window to see the details."],ar:["تحتاج إلى تحديث واحد أو أكثر من المؤشرات الخاصة بك. قم بتغيير حجم الأجزاء أو النافذة لرؤية التفاصيل."]}}

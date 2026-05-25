@@ -1,0 +1,1 @@
+e=>{e.exports={en:["cut {title}"],ar:["قص ‎{title}‎"]}}

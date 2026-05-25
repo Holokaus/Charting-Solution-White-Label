@@ -1,0 +1,1 @@
+e=>{e.exports={en:["symbol lock"],ar:["قفل الرمز"]}}

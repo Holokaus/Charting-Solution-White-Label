@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Zoom out"],ar:["تصغير"]}}

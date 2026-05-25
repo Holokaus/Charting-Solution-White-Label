@@ -1,0 +1,1 @@
+t=>{t.exports={wrap:"wrap-Nn3SCuEL",icon:"icon-Nn3SCuEL",colorBg:"colorBg-Nn3SCuEL",color:"color-Nn3SCuEL",multicolor:"multicolor-Nn3SCuEL",white:"white-Nn3SCuEL"}}

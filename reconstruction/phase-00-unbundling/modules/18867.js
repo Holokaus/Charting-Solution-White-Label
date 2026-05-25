@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change continuous contract switch visibility"],ar:["تغيير رؤية تبديل العقد المستمر"]}}

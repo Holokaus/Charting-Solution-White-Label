@@ -1,0 +1,1 @@
+(e,t,n)=>{"use strict";function o(e){null!==e&&e.setSelectionRange(0,e.value.length)}n.d(t,{selectAllContent:()=>o})}

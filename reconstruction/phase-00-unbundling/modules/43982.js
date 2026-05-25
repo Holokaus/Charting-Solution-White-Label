@@ -1,0 +1,1 @@
+(e,t,n)=>{"use strict";n.d(t,{useProperty:()=>a});var o=n(50959);const a=e=>{const[t,n]=(0,o.useState)(e.value());return(0,o.useEffect)((()=>{const t=e=>{n(e.value())};t(e);const o={};return e.subscribe(o,t),()=>e.unsubscribe(o,t)}),[e]),t}}

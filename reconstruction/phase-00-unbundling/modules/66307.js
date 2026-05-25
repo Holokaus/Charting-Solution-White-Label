@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change last day change visibility"],ar:["تغيير الرؤية في اليوم الأخير"]}}

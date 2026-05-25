@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Profit level"],ar:["مستوى جني الأرباح"]}}

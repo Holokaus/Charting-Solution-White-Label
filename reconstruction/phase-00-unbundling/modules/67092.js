@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Fullscreen mode"],ar:["وضع الشاشة الكاملة"]}}

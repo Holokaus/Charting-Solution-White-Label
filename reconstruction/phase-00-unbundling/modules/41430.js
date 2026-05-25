@@ -1,0 +1,1 @@
+e=>{e.exports={en:["removing line tools group {name}"],ar:["حذف مجموعة أدوات الخطوط ‎{name}‎"]}}

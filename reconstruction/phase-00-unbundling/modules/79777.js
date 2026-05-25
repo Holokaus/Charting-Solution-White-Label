@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Lock/unlock"],ar:["إغلاق/ فتح"]}}

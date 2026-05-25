@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Copy link"],ar:["نسخ الرابط"]}}

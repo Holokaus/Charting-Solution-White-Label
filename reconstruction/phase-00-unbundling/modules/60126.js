@@ -1,0 +1,1 @@
+e=>{e.exports={en:["New price scale"],ar:["مقياس سعر جديد"]}}

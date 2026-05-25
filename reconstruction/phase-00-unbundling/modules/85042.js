@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Fib Wedge"],ar:["وتد فيبوناتشي"]}}

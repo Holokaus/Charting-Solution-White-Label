@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Head and Shoulders"],ar:["نموذج الرأس والكتفين"]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Script name"],ar:["اسم النص البرمجي"]}}

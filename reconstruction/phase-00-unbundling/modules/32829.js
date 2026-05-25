@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change resolution"],ar:["تغيير النطاق"]}}

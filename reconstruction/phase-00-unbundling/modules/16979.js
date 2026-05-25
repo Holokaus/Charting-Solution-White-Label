@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change date range"],ar:["تغيير نطاق التاريخ"]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Tallinn"],ar:["بورصة تالين"]}}

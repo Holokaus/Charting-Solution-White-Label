@@ -1,0 +1,1 @@
+e=>{e.exports={en:["No data here"],ar:["لا توجد بيانات هنا"]}}

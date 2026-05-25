@@ -1,0 +1,1 @@
+r=>{r.exports={en:["Extended Hours is available only for intraday charts"],ar:["ساعات التداول المُمددة متاحة فقط على النطاقات الصغرى خلال اليوم للرسوم البيانية"]}}

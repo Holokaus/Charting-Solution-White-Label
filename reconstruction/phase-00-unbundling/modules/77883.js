@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change flag color"],ar:["تغيير لون العلم"]}}

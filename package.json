@@ -26,6 +26,18 @@
   "version": "30.0.0",
   "types": "charting_library.d.ts",
   "dependencies": {
-    "@babel/parser": "^7.29.3"
-  }
+    "@babel/parser": "^7.29.3",
+    "@babel/traverse": "^7.29.0",
+    "@babel/types": "^7.29.0"
+  },
+  "description": "[Demo][demo-url] | [Documentation][doc-url] | [Tutorial][tutorial-url] | [Discord community][discord-url]",
+  "devDependencies": {
+    "puppeteer-core": "^24.43.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }

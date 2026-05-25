@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Time for a walk — this market is closed."],ar:["حان وقت المغادرة - هذا السوق مغلق."]}}

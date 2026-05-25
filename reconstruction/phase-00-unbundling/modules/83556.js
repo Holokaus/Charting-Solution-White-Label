@@ -1,0 +1,1 @@
+e=>{e.exports={en:["This is no longer publicly trading so no new data will be added. But you can explore the historicals here."],ar:["لم يعد هذا يتم تداوله علنًا، لذا لن تتم إضافة أي بيانات جديدة. ولكن يمكنك استكشاف التواريخ هنا."]}}

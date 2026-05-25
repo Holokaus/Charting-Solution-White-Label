@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Thin bars"],ar:["أعمدة نحيفة"]}}

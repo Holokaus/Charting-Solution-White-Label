@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Background color"],ar:["لون الخلفية"]}}

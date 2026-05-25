@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change {title} visibility on seconds"],ar:["تغيير وضوح {title} على الثواني"]}}

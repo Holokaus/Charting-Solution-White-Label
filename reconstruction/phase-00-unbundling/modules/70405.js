@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Chart style High-low"],ar:["نمط الرسم البياني High-Low"]}}

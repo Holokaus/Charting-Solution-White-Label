@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Line tool text colors"],ar:["ألوان نص أداة الخطوط"]}}

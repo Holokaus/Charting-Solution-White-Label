@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change pane separators color"],ar:["تغيير لون فواصل الجزء"]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["The source code of this script version is open in the Pine Editor."],ar:["الكود المصدري لإصدار البرنامج النصي هذا مفتوح في Pine Editor."]}}

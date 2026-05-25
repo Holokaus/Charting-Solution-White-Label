@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change {chartType} down color"],ar:["تغيير لون {chartType} الهابط"]}}

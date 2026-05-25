@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Open chart in popup"],ar:["افتح الرسم البياني في نافذة منبثقة"]}}

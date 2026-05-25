@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Three Drives Pattern"],ar:["نموذج الثلاث موجات"]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["{userName} created with {customer}, {date}"],ar:["{userName} تم إنشاؤها باستخدام {customer}، {date}"]}}

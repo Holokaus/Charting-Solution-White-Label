@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change high-low borders visibility"],ar:["تغيير وضوح حدود أعلى-أدنى"]}}

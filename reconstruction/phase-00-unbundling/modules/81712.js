@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Press and hold {key} while zooming to maintain the chart position"],ar:["اضغط لمدة مطولة على {key} أثناء التكبير للحفاظ على موضع الرسم البياني"]}}

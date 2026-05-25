@@ -1,0 +1,1 @@
+e=>{e.exports={en:["{listedExchange} real-time data is available for free to registered users."],ar:["بيانات ‎{listedExchange}‎ اللحظية متاحة مجانًا للمستخدمين المسجلين."]}}

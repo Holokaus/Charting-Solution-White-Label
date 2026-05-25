@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Coordinates"],ar:["إحداثيات"]}}

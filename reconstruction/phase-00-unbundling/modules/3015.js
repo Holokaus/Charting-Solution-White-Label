@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Currency and Unit"],ar:["العملة والوحدة"]}}

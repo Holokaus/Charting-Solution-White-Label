@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Price/bar ratio"],ar:["نسبة السعر/العمود"]}}

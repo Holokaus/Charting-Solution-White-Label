@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change bar X coordinate"],ar:["تغيير إحداثيات سعر X"]}}

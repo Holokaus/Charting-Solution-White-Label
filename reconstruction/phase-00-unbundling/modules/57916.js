@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change visibility at all intervals"],ar:["تغيير الوضوح في جميع الفترات"]}}

@@ -1,0 +1,1 @@
+(e,t,a)=>{"use strict";function n(e,t){const a=document.createElement("a");a.style.display="none",a.href=t,a.download=e,a.click()}a.d(t,{downloadFile:()=>n})}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Volume Profile indicator available only on our upgraded plans."],ar:["مؤشر بروفايل حجم التداول متاح فقط على عضوياتنا المدفوعة."]}}

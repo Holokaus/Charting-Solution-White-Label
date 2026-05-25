@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Line tool backgrounds"],ar:["خلفيات أداة الخطوط"]}}

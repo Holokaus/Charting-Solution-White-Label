@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Chart style HLC bars"],ar:["أعمدة HLC بنمط المخطط"]}}

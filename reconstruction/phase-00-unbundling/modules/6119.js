@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change events visibility on chart"],ar:["تغيير وضوح الأحداث على الرسم البياني"]}}

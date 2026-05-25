@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Indicators name labels"],ar:["ملصق اسم المؤشر"]}}

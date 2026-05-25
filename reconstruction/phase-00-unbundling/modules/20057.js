@@ -1,0 +1,1 @@
+(t,e,n)=>{"use strict";n.d(e,{default:()=>o});var r=n(90484),i=n(82433);const o=function(t,e,n){var o=!0,u=!0;if("function"!=typeof t)throw new TypeError("Expected a function");return(0,i.default)(n)&&(o="leading"in n?!!n.leading:o,u="trailing"in n?!!n.trailing:u),(0,r.default)(t,e,{leading:o,maxWait:e,trailing:u})}}

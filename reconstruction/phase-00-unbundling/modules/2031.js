@@ -1,0 +1,1 @@
+r=>{r.exports={en:["Main symbol data is adjusted for dividends only"],ar:["يتم ضبط بيانات الرمز الرئيسي لتوزيعات الأرباح فقط"]}}

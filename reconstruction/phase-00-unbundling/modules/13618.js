@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Chart style Volume candles"],ar:["شموع الحجم بنمط الرسم البياني"]}}

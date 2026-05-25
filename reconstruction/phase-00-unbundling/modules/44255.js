@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Elliott waves"],ar:["موجات إليوت"]}}

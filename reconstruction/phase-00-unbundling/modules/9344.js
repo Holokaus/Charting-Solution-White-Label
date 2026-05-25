@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change values visibility"],ar:["تغيير وضوح القيم"]}}

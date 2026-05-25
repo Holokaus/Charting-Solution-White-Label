@@ -1,0 +1,1 @@
+e=>{e.exports={en:["US markets overnight quotes"],ar:["عروض الأسعار الليلية في الأسواق الأمريكية"]}}

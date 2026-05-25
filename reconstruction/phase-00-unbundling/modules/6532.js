@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Trades on chart"],ar:["صفقات على الرسم البياني"]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Value according to scale"],ar:["القيمة حسب المقياس"]}}

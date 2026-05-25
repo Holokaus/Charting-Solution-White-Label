@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Point value"],ar:["قيمة النقطة"]}}

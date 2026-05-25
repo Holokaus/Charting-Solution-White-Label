@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Compare symbol"],ar:["مقارنة الرمز"]}}

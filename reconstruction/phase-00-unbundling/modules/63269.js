@@ -1,0 +1,1 @@
+e=>{e.exports={en:["No layouts matched your criteria"],ar:["لا توجد تنسيقات مطابقة للمعايير الخاصة بك"]}}

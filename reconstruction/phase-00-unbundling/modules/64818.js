@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Only {availableResolutions} intervals are supported for {ticker}."],ar:["يتم دعم الفواصل الزمنية {availableResolutions} فقط لـ {ticker}."]}}

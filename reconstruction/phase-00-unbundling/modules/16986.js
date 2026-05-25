@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Pin to right scale (hidden)"],ar:["ثبت على المقياس الأيمن (مخفي)"]}}

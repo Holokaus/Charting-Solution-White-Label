@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Synthetic symbol"],ar:["رمز اصطناعي"]}}

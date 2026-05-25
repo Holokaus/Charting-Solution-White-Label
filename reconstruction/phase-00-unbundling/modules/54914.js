@@ -1,0 +1,1 @@
+e=>{e.exports={description:"description-jgoQcEnP"}}

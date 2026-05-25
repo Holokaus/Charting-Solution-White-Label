@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change electronic trading hours"],ar:["تغيير ساعات التداول الإلكترونية"]}}

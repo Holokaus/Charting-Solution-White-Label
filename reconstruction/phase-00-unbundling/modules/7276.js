@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Merge all scales to the left"],ar:["دمج كل المقاييس إلى اليسار"]}}

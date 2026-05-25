@@ -1,0 +1,1 @@
+e=>{e.exports={en:["hide objects"],ar:["إخفاء العناصر"]}}

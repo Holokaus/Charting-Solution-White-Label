@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Target text"],ar:["نص الهدف"]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Long Position"],ar:["صفقة شراء"]}}

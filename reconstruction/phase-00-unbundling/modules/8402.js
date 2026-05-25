@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Vert only"],ar:["عمودي فقط"]}}

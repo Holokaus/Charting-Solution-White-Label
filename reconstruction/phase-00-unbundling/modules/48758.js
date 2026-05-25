@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Indicators update"],ar:["تحديث المؤشرات"]}}

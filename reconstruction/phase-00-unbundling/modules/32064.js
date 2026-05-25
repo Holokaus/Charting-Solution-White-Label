@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Annotation tools"],ar:["أدوات التوضيحات والملاحظات"]}}

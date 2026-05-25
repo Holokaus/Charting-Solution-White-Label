@@ -1,0 +1,1 @@
+e=>{e.exports={en:["No sync"],ar:["لا مزامنة"]}}

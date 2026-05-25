@@ -1,0 +1,1 @@
+e=>{e.exports={scrollWrap:"scrollWrap-vgCB17hK",overflowScroll:"overflowScroll-vgCB17hK",roundTabs:"roundTabs-vgCB17hK",center:"center-vgCB17hK",overflowWrap:"overflowWrap-vgCB17hK",start:"start-vgCB17hK"}}

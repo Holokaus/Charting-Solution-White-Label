@@ -1,0 +1,1 @@
+(t,e,n)=>{"use strict";function r(t,e){return{start:t,length:e}}function i(t){return r(t.x,t.width)}function o(t){return r(t.y,t.height)}n.d(e,{createHorizontalInterval:()=>i,createInterval:()=>r,createVerticalInterval:()=>o})}

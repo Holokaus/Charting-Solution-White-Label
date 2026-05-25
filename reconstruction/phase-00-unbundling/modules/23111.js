@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Color bars based on previous close"],ar:["تلوين الأعمدة طبقًا للإغلاق السابق"]}}

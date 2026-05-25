@@ -1,0 +1,1 @@
+e=>{e.exports={en:["All sessions"],ar:["جميع الجلسات"]}}

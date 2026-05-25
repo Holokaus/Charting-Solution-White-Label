@@ -1,0 +1,1 @@
+e=>{e.exports={en:["create line tools group"],ar:["أنشئ مجموعة أدوات الخطوط"]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Target border"],ar:["إطار الهدف"]}}

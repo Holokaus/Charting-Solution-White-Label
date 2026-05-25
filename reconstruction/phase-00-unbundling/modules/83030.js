@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change {title} VWAP line color"],ar:["تغيير لون خط VWAP {title}"]}}

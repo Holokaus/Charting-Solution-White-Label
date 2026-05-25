@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change base level"],ar:["تغيير مستوى الأساس"]}}

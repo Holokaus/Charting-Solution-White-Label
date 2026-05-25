@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change {toolName} labels alignment vertical"],ar:["تغيير المحاذاة الرأسية لملصقات {toolName}"]}}

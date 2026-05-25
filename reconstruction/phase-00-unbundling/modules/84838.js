@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Date format"],ar:["تنسيق التاريخ"]}}

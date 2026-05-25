@@ -1,0 +1,1 @@
+e=>{e.exports={en:["flags"],ar:["أعلام"]}}

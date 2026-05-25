@@ -1,0 +1,1 @@
+(e,t,n)=>{"use strict";n.d(t,{default:()=>l});var s=n(38459),a=n(61833),r=n(56882),o=Math.ceil,i=Math.max;const l=function(e,t,n){t=(n?(0,a.default)(e,t,n):void 0===t)?1:i((0,r.default)(t),0);var l=null==e?0:e.length;if(!l||t<1)return[];for(var u=0,c=0,d=Array(o(l/t));u<l;)d[c++]=(0,s.default)(e,u,u+=t);return d}}

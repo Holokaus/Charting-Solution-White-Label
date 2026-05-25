@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Send backward"],ar:["إرسال إلى الخلف"]}}

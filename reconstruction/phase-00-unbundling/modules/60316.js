@@ -1,0 +1,1 @@
+r=>{r.exports={en:["{str} week intervals","{str} weeks intervals"],ar:["فترات ‎{str}‎ أسبوع","فترات ‎{str}‎ أسبوع","فترات ‎{str}‎ أسبوع","فترات ‎{str}‎ أسبوع","فترات ‎{str}‎ أسبوع","فترات ‎{str}‎ أسبوع"]}}

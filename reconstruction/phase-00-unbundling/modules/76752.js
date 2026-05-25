@@ -1,0 +1,1 @@
+e=>{e.exports={en:["stock"],ar:["سهم"]}}

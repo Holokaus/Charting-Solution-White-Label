@@ -1,0 +1,1 @@
+(e,t,o)=>{"use strict";var n;function r(e){e.dispatchEvent(new CustomEvent("roving-tabindex:main-element"))}function i(e){e.dispatchEvent(new CustomEvent("roving-tabindex:secondary-element"))}o.d(t,{becomeMainElement:()=>r,becomeSecondaryElement:()=>i}),function(e){e.MainElement="roving-tabindex:main-element",e.SecondaryElement="roving-tabindex:secondary-element"}(n||(n={}))}

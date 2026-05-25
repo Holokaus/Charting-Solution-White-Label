@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Price labels & lines"],ar:["ملصقات وخطوط الأسعار"]}}

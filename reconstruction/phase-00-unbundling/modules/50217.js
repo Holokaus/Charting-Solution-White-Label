@@ -1,0 +1,1 @@
+(e,t,n)=>{"use strict";n.d(t,{IconGroupWrapper:()=>r});var o=n(50959),s=n(38496);function r(e){const{children:t}=e;return o.createElement("div",{className:s.wrapper},t)}}

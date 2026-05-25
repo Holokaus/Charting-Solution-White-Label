@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Source text"],ar:["نص المصدر"]}}

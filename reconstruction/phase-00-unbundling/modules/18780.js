@@ -1,0 +1,1 @@
+d=>{d.exports={list:"list-JPoFARaG"}}

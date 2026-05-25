@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Chart style Hollow candles"],ar:["شموع جوفاء لنمط الرسم البياني"]}}

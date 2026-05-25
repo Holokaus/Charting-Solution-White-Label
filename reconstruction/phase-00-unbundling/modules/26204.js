@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Scale modes (A and L)"],ar:["أوضاع المقياس (A و L)"]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Crosshair"],ar:["مؤشر التقاطع"]}}

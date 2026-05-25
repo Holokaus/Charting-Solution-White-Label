@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Label text"],ar:["نص الملصق"]}}

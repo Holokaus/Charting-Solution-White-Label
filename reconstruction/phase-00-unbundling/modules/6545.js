@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Snap to indicators"],ar:["انتقل إلى المؤشرات"]}}

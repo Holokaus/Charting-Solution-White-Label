@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change baseline bottom line style"],ar:["تغيير نمط الخط السفلي الأساسي"]}}

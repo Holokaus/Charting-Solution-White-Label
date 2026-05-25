@@ -1,0 +1,1 @@
+e=>{e.exports={en:["add column to right"],ar:["إضافة عمود إلى اليمين"]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["One update per second"],ar:["تحديث واحد لكل ثانية"]}}

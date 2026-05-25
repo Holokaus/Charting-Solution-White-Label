@@ -1,0 +1,1 @@
+e=>{e.exports={customTradingViewStyleButton:"customTradingViewStyleButton-zigjK1n2",withoutIcon:"withoutIcon-zigjK1n2"}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change {title} lower band #2 line color"],ar:["تغيير لون خط النطاق السفلي #2 {title}"]}}

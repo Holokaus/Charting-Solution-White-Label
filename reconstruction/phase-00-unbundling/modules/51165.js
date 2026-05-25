@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Symbol Search"],ar:["بحث عن الرموز"]}}

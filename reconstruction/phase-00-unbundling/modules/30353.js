@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change {title} text visibility"],ar:["تغيير رؤية نص {title}"]}}

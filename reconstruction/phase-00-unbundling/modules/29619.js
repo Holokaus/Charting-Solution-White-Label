@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Add custom color"],ar:["إضافة لون مخصص"]}}

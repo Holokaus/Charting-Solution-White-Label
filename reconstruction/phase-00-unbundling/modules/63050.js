@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change indicator titles visibility"],ar:["تغيير وضوح عناوين المؤشر"]}}

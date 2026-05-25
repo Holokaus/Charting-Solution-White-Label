@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Unflag Symbol"],ar:["إزالة العلامة من الرمز"]}}

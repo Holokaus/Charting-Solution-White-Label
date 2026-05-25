@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Lot size"],ar:["‏ حجم العقد"]}}

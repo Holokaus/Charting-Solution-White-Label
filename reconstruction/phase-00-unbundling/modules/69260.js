@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Volume-based"],ar:["يعتمد على الحجم"]}}

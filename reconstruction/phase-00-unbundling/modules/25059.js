@@ -1,0 +1,1 @@
+e=>{e.exports={en:["You cannot see this pivot timeframe on this resolution"],ar:["لا يمكنك رؤية النقاط المحورية على هذا الإطار الزمني"]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Arrow Mark Down"],ar:["علامة السهم تُشير للأسفل"]}}

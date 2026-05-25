@@ -1,0 +1,1 @@
+e=>{e.exports={emojiSelect:"emojiSelect-IY7RpEY6",placeholder:"placeholder-IY7RpEY6"}}

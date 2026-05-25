@@ -1,0 +1,1 @@
+(e,t,r)=>{"use strict";function n(e,t,r){const n=r.getRegistry(),o=n.addTarget(e,t);return[o,()=>n.removeTarget(o)]}function o(e,t,r){const n=r.getRegistry(),o=n.addSource(e,t);return[o,()=>n.removeSource(o)]}r.d(t,{registerSource:()=>o,registerTarget:()=>n})}

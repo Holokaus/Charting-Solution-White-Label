@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change post market line color"],ar:["تغيير لون خط ما بعد الجلسة"]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["show my ideas only"],ar:["عرض تحاليلي فقط"]}}

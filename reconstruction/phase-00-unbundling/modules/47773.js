@@ -1,0 +1,1 @@
+e=>{e.exports={en:["This symbol is only available on {linkStart}TradingView{linkEnd}."],ar:["هذا الرمز متاح فقط في ‎{linkStart}‎TradingView{linkEnd}."]}}

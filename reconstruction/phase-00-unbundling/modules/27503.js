@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change {title} stop price"],ar:["تغيير سعر الإيقاف {title}"]}}

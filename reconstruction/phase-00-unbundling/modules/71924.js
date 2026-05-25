@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Save indicator template"],ar:["حفظ قالب المؤشر"]}}

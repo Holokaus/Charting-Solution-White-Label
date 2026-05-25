@@ -1,0 +1,1 @@
+e=>{e.exports={en:["{hotKey_0} + Click on the chart"],ar:["{hotKey_0} + اضغط على الرسم البياني"]}}

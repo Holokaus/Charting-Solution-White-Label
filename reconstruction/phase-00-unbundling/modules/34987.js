@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Happy holidays, traders"],ar:["أعيادا سعيدة، أيها التجار"]}}

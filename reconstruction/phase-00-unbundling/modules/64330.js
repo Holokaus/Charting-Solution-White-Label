@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change {title} profit level"],ar:["تغيير مستوى الربح {title}"]}}

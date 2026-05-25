@@ -1,0 +1,1 @@
+(t,e,n)=>{"use strict";n.d(e,{default:()=>f});var r=n(31434),i=n(82593),o=n(49084),u=n(38459);const a=function(t,e){return e.length<2?t:(0,o.default)(t,(0,u.default)(e,0,-1))};var s=n(13383);const c=function(t,e){return e=(0,r.default)(e,t),null==(t=a(t,e))||delete t[(0,s.default)((0,i.default)(e))]};const f=function(t,e){return null==t||c(t,e)}}

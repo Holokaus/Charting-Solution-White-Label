@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Merge all scales into one"],ar:["دمج كل المقاييس في مقياس واحد"]}}

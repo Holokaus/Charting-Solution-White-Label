@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Tick size"],ar:["حجم التيك"]}}

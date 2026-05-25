@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Developing VA"],ar:["تطوير منطقة القيمة"]}}

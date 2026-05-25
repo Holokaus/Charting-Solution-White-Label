@@ -1,0 +1,1 @@
+e=>{e.exports={en:["track time"],ar:["وقت المسار"]}}

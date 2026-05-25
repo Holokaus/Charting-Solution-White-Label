@@ -1,0 +1,1 @@
+e=>{e.exports={en:["The image being pasted is way too large"],ar:["الصورة التي يتم لصقها كبيرة جدًا"]}}

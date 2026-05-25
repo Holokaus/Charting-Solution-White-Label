@@ -1,0 +1,1 @@
+(e,t,n)=>{"use strict";n.d(t,{getChartTimezoneOffsetMs:()=>r,getTimezoneName:()=>a});var s=n(37236);function a(e){const t=e.model().timezone();if("exchange"!==t)return t;const n=e.model().mainSeries().symbolInfo();return n?.timezone}function r(e,t){if(void 0===t)return 0;return(0,s.get_timezone)(t).offset_utc(e)}}

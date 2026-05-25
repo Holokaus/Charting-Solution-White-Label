@@ -1,0 +1,1 @@
+e=>{e.exports={en:["activity"],ar:["أنشطة"]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change arrow color"],ar:["تغيير لون السهم"]}}

@@ -1,0 +1,1 @@
+(e,t,i)=>{"use strict";i.d(t,{StudyError:()=>s});class s extends Error{constructor(e,t){super(e),this.studyError=!0,this.title=t}}}

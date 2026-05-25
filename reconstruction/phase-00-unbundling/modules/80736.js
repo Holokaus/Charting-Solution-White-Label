@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Don't extend"],ar:["لا تقم بالتمديد"]}}

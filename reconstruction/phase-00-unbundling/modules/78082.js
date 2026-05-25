@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Indicators and financials"],ar:["المؤشرات والبيانات المالية"]}}

@@ -1,0 +1,1 @@
+(e,t,i)=>{"use strict";i.r(t),i.d(t,{IconPaneView:()=>r});var n=i(34271);class r extends n.SvgIconPaneView{_iconColor(){return this._source.properties().childs().color.value()}}}

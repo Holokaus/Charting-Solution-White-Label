@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change high-low border color"],ar:["تغيير لون حدود أعلى-أدنى"]}}

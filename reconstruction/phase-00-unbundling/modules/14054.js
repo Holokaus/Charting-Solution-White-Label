@@ -1,0 +1,1 @@
+(t,e,n)=>{"use strict";n.d(e,{default:()=>s});var r=n(99615),i="object"==typeof exports&&exports&&!exports.nodeType&&exports,o=i&&"object"==typeof module&&module&&!module.nodeType&&module,u=o&&o.exports===i?r.default.Buffer:void 0,a=u?u.allocUnsafe:void 0;const s=function(t,e){if(e)return t.slice();var n=t.length,r=a?a(n):new t.constructor(n);return t.copy(r),r}}

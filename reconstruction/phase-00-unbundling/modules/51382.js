@@ -1,0 +1,1 @@
+e=>{e.exports={en:["show {title}"],ar:["عرض ‎{title}‎"]}}

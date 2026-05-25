@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Tick-based intervals are not available for {ticker}."],ar:["الفواصل الزمنية المستندة إلى التيك غير متوفرة لـ {ticker}."]}}

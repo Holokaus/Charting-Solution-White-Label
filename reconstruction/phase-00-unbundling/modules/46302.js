@@ -1,0 +1,1 @@
+e=>{e.exports={en:["set layout sizes"],ar:["تعيين أحجام التخطيط"]}}

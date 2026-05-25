@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change bar down color"],ar:["تغيير لون العمود الهابط"]}}

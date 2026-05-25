@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Available for Pro accounts"],ar:["متاح لحسابات Pro"]}}

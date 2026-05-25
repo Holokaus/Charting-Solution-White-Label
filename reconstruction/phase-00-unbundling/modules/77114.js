@@ -1,0 +1,1 @@
+e=>{e.exports={en:["erase level line"],ar:["محو خط المستوى"]}}

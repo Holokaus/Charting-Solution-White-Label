@@ -1,0 +1,1 @@
+e=>{e.exports={en:["remove line data sources"],ar:["إزالة مصادر خط البيانات"]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Full circles"],ar:["دوائر كاملة"]}}

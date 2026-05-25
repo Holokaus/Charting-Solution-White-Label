@@ -1,0 +1,1 @@
+e=>{e.exports={en:["{count}d","{count}d"],ar:["‎{count}‎ي","‎{count}‎ي","‎{count}‎ي","‎{count}‎ي","‎{count}‎ي","‎{count}‎ي"]}}

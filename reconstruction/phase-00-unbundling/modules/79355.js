@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Save template as"],ar:["حفظ القالب باسم"]}}

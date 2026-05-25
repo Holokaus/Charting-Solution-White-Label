@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Horizontal Line"],ar:["خط أفقي"]}}

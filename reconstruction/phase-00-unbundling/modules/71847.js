@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Synthetic instruments combining individual contracts. The 1! contract represents the front-month (nearest expiration) while the 2! represents the second nearest expiration."],ar:["الأدوات الاصطناعية التي تجمع بين العقود الفردية. ال 1! يمثل عقد الشهر الأول (أقرب انتهاء صلاحية) بينما يمثل 2! يمثل ثاني أقرب تاريخ لانتهاء صلاحية."]}}

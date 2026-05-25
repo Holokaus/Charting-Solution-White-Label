@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Compare or Add Symbol"],ar:["قارن أو اضف رمز"]}}

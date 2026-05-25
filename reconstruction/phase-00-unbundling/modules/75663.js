@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change indicator inputs visibility"],ar:["تغيير رؤية مدخلات المؤشر"]}}

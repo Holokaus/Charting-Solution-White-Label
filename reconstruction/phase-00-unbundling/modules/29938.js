@@ -1,0 +1,1 @@
+e=>{e.exports={en:["All's well — market is open."],ar:["كل شيء على ما يرام - السوق مفتوح."]}}

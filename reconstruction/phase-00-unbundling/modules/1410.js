@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Forecasting and measurement tools"],ar:["أدوات التنبؤ والقياس"]}}

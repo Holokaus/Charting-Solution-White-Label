@@ -1,0 +1,1 @@
+r=>{r.exports={en:["{str} year","{str} years"],ar:["‎{str}‎ سنة","‎{str}‎ سنة","‎{str}‎ سنة","‎{str}‎ سنة","‎{str}‎ سنة","‎{str}‎ سنة"]}}

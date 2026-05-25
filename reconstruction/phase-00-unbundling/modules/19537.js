@@ -1,0 +1,1 @@
+(e,t,i)=>{function r(e,t){return{propType:"checkable",properties:e,notFormatedTitle:!1,...t}}i.d(t,{createCheckablePropertyDefinition:()=>r})}

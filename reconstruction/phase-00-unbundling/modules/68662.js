@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Grid lines"],ar:["خطوط الشبكة"]}}

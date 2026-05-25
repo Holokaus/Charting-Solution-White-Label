@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change bid line color"],ar:["تغيير لون خط سعر البيع"]}}

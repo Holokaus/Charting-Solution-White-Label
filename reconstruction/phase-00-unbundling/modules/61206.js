@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Maximize chart"],ar:["تكبير الرسم البياني"]}}

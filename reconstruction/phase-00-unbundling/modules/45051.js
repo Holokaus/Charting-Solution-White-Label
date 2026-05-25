@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Flat Top/Bottom"],ar:["قمة / قاع مسطح"]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Change symbol. Start typing symbol name"],ar:["رمز التغيير. ابدأ بكتابة اسم الرمز"]}}

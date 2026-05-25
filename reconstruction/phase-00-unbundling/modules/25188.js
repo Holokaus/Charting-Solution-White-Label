@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Extend lines left"],ar:["تمديد الخطوط لليسار"]}}

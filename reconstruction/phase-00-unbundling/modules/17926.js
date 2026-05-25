@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change {title} base line width"],ar:["تغيير عرض خط القاعدة {title}"]}}

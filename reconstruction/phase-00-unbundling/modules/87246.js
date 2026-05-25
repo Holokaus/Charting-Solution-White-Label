@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change {title} percent change visibility"],ar:["تغيير وضوح نسبة تغير {title}"]}}

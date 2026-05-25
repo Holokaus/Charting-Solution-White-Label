@@ -1,0 +1,1 @@
+e=>{e.exports={label:"label-nb7ji1l2"}}

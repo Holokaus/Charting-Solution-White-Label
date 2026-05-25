@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Something went wrong when creating the indicator."],ar:["حدث خطأ ما عند إنشاء المؤشر."]}}

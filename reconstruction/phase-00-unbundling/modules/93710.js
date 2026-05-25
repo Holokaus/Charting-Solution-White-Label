@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Width (% of the box)"],ar:["عرض (% من المربع)"]}}

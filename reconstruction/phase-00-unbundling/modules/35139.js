@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change {title} extend left"],ar:["تغيير التمديد لليسار {title}"]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Arrow Marker"],ar:["علامة السهم"]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["No symbols match your criteria"],ar:["لا توجد رموز تطابق معاييرك"]}}

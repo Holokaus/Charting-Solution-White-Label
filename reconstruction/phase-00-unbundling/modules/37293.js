@@ -1,0 +1,1 @@
+(e,t,i)=>{"use strict";i.d(t,{intervalsVisibilitiesDefaults:()=>s});const s={ticks:!0,seconds:!0,secondsFrom:1,secondsTo:59,minutes:!0,minutesFrom:1,minutesTo:59,hours:!0,hoursFrom:1,hoursTo:24,days:!0,daysFrom:1,daysTo:366,weeks:!0,weeksFrom:1,weeksTo:52,months:!0,monthsFrom:1,monthsTo:12,ranges:!0}}

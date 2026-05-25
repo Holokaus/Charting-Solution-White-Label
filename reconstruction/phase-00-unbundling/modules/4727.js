@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change column price source"],ar:["تغيير مصدر سعر العمود"]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Chart style Renko"],ar:["نمط الرسم البياني رينكو"]}}

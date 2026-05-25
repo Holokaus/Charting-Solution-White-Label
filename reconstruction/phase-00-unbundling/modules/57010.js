@@ -1,0 +1,1 @@
+e=>{e.exports={en:["paste {title}"],ar:["لصق {title}"]}}

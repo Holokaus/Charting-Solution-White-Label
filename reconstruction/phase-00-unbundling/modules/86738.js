@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Show all drawings, indicators, positions & orders"],ar:["إظهار كافة الرسومات والمؤشرات والمراكز والأوامر"]}}

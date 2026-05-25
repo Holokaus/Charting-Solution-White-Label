@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change {title} level {index} line style"],ar:["تغيير نمط خط مستوى {title} {index}"]}}

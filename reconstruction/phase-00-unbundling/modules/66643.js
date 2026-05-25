@@ -1,0 +1,1 @@
+e=>{e.exports={en:["reverse {tool}"],ar:["عكس {tool}"]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Entry price"],ar:["سعر صفقة التداول"]}}

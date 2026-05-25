@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change {title} image background color"],ar:["تغيير لون خلفية الصورة {title}"]}}

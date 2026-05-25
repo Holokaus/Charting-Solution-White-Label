@@ -1,0 +1,1 @@
+e=>{e.exports={en:["{value} decimal","{value} decimals"],ar:["{value} عشرية","{value} عشرية","{value} عشرية","{value} عشرية","{value} عشرية","{value} عشرية"]}}

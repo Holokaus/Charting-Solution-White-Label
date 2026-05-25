@@ -1,0 +1,1 @@
+(e,t,n)=>{"use strict";n.d(t,{useIsMouseDown:()=>r});var o=n(50959);function r(){const e=(0,o.useRef)(!1),t=(0,o.useCallback)((()=>{e.current=!0}),[e]),n=(0,o.useCallback)((()=>{e.current=!1}),[e]);return{isMouseDown:e,handleMouseDown:t,handleMouseUp:n}}}

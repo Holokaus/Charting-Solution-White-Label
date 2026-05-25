@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Hide options"],ar:["إخفاء الخيارات"]}}

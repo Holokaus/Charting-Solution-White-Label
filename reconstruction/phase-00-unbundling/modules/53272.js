@@ -1,0 +1,1 @@
+e=>{e.exports={en:["This symbol doesn't exist, please pick another one."],ar:["لا يوجد هذا الرمز. يرجى اختيار رمز آخر."]}}

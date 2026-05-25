@@ -1,0 +1,1 @@
+e=>{e.exports={en:["set price scale selection strategy to {title}"],ar:["تعيين إستراتيجية اختيار مقياس السعر على {title}"]}}

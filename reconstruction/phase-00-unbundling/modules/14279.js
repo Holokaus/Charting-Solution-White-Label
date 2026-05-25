@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Source background"],ar:["خلفية المصدر"]}}

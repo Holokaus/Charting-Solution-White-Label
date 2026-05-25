@@ -1,0 +1,1 @@
+(e,t,n)=>{"use strict";n.d(t,{defaultLineStyleItems:()=>c,lineStyleItemValues:()=>l});var o=n(89880),s=n(69558),r=n(501),a=n(23851),i=n(57740);const l=[{type:s.LINESTYLE_SOLID,icon:r,label:o.t(null,void 0,n(3554))},{type:s.LINESTYLE_DASHED,icon:a,label:o.t(null,void 0,n(88123))},{type:s.LINESTYLE_DOTTED,icon:i,label:o.t(null,void 0,n(27390))}],c=l.map((e=>e.type))}

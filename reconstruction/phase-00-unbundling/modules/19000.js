@@ -1,0 +1,1 @@
+(e,t,i)=>{"use strict";i.d(t,{getTranslatedSymbolDescription:()=>s});i(11542);function s(e){return e.description||""}}

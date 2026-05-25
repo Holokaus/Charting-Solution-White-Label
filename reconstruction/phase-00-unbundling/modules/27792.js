@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change scales font size"],ar:["تغيير حجم خط المقاييس"]}}

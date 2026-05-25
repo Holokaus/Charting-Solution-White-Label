@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Profit background color"],ar:["لون خلفية الأرباح"]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change {chartType} projection border bar up color"],ar:["تغيير لون الإسقاط لحدود عمود {chartType} الصاعد"]}}

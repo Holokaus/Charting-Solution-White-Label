@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Average close price label"],ar:["ملصق متوسط سعر الإغلاق"]}}

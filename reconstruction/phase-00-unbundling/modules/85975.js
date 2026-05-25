@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change unit"],ar:["تغيير الوحدة"]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["apply factory defaults to selected sources"],ar:["تطبيق إعدادات المصنع الافتراضية على المصادر المختارة"]}}

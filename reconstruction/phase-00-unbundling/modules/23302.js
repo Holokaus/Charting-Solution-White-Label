@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Evening. Market is open for post-market trading."],ar:["السوق مفتوح حاليًا للتداول ما بعد الجلسة."]}}

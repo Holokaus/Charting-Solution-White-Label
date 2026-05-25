@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Remember Interval"],ar:["تذكر الفاصل الزمني"]}}

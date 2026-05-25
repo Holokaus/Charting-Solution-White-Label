@@ -1,0 +1,2 @@
+(e,t,l)=>{"use strict";l.d(t,{DialogTabs:()=>i});var n=l(50959),r=l(67829);const i=n.forwardRef((function(e,t){const{id:l,tabs:i,activeTab:o,onChange:s,className:a}=e;return n.createElement("div",{className:a,ref:t},n.createElement(r.UnderlineButtonTabs,{id:l,items:i,isActive:function(e){return e.id===o},
+onActivate:function(e){s(e.id)},overflowBehaviour:"scroll"}))}))}

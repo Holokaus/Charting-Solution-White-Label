@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Show all indicators"],ar:["عرض كل المؤشرات"]}}

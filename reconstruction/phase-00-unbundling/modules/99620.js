@@ -1,0 +1,1 @@
+(e,t,i)=>{"use strict";e.exports=i.p+"prediction-clock-white.c4675d37769f1df4c9ec.png"}

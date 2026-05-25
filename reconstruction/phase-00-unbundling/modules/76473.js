@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Bid and ask"],ar:["سعر البيع والشراء"]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change {title} left labels visibility"],ar:["تغيير وضوح الملصقات اليسرى {title}"]}}

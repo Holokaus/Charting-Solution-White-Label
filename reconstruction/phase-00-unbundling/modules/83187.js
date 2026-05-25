@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Enable align to 45 degrees mode"],ar:["تمكين المحاذاة إلى وضع 45 درجة"]}}

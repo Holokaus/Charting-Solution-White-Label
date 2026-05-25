@@ -1,0 +1,1 @@
+e=>{e.exports={en:["The data vendor doesn't provide volume data for this symbol."],ar:["لا يوفر المزود بيانات أحجام التداول لهذا الرمز."]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["It'll open for pre-market trading in {remainingTime}."],ar:["سيتم فتحه للتداول ما قبل الافتتاح في {remainingTime}."]}}

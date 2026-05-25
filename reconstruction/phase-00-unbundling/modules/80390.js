@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change {title} always show stats"],ar:["تغيير {title} لتظهر دائما الإحصائيات"]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["JPG, PNG or WEBP"],ar:["JPG أو PNG أوWEBP"]}}

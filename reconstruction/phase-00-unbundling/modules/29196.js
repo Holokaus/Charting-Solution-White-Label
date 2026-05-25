@@ -1,0 +1,1 @@
+(e,t,n)=>{"use strict";n.d(t,{useHintShowAnimation:()=>o});var r=n(50959);const i=50,a=2500;function o(e){const[t,n]=(0,r.useState)(!1);return(0,r.useLayoutEffect)((()=>{const t=setTimeout((()=>n(!0)),i),r=setTimeout((()=>n(!1)),e??a);return()=>{clearTimeout(t),clearTimeout(r)}}),[]),t}}

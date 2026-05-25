@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change decimal places"],ar:["تغيير المنازل العشرية"]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Visual order"],ar:["الترتيب المرئي"]}}

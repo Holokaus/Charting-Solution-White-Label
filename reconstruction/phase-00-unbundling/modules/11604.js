@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Chart style Line break"],ar:["فاصل خط لنمط الرسم البياني"]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={emojiWrap:"emojiWrap-R2CTpmHr",emoji:"emoji-R2CTpmHr",tooltipEmoji:"tooltipEmoji-R2CTpmHr",tooltipEmojiWrap:"tooltipEmojiWrap-R2CTpmHr"}}

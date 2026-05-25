@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Group is hidden on current interval"],ar:["المجموعة مخفية في الفاصل الزمني الحالي"]}}

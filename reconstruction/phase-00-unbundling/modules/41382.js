@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change chart background type"],ar:["تغيير نوع خلفية الرسم البياني"]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change sessions breaks color"],ar:["تغيير وضوح لون فواصل الجلسات"]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["move all scales to right"],ar:["حرك كل المقاييس إلى اليمين"]}}

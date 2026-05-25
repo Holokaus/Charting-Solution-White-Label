@@ -1,0 +1,1 @@
+e=>{e.exports={en:["travel & places"],ar:["السفر والأماكن"]}}

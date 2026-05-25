@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Remove from favorites"],ar:["حذف من القائمة المفضلة"]}}

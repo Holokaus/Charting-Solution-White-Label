@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Doing this will remove this indicator and everything attached to it, including:"],ar:["سيؤدي القيام بذلك إلى إزالة هذا المؤشر وكل ما يتعلق به، بما في ذلك:"]}}

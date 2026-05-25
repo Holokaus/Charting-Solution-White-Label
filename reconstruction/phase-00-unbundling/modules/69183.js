@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change vertical position Y coordinate"],ar:["تغيير إحداثيات الوضع الرأسي Y"]}}

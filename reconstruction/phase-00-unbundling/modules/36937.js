@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Levels line"],ar:["خط المستويات"]}}

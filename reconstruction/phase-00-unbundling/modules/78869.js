@@ -1,0 +1,1 @@
+(e,t,n)=>{"use strict";n.d(t,{useRefsMap:()=>r});var o=n(50959);function r(){const e=(0,o.useRef)(new Map),t=(0,o.useCallback)((t=>n=>{null!==n?e.current.set(t,n):e.current.delete(t)}),[e]);return[e,t]}}

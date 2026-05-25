@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Unknown error"],ar:["خطأ غير معروف"]}}

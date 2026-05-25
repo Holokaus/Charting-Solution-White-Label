@@ -1,0 +1,1 @@
+(e,n,t)=>{"use strict";t.d(n,{useDimensions:()=>a});var o=t(50959),r=t(67842);function a(e){const[n,t]=(0,o.useState)(null),a=(0,o.useCallback)((([e])=>{const o=e.target.getBoundingClientRect();o.width===n?.width&&o.height===n.height||t(o)}),[n]);return[(0,r.useResizeObserver)({callback:a,ref:e}),n]}}

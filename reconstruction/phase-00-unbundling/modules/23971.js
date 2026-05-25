@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Success text"],ar:["نص النجاح"]}}

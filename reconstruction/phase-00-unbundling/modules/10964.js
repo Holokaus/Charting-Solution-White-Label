@@ -1,0 +1,1 @@
+(t,e,n)=>{"use strict";n.d(e,{default:()=>r});const r=(0,n(45635).default)(Object.getPrototypeOf,Object)}

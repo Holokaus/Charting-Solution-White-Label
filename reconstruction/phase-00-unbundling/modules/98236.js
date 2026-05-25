@@ -1,0 +1,1 @@
+e=>{e.exports={en:["High-low"],ar:["أعلى-أدنى"]}}

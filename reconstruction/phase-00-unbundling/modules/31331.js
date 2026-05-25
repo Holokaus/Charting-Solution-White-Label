@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Specified value is more than the instrument maximum of {max}."],ar:["القيمة المحددة أكبر من الحد الأقصى للأداة والتي تبلغ ‎{max}."]}}

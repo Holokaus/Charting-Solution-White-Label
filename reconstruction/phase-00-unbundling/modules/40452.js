@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Always invisible"],ar:["مختفي دائمًا"]}}

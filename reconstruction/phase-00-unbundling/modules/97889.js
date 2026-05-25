@@ -1,0 +1,1 @@
+(t,e,n)=>{"use strict";n.d(e,{default:()=>r});const r="object"==typeof global&&global&&global.Object===Object&&global}

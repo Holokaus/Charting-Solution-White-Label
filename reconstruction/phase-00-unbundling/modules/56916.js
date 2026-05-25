@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Draw Horizontal Line at {price}"],ar:["ارسم خطًا أفقيًا عند {price}"]}}

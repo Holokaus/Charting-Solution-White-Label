@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Trend-Based Fib Time"],ar:["فيبوناتشي الزمني الاتجاهي"]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Minute"],ar:["دقيقة"]}}

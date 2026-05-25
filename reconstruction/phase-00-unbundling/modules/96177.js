@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change {title} base line visibility"],ar:["تغيير وضوح خط القاعدة {title}"]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Indicator values"],ar:["قيم المؤشر"]}}

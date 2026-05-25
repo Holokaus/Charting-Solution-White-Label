@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change vert grid lines color"],ar:["تغيير لون خطوط الشبكة العمودية"]}}

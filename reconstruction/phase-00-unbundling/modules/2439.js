@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Add financial metric for {instrumentName}"],ar:["إضافة مؤشر مالي لـ {instrumentName}"]}}

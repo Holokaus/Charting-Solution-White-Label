@@ -1,0 +1,1 @@
+e=>{e.exports={"small-height-breakpoint":"(max-height: 360px)",container:"container-BZKENkhT",unsetAlign:"unsetAlign-BZKENkhT",title:"title-BZKENkhT",subtitle:"subtitle-BZKENkhT",textWrap:"textWrap-BZKENkhT",ellipsis:"ellipsis-BZKENkhT",close:"close-BZKENkhT",icon:"icon-BZKENkhT"}}

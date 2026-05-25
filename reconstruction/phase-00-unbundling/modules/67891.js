@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Norfolk Island"],ar:["جزيرة نورفولك"]}}

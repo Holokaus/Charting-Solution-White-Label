@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Hide events on chart"],ar:["إخفاء الأحداث على الرسم البياني"]}}

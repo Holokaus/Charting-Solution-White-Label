@@ -1,0 +1,1 @@
+e=>{e.exports={icon:"icon-uMfL97K2"}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["It'll go to post-market trading in {remainingTime}."],ar:["ستنتقل إلى التداول فيما بعد الجلسة في {remainingTime}."]}}

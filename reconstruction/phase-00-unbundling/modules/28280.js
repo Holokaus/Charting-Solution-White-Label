@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Pin to new right scale"],ar:["ثبت على مقياس أيمن جديد"]}}

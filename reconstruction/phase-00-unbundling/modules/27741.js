@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Learn more"],ar:["تعرف على المزيد"]}}

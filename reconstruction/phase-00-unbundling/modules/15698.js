@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change {title} upper band #3 line visibility"],ar:["تغيير وضوح خط النطاق العلوي #3 {title}"]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Fill top area"],ar:["إملئ  المنطقة العلوية"]}}

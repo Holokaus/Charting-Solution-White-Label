@@ -1,0 +1,1 @@
+(t,e,i)=>{i.d(e,{rgbaFromIntegerCached:()=>l});var n=i(59332),s=i(52859),o=i(16659);function l(t=1e3){const e=n.default.Cache;n.default.Cache=o.CircularCacheBuffer.bind(o.CircularCacheBuffer,t);const i=(0,n.default)(s.rgbaFromInteger);return n.default.Cache=e,i}}

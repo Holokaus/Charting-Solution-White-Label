@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Remove this indicator and its dependent indicators?"],ar:["هل تريد إزالة هذا المؤشر والمؤشرات التابعة له؟"]}}

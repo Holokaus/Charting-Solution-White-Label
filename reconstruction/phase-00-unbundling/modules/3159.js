@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Bottom line"],ar:["الخط السفلي"]}}

@@ -1,0 +1,1 @@
+r=>{r.exports={en:["{str} month","{str} months"],ar:["‎{str}‎ شهر","‎{str}‎ شهر","‎{str}‎ شهر","‎{str}‎ شهر","‎{str}‎ شهر","‎{str}‎ شهر"]}}

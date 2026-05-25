@@ -1,0 +1,1 @@
+r=>{r.exports={en:["flip bars pattern"],ar:["قلب أنماط الأعمدة"]}}

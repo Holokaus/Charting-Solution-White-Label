@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Double-tap any edge to reset layout grid"],ar:["انقر نقرًا مزدوجًا على أي حافة لإعادة ضبط شبكة التنسيق"]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["rearrange panes"],ar:["إعادة ترتيب الأجزاء"]}}

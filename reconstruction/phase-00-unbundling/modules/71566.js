@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Plus button"],ar:["زر زائد"]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["add this financial metric to entire layout"],ar:["أضف هذا المؤشر المالي إلى التنسيق بالكامل"]}}

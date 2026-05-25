@@ -1,0 +1,1 @@
+e=>{e.exports={en:["HLC area"],ar:["منطقة HLC."]}}

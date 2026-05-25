@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change {title} mode"],ar:["تغيير وضع {title}"]}}

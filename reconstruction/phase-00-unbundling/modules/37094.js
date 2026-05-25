@@ -1,0 +1,1 @@
+e=>{e.exports={en:["No symbols here yet — why not add some?"],ar:["لا توجد رموز هنا حالياً — قم بإضافة الرموز"]}}

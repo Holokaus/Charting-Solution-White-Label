@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Indicator error"],ar:["خطأ المؤشر"]}}

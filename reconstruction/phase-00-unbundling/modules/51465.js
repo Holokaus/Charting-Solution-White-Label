@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Show Favorite Drawing Tools Toolbar"],ar:["عرض شريط أدوات الرسم المفضلة"]}}

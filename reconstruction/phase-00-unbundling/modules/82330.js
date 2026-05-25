@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Fib Circles"],ar:["دوائر فيبوناتشي"]}}

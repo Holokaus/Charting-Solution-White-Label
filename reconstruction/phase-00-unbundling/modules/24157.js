@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Auto (fits data to screen)"],ar:["تلقائي (تناسب البيانات مع حجم الشاشة)"]}}

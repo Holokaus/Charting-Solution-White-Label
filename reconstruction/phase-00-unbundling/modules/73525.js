@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Percent change"],ar:["التغيير في المئة"]}}

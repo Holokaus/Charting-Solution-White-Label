@@ -1,0 +1,1 @@
+e=>{e.exports={en:["on {amount} symbol","on {amount} symbols"],ar:["على {amount} من الرموز","على {amount} من الرموز","على {amount} من الرموز","على {amount} من الرموز","على {amount} من الرموز","على {amount} من الرموز"]}}

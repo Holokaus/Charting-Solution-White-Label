@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Data on our Basic plan is updated once per second, even if there are more updates on the market."],ar:["البيانات المقدمة على العضويات المجانية لا يتم تحديثها أكثر من مرة واحدة كل ثانية، حتى لو كانت هناك عدة تحديثات في السوق."]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Baseline"],ar:["خط الأساس"]}}

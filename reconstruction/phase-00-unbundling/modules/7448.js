@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Recently used"],ar:["مستخدَمٌ حديثاً"]}}

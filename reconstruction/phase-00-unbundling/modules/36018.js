@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Pre-market"],ar:["ما قبل الجلسة"]}}

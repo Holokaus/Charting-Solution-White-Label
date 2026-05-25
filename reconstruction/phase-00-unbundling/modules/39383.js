@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change countdown to bar close visibility"],ar:["تغيير وضوح العد التنازلي لعمود الإغلاق"]}}

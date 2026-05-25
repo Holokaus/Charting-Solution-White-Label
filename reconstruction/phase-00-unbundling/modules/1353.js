@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change {title} upper band #1 line width"],ar:["تغيير عرض خط النطاق العلوي {title}"]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["unanchor objects"],ar:["عناصر غير مثبتة"]}}

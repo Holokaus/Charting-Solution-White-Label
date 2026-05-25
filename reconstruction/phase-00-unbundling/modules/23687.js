@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change {sourceTitle} title to {newSourceTitle}"],ar:["غيّر عنوان {sourceTitle} إلى {newSourceTitle}"]}}

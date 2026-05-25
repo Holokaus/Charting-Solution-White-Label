@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Data is updated once a day."],ar:["يتم تحديث البيانات مرة واحدة في اليوم."]}}

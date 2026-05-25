@@ -1,0 +1,1 @@
+e=>{e.exports={"tablet-normal-breakpoint":"(max-width: 768px)","tablet-small-breakpoint":"(max-width: 440px)",withSidebar:"withSidebar-F0WBLDV5",content:"content-F0WBLDV5",tabContent:"tabContent-F0WBLDV5",applyToAllButton:"applyToAllButton-F0WBLDV5"}}

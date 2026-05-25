@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Template '{themeName}' already exists. Do you really want to replace it?"],ar:["القالب '{themeName}' موجود بالفعل. هل تريد حقًا استبدالها؟"]}}

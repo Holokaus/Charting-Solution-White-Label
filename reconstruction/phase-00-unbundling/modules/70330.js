@@ -1,0 +1,1 @@
+e=>{e.exports={switcher:"switcher-fwE97QDf",input:"input-fwE97QDf",thumbWrapper:"thumbWrapper-fwE97QDf",disabled:"disabled-fwE97QDf",checked:"checked-fwE97QDf"}}

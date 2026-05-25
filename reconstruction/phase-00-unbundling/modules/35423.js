@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change {toolName} text border width"],ar:["تغيير عرض حدود النص {toolName}"]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Drop image here!"],ar:["أسقط الصورة هنا!"]}}

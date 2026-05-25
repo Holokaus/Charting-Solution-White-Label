@@ -1,0 +1,1 @@
+e=>{e.exports={en:["seconds from"],ar:["ثوان من"]}}

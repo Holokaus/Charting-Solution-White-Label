@@ -1,0 +1,1 @@
+e=>{e.exports={"tablet-small-breakpoint":"(max-width: 440px)",item:"item-o5a0MQMm",withIcon:"withIcon-o5a0MQMm",shortcut:"shortcut-o5a0MQMm",loading:"loading-o5a0MQMm",icon:"icon-o5a0MQMm"}}

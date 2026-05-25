@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change {title} full circles visibility"],ar:["تغيير وضوح الدوائر الكاملة {title}"]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["charts by TradingView"],ar:["الرسوم البيانية بواسطة TradingView"]}}

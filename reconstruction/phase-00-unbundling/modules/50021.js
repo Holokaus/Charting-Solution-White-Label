@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Simply start typing while on the chart to pull up this search box"],ar:["يمكنك ببساطة الكتابة مباشرة على الرسم البياني لعرض مربع البحث"]}}

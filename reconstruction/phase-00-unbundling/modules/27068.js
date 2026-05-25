@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change HLC bars"],ar:["تغيير أعمدة HLC"]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["New pane below"],ar:["جزء جديد أدناه"]}}

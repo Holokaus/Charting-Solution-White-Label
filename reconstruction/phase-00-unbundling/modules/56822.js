@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Time label"],ar:["ملصق الوقت"]}}

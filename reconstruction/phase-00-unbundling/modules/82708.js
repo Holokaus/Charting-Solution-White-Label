@@ -1,0 +1,1 @@
+(e,t,r)=>{"use strict";r.d(t,{safeShortName:()=>o});var n=r(59149);function o(e){try{return(0,n.shortName)(e)}catch(t){return e}}}

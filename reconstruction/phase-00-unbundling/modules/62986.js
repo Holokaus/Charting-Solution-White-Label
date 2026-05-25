@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Show latest news"],ar:["عرض آخر الأخبار"]}}

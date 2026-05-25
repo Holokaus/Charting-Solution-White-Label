@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Current interval and below"],ar:["الفاصل الزمني الحالي وأدناه"]}}

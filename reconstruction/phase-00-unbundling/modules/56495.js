@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Do you really want to delete chart layout '{name}' that contains {n_drawings_on_n_symbols}? This can't be undone. Your drawings and this layout will be gone forever."],ar:["هل تريد حقًا حذف تنسيق الرسم '{name}' الذي يحتوي على {n_drawings_on_n_symbols}؟ احذف الحساب نهائيًا ستختفي رسوماتك وهذا التصميم إلى الأبد."]}}

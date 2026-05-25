@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Go to editor"],ar:["انتقل إلى المحرر"]}}

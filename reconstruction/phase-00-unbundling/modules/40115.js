@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Make a copy"],ar:["إنشاء نسخة"]}}

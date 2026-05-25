@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Line - low"],ar:["خط - انخفاض"]}}

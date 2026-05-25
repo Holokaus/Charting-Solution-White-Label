@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Calendar is currently on year {year}"],ar:["الأجندة حاليًا في عام {year}"]}}

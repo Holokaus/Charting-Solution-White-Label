@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Object Tree"],ar:["عناصر الرسم البياني"]}}

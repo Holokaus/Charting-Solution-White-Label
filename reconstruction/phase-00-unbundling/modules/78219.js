@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change {title} visibility on minutes"],ar:["تغيير {title} الدقائق من"]}}

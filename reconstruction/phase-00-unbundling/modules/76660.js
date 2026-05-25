@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change point"],ar:["نقطة التغيير"]}}

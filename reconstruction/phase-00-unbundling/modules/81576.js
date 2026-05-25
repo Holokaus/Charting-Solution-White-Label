@@ -1,0 +1,1 @@
+e=>{e.exports={en:["unmerge to new bottom pane"],ar:["إلغاء الاندماج في الجزء السفلي الجديد"]}}

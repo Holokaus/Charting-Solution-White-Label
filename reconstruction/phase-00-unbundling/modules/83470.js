@@ -1,0 +1,1 @@
+e=>{e.exports={en:["{symbol} financials by TradingView"],ar:["{symbol} تم تفريغ القوائم المالية عن طريق TradingView"]}}

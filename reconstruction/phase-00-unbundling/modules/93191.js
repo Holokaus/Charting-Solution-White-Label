@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Cypher Pattern"],ar:["نمط سيفر"]}}

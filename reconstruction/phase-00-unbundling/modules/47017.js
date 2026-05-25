@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Date and Price Range"],ar:["نطاق التاريخ والسعر"]}}

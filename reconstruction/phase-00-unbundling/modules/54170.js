@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Reset time scale"],ar:["إعادة تعيين مقياس الزمن"]}}

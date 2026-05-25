@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Halal symbol"],ar:["رمز الحلال"]}}

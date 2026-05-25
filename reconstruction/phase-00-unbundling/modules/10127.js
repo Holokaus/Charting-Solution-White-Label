@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Symbol last price label"],ar:["ملصق آخر قيمة للرمز"]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Remember Symbol"],ar:["تذكر الرمز"]}}

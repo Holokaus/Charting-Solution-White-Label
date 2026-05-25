@@ -1,0 +1,1 @@
+e=>{e.exports={en:["invert scale"],ar:["عكس المقياس"]}}

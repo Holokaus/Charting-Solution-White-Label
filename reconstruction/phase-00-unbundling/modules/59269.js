@@ -1,0 +1,1 @@
+e=>{e.exports={en:["From our family to yours, wishing you a merry festive season."],ar:["من عائلتنا إلى عائلتك، نتمنى لك موسمًا احتفاليًا سعيدًا."]}}

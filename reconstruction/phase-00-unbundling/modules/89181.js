@@ -1,0 +1,2 @@
+e=>{e.exports={
+en:["You need to update one or more of your indicators. Click the arrow button to the left to expand the indicator list and see details."],ar:["تحتاج إلى تحديث واحد أو أكثر من المؤشرات الخاصة بك. انقر فوق زر السهم على اليسار لتوسيع قائمة المؤشرات ومشاهدة التفاصيل."]}}

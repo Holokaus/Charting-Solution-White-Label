@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change average close price label visibility"],ar:["تغيير وضوح ملصق متوسط إغلاق السعر"]}}

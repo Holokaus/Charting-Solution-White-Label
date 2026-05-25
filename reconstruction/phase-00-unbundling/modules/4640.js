@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change area price source"],ar:["تغيير مصدر سعر المنطقة"]}}

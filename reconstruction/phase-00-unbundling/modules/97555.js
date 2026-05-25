@@ -1,0 +1,1 @@
+e=>{e.exports={en:["If you'd like {listedExchange} real-time data you'll need to complete an Exchange Agreement. Don't worry, it only takes a few clicks"],ar:["إذا كنت ترغب في الحصول على بيانات ‎{listedExchange}‎ اللحظية، فستحتاج إلى ملء اتفاقية البورصة. لا تقلق، لا يتطلب الأمر سوى بضع نقرات."]}}

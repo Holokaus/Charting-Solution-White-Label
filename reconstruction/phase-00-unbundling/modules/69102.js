@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Next year"],ar:["العام القادم"]}}

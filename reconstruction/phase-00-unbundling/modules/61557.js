@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change no overlapping labels"],ar:["تغيير الملصقات غير متداخلة"]}}

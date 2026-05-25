@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Visible on mouse over"],ar:["مرئية عند تمرير الفأرة"]}}

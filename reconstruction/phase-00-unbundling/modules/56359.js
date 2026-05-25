@@ -1,0 +1,1 @@
+e=>{e.exports={en:["High line"],ar:["خط أعلى مستوى"]}}

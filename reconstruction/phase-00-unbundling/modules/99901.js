@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Keep drawing"],ar:["استمر في الرسم"]}}

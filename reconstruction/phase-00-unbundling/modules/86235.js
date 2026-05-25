@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Percentage"],ar:["نسبة مئوية"]}}

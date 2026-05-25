@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Manage layouts"],ar:["إدارة التنسيقات"]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change opacity"],ar:["تغيير درجة الشفافية"]}}

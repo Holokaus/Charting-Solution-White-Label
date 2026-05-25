@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change {toolName} text background visibility"],ar:["تغيير وضوح خلفية النص {toolName}"]}}

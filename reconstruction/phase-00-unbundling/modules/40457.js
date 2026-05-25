@@ -1,0 +1,1 @@
+e=>{e.exports={en:["symbols"],ar:["رموز"]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Confirm to remove locked drawings"],ar:["تأكد من إزالة الرسومات المقفلة"]}}

@@ -1,0 +1,1 @@
+(e,t,i)=>{"use strict";var n,o;function l(e){return{isMobile:"mobile"===e,isTablet:"tablet"===e}}i.d(t,{getSidebarMode:()=>l}),function(e){e.Bold="bold",e.Default="default"}(n||(n={})),function(e){e.Tablet="tablet",e.Mobile="mobile"}(o||(o={}))}

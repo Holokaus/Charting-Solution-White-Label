@@ -1,0 +1,1 @@
+r=>{r.exports={en:["Toggle Percentage"],ar:["نطاق قياس النسبة المئوية"]}}

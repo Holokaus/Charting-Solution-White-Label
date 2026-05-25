@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change {title} extend top"],ar:["تغيير التمديد لأعلى {title}"]}}

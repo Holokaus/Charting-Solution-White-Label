@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Please enter the right date format yyyy-mm-dd"],ar:["الرجاء إدخال التاريخ بالشكل الصحيح يوم- شهر- سنة"]}}

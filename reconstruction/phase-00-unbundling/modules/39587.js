@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change {toolName} text wrap"],ar:["تغيير التفاف نص {toolName}"]}}

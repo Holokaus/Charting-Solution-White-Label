@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change session breaks visibility"],ar:["تغيير وضوح فواصل الجلسة"]}}

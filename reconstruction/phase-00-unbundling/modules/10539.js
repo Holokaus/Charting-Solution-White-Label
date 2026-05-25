@@ -1,0 +1,1 @@
+e=>{e.exports={en:["{hotKey_0} — square"],ar:["{hotKey_0} - مربع"]}}

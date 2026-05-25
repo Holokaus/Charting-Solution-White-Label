@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change symbol last value mode"],ar:["تغيير وضع آخر قيمة للرمز"]}}

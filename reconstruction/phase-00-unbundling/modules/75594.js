@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Security info"],ar:["معلومات الرمز"]}}

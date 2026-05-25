@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Indicator template '{templateName}' already exists. Do you really want to replace it?"],ar:["قالب المؤشر '{templateName}' موجود بالفعل. هل تريد حقًا استبدالها؟"]}}

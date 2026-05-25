@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Something went wrong. Hang tight and try again later."],ar:["حدث خطأ ما. انتظر جيدًا وحاول مرة أخرى لاحقًا."]}}

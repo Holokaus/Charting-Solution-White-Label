@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Indicator inputs"],ar:["مدخلات المؤشر"]}}

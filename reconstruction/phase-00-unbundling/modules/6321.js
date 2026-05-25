@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Rename"],ar:["تغيير الأسم"]}}

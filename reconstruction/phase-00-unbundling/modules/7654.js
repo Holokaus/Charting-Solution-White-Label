@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Max size {value}"],ar:["الحد الأقصى {value}"]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Middle point"],ar:["نقطة المنتصف"]}}

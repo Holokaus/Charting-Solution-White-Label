@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Remove all indicators and drawing tools"],ar:["حذف جميع المؤشرات وأدوات الرسم"]}}

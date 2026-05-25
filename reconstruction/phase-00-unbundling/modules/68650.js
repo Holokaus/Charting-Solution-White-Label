@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Average close"],ar:["متوسط الإغلاق"]}}

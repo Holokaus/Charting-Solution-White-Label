@@ -1,0 +1,1 @@
+e=>{e.exports={colorPicker:"colorPicker-VK3h8amb",fontStyleButton:"fontStyleButton-VK3h8amb",dropdown:"dropdown-VK3h8amb",dropdownMenu:"dropdownMenu-VK3h8amb",hintButton:"hintButton-VK3h8amb",title:"title-VK3h8amb"}}

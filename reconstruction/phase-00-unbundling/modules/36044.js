@@ -1,0 +1,1 @@
+e=>{e.exports={en:["move objects"],ar:["تحريك العناصر"]}}

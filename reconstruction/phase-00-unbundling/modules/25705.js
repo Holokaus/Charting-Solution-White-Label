@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Fixed Range Volume Profile"],ar:["بروفايل حجم التداول بنطاق ثابت"]}}

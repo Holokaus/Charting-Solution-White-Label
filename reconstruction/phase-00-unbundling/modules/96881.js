@@ -1,0 +1,1 @@
+e=>{e.exports={en:["restore study defaults"],ar:["استعادة الإعدادات الافتراضية للدراسة"]}}

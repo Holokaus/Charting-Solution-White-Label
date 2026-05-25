@@ -1,0 +1,1 @@
+e=>{e.exports={en:["This indicator has no source-type input, so it can't be applied to another indicator."],ar:["لا يحتوي هذا المؤشر على إدخال من نوع المصدر، لذلك لا يمكن تطبيقه على مؤشر آخر."]}}

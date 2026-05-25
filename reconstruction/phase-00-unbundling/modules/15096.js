@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Do you really want to delete indicator template '{name}' ?"],ar:["هل تريد حقًا حذف قالب المؤشر '{name}'؟"]}}

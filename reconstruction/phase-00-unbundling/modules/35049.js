@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Move to"],ar:["حرك إلى"]}}

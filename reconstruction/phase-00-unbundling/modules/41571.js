@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Watermark"],ar:["علامة مائية"]}}

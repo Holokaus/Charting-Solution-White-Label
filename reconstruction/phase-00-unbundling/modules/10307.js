@@ -1,0 +1,1 @@
+(e,t,i)=>{"use strict";i.d(t,{BitmapCoordinatesPaneRenderer:()=>o});var s=i(27714);class o{draw(e,t){new s.CanvasRenderingTarget2D(e,t.mediaSize,t.bitmapSize).useBitmapCoordinateSpace((e=>this._drawImpl(e)))}drawBackground(e,t){new s.CanvasRenderingTarget2D(e,t.mediaSize,t.bitmapSize).useBitmapCoordinateSpace((e=>this._drawBackgroundImpl(e)))}_drawBackgroundImpl(e){}}}

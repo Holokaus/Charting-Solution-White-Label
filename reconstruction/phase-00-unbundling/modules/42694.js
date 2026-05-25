@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change {toolName} text font italic"],ar:["تغيير خط النص {toolName} المائل"]}}

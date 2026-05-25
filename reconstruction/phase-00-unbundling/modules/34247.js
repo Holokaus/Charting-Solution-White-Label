@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Arrow Down"],ar:["سهم لأسفل"]}}

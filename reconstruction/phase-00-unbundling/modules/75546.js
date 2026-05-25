@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Unsupported interval"],ar:["فاصل زمني غير مدعوم"]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Countdown to bar close"],ar:["العد التنازلي لإغلاق العمود البياني"]}}

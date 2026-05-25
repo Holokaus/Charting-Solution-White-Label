@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change {title} risk display mode"],ar:["تغيير وضع عرض الخاطرة {title}"]}}

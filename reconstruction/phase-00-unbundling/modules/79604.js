@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change renko wick visibility"],ar:["تغيير وضوح ذيل الرينكو"]}}

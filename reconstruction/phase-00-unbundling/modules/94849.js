@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Main chart symbol"],ar:["رمز الرسم البياني الرئيسي"]}}

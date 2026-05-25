@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Invalid URL"],ar:["رابط غير صالح"]}}

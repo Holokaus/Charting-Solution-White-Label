@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Vert and horz"],ar:["عمودي وأفقي"]}}

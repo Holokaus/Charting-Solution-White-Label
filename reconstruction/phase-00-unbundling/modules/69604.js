@@ -1,0 +1,1 @@
+e=>{e.exports={en:["apply study template {template}"],ar:["تطبيق قالب الدراسة {template}"]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Bring to front"],ar:["وضعه في المقدمة"]}}

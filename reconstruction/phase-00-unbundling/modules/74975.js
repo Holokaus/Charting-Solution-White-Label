@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Go to {lineToolName}"],ar:["انتقل إلى {lineToolName}"]}}

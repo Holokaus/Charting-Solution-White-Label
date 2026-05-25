@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change indicators and financials name labels visibility"],ar:["وضوح ملصقات تغير المؤشرات وأسماء البيانات المالية"]}}

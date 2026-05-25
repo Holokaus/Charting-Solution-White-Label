@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change {title} line style"],ar:["تغيير نمط الخط {title}"]}}

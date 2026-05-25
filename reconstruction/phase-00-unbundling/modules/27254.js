@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Please enter the right date"],ar:["الرجاء إدخال التاريخ بالشكل الصحيح"]}}

@@ -1,0 +1,2 @@
+e=>{
+e.exports='<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" width="18" height="18"><path fill="currentColor" fill-rule="evenodd" d="M8.55 2.78 2.7 15H15v-1h-4.01a6.2 6.2 0 0 0-1.36-3.95 7.94 7.94 0 0 0-2.57-1.83l2.4-5-.91-.44ZM6.63 9.12 4.29 14H10a5.18 5.18 0 0 0-1.12-3.3 6.93 6.93 0 0 0-2.24-1.58Z"/></svg>'}

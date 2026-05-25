@@ -1,0 +1,1 @@
+(t,e,i)=>{function n(t,e){if(null===t)return e;const i=t.firstIndex,n=e.firstIndex,s=t.clearData||e.clearData;return{firstIndex:s||void 0===i||void 0===n?void 0:Math.min(i,n),clearData:s}}i.d(e,{mergeDataInvalidation:()=>n})}

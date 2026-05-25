@@ -1,0 +1,1 @@
+e=>{e.exports={en:["show price"],ar:["عرض السعر"]}}

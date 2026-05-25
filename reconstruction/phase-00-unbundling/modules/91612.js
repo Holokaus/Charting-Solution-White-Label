@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Inside"],ar:["بالداخل"]}}

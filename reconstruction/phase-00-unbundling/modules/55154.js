@@ -1,0 +1,1 @@
+e=>{e.exports={en:["{exchange} by {originalExchange}"],ar:["‎{exchange}‎ من ‎{originalExchange}‎"]}}

@@ -1,0 +1,1 @@
+(e,t,i)=>{i.d(t,{alignByAngle:()=>r});var o=i(50605);function r(e){let t,i;return e>=-135&&e<=-45?(t=o.HorizontalAlign.Center,i=o.VerticalAlign.Bottom):e>-45&&e<45?(t=o.HorizontalAlign.Left,i=o.VerticalAlign.Middle):e>=45&&e<=135?(t=o.HorizontalAlign.Center,i=o.VerticalAlign.Top):(t=o.HorizontalAlign.Right,i=o.VerticalAlign.Middle),{horzAlign:t,vertAlign:i}}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["{days} and {hours}"],ar:["{days} و{hours}"]}}

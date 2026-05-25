@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Choose manually"],ar:["اختر يدويًا"]}}

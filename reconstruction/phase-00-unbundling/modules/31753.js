@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change {title} coeffs as percents visibility"],ar:["تغيير وضوح معامل {title} كنسبة رؤية"]}}

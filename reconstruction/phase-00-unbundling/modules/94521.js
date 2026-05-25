@@ -1,0 +1,1 @@
+e=>{e.exports={en:["sync drawings"],ar:["مزامنة الرسومات"]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change area line color"],ar:["تغيير لون خطوط المنطقة"]}}

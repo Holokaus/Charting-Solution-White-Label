@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Chart values"],ar:["قيم الرسم البياني"]}}

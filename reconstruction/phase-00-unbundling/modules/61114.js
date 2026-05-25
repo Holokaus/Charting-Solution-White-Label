@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Elliott Impulse Wave (12345)"],ar:["موجة إليوت الدافعة (12345)"]}}

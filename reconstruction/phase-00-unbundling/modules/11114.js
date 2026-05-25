@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change {candleType} border visibility"],ar:["تغيير وضوح حدود {candleType}"]}}

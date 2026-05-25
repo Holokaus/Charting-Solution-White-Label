@@ -1,0 +1,1 @@
+e=>{e.exports={en:["No, keep them"],ar:["لا، احتفظ بها"]}}

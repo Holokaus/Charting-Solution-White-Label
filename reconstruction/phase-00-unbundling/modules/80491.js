@@ -1,0 +1,1 @@
+e=>{e.exports={en:["rename group {group} to {newName}"],ar:["تغيير اسم المجموعة ‎{group}‎ إلى ‎{newName}‎"]}}

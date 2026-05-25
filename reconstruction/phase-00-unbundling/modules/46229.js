@@ -1,0 +1,1 @@
+e=>{e.exports={en:["insert {title} before {targetTitle}"],ar:["أدخل {title} قبل {targetTitle}"]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["nature"],ar:["طبيعي"]}}

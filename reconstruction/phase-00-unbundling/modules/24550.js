@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change {toolName} line visibility"],ar:["تغيير وضوح خط {toolName}"]}}

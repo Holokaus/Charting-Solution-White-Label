@@ -1,0 +1,1 @@
+(t,e,n)=>{"use strict";n.d(e,{default:()=>o});var r=n(56882);const i=function(t,e){var n;if("function"!=typeof e)throw new TypeError("Expected a function");return t=(0,r.default)(t),function(){return--t>0&&(n=e.apply(this,arguments)),t<=1&&(e=void 0),n}};const o=function(t){return i(2,t)}}

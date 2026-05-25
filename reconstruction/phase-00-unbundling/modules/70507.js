@@ -1,0 +1,1 @@
+e=>{e.exports={en:["apply indicators to entire layout"],ar:["تطبيق المؤشرات على التنسيق بأكمله"]}}

@@ -1,0 +1,1 @@
+(e,t,i)=>{function r(e,t){return{propType:"options",properties:e,...t}}i.d(t,{createOptionsPropertyDefinition:()=>r})}

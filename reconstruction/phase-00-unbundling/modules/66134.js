@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Copy Chart Layout"],ar:["نسخ تصميم الرسم البياني"]}}

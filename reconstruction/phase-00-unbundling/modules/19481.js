@@ -1,0 +1,1 @@
+e=>{e.exports={en:["This refers to financial indicators which are created by combining and/or processing raw data supplied from various sources."],ar:["يشير هذا إلى المؤشرات المالية التي يتم إنشاؤها من خلال الجمع و/أو معالجة البيانات الخام المقدمة من مصادر مختلفة."]}}

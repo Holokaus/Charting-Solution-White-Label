@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Primary listing"],ar:["القائمة الأولية"]}}

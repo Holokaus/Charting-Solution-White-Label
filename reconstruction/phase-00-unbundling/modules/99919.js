@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Align to 45 degree"],ar:["محاذاة حتى 45 درجة"]}}

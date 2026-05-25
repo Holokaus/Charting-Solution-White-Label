@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change {title} counterclockwise"],ar:["تغيير عكس عقارب الساعة {title}"]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Change in pips"],ar:["التغيير بالنقاط"]}}

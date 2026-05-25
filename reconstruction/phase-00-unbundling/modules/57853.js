@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change {title} base line style"],ar:["تغيير نمط خط القاعدة {title}"]}}

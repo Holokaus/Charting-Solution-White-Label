@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change symbol watermark visibility"],ar:["تغيير وضوح علامة الرمز"]}}

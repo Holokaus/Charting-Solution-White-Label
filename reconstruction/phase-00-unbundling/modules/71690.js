@@ -1,0 +1,1 @@
+(e,t,r)=>{"use strict";r.d(t,{useCollector:()=>s});var n=r(3341),o=r(50959),i=r(52541);function s(e,t,r){const[s,a]=(0,o.useState)((()=>t(e))),c=(0,o.useCallback)((()=>{const o=t(e);n(s,o)||(a(o),r&&r())}),[s,e,r]);return(0,i.useIsomorphicLayoutEffect)(c),[s,c]}}

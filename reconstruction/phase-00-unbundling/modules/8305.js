@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Above bar"],ar:["أعلى العمود"]}}

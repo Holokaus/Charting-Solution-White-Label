@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change chart background color"],ar:["تغيير لون خلفية الرسم البياني"]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Minuscule"],ar:["حرف صغير"]}}

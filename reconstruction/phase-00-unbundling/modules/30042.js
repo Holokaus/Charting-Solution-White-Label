@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Scales placement"],ar:["وضع المقاييس"]}}

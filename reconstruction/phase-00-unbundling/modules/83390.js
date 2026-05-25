@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Create a group of drawings"],ar:["أنشئ مجموعة من الرسومات"]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Download image"],ar:["تنزيل الصورة"]}}

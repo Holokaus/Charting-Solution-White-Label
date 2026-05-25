@@ -1,0 +1,1 @@
+e=>{e.exports={scrollable:"scrollable-vwgPOHG8",tabs:"tabs-vwgPOHG8"}}

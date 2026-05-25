@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change navigation buttons visibility"],ar:["تغيير وضوح أزرار التنقل"]}}

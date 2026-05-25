@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Custom range"],ar:["نطاق مخصّص"]}}

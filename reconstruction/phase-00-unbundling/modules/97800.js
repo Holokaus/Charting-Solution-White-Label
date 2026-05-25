@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Stack on the right"],ar:["انحياز لليمين"]}}

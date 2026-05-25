@@ -1,0 +1,1 @@
+(t,e)=>{"use strict";e.hasProperty=e.isObject=void 0,e.isObject=function(t){var e=typeof t;return null!==t&&("object"===e||"function"===e)},e.hasProperty=function(t,e){return e in t}}

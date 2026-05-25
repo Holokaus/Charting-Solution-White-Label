@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Pre"],ar:["قبل"]}}

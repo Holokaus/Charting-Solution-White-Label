@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Dark theme"],ar:["خلفية داكنة"]}}

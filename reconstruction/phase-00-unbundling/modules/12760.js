@@ -1,0 +1,2 @@
+(e,t,n)=>{"use strict";n.d(t,{ModelContext:()=>s,bindModel:()=>r});var o=n(50959)
+;const s=o.createContext(null);function r(e,t){return o.createElement(s.Consumer,null,(n=>n?o.createElement(e,{...Object.assign({model:n},t)}):null))}}

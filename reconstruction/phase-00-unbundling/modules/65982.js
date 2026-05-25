@@ -1,0 +1,1 @@
+(e,t,r)=>{"use strict";r.d(t,{useDragLayer:()=>s});var n=r(50959),o=r(71690),i=r(68788);function s(e){const t=(0,i.useDragDropManager)().getMonitor(),[r,s]=(0,o.useCollector)(t,e);return(0,n.useEffect)((()=>t.subscribeToOffsetChange(s))),(0,n.useEffect)((()=>t.subscribeToStateChange(s))),r}}

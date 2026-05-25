@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change bottom margin"],ar:["تغيير الهامش السفلي"]}}

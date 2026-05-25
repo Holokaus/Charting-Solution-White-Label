@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Anchored VWAP"],ar:["VWAP مُثبّت"]}}

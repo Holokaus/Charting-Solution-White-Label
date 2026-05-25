@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Label Down"],ar:["إشارة لأسفل"]}}

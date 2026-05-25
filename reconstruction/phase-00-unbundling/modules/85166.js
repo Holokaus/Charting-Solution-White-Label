@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Start using keyboard navigation mode. Press {shortcut}"],ar:["ابدأ باستخدام وضع التنقل باستخدام لوحة المفاتيح. اضغط على {shortcut}"]}}

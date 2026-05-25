@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Existing pane above"],ar:["جزء موجود أعلاه"]}}

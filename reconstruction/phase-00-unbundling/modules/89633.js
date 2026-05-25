@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Anchored Volume Profile"],ar:["بروفايل أحجام التداول المثبت"]}}

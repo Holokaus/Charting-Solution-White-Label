@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Chart style Range"],ar:["نطاق نمط الرسم البياني"]}}

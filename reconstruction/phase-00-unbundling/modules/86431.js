@@ -1,0 +1,1 @@
+(e,t,i)=>{"use strict";i.d(t,{makeOverlapable:()=>o});var s=i(50959),n=i(65718);function o(e,t){return class extends s.PureComponent{render(){const{isOpened:i,root:o}=this.props;if(!i)return null;const a=s.createElement(e,{...this.props,ref:this.props.componentRef,zIndex:150});return"parent"===o?a:s.createElement(n.Portal,{shouldTrapFocus:t},a)}}}}

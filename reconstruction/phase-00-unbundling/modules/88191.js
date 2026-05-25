@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Expiration date"],ar:["تاريخ انتهاء الصلاحية"]}}

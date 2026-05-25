@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change the row height"],ar:["تغيير ارتفاع الصف"]}}

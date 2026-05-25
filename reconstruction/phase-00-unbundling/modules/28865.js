@@ -1,0 +1,1 @@
+(t,e,n)=>{"use strict";n.d(e,{getIsoLanguageCodeFromLanguage:()=>i});const r={ar_AE:"ar",br:"pt",de_DE:"de",ca_ES:"ca",he_IL:"he",id_ID:"id",in:"en",kr:"ko",ms_MY:"ms",sv_SE:"sv",th_TH:"th",uk:"en",vi_VN:"vi",zh_CN:"zh-Hans",zh_TW:"zh-Hant",zh:"zh-Hans",hu_HU:"hu-HU"};function i(t){return r[t]||t}}

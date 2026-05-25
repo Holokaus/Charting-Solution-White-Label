@@ -1,0 +1,2 @@
+(e,t,o)=>{"use strict";o.d(t,{ToolWidgetIconButton:()=>a});var n=o(50959),r=o(97754),i=o(46003),s=o(80204)
+;const a=n.forwardRef((function(e,t){const{className:o,id:a,...l}=e;return n.createElement(i.ToolWidgetButton,{id:a,"data-name":a,...l,ref:t,className:r(o,s.button)})}))}

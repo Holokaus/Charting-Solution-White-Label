@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change {title} emoji visibility"],ar:["تغيير وضوح الرموز التعبيرية {title}"]}}

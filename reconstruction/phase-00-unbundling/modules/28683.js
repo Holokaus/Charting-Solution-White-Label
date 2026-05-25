@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Use one color"],ar:["استخدم لون واحد"]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Please enter the right time"],ar:["يرجى إدخال الوقت المناسب"]}}

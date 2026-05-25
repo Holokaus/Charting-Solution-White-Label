@@ -1,0 +1,1 @@
+(e,t,r)=>{"use strict";r.d(t,{useForceUpdate:()=>o});var n=r(50959);const o=()=>{const[,e]=(0,n.useReducer)((e=>e+1),0);return e}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Supercycle"],ar:["الموجة الدورية العليا"]}}

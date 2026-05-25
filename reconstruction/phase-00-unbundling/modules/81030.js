@@ -1,0 +1,1 @@
+e=>{e.exports={en:["VWAP is waiting for more data"],ar:["VWAP ينتظر المزيد من البيانات"]}}

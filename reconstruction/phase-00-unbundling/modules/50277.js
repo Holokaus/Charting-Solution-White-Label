@@ -1,0 +1,1 @@
+e=>{e.exports={en:["To access overnight trading quotes from US markets, subscribe to Blue Ocean (overnight quotes)."],ar:["للوصول إلى أسعار التداول الليلية من أسواق الولايات المتحدة، اشترك في Blue Ocean (عروض الأسعار الليلية)."]}}

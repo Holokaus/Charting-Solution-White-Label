@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change {title} account size"],ar:["تغيير حجم الحساب {title}"]}}

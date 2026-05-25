@@ -1,0 +1,1 @@
+t=>{t.exports={text:"text-hF57_4zZ"}}

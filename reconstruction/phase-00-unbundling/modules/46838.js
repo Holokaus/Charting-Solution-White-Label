@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Default templates"],ar:["القوالب الافتراضية"]}}

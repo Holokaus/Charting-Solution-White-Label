@@ -1,0 +1,1 @@
+e=>{e.exports={en:["#{count} (price, bar)"],ar:["#{count}' (سعر، عمود)"]}}

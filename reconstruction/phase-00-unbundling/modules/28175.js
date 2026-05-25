@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change sessions breaks width"],ar:["تغيير عرض فواصل الجلسات"]}}

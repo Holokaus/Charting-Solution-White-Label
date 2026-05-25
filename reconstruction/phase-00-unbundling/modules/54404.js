@@ -1,0 +1,2 @@
+(t,e,n)=>{"use strict";n.d(e,{default:()=>c});var r=n(89572),i=n(13795);const o=function(t){return(0,i.default)(t)&&"[object Arguments]"==(0,r.default)(t)};var u=Object.prototype,a=u.hasOwnProperty,s=u.propertyIsEnumerable;const c=o(function(){return arguments}())?o:function(t){return(0,
+i.default)(t)&&a.call(t,"callee")&&!s.call(t,"callee")}}

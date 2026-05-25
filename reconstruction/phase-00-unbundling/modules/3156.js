@@ -1,0 +1,1 @@
+(e,t,o)=>{o.d(t,{generateColorCached:()=>n});var i=o(59332),r=o(52859),l=o(16659);function n(e=1e3){const t=i.default.Cache;i.default.Cache=l.CircularCacheBuffer.bind(l.CircularCacheBuffer,e);const o=(0,i.default)(r.generateColor,((e,t,o)=>`${e}_${t}_${o}`));return i.default.Cache=t,o}}

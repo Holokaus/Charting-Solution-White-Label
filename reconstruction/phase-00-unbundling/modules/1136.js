@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Chart for {symbol}, {interval}"],ar:["رسم لـ {symbol}، {interval}"]}}

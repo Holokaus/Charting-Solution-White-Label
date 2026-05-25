@@ -1,0 +1,2 @@
+(e,t,n)=>{"use strict";n.d(t,{IntegerInput:()=>p,IntegerInputComponent:()=>d})
+;var o=n(50959),s=n(97754),r=n.n(s),a=n(63552),i=n(97170),l=n(50046),c=n(75191);class u extends o.PureComponent{render(){const{hasTooltip:e}=this.props;return o.createElement(l.NumericInput,{...this.props,mode:"integer",className:r()(c.input,e&&c.hasTooltip),stretch:!1})}}const d=(0,i.debounced)(u,{change:1/0,commit:0,blur:0}),p=(0,a.bind)(d)}

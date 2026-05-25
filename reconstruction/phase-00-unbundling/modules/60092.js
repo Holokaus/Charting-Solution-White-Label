@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Values"],ar:["القِيم"]}}

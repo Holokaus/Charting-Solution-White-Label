@@ -1,0 +1,1 @@
+a=>{a.exports={en:["Last available bar"],ar:["وقت آخر شريط"]}}

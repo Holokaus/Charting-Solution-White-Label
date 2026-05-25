@@ -1,0 +1,1 @@
+(t,e,i)=>{i.d(e,{StudyForceOverlayPlotView:()=>n});class n{constructor(t,e,i){this._series=t,this._model=e,this._plotName=i}isForceOverlay(){return!!this._study.metaInfo().isPlotForceOverlay(this._plotName)}_priceScale(){return this.isForceOverlay()?this._model.mainSeries().priceScale():this._study.priceScale()}}}

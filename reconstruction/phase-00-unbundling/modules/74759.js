@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Show interval settings"],ar:["إظهار إعدادات النطاق الزمني"]}}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change {title} price range visibility"],ar:["تغيير وضوح ملصقات أسعار {title}"]}}

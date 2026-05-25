@@ -1,0 +1,1 @@
+(e,t,r)=>{"use strict";r.d(t,{useDragDropManager:()=>s});var n=r(6346),o=r(50959),i=r(79178);function s(){const{dragDropManager:e}=(0,o.useContext)(i.DndContext);return(0,n.invariant)(null!=e,"Expected drag drop context"),e}}

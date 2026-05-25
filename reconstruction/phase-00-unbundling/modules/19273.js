@@ -1,0 +1,1 @@
+r=>{r.exports={en:["Year to day"],ar:["من عام إلى يوم"]}}

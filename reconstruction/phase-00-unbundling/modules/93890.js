@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change column down color"],ar:["تغيير لون الأعمدة الهابطة"]}}

@@ -1,0 +1,1 @@
+(e,t,s)=>{"use strict";s.d(t,{usePromise:()=>o});var i=s(50959),l=s(95406);function o(e,t,s){const[o,a]=(0,i.useState)(null);return(0,i.useEffect)((()=>{const s=new AbortController;let i=null;return(0,l.respectAbort)(s.signal,e()).then((e=>a(i=e))).catch(l.skipAbortError),()=>{s.abort(),i&&t&&t(i)}}),s?[...s]:void 0),o}}

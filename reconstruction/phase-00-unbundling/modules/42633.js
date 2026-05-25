@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Hold {hotKey_0} for temporary drawing"],ar:["اضغط باستمرار على {hotKey_0} للرسم المؤقت"]}}

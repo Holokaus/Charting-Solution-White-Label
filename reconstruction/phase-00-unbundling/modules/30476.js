@@ -1,0 +1,1 @@
+t=>{t.exports={mobile:"(max-width: 567px)"}}

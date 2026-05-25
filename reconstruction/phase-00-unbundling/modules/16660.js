@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change the display of real prices on price scale (instead of Heiken-Ashi price)"],ar:["تغيير عرض الأسعار الحقيقية على مقياس السعر (بدلًا من سعر هيكن آشي)"]}}

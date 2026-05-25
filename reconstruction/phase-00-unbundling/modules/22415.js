@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Listed exchange"],ar:["البورصة المدرجة"]}}

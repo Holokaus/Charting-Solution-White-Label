@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Ho Chi Minh"],ar:["هوشي منه"]}}

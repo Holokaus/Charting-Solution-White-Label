@@ -1,0 +1,1 @@
+(e,t,i)=>{var r;function o(e,t){return{propType:"number",properties:e,type:1,...t}}i.d(t,{createNumberPropertyDefinition:()=>o}),function(e){e[e.Integer=0]="Integer",e[e.Float=1]="Float"}(r||(r={}))}

@@ -1,0 +1,1 @@
+e=>{e.exports={en:["{chartStyle} chart type isn't currently available for tick-based intervals."],ar:["نوع رسم {chartStyle} غير متاح حاليًا للفواصل الزمنية القائمة على التيك."]}}

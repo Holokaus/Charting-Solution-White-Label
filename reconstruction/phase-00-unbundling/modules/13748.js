@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Use special math signs to displace selected drawings: +,-,/,* for price and +,- for bar index."],ar:["استخدم علامات رياضية خاصة لتحل محل الرسومات المحددة: + ، - ، / ، * للسعر و + ، - لفهرس العمود."]}}

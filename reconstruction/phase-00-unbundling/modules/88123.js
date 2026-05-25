@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Dashed line"],ar:["خط متقطع"]}}

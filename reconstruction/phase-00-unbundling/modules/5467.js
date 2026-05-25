@@ -1,0 +1,1 @@
+(t,e,n)=>{"use strict";n.d(e,{default:()=>r});const r=function(t){return function(e){return t(e)}}}

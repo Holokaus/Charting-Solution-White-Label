@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Risk/Reward Ratio: {ratio}"],ar:["نسبة المخاطرة/العائد: {ratio}"]}}

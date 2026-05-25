@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change plus button visibility"],ar:["تغيير وضوح زر +"]}}

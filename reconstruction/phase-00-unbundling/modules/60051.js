@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Output values"],ar:["قيم الإخراج"]}}

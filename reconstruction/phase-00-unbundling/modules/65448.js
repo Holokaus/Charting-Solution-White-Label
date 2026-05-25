@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Upper band #2"],ar:["النطاق العلوي #2"]}}

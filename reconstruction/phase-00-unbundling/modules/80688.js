@@ -1,0 +1,1 @@
+e=>{e.exports={en:["toggle regular scale"],ar:["تبديل المقياس العادي"]}}

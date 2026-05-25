@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Always remove locked drawings"],ar:["قم دائمًا بإزالة الرسومات المقفلة"]}}

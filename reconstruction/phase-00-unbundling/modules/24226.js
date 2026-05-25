@@ -1,0 +1,1 @@
+e=>{e.exports={en:["change high and low price labels visibility"],ar:["تغيير وضوح ملصقات أعلى سعر وأدنى سعر"]}}

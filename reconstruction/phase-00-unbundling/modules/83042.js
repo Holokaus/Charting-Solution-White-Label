@@ -1,0 +1,1 @@
+e=>{e.exports={en:["{hotKey_0} — fixed increments"],ar:["{hotKey_0}  — زيادات ثابتة"]}}

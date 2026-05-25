@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Histogram is too large, please increase {boldHighlightStart}Row Size{boldHighlightEnd} in the settings window."],ar:["الرسم البياني كبير جدًا، يرجى زيادة {boldHighlightStart}حجم الصف{boldHighlightEnd} في نافذة الإعدادات."]}}

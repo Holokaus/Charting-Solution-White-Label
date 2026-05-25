@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Show splits"],ar:["عرض تقسيمات الأسهم"]}}

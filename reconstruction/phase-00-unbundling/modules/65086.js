@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Stop background color"],ar:["لون خلفية الخسارة"]}}

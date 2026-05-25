@@ -1,0 +1,1 @@
+(e,t,r)=>{"use strict";r.d(t,{useResizeObserver:()=>n.useResizeObserver});var n=r(67842)}

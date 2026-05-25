@@ -1,0 +1,1 @@
+e=>{e.exports={en:["Bar Replay isn't available for this chart type. Want to exit Bar Replay?"],ar:["إعادة تشغيل الأعمدة Bar Replay غير متاح لهذا النوع من الرسوم البيانية. هل تريد الخروج من Bar Replay؟"]}}
