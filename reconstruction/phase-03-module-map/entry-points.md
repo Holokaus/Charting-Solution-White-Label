@@ -49,61 +49,61 @@ Modules with `dependentCount === 0` are potential entry points - they are `__web
 
 | Module ID | Dependencies | Likely Feature |
 |-----------|-------------|----------------|
-| 12 | 4 | Initialization / Core |
-| 32 | 0 | Initialization / Core |
-| 100 | 0 | Initialization / Core |
-| 125 | 0 | Initialization / Core |
-| 540 | 0 | Initialization / Core |
-| 573 | 0 | Initialization / Core |
-| 618 | 0 | Initialization / Core |
-| 646 | 0 | Initialization / Core |
-| 857 | 0 | Initialization / Core |
-| 898 | 0 | Initialization / Core |
-| 1006 | 3 | Initialization / Core |
-| 1086 | 7 | Initialization / Core |
-| 1140 | 0 | Initialization / Core |
-| 1162 | 9 | Initialization / Core |
-| 1232 | 0 | Initialization / Core |
-| 1336 | 23 | Initialization / Core |
-| 1405 | 0 | Initialization / Core |
-| 1486 | 22 | Initialization / Core |
-| 1524 | 0 | Initialization / Core |
-| 2059 | 6 | Initialization / Core |
+| 12 | 4 | Core initialization (library.*.js) |
+| 32 | 0 | Core initialization (library.*.js) |
+| 100 | 0 | Core initialization (library.*.js) |
+| 125 | 0 | Core initialization (library.*.js) |
+| 540 | 0 | Core initialization (library.*.js) |
+| 573 | 2 | Drawing tools (line-tool-cypher-pattern.*.js) |
+| 618 | 1 | Chart widget (chart-widget-gui.*.js) |
+| 646 | 8 | Drawing tools (line-tool-gann-fan.*.js) |
+| 857 | 1 | Core initialization (library.*.js) |
+| 898 | 2 | Core initialization (library.*.js) |
+| 1006 | 3 | Drawing tools (line-tool-callout.*.js) |
+| 1086 | 7 | Drawing tools (line-tool-trend-based-fib-extension.*.js) |
+| 1140 | 0 | Core initialization (library.*.js) |
+| 1162 | 9 | Core initialization (library.*.js) |
+| 1232 | 1 | Drawing tools (line-tool-regression-trend.*.js) |
+| 1336 | 23 | Core initialization (library.*.js) |
+| 1405 | 0 | Core initialization (library.*.js) |
+| 1486 | 22 | Core initialization (library.*.js) |
+| 1524 | 0 | Screenshot hint (chart-screenshot-hint.*.js) |
+| 2059 | 6 | Core initialization (library.*.js) |
 
 ## Chunk → Feature Mapping
 
 | Chunk File | Chunk ID | Module Count | Feature |
 |-----------|----------|-------------|---------|
-| zh_TW.91.cfe4af4f43df761935ee.js | 91 | 0 | unknown
-| chart-screenshot-hint.20aec3fd3e04096eae8a.js | 92 | 11 | 20aec3fd3e04096eae8a
-| get-error-card.9bac6b5005b2fe097cf3.js | 139 | 10 | 9bac6b5005b2fe097cf3
-| line-tool-table.bfad5173227ff4b17ee9.js | 319 | 9 | bfad5173227ff4b17ee9
-| line-tool-schiff-pitchfork2.a9eb3484dc231697e64a.js | 341 | 4 | a9eb3484dc231697e64a
-| demonstration-highlighter.7ab37b19fbd43b62435c.js | 360 | 6 | 7ab37b19fbd43b62435c
-| line-tool-price-note.0beb21ac39ce88afd40a.js | 380 | 10 | 0beb21ac39ce88afd40a
-| study-pane-views.ab403205125f170be9e2.js | 507 | 6 | ab403205125f170be9e2
-| line-tool-arrow-mark.f0be320dc06ad56040bf.js | 569 | 1 | f0be320dc06ad56040bf
-| line-tool-horizontal-ray.7ff8a41f54edcb4ad73d.js | 574 | 2 | 7ff8a41f54edcb4ad73d
-| study-property-pages-with-definitions.c82ef5c409f191cc7c5d.js | 607 | 7 | c82ef5c409f191cc7c5d
-| tablecontext-menu.bcf3249fc32562e96280.js | 620 | 2 | bcf3249fc32562e96280
-| 624.3b396e1376ddaa5e6358.js | 624 | 24 | 3b396e1376ddaa5e6358
-| line-tool-callout.0c88ce61641b39b90734.js | 688 | 3 | 0c88ce61641b39b90734
-| add-compare-dialog.3cab117ede5b1696d880.js | 731 | 11 | 3cab117ede5b1696d880
-| 769.cfef16111d0547178795.js | 769 | 20 | cfef16111d0547178795
-| line-tool-fib-speed-resistance-fan.d3f7742cd1f166c581ca.js | 906 | 8 | d3f7742cd1f166c581ca
-| 917.41b6aa03c55ba682d104.js | 917 | 15 | 41b6aa03c55ba682d104
-| line-tool-extended.e847213b4f2f0347eec1.js | 925 | 3 | e847213b4f2f0347eec1
-| zh_TW.938.5f20502c9172fdac1c7f.js | 938 | 0 | unknown
-| line-tool-path.654ee1abe8bd1c5165c5.js | 961 | 1 | 654ee1abe8bd1c5165c5
-| 986.af29b1f88812e58c9f6c.js | 986 | 5 | af29b1f88812e58c9f6c
-| zh_TW.9520.56af53115bbb024475fe.js | 1095 | 0 | unknown
-| line-tool-cypher-pattern.96f4b196b30af8149b1c.js | 1155 | 2 | 6b6008c2c60cff13d7f4
-| line-tool-balloon.1e3ca2deba9ec68bfb74.js | 1277 | 4 | 1e3ca2deba9ec68bfb74
-| line-tool-vertical-line.3b73ca25e6d4f290597f.js | 1282 | 3 | 3b73ca25e6d4f290597f
-| library.15664647653f41254b4d.js | 1297 | 437 | unknown
-| zh_TW.1308.bf60d54f92e58a11cef1.js | 1308 | 0 | unknown
-| line-tool-pitch-fan.916eb4d87cdda49b9337.js | 1313 | 5 | 916eb4d87cdda49b9337
-| line-tool-position.2506e7de45c96e5a349c.js | 1314 | 2 | 2506e7de45c96e5a349c
+| zh_TW.91.cfe4af4f43df761935ee.js | 91 | 0 | locale (zh_TW)
+| chart-screenshot-hint.20aec3fd3e04096eae8a.js | 92 | 11 | screenshot_hint
+| get-error-card.9bac6b5005b2fe097cf3.js | 139 | 10 | error_card
+| line-tool-table.bfad5173227ff4b17ee9.js | 319 | 9 | drawing_tools_table
+| line-tool-schiff-pitchfork2.a9eb3484dc231697e64a.js | 341 | 4 | drawing_tools_schiff_pitchfork2
+| demonstration-highlighter.7ab37b19fbd43b62435c.js | 360 | 6 | drawing_tools_demonstration_highlighter
+| line-tool-price-note.0beb21ac39ce88afd40a.js | 380 | 10 | drawing_tools_price_note
+| study-pane-views.ab403205125f170be9e2.js | 507 | 6 | study_pane_views
+| line-tool-arrow-mark.f0be320dc06ad56040bf.js | 569 | 1 | drawing_tools_arrow_mark
+| line-tool-horizontal-ray.7ff8a41f54edcb4ad73d.js | 574 | 2 | drawing_tools_horizontal_ray
+| study-property-pages-with-definitions.c82ef5c409f191cc7c5d.js | 607 | 7 | study_property_pages
+| tablecontext-menu.bcf3249fc32562e96280.js | 620 | 2 | table_context_menu
+| 624.3b396e1376ddaa5e6358.js | 624 | 24 | core_features
+| line-tool-callout.0c88ce61641b39b90734.js | 688 | 3 | drawing_tools_callout
+| add-compare-dialog.3cab117ede5b1696d880.js | 731 | 11 | compare_dialog
+| 769.cfef16111d0547178795.js | 769 | 20 | chart_bars_patterns
+| line-tool-fib-speed-resistance-fan.d3f7742cd1f166c581ca.js | 906 | 8 | drawing_tools_fib_speed_resistance_fan
+| 917.41b6aa03c55ba682d104.js | 917 | 15 | core_features
+| line-tool-extended.e847213b4f2f0347eec1.js | 925 | 3 | drawing_tools_extended
+| zh_TW.938.5f20502c9172fdac1c7f.js | 938 | 0 | locale (zh_TW)
+| line-tool-path.654ee1abe8bd1c5165c5.js | 961 | 1 | drawing_tools_path
+| 986.af29b1f88812e58c9f6c.js | 986 | 5 | chart_features
+| zh_TW.9520.56af53115bbb024475fe.js | 1095 | 0 | locale (zh_TW)
+| line-tool-cypher-pattern.96f4b196b30af8149b1c.js | 1155 | 2 | drawing_tools_cypher_pattern
+| line-tool-balloon.1e3ca2deba9ec68bfb74.js | 1277 | 4 | drawing_tools_balloon
+| line-tool-vertical-line.3b73ca25e6d4f290597f.js | 1282 | 3 | drawing_tools_vertical_line
+| library.15664647653f41254b4d.js | 1297 | 437 | core_library
+| zh_TW.1308.bf60d54f92e58a11cef1.js | 1308 | 0 | locale (zh_TW)
+| line-tool-pitch-fan.916eb4d87cdda49b9337.js | 1313 | 5 | drawing_tools_pitch_fan
+| line-tool-position.2506e7de45c96e5a349c.js | 1314 | 2 | drawing_tools_position
 
 ## Named Chunks from Runtime
 
@@ -154,24 +154,21 @@ The runtime file contains a mapping of module IDs to human-readable chunk names:
 
 ## API Feature → Entry Module Mapping
 
-| API Feature | Related Methods | Likely Entry Modules |
-|------------|----------------|---------------------|
-| chart_properties | chart, save, load, layout, setLayout | See chunk manifest for related chunks |
-| change_symbol | setSymbol, symbolInterval, symbolSync | See chunk manifest for related chunks |
-| change_interval | setTimeFrame, getIntervals, intervalSync | See chunk manifest for related chunks |
-| change_theme | changeTheme, getTheme | See chunk manifest for related chunks |
-| change_chart_type | (none identified) | See chunk manifest for related chunks |
-| add_indicator | getStudiesList, getStudyInputs, getStudyStyles | See chunk manifest for related chunks |
-| drawing_tools | selectLineTool, selectedLineTool, hideAllDrawingTools, lockAllDrawingTools, drawOnAllCharts | See chunk manifest for related chunks |
-| screenshot | takeScreenshot, takeClientScreenshot | See chunk manifest for related chunks |
-| undo_redo | undo, redo, clearUndoHistory, undoRedoState | See chunk manifest for related chunks |
-| keyboard_shortcuts | (none identified) | See chunk manifest for related chunks |
-| symbol_search | (none identified) | See chunk manifest for related chunks |
-| save_load | showLoadChartDialog, showSaveAsChartDialog, getSavedCharts, loadChartFromServer, saveChartToServer | See chunk manifest for related chunks |
-| fullscreen | (none identified) | See chunk manifest for related chunks |
-| timeframes | (none identified) | See chunk manifest for related chunks |
-| compare_symbol | (none identified) | See chunk manifest for related chunks |
-| data_window | (none identified) | See chunk manifest for related chunks |
+| API Feature | Related Methods | Entry Module IDs | Source Chunk |
+|------------|----------------|-----------------|--------------|
+| chart_properties | chart, save, load, layout, setLayout | 11985, 53288, 55456, 59142, 87795 | library.*.js |
+| change_symbol | setSymbol, symbolInterval, symbolSync | 5808, 24044, 57554, 59142, 82321, 97754 | library.*.js |
+| change_interval | setTimeFrame, getIntervals, intervalSync | 16499, 59142, 97754 | library.*.js |
+| change_theme | changeTheme, getTheme | 97754 | library.*.js |
+| change_chart_type | chartType, setChartType | 23484, 41028, 49107, 50516, 51284, 57554, 59142 | library.*.js |
+| add_indicator | createStudy, getStudiesList, getStudyInputs | 14472, 17773, 52973, 62093, 73914, 94073, 97754 | study-*.js |
+| drawing_tools | selectLineTool, selectedLineTool, hideAllDrawingTools, lockAllDrawingTools | 1232, 9431, 9587, 12148, 14472, 14638, 17721, 18348, 18441, 21730, 22523, 23283, 23970, 28121, 31558, 37130, 39022, 40226, 40283, 41160, 43470, 43684, 44341, 44504, 46350, 48984, 49684, 50991, 52982, 54707, 55157, 56348, 57296, 60594, 62414, 63117, 63136, 66807, 67046, 67725, 70214, 71514, 77325, 77657, 79327, 79530, 81817, 81951, 91445, 92417, 94407, 94512, 95121, 95400, 97754, 98653 | line-tool-*.js |
+| screenshot | takeScreenshot, takeClientScreenshot | 6969, 43010, 67090 | library.*.js |
+| undo_redo | undo, redo, clearUndoHistory, undoRedoState | 55517 | library.*.js |
+| symbol_search | searchSymbols, symbolSearchComplete | 22233, 24674, 89324 | symbol-search-dialog.*.js |
+| save_load | showLoadChartDialog, showSaveAsChartDialog, getSavedCharts, loadChartFromServer, saveChartToServer | 33384, 38672, 57351 | library.*.js |
+| timeframes | getTimeframes, setTimeframe | 44138, 48473, 48758 | library.*.js |
+| compare_symbol | searchSymbols, symbolInterval, symbolSync | 14143 | library.*.js |
 
 ## Notes
 
