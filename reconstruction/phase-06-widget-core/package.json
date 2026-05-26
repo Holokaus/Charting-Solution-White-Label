@@ -1,0 +1,14 @@
+{
+  "name": "widget-core",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Widget core reconstruction — state machine, message bridge, theme, layout, cross-frame sync",
+  "private": true,
+  "exports": {
+    "./StateMachine": "./src/StateMachine.js",
+    "./MessageBridge": "./src/MessageBridge.js",
+    "./ThemeManager": "./src/ThemeManager.js",
+    "./LayoutManager": "./src/LayoutManager.js",
+    "./CrossFrameSync": "./src/CrossFrameSync.js"
+  }
+}

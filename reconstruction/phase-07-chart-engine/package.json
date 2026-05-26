@@ -1,0 +1,7 @@
+{
+  "name": "chart-engine",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Chart engine reconstruction — canvas renderer, scales, series, overlays, data management",
+  "private": true
+}
