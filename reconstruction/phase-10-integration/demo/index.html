@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Charting Solution — Reconstructed Demo</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #131722; color: #D1D4DC; }
+    .demo-header { padding: 12px 16px; background: #1E222D; border-bottom: 1px solid #2A2E39; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+    .demo-header.light { background: #FAFAFA; border-color: #E0E0E0; color: #212121; }
+    .demo-header h1 { font-size: 14px; font-weight: 600; margin-right: 16px; }
+    .demo-header button { padding: 6px 12px; border: 1px solid #2A2E39; border-radius: 4px; background: #1E222D; color: #D1D4DC; cursor: pointer; font-size: 12px; white-space: nowrap; }
+    .demo-header button:hover { background: #2A2E39; }
+    .demo-header.light button { border-color: #E0E0E0; background: #FAFAFA; color: #212121; }
+    .demo-header.light button:hover { background: #F0F0F0; }
+    #chart-container { width: 100%; height: calc(100vh - 52px); position: relative; }
+    #chart-container canvas { display: block; }
+    .status { font-size: 11px; color: #787B86; margin-left: auto; padding: 4px 8px; }
+  </style>
+</head>
+<body>
+  <div class="demo-header">
+    <h1>Charting Solution</h1>
+    <button id="btn-change-symbol">Change Symbol</button>
+    <button id="btn-change-interval">Change Interval</button>
+    <button id="btn-toggle-theme">Toggle Theme</button>
+    <button id="btn-add-ma">Add MA (14)</button>
+    <button id="btn-add-rsi">Add RSI (14)</button>
+    <button id="btn-draw-trendline">Draw Trendline</button>
+    <span class="status">Reconstructed v30.0.0</span>
+  </div>
+  <div id="chart-container"></div>
+  <script type="module" src="./demo.js"></script>
+</body>
+</html>
