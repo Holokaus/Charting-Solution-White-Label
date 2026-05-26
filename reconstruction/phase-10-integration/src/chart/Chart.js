@@ -21,6 +21,7 @@ export class Chart {
     this._datafeed = datafeed;
     this._chartStyle = 0;
     this._studies = [];
+    this._state = 'active';
 
     const w = container.clientWidth || 800;
     const h = container.clientHeight || 600;
@@ -89,8 +90,11 @@ export class Chart {
   }
 
   destroy() {
+    this._state = 'destroyed';
     this._renderer.destroy();
   }
+
+  get state() { return this._state; }
 
   _setupMouse() {
     this._renderer.canvas.addEventListener('mousemove', (e) => {

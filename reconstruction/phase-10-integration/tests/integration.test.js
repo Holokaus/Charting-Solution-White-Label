@@ -1,55 +1,146 @@
+import { describe, it, expect, beforeEach, afterEach } from 'vitest';
 import { TradingView, Widget, ChartStyle, PriceScaleMode, CrosshairMode, toolRegistry, studyRegistry } from '../src/index.js';
 
-function assert(condition, msg) {
-  if (!condition) {
-    console.error('FAIL:', msg);
-    process.exitCode = 1;
-  } else {
-    console.log('PASS:', msg);
-  }
-}
+describe('TradingView namespace', () => {
+  it('exports TradingView as an object', () => {
+    expect(typeof TradingView).toBe('object');
+  });
 
-assert(typeof TradingView === 'object', 'TradingView namespace exists');
-assert(TradingView.widget === Widget, 'TradingView.widget is Widget');
-assert(ChartStyle.CANDLES === 0, 'ChartStyle.CANDLES exists');
-assert(ChartStyle.BARS === 1, 'ChartStyle.BARS exists');
-assert(ChartStyle.LINE === 2, 'ChartStyle.LINE exists');
-assert(PriceScaleMode.NORMAL === 0, 'PriceScaleMode.NORMAL exists');
-assert(PriceScaleMode.LOG === 1, 'PriceScaleMode.LOG exists');
-assert(CrosshairMode.NORMAL === 0, 'CrosshairMode.NORMAL exists');
+  it('TradingView.widget is Widget', () => {
+    expect(TradingView.widget).toBe(Widget);
+  });
 
-assert(toolRegistry.getNames().length === 8, 'toolRegistry has 8 tools');
-assert(studyRegistry.getNames().length === 5, 'studyRegistry has 5 studies');
+  it('has version set', () => {
+    expect(TradingView.version).toBe('30.0.0-reconstructed');
+  });
+});
 
-assert(TradingView.version === '30.0.0-reconstructed', 'TradingView version is set');
+describe('Enums', () => {
+  it('ChartStyle.CANDLES is 0', () => {
+    expect(ChartStyle.CANDLES).toBe(0);
+  });
 
-// Create widget with mock container
-const container = document.createElement('div');
-container.style.width = '800px';
-container.style.height = '600px';
-document.body.appendChild(container);
+  it('ChartStyle.BARS is 1', () => {
+    expect(ChartStyle.BARS).toBe(1);
+  });
 
-let threw = false;
-try {
-  const widget = new Widget({ container, symbol: 'TEST', interval: '1D' });
-  assert(typeof widget.chart === 'function', 'widget has chart() method');
-  assert(typeof widget.setSymbol === 'function', 'widget has setSymbol()');
-  assert(typeof widget.setInterval === 'function', 'widget has setInterval()');
+  it('ChartStyle.LINE is 2', () => {
+    expect(ChartStyle.LINE).toBe(2);
+  });
 
-  const chart = widget.chart();
-  assert(chart !== null, 'chart() returns a chart instance');
-  assert(chart.getSymbol() !== undefined, 'chart has getSymbol()');
-  assert(chart.getInterval() !== undefined, 'chart has getInterval()');
+  it('PriceScaleMode.NORMAL is 0', () => {
+    expect(PriceScaleMode.NORMAL).toBe(0);
+  });
 
-  const returnedSymbol = chart.getSymbol();
-  assert(returnedSymbol === 'TEST', `chart.getSymbol() returns "${returnedSymbol}"`);
+  it('PriceScaleMode.LOG is 1', () => {
+    expect(PriceScaleMode.LOG).toBe(1);
+  });
 
-  widget.remove();
-  assert(widget.state === 'destroyed', 'widget state is destroyed after remove');
-} catch (e) {
-  threw = true;
-  console.error('Widget creation threw:', e.message);
-}
-assert(!threw, 'Widget creation does not throw');
+  it('CrosshairMode.NORMAL is 0', () => {
+    expect(CrosshairMode.NORMAL).toBe(0);
+  });
+});
 
-console.log('Integration tests complete');
+describe('Registries', () => {
+  it('toolRegistry has 8 tools', () => {
+    expect(toolRegistry.getNames().length).toBe(8);
+  });
+
+  it('studyRegistry has 5 studies', () => {
+    expect(studyRegistry.getNames().length).toBe(5);
+  });
+});
+
+describe('Widget', () => {
+  let container;
+
+  beforeEach(() => {
+    container = document.createElement('div');
+    container.style.width = '800px';
+    container.style.height = '600px';
+    document.body.appendChild(container);
+  });
+
+  afterEach(() => {
+    if (container && container.parentNode) {
+      container.parentNode.removeChild(container);
+    }
+  });
+
+  it('creates without throwing', () => {
+    expect(() => new Widget({ container, symbol: 'TEST', interval: '1D' })).not.toThrow();
+  });
+
+  it('has chart() method', () => {
+    const widget = new Widget({ container, symbol: 'TEST', interval: '1D' });
+    expect(typeof widget.chart).toBe('function');
+    widget.remove();
+  });
+
+  it('has setSymbol() method', () => {
+    const widget = new Widget({ container, symbol: 'TEST', interval: '1D' });
+    expect(typeof widget.setSymbol).toBe('function');
+    widget.remove();
+  });
+
+  it('has setInterval() method', () => {
+    const widget = new Widget({ container, symbol: 'TEST', interval: '1D' });
+    expect(typeof widget.setInterval).toBe('function');
+    widget.remove();
+  });
+
+  it('chart() returns a chart instance', () => {
+    const widget = new Widget({ container, symbol: 'TEST', interval: '1D' });
+    const chart = widget.chart();
+    expect(chart).not.toBeNull();
+    widget.remove();
+  });
+
+  it('chart has getSymbol()', () => {
+    const widget = new Widget({ container, symbol: 'TEST', interval: '1D' });
+    const chart = widget.chart();
+    expect(typeof chart.getSymbol).toBe('function');
+    widget.remove();
+  });
+
+  it('chart.getSymbol() returns the configured symbol', () => {
+    const widget = new Widget({ container, symbol: 'TEST', interval: '1D' });
+    const chart = widget.chart();
+    expect(chart.getSymbol()).toBe('TEST');
+    widget.remove();
+  });
+
+  it('chart has getInterval()', () => {
+    const widget = new Widget({ container, symbol: 'TEST', interval: '1D' });
+    const chart = widget.chart();
+    expect(typeof chart.getInterval).toBe('function');
+    widget.remove();
+  });
+
+  it('widget state is destroyed after remove', () => {
+    const widget = new Widget({ container, symbol: 'TEST', interval: '1D' });
+    widget.remove();
+    expect(widget.state).toBe('destroyed');
+  });
+
+  it('chart is null after widget remove', () => {
+    const widget = new Widget({ container, symbol: 'TEST', interval: '1D' });
+    const chart = widget.chart();
+    widget.remove();
+    expect(chart.state).toBe('destroyed');
+  });
+
+  it('setSymbol updates chart symbol', () => {
+    const widget = new Widget({ container, symbol: 'TEST', interval: '1D' });
+    widget.setSymbol('AAPL');
+    expect(widget.chart().getSymbol()).toBe('AAPL');
+    widget.remove();
+  });
+
+  it('setInterval updates chart interval', () => {
+    const widget = new Widget({ container, symbol: 'TEST', interval: '1D' });
+    widget.setInterval('1H');
+    expect(widget.chart().getInterval()).toBe('1H');
+    widget.remove();
+  });
+});
