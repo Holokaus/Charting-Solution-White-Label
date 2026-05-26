@@ -1,0 +1,7 @@
+{
+  "name": "drawing-tools",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Drawing tools reconstruction — trend lines, fibonacci, rectangles, text, persistence",
+  "private": true
+}

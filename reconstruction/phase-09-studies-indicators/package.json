@@ -1,0 +1,7 @@
+{
+  "name": "studies-indicators",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Studies and indicators reconstruction — MA, RSI, MACD, Bollinger Bands, Volume, renderers",
+  "private": true
+}
