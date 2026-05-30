@@ -1,32 +1,8 @@
 import { TradingView, studyRegistry, toolRegistry } from '../src/index.js';
 import { LineRenderer } from '../../phase-09-studies-indicators/src/renderers/LineRenderer.js';
+import { BinanceDatafeed } from '../src/datafeed/BinanceDatafeed.js';
 
-class MockDatafeed {
-  generateBars(symbol, interval, count = 100) {
-    const key = `${symbol}_${interval}`;
-    let price = symbol === 'AAPL' ? 150 : symbol === 'GOOGL' ? 2800 : symbol === 'TSLA' ? 700 : 100;
-    const now = Math.floor(Date.now() / 1000);
-    const intervalSeconds = { '1': 60, '5': 300, '15': 900, '60': 3600, '1D': 86400, '1W': 604800, '1M': 2592000 }[interval] || 86400;
-    const bars = [];
-    for (let i = count; i >= 0; i--) {
-      const time = now - i * intervalSeconds;
-      const change = (Math.random() - 0.48) * price * 0.02;
-      const open = price;
-      const close = price + change;
-      const high = Math.max(open, close) * (1 + Math.random() * 0.01);
-      const low = Math.min(open, close) * (1 - Math.random() * 0.01);
-      bars.push({ time, open, high, low, close, volume: Math.floor(Math.random() * 1000000) + 100000 });
-      price = close;
-    }
-    return bars;
-  }
-
-  getBars(symbol, interval, callback) {
-    setTimeout(() => callback(this.generateBars(symbol, interval)), 50);
-  }
-}
-
-const datafeed = new MockDatafeed();
+const datafeed = new BinanceDatafeed();
 const container = document.getElementById('chart-container');
 
 const widget = new TradingView.widget({ container, symbol: 'AAPL', interval: '1D', theme: 'dark', datafeed, studyRegistry });
