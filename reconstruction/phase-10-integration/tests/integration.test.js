@@ -42,8 +42,8 @@ describe('Enums', () => {
 });
 
 describe('Registries', () => {
-  it('toolRegistry has 8 tools', () => {
-    expect(toolRegistry.getNames().length).toBe(8);
+  it('toolRegistry has 18 tools', () => {
+    expect(toolRegistry.getNames().length).toBe(18);
   });
 
   it('studyRegistry has 5 studies', () => {

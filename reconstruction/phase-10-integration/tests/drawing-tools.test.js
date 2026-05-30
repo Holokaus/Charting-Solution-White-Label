@@ -2,8 +2,8 @@ import { describe, it, expect } from 'vitest';
 import { toolRegistry } from '../src/index.js';
 
 describe('Drawing Tools', () => {
-  it('has 8 registered tools', () => {
-    expect(toolRegistry.getNames().length).toBe(8);
+  it('has 18 registered tools', () => {
+    expect(toolRegistry.getNames().length).toBe(18);
   });
 
   it('can create TrendLine', () => {
