@@ -1,0 +1,9 @@
+src/
+tests/
+docs-site/
+demo/
+coverage/
+node_modules/
+*.test.js
+vitest.config.js
+tsconfig.json
