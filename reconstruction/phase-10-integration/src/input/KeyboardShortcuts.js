@@ -1,30 +1,20 @@
 export class KeyboardShortcuts {
-  constructor(chart, options = {}) {
-    this.chart = chart;
-    this.options = {
-      zoomStep: 0.1,
-      panStep: 50,
-      ...options
-    };
+  constructor(widget) {
+    this.widget = widget;
+    this.bindings = new Map();
     this._handlers = {};
+    this._keyActionMap = {
+      '+': 'zoomIn', '=': 'zoomIn', '-': 'zoomOut',
+      'arrowleft': 'panLeft', 'arrowright': 'panRight',
+      'delete': 'deleteTool', 'backspace': 'deleteTool'
+    };
     this._enabled = true;
-    this._init();
+    this._handler = this._onKeyDown.bind(this);
+    document.addEventListener('keydown', this._handler);
   }
 
-  _init() {
-    this._onKeyDown = (e) => {
-      if (!this._enabled) return;
-      const key = e.key;
-      const ctrl = e.ctrlKey || e.metaKey;
-      if (ctrl && key === 'z') { e.preventDefault(); this._trigger('undo'); return; }
-      if (ctrl && key === 's') { e.preventDefault(); this._trigger('save'); return; }
-      if (key === '+' || key === '=') { e.preventDefault(); this._trigger('zoomIn'); return; }
-      if (key === '-') { e.preventDefault(); this._trigger('zoomOut'); return; }
-      if (key === 'ArrowLeft') { e.preventDefault(); this._trigger('panLeft'); return; }
-      if (key === 'ArrowRight') { e.preventDefault(); this._trigger('panRight'); return; }
-      if (key === 'Delete' || key === 'Backspace') { e.preventDefault(); this._trigger('delete'); return; }
-    };
-    document.addEventListener('keydown', this._onKeyDown);
+  register(keyCombo, action) {
+    this.bindings.set(keyCombo, action);
   }
 
   on(action, handler) {
@@ -37,9 +27,55 @@ export class KeyboardShortcuts {
     for (const h of handlers) h();
   }
 
+  _onKeyDown(e) {
+    if (!this._enabled) return;
+    const key = e.key;
+    const ctrl = e.ctrlKey || e.metaKey;
+    const shift = e.shiftKey;
+
+    if (ctrl && key.toLowerCase() === 'z') {
+      e.preventDefault();
+      if (shift) {
+        this._trigger('redo');
+        const binding = this.bindings.get('ctrl+shift+z');
+        if (binding) binding();
+      } else {
+        this._trigger('undo');
+        const binding = this.bindings.get('ctrl+z');
+        if (binding) binding();
+      }
+      return;
+    }
+    if (ctrl && key.toLowerCase() === 's') {
+      e.preventDefault();
+      this._trigger('save');
+      const binding = this.bindings.get('ctrl+s');
+      if (binding) binding();
+      return;
+    }
+
+    const combo = [];
+    if (ctrl) combo.push('ctrl');
+    if (shift) combo.push('shift');
+    if (e.altKey) combo.push('alt');
+    combo.push(key.toLowerCase());
+    const comboStr = combo.join('+');
+
+    const action = this._keyActionMap[key.toLowerCase()];
+    if (action) {
+      e.preventDefault();
+      this._trigger(action);
+    }
+
+    if (this.bindings.has(comboStr)) {
+      e.preventDefault();
+      this.bindings.get(comboStr)();
+    }
+  }
+
   destroy() {
     this._enabled = false;
-    document.removeEventListener('keydown', this._onKeyDown);
+    document.removeEventListener('keydown', this._handler);
   }
 
   setEnabled(enabled) {

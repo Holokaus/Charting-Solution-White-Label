@@ -2,6 +2,7 @@ import { StateMachine } from './StateMachine.js';
 import { ThemeManager } from './ThemeManager.js';
 import { LayoutManager } from './LayoutManager.js';
 import { Chart } from '../chart/Chart.js';
+import { KeyboardShortcuts } from '../input/KeyboardShortcuts.js';
 
 export class Widget {
   constructor(options) {
@@ -38,6 +39,14 @@ export class Widget {
 
     if (this._options.symbol) this._chart.setSymbol(this._options.symbol);
     if (this._options.interval) this._chart.setInterval(this._options.interval);
+
+    this._shortcuts = new KeyboardShortcuts(this);
+    this._shortcuts.register('ctrl+s', () => this._layoutManager.save());
+    this._shortcuts.register('ctrl+z', () => this._layoutManager.undo());
+    this._shortcuts.register('ctrl+shift+z', () => this._layoutManager.redo());
+    this._shortcuts.register('+', () => { /* zoom in */ });
+    this._shortcuts.register('-', () => { /* zoom out */ });
+    this._shortcuts.register('delete', () => { /* remove drawing */ });
   }
 
   chart() {

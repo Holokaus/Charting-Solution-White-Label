@@ -10,7 +10,8 @@ describe('CompareSymbol', () => {
   ];
 
   it('normalizes to percentage change from first bar', () => {
-    const cs = new CompareSymbol('TEST', compareBars);
+    const cs = new CompareSymbol(null, 'TEST', null);
+    cs.bars = compareBars;
     const result = cs.calculate(mainBars);
     expect(result.length).toBe(3);
     expect(result[0].value).toBe(0);
@@ -19,13 +20,27 @@ describe('CompareSymbol', () => {
   });
 
   it('returns empty when not visible', () => {
-    const cs = new CompareSymbol('TEST', compareBars);
+    const cs = new CompareSymbol(null, 'TEST', null);
+    cs.bars = compareBars;
     cs.setVisible(false);
     expect(cs.calculate(mainBars)).toEqual([]);
   });
 
   it('returns empty for empty bars', () => {
-    const cs = new CompareSymbol('TEST', []);
+    const cs = new CompareSymbol(null, 'TEST', null);
     expect(cs.calculate(mainBars)).toEqual([]);
+  });
+
+  it('loads bars via datafeed', async () => {
+    const datafeed = {
+      getBars(symbolInfo, resolution, from, to, onResult, onError) {
+        onResult([{ time: 1, close: 100 }, { time: 2, close: 110 }]);
+      }
+    };
+    const cs = new CompareSymbol(null, 'TEST', datafeed);
+    await cs.load('1D', 0, 10);
+    expect(cs.bars.length).toBe(2);
+    expect(cs.bars[0].value).toBe(0);
+    expect(cs.bars[1].value).toBeCloseTo(10, 1);
   });
 });
