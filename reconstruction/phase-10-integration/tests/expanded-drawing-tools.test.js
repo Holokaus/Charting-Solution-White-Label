@@ -26,6 +26,19 @@ describe('Channel', () => {
     const t = toolRegistry.create('Channel');
     expect(t.name).toBe('Channel');
   });
+
+  it('hitTest with 3 points', () => {
+    const t = new Channel();
+    t.points = [
+      { time: 0, price: 100 },
+      { time: 5, price: 110 },
+      { time: 1, price: 95 }
+    ];
+    const viewport = { width: 800, height: 600, timeToX: (t) => t * 80, barSpacing: 6 };
+    const priceScale = { priceToY: (p) => 600 - (p - 90) * 20 };
+    expect(t.hitTest(280, 400, viewport, priceScale, null)).toBe(true);
+    expect(t.hitTest(0, 0, viewport, priceScale, null)).toBe(false);
+  });
 });
 
 describe('Pitchfork', () => {
