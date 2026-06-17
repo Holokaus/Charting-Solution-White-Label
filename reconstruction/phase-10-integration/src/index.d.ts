@@ -1,106 +1,199 @@
 declare module 'charting-solution-reconstructed' {
-  // Core types
+  // =========== Core Types ===========
   export interface Bar {
+    time: number;
     open: number;
     high: number;
     low: number;
     close: number;
-    volume: number;
-    time: number;
+    volume?: number;
   }
 
-  export interface StudyInput {
+  export interface StudyInputDef {
     name: string;
     type: 'integer' | 'float' | 'select' | 'text' | 'bool';
     min?: number;
     max?: number;
-    default?: any;
+    default?: string | number | boolean;
     options?: string[];
   }
 
-  export interface StudyOutput {
+  export interface StudyOutputDef {
     name: string;
   }
 
-  export interface StudyDefinition {
-    inputs: StudyInput[];
-    outputs: string[];
+  // =========== Enums ===========
+  export const enum ChartStyle {
+    CANDLES = 0,
+    HOLLOW_CANDLES = 1,
+    HEIKIN_ASHI = 2,
+    BARS = 3,
+    LINE = 4,
+    AREA = 5,
+    RENKO = 6,
+    PNF = 7,
+    KAGI = 8,
+    LINE_BREAK = 9,
   }
 
-  // Chart
+  export const enum PriceScaleMode {
+    NORMAL = 0,
+    LOG = 1,
+    PERCENTAGE = 2,
+    INDEXED_TO_100 = 3,
+  }
+
+  export const enum CrosshairMode {
+    NONE = 0,
+    VERTICAL = 1,
+    HORIZONTAL = 2,
+    BOTH = 3,
+  }
+
+  // =========== Widget ===========
+  export interface WidgetOptions {
+    container: string | HTMLElement;
+    symbol?: string;
+    interval?: string;
+    datafeed?: IDatafeed;
+    theme?: 'light' | 'dark' | 'custom';
+    studyRegistry?: StudyRegistry;
+    toolRegistry?: ToolRegistry;
+    width?: number;
+    height?: number;
+    library_path?: string;
+    autosize?: boolean;
+    timezone?: string;
+    debug?: boolean;
+    locale?: string;
+    disabled_features?: string[];
+    enabled_features?: string[];
+    overrides?: Record<string, unknown>;
+    studies_overrides?: Record<string, unknown>;
+    custom_css_url?: string;
+    loading_screen?: { backgroundColor?: string; foregroundColor?: string };
+    symbol_watermark?: string;
+  }
+
+  export class Widget {
+    constructor(options: WidgetOptions);
+    chart(index?: number): Chart | null;
+    setSymbol(symbol: string, interval?: string): void;
+    setInterval(interval: string): void;
+    remove(): void;
+    changeTheme(theme: 'light' | 'dark' | 'custom'): void;
+    addStudy(studyName: string, inputs?: Record<string, unknown>): BuiltinStudy | null;
+    onChartReady(callback: () => void): void;
+    onSymbolChanged(callback: () => void): void;
+    onIntervalChanged(callback: () => void): void;
+    readonly state: string;
+  }
+
+  // =========== Chart ===========
   export class Chart {
-    constructor(container: HTMLElement, options?: any);
+    constructor(container: HTMLElement, symbol: string, interval: string, datafeed: IDatafeed | null);
     setSymbol(symbol: string): void;
     getSymbol(): string;
     setInterval(interval: string): void;
     getInterval(): string;
-    addStudy(study: any, options?: any): void;
-    removeStudy(id: string): void;
+    setChartStyle(style: ChartStyle): void;
+    addStudy(study: BuiltinStudy): void;
+    setData(bars: Bar[]): void;
+    addBar(bar: Bar): void;
     destroy(): void;
-    state: string;
+    readonly state: string;
   }
 
-  // Widget
-  export class Widget {
-    constructor(options: any);
-    chart(): Chart | null;
-    setSymbol(symbol: string): void;
-    setInterval(interval: string): void;
-    remove(): void;
-  }
-
-  // Price Scale
+  // =========== Price Scale ===========
   export class PriceScale {
-    constructor(options?: any);
-    setMode(mode: number): void;
-    getMode(): number;
-    autoScale(): void;
+    constructor(height: number, mode?: PriceScaleMode);
+    setMode(mode: PriceScaleMode): void;
+    getMode(): PriceScaleMode;
+    autoScale(bars: Bar[]): void;
+    priceToY(price: number): number | null;
+    yToPrice(y: number): number | null;
   }
 
   export const PriceScaleMode: {
-    Normal: 0;
-    Logarithmic: 1;
-    Percentage: 2;
-    IndexedTo100: 3;
+    NORMAL: 0;
+    LOG: 1;
+    PERCENTAGE: 2;
+    INDEXED_TO_100: 3;
   };
 
-  // Chart Style
+  // =========== Time Scale ===========
+  export class TimeScale {
+    constructor(width: number, barSpacing?: number);
+    timeToX(time: number): number | null;
+    xToTime(x: number): number | null;
+    zoom(factor: number, centerX: number): void;
+    formatLabel(time: number): string;
+  }
+
+  // =========== Crosshair ===========
+  export class Crosshair {
+    move(x: number, y: number): void;
+    hide(): void;
+    render(ctx: CanvasRenderingContext2D, viewport: Viewport, priceScale: PriceScale, timeScale: TimeScale, options?: Record<string, unknown>): void;
+  }
+
+  // =========== Viewport ===========
+  export class Viewport {
+    constructor(width: number, height: number);
+    timeToX(time: number): number | null;
+    xToTime(x: number): number | null;
+    priceToY(price: number, priceScale: PriceScale): number;
+    getVisibleBars<T extends { time: number }>(data: T[]): T[];
+    fit(bars: Bar[]): void;
+    zoom(factor: number, cx: number): void;
+    readonly width: number;
+    readonly height: number;
+    readonly barSpacing: number;
+  }
+
+  // =========== Chart Style Constants ===========
   export const ChartStyle: {
-    Candles: 0;
-    HollowCandles: 1;
-    HeikinAshi: 2;
-    Bars: 3;
-    Line: 4;
-    Area: 5;
-    Renko: 6;
-    PnF: 7;
-    Kagi: 8;
-    LineBreak: 9;
+    CANDLES: 0;
+    HOLLOW_CANDLES: 1;
+    HEIKIN_ASHI: 2;
+    BARS: 3;
+    LINE: 4;
+    AREA: 5;
+    RENKO: 6;
+    PNF: 7;
+    KAGI: 8;
+    LINE_BREAK: 9;
   };
 
-  // Crosshair Mode
   export const CrosshairMode: {
-    None: 0;
-    Vertical: 1;
-    Horizontal: 2;
-    Both: 3;
+    NONE: 0;
+    VERTICAL: 1;
+    HORIZONTAL: 2;
+    BOTH: 3;
   };
 
-  // Studies
+  // =========== Studies ===========
+  export interface StudyDefinition {
+    inputs: StudyInputDef[];
+    outputs: string[];
+  }
+
+  export class BuiltinStudy implements StudyDefinition {
+    static inputs: StudyInputDef[];
+    static outputs: string[];
+    constructor(inputs?: Record<string, unknown>);
+    calculate(bars: Bar[]): Record<string, number | null>[];
+  }
+
   export class StudyRegistry {
-    register(name: string, study: any): void;
-    get(name: string): typeof BuiltinStudy | undefined;
+    register(name: string, studyClass: typeof BuiltinStudy): void;
+    create(name: string, inputs?: Record<string, unknown>): BuiltinStudy;
     getNames(): string[];
+    getInputs(name: string): StudyInputDef[] | null;
+    getOutputs(name: string): string[] | null;
   }
 
   export const studyRegistry: StudyRegistry;
-
-  export class BuiltinStudy {
-    static inputs: StudyInput[];
-    static outputs: string[];
-    constructor(inputs?: Record<string, any>);
-    calculate(bars: Bar[]): any[];
-  }
 
   export class MovingAverage extends BuiltinStudy {}
   export class RSI extends BuiltinStudy {}
@@ -128,37 +221,121 @@ declare module 'charting-solution-reconstructed' {
   export class LinearRegression extends BuiltinStudy {}
   export class Correlation extends BuiltinStudy {}
 
-  // Drawing Tools
+  // =========== Drawing Tools ===========
+  export interface ToolPoint {
+    time: number;
+    price: number;
+  }
+
+  export interface ToolStyle {
+    color?: string;
+    width?: number;
+    [key: string]: unknown;
+  }
+
+  export abstract class BaseDrawingTool {
+    name: string;
+    icon: string;
+    cursor: string;
+    maxPoints: number;
+    points: ToolPoint[];
+    style: ToolStyle;
+    render(ctx: CanvasRenderingContext2D, viewport: Viewport, priceScale: PriceScale, timeScale: TimeScale, options?: Record<string, unknown>): void;
+    hitTest(mouseX: number, mouseY: number, viewport: Viewport, priceScale: PriceScale, timeScale: TimeScale, threshold?: number): boolean;
+  }
+
   export class ToolRegistry {
-    register(tool: any): void;
-    get(name: string): any;
-    getAll(): any[];
+    register(name: string, toolClass: typeof BaseDrawingTool): void;
+    create(name: string, options?: { points?: ToolPoint[]; style?: ToolStyle }): BaseDrawingTool;
+    getNames(): string[];
+    getClass(name: string): typeof BaseDrawingTool | null;
   }
 
   export const toolRegistry: ToolRegistry;
 
-  // Datafeeds
+  // =========== Datafeeds ===========
+  export interface SymbolInfo {
+    name: string;
+    ticker?: string;
+    exchange?: string;
+    type?: string;
+    session?: string;
+    pricescale?: number;
+    minmov?: number;
+    description?: string;
+    timezone?: string;
+    has_intraday?: boolean;
+    has_seconds?: boolean;
+    has_daily?: boolean;
+    has_weekly_and_monthly?: boolean;
+    supported_resolutions?: string[];
+  }
+
+  export interface DatafeedConfig {
+    supports_search?: boolean;
+    supports_group_request?: boolean;
+    supported_resolutions?: string[];
+  }
+
   export interface IDatafeed {
-    onReady(callback: (info: any) => void): void;
-    resolveSymbol(symbolName: string, callback: (info: any) => void, errorCallback: (err: any) => void): void;
-    getBars(symbolInfo: any, interval: string, callback: (bars: Bar[]) => void, errorCallback: (err: any) => void): void;
-    subscribeBars(symbolInfo: any, interval: string, callback: (bar: Bar) => void): void;
-    unsubscribeBars(): void;
+    onReady(callback: (config: DatafeedConfig) => void): void;
+    resolveSymbol(
+      symbolName: string,
+      onResolve: (symbolInfo: SymbolInfo) => void,
+      onError: (error: string) => void
+    ): void;
+    getBars(
+      symbolInfo: SymbolInfo,
+      resolution: string,
+      from: number,
+      to: number,
+      onHistoryCallback: (bars: Bar[], meta: { noData?: boolean; nextTime?: number }) => void,
+      onError: (error: string) => void,
+      firstDataRequest?: boolean
+    ): void;
+    subscribeBars(
+      symbolInfo: SymbolInfo,
+      resolution: string,
+      onRealtimeCallback: (bar: Bar) => void,
+      subscriberUID: string,
+      onResetCacheNeededCallback?: () => void
+    ): () => void;
+    unsubscribeBars(subscriberUID: string): void;
+    searchSymbols(
+      userInput: string,
+      exchange: string,
+      symbolType: string,
+      onResult: (items: SymbolInfo[]) => void,
+      onError: (error: string) => void
+    ): void;
   }
 
   export class RESTDatafeed implements IDatafeed {
-    constructor(options?: any);
+    constructor(baseURL?: string, options?: Record<string, unknown>);
+    onReady(callback: (config: DatafeedConfig) => void): void;
+    resolveSymbol(symbolName: string, onResolve: (info: SymbolInfo) => void, onError: (err: string) => void): void;
+    getBars(symbolInfo: SymbolInfo, resolution: string, from: number, to: number, onHistoryCallback: (bars: Bar[], meta: { noData?: boolean; nextTime?: number }) => void, onError: (err: string) => void, firstDataRequest?: boolean): void;
+    subscribeBars(symbolInfo: SymbolInfo, resolution: string, onRealtimeCallback: (bar: Bar) => void, subscriberUID: string, onResetCacheNeededCallback?: () => void): () => void;
+    unsubscribeBars(subscriberUID: string): void;
+    searchSymbols(userInput: string, exchange: string, symbolType: string, onResult: (items: SymbolInfo[]) => void, onError: (err: string) => void): void;
   }
 
   export class BinanceDatafeed extends RESTDatafeed {
-    constructor(options?: any);
+    constructor(options?: Record<string, unknown>);
+    generateBars(symbol: string, interval: string, count?: number): Bar[];
   }
 
   export class WebSocketDatafeed implements IDatafeed {
-    constructor(url: string, options?: any);
+    constructor(url: string, options?: Record<string, unknown>);
+    onReady(callback: (config: DatafeedConfig) => void): void;
+    resolveSymbol(symbolName: string, onResolve: (info: SymbolInfo) => void, onError: (err: string) => void): void;
+    getBars(symbolInfo: SymbolInfo, resolution: string, from: number, to: number, onHistoryCallback: (bars: Bar[], meta: { noData?: boolean; nextTime?: number }) => void, onError: (err: string) => void, firstDataRequest?: boolean): void;
+    subscribeBars(symbolInfo: SymbolInfo, resolution: string, onRealtimeCallback: (bar: Bar) => void, subscriberUID: string, onResetCacheNeededCallback?: () => void): () => void;
+    unsubscribeBars(subscriberUID: string): void;
+    searchSymbols(userInput: string, exchange: string, symbolType: string, onResult: (items: SymbolInfo[]) => void, onError: (err: string) => void): void;
   }
 
-  // Alerts
+  // =========== Alerts ===========
   export interface Alert {
     id: string;
     type: 'price' | 'study' | 'drawing';
@@ -170,76 +347,123 @@ declare module 'charting-solution-reconstructed' {
 
   export class AlertSystem {
     constructor();
-    addAlert(alert: Alert): string;
+    addAlert(alert: Omit<Alert, 'id'>): string;
     removeAlert(id: string): boolean;
     getAlerts(): Alert[];
-    checkAlerts(chart: any): void;
+    checkAlerts(chart: Chart): Alert[];
     clear(): void;
   }
 
-  // Keyboard Shortcuts
+  // =========== Keyboard Shortcuts ===========
   export class KeyboardShortcuts {
-    constructor(chart: any, options?: Record<string, string>);
-    register(shortcut: string, handler: () => void): void;
-    unregister(shortcut: string): void;
+    constructor(widget: Widget);
+    register(keyCombo: string, action: () => void): void;
+    on(action: string, handler: () => void): void;
     destroy(): void;
+    setEnabled(enabled: boolean): void;
   }
 
-  // Command History
+  // =========== Command History ===========
+  export interface Command {
+    execute(): unknown;
+    undo(): unknown;
+  }
+
   export class CommandHistory {
     constructor(maxSize?: number);
-    execute(command: any): any;
-    undo(): any;
-    redo(): any;
+    execute(command: Command): unknown;
+    undo(): Command | null;
+    redo(): Command | null;
     clear(): void;
     getUndoCount(): number;
     getRedoCount(): number;
   }
 
-  // Screenshot
+  // =========== Screenshot ===========
   export class Screenshot {
-    static capture(element: HTMLElement | HTMLCanvasElement): string | null;
+    constructor(canvas: HTMLCanvasElement | null);
+    toDataURL(type?: string, quality?: number): string | null;
+    download(filename?: string, type?: string, quality?: number): void;
   }
 
-  // Compare Symbol
+  export class ScreenshotExport {
+    static exportPNG(canvas: HTMLCanvasElement, filename?: string): void;
+    static exportJPG(canvas: HTMLCanvasElement, quality?: number, filename?: string): void;
+    static toDataURL(canvas: HTMLCanvasElement, type?: string, quality?: number): string;
+  }
+
+  // =========== Compare Symbol ===========
   export class CompareSymbol {
-    calculate(bars: Bar[], baseBars: Bar[]): any[];
+    constructor(chart: Chart | null, symbol: string, datafeed: IDatafeed | null);
+    bars: Bar[];
+    color: string;
+    load(resolution: string, from: number, to: number): Promise<void>;
+    calculate(mainBars: Bar[]): { time: number; value: number }[];
+    setVisible(visible: boolean): void;
+    render(ctx: CanvasRenderingContext2D, viewport: Viewport, priceScale: PriceScale, timeScale: TimeScale, options?: Record<string, unknown>): void;
   }
 
-  // Session Breaks
+  // =========== Session Breaks ===========
+  export interface SessionBreak {
+    start: number;
+    end: number;
+    isWeekend: boolean;
+  }
+
   export class SessionBreaks {
-    detect(bars: Bar[], sessionStartHour?: number): any[];
+    constructor(options?: { color?: string; weekendColor?: string; gapThreshold?: number });
+    detect(bars: Bar[]): SessionBreak[];
+    render(ctx: CanvasRenderingContext2D, viewport: Viewport, priceScale: PriceScale, timeScale: TimeScale, options?: Record<string, unknown>): void;
+    setBars(bars: Bar[]): void;
   }
 
-  // Pine Script
+  // =========== Pine Script ===========
+  export interface PineAST {
+    type: string;
+    body?: PineAST[];
+    [key: string]: unknown;
+  }
+
+  export class PineSyntaxError extends Error {
+    constructor(message: string, line: number, col: number);
+    line: number;
+    col: number;
+  }
+
   export class Parser {
-    parse(source: string): any;
+    parse(source: string): PineAST;
   }
 
   export class Transpiler {
-    transpile(ast: any): string;
+    transpile(ast: PineAST): string;
   }
 
   export class Runtime {
     sma(values: number[], length: number): number[];
     ema(values: number[], length: number): number[];
+    wma(values: number[], length: number): number[];
     rsi(values: number[], length: number): number[];
-    macd(values: number[], fast: number, slow: number, signal: number): any[];
-    stoch(high: number[], low: number[], close: number[], kPeriod: number, kSmooth: number, dPeriod: number): any[];
+    macd(values: number[], fast: number, slow: number, signal: number): { macd: number; signal: number; histogram: number }[];
+    stoch(high: number[], low: number[], close: number[], kPeriod: number, kSmooth: number, dPeriod: number): { k: number; d: number }[];
     highest(values: number[], length: number): number[];
     lowest(values: number[], length: number): number[];
     crossover(a: number, b: number): boolean;
     crossunder(a: number, b: number): boolean;
-    na(value: any): boolean;
-    nz(value: any, fallback?: number): any;
+    na(value: unknown): boolean;
+    nz(value: unknown, fallback?: number): number;
+    cum(value: number): number;
+    change(values: number[], length?: number): number[];
+    rising(values: number[], length: number): boolean[];
+    falling(values: number[], length: number): boolean[];
+    valuewhen(condition: boolean[], source: number[], occurrence?: number): number;
   }
 
   export class CustomStudy extends BuiltinStudy {
-    constructor(inputs?: Record<string, any>);
-    setInput(name: string, value: any): void;
+    constructor(inputs?: Record<string, unknown>);
+    setInput(name: string, value: unknown): void;
   }
 
-  // Performance
+  // =========== Performance ===========
   export class WebGLRenderer {
     constructor(canvas: HTMLCanvasElement);
     init(): void;
@@ -252,23 +476,32 @@ declare module 'charting-solution-reconstructed' {
   }
 
   export class LODRenderer {
-    constructor(canvasRenderer: any, webglRenderer: WebGLRenderer);
+    constructor(canvasRenderer: { render(): boolean }, webglRenderer: WebGLRenderer);
     setMode(mode: 'auto' | 'canvas' | 'webgl'): void;
-    simplify(data: any[], threshold?: number): any[];
+    getLOD(): number;
+    updateMetrics(dataPointCount: number, visibleRange: number): void;
+    render(): boolean;
     destroy(): void;
   }
 
   export class VirtualScroll {
-    constructor(options?: { totalItems?: number; itemHeight?: number; overscan?: number; viewportHeight?: number });
+    constructor(options?: VirtualScrollOptions);
     scrollTo(position: number): void;
     getVisibleRange(): { start: number; end: number };
-    getVisibleItems(data: any[]): any[];
+    getVisibleItems<T>(data: T[]): T[];
     setTotalItems(n: number): void;
     setViewportHeight(h: number): void;
     destroy(): void;
   }
 
-  // Enums
+  export interface VirtualScrollOptions {
+    totalItems?: number;
+    itemHeight?: number;
+    overscan?: number;
+    viewportHeight?: number;
+  }
+
+  // =========== Resolutions ===========
   export enum Resolution {
     S1 = '1S', S5 = '5S', S10 = '10S', S30 = '30S',
     M1 = '1', M5 = '5', M15 = '15', M30 = '30',
@@ -276,5 +509,6 @@ declare module 'charting-solution-reconstructed' {
     D1 = '1D', W1 = '1W', MN1 = '1M'
   }
 
+  // =========== Version ===========
   export const version: string;
 }
