@@ -1,5 +1,5 @@
 import { TradingView, studyRegistry, toolRegistry } from '../src/index.js';
-import { LineRenderer } from '../../phase-09-studies-indicators/src/renderers/LineRenderer.js';
+import { LineRenderer } from '../src/studies/renderers/LineRenderer.js';
 import { BinanceDatafeed } from '../src/datafeed/BinanceDatafeed.js';
 
 const datafeed = new BinanceDatafeed();

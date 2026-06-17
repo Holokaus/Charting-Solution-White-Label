@@ -1,7 +1,7 @@
-import { StudyRegistry } from '../../../phase-09-studies-indicators/src/StudyRegistry.js';
-import { LineRenderer } from '../../../phase-09-studies-indicators/src/renderers/LineRenderer.js';
-import { HistogramRenderer } from '../../../phase-09-studies-indicators/src/renderers/HistogramRenderer.js';
-import { BandRenderer } from '../../../phase-09-studies-indicators/src/renderers/BandRenderer.js';
+import { StudyRegistry } from './StudyRegistry.js';
+import { LineRenderer } from './renderers/LineRenderer.js';
+import { HistogramRenderer } from './renderers/HistogramRenderer.js';
+import { BandRenderer } from './renderers/BandRenderer.js';
 
 import { MovingAverage } from './MovingAverage.js';
 import { RSI } from './RSI.js';

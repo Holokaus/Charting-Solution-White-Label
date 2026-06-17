@@ -1,6 +1,6 @@
-import { StateMachine } from '../../../phase-06-widget-core/src/StateMachine.js';
-import { ThemeManager } from '../../../phase-06-widget-core/src/ThemeManager.js';
-import { LayoutManager } from '../../../phase-06-widget-core/src/LayoutManager.js';
+import { StateMachine } from './StateMachine.js';
+import { ThemeManager } from './ThemeManager.js';
+import { LayoutManager } from './LayoutManager.js';
 import { Chart } from '../chart/Chart.js';
 
 export class Widget {

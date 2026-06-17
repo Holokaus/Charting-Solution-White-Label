@@ -1,17 +1,17 @@
-import { CanvasRenderer } from '../../../phase-07-chart-engine/src/core/CanvasRenderer.js';
-import { Viewport } from '../../../phase-07-chart-engine/src/core/Viewport.js';
-import { PriceScale, PriceMode } from '../../../phase-07-chart-engine/src/scales/PriceScale.js';
-import { TimeScale } from '../../../phase-07-chart-engine/src/scales/TimeScale.js';
-import { CandlestickRenderer } from '../../../phase-07-chart-engine/src/series/CandlestickRenderer.js';
-import { BarRenderer } from '../../../phase-07-chart-engine/src/series/BarRenderer.js';
-import { LineRenderer } from '../../../phase-07-chart-engine/src/series/LineRenderer.js';
-import { AreaRenderer } from '../../../phase-07-chart-engine/src/series/AreaRenderer.js';
-import { BaselineRenderer } from '../../../phase-07-chart-engine/src/series/BaselineRenderer.js';
-import { Crosshair } from '../../../phase-07-chart-engine/src/overlay/Crosshair.js';
-import { Legend } from '../../../phase-07-chart-engine/src/overlay/Legend.js';
-import { Grid } from '../../../phase-07-chart-engine/src/overlay/Grid.js';
-import { BarCache } from '../../../phase-07-chart-engine/src/data/BarCache.js';
-import { RealtimeUpdater } from '../../../phase-07-chart-engine/src/data/RealtimeUpdater.js';
+import { CanvasRenderer } from './core/CanvasRenderer.js';
+import { Viewport } from './core/Viewport.js';
+import { PriceScale, PriceMode } from './scales/PriceScale.js';
+import { TimeScale } from './scales/TimeScale.js';
+import { CandlestickRenderer } from './series/CandlestickRenderer.js';
+import { BarRenderer } from './series/BarRenderer.js';
+import { LineRenderer } from './series/LineRenderer.js';
+import { AreaRenderer } from './series/AreaRenderer.js';
+import { BaselineRenderer } from './series/BaselineRenderer.js';
+import { Crosshair } from './overlay/Crosshair.js';
+import { Legend } from './overlay/Legend.js';
+import { Grid } from './overlay/Grid.js';
+import { BarCache } from './data/BarCache.js';
+import { RealtimeUpdater } from './data/RealtimeUpdater.js';
 
 export class Chart {
   constructor(container, symbol, interval, datafeed) {
