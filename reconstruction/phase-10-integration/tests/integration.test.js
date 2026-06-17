@@ -45,9 +45,9 @@ describe('Registries', () => {
   it('toolRegistry has 18 tools', () => {
     expect(toolRegistry.getNames().length).toBe(18);
   });
+  it('studyRegistry has 25 studies', () => {
 
-  it('studyRegistry has 5 studies', () => {
-    expect(studyRegistry.getNames().length).toBe(5);
+    expect(studyRegistry.getNames().length).toBe(25);
   });
 });
 

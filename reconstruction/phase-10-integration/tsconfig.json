@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "es2020",
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "strict": true,
+    "noEmit": true,
+    "allowJs": false,
+    "checkJs": false,
+    "skipLibCheck": true,
+    "types": []
+  },
+  "include": ["src/index.d.ts"]
+}
