@@ -63,7 +63,7 @@ d(M, "STATES", Object.freeze({
   ACTIVE: "active",
   DESTROYED: "destroyed"
 }));
-let F = M;
+let x = M;
 const Q = "tv-theme", rt = [
   "--tv-color-bg",
   "--tv-color-pane-bg",
@@ -121,7 +121,7 @@ const Q = "tv-theme", rt = [
     "--tv-color-volume": "#08998180"
   }
 };
-class A {
+class b {
   constructor(t) {
     this._container = t, this._currentTheme = "dark";
   }
@@ -145,12 +145,12 @@ class A {
     try {
       const e = localStorage.getItem(Q);
       if (e) {
-        const i = new A(t);
+        const i = new b(t);
         return i.apply(e), i;
       }
     } catch {
     }
-    return new A(t);
+    return new b(t);
   }
 }
 const et = "30.0.0-reconstructed";
@@ -842,6 +842,61 @@ class Pt {
     });
   }
 }
+class bt {
+  constructor(t) {
+    this.widget = t, this.bindings = /* @__PURE__ */ new Map(), this._handlers = {}, this._keyActionMap = {
+      "+": "zoomIn",
+      "=": "zoomIn",
+      "-": "zoomOut",
+      arrowleft: "panLeft",
+      arrowright: "panRight",
+      delete: "deleteTool",
+      backspace: "deleteTool"
+    }, this._enabled = !0, this._handler = this._onKeyDown.bind(this), document.addEventListener("keydown", this._handler);
+  }
+  register(t, e) {
+    this.bindings.set(t, e);
+  }
+  on(t, e) {
+    this._handlers[t] || (this._handlers[t] = []), this._handlers[t].push(e);
+  }
+  _trigger(t) {
+    const e = this._handlers[t] || [];
+    for (const i of e) i();
+  }
+  _onKeyDown(t) {
+    if (!this._enabled) return;
+    const e = t.key, i = t.ctrlKey || t.metaKey, n = t.shiftKey;
+    if (i && e.toLowerCase() === "z") {
+      if (t.preventDefault(), n) {
+        this._trigger("redo");
+        const h = this.bindings.get("ctrl+shift+z");
+        h && h();
+      } else {
+        this._trigger("undo");
+        const h = this.bindings.get("ctrl+z");
+        h && h();
+      }
+      return;
+    }
+    if (i && e.toLowerCase() === "s") {
+      t.preventDefault(), this._trigger("save");
+      const h = this.bindings.get("ctrl+s");
+      h && h();
+      return;
+    }
+    const o = [];
+    i && o.push("ctrl"), n && o.push("shift"), t.altKey && o.push("alt"), o.push(e.toLowerCase());
+    const s = o.join("+"), l = this._keyActionMap[e.toLowerCase()];
+    l && (t.preventDefault(), this._trigger(l)), this.bindings.has(s) && (t.preventDefault(), this.bindings.get(s)());
+  }
+  destroy() {
+    this._enabled = !1, document.removeEventListener("keydown", this._handler);
+  }
+  setEnabled(t) {
+    this._enabled = t;
+  }
+}
 class xt {
   constructor(t) {
     if (this._options = t || {}, this._container = typeof t.container == "string" ? document.querySelector(t.container) : t.container, !this._container) throw new Error("Widget requires a valid container");
@@ -849,10 +904,13 @@ class xt {
       (this._handlers[e] || []).forEach((n) => n(i));
     }, on(e, i) {
       (this._handlers[e] = this._handlers[e] || []).push(i);
-    } }, this._stateMachine = new F(this._emitter), this._themeManager = new A(this._container), this._layoutManager = new at(), this._datafeed = t.datafeed || null, this._symbol = t.symbol || "AAPL", this._interval = t.interval || "1D", this._chart = null, this._studies = [], this._init();
+    } }, this._stateMachine = new x(this._emitter), this._themeManager = new b(this._container), this._layoutManager = new at(), this._datafeed = t.datafeed || null, this._symbol = t.symbol || "AAPL", this._interval = t.interval || "1D", this._chart = null, this._studies = [], this._init();
   }
   _init() {
-    this._options.theme && this._themeManager.apply(this._options.theme), this._stateMachine.transition("loading"), this._chart = new Pt(this._container, this._symbol, this._interval, this._datafeed), this._stateMachine.transition("ready"), this._stateMachine.transition("active"), this._options.symbol && this._chart.setSymbol(this._options.symbol), this._options.interval && this._chart.setInterval(this._options.interval);
+    this._options.theme && this._themeManager.apply(this._options.theme), this._stateMachine.transition("loading"), this._chart = new Pt(this._container, this._symbol, this._interval, this._datafeed), this._stateMachine.transition("ready"), this._stateMachine.transition("active"), this._options.symbol && this._chart.setSymbol(this._options.symbol), this._options.interval && this._chart.setInterval(this._options.interval), this._shortcuts = new bt(this), this._shortcuts.register("ctrl+s", () => this._layoutManager.save()), this._shortcuts.register("ctrl+z", () => this._layoutManager.undo()), this._shortcuts.register("ctrl+shift+z", () => this._layoutManager.redo()), this._shortcuts.register("+", () => {
+    }), this._shortcuts.register("-", () => {
+    }), this._shortcuts.register("delete", () => {
+    });
   }
   chart() {
     return this._chart;
@@ -879,7 +937,7 @@ class xt {
     return this._stateMachine.state;
   }
 }
-class bt {
+class At {
   constructor() {
     this._tools = /* @__PURE__ */ new Map();
   }
@@ -901,7 +959,7 @@ class bt {
     return this._tools.get(t) || null;
   }
 }
-class At {
+class Ft {
   constructor() {
     this.name = "TrendLine", this.icon = "↗", this.cursor = "crosshair", this.maxPoints = 2, this.points = [], this.style = { color: "#2196F3", width: 2, extend: !1 };
   }
@@ -940,7 +998,7 @@ class At {
     return r = Math.max(0, Math.min(1, r)), Math.hypot(t - (i + r * l), e - (n + r * h));
   }
 }
-class Ft {
+class Dt {
   constructor() {
     this.name = "HorizontalLine", this.icon = "—", this.cursor = "crosshair", this.maxPoints = 1, this.points = [], this.style = { color: "#FF9800", width: 1, labelColor: "#FFFFFF" };
   }
@@ -980,7 +1038,7 @@ class Ct {
     return l != null && Math.abs(t - l) <= s;
   }
 }
-class Dt {
+class Et {
   constructor() {
     this.name = "Rectangle", this.icon = "▭", this.cursor = "crosshair", this.maxPoints = 2, this.points = [], this.style = { color: "#9C27B0", width: 1, fill: !1, fillColor: "rgba(156, 39, 176, 0.15)" };
   }
@@ -1005,7 +1063,7 @@ class Dt {
     };
   }
 }
-class Et {
+class kt {
   constructor() {
     this.name = "Text", this.icon = "T", this.cursor = "crosshair", this.maxPoints = 1, this.points = [], this.style = {
       color: "#FFFFFF",
@@ -1037,7 +1095,7 @@ class Et {
     };
   }
 }
-class kt {
+class Rt {
   constructor() {
     this.name = "FibonacciRetracement", this.icon = "Fib", this.cursor = "crosshair", this.maxPoints = 2, this.points = [], this.style = { color: "#E91E63", width: 1, labelColor: "#FFFFFF", levels: [0, 23.6, 38.2, 50, 61.8, 78.6, 100] };
   }
@@ -1063,7 +1121,7 @@ class kt {
     return t.time == null || t.price == null ? null : { x: e.timeToX(t.time), y: i.priceToY(t.price) };
   }
 }
-class Rt {
+class Lt {
   constructor() {
     this.name = "FibonacciExtension", this.icon = "FibExt", this.cursor = "crosshair", this.maxPoints = 3, this.points = [], this.style = { color: "#00BCD4", width: 1, labelColor: "#FFFFFF", levels: [61.8, 100, 161.8, 261.8] };
   }
@@ -1093,7 +1151,7 @@ class Rt {
     return t.time == null || t.price == null ? null : { x: e.timeToX(t.time), y: i.priceToY(t.price) };
   }
 }
-class Lt {
+class It {
   constructor() {
     this.name = "FibonacciFan", this.icon = "Fan", this.cursor = "crosshair", this.maxPoints = 2, this.points = [], this.style = { color: "#FF5722", width: 1, labelColor: "#FFFFFF", levels: [38.2, 50, 61.8] };
   }
@@ -1117,7 +1175,7 @@ class Lt {
     return t.time == null || t.price == null ? null : { x: e.timeToX(t.time), y: i.priceToY(t.price) };
   }
 }
-class It {
+class Yt {
   constructor() {
     this.name = "Channel", this.icon = "∥", this.cursor = "crosshair", this.maxPoints = 3, this.points = [], this.style = { color: "#4CAF50", width: 1, fill: !1, fillColor: "rgba(76, 175, 80, 0.1)" };
   }
@@ -1145,7 +1203,7 @@ class It {
     return r = Math.max(0, Math.min(1, r)), Math.hypot(t - (i + r * l), e - (n + r * h));
   }
 }
-class Yt {
+class Bt {
   constructor() {
     this.name = "Pitchfork", this.icon = "⤡", this.cursor = "crosshair", this.maxPoints = 3, this.points = [], this.style = { color: "#FF5722", width: 1 };
   }
@@ -1173,7 +1231,7 @@ class Yt {
     return r = Math.max(0, Math.min(1, r)), Math.hypot(t - (i + r * l), e - (n + r * h));
   }
 }
-class Bt {
+class Ot {
   constructor() {
     this.name = "GannFan", this.icon = "◈", this.cursor = "crosshair", this.maxPoints = 2, this.points = [], this.style = { color: "#607D8B", width: 1 }, this.angles = [1, 2, 3, 4, 5, 6, 7, 8];
   }
@@ -1199,7 +1257,7 @@ class Bt {
     return t.time == null || t.price == null ? null : { x: e.timeToX(t.time), y: i.priceToY(t.price) };
   }
 }
-class Ot {
+class jt {
   constructor() {
     this.name = "GannBox", this.icon = "▣", this.cursor = "crosshair", this.maxPoints = 2, this.points = [], this.style = { color: "#795548", width: 1, fill: !1, fillColor: "rgba(121, 85, 72, 0.1)" };
   }
@@ -1221,7 +1279,7 @@ class Ot {
     return t.time == null || t.price == null ? null : { x: e.timeToX(t.time), y: i.priceToY(t.price) };
   }
 }
-class jt {
+class Wt {
   constructor() {
     this.name = "ElliottWave", this.icon = "〰", this.cursor = "crosshair", this.maxPoints = 5, this.points = [], this.style = { color: "#00BCD4", width: 1, labels: !0 };
   }
@@ -1254,7 +1312,7 @@ class jt {
     return t.time == null || t.price == null ? null : { x: e.timeToX(t.time), y: i.priceToY(t.price) };
   }
 }
-class Wt {
+class Xt {
   constructor() {
     this.name = "Brush", this.icon = "✏", this.cursor = "crosshair", this.maxPoints = 1 / 0, this.points = [], this.style = { color: "#FFFFFF", width: 3, opacity: 0.8 };
   }
@@ -1285,7 +1343,7 @@ class Wt {
     return r = Math.max(0, Math.min(1, r)), Math.hypot(t - (i + r * l), e - (n + r * h));
   }
 }
-class Xt {
+class zt {
   constructor() {
     this.name = "Arrow", this.icon = "→", this.cursor = "crosshair", this.maxPoints = 2, this.points = [], this.style = { color: "#E91E63", width: 2, headSize: 10 };
   }
@@ -1366,7 +1424,7 @@ class $t {
     return t.time == null || t.price == null ? null : { x: e.timeToX(t.time), y: i.priceToY(t.price) };
   }
 }
-class zt {
+class Nt {
   constructor() {
     this.name = "PriceRange", this.icon = "↕", this.cursor = "crosshair", this.maxPoints = 2, this.points = [], this.style = { color: "#FF9800", width: 1, fill: !0, fillColor: "rgba(255, 152, 0, 0.1)" };
   }
@@ -1390,26 +1448,26 @@ class zt {
     return t.time == null || t.price == null ? null : { x: e.timeToX(t.time), y: i.priceToY(t.price) };
   }
 }
-const T = new bt();
-T.register("TrendLine", At);
-T.register("HorizontalLine", Ft);
+const T = new At();
+T.register("TrendLine", Ft);
+T.register("HorizontalLine", Dt);
 T.register("VerticalLine", Ct);
-T.register("Rectangle", Dt);
-T.register("Text", Et);
-T.register("FibonacciRetracement", kt);
-T.register("FibonacciExtension", Rt);
-T.register("FibonacciFan", Lt);
-T.register("Channel", It);
-T.register("Pitchfork", Yt);
-T.register("GannFan", Bt);
-T.register("GannBox", Ot);
-T.register("ElliottWave", jt);
-T.register("Brush", Wt);
-T.register("Arrow", Xt);
+T.register("Rectangle", Et);
+T.register("Text", kt);
+T.register("FibonacciRetracement", Rt);
+T.register("FibonacciExtension", Lt);
+T.register("FibonacciFan", It);
+T.register("Channel", Yt);
+T.register("Pitchfork", Bt);
+T.register("GannFan", Ot);
+T.register("GannBox", jt);
+T.register("ElliottWave", Wt);
+T.register("Brush", Xt);
+T.register("Arrow", zt);
 T.register("Measure", Vt);
 T.register("DateRange", $t);
-T.register("PriceRange", zt);
-class Nt {
+T.register("PriceRange", Nt);
+class Ut {
   constructor() {
     this._studies = /* @__PURE__ */ new Map();
   }
@@ -1434,7 +1492,7 @@ class Nt {
     return this._studies.has(t) ? this._studies.get(t).outputs || [] : null;
   }
 }
-class C {
+class A {
   constructor(t = {}) {
     this.type = t.type || "SMA", this.length = t.length || 14, this.source = t.source || "close";
   }
@@ -1516,12 +1574,12 @@ class C {
     return e;
   }
 }
-d(C, "inputs", [
+d(A, "inputs", [
   { name: "type", type: "select", options: ["SMA", "EMA", "WMA", "SMMA"], default: "SMA" },
   { name: "length", type: "integer", min: 1, max: 200, default: 14 },
   { name: "source", type: "select", options: ["close", "high", "low", "open"], default: "close" }
-]), d(C, "outputs", ["MA"]);
-class D {
+]), d(A, "outputs", ["MA"]);
+class F {
   constructor(t = {}) {
     this.length = t.length || 14;
   }
@@ -1561,11 +1619,10 @@ class D {
     return i;
   }
 }
-d(D, "inputs", [
+d(F, "inputs", [
   { name: "length", type: "integer", min: 1, max: 100, default: 14 }
-]), d(D, "outputs", ["RSI"]);
-var x;
-let Ut = (x = class {
+]), d(F, "outputs", ["RSI"]);
+class D {
   constructor(t = {}) {
     this.fast = t.fast || 12, this.slow = t.slow || 26, this.signal = t.signal || 9;
   }
@@ -1607,14 +1664,13 @@ let Ut = (x = class {
     }
     return i;
   }
-}, d(x, "inputs", [
+}
+d(D, "inputs", [
   { name: "fast", type: "integer", min: 1, max: 100, default: 12 },
   { name: "slow", type: "integer", min: 1, max: 200, default: 26 },
   { name: "signal", type: "integer", min: 1, max: 100, default: 9 }
-]), d(x, "outputs", ["MACD", "Signal", "Histogram"]), x);
-class Ht extends Ut {
-}
-class E {
+]), d(D, "outputs", ["MACD", "Signal", "Histogram"]);
+class C {
   constructor(t = {}) {
     this.length = t.length || 20, this.mult = t.mult || 2;
   }
@@ -1641,12 +1697,11 @@ class E {
     return i;
   }
 }
-d(E, "inputs", [
+d(C, "inputs", [
   { name: "length", type: "integer", min: 1, max: 200, default: 20 },
   { name: "mult", type: "float", min: 0.1, max: 5, default: 2 }
-]), d(E, "outputs", ["Middle", "Upper", "Lower"]);
-var b;
-let Gt = (b = class {
+]), d(C, "outputs", ["Middle", "Upper", "Lower"]);
+class E {
   constructor(t = {}) {
     this.maLength = t.maLength || 20;
   }
@@ -1664,11 +1719,10 @@ let Gt = (b = class {
     }
     return i;
   }
-}, d(b, "inputs", [
-  { name: "maLength", type: "integer", min: 1, max: 200, default: 20 }
-]), d(b, "outputs", ["Volume", "VolumeMA"]), b);
-class qt extends Gt {
 }
+d(E, "inputs", [
+  { name: "maLength", type: "integer", min: 1, max: 200, default: 20 }
+]), d(E, "outputs", ["Volume", "VolumeMA"]);
 class k {
   constructor(t = {}) {
     this.kPeriod = t.kPeriod || 14, this.kSmooth = t.kSmooth || 3, this.dPeriod = t.dPeriod || 3;
@@ -1937,7 +1991,7 @@ class X {
 d(X, "inputs", [
   { name: "length", type: "integer", min: 1, max: 200, default: 10 }
 ]), d(X, "outputs", ["Momentum"]);
-class V {
+class z {
   constructor(t = {}) {
     this.length = t.length || 14;
   }
@@ -1958,10 +2012,10 @@ class V {
     return e;
   }
 }
-d(V, "inputs", [
+d(z, "inputs", [
   { name: "length", type: "integer", min: 1, max: 100, default: 14 }
-]), d(V, "outputs", ["Williams %R"]);
-class $ {
+]), d(z, "outputs", ["Williams %R"]);
+class V {
   constructor(t = {}) {
     this.p1 = t.period1 || 7, this.p2 = t.period2 || 14, this.p3 = t.period3 || 28;
   }
@@ -1991,12 +2045,12 @@ class $ {
     return h;
   }
 }
-d($, "inputs", [
+d(V, "inputs", [
   { name: "period1", type: "integer", default: 7 },
   { name: "period2", type: "integer", default: 14 },
   { name: "period3", type: "integer", default: 28 }
-]), d($, "outputs", ["UO"]);
-class z {
+]), d(V, "outputs", ["UO"]);
+class $ {
   constructor(t = {}) {
     this.length = t.length || 14;
   }
@@ -2022,9 +2076,9 @@ class z {
     return n;
   }
 }
-d(z, "inputs", [
+d($, "inputs", [
   { name: "length", type: "integer", min: 1, max: 100, default: 14 }
-]), d(z, "outputs", ["MFI"]);
+]), d($, "outputs", ["MFI"]);
 class N {
   constructor(t = {}) {
     this.fast = t.fastPeriod || 3, this.slow = t.slowPeriod || 10;
@@ -2207,7 +2261,7 @@ d(G, "inputs", [
   { name: "period", type: "integer", min: 1, max: 100, default: 10 },
   { name: "multiplier", type: "float", min: 0.1, max: 10, default: 3 }
 ]), d(G, "outputs", ["SuperTrend", "Direction"]);
-class q {
+class K {
   constructor(t = {}) {
     this.deviation = t.deviation || 5, this.depth = t.depth || 10;
   }
@@ -2237,11 +2291,11 @@ class q {
     return o;
   }
 }
-d(q, "inputs", [
+d(K, "inputs", [
   { name: "deviation", type: "float", min: 0.1, max: 50, default: 5 },
   { name: "depth", type: "integer", min: 1, max: 50, default: 10 }
-]), d(q, "outputs", ["ZigZag"]);
-class J {
+]), d(K, "outputs", ["ZigZag"]);
+class q {
   constructor(t = {}) {
     this.length = t.length || 14, this.source = t.source || "close";
   }
@@ -2265,11 +2319,11 @@ class J {
     return i;
   }
 }
-d(J, "inputs", [
+d(q, "inputs", [
   { name: "length", type: "integer", min: 2, max: 200, default: 14 },
   { name: "source", type: "select", options: ["close", "high", "low", "open"], default: "close" }
-]), d(J, "outputs", ["LR"]);
-class K {
+]), d(q, "outputs", ["LR"]);
+class J {
   constructor(t = {}) {
     this.length = t.length || 20, this.source = t.source || "close";
   }
@@ -2293,16 +2347,16 @@ class K {
     return i;
   }
 }
-d(K, "inputs", [
+d(J, "inputs", [
   { name: "length", type: "integer", min: 2, max: 200, default: 20 },
   { name: "source", type: "select", options: ["close", "high", "low", "open"], default: "close" }
-]), d(K, "outputs", ["Correlation"]);
-const _ = new Nt();
-_.register("MovingAverage", C);
-_.register("RSI", D);
-_.register("MACD", Ht);
-_.register("BollingerBands", E);
-_.register("Volume", qt);
+]), d(J, "outputs", ["Correlation"]);
+const _ = new Ut();
+_.register("MovingAverage", A);
+_.register("RSI", F);
+_.register("MACD", D);
+_.register("BollingerBands", C);
+_.register("Volume", E);
 _.register("Stochastic", k);
 _.register("CCI", R);
 _.register("ATR", L);
@@ -2313,16 +2367,16 @@ _.register("ParabolicSAR", O);
 _.register("Ichimoku", j);
 _.register("ADX", W);
 _.register("Momentum", X);
-_.register("WilliamsR", V);
-_.register("UltimateOscillator", $);
-_.register("MFI", z);
+_.register("WilliamsR", z);
+_.register("UltimateOscillator", V);
+_.register("MFI", $);
 _.register("ChaikinOsc", N);
 _.register("KeltnerChannels", U);
 _.register("DonchianChannels", H);
 _.register("SuperTrend", G);
-_.register("ZigZag", q);
-_.register("LinearRegression", J);
-_.register("Correlation", K);
+_.register("ZigZag", K);
+_.register("LinearRegression", q);
+_.register("Correlation", J);
 Z.widget = xt;
 Z._toolRegistry = T;
 Z._studyRegistry = _;
