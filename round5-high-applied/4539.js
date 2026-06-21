@@ -144,3 +144,4 @@
     function S(seriesBarFunction_e) {
       return Math.max(Math.floor(seriesBarFunction_e), 1)
     }
+}

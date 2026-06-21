@@ -38,14 +38,12 @@
  * ============================================================================
  */
 
-49156: (exports, module, require) => {
-    "use strict";
-    i.d(t, {
-      colors: () => a
-    });
-    const colorUtils = require(58978),
-      alphaGenerator = require(52859);
-    const baseColors = {
+"use strict";
+
+const colorUtils = require(58978);
+const alphaGenerator = require(52859);
+
+const baseColors = {
         colorBlack: (0, colorUtils.getHexColorByName)("color-black"),
         colorWhite: (0, colorUtils.getHexColorByName)("color-white"),
         colorTvBlue50: (0, colorUtils.getHexColorByName)("color-tv-blue-50"),
@@ -108,51 +106,53 @@
         colorColdGray850: (0, colorUtils.getHexColorByName)("color-cold-gray-850"),
         colorColdGray900: (0, colorUtils.getHexColorByName)("color-cold-gray-900"),
         colorForestGreen300: (0, colorUtils.getHexColorByName)("color-forest-green-300")
-      },
-      const alphaVariants = {
-        colorWhiteAlpha25: (0, alphaGenerator.generateColor)(n.colorWhite, 75),
-        colorTvBlue500Alpha40: (0, alphaGenerator.generateColor)(n.colorTvBlue500, 60),
-        colorTvBlue500Alpha30: (0, alphaGenerator.generateColor)(n.colorTvBlue500, 70),
-        colorTvBlue500Alpha28: (0, alphaGenerator.generateColor)(n.colorTvBlue500, 72),
-        colorTvBlue500Alpha25: (0, alphaGenerator.generateColor)(n.colorTvBlue500, 75),
-        colorTvBlue500Alpha20: (0, alphaGenerator.generateColor)(n.colorTvBlue500, 80),
-        colorDeepBlue500Alpha20: (0, alphaGenerator.generateColor)(n.colorDeepBlue500, 80),
-        colorSkyBlue400Alpha5: (0, alphaGenerator.generateColor)(n.colorSkyBlue400, 95),
-        colorSkyBlue400Alpha50: (0, alphaGenerator.generateColor)(n.colorSkyBlue400, 50),
-        colorSkyBlue400Alpha75: (0, alphaGenerator.generateColor)(n.colorSkyBlue400, 25),
-        colorSkyBlue500Alpha20: (0, alphaGenerator.generateColor)(n.colorSkyBlue500, 80),
-        colorSkyBlue500Alpha25: (0, alphaGenerator.generateColor)(n.colorSkyBlue500, 75),
-        colorSkyBlue700Alpha70: (0, alphaGenerator.generateColor)(n.colorSkyBlue700, 30),
-        colorRipeRed400Alpha5: (0, alphaGenerator.generateColor)(n.colorRipeRed400, 95),
-        colorRipeRed500Alpha5: (0, alphaGenerator.generateColor)(n.colorRipeRed500, 95),
-        colorRipeRed500Alpha20: (0, alphaGenerator.generateColor)(n.colorRipeRed500, 80),
-        colorRipeRed500Alpha28: (0, alphaGenerator.generateColor)(n.colorRipeRed500, 72),
-        colorRipeRed500Alpha30: (0, alphaGenerator.generateColor)(n.colorRipeRed500, 70),
-        colorRipeRed500Alpha50: (0, alphaGenerator.generateColor)(n.colorRipeRed500, 50),
-        colorGrapesPurpleA200Alpha15: (0, alphaGenerator.generateColor)(n.colorGrapesPurpleA200, 85),
-        colorGrapesPurple500Alpha0: (0, alphaGenerator.generateColor)(n.colorGrapesPurple500, 100),
-        colorGrapesPurple500Alpha20: (0, alphaGenerator.generateColor)(n.colorGrapesPurple500, 80),
-        colorGrapesPurple500Alpha70: (0, alphaGenerator.generateColor)(n.colorGrapesPurple500, 30),
-        colorBerryPink400Alpha50: (0, alphaGenerator.generateColor)(n.colorBerryPink400, 50),
-        colorBerryPink400Alpha75: (0, alphaGenerator.generateColor)(n.colorBerryPink400, 25),
-        colorBerryPink500Alpha20: (0, alphaGenerator.generateColor)(n.colorBerryPink500, 80),
-        colorBerryPink500Alpha25: (0, alphaGenerator.generateColor)(n.colorBerryPink500, 75),
-        colorMintyGreen500Alpha20: (0, alphaGenerator.generateColor)(n.colorMintyGreen500, 80),
-        colorMintyGreen500Alpha28: (0, alphaGenerator.generateColor)(n.colorMintyGreen500, 72),
-        colorMintyGreen500Alpha50: (0, alphaGenerator.generateColor)(n.colorMintyGreen500, 50),
-        colorMintyGreen500Alpha5: (0, alphaGenerator.generateColor)(n.colorMintyGreen500, 95),
-        colorIguanaGreen500Alpha20: (0, alphaGenerator.generateColor)(n.colorIguanaGreen500, 80),
-        colorTanOrange500Alpha20: (0, alphaGenerator.generateColor)(n.colorTanOrange500, 80),
-        colorForestGreen300Alpha5: (0, alphaGenerator.generateColor)(n.colorForestGreen300, 95),
-        colorColdGray100Alpha0: (0, alphaGenerator.generateColor)(n.colorColdGray100, 100),
-        colorColdGray100Alpha6: (0, alphaGenerator.generateColor)(n.colorColdGray100, 94),
-        colorColdGray800Alpha0: (0, alphaGenerator.generateColor)(n.colorColdGray800, 100),
-        colorColdGray800Alpha6: (0, alphaGenerator.generateColor)(n.colorColdGray800, 94)
-      },
-      const allColors = {
-        ...n,
-        ...r
-      }
+};
+
+const alphaVariants = {
+        colorWhiteAlpha25: (0, alphaGenerator.generateColor)(baseColors.colorWhite, 75),
+        colorTvBlue500Alpha40: (0, alphaGenerator.generateColor)(baseColors.colorTvBlue500, 60),
+        colorTvBlue500Alpha30: (0, alphaGenerator.generateColor)(baseColors.colorTvBlue500, 70),
+        colorTvBlue500Alpha28: (0, alphaGenerator.generateColor)(baseColors.colorTvBlue500, 72),
+        colorTvBlue500Alpha25: (0, alphaGenerator.generateColor)(baseColors.colorTvBlue500, 75),
+        colorTvBlue500Alpha20: (0, alphaGenerator.generateColor)(baseColors.colorTvBlue500, 80),
+        colorDeepBlue500Alpha20: (0, alphaGenerator.generateColor)(baseColors.colorDeepBlue500, 80),
+        colorSkyBlue400Alpha5: (0, alphaGenerator.generateColor)(baseColors.colorSkyBlue400, 95),
+        colorSkyBlue400Alpha50: (0, alphaGenerator.generateColor)(baseColors.colorSkyBlue400, 50),
+        colorSkyBlue400Alpha75: (0, alphaGenerator.generateColor)(baseColors.colorSkyBlue400, 25),
+        colorSkyBlue500Alpha20: (0, alphaGenerator.generateColor)(baseColors.colorSkyBlue500, 80),
+        colorSkyBlue500Alpha25: (0, alphaGenerator.generateColor)(baseColors.colorSkyBlue500, 75),
+        colorSkyBlue700Alpha70: (0, alphaGenerator.generateColor)(baseColors.colorSkyBlue700, 30),
+        colorRipeRed400Alpha5: (0, alphaGenerator.generateColor)(baseColors.colorRipeRed400, 95),
+        colorRipeRed500Alpha5: (0, alphaGenerator.generateColor)(baseColors.colorRipeRed500, 95),
+        colorRipeRed500Alpha20: (0, alphaGenerator.generateColor)(baseColors.colorRipeRed500, 80),
+        colorRipeRed500Alpha28: (0, alphaGenerator.generateColor)(baseColors.colorRipeRed500, 72),
+        colorRipeRed500Alpha30: (0, alphaGenerator.generateColor)(baseColors.colorRipeRed500, 70),
+        colorRipeRed500Alpha50: (0, alphaGenerator.generateColor)(baseColors.colorRipeRed500, 50),
+        colorGrapesPurpleA200Alpha15: (0, alphaGenerator.generateColor)(baseColors.colorGrapesPurpleA200, 85),
+        colorGrapesPurple500Alpha0: (0, alphaGenerator.generateColor)(baseColors.colorGrapesPurple500, 100),
+        colorGrapesPurple500Alpha20: (0, alphaGenerator.generateColor)(baseColors.colorGrapesPurple500, 80),
+        colorGrapesPurple500Alpha70: (0, alphaGenerator.generateColor)(baseColors.colorGrapesPurple500, 30),
+        colorBerryPink400Alpha50: (0, alphaGenerator.generateColor)(baseColors.colorBerryPink400, 50),
+        colorBerryPink400Alpha75: (0, alphaGenerator.generateColor)(baseColors.colorBerryPink400, 25),
+        colorBerryPink500Alpha20: (0, alphaGenerator.generateColor)(baseColors.colorBerryPink500, 80),
+        colorBerryPink500Alpha25: (0, alphaGenerator.generateColor)(baseColors.colorBerryPink500, 75),
+        colorMintyGreen500Alpha20: (0, alphaGenerator.generateColor)(baseColors.colorMintyGreen500, 80),
+        colorMintyGreen500Alpha28: (0, alphaGenerator.generateColor)(baseColors.colorMintyGreen500, 72),
+        colorMintyGreen500Alpha50: (0, alphaGenerator.generateColor)(baseColors.colorMintyGreen500, 50),
+        colorMintyGreen500Alpha5: (0, alphaGenerator.generateColor)(baseColors.colorMintyGreen500, 95),
+        colorIguanaGreen500Alpha20: (0, alphaGenerator.generateColor)(baseColors.colorIguanaGreen500, 80),
+        colorTanOrange500Alpha20: (0, alphaGenerator.generateColor)(baseColors.colorTanOrange500, 80),
+        colorForestGreen300Alpha5: (0, alphaGenerator.generateColor)(baseColors.colorForestGreen300, 95),
+        colorColdGray100Alpha0: (0, alphaGenerator.generateColor)(baseColors.colorColdGray100, 100),
+        colorColdGray100Alpha6: (0, alphaGenerator.generateColor)(baseColors.colorColdGray100, 94),
+        colorColdGray800Alpha0: (0, alphaGenerator.generateColor)(baseColors.colorColdGray800, 100),
+        colorColdGray800Alpha6: (0, alphaGenerator.generateColor)(baseColors.colorColdGray800, 94)
+};
+
+const allColors = {
+  ...baseColors,
+  ...alphaVariants
+};
 
 // Export for module system
 module.exports = { colors: allColors };

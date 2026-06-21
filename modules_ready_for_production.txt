@@ -1,0 +1,48 @@
+# Tier A Modules Ready for Production
+# Generated: 2026-05-07T11:49:43.835Z
+# Format: ModuleID,Filename,SemanticName,QualityScore
+# Total: 43 modules
+
+10307,10307-bitmap-coordinates-pane-renderer.js,BitmapCoordinatesPaneRenderer,100/100
+10341,10341-too-many-studies-notice.js,Show,100/100
+10544,10544-elliott-wave-tools.js,LineToolElliott,100/100
+10845,10845-timezone-utilities.js,Base,100/100
+10980,10980-image-upload-utils.js,Image,100/100
+10980,10980-time-scale-utils.js,Formats,100/100
+11063,11063-drawing-tool-properties.js,Default,100/100
+11245,11245-symbol-search-source.js,SymbolSearchCache,100/100
+11388,11388-chart-event-dispatcher.js,ChartEventDispatcher,100/100
+11502,11502-pane-manager.js,PaneManager,100/100
+13896,13896-line-tools-constants.js,Flag,90/100
+1395,1395-create-line-tool-sync-mode.js,Enumeration,100/100
+14411,14411-chart-changes-watcher.js,Change,100/100
+1457,1457-copy-icon.js,SVG,100/100
+14881,14881-hide-state-change.js,Enumeration,90/100
+15219,15219-study-versioning.js,Study,100/100
+16329,16329-sessions-spec.js,Session,100/100
+1866,1866-tv-logo-svg.js,This,100/100
+2072,2072-watched-value.js,Log,100/100
+2088,2088-study-factory.js,Get,100/100
+2258,2258-study-stub.js,StudyStub,100/100
+2383,2383-hit-test-result.js,Unknown,85/100
+2433,2433-light-theme.js,Light,100/100
+2872,2872-lock-icon.js,SVG,100/100
+3186,3186-graphics-list-collection.js,GraphicsListColl,100/100
+3190,3190-time-hours-format.js,Setting,100/100
+32399,32399-series-line-pane-view.js,Unknown,85/100
+32925,32925-fetch-wrapper.js,Wrapper,100/100
+3343,3343-keyboard-modifiers.js,Modifier,100/100
+33505,33505-series-base-renderer.js,Unknown,95/100
+3354,3354-chart-layouts.js,Internal,100/100
+34840,34840-chart-storage-http-adapter.js,Builds,100/100
+3615,3615-dialog-utilities.js,Show,100/100
+3618,3618-input-title-translations.js,Mapping,100/100
+3885,3885-series-values-provider.js,Calculate,100/100
+43501,43501-baseline-pane-view.js,Unknown,80/100
+48096,48096-delegate.js,Filter,100/100
+50151,50151-assertion-utils.js,Note,100/100
+52746,52746-series-data.js,Dependencies,100/100
+67135,67135-price-data-source.js,Dependencies,100/100
+72187,72187-plot-list.js,Dependencies,100/100
+72207,72207-data-source.js,Unknown,100/100
+86228,86228-rectangle-renderer.js,Unknown,80/100

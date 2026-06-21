@@ -154,3 +154,4 @@
           .ensureNotNull)(lineToolManager_e.getContext("2d")), x.textBaseline = "alphabetic", x.textAlign = "center"
       }(), t && x.font !== t && (x.font = t), i ? i.getMetrics(x, lineToolManager_e) : (0, r.getMinTextMetrics)(x.measureText(lineToolManager_e))
     }
+}

@@ -1,59 +1,83 @@
-# Logs and temp files
-*.log
-*.tmp
-*.swp
-
-# Environment
-.env
-.env.local
-*.env.*
-
-# Editors
-.vscode/
-.idea/
+```
+# Compiled and build artifacts
+*.pyc
+__pycache__/
+*.o
+*.obj
+*.class
+*.exe
+*.dll
+*.so
+*.a
+*.out
 
 # Dependencies
 node_modules/
-.jest/
-.nyc_output/
-coverage/
-.npm/
-.yarn/
+venv/
+.venv/
+.env
+.env.local
+.env.*
 
-# Build artifacts
+# Build directories
 dist/
 build/
-*.js.map
-*.cjs.map
-*.mjs.map
+target/
+.gradle/
 
-# Python
-__pycache__/
+# Python specific
 *.pyc
+__pycache__/
 *.pyo
 *.pyd
 .Python
 *.so
-.coverage
-htmlcov/
-.pytest_cache/
-.mypy_cache/
-.tox/
-.eggs/
+.Python
 *.egg-info/
-.installed.cfg
-*.egg
+.eggs/
+.mypy_cache/
+.pytest_cache/
+.coverage
+coverage/
+htmlcov/
 
-# Node.js
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-node_modules/
-.pnp
-.pnp.js
-.npmrc
-.yarnrc
-*.tgz
-
-# Original rules preserved
+# Logs and temp files
 *.log
+*.tmp
+*.swp
+*.swo
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Compressed files
+*.zip
+*.gz
+*.tar
+*.tgz
+*.bz2
+*.xz
+*.7z
+*.rar
+*.zst
+*.lz4
+*.lzh
+*.cab
+*.arj
+*.rpm
+*.deb
+*.Z
+*.lz
+*.lzo
+*.tar.gz
+*.tar.bz2
+*.tar.xz
+*.tar.zst
+```

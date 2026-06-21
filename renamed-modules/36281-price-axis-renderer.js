@@ -4,33 +4,27 @@
 // Purpose: Renders price axis labels with hit testing support
 // Key components: PriceAxisView, LabelRenderer, HitTest
 
-(e, t, i) => {
-  "use strict";
-  i.d(t, {
-    PriceAxisView: () => PriceAxisView
-  });
-  
-  // Import dependencies
-  var s, 
-      geometry = i(10555),        // Point/box geometry utilities
-      hitTestUtil = i(6453),      // Hit testing utilities
-      eventInfo = i(39612),       // Mouse/touch event info
-      textUtils = i(24640),       // Text formatting (LTR support)
-      canvasUtils = i(33350),     // Canvas drawing helpers
-      hitTarget = i(2383),        // Hit target constants
-      borderUtils = i(58221);     // Border drawing utilities
-  
-  // Renderer configuration constants
-  ! function(e) {
-    e[e.HitTestTolerance = 0] = "HitTestTolerance", 
-    e[e.HitTestToleranceTouch = 20] = "HitTestToleranceTouch", 
-    e[e.AdditionalVisibilityTolerance = 3] = "AdditionalVisibilityTolerance", 
-    e[e.IconLabelExistingAlertWidth = 12] = "IconLabelExistingAlertWidth", 
-    e[e.IconLabelExistingAlertHeight = 10.73] = "IconLabelExistingAlertHeight", 
-    e[e.IconLabelExistingAlertHorzMargin = 11] = "IconLabelExistingAlertHorzMargin"
-  }(s || (s = {}));
-  
-  new Path2D("");
+"use strict";
+
+// Import dependencies
+const geometry = require(10555);        // Point/box geometry utilities
+const hitTestUtil = require(6453);      // Hit testing utilities
+const eventInfo = require(39612);       // Mouse/touch event info
+const textUtils = require(24640);       // Text formatting (LTR support)
+const canvasUtils = require(33350);     // Canvas drawing helpers
+const hitTarget = require(2383);        // Hit target constants
+const borderUtils = require(58221);     // Border drawing utilities
+const colorUtils = require(52859);      // Color utilities
+
+// Renderer configuration constants
+const RendererConfig = {
+    HitTestTolerance: 0,
+    HitTestToleranceTouch: 20,
+    AdditionalVisibilityTolerance: 3,
+    IconLabelExistingAlertWidth: 12,
+    IconLabelExistingAlertHeight: 10.73,
+    IconLabelExistingAlertHorzMargin: 11
+};
   
   /**
    * LabelRenderer - Renders individual price axis labels
@@ -248,12 +242,10 @@
     }
   }
   
-  var colorUtils = i(52859);
-  
   /**
-   * PriceAxisView - Main price axis view controller
-   */
-  class PriceAxisView {
+ * PriceAxisView - Main price axis view controller
+ */
+class PriceAxisView {
     constructor(RC) {
       this._commonRendererData = { coordinate: 0, textColor: "#FFF", background: "#000", additionalPaddingBottom: 0, additionalPaddingTop: 0 };
       this._axisRendererData = { text: "", visible: false, separatorVisible: true, borderVisible: false, ignoreAdditionalPaddingInner: false };
@@ -291,5 +283,11 @@
     setPaneLabelVisible(v) { this._paneRendererData.visible = v; this._invalidated = true; }
     ignoreAlignment() { return false; }
     _upd() { if (this._invalidated) { this._commonRendererData.fixedCoordinate = void 0; this._updateRendererData(this._axisRendererData, this._paneRendererData, this._commonRendererData); this._invalidated = false; } }
-  }
 }
+
+// Export
+module.exports = {
+    PriceAxisView: PriceAxisView,
+    LabelRenderer: LabelRenderer,
+    RendererConfig: RendererConfig
+};

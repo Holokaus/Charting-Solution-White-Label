@@ -1,32 +1,66 @@
 /**
- * Module 4783 - Auto-beautified from TradingView webpack bundle
+ * ============================================================================
+ * TRADINGVIEW MODULE 4783 - TECHNICAL INDICATORS LIBRARY
+ * ============================================================================
  *
- * @module 4783
- * @date 2026-04-23
- * @size 150633 bytes
+ * Purpose: Complete technical analysis indicator library for TradingView charts
  *
- * Status: Beautified (variable renaming pending)
+ * Size: ~290KB (largest module - 10,285 lines)
  *
- * Dependencies: 19979, 58978
+ * Contents:
+ *   - 100+ Technical Indicators including:
+ *     * Trend Indicators (MA, EMA, MACD, etc.)
+ *     * Momentum Indicators (RSI, Stochastic, CCI, etc.)
+ *     * Volume Indicators (Accumulation/Distribution, OBV, etc.)
+ *     * Volatility Indicators (Bollinger Bands, ATR, etc.)
+ *     * Pattern Recognition (Doji, Hammer, etc.)
  *
- * Next Steps:
- *   1. Rename single-letter variables to semantic names
- *   2. Add JSDoc comments for classes/functions
- *   3. Map dependency relationships
+ * Key Components:
+ *   - JSServer.studyLibrary: Array of all indicator definitions
+ *   - Metainfo: Indicator metadata (inputs, plots, styles, formatting)
+ *   - Constructor Functions: Calculation logic for each indicator
+ *   - Standard Library: o (Std) - mathematical operations
+ *   - Color Palette: Pre-defined colors for indicator plots
+ *
+ * Dependencies:
+ *   - 58978: Color utilities (getHexColorByName)
+ *   - 19979: Standard mathematical library (Std)
+ *     * Functions: close(), high(), low(), open(), volume(), cum(), max(), etc.
+ *
+ * Architecture:
+ *   Each indicator follows pattern:
+ *   {
+ *     name: "Indicator Name",
+ *     metainfo: { defaults, plots, styles, inputs, description },
+ *     constructor: function() {
+ *       this.f_0 = function(...) { calculation logic };
+ *       this.main = function(context, input) { return [values] }
+ *     }
+ *   }
+ *
+ * @module 4783-indicators
+ * @date 2026-05-07
+ * @size 290KB
+ * ============================================================================
  */
 
-4783: (e, t, i) => {
+// Module 4783 - Technical Indicators Library
+// Original file: 4783.js
+// Size: 290KB
+// Purpose: TradingView technical analysis indicators
+
+(moduleExports, moduleConfig, moduleRequire) => {
     "use strict";
-    const s = i(58978).getHexColorByName,
-      o = i(19979).Std,
-      n = s("color-ripe-red-100"),
-      r = s("color-ripe-red-200"),
-      a = s("color-ripe-red-500"),
-      l = s("color-ripe-red-900"),
-      c = s("color-ripe-red-a200"),
-      h = s("color-minty-green-100"),
-      d = s("color-minty-green-400"),
-      u = s("color-minty-green-500");
+    const getHexColorByName = moduleRequire(58978).getHexColorByName,
+      stdLib = moduleRequire(19979).Std,
+      colorRipeRed100 = getHexColorByName("color-ripe-red-100"),
+      colorRipeRed200 = getHexColorByName("color-ripe-red-200"),
+      colorRipeRed500 = getHexColorByName("color-ripe-red-500"),
+      colorRipeRed900 = getHexColorByName("color-ripe-red-900"),
+      colorRipeRedA200 = getHexColorByName("color-ripe-red-a200"),
+      colorMintyGreen100 = getHexColorByName("color-minty-green-100"),
+      colorMintyGreen400 = getHexColorByName("color-minty-green-400"),
+      colorMintyGreen500 = getHexColorByName("color-minty-green-500");
     JSServer.studyLibrary = [{
       name: "Accumulation/Distribution",
       metainfo: {
@@ -72,11 +106,11 @@
       },
       constructor: function() {
         this.f_0 = function(e, t, i, s) {
-          return o.or(o.and(o.eq(e, t), o.eq(e, i)), o.eq(t, i)) ? 0 : (2 * e - i - t) / (t - i) * s
+          return stdLib.or(stdLib.and(stdLib.eq(e, t), stdLib.eq(e, i)), stdLib.eq(t, i)) ? 0 : (2 * e - i - t) / (t - i) * s
         }, this.main = function(e, t) {
           this._context = e, this._input = t;
-          var i = this.f_0(o.close(this._context), o.high(this._context), o.low(this._context), o.volume(this._context));
-          return [o.cum(i, this._context)]
+          var i = this.f_0(stdLib.close(this._context), stdLib.high(this._context), stdLib.low(this._context), stdLib.volume(this._context));
+          return [stdLib.cum(i, this._context)]
         }
       }
     }, {
@@ -133,20 +167,20 @@
       },
       constructor: function() {
         this.f_0 = function(e, t) {
-          var i = t.new_var(o.open(t)),
-            s = t.new_var(o.high(t)),
-            n = t.new_var(o.low(t)),
-            r = t.new_var(o.close(t)),
-            a = o.abs(s - r.get(1)),
-            l = o.abs(n - r.get(1)),
-            c = o.abs(s - n),
-            h = o.abs(r.get(1) - i.get(1)),
-            d = o.max(a, l),
-            u = o.iff(a >= o.max(l, c), a - .5 * l + .25 * h, o.iff(l >= o.max(a, c), l - .5 * a + .25 * h, c + .25 * h));
-          return o.iff(0 === u, 0, (r - r.get(1) + .5 * (r - i) + .25 * (r.get(1) - i.get(1))) / u * d / e * 50)
+          var i = t.new_var(stdLib.open(t)),
+            s = t.new_var(stdLib.high(t)),
+            n = t.new_var(stdLib.low(t)),
+            r = t.new_var(stdLib.close(t)),
+            a = stdLib.abs(s - r.get(1)),
+            l = stdLib.abs(n - r.get(1)),
+            c = stdLib.abs(s - n),
+            h = stdLib.abs(r.get(1) - i.get(1)),
+            d = stdLib.max(a, l),
+            u = stdLib.iff(a >= stdLib.max(l, c), a - .5 * l + .25 * h, stdLib.iff(l >= stdLib.max(a, c), l - .5 * a + .25 * h, c + .25 * h));
+          return stdLib.iff(0 === u, 0, (r - r.get(1) + .5 * (r - i) + .25 * (r.get(1) - i.get(1))) / u * d / e * 50)
         }, this.f_1 = function(e, t) {
           var i = this.f_0(e, t);
-          return o.cum(i, t)
+          return stdLib.cum(i, t)
         }, this.main = function(e, t) {
           this._context = e, this._input = t;
           var i = this._input(0);
@@ -208,20 +242,20 @@
       },
       constructor: function() {
         this.f_0 = function(e, t) {
-          return o.gt(e, t)
+          return stdLib.gt(e, t)
         }, this.f_1 = function(e, t) {
-          return o.lt(e, t)
+          return stdLib.lt(e, t)
         }, this.f_2 = function(e, t) {
           return 0 === t ? e : e / t
         }, this.main = function(e, t) {
           this._context = e, this._input = t;
           var i = this._input(0),
-            s = this.f_0(o.close(this._context), o.open(this._context)),
+            s = this.f_0(stdLib.close(this._context), stdLib.open(this._context)),
             n = this._context.new_var(s),
-            r = o.sum(n, i, this._context),
-            a = this.f_1(o.close(this._context), o.open(this._context)),
+            r = stdLib.sum(n, i, this._context),
+            a = this.f_1(stdLib.close(this._context), stdLib.open(this._context)),
             l = this._context.new_var(a),
-            c = o.sum(l, i, this._context);
+            c = stdLib.sum(l, i, this._context);
           return [this.f_2(r, c)]
         }
       }
@@ -296,12 +330,12 @@
       constructor: function() {
         this.main = function(e, t) {
           this._context = e, this._input = t;
-          var i = o.close(this._context),
+          var i = stdLib.close(this._context),
             s = this._input(0),
             n = this._input(1),
             r = this._input(2),
             a = this._context.new_var(i);
-          return [o.alma(a, s, n, r)]
+          return [stdLib.alma(a, s, n, r)]
         }
       }
     }, {
@@ -380,14 +414,14 @@
         }, this.main = function(e, t) {
           this._context = e, this._input = t;
           var i = this._input(0),
-            s = o.high(this._context),
+            s = stdLib.high(this._context),
             n = i + 1,
             r = this._context.new_var(s),
-            a = o.highestbars(r, n, this._context),
+            a = stdLib.highestbars(r, n, this._context),
             l = this.f_0(a, i),
-            c = o.low(this._context),
+            c = stdLib.low(this._context),
             h = this._context.new_var(c),
-            d = o.lowestbars(h, n, this._context);
+            d = stdLib.lowestbars(h, n, this._context);
           return [l, this.f_0(d, i)]
         }
       }
@@ -443,13 +477,13 @@
       },
       constructor: function() {
         this.init = function(e, t) {
-          this._context = e, "" !== t(0) && this._context.new_sym(t(0), o.period(this._context))
+          this._context = e, "" !== t(0) && this._context.new_sym(t(0), stdLib.period(this._context))
         }, this.main = function(e, t) {
-          if (this._context = e, this._input = t, "" === this._input(0)) return [o.ohlc4(this._context)];
+          if (this._context = e, this._input = t, "" === this._input(0)) return [stdLib.ohlc4(this._context)];
           this._context.select_sym(0);
           const i = this._context.new_var(this._context.symbol.time);
           this._context.select_sym(1);
-          const s = this._context.new_var(o.ohlc4(this._context)).adopt(this._context.new_var(this._context.symbol.time), i, 1);
+          const s = this._context.new_var(stdLib.ohlc4(this._context)).adopt(this._context.new_var(this._context.symbol.time), i, 1);
           return this._context.select_sym(0), [s]
         }
       }
@@ -517,23 +551,23 @@
       },
       constructor: function() {
         this.f_0 = function(e) {
-            var t = this._context.new_var(o.high(this._context)),
-              i = o.change(t),
-              s = this._context.new_var(o.low(this._context)),
-              n = -o.change(s),
-              r = this._context.new_var(o.tr(void 0, this._context)),
-              a = o.rma(r, e, this._context),
-              l = this._context.new_var(o.and(o.gt(i, n), o.gt(i, 0)) ? i : 0),
-              c = o.fixnan(100 * o.rma(l, e, this._context) / a, this._context),
-              h = this._context.new_var(o.and(o.gt(n, i), o.gt(n, 0)) ? n : 0);
-            return [c, o.fixnan(100 * o.rma(h, e, this._context) / a, this._context)]
+            var t = this._context.new_var(stdLib.high(this._context)),
+              i = stdLib.change(t),
+              s = this._context.new_var(stdLib.low(this._context)),
+              n = -stdLib.change(s),
+              r = this._context.new_var(stdLib.tr(void 0, this._context)),
+              a = stdLib.rma(r, e, this._context),
+              l = this._context.new_var(stdLib.and(stdLib.gt(i, n), stdLib.gt(i, 0)) ? i : 0),
+              c = stdLib.fixnan(100 * stdLib.rma(l, e, this._context) / a, this._context),
+              h = this._context.new_var(stdLib.and(stdLib.gt(n, i), stdLib.gt(n, 0)) ? n : 0);
+            return [c, stdLib.fixnan(100 * stdLib.rma(h, e, this._context) / a, this._context)]
           }, this.f_1 = function(e, t) {
             var i = this.f_0(e),
               s = i[0],
               n = i[1],
               r = s + n,
-              a = this._context.new_var(o.abs(s - n) / (o.eq(r, 0) ? 1 : r));
-            return [100 * o.rma(a, t, this._context)]
+              a = this._context.new_var(stdLib.abs(s - n) / (stdLib.eq(r, 0) ? 1 : r));
+            return [100 * stdLib.rma(a, t, this._context)]
           },
           this.main = function(e, t) {
             return this._context = e, this._input = t, this._context.setMinimumAdditionalDepth(this._input(0) + this._input(1)), this.f_1(this._input(1), this._input(0))
@@ -594,7 +628,7 @@
       constructor: function() {
         this.main = function(e, t) {
           var i = t(0);
-          return [o.atr(i, e)]
+          return [stdLib.atr(i, e)]
         }
       }
     }, {
@@ -677,18 +711,18 @@
         this.f_0 = function(e, t) {
           return e - t
         }, this.f_1 = function(e) {
-          return o.le(e, 0) ? 0 : 1
+          return stdLib.le(e, 0) ? 0 : 1
         }, this.main = function(e, t) {
           this._context = e, this._input = t;
-          var i = o.hl2(this._context),
+          var i = stdLib.hl2(this._context),
             s = this._context.new_var(i),
-            n = o.sma(s, 5, this._context),
+            n = stdLib.sma(s, 5, this._context),
             r = this._context.new_var(i),
-            a = o.sma(r, 34, this._context),
+            a = stdLib.sma(r, 34, this._context),
             l = this.f_0(n, a),
             c = l,
             h = this._context.new_var(l),
-            d = o.change(h);
+            d = stdLib.change(h);
           return [c, this.f_1(d)]
         }
       }
@@ -772,20 +806,20 @@
         this.f_0 = function(e, t) {
           return e - t
         }, this.f_1 = function(e) {
-          return o.le(e, 0) ? 0 : 1
+          return stdLib.le(e, 0) ? 0 : 1
         }, this.main = function(e, t) {
           this._context = e, this._input = t;
-          var i = o.hl2(this._context),
+          var i = stdLib.hl2(this._context),
             s = this._context.new_var(i),
-            n = o.sma(s, 5, this._context),
+            n = stdLib.sma(s, 5, this._context),
             r = this._context.new_var(i),
-            a = o.sma(r, 34, this._context),
+            a = stdLib.sma(r, 34, this._context),
             l = this.f_0(n, a),
             c = this._context.new_var(l),
-            h = o.sma(c, 5, this._context),
+            h = stdLib.sma(c, 5, this._context),
             d = this.f_0(l, h),
             u = this._context.new_var(d),
-            _ = o.change(u);
+            _ = stdLib.change(u);
           return [d, this.f_1(_)]
         }
       }
@@ -837,7 +871,7 @@
         this.f_0 = function(e, t, i, s) {
           return (e - t) / (i - s)
         }, this.main = function(e, t) {
-          return this._context = e, this._input = t, [this.f_0(o.close(this._context), o.open(this._context), o.high(this._context), o.low(this._context))]
+          return this._context = e, this._input = t, [this.f_0(stdLib.close(this._context), stdLib.open(this._context), stdLib.high(this._context), stdLib.low(this._context))]
         }
       }
     }, {
@@ -953,13 +987,13 @@
           return e - t
         }, this.main = function(e, t) {
           this._context = e, this._input = t;
-          var i = o.close(this._context),
+          var i = stdLib.close(this._context),
             s = this._input(0),
             n = this._input(1),
             r = this._context.new_var(i),
-            a = o.sma(r, s, this._context),
+            a = stdLib.sma(r, s, this._context),
             l = this._context.new_var(i),
-            c = o.stdev(l, s, this._context),
+            c = stdLib.stdev(l, s, this._context),
             h = this.f_0(n, c);
           return [a, this.f_1(a, h), this.f_2(a, h)]
         }
@@ -1096,24 +1130,24 @@
         }, this.f_2 = function(e, t) {
           return e - t
         }, this.init = function(e, t) {
-          this._context = e, "" !== t(0) && this._context.new_sym(t(0), o.period(this._context))
+          this._context = e, "" !== t(0) && this._context.new_sym(t(0), stdLib.period(this._context))
         }, this.main = function(e, t) {
           this._context = e, this._input = t;
-          var i = this._context.new_var(o.time(this._context)),
-            s = o.close(this._context),
+          var i = this._context.new_var(stdLib.time(this._context)),
+            s = stdLib.close(this._context),
             n = this._input(0),
             r = this._input(1),
             a = this._input(2),
             l = this._input(3);
           if ("" !== n) {
             this._context.select_sym(1);
-            var c = this._context.new_var(o.time(this._context));
-            s = this._context.new_var(o.close(this._context)).adopt(c, i, 1), this._context.select_sym(0)
+            var c = this._context.new_var(stdLib.time(this._context));
+            s = this._context.new_var(stdLib.close(this._context)).adopt(c, i, 1), this._context.select_sym(0)
           }
           var h = this._context.new_var(s),
-            d = o.sma(h, r, this._context),
+            d = stdLib.sma(h, r, this._context),
             u = this._context.new_var(s),
-            _ = o.stdev(u, r, this._context),
+            _ = stdLib.stdev(u, r, this._context),
             p = this.f_0(a, _);
           return [{
             value: d,
@@ -1238,13 +1272,13 @@
           return (e - t) / (i - t)
         }, this.main = function(e, t) {
           this._context = e, this._input = t;
-          var i = o.close(this._context),
+          var i = stdLib.close(this._context),
             s = this._input(0),
             n = this._input(1),
             r = this._context.new_var(i),
-            a = o.sma(r, s, this._context),
+            a = stdLib.sma(r, s, this._context),
             l = this._context.new_var(i),
-            c = o.stdev(l, s, this._context),
+            c = stdLib.stdev(l, s, this._context),
             h = this.f_0(n, c),
             d = this.f_1(a, h),
             u = this.f_2(a, h);
@@ -1323,13 +1357,13 @@
           return (e - t) / i
         }, this.main = function(e, t) {
           this._context = e, this._input = t;
-          var i = o.close(this._context),
+          var i = stdLib.close(this._context),
             s = this._input(0),
             n = this._input(1),
             r = this._context.new_var(i),
-            a = o.sma(r, s, this._context),
+            a = stdLib.sma(r, s, this._context),
             l = this._context.new_var(i),
-            c = o.stdev(l, s, this._context),
+            c = stdLib.stdev(l, s, this._context),
             h = this.f_0(n, c),
             d = this.f_1(a, h),
             u = this.f_2(a, h);
@@ -1405,18 +1439,18 @@
       },
       constructor: function() {
         this.f_0 = function(e, t, i, s) {
-          return o.or(o.and(o.eq(e, t), o.eq(e, i)), o.eq(t, i)) ? 0 : (2 * e - i - t) / (t - i) * s
+          return stdLib.or(stdLib.and(stdLib.eq(e, t), stdLib.eq(e, i)), stdLib.eq(t, i)) ? 0 : (2 * e - i - t) / (t - i) * s
         }, this.f_1 = function(e, t) {
           return e / t
         }, this.main = function(e, t) {
           this._context = e, this._input = t;
           var i = this._input(0),
-            s = this.f_0(o.close(this._context), o.high(this._context), o.low(this._context), o.volume(this._context)),
+            s = this.f_0(stdLib.close(this._context), stdLib.high(this._context), stdLib.low(this._context), stdLib.volume(this._context)),
             n = this._context.new_var(s),
-            r = o.sum(n, i, this._context),
-            a = o.volume(this._context),
+            r = stdLib.sum(n, i, this._context),
+            a = stdLib.volume(this._context),
             l = this._context.new_var(a),
-            c = o.sum(l, i, this._context);
+            c = stdLib.sum(l, i, this._context);
           return [this.f_1(r, c)]
         }
       }
@@ -1501,11 +1535,11 @@
           this._context = e, this._input = t;
           var i = this._input(0),
             s = this._input(1),
-            n = o.accdist(this._context),
+            n = stdLib.accdist(this._context),
             r = this._context.new_var(n),
-            a = o.ema(r, i, this._context),
+            a = stdLib.ema(r, i, this._context),
             l = this._context.new_var(n),
-            c = o.ema(l, s, this._context);
+            c = stdLib.ema(l, s, this._context);
           return [this.f_0(a, c)]
         }
       }
@@ -1580,9 +1614,9 @@
           this._context = e, this._input = t, this.period = this._input(0), this.rocLookback = this._input(1)
         }, this.main = function(e, t) {
           this._context = e, this._input = t, this._context.setMinimumAdditionalDepth(this.period + this.rocLookback);
-          var i = this._context.new_var(o.high(this._context) - o.low(this._context)),
-            s = this._context.new_var(o.ema(i, this.period, this._context));
-          return [o.roc(s, this.rocLookback)]
+          var i = this._context.new_var(stdLib.high(this._context) - stdLib.low(this._context)),
+            s = this._context.new_var(stdLib.ema(i, this.period, this._context));
+          return [stdLib.roc(s, this.rocLookback)]
         }
       }
     }, {
@@ -1680,18 +1714,18 @@
           var i = this._input(0),
             s = this._input(1),
             n = this._input(2),
-            r = o.high(this._context),
+            r = stdLib.high(this._context),
             a = this._context.new_var(r),
-            l = o.highest(a, i, this._context),
-            c = o.atr(i, this._context),
+            l = stdLib.highest(a, i, this._context),
+            c = stdLib.atr(i, this._context),
             h = this.f_0(l, s, c),
             d = this._context.new_var(r),
-            u = o.lowest(d, i, this._context),
+            u = stdLib.lowest(d, i, this._context),
             _ = this.f_1(u, s, c),
             p = this._context.new_var(h),
-            m = o.highest(p, n, this._context),
+            m = stdLib.highest(p, n, this._context),
             g = this._context.new_var(_);
-          return [o.lowest(g, n, this._context), m]
+          return [stdLib.lowest(g, n, this._context), m]
         }
       }
     }, {
@@ -1749,9 +1783,9 @@
       },
       constructor: function() {
         this.f_0 = function(e) {
-          return o.ge(e, 0) ? e : 0
+          return stdLib.ge(e, 0) ? e : 0
         }, this.f_1 = function(e) {
-          return o.ge(e, 0) ? 0 : -e
+          return stdLib.ge(e, 0) ? 0 : -e
         }, this.f_2 = function(e, t) {
           return 100 * e / t
         }, this.f_3 = function(e, t) {
@@ -1759,15 +1793,15 @@
         }, this.main = function(e, t) {
           this._context = e, this._input = t;
           var i = this._input(0),
-            s = o.close(this._context),
+            s = stdLib.close(this._context),
             n = this._context.new_var(s),
-            r = o.change(n),
+            r = stdLib.change(n),
             a = this.f_0(r),
             l = this.f_1(r),
             c = this._context.new_var(a),
-            h = o.sum(c, i, this._context),
+            h = stdLib.sum(c, i, this._context),
             d = this._context.new_var(l),
-            u = o.sum(d, i, this._context);
+            u = stdLib.sum(d, i, this._context);
           return [this.f_3(h, u)]
         }
       }
@@ -1918,26 +1952,26 @@
       },
       constructor: function() {
         this.f_0 = function() {
-          var e = o.close(this._context),
-            t = o.hlc3(this._context),
-            i = this._context.new_var(o.high(this._context)),
-            s = o.highest(i, 30, this._context),
-            n = o.lowest(i, 30, this._context),
+          var e = stdLib.close(this._context),
+            t = stdLib.hlc3(this._context),
+            i = this._context.new_var(stdLib.high(this._context)),
+            s = stdLib.highest(i, 30, this._context),
+            n = stdLib.lowest(i, 30, this._context),
             r = 25 / (s - n) * n,
             a = this._context.new_var(e),
-            l = this._context.new_var(o.ema(a, 34, this._context)),
+            l = this._context.new_var(stdLib.ema(a, 34, this._context)),
             c = (l.get(1) - l.get(0)) / t * r,
-            h = o.sqrt(1 + c * c),
-            d = o.round(180 * o.acos(1 / h) / 3.141592653589793),
-            u = o.iff(o.gt(c, 0), -d, d),
-            _ = o.and(o.gt(u, -2.14), o.le(u, -.71)) ? 7 : 8,
-            p = o.and(o.gt(u, -3.57), o.le(u, -2.14)) ? 6 : _,
-            m = o.and(o.gt(u, -5), o.le(u, -3.57)) ? 5 : p,
-            g = o.le(u, -5) ? 4 : m,
-            f = o.and(o.lt(u, 2.14), o.ge(u, .71)) ? 3 : g,
-            y = o.and(o.lt(u, 3.57), o.ge(u, 2.14)) ? 2 : f,
-            v = o.and(o.lt(u, 5), o.ge(u, 3.57)) ? 1 : y;
-          return [1, o.ge(u, 5) ? 0 : v]
+            h = stdLib.sqrt(1 + c * c),
+            d = stdLib.round(180 * stdLib.acos(1 / h) / 3.141592653589793),
+            u = stdLib.iff(stdLib.gt(c, 0), -d, d),
+            _ = stdLib.and(stdLib.gt(u, -2.14), stdLib.le(u, -.71)) ? 7 : 8,
+            p = stdLib.and(stdLib.gt(u, -3.57), stdLib.le(u, -2.14)) ? 6 : _,
+            m = stdLib.and(stdLib.gt(u, -5), stdLib.le(u, -3.57)) ? 5 : p,
+            g = stdLib.le(u, -5) ? 4 : m,
+            f = stdLib.and(stdLib.lt(u, 2.14), stdLib.ge(u, .71)) ? 3 : g,
+            y = stdLib.and(stdLib.lt(u, 3.57), stdLib.ge(u, 2.14)) ? 2 : f,
+            v = stdLib.and(stdLib.lt(u, 5), stdLib.ge(u, 3.57)) ? 1 : y;
+          return [1, stdLib.ge(u, 5) ? 0 : v]
         }, this.main = function(e, t) {
           return this._context = e, this._input = t, this.f_0()
         }
@@ -2036,20 +2070,20 @@
       },
       constructor: function() {
         this.f_0 = function(e, t, i, s) {
-          return 100 * o.log10(e / (t - i)) / s
+          return 100 * stdLib.log10(e / (t - i)) / s
         }, this.main = function(e, t) {
           this._context = e, this._input = t;
           var i = this._input(0),
-            s = o.atr(1, this._context),
+            s = stdLib.atr(1, this._context),
             n = this._context.new_var(s),
-            r = o.sum(n, i, this._context),
-            a = o.high(this._context),
+            r = stdLib.sum(n, i, this._context),
+            a = stdLib.high(this._context),
             l = this._context.new_var(a),
-            c = o.highest(l, i, this._context),
-            h = o.low(this._context),
+            c = stdLib.highest(l, i, this._context),
+            h = stdLib.low(this._context),
             d = this._context.new_var(h),
-            u = o.lowest(d, i, this._context),
-            _ = o.log10(i);
+            u = stdLib.lowest(d, i, this._context),
+            _ = stdLib.log10(i);
           return [this.f_0(r, c, u, _)]
         }
       }
@@ -2184,18 +2218,18 @@
           return (e - t) / (.015 * i)
         }, this.main = function(e, t) {
           this._context = e, this._input = t;
-          var i = o.hlc3(this._context),
+          var i = stdLib.hlc3(this._context),
             s = this._input(0),
             n = this._input(1),
             r = this._input(2);
           this._context.setMinimumAdditionalDepth(s + r);
           var a, l = this._context.new_var(i),
-            c = o.sma(l, s, this._context),
+            c = stdLib.sma(l, s, this._context),
             h = this._context.new_var(i),
-            d = o.dev(h, s, this._context),
+            d = stdLib.dev(h, s, this._context),
             u = this.f_0(i, c, d),
             _ = this._context.new_var(u);
-          return "EMA" === n ? a = o.ema(_, r, this._context) : "WMA" === n ? a = o.wma(_, r, this._context) : "SMA" === n && (a = o.sma(_, r, this._context)), [u, a]
+          return "EMA" === n ? a = stdLib.ema(_, r, this._context) : "WMA" === n ? a = stdLib.wma(_, r, this._context) : "SMA" === n && (a = stdLib.sma(_, r, this._context)), [u, a]
         }
       }
     }, {
@@ -2306,29 +2340,29 @@
       constructor: function() {
         var e;
         this.f_1 = function(e, t, i) {
-          var s = i.new_var(o.max(o.change(e), 0));
-          return o.rma(s, t, i)
+          var s = i.new_var(stdLib.max(stdLib.change(e), 0));
+          return stdLib.rma(s, t, i)
         }, this.f_2 = function(e, t, i) {
-          var s = i.new_var(-o.min(o.change(e), 0));
-          return o.rma(s, t, i)
+          var s = i.new_var(-stdLib.min(stdLib.change(e), 0));
+          return stdLib.rma(s, t, i)
         }, this.f_3 = (e = 0, function(t) {
           var i = t.get(0),
             s = t.get(1);
-          return e = i === s ? 0 : i > s ? o.nz(e) <= 0 ? 1 : o.nz(e) + 1 : o.nz(e) >= 0 ? -1 : o.nz(e) - 1, this._context.new_var(e)
+          return e = i === s ? 0 : i > s ? stdLib.nz(e) <= 0 ? 1 : stdLib.nz(e) + 1 : stdLib.nz(e) >= 0 ? -1 : stdLib.nz(e) - 1, this._context.new_var(e)
         }), this.main = function(e, t) {
           this._context = e, this._input = t;
-          var i = o.close(this._context),
+          var i = stdLib.close(this._context),
             s = this._context.new_var(i),
             n = this._input(0),
             r = this._input(1),
             a = this._input(2);
           this._context.setMinimumAdditionalDepth(a);
-          var l = o.rsi(this.f_1(s, n, this._context), this.f_2(s, n, this._context)),
+          var l = stdLib.rsi(this.f_1(s, n, this._context), this.f_2(s, n, this._context)),
             c = this.f_3(s),
-            h = o.rsi(this.f_1(c, r, this._context), this.f_2(c, r, this._context)),
-            d = this._context.new_var(o.roc(s, 1)),
-            u = o.percentrank(d, a);
-          return [o.avg(l, h, u)]
+            h = stdLib.rsi(this.f_1(c, r, this._context), this.f_2(c, r, this._context)),
+            d = this._context.new_var(stdLib.roc(s, 1)),
+            u = stdLib.percentrank(d, a);
+          return [stdLib.avg(l, h, u)]
         }
       }
     }, {
@@ -2408,14 +2442,14 @@
             s = this._input(1),
             n = this._input(2);
           this._context.setMinimumAdditionalDepth(i + Math.max(s, n));
-          var r = o.close(this._context),
+          var r = stdLib.close(this._context),
             a = this._context.new_var(r),
-            l = o.roc(a, s),
+            l = stdLib.roc(a, s),
             c = this._context.new_var(r),
-            h = o.roc(c, n),
+            h = stdLib.roc(c, n),
             d = this.f_0(l, h),
             u = this._context.new_var(d);
-          return [o.wma(u, i, this._context)]
+          return [stdLib.wma(u, i, this._context)]
         }
       }
     }, {
@@ -2479,21 +2513,21 @@
       },
       constructor: function() {
         this.init = function(e, t) {
-          this._context = e, this._input = t, this._context.new_sym(this._input(0), o.period(this._context))
+          this._context = e, this._input = t, this._context.new_sym(this._input(0), stdLib.period(this._context))
         }, this.main = function(e, t) {
           this._context = e, this._input = t;
           var i = this._context.new_unlimited_var(this._context.symbol.time),
-            s = (this._input(0), o.period(this._context), o.close(this._context)),
+            s = (this._input(0), stdLib.period(this._context), stdLib.close(this._context)),
             n = this._input(1);
           this._context.select_sym(1);
           var r = this._context.new_unlimited_var(this._context.symbol.time),
-            a = o.close(this._context),
+            a = stdLib.close(this._context),
             l = this._context.new_unlimited_var(a);
           this._context.select_sym(0);
           var c = l.adopt(r, i, 0),
             h = this._context.new_var(s),
             d = this._context.new_var(c);
-          return [o.correlation(h, d, n, this._context)]
+          return [stdLib.correlation(h, d, n, this._context)]
         }
       }
     }, {
@@ -2561,27 +2595,27 @@
       },
       constructor: function() {
         this.init = function(e, t) {
-          this._context = e, this._input = t, this._context.new_sym(this._input(0), o.period(this._context)), this._context.new_sym(this._input(1), o.period(this._context)), this.period = this._input(2)
+          this._context = e, this._input = t, this._context.new_sym(this._input(0), stdLib.period(this._context)), this._context.new_sym(this._input(1), stdLib.period(this._context)), this.period = this._input(2)
         }, this.correlationLog = function(e, t, i, s) {
-          var n = o.sma(e, i, s),
-            r = o.sma(t, i, s),
+          var n = stdLib.sma(e, i, s),
+            r = stdLib.sma(t, i, s),
             a = s.new_var(e.get() * t.get());
-          return (o.sma(a, i, s) - n * r) / Math.sqrt(o.variance2(e, n, i) * o.variance2(t, r, i))
+          return (stdLib.sma(a, i, s) - n * r) / Math.sqrt(stdLib.variance2(e, n, i) * stdLib.variance2(t, r, i))
         }, this.main = function(e, t) {
           this._context = e, this._input = t;
           var i = this._context.new_var(this._context.symbol.time);
           this._context.select_sym(2);
-          var s = this._context.new_var(o.close(this._context)),
-            n = this._context.new_var(o.log(s.get() / s.get(1))),
+          var s = this._context.new_var(stdLib.close(this._context)),
+            n = this._context.new_var(stdLib.log(s.get() / s.get(1))),
             r = this._context.new_var(this._context.symbol.time);
           this._context.select_sym(1);
           var a = this._context.new_var(this._context.symbol.time),
-            l = this._context.new_var(o.close(this._context)),
-            c = this._context.new_var(o.log(l.get() / l.get(1))),
+            l = this._context.new_var(stdLib.close(this._context)),
+            c = this._context.new_var(stdLib.log(l.get() / l.get(1))),
             h = this._context.new_var(n.adopt(r, a, 0)),
             d = this._context.new_var(this.correlationLog(c, h, this.period, this._context)),
             u = this._context.new_var(d.adopt(a, i, 0)).get(),
-            _ = o.round(1e3 * u) / 1e3;
+            _ = stdLib.round(1e3 * u) / 1e3;
           return this._context.select_sym(0), [_]
         }
       }
@@ -2666,10 +2700,10 @@
             t = this._input(1),
             i = Math.floor(e / 2 + 1);
           this._context.setMinimumAdditionalDepth(e + i);
-          var s = this._context.new_var(o.close(this._context)),
-            n = this._context.new_var(o.sma(s, e, this._context)),
-            r = this._context.new_var(o.close(this._context)).get(i) - n,
-            a = o.close(this._context) - n.get(i);
+          var s = this._context.new_var(stdLib.close(this._context)),
+            n = this._context.new_var(stdLib.sma(s, e, this._context)),
+            r = this._context.new_var(stdLib.close(this._context)).get(i) - n,
+            a = stdLib.close(this._context) - n.get(i);
           return [t ? r : a, t ? -i : 0]
         }, this.main = function(e, t) {
           this._context = e, this._input = t;
@@ -2814,7 +2848,7 @@
           this._context = e, this._input = t;
           var i = this._input(0),
             s = this._input(1);
-          return this._context.setMinimumAdditionalDepth(2 * i + s), o.dmi(i, s, this._context)
+          return this._context.setMinimumAdditionalDepth(2 * i + s), stdLib.dmi(i, s, this._context)
         }
       }
     }, {
@@ -2930,13 +2964,13 @@
           this._context = e, this._input = t;
           var i = this._input(0),
             s = this._input(1),
-            n = o.low(this._context),
+            n = stdLib.low(this._context),
             r = this._context.new_var(n);
           this._context.setMinimumAdditionalDepth(i + Math.max(s, 0));
-          var a = o.lowest(r, i, this._context),
-            l = o.high(this._context),
+          var a = stdLib.lowest(r, i, this._context),
+            l = stdLib.high(this._context),
             c = this._context.new_var(l),
-            h = o.highest(c, i, this._context);
+            h = stdLib.highest(c, i, this._context);
           return [{
             value: a,
             offset: s
@@ -2944,7 +2978,7 @@
             value: h,
             offset: s
           }, {
-            value: o.avg(h, a),
+            value: stdLib.avg(h, a),
             offset: s
           }]
         }
@@ -3008,11 +3042,11 @@
           this._context = e, this._input = t;
           var i = this._input(0);
           this._context.setMinimumAdditionalDepth(2 * i);
-          var s = o.close(this._context),
+          var s = stdLib.close(this._context),
             n = this._context.new_var(s),
-            r = o.ema(n, i, this._context),
+            r = stdLib.ema(n, i, this._context),
             a = this._context.new_var(r),
-            l = o.ema(a, i, this._context);
+            l = stdLib.ema(a, i, this._context);
           return [this.f_0(r, l)]
         }
       }
@@ -3083,12 +3117,12 @@
           this._context = e, this._input = t;
           var i = this._input(0),
             s = this._input(1),
-            n = o.hl2(this._context),
+            n = stdLib.hl2(this._context),
             r = this._context.new_var(n),
-            a = o.change(r),
-            l = this.f_0(i, a, o.high(this._context), o.low(this._context), o.volume(this._context)),
+            a = stdLib.change(r),
+            l = this.f_0(i, a, stdLib.high(this._context), stdLib.low(this._context), stdLib.volume(this._context)),
             c = this._context.new_var(l);
-          return [o.sma(c, s, this._context)]
+          return [stdLib.sma(c, s, this._context)]
         }
       }
     }, {
@@ -3163,12 +3197,12 @@
         }, this.main = function(e, t) {
           this._context = e, this._input = t;
           var i = this._input(0),
-            s = o.close(this._context),
+            s = stdLib.close(this._context),
             n = this._context.new_var(s),
-            r = o.change(n),
-            a = this.f_0(r, o.volume(this._context)),
+            r = stdLib.change(n),
+            a = this.f_0(r, stdLib.volume(this._context)),
             l = this._context.new_var(a);
-          return [o.ema(l, i, this._context)]
+          return [stdLib.ema(l, i, this._context)]
         }
       }
     }, {
@@ -3269,19 +3303,19 @@
       },
       constructor: function() {
         this.f_0 = function(e, t) {
-          return e ? t : o.na()
+          return e ? t : stdLib.na()
         }, this.main = function(e, t) {
           this._context = e, this._input = t;
           var i = this._input(0),
             s = this._input(1),
-            n = o.close(this._context),
+            n = stdLib.close(this._context),
             r = this._context.new_var(n),
-            a = o.ema(r, i, this._context),
+            a = stdLib.ema(r, i, this._context),
             l = this._context.new_var(n),
-            c = o.ema(l, s, this._context),
+            c = stdLib.ema(l, s, this._context),
             h = a,
             d = c,
-            u = o.cross(a, c, this._context);
+            u = stdLib.cross(a, c, this._context);
           return [h, d, this.f_0(u, a)]
         }
       }
@@ -3421,8 +3455,8 @@
         }, this.main = function(e, t) {
           this._context = e, this._input = t;
           var i = this._context.new_var(o[this._input(4)](this._context)),
-            s = o.sma(i, this._input(0), this._context);
-          return "Exponential" === this._input(3) ? s = o.ema(i, this._input(0), this._context) : "Weighted" === this._input(3) && (s = o.wma(i, this._input(0), this._context)), [this.f_0(s, this._input(1) / 100), s, this.f_1(s, this._input(2) / 100)]
+            s = stdLib.sma(i, this._input(0), this._context);
+          return "Exponential" === this._input(3) ? s = stdLib.ema(i, this._input(0), this._context) : "Weighted" === this._input(3) && (s = stdLib.wma(i, this._input(0), this._context)), [this.f_0(s, this._input(1) / 100), s, this.f_1(s, this._input(2) / 100)]
         }
       }
     }, {
@@ -3479,7 +3513,7 @@
           this._context = e, this._input = t, this.period = this._input(0)
         }, this.main = function(e, t) {
           this._context = e, this._input = t;
-          for (var i, s, n = this._context.new_var(o.close(this._context)), r = 0, a = 0, l = 0; l < this.period; l++) r += l + 1, a += n.get(l);
+          for (var i, s, n = this._context.new_var(stdLib.close(this._context)), r = 0, a = 0, l = 0; l < this.period; l++) r += l + 1, a += n.get(l);
           i = r / this.period, s = a / this.period;
           var c = 0,
             h = 0,
@@ -3601,7 +3635,7 @@
           this._context = e, this._input = t, this.period = this._input(0), this.errorDeviation = this._input(1), this.maMethod = this._input(2), this.averagePeriod = this._input(3)
         }, this.main = function(e, t) {
           this._context = e, this._input = t;
-          for (var i, s, n = this._context.new_var(o.close(this._context)), r = 0, a = 0, l = 0; l < this.period; l++) r += l + 1, a += n.get(l);
+          for (var i, s, n = this._context.new_var(stdLib.close(this._context)), r = 0, a = 0, l = 0; l < this.period; l++) r += l + 1, a += n.get(l);
           i = r / this.period, s = a / this.period;
           var c = 0,
             h = 0,
@@ -3609,11 +3643,11 @@
           for (l = 0; l < this.period; l++) d += Math.pow(s - n.get(l), 2), h += (i - l - 1) * (s - n.get(l)), c += Math.pow(i - l - 1, 2);
           h = Math.pow(h, 2);
           var u, _, p, m = Math.sqrt((d - h / c) / (this.period - 2)),
-            g = o.linreg(n, this.period, 0),
+            g = stdLib.linreg(n, this.period, 0),
             f = this._context.new_var(g + this.errorDeviation * m),
             y = this._context.new_var(g),
             v = this._context.new_var(g - this.errorDeviation * m);
-          return "Simple" === this.maMethod ? (u = o.sma(f, this.averagePeriod, this._context), _ = o.sma(y, this.averagePeriod, this._context), p = o.sma(v, this.averagePeriod, this._context)) : "Exponential" === this.maMethod ? (u = o.ema(f, this.averagePeriod, this._context), _ = o.ema(y, this.averagePeriod, this._context), p = o.ema(v, this.averagePeriod, this._context)) : (u = o.wma(f, this.averagePeriod, this._context), _ = o.wma(y, this.averagePeriod, this._context), p = o.wma(v, this.averagePeriod, this._context)), [u, _, p]
+          return "Simple" === this.maMethod ? (u = stdLib.sma(f, this.averagePeriod, this._context), _ = stdLib.sma(y, this.averagePeriod, this._context), p = stdLib.sma(v, this.averagePeriod, this._context)) : "Exponential" === this.maMethod ? (u = stdLib.ema(f, this.averagePeriod, this._context), _ = stdLib.ema(y, this.averagePeriod, this._context), p = stdLib.ema(v, this.averagePeriod, this._context)) : (u = stdLib.wma(f, this.averagePeriod, this._context), _ = stdLib.wma(y, this.averagePeriod, this._context), p = stdLib.wma(v, this.averagePeriod, this._context)), [u, _, p]
         }
       }
     }, {
@@ -3750,19 +3784,19 @@
       },
       constructor: function() {
         this.f_0 = function(e) {
-          var t = o.lt(e, -.99) ? -.999 : e;
-          return [o.gt(e, .99) ? .999 : t]
+          var t = stdLib.lt(e, -.99) ? -.999 : e;
+          return [stdLib.gt(e, .99) ? .999 : t]
         }, this.f_1 = function() {
           var e = this._input(0),
-            t = this._context.new_var(o.hl2(this._context)),
-            i = o.highest(t, e, this._context),
-            s = this._context.new_var(o.hl2(this._context)),
-            n = o.lowest(s, e, this._context),
+            t = this._context.new_var(stdLib.hl2(this._context)),
+            i = stdLib.highest(t, e, this._context),
+            s = this._context.new_var(stdLib.hl2(this._context)),
+            n = stdLib.lowest(s, e, this._context),
             r = this._context.new_var(),
-            a = this.f_0(.66 * ((o.hl2(this._context) - n) / o.max(i - n, .001) - .5) + .67 * o.nz(r.get(1)));
+            a = this.f_0(.66 * ((stdLib.hl2(this._context) - n) / stdLib.max(i - n, .001) - .5) + .67 * stdLib.nz(r.get(1)));
           r.set(a[0]);
           var l = this._context.new_var();
-          l.set(.5 * o.log((1 + r.get(0)) / o.max(1 - r.get(0), .001)) + .5 * o.nz(l.get(1)));
+          l.set(.5 * stdLib.log((1 + r.get(0)) / stdLib.max(1 - r.get(0), .001)) + .5 * stdLib.nz(l.get(1)));
           var c = l.get(1);
           return [l.get(0), c]
         }, this.main = function(e, t) {
@@ -3826,10 +3860,10 @@
       constructor: function() {
         this.f_0 = function() {
           var e = this._input(0),
-            t = o.or(o.isintraday(this._context), o.and(o.isdaily(this._context), o.eq(o.interval(this._context), 1))) ? 1 : 7,
-            i = this._context.new_var(o.close(this._context)),
-            s = this._context.new_var(o.log(o.close(this._context) / i.get(1)));
-          return [100 * o.stdev(s, e, this._context) * o.sqrt(365 / t)]
+            t = stdLib.or(stdLib.isintraday(this._context), stdLib.and(stdLib.isdaily(this._context), stdLib.eq(stdLib.interval(this._context), 1))) ? 1 : 7,
+            i = this._context.new_var(stdLib.close(this._context)),
+            s = this._context.new_var(stdLib.log(stdLib.close(this._context) / i.get(1)));
+          return [100 * stdLib.stdev(s, e, this._context) * stdLib.sqrt(365 / t)]
         }, this.main = function(e, t) {
           return this._context = e, this._input = t, this.f_0()
         }
@@ -3891,19 +3925,19 @@
           return 2 * e - t
         }, this.main = function(e, t) {
           this._context = e, this._input = t;
-          var i = o.close(this._context),
+          var i = stdLib.close(this._context),
             s = this._input(0),
             n = s / 2;
           this._context.setMinimumAdditionalDepth(Math.ceil(s + n));
           var r = this._context.new_var(i),
-            a = o.wma(r, n, this._context),
+            a = stdLib.wma(r, n, this._context),
             l = this._context.new_var(i),
-            c = o.wma(l, s, this._context),
+            c = stdLib.wma(l, s, this._context),
             h = this.f_0(a, c),
-            d = o.sqrt(s),
-            u = o.round(d),
+            d = stdLib.sqrt(s),
+            u = stdLib.round(d),
             _ = this._context.new_var(h);
-          return [o.wma(_, u, this._context)]
+          return [stdLib.wma(_, u, this._context)]
         }
       }
     }, {
@@ -4128,32 +4162,32 @@
         this.donchian = function(e, t, i) {
           var s = this._context.new_var(e),
             n = this._context.new_var(t);
-          return o.avg(o.lowest(s, i, this._context), o.highest(n, i, this._context))
+          return stdLib.avg(stdLib.lowest(s, i, this._context), stdLib.highest(n, i, this._context))
         }, this.f_1 = function() {
           var e = this._input(1),
             t = this._input(2),
             i = this._input(3),
             s = this._input(4) - 1,
             n = this._input(5) - 1,
-            r = this._context.new_var(o.time(this._context)),
-            a = o.close(this._context),
-            l = o.low(this._context),
-            c = o.high(this._context);
+            r = this._context.new_var(stdLib.time(this._context)),
+            a = stdLib.close(this._context),
+            l = stdLib.low(this._context),
+            c = stdLib.high(this._context);
           if ("" !== this._input(0)) {
             this._context.select_sym(1);
-            var h = this._context.new_var(o.time(this._context)),
-              d = o.close(this._context),
-              u = o.low(this._context),
-              _ = o.high(this._context);
+            var h = this._context.new_var(stdLib.time(this._context)),
+              d = stdLib.close(this._context),
+              u = stdLib.low(this._context),
+              _ = stdLib.high(this._context);
             a = this._context.new_var(d).adopt(h, r, 1), l = this._context.new_var(u).adopt(h, r, 1), c = this._context.new_var(_).adopt(h, r, 1), this._context.select_sym(0)
           }
           var p = this.donchian(l, c, e),
             m = this.donchian(l, c, t),
-            g = o.avg(p, m),
+            g = stdLib.avg(p, m),
             f = this.donchian(l, c, i);
-          return [p, m, a, g, f, -s, s, n, o.gt(g, f) ? 0 : 1]
+          return [p, m, a, g, f, -s, s, n, stdLib.gt(g, f) ? 0 : 1]
         }, this.init = function(e, t) {
-          this._context = e, "" !== t(0) && this._context.new_sym(t(0), o.period(this._context))
+          this._context = e, "" !== t(0) && this._context.new_sym(t(0), stdLib.period(this._context))
         }, this.main = function(e, t) {
           this._context = e, this._input = t;
           var i = this.f_1();
@@ -4292,15 +4326,15 @@
           return e - t * i
         }, this.main = function(e, t) {
           this._context = e, this._input = t;
-          var i = o.close(this._context),
+          var i = stdLib.close(this._context),
             s = this._input(0),
             n = this._input(1),
             r = this._input(2),
             a = this._context.new_var(i),
-            l = o.ema(a, n, this._context),
-            c = this.f_0(s, o.tr(void 0, this._context), o.high(this._context), o.low(this._context)),
+            l = stdLib.ema(a, n, this._context),
+            c = this.f_0(s, stdLib.tr(void 0, this._context), stdLib.high(this._context), stdLib.low(this._context)),
             h = this._context.new_var(c),
-            d = o.ema(h, n, this._context);
+            d = stdLib.ema(h, n, this._context);
           return [this.f_1(l, d, r), l, this.f_2(l, d, r)]
         }
       }
@@ -4366,23 +4400,23 @@
       },
       constructor: function() {
         this.f_0 = function(e, t) {
-          return o.ge(e, 0) ? t : -t
+          return stdLib.ge(e, 0) ? t : -t
         }, this.f_1 = function(e, t) {
           return e - t
         }, this.main = function(e, t) {
           this._context = e, this._input = t;
-          var i = o.hlc3(this._context);
+          var i = stdLib.hlc3(this._context);
           this._context.setMinimumAdditionalDepth(66);
           var s = this._context.new_var(i),
-            n = o.change(s),
-            r = this.f_0(n, o.volume(this._context)),
+            n = stdLib.change(s),
+            r = this.f_0(n, stdLib.volume(this._context)),
             a = this._context.new_var(r),
-            l = o.ema(a, 34, this._context),
+            l = stdLib.ema(a, 34, this._context),
             c = this._context.new_var(r),
-            h = o.ema(c, 55, this._context),
+            h = stdLib.ema(c, 55, this._context),
             d = this.f_1(l, h),
             u = this._context.new_var(d);
-          return [d, o.ema(u, 13, this._context)]
+          return [d, stdLib.ema(u, 13, this._context)]
         }
       }
     }, {
@@ -4550,34 +4584,34 @@
             h = this._input(7),
             d = this._input(8);
           this._context.setMinimumAdditionalDepth(Math.max(a + i, l + s, c + n, h + r) + d);
-          var u = o.close(this._context),
+          var u = stdLib.close(this._context),
             _ = i,
             p = this._context.new_var(u),
-            m = o.roc(p, _),
+            m = stdLib.roc(p, _),
             g = a,
             f = this._context.new_var(m),
-            y = o.sma(f, g, this._context),
+            y = stdLib.sma(f, g, this._context),
             v = s,
             S = this._context.new_var(u),
-            b = o.roc(S, v),
+            b = stdLib.roc(S, v),
             w = l,
             C = this._context.new_var(b),
-            T = o.sma(C, w, this._context),
+            T = stdLib.sma(C, w, this._context),
             P = n,
             x = this._context.new_var(u),
-            M = o.roc(x, P),
+            M = stdLib.roc(x, P),
             I = c,
             A = this._context.new_var(M),
-            L = o.sma(A, I, this._context),
+            L = stdLib.sma(A, I, this._context),
             k = r,
             E = this._context.new_var(u),
-            D = o.roc(E, k),
+            D = stdLib.roc(E, k),
             B = h,
             V = this._context.new_var(D),
-            R = o.sma(V, B, this._context),
+            R = stdLib.sma(V, B, this._context),
             N = this.f_0(y, T, L, R),
             O = this._context.new_var(N);
-          return [N, o.sma(O, d, this._context)]
+          return [N, stdLib.sma(O, d, this._context)]
         }
       }
     }, {
@@ -4645,9 +4679,9 @@
           this._context = e, this._input = t;
           var i = this._input(0),
             s = this._input(1),
-            n = o.close(this._context),
+            n = stdLib.close(this._context),
             r = this._context.new_var(n);
-          return [o.linreg(r, i, s)]
+          return [stdLib.linreg(r, i, s)]
         }
       }
     }, {
@@ -4705,10 +4739,10 @@
       constructor: function() {
         this.main = function(e, t) {
           this._context = e, this._input = t;
-          var i = o.close(this._context),
+          var i = stdLib.close(this._context),
             s = this._input(0),
             n = this._context.new_var(i);
-          return [o.linreg(n, s, 0)]
+          return [stdLib.linreg(n, s, 0)]
         }
       }
     }, {
@@ -4773,7 +4807,7 @@
           return (t * c - r * a) / (t * l - r * r)
         }, this.main = function(e, t) {
           this._context = e, this._input = t;
-          var i = this._context.new_var(o.close(this._context));
+          var i = this._context.new_var(stdLib.close(this._context));
           return [this.linregSlope(i, this.period, 0)]
         }
       }
@@ -4875,19 +4909,19 @@
       },
       constructor: function() {
         this.f_0 = function(e, t) {
-          return e ? t : o.na()
+          return e ? t : stdLib.na()
         }, this.main = function(e, t) {
           this._context = e, this._input = t;
           var i = this._input(0),
             s = this._input(1),
-            n = o.close(this._context),
+            n = stdLib.close(this._context),
             r = this._context.new_var(n),
-            a = o.sma(r, i, this._context),
+            a = stdLib.sma(r, i, this._context),
             l = this._context.new_var(n),
-            c = o.sma(l, s, this._context),
+            c = stdLib.sma(l, s, this._context),
             h = a,
             d = c,
-            u = o.cross(a, c, this._context);
+            u = stdLib.cross(a, c, this._context);
           return [h, d, this.f_0(u, a)]
         }
       }
@@ -4989,19 +5023,19 @@
       },
       constructor: function() {
         this.f_0 = function(e, t) {
-          return e ? t : o.na()
+          return e ? t : stdLib.na()
         }, this.main = function(e, t) {
           this._context = e, this._input = t;
           var i = this._input(0),
             s = this._input(1),
-            n = o.close(this._context),
+            n = stdLib.close(this._context),
             r = this._context.new_var(n),
-            a = o.sma(r, i, this._context),
+            a = stdLib.sma(r, i, this._context),
             l = this._context.new_var(n),
-            c = o.ema(l, s, this._context),
+            c = stdLib.ema(l, s, this._context),
             h = a,
             d = c,
-            u = o.cross(a, c, this._context);
+            u = stdLib.cross(a, c, this._context);
           return [h, d, this.f_0(u, a)]
         }
       }
@@ -5066,14 +5100,14 @@
         }, this.main = function(e, t) {
           this._context = e, this._input = t;
           var i = this._input(0),
-            s = this.f_0(o.high(this._context), o.low(this._context)),
+            s = this.f_0(stdLib.high(this._context), stdLib.low(this._context)),
             n = this._context.new_var(s),
-            r = o.ema(n, 9, this._context),
+            r = stdLib.ema(n, 9, this._context),
             a = this._context.new_var(r),
-            l = o.ema(a, 9, this._context),
+            l = stdLib.ema(a, 9, this._context),
             c = this.f_1(r, l),
             h = this._context.new_var(c);
-          return [o.sum(h, i, this._context)]
+          return [stdLib.sum(h, i, this._context)]
         }
       }
     }, {
@@ -5132,12 +5166,12 @@
       constructor: function() {
         this.f_0 = function() {
           var e = this._input(0),
-            t = o.close(this._context),
+            t = stdLib.close(this._context),
             i = this._context.new_var(t),
-            s = o.ema(i, e, this._context),
+            s = stdLib.ema(i, e, this._context),
             n = this._context.new_var(),
-            r = n.get(1) + (t - n.get(1)) / (e * o.pow(t / n.get(1), 4));
-          return n.set(o.na(n.get(1)) ? s : o.nz(r, s)), [n.get(0)]
+            r = n.get(1) + (t - n.get(1)) / (e * stdLib.pow(t / n.get(1), 4));
+          return n.set(stdLib.na(n.get(1)) ? s : stdLib.nz(r, s)), [n.get(0)]
         }, this.main = function(e, t) {
           return this._context = e, this._input = t, this.f_0()
         }
@@ -5185,7 +5219,7 @@
       },
       constructor: function() {
         this.main = function(e, t) {
-          return this._context = e, this._input = t, [o.hl2(this._context)]
+          return this._context = e, this._input = t, [stdLib.hl2(this._context)]
         }
       }
     }, {
@@ -5364,22 +5398,22 @@
       },
       constructor: function() {
         this.f_0 = function(e, t, i) {
-          return e * (o.le(t, 0) ? 0 : i)
+          return e * (stdLib.le(t, 0) ? 0 : i)
         }, this.f_1 = function(e, t, i) {
-          return e * (o.ge(t, 0) ? 0 : i)
+          return e * (stdLib.ge(t, 0) ? 0 : i)
         }, this.main = function(e, t) {
           this._context = e, this._input = t;
           var i = this._input(0),
-            s = o.hlc3(this._context),
+            s = stdLib.hlc3(this._context),
             n = this._context.new_var(s),
-            r = o.change(n),
-            a = this.f_0(o.volume(this._context), r, s),
+            r = stdLib.change(n),
+            a = this.f_0(stdLib.volume(this._context), r, s),
             l = this._context.new_var(a),
-            c = o.sum(l, i, this._context),
-            h = this.f_1(o.volume(this._context), r, s),
+            c = stdLib.sum(l, i, this._context),
+            h = this.f_1(stdLib.volume(this._context), r, s),
             d = this._context.new_var(h),
-            u = o.sum(d, i, this._context);
-          return [o.rsi(c, u)]
+            u = stdLib.sum(d, i, this._context);
+          return [stdLib.rsi(c, u)]
         }
       }
     }, {
@@ -5496,7 +5530,7 @@
       },
       constructor: function() {
         this.init = function(e, t) {
-          this._context = e, "" !== t(0) && this._context.new_sym(t(0), o.period(this._context))
+          this._context = e, "" !== t(0) && this._context.new_sym(t(0), stdLib.period(this._context))
         }, this.main = function(e, t) {
           this._context = e, this._input = t;
           var i = this._context.new_var(this._context.symbol.time),
@@ -5512,9 +5546,9 @@
             s = this._context.new_var(h).adopt(c, i, 1), this._context.select_sym(0)
           }
           var d, u = this._context.new_var(s),
-            _ = o.sma(u, n, this._context),
+            _ = stdLib.sma(u, n, this._context),
             p = this._context.new_var(_);
-          return "EMA" === a ? d = o.ema(p, l, this._context) : "WMA" === a ? d = o.wma(p, l, this._context) : "SMA" === a && (d = o.sma(p, l, this._context)), [{
+          return "EMA" === a ? d = stdLib.ema(p, l, this._context) : "WMA" === a ? d = stdLib.wma(p, l, this._context) : "SMA" === a && (d = stdLib.sma(p, l, this._context)), [{
             value: _,
             offset: r
           }, {
@@ -5633,8 +5667,8 @@
       constructor: function() {
         this.main = function(e, t) {
           this._context = e, this._input = t;
-          var i = o.high(this._context),
-            s = o.low(this._context),
+          var i = stdLib.high(this._context),
+            s = stdLib.low(this._context),
             n = this._input(0),
             r = this._input(1),
             a = this._input(2),
@@ -5642,10 +5676,10 @@
             c = this._context.new_var(i),
             h = this._context.new_var(s);
           return [{
-            value: o.sma(c, n, this._context),
+            value: stdLib.sma(c, n, this._context),
             offset: a
           }, {
-            value: o.sma(h, r, this._context),
+            value: stdLib.sma(h, r, this._context),
             offset: l
           }]
         }
@@ -5839,10 +5873,10 @@
           return e - t
         }, this.f_1 = function(e) {
           var t = e > 0 ? 1 : 3,
-            i = o.change(this._context.new_var(e));
-          return t - (o.le(i, 0) ? 0 : 1)
+            i = stdLib.change(this._context.new_var(e));
+          return t - (stdLib.le(i, 0) ? 0 : 1)
         }, this.init = function(e, t) {
-          this._context = e, "" !== t(0) && this._context.new_sym(t(0), o.period(this._context))
+          this._context = e, "" !== t(0) && this._context.new_sym(t(0), stdLib.period(this._context))
         }, this.main = function(e, t) {
           this._context = e, this._input = t;
           var i = this._context.new_var(this._context.symbol.time),
@@ -5859,10 +5893,10 @@
             s = this._context.new_var(d).adopt(h, i, 0), this._context.select_sym(0)
           }
           var u, _, p = this._context.new_var(s);
-          "EMA" === l ? u = o.ema(p, n, this._context) : "WMA" === l ? u = o.wma(p, n, this._context) : "SMA" === l && (u = o.sma(p, n, this._context)), "EMA" === l ? _ = o.ema(p, r, this._context) : "WMA" === l ? _ = o.wma(p, r, this._context) : "SMA" === l && (_ = o.sma(p, r, this._context));
+          "EMA" === l ? u = stdLib.ema(p, n, this._context) : "WMA" === l ? u = stdLib.wma(p, n, this._context) : "SMA" === l && (u = stdLib.sma(p, n, this._context)), "EMA" === l ? _ = stdLib.ema(p, r, this._context) : "WMA" === l ? _ = stdLib.wma(p, r, this._context) : "SMA" === l && (_ = stdLib.sma(p, r, this._context));
           var m, g = this.f_0(u, _),
             f = this._context.new_var(g);
-          "EMA" === c ? m = o.ema(f, a, this._context) : "WMA" === c ? m = o.wma(f, a, this._context) : "SMA" === c && (m = o.sma(f, a, this._context));
+          "EMA" === c ? m = stdLib.ema(f, a, this._context) : "WMA" === c ? m = stdLib.wma(f, a, this._context) : "SMA" === c && (m = stdLib.sma(f, a, this._context));
           var y = this.f_0(g, m);
           return [y, g, m, this.f_1(y)]
         }
@@ -5977,9 +6011,9 @@
             a = this._input(4);
           this._context.setMinimumAdditionalDepth(s + a);
           var l, c = this._context.new_var(i),
-            h = o.ema(c, s, this._context),
+            h = stdLib.ema(c, s, this._context),
             d = this._context.new_var(h);
-          return "EMA" === r ? l = o.ema(d, a, this._context) : "WMA" === r ? l = o.wma(d, a, this._context) : "SMA" === r && (l = o.sma(d, a, this._context)), [{
+          return "EMA" === r ? l = stdLib.ema(d, a, this._context) : "WMA" === r ? l = stdLib.wma(d, a, this._context) : "SMA" === r && (l = stdLib.sma(d, a, this._context)), [{
             value: h,
             offset: n
           }, {
@@ -6063,7 +6097,7 @@
             n = this._input(2),
             r = this._context.new_var(i);
           return [{
-            value: o.wma(r, s, this._context),
+            value: stdLib.wma(r, s, this._context),
             offset: n
           }]
         }
@@ -6158,19 +6192,19 @@
       },
       constructor: function() {
         this.init = function(e, t) {
-          this._context = e, "" !== t(0) && this._context.new_sym(t(0), o.period(this._context))
+          this._context = e, "" !== t(0) && this._context.new_sym(t(0), stdLib.period(this._context))
         }, this.main = function(e, t) {
           this._context = e, this._input = t;
-          var i = this._context.new_var(o.time(this._context)),
-            s = o.close(this._context);
+          var i = this._context.new_var(stdLib.time(this._context)),
+            s = stdLib.close(this._context);
           if ("" !== this._input(0)) {
             this._context.select_sym(1);
-            var n = this._context.new_var(o.time(this._context)),
-              r = o.close(this._context);
+            var n = this._context.new_var(stdLib.time(this._context)),
+              r = stdLib.close(this._context);
             s = this._context.new_var(r).adopt(n, i, 1), this._context.select_sym(0)
           }
           var a, l, c = this._context.new_var(s);
-          return "Exponential" === this._input(2) ? (a = o.ema(c, this._input(1), this._context), l = o.ema(c, this._input(2), this._context)) : "Weighted" === this._input(2) ? (a = o.wma(c, this._input(1), this._context), l = o.wma(c, this._input(2), this._context)) : (a = o.sma(c, this._input(1), this._context), l = o.sma(c, this._input(2), this._context)), [a, l]
+          return "Exponential" === this._input(2) ? (a = stdLib.ema(c, this._input(1), this._context), l = stdLib.ema(c, this._input(2), this._context)) : "Weighted" === this._input(2) ? (a = stdLib.wma(c, this._input(1), this._context), l = stdLib.wma(c, this._input(2), this._context)) : (a = stdLib.sma(c, this._input(1), this._context), l = stdLib.sma(c, this._input(2), this._context)), [a, l]
         }
       }
     }, {
@@ -6289,19 +6323,19 @@
       },
       constructor: function() {
         this.init = function(e, t) {
-          this._context = e, "" !== t(0) && this._context.new_sym(t(0), o.period(this._context))
+          this._context = e, "" !== t(0) && this._context.new_sym(t(0), stdLib.period(this._context))
         }, this.main = function(e, t) {
           this._context = e, this._input = t;
           var i = this._context.new_var(this._context.symbol.time),
-            s = o.close(this._context);
+            s = stdLib.close(this._context);
           if ("" !== this._input(0)) {
             this._context.select_sym(1);
             var n = this._context.new_var(this._context.symbol.time),
-              r = o.close(this._context);
+              r = stdLib.close(this._context);
             s = this._context.new_var(r).adopt(n, i, 1), this._context.select_sym(0)
           }
           var a, l, c, h = this._context.new_var(s);
-          return "Exponential" === this._input(4) ? (a = o.ema(h, this._input(1), this._context), l = o.ema(h, this._input(2), this._context), c = o.ema(h, this._input(3), this._context)) : "Weighted" === this._input(4) ? (a = o.wma(h, this._input(1), this._context), l = o.wma(h, this._input(2), this._context), c = o.wma(h, this._input(3), this._context)) : (a = o.sma(h, this._input(1), this._context), l = o.sma(h, this._input(2), this._context), c = o.sma(h, this._input(3), this._context)), [a, l, c]
+          return "Exponential" === this._input(4) ? (a = stdLib.ema(h, this._input(1), this._context), l = stdLib.ema(h, this._input(2), this._context), c = stdLib.ema(h, this._input(3), this._context)) : "Weighted" === this._input(4) ? (a = stdLib.wma(h, this._input(1), this._context), l = stdLib.wma(h, this._input(2), this._context), c = stdLib.wma(h, this._input(3), this._context)) : (a = stdLib.sma(h, this._input(1), this._context), l = stdLib.sma(h, this._input(2), this._context), c = stdLib.sma(h, this._input(3), this._context)), [a, l, c]
         }
       }
     }, {
@@ -6361,15 +6395,15 @@
           var i = this.periods,
             s = this._context.new_var(),
             n = e.get(),
-            r = o.stdev(t, i, this._context),
-            a = o.log(n / e.get(i)) / (r * Math.sqrt(i)),
+            r = stdLib.stdev(t, i, this._context),
+            a = stdLib.log(n / e.get(i)) / (r * Math.sqrt(i)),
             l = .1 * Math.abs(a),
             c = (n - s.get(1)) * l + s.get(1);
           return s.set(isNaN(c) ? n : c), c
         }, this.main = function(e, t) {
           this._context = e, this._input = t;
-          var i = this._context.new_var(o.close(this._context)),
-            s = this._context.new_var(o.log(i.get() / i.get(1)));
+          var i = this._context.new_var(stdLib.close(this._context)),
+            s = this._context.new_var(stdLib.log(i.get() / i.get(1)));
           return [this.ama(i, s)]
         }
       }
@@ -6436,7 +6470,7 @@
           return i /= this.hmaFactorsSum
         }, this.main = function(e, t) {
           this._context = e, this._input = t;
-          var i = this._context.new_var(o.close(this._context));
+          var i = this._context.new_var(stdLib.close(this._context));
           return [this.hma(i)]
         }
       }
@@ -6628,19 +6662,19 @@
       },
       constructor: function() {
         this.init = function(e, t) {
-          this._context = e, "" !== t(0) && this._context.new_sym(t(0), o.period(this._context))
+          this._context = e, "" !== t(0) && this._context.new_sym(t(0), stdLib.period(this._context))
         }, this.main = function(e, t) {
           this._context = e, this._input = t;
           var i = this._context.new_var(this._context.symbol.time),
-            s = o.close(this._context);
+            s = stdLib.close(this._context);
           if ("" !== this._input(0)) {
             this._context.select_sym(1);
             var n = this._context.new_var(this._context.symbol.time),
-              r = o.close(this._context);
+              r = stdLib.close(this._context);
             s = this._context.new_var(r).adopt(n, i, 1), this._context.select_sym(0)
           }
           var a, l, c, h, d, u, _ = this._context.new_var(s);
-          return "Exponential" === this._input(7) ? (a = o.ema(_, this._input(1), this._context), l = o.ema(_, this._input(2), this._context), c = o.ema(_, this._input(3), this._context), h = o.ema(_, this._input(4), this._context), d = o.ema(_, this._input(5), this._context), u = o.ema(_, this._input(6), this._context)) : "Weighted" === this._input(7) ? (a = o.wma(_, this._input(1), this._context), l = o.wma(_, this._input(2), this._context), c = o.wma(_, this._input(3), this._context), h = o.wma(_, this._input(4), this._context), d = o.wma(_, this._input(5), this._context), u = o.wma(_, this._input(6), this._context)) : (a = o.sma(_, this._input(1), this._context), l = o.sma(_, this._input(2), this._context), c = o.sma(_, this._input(3), this._context), h = o.sma(_, this._input(4), this._context), d = o.sma(_, this._input(5), this._context), u = o.sma(_, this._input(6), this._context)), [a, l, c, h, d, u]
+          return "Exponential" === this._input(7) ? (a = stdLib.ema(_, this._input(1), this._context), l = stdLib.ema(_, this._input(2), this._context), c = stdLib.ema(_, this._input(3), this._context), h = stdLib.ema(_, this._input(4), this._context), d = stdLib.ema(_, this._input(5), this._context), u = stdLib.ema(_, this._input(6), this._context)) : "Weighted" === this._input(7) ? (a = stdLib.wma(_, this._input(1), this._context), l = stdLib.wma(_, this._input(2), this._context), c = stdLib.wma(_, this._input(3), this._context), h = stdLib.wma(_, this._input(4), this._context), d = stdLib.wma(_, this._input(5), this._context), u = stdLib.wma(_, this._input(6), this._context)) : (a = stdLib.sma(_, this._input(1), this._context), l = stdLib.sma(_, this._input(2), this._context), c = stdLib.sma(_, this._input(3), this._context), h = stdLib.sma(_, this._input(4), this._context), d = stdLib.sma(_, this._input(5), this._context), u = stdLib.sma(_, this._input(6), this._context)), [a, l, c, h, d, u]
         }
       }
     }, {
@@ -6697,8 +6731,8 @@
           this._context = e, this._input = t, this.rollingPeriod = this._input(0)
         }, this.main = function(e, t) {
           this._context = e, this._input = t;
-          var i, s = o.close(this._context);
-          return i = s > this._context.new_var(s).get(1) ? 1 : 0, [100 * o.sma(this._context.new_var(i), this.rollingPeriod, this._context)]
+          var i, s = stdLib.close(this._context);
+          return i = s > this._context.new_var(s).get(1) ? 1 : 0, [100 * stdLib.sma(this._context.new_var(i), this.rollingPeriod, this._context)]
         }
       }
     }, {
@@ -6746,13 +6780,13 @@
       },
       constructor: function() {
         this.f_0 = function(e, t, i) {
-          return o.gt(e, 0) ? t : o.lt(i, 0) ? -t : 0 * t
+          return stdLib.gt(e, 0) ? t : stdLib.lt(i, 0) ? -t : 0 * t
         }, this.main = function(e, t) {
           this._context = e, this._input = t;
-          var i = o.close(this._context),
+          var i = stdLib.close(this._context),
             s = this._context.new_var(i),
-            n = o.change(s);
-          return [this.f_0(n, o.volume(this._context), n)]
+            n = stdLib.change(s);
+          return [this.f_0(n, stdLib.volume(this._context), n)]
         }
       }
     }, {
@@ -6834,19 +6868,19 @@
       },
       constructor: function() {
         this.f_0 = function(e, t, i) {
-          return o.gt(e, 0) ? t : o.lt(i, 0) ? -t : 0 * t
+          return stdLib.gt(e, 0) ? t : stdLib.lt(i, 0) ? -t : 0 * t
         }, this.main = function(e, t) {
           this._context = e, this._input = t;
           var i = this._input(0),
             s = this._input(1),
-            n = o.close(this._context),
+            n = stdLib.close(this._context),
             r = this._context.new_var(n),
-            a = o.change(r),
-            l = this.f_0(a, o.volume(this._context), a),
-            c = o.cum(l, this._context);
+            a = stdLib.change(r),
+            l = this.f_0(a, stdLib.volume(this._context), a),
+            c = stdLib.cum(l, this._context);
           this._context.setMinimumAdditionalDepth(s);
           var h, d = this._context.new_var(c);
-          return "EMA" === i ? h = o.ema(d, s, this._context) : "WMA" === i ? h = o.wma(d, s, this._context) : "SMA" === i && (h = o.sma(d, s, this._context)), [c, h]
+          return "EMA" === i ? h = stdLib.ema(d, s, this._context) : "WMA" === i ? h = stdLib.wma(d, s, this._context) : "SMA" === i && (h = stdLib.sma(d, s, this._context)), [c, h]
         }
       }
     }, {
@@ -6927,10 +6961,10 @@
       },
       constructor: function() {
         this.init = function(e, t) {
-          this._context = e, "" !== t(0) && this._context.new_sym(t(0), o.period(this._context))
+          this._context = e, "" !== t(0) && this._context.new_sym(t(0), stdLib.period(this._context))
         }, this.main = function(e, t) {
           this._context = e, this._input = t;
-          const i = () => o.sar(this._input(1), this._input(2), this._input(3), this._context);
+          const i = () => stdLib.sar(this._input(1), this._input(2), this._input(3), this._context);
           if ("" === this._input(0)) return [i()];
           this._context.select_sym(0);
           const s = this._context.new_var(this._context.symbol.time);
@@ -7036,14 +7070,14 @@
       constructor: function() {
         this.main = function(e, t) {
           this._context = e, this._input = t;
-          var i = o.high(this._context),
+          var i = stdLib.high(this._context),
             s = this._context.new_var(i),
-            n = o.low(this._context),
+            n = stdLib.low(this._context),
             r = this._context.new_var(n),
             a = this._input(0),
             l = this._input(1),
-            c = o.highest(s, a, this._context),
-            h = o.lowest(r, a, this._context);
+            c = stdLib.highest(s, a, this._context),
+            h = stdLib.lowest(r, a, this._context);
           return [{
             value: c,
             offset: l
@@ -7051,7 +7085,7 @@
             value: h,
             offset: l
           }, {
-            value: o.avg(c, h),
+            value: stdLib.avg(c, h),
             offset: l
           }]
         }
@@ -7122,13 +7156,13 @@
           return (e - t) / t * 100
         }, this.main = function(e, t) {
           this._context = e, this._input = t;
-          var i = o.close(this._context),
+          var i = stdLib.close(this._context),
             s = this._input(0),
             n = this._input(1),
             r = this._context.new_var(i),
-            a = o.sma(r, s, this._context),
+            a = stdLib.sma(r, s, this._context),
             l = this._context.new_var(i),
-            c = o.sma(l, n, this._context);
+            c = stdLib.sma(l, n, this._context);
           return [this.f_0(a, c)]
         }
       }
@@ -7178,8 +7212,8 @@
       },
       constructor: function() {
         this.f_0 = function() {
-          var e = this._context.new_var(o.close(this._context));
-          return [o.cum(o.change(e) / e.get(1) * o.volume(this._context), this._context)]
+          var e = this._context.new_var(stdLib.close(this._context));
+          return [stdLib.cum(stdLib.change(e) / e.get(1) * stdLib.volume(this._context), this._context)]
         }, this.main = function(e, t) {
           return this._context = e,
             this._input = t, [this.f_0()[0]]
@@ -7261,7 +7295,7 @@
             r = 0;
           for (let t = 0; t < i; t++) {
             const i = e.get(t);
-            if (o.na(i)) return o.na();
+            if (stdLib.na(i)) return stdLib.na();
             s < i ? n += 1 : s === i && (r += 1)
           }
           return n + (r - 1) / 2
@@ -7272,7 +7306,7 @@
         }, this.rci = function(e, t) {
           return 1 - 6 * this.rankDifferences(e, t) / (t * (t * t - 1))
         }, this.main = function(e, t) {
-          var i = e.new_var(o.close(e)),
+          var i = e.new_var(stdLib.close(e)),
             s = t(0);
           return [this.rci(i, s)]
         }
@@ -7349,7 +7383,7 @@
       constructor: function() {
         this.main = function(e, t) {
           this._context = e, this._input = t;
-          var i = this._context.new_var(o.close(this._context)),
+          var i = this._context.new_var(stdLib.close(this._context)),
             s = this._input(0);
           return [100 * (i.get(0) - i.get(s)) / i.get(s)]
         }
@@ -7495,29 +7529,29 @@
       },
       constructor: function() {
         this.f_0 = function(e) {
-          return o.max(e, 0)
+          return stdLib.max(e, 0)
         }, this.f_1 = function(e) {
-          return -o.min(e, 0)
+          return -stdLib.min(e, 0)
         }, this.f_2 = function(e, t) {
-          return o.eq(e, 0) ? 100 : o.eq(t, 0) ? 0 : 100 - 100 / (1 + t / e)
+          return stdLib.eq(e, 0) ? 100 : stdLib.eq(t, 0) ? 0 : 100 - 100 / (1 + t / e)
         }, this.main = function(e, t) {
           this._context = e, this._input = t;
-          var i = o.close(this._context),
+          var i = stdLib.close(this._context),
             s = this._input(0),
             n = this._input(1),
             r = this._input(2);
           this._context.setMinimumAdditionalDepth(s + r);
           var a, l = this._context.new_var(i),
-            c = o.change(l),
+            c = stdLib.change(l),
             h = this.f_0(c),
             d = this._context.new_var(h),
-            u = o.rma(d, s, this._context),
+            u = stdLib.rma(d, s, this._context),
             _ = this.f_1(c),
             p = this._context.new_var(_),
-            m = o.rma(p, s, this._context),
+            m = stdLib.rma(p, s, this._context),
             g = this.f_2(m, u),
             f = this._context.new_var(g);
-          return "EMA" === n ? a = o.ema(f, r, this._context) : "WMA" === n ? a = o.wma(f, r, this._context) : "SMA" === n && (a = o.sma(f, r, this._context)), [{
+          return "EMA" === n ? a = stdLib.ema(f, r, this._context) : "WMA" === n ? a = stdLib.wma(f, r, this._context) : "SMA" === n && (a = stdLib.sma(f, r, this._context)), [{
             value: g
           }, {
             value: a
@@ -7602,19 +7636,19 @@
         }, this.main = function(e, t) {
           this._context = e, this._input = t;
           var i = this._input(0),
-            s = this.f_0(o.close(this._context), o.open(this._context)),
+            s = this.f_0(stdLib.close(this._context), stdLib.open(this._context)),
             n = this._context.new_var(s),
-            r = o.swma(n, this._context),
+            r = stdLib.swma(n, this._context),
             a = this._context.new_var(r),
-            l = o.sum(a, i, this._context),
-            c = this.f_0(o.high(this._context), o.low(this._context)),
+            l = stdLib.sum(a, i, this._context),
+            c = this.f_0(stdLib.high(this._context), stdLib.low(this._context)),
             h = this._context.new_var(c),
-            d = o.swma(h, this._context),
+            d = stdLib.swma(h, this._context),
             u = this._context.new_var(d),
-            _ = o.sum(u, i, this._context),
+            _ = stdLib.sum(u, i, this._context),
             p = this.f_1(l, _),
             m = this._context.new_var(p);
-          return [p, o.swma(m, this._context)]
+          return [p, stdLib.swma(m, this._context)]
         }
       }
     }, {
@@ -7711,26 +7745,26 @@
       },
       constructor: function() {
         this.f_0 = function(e, t) {
-          return o.le(e, 0) ? 0 : t
+          return stdLib.le(e, 0) ? 0 : t
         }, this.f_1 = function(e, t) {
-          return o.gt(e, 0) ? 0 : t
+          return stdLib.gt(e, 0) ? 0 : t
         }, this.f_2 = function(e, t) {
           return e / (e + t) * 100
         }, this.main = function(e, t) {
           this._context = e, this._input = t;
           var i = this._input(0);
           this._context.setMinimumAdditionalDepth(i + 12);
-          var s = o.close(this._context),
+          var s = stdLib.close(this._context),
             n = this._context.new_var(s),
-            r = o.stdev(n, i, this._context),
+            r = stdLib.stdev(n, i, this._context),
             a = this._context.new_var(s),
-            l = o.change(a),
+            l = stdLib.change(a),
             c = this.f_0(l, r),
             h = this._context.new_var(c),
-            d = o.ema(h, 14, this._context),
+            d = stdLib.ema(h, 14, this._context),
             u = this.f_1(l, r),
             _ = this._context.new_var(u),
-            p = o.ema(_, 14, this._context);
+            p = stdLib.ema(_, 14, this._context);
           return [this.f_2(d, p)]
         }
       }
@@ -7846,11 +7880,11 @@
             s = this._input(1),
             n = this._input(2);
           this._context.setMinimumAdditionalDepth(i + s + n);
-          var r = o.close(this._context),
+          var r = stdLib.close(this._context),
             a = this._context.new_var(r),
-            l = o.tsi(a, i, s, this._context),
+            l = stdLib.tsi(a, i, s, this._context),
             c = this._context.new_var(l),
-            h = o.ema(c, n, this._context);
+            h = stdLib.ema(c, n, this._context);
           return [l, h, this.f_0(l, h)]
         }
       }
@@ -7918,7 +7952,7 @@
         this.f_0 = function() {
           var e = this._input(0),
             t = o[this._input(1)](this._context);
-          return [o.smma(t, e, this._context)]
+          return [stdLib.smma(t, e, this._context)]
         }, this.main = function(e, t) {
           return this._context = e, this._input = t, this.f_0()
         }
@@ -7981,8 +8015,8 @@
           this._context = e, this._input = t;
           var i = this._input(0),
             s = this._input(1),
-            n = this._context.new_var(o.close(this._context));
-          return [o.stdev(n, i, this._context) * s]
+            n = this._context.new_var(stdLib.close(this._context));
+          return [stdLib.stdev(n, i, this._context) * s]
         }
       }
     }, {
@@ -8118,17 +8152,17 @@
             s = this._input(1),
             n = this._input(2);
           this._context.setMinimumAdditionalDepth(i + s + n);
-          var r = o.close(this._context),
-            a = o.high(this._context),
-            l = o.low(this._context),
+          var r = stdLib.close(this._context),
+            a = stdLib.high(this._context),
+            l = stdLib.low(this._context),
             c = this._context.new_var(r),
             h = this._context.new_var(a),
             d = this._context.new_var(l),
-            u = o.stoch(c, h, d, i, this._context),
+            u = stdLib.stoch(c, h, d, i, this._context),
             _ = this._context.new_var(u),
-            p = o.sma(_, s, this._context),
+            p = stdLib.sma(_, s, this._context),
             m = this._context.new_var(p);
-          return [p, o.sma(m, n, this._context)]
+          return [p, stdLib.sma(m, n, this._context)]
         }
       }
     }, {
@@ -8267,29 +8301,29 @@
       },
       constructor: function() {
         this.f_1 = function(e, t, i) {
-          var s = i.new_var(o.max(o.change(e), 0));
-          return o.rma(s, t, i)
+          var s = i.new_var(stdLib.max(stdLib.change(e), 0));
+          return stdLib.rma(s, t, i)
         }, this.f_2 = function(e, t, i) {
-          var s = i.new_var(-o.min(o.change(e), 0));
-          return o.rma(s, t, i)
+          var s = i.new_var(-stdLib.min(stdLib.change(e), 0));
+          return stdLib.rma(s, t, i)
         }, this.main = function(e, t) {
           this._context = e, this._input = t;
-          var i = o.close(this._context),
+          var i = stdLib.close(this._context),
             s = this._input(0),
             n = this._input(1),
             r = this._input(2),
             a = this._input(3);
           e.setMinimumAdditionalDepth(s + n + r + a);
           var l = this._context.new_var(i),
-            c = o.rsi(this.f_1(l, s, this._context), this.f_2(l, s, this._context)),
+            c = stdLib.rsi(this.f_1(l, s, this._context), this.f_2(l, s, this._context)),
             h = this._context.new_var(c),
             d = this._context.new_var(c),
             u = this._context.new_var(c),
-            _ = o.stoch(h, d, u, n, this._context),
+            _ = stdLib.stoch(h, d, u, n, this._context),
             p = this._context.new_var(_),
-            m = o.sma(p, r, this._context),
+            m = stdLib.sma(p, r, this._context),
             g = this._context.new_var(m);
-          return [m, o.sma(g, a, this._context)]
+          return [m, stdLib.sma(g, a, this._context)]
         }
       }
     }, {
@@ -8361,22 +8395,22 @@
       },
       constructor: function() {
         this.f_0 = function(e) {
-          return o.log(e)
+          return stdLib.log(e)
         }, this.f_1 = function(e) {
           return 1e4 * e
         }, this.main = function(e, t) {
           this._context = e, this._input = t;
           var i = this._input(0);
           e.setMinimumAdditionalDepth(3 * i);
-          var s = this.f_0(o.close(this._context)),
+          var s = this.f_0(stdLib.close(this._context)),
             n = this._context.new_var(s),
-            r = o.ema(n, i, this._context),
+            r = stdLib.ema(n, i, this._context),
             a = this._context.new_var(r),
-            l = o.ema(a, i, this._context),
+            l = stdLib.ema(a, i, this._context),
             c = this._context.new_var(l),
-            h = o.ema(c, i, this._context),
+            h = stdLib.ema(c, i, this._context),
             d = this._context.new_var(h),
-            u = o.change(d);
+            u = stdLib.change(d);
           return [this.f_1(u)]
         }
       }
@@ -8439,13 +8473,13 @@
           this._context = e, this._input = t;
           var i = this._input(0);
           this._context.setMinimumAdditionalDepth(3 * i);
-          var s = o.close(this._context),
+          var s = stdLib.close(this._context),
             n = this._context.new_var(s),
-            r = o.ema(n, i, this._context),
+            r = stdLib.ema(n, i, this._context),
             a = this._context.new_var(r),
-            l = o.ema(a, i, this._context),
+            l = stdLib.ema(a, i, this._context),
             c = this._context.new_var(l),
-            h = o.ema(c, i, this._context);
+            h = stdLib.ema(c, i, this._context);
           return [this.f_0(r, l, h)]
         }
       }
@@ -8558,11 +8592,11 @@
             s = this._input(1),
             n = this._input(2);
           this._context.setMinimumAdditionalDepth(this._input(0) + this._input(1) + this._input(2));
-          var r = o.close(this._context),
+          var r = stdLib.close(this._context),
             a = this._context.new_var(r),
-            l = o.tsi(a, s, i, this._context),
+            l = stdLib.tsi(a, s, i, this._context),
             c = this._context.new_var(l);
-          return [l, o.ema(c, n, this._context)]
+          return [l, stdLib.ema(c, n, this._context)]
         }
       }
     }, {
@@ -8617,7 +8651,7 @@
         this.init = function(e, t) {
           this._context = e, this._input = t, this.period = this._input(0), this.invertedPeriod = 1 / this.period, this.sumX = (this.period - 1) * this.period / 2, this.sumXX = (this.period - 1) * this.period * (2 * this.period - 1) / 6, this.invertedPeriodSumXSumX = this.invertedPeriod * this.sumX * this.sumX
         }, this.trendStrengthIndex = function() {
-          for (var e = this._context.new_var(o.close(this._context)), t = o.sum(e, this.period, this._context), i = 0, s = 0, n = 0; n < this.period; n++) {
+          for (var e = this._context.new_var(stdLib.close(this._context)), t = stdLib.sum(e, this.period, this._context), i = 0, s = 0, n = 0; n < this.period; n++) {
             var r = e.get(n);
             s += (this.period - 1 - n) * r, i += r * r
           }
@@ -8671,7 +8705,7 @@
       },
       constructor: function() {
         this.main = function(e, t) {
-          return this._context = e, this._input = t, [o.hlc3(this._context)]
+          return this._context = e, this._input = t, [stdLib.hlc3(this._context)]
         }
       }
     }, {
@@ -8748,16 +8782,16 @@
         this.f_0 = function(e, t, i) {
           var s = this._context.new_var(e),
             n = this._context.new_var(t);
-          return [o.sum(s, i, this._context) / o.sum(n, i, this._context)]
+          return [stdLib.sum(s, i, this._context) / stdLib.sum(n, i, this._context)]
         }, this.f_1 = function() {
           var e = this._input(0),
             t = this._input(1),
             i = this._input(2),
-            s = this._context.new_var(o.close(this._context)),
-            n = o.max(o.high(this._context), s.get(1)),
-            r = this._context.new_var(o.close(this._context)),
-            a = o.min(o.low(this._context), r.get(1)),
-            l = o.close(this._context) - a,
+            s = this._context.new_var(stdLib.close(this._context)),
+            n = stdLib.max(stdLib.high(this._context), s.get(1)),
+            r = this._context.new_var(stdLib.close(this._context)),
+            a = stdLib.min(stdLib.low(this._context), r.get(1)),
+            l = stdLib.close(this._context) - a,
             c = n - a,
             h = this.f_0(l, c, e),
             d = this.f_0(l, c, t),
@@ -8830,18 +8864,18 @@
           this._context = e, this._input = t, this.period = this._input(0), this.daysPerYear = this._input(1)
         }, this.stdev = function(e, t, i) {
           var s = this.variance(e, t, i);
-          return o.sqrt(s)
+          return stdLib.sqrt(s)
         }, this.variance = function(e, t, i) {
-          var s = o.sma(e, t, i);
+          var s = stdLib.sma(e, t, i);
           return this.variance2(e, s, t)
         }, this.variance2 = function(e, t, i) {
           var s, o, n = 0;
           for (s = 0; s < i; s++) n += (o = e.get(s) - t) * o;
           return n / (i - 1)
         }, this.standardHistVol = function() {
-          var e = this._context.new_var(o.close(this._context)),
-            t = this._context.new_var(o.log(e.get() / e.get(1)));
-          return 100 * this.stdev(t, this.period, this._context) * o.sqrt(this.daysPerYear)
+          var e = this._context.new_var(stdLib.close(this._context)),
+            t = this._context.new_var(stdLib.log(e.get() / e.get(1)));
+          return 100 * this.stdev(t, this.period, this._context) * stdLib.sqrt(this.daysPerYear)
         }, this.main = function(e, t) {
           return this._context = e, this._input = t, [this.standardHistVol()]
         }
@@ -8906,7 +8940,7 @@
           this._context = e, this._input = t, this.period = this._input(0), this.daysPerYear = this._input(1)
         }, this.volatliityZTCTC = function() {
           this._context.setMinimumAdditionalDepth(this._input(0) + 1);
-          for (var e = this._context.new_var(o.close(this._context)), t = this._context.new_var(e.symbol.time), i = Math.sqrt((t.get(0) - t.get(1)) / 864e5 / this.daysPerYear), s = Math.log(o.close(this._context) / e.get(1)), n = this._context.new_var(s / i), r = this._context.new_var(Math.pow(n, 2)), a = 0, l = 0; l < this.period; l++) a += r.get(l);
+          for (var e = this._context.new_var(stdLib.close(this._context)), t = this._context.new_var(e.symbol.time), i = Math.sqrt((t.get(0) - t.get(1)) / 864e5 / this.daysPerYear), s = Math.log(stdLib.close(this._context) / e.get(1)), n = this._context.new_var(s / i), r = this._context.new_var(Math.pow(n, 2)), a = 0, l = 0; l < this.period; l++) a += r.get(l);
           return 100 * Math.sqrt(a / this.period)
         }, this.main = function(e, t) {
           return this._context = e, this._input = t, [this.volatliityZTCTC()]
@@ -8978,17 +9012,17 @@
         }, this.square = function(e) {
           return e * e
         }, this.volatilityOHLC = function() {
-          var e = this._context.new_var(Math.log(o.open(this._context))),
-            t = this._context.new_var(Math.log(o.high(this._context))),
-            i = this._context.new_var(Math.log(o.low(this._context))),
-            s = this._context.new_var(Math.log(o.close(this._context))),
-            n = this._context.new_var(o.close(this._context)),
+          var e = this._context.new_var(Math.log(stdLib.open(this._context))),
+            t = this._context.new_var(Math.log(stdLib.high(this._context))),
+            i = this._context.new_var(Math.log(stdLib.low(this._context))),
+            s = this._context.new_var(Math.log(stdLib.close(this._context))),
+            n = this._context.new_var(stdLib.close(this._context)),
             r = this._context.new_var(n.symbol.time),
             a = (r.get(0) - r.get(1)) / 1e3,
             l = .5 * this.square(t.get() - i.get());
           l -= (Math.log(4) - 1) * this.square(s.get() - e.get()), this.marketClosedPercentage > 0 && (l = .12 * this.square(e.get() - s.get(1)) / this.marketClosedPercentage + .88 * l / (1 - this.marketClosedPercentage)), l /= a, l *= this.secondsPerYear;
           var c = this._context.new_var(l);
-          return 100 * Math.sqrt(o.sum(c, this.period, this._context) / this.period)
+          return 100 * Math.sqrt(stdLib.sum(c, this.period, this._context) / this.period)
         }, this.main = function(e, t) {
           return this._context = e, this._input = t, [this.volatilityOHLC()]
         }
@@ -9057,24 +9091,24 @@
           this._context = e, this._input = t,
             this.period = this._input(0), this.atrMult = this._input(1), this.maMethod = this._input(2), this.nextsar = null, this.position = null, this.sic = null, this.bars = [], this.count = 0, this.lastSar = null, this._context.setMinimumAdditionalDepth("Exponential" === this.maMethod ? 2 * this.period + 2 : this.period)
         }, this.computeATR = function() {
-          var e = o.high(this._context) - o.low(this._context),
-            t = o.high(this._context) - this.bars[this.bars.length - 2],
-            i = this.bars[this.bars.length - 2] - o.low(this._context);
-          return this.tr = Math.max(e, t, i), "Exponential" === this.maMethod ? this.atr = o.ema(this._context.new_var(this.tr), this.period, this._context) : this.atr = this.tr / this.period + (1 - 1 / this.period) * this.atr, this.atr * this.atrMult
+          var e = stdLib.high(this._context) - stdLib.low(this._context),
+            t = stdLib.high(this._context) - this.bars[this.bars.length - 2],
+            i = this.bars[this.bars.length - 2] - stdLib.low(this._context);
+          return this.tr = Math.max(e, t, i), "Exponential" === this.maMethod ? this.atr = stdLib.ema(this._context.new_var(this.tr), this.period, this._context) : this.atr = this.tr / this.period + (1 - 1 / this.period) * this.atr, this.atr * this.atrMult
         }, this.calculateVolatility = function() {
-          if (o.close(this._context) === this.bars[this.bars.length - 1]) return this.lastSar;
-          if (this.bars.push(o.close(this._context)), 1 === this.count) this.atr = o.high(this._context) - o.low(this._context), this.sic = o.close(this._context);
+          if (stdLib.close(this._context) === this.bars[this.bars.length - 1]) return this.lastSar;
+          if (this.bars.push(stdLib.close(this._context)), 1 === this.count) this.atr = stdLib.high(this._context) - stdLib.low(this._context), this.sic = stdLib.close(this._context);
           else if (this.count < this.period) {
-            var e = o.high(this._context) - o.low(this._context),
-              t = o.high(this._context) - this.bars[this.bars.length - 2],
-              i = this.bars[this.bars.length - 2] - o.low(this._context);
-            this.atr += Math.max(e, t, i), o.close(this._context) > this.sic && (this.sic = o.close(this._context))
+            var e = stdLib.high(this._context) - stdLib.low(this._context),
+              t = stdLib.high(this._context) - this.bars[this.bars.length - 2],
+              i = this.bars[this.bars.length - 2] - stdLib.low(this._context);
+            this.atr += Math.max(e, t, i), stdLib.close(this._context) > this.sic && (this.sic = stdLib.close(this._context))
           } else if (this.count === this.period) {
-            e = o.high(this._context) - o.low(this._context), t = o.high(this._context) - this.bars[this.bars.length - 2], i = this.bars[this.bars.length - 2] - o.low(this._context);
-            this.atr += Math.max(e, t, i), this.atr *= 1 / this.period, o.close(this._context) > this.sic && (this.sic = o.close(this._context)), this.position = "LONG", this.nextsar = this.sic - this.atr * this.atrMult
+            e = stdLib.high(this._context) - stdLib.low(this._context), t = stdLib.high(this._context) - this.bars[this.bars.length - 2], i = this.bars[this.bars.length - 2] - stdLib.low(this._context);
+            this.atr += Math.max(e, t, i), this.atr *= 1 / this.period, stdLib.close(this._context) > this.sic && (this.sic = stdLib.close(this._context)), this.position = "LONG", this.nextsar = this.sic - this.atr * this.atrMult
           } else {
             var s = this.nextsar;
-            "LONG" === this.position ? o.close(this._context) < s ? (this.position = "SHORT", this.sic = o.close(this._context), this.nextsar = this.sic + this.computeATR()) : (this.position = "LONG", this.sic = Math.max(o.close(this._context), this.sic), this.nextsar = this.sic - this.computeATR()) : "SHORT" === this.position && (o.close(this._context) > s ? (this.position = "LONG", this.sic = o.close(this._context), this.nextsar = this.sic - this.computeATR()) : (this.position = "SHORT", this.sic = Math.min(o.close(this._context), this.sic), this.nextsar = this.sic + this.computeATR())), this.lastSar = s
+            "LONG" === this.position ? stdLib.close(this._context) < s ? (this.position = "SHORT", this.sic = stdLib.close(this._context), this.nextsar = this.sic + this.computeATR()) : (this.position = "LONG", this.sic = Math.max(stdLib.close(this._context), this.sic), this.nextsar = this.sic - this.computeATR()) : "SHORT" === this.position && (stdLib.close(this._context) > s ? (this.position = "LONG", this.sic = stdLib.close(this._context), this.nextsar = this.sic - this.computeATR()) : (this.position = "SHORT", this.sic = Math.min(stdLib.close(this._context), this.sic), this.nextsar = this.sic + this.computeATR())), this.lastSar = s
           }
           return this.count++, s
         }, this.main = function(e, t) {
@@ -9147,27 +9181,27 @@
           switch (t) {
             case "Week":
               return function(t, i) {
-                return o.weekofyear(e, t) !== o.weekofyear(e, i) || o.year(e, t) !== o.year(e, i)
+                return stdLib.weekofyear(e, t) !== stdLib.weekofyear(e, i) || stdLib.year(e, t) !== stdLib.year(e, i)
               };
             case "Month":
               return function(t, i) {
-                return o.month(e, t) !== o.month(e, i) || o.year(e, t) !== o.year(e, i)
+                return stdLib.month(e, t) !== stdLib.month(e, i) || stdLib.year(e, t) !== stdLib.year(e, i)
               };
             case "Quarter":
               return function(t, i) {
-                return Math.floor(o.month(e, t) / 3) !== Math.floor(o.month(e, i) / 3) || o.year(e, t) !== o.year(e, i)
+                return Math.floor(stdLib.month(e, t) / 3) !== Math.floor(stdLib.month(e, i) / 3) || stdLib.year(e, t) !== stdLib.year(e, i)
               };
             case "Year":
               return function(t, i) {
-                return o.year(e, t) !== o.year(e, i)
+                return stdLib.year(e, t) !== stdLib.year(e, i)
               };
             case "Decade":
               return function(t, i) {
-                return Math.floor(o.year(e, t) / 10) !== Math.floor(o.year(e, i) / 10)
+                return Math.floor(stdLib.year(e, t) / 10) !== Math.floor(stdLib.year(e, i) / 10)
               };
             case "Century":
               return function(t, i) {
-                return Math.floor(o.year(e, t) / 100) !== Math.floor(o.year(e, i) / 100)
+                return Math.floor(stdLib.year(e, t) / 100) !== Math.floor(stdLib.year(e, i) / 100)
               };
             default:
               return e => this._isFirstBarInSession(e)
@@ -9182,16 +9216,16 @@
           var s = e.new_var(),
             n = e.new_var(),
             r = e.new_var();
-          const a = o.time(this._context),
+          const a = stdLib.time(this._context),
             l = this._context.new_unlimited_var(a).get(1);
           if (a) {
             if (null === this._isFirstBarInSession) {
-              const t = o.createNthBarInSessionCheck(e);
+              const t = stdLib.createNthBarInSessionCheck(e);
               this._isFirstBarInSession = e => t(e, 0)
             }
             this._anchorChecker(a, l) && (this.f_1(s), this.f_1(n), r.set(a))
           }
-          return s.set(o.nz(s.get(1)) + o[i](this._context) * o.volume(this._context)), n.set(o.nz(n.get(1)) + o.volume(this._context)), o.na(r.get(0)) ? (e.symbol.isLastBar && o.error("To calculate the VWAP indicator, more data is needed. Zoom out or scroll left to load more historical data.", "VWAP is waiting for more data"), [NaN]) : [s.get(0) / n.get(0)]
+          return s.set(stdLib.nz(s.get(1)) + o[i](this._context) * stdLib.volume(this._context)), n.set(stdLib.nz(n.get(1)) + stdLib.volume(this._context)), stdLib.na(r.get(0)) ? (e.symbol.isLastBar && stdLib.error("To calculate the VWAP indicator, more data is needed. Zoom out or scroll left to load more historical data.", "VWAP is waiting for more data"), [NaN]) : [s.get(0) / n.get(0)]
         }
       }
     }, {
@@ -9249,10 +9283,10 @@
       constructor: function() {
         this.main = function(e, t) {
           this._context = e, this._input = t;
-          var i = o.close(this._context),
+          var i = stdLib.close(this._context),
             s = this._input(0),
             n = this._context.new_var(i);
-          return [o.vwma(n, s, this._context)]
+          return [stdLib.vwma(n, s, this._context)]
         }
       }
     }, {
@@ -9337,11 +9371,11 @@
           this._context = e, this._input = t;
           var i = this._input(0),
             s = this._input(1),
-            n = o.volume(this._context),
+            n = stdLib.volume(this._context),
             r = this._context.new_var(n),
-            a = o.ema(r, i, this._context),
+            a = stdLib.ema(r, i, this._context),
             l = this._context.new_var(n),
-            c = o.ema(l, s, this._context);
+            c = stdLib.ema(l, s, this._context);
           return [this.f_0(a, c)]
         }
       }
@@ -9420,14 +9454,14 @@
       constructor: function() {
         this.f_0 = function() {
           var e = this._input(0),
-            t = this._context.new_var(o.low(this._context)),
-            i = this._context.new_var(o.abs(o.high(this._context) - t.get(1))),
-            s = o.sum(i, e, this._context),
-            n = this._context.new_var(o.high(this._context)),
-            r = this._context.new_var(o.abs(o.low(this._context) - n.get(1))),
-            a = o.sum(r, e, this._context),
-            l = this._context.new_var(o.atr(1, this._context)),
-            c = o.sum(l, e, this._context);
+            t = this._context.new_var(stdLib.low(this._context)),
+            i = this._context.new_var(stdLib.abs(stdLib.high(this._context) - t.get(1))),
+            s = stdLib.sum(i, e, this._context),
+            n = this._context.new_var(stdLib.high(this._context)),
+            r = this._context.new_var(stdLib.abs(stdLib.low(this._context) - n.get(1))),
+            a = stdLib.sum(r, e, this._context),
+            l = this._context.new_var(stdLib.atr(1, this._context)),
+            c = stdLib.sum(l, e, this._context);
           return [s / c, a / c]
         }, this.main = function(e, t) {
           return this._context = e, this._input = t, this.f_0()
@@ -9531,13 +9565,13 @@
         }, this.main = function(e, t) {
           this._context = e, this._input = t;
           var i = this._input(0),
-            s = o.high(this._context),
+            s = stdLib.high(this._context),
             n = this._context.new_var(s),
-            r = o.highest(n, i, this._context),
-            a = o.low(this._context),
+            r = stdLib.highest(n, i, this._context),
+            a = stdLib.low(this._context),
             l = this._context.new_var(a),
-            c = o.lowest(l, i, this._context);
-          return [this.f_0(o.close(this._context), r, c)]
+            c = stdLib.lowest(l, i, this._context);
+          return [this.f_0(stdLib.close(this._context), r, c)]
         }
       }
     }, {
@@ -9681,15 +9715,15 @@
             r = this._input(3),
             a = this._input(4),
             l = this._input(5),
-            c = o.hl2(this._context);
+            c = stdLib.hl2(this._context);
           return [{
-            value: o.smma(c, i, this._context),
+            value: stdLib.smma(c, i, this._context),
             offset: r
           }, {
-            value: o.smma(c, s, this._context),
+            value: stdLib.smma(c, s, this._context),
             offset: a
           }, {
-            value: o.smma(c, n, this._context),
+            value: stdLib.smma(c, n, this._context),
             offset: l
           }]
         }
@@ -9760,20 +9794,20 @@
       },
       constructor: function() {
         this.f_0 = function() {
-          for (var e = this._input(0), t = this._context.new_var(o.high(this._context)), i = !0, s = !0, n = !0, r = !0, a = !0, l = !0, c = 1; c <= e; c++) i = o.and(i, o.lt(t.get(e - c), t.get(e))), s = o.and(s, o.lt(t.get(e + c), t.get(e))), n = o.and(n, o.and(o.le(t.get(e + 1), t.get(e)), o.lt(t.get(e + c + 1), t.get(e)))),
-            r = o.and(r, o.and(o.le(t.get(e + 1), t.get(e)), o.and(o.le(t.get(e + 2), t.get(e)), o.lt(t.get(e + c + 2), t.get(e))))), a = o.and(a, o.and(o.le(t.get(e + 1), t.get(e)), o.and(o.le(t.get(e + 2), t.get(e)), o.and(o.le(t.get(e + 3), t.get(e)), o.lt(t.get(e + c + 3), t.get(e)))))), l = o.and(l, o.and(o.le(t.get(e + 1), t.get(e)), o.and(o.le(t.get(e + 2), t.get(e)), o.and(o.le(t.get(e + 3), t.get(e)), o.and(o.le(t.get(e + 4), t.get(e)), o.lt(t.get(e + c + 4), t.get(e)))))));
-          var h = o.or(s, o.or(n, o.or(r, o.or(a, l)))),
-            d = o.and(i, h),
-            u = this._context.new_var(o.low(this._context)),
+          for (var e = this._input(0), t = this._context.new_var(stdLib.high(this._context)), i = !0, s = !0, n = !0, r = !0, a = !0, l = !0, c = 1; c <= e; c++) i = stdLib.and(i, stdLib.lt(t.get(e - c), t.get(e))), s = stdLib.and(s, stdLib.lt(t.get(e + c), t.get(e))), n = stdLib.and(n, stdLib.and(stdLib.le(t.get(e + 1), t.get(e)), stdLib.lt(t.get(e + c + 1), t.get(e)))),
+            r = stdLib.and(r, stdLib.and(stdLib.le(t.get(e + 1), t.get(e)), stdLib.and(stdLib.le(t.get(e + 2), t.get(e)), stdLib.lt(t.get(e + c + 2), t.get(e))))), a = stdLib.and(a, stdLib.and(stdLib.le(t.get(e + 1), t.get(e)), stdLib.and(stdLib.le(t.get(e + 2), t.get(e)), stdLib.and(stdLib.le(t.get(e + 3), t.get(e)), stdLib.lt(t.get(e + c + 3), t.get(e)))))), l = stdLib.and(l, stdLib.and(stdLib.le(t.get(e + 1), t.get(e)), stdLib.and(stdLib.le(t.get(e + 2), t.get(e)), stdLib.and(stdLib.le(t.get(e + 3), t.get(e)), stdLib.and(stdLib.le(t.get(e + 4), t.get(e)), stdLib.lt(t.get(e + c + 4), t.get(e)))))));
+          var h = stdLib.or(s, stdLib.or(n, stdLib.or(r, stdLib.or(a, l)))),
+            d = stdLib.and(i, h),
+            u = this._context.new_var(stdLib.low(this._context)),
             _ = 1,
             p = 1,
             m = 1,
             g = 1,
             f = 1,
             y = 1;
-          for (c = 1; c <= e; c++) _ = o.and(_, o.gt(u.get(e - c), u.get(e))), p = o.and(p, o.gt(u.get(e + c), u.get(e))), m = o.and(m, o.and(o.ge(u.get(e + 1), u.get(e)), o.gt(u.get(e + c + 1), u.get(e)))), g = o.and(g, o.and(o.ge(u.get(e + 1), u.get(e)), o.and(o.ge(u.get(e + 2), u.get(e)), o.gt(u.get(e + c + 2), u.get(e))))), f = o.and(f, o.and(o.ge(u.get(e + 1), u.get(e)), o.and(o.ge(u.get(e + 2), u.get(e)), o.and(o.ge(u.get(e + 3), u.get(e)), o.gt(u.get(e + c + 3), u.get(e)))))), y = o.and(y, o.and(o.ge(u.get(e + 1), u.get(e)), o.and(o.ge(u.get(e + 2), u.get(e)), o.and(o.ge(u.get(e + 3), u.get(e)), o.and(o.ge(u.get(e + 4), u.get(e)), o.gt(u.get(e + c + 4), u.get(e)))))));
-          var v = o.or(p, o.or(m, o.or(g, o.or(f, y))));
-          return [o.and(_, v), d]
+          for (c = 1; c <= e; c++) _ = stdLib.and(_, stdLib.gt(u.get(e - c), u.get(e))), p = stdLib.and(p, stdLib.gt(u.get(e + c), u.get(e))), m = stdLib.and(m, stdLib.and(stdLib.ge(u.get(e + 1), u.get(e)), stdLib.gt(u.get(e + c + 1), u.get(e)))), g = stdLib.and(g, stdLib.and(stdLib.ge(u.get(e + 1), u.get(e)), stdLib.and(stdLib.ge(u.get(e + 2), u.get(e)), stdLib.gt(u.get(e + c + 2), u.get(e))))), f = stdLib.and(f, stdLib.and(stdLib.ge(u.get(e + 1), u.get(e)), stdLib.and(stdLib.ge(u.get(e + 2), u.get(e)), stdLib.and(stdLib.ge(u.get(e + 3), u.get(e)), stdLib.gt(u.get(e + c + 3), u.get(e)))))), y = stdLib.and(y, stdLib.and(stdLib.ge(u.get(e + 1), u.get(e)), stdLib.and(stdLib.ge(u.get(e + 2), u.get(e)), stdLib.and(stdLib.ge(u.get(e + 3), u.get(e)), stdLib.and(stdLib.ge(u.get(e + 4), u.get(e)), stdLib.gt(u.get(e + c + 4), u.get(e)))))));
+          var v = stdLib.or(p, stdLib.or(m, stdLib.or(g, stdLib.or(f, y))));
+          return [stdLib.and(_, v), d]
         }, this.main = function(e, t) {
           this._context = e, this._input = t;
           var i = this.f_0();
@@ -10138,26 +10172,26 @@
       constructor: function() {
         this.main = function(e, t) {
           this._context = e, this._input = t;
-          var i = this._context.new_var(o.close(this._context)),
+          var i = this._context.new_var(stdLib.close(this._context)),
             s = this._input(0),
             n = this._input(1),
             r = this._input(2),
             a = this._input(3),
             l = this._input(4),
             c = this._input(5),
-            h = o.ema(i, s, this._context),
-            d = o.ema(i, n, this._context),
-            u = o.ema(i, r, this._context),
-            _ = o.ema(i, a, this._context),
-            p = o.ema(i, l, this._context),
-            m = o.ema(i, c, this._context),
+            h = stdLib.ema(i, s, this._context),
+            d = stdLib.ema(i, n, this._context),
+            u = stdLib.ema(i, r, this._context),
+            _ = stdLib.ema(i, a, this._context),
+            p = stdLib.ema(i, l, this._context),
+            m = stdLib.ema(i, c, this._context),
             g = this._input(6),
             f = this._input(7),
             y = this._input(8),
             v = this._input(9),
             S = this._input(10),
             b = this._input(11);
-          return [h, d, u, _, p, m, o.ema(i, g, this._context), o.ema(i, f, this._context), o.ema(i, y, this._context), o.ema(i, v, this._context), o.ema(i, S, this._context), o.ema(i, b, this._context)]
+          return [h, d, u, _, p, m, stdLib.ema(i, g, this._context), stdLib.ema(i, f, this._context), stdLib.ema(i, y, this._context), stdLib.ema(i, v, this._context), stdLib.ema(i, S, this._context), stdLib.ema(i, b, this._context)]
         }
       }
     }, {
@@ -10222,20 +10256,20 @@
       },
       constructor: function() {
         this.init = function(e, t) {
-          this._context = e, this._input = t, this._symbolSupports1DResolution = !this._context.symbol.info.supported_resolutions || -1 !== this._context.symbol.info.supported_resolutions.indexOf("1D"), this._symbolSupports1DResolution && "1D" !== o.period(this._context) && this._context.new_sym(this._context.symbol.ticker, "1D")
+          this._context = e, this._input = t, this._symbolSupports1DResolution = !this._context.symbol.infstdLib.supported_resolutions || -1 !== this._context.symbol.infstdLib.supported_resolutions.indexOf("1D"), this._symbolSupports1DResolution && "1D" !== stdLib.period(this._context) && this._context.new_sym(this._context.symbol.ticker, "1D")
         }, this.main = function(e, t) {
-          this._symbolSupports1DResolution || o.error(`Daily bars are not available for ${this._context.symbol.info.name}`), this._context = e, this._input = t, "1D" !== o.period(this._context) && this._context.select_sym(1);
+          this._symbolSupports1DResolution || stdLib.error(`Daily bars are not available for ${this._context.symbol.infstdLib.name}`), this._context = e, this._input = t, "1D" !== stdLib.period(this._context) && this._context.select_sym(1);
           const i = this._input(0),
             s = this._input(1),
-            n = o.time(this._context),
+            n = stdLib.time(this._context),
             r = this._context.new_unlimited_var(n),
             a = this._context.new_unlimited_var(o[i](this._context)),
             l = this._context.new_unlimited_var(o[s](this._context));
           if (r.get(365), !this._context.symbol.isLastBar || !this._context.symbol.isNewBar) return null;
-          const c = o.add_years_considering_dst(this._context.symbol.info.timezone, new Date(n), -1),
+          const c = stdLib.add_years_considering_dst(this._context.symbol.infstdLib.timezone, new Date(n), -1),
             h = r.indexOf(c.getTime()),
-            d = -1 === h ? NaN : o.highest(a, h, this._context),
-            u = -1 === h ? NaN : o.lowest(l, h, this._context);
+            d = -1 === h ? NaN : stdLib.highest(a, h, this._context),
+            u = -1 === h ? NaN : stdLib.lowest(l, h, this._context);
           if (isNaN(d) || isNaN(u)) return {
             nonseries: !0,
             type: "study_graphics",

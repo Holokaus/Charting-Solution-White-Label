@@ -29,3 +29,4 @@
         seriesBarFunction_e[seriesBarFunction_e.InvalidSymbol = 0] = "InvalidSymbol", seriesBarFunction_e[seriesBarFunction_e.ReplayUnsupported = 1] = "ReplayUnsupported", seriesBarFunction_e[seriesBarFunction_e
           .UnsupportedDepth = 2] = "UnsupportedDepth", seriesBarFunction_e[seriesBarFunction_e.UnsupportedIntradyReplay = 3] = "UnsupportedIntradyReplay"
       }(n || (n = {}))
+}

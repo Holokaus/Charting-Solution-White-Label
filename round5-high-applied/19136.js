@@ -223,3 +223,4 @@
         return series_e === t || series_e === this._seriesSource.turnaround() || series_e === `${this._seriesSource.turnaround()}_${t}`
       }
     }
+}

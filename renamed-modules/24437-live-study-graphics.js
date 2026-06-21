@@ -5,25 +5,19 @@
 // Note: Despite module name suggesting WebGL, this handles drawing tool data management
 // Dependencies: 50151, 12217, 48096, 99481, 60661, 58554, 30798, 69866, 82130, 39488
 
-(e, t, i) => {
-  "use strict";
-  
-  // Exported classes
-  i.d(t, {
-    LiveStudyGraphics: () => LiveStudyGraphics
-  });
-  
-  // Import dependencies
-  var nullUtils = i(50151),            // ensureNotNull, assert
-      arrayUtils = i(12217),           // join, mapEntriesGenerator, nestedMapGenerator
-      eventSystem = i(48096),          // Delegate (event emitter)
-      hhistRenderer = i(99481),        // materializeHHist, containsHHistTimePointIndexes
-      horizLine = i(60661),            // materializeHorizLine, containsHorizLineTimePointIndexes
-      vertLine = i(58554),             // materializeVertLine, containsVertLineTimePointIndexes
-      polygon = i(30798),              // materializePolygon, containsPolygonTimePointIndexes
-      background = i(69866),           // materializeBackground, containsBackgroundTimePointIndexes
-      primitiveDefs = i(82130),        // primitiveNames, regularPrimitiveNames, groupedPrimitiveNames, etc.
-      staticGraphics = i(39488);       // StaticStudyGraphics
+"use strict";
+
+// Import dependencies
+const nullUtils = require(50151);            // ensureNotNull, assert
+const arrayUtils = require(12217);           // join, mapEntriesGenerator, nestedMapGenerator
+const eventSystem = require(48096);          // Delegate (event emitter)
+const hhistRenderer = require(99481);        // materializeHHist, containsHHistTimePointIndexes
+const horizLine = require(60661);            // materializeHorizLine, containsHorizLineTimePointIndexes
+const vertLine = require(58554);             // materializeVertLine, containsVertLineTimePointIndexes
+const polygon = require(30798);              // materializePolygon, containsPolygonTimePointIndexes
+const background = require(69866);           // materializeBackground, containsBackgroundTimePointIndexes
+const primitiveDefs = require(82130);        // primitiveNames, regularPrimitiveNames, groupedPrimitiveNames, etc.
+const staticGraphics = require(39488);       // StaticStudyGraphics
   
   // ============================================================================
   // CLASS: LiveStudyGraphics
@@ -679,5 +673,15 @@
       materializeVolumeFootprintPriceLevel,
       containsFootprintPriceLevelTimePointIndexes
     )
-  };
-}
+};
+
+// Exported classes
+module.exports = {
+    LiveStudyGraphics: LiveStudyGraphics,
+    PrimitiveContainer: PrimitiveContainer,
+    PrimitiveFactory: PrimitiveFactory,
+    extractGrouped: extractGrouped,
+    extractRegular: extractRegular,
+    extractNested: extractNested,
+    addPrimitives: addPrimitives
+};

@@ -1,0 +1,5 @@
+# Tier A Modules Requiring Fixes
+# Generated: 2026-05-07T11:49:43.839Z
+# Total: 1 modules
+
+60973,60973-chart-config-defaults.js,Issues: Potential minification pattern detected: /\(\s*e\s*,\s*t\s*,\s*i\s*\)\s*=>/; Potential minification pattern detected: /_[a-z]\b/; Line 2064: Suspicious minified variable assignment: a = c(r[0]),; Line 2111: Suspicious minified variable assignment: e = e.toString();; Line 2118: Suspicious minified variable assignment: a = t.updateStudyInputs(n.id, n.version, "last", r, null);; Line 2119: Suspicious minified variable assignment: n.inputs = a, n = t.updateStudyState(n, n)

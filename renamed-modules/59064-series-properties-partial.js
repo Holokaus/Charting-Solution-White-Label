@@ -76,14 +76,12 @@
  * ============================================================================
  */
 
-59064: (exports, module, require) => {
-    "use strict";
-    i.d(t, {
-      mainSeriesProperties: () => n
-    });
-    const lineStyleConstants = require(69558),
-      rangeBarStyle = require(22033);
-    const mainSeriesProperties = {
+"use strict";
+
+const lineStyleConstants = require(69558);
+const rangeBarStyle = require(22033);
+
+const mainSeriesProperties = {
       style: 1,
       esdShowDividends: !0,
       esdShowSplits: !0,
@@ -353,7 +351,7 @@
         barColorsOnPrevClose: !1,
         thinBars: !0
       }
-    }
+};
 
 // Export for module system
 module.exports = { mainSeriesProperties };

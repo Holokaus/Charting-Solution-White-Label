@@ -4,26 +4,19 @@
 // Size: 5.9 KB (270 lines beautified)
 // Dependencies: 2624, 10555, 2383, 4539, 58221, 10307, 79268, 4699, 85565, 12217
 
-(e, t, i) => {
-  "use strict";
-  
-  // Exported classes
-  i.d(t, {
-    PaneRendererStepLine: () => PaneRendererStepLine,
-    StepLineDecoration: () => StepLineDecoration
-  });
-  
-  // Import dependencies
-  var distanceUtils = i(2624),           // distanceToSegment
-      pointUtils = i(10555),              // point
-      HitTestResult = i(2383),            // HitTestResult, HitTarget
-      interactionConfig = i(4539),        // interactionTolerance
-      shapeDrawing = i(58221),            // drawRoundRect
-      BitmapRenderer = i(10307),          // BitmapCoordinatesPaneRenderer
-      lineIterator = i(79268),            // isValidPoint, PaneRendererLineItemsIterator
-      colorUtils = i(4699),               // applyColor
-      dashCanvas = i(85565),              // SmartDashCanvas
-      arrayUtils = i(12217);              // sum
+"use strict";
+
+// Import dependencies
+const distanceUtils = require(2624);           // distanceToSegment
+const pointUtils = require(10555);              // point
+const HitTestResult = require(2383);            // HitTestResult, HitTarget
+const interactionConfig = require(4539);        // interactionTolerance
+const shapeDrawing = require(58221);            // drawRoundRect
+const BitmapRenderer = require(10307);          // BitmapCoordinatesPaneRenderer
+const lineIterator = require(79268);            // isValidPoint, PaneRendererLineItemsIterator
+const colorUtils = require(4699);               // applyColor
+const dashCanvas = require(85565);              // SmartDashCanvas
+const arrayUtils = require(12217);              // sum
   
   // ============================================================================
   // ENUMS
@@ -599,5 +592,10 @@
         dashPattern: smartDash.lastSegmentDashPattern()
       };
     }
-  }
 }
+
+// Exported classes
+module.exports = {
+    PaneRendererStepLine: PaneRendererStepLine,
+    StepLineDecoration: StepLineDecoration
+};

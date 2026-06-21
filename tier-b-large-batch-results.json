@@ -1,0 +1,210 @@
+{
+  "timestamp": "2026-05-10T05:32:15.307Z",
+  "batchSize": 38,
+  "processed": 29,
+  "modules": [
+    {
+      "moduleId": "34378",
+      "originalFile": "34378.js",
+      "remediatedFile": "34378-remediated.js",
+      "size": 10350,
+      "hasMechanicalPrefixing": true
+    },
+    {
+      "moduleId": "43046",
+      "originalFile": "43046.js",
+      "remediatedFile": "43046-remediated.js",
+      "size": 11359,
+      "hasMechanicalPrefixing": true
+    },
+    {
+      "moduleId": "51304",
+      "originalFile": "51304.js",
+      "remediatedFile": "51304-remediated.js",
+      "size": 11376,
+      "hasMechanicalPrefixing": true
+    },
+    {
+      "moduleId": "58978",
+      "originalFile": "58978.js",
+      "remediatedFile": "58978-remediated.js",
+      "size": 11507,
+      "hasMechanicalPrefixing": true
+    },
+    {
+      "moduleId": "3885",
+      "originalFile": "3885.js",
+      "remediatedFile": "3885-remediated.js",
+      "size": 12201,
+      "hasMechanicalPrefixing": true
+    },
+    {
+      "moduleId": "29063",
+      "originalFile": "29063.js",
+      "remediatedFile": "29063-remediated.js",
+      "size": 12370,
+      "hasMechanicalPrefixing": true
+    },
+    {
+      "moduleId": "10544",
+      "originalFile": "10544.js",
+      "remediatedFile": "10544-remediated.js",
+      "size": 12721,
+      "hasMechanicalPrefixing": true
+    },
+    {
+      "moduleId": "44862",
+      "originalFile": "44862.js",
+      "remediatedFile": "44862-remediated.js",
+      "size": 13327,
+      "hasMechanicalPrefixing": true
+    },
+    {
+      "moduleId": "30947",
+      "originalFile": "30947.js",
+      "remediatedFile": "30947-remediated.js",
+      "size": 14034,
+      "hasMechanicalPrefixing": true
+    },
+    {
+      "moduleId": "95779",
+      "originalFile": "95779.js",
+      "remediatedFile": "95779-remediated.js",
+      "size": 14291,
+      "hasMechanicalPrefixing": true
+    },
+    {
+      "moduleId": "19844",
+      "originalFile": "19844.js",
+      "remediatedFile": "19844-remediated.js",
+      "size": 15101,
+      "hasMechanicalPrefixing": true
+    },
+    {
+      "moduleId": "53690",
+      "originalFile": "53690.js",
+      "remediatedFile": "53690-remediated.js",
+      "size": 15181,
+      "hasMechanicalPrefixing": true
+    },
+    {
+      "moduleId": "74109",
+      "originalFile": "74109.js",
+      "remediatedFile": "74109-remediated.js",
+      "size": 15562,
+      "hasMechanicalPrefixing": true
+    },
+    {
+      "moduleId": "95059",
+      "originalFile": "95059.js",
+      "remediatedFile": "95059-remediated.js",
+      "size": 15895,
+      "hasMechanicalPrefixing": true
+    },
+    {
+      "moduleId": "43501",
+      "originalFile": "43501.js",
+      "remediatedFile": "43501-remediated.js",
+      "size": 16040,
+      "hasMechanicalPrefixing": true
+    },
+    {
+      "moduleId": "78176",
+      "originalFile": "78176.js",
+      "remediatedFile": "78176-remediated.js",
+      "size": 16354,
+      "hasMechanicalPrefixing": true
+    },
+    {
+      "moduleId": "87296",
+      "originalFile": "87296.js",
+      "remediatedFile": "87296-remediated.js",
+      "size": 16791,
+      "hasMechanicalPrefixing": true
+    },
+    {
+      "moduleId": "36281",
+      "originalFile": "36281.js",
+      "remediatedFile": "36281-remediated.js",
+      "size": 18166,
+      "hasMechanicalPrefixing": true
+    },
+    {
+      "moduleId": "60876",
+      "originalFile": "60876.js",
+      "remediatedFile": "60876-remediated.js",
+      "size": 18255,
+      "hasMechanicalPrefixing": true
+    },
+    {
+      "moduleId": "59149",
+      "originalFile": "59149.js",
+      "remediatedFile": "59149-remediated.js",
+      "size": 18602,
+      "hasMechanicalPrefixing": true
+    },
+    {
+      "moduleId": "24437",
+      "originalFile": "24437.js",
+      "remediatedFile": "24437-remediated.js",
+      "size": 18798,
+      "hasMechanicalPrefixing": true
+    },
+    {
+      "moduleId": "45",
+      "originalFile": "45.js",
+      "remediatedFile": "45-remediated.js",
+      "size": 21175,
+      "hasMechanicalPrefixing": true
+    },
+    {
+      "moduleId": "38780",
+      "originalFile": "38780.js",
+      "remediatedFile": "38780-remediated.js",
+      "size": 22997,
+      "hasMechanicalPrefixing": true
+    },
+    {
+      "moduleId": "15219",
+      "originalFile": "15219.js",
+      "remediatedFile": "15219-remediated.js",
+      "size": 25831,
+      "hasMechanicalPrefixing": true
+    },
+    {
+      "moduleId": "72187",
+      "originalFile": "72187.js",
+      "remediatedFile": "72187-remediated.js",
+      "size": 26113,
+      "hasMechanicalPrefixing": true
+    },
+    {
+      "moduleId": "62153",
+      "originalFile": "62153.js",
+      "remediatedFile": "62153-remediated.js",
+      "size": 27944,
+      "hasMechanicalPrefixing": true
+    },
+    {
+      "moduleId": "51101",
+      "originalFile": "51101.js",
+      "remediatedFile": "51101-remediated.js",
+      "size": 43153,
+      "hasMechanicalPrefixing": true
+    },
+    {
+      "moduleId": "19979",
+      "originalFile": "19979.js",
+      "remediatedFile": "19979-remediated.js",
+      "size": 44783,
+      "hasMechanicalPrefixing": true
+    },
+    {
+      "moduleId": "4753",
+      "originalFile": "4753.js",
+      "remediatedFile": "4753-remediated.js",
+      "size": 45169,
+      "hasMechanicalPrefixing": true
+    }
+  ]
+}

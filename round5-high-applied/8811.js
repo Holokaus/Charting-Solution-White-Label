@@ -19,3 +19,4 @@
       }));
       return i.readonly().spawn((() => t.unsubscribeAll(o)))
     }
+}

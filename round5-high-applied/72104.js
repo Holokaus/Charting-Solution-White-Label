@@ -28,3 +28,4 @@
     ! function(seriesBarFunction_e) {
       seriesBarFunction_e.Copy = "Copy"
     }(o || (o = {}))
+}

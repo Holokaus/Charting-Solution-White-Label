@@ -3,41 +3,41 @@
 // Size: 109.7 KB
 // Purpose: Auto-extracted webpack module from TradingView library
 
-(e, t, i) => {
+(moduleExports, moduleConfig, moduleRequire) => {
   "use strict";
-  i.d(t, {
-    Series: () => wi
+  moduleRequire.d(moduleConfig, {
+    Series: () => SeriesClass
   });
-  var s = i(50279),
-    o = i(50151),
-    n = i(9343),
-    r = i(51768),
-    a = i(76422),
-    l = i(88723),
-    c = i(67135),
-    h = i(86572),
-    d = i(52746),
-    u = i(72187),
-    _ = i(5471),
-    p = i(24062),
-    m = i(43337),
-    g = i(95059),
-    f = i(92211),
-    y = i(30342),
-    v = i(67563),
-    S = i(82095),
-    b = i(13651),
-    w = i(11542),
-    C = i(37103),
-    T = i(19e3),
-    P = i(52479),
-    x = (i(3618), i(75641));
-  i(40080);
+  var dataLayerModule = moduleRequire(50279),
+    assertionUtils = moduleRequire(50151),
+    loggerModule = moduleRequire(9343),
+    dataUpdateModule = moduleRequire(51768),
+    priceDataModule = moduleRequire(76422),
+    intervalUtils = moduleRequire(88723),
+    priceDataSourceModule = moduleRequire(67135),
+    displayConstantsModule = moduleRequire(86572),
+    seriesDataModule = moduleRequire(52746),
+    plotListModule = moduleRequire(72187),
+    helpersModule = moduleRequire(5471),
+    chartStyleModule = moduleRequire(24062),
+    seriesTypeModule = moduleRequire(43337),
+    symbolUtilsModule = moduleRequire(95059),
+    globalsModule = moduleRequire(92211),
+    i18nModule = moduleRequire(30342),
+    magnetModeModule = moduleRequire(67563),
+    styleConstantsModule = moduleRequire(82095),
+    statusViewModule = moduleRequire(13651),
+    translationModule = moduleRequire(11542),
+    featureFlagsModule = moduleRequire(37103),
+    symbolDescriptionModule = moduleRequire(19e3),
+    statusProviderModule = moduleRequire(52479),
+    intervalTranslationModule = (moduleRequire(3618), moduleRequire(75641));
+  moduleRequire(40080);
 
-  function M(e) {
-    const t = "QUANDL" === (e = e || {})
+  function generateSeriesTitle(symbolInfo) {
+    const isQuandl = "QUANDL" === (symbolInfo = symbolInfo || {})
       .listedExchange,
-      s = {
+      titleConfig = {
         title: "",
         description: "",
         interval: "",
@@ -50,64 +50,64 @@
         backadjustment: "",
         settlement: ""
       };
-    let o = "";
-    if (e.description && t)
-      if (2 === e.description.split("/")
-        .length) o = e.description.split("/")[1];
+    let descriptionText = "";
+    if (symbolInfo.description && isQuandl)
+      if (2 === symbolInfo.description.split("/")
+        .length) descriptionText = symbolInfo.description.split("/")[1];
       else {
-        e.description.split("'")
-          .filter((e => e.length))
-          .forEach((e => {
-            let t = [];
-            t = e && ("/" === e[0] || /\d+\/\(?/.test(e)) ? [e] : e.split("/")
-              .filter((e => e.length)), o += t[2 === t.length ? 1 : 0]
+        symbolInfo.description.split("'")
+          .filter((part => part.length))
+          .forEach((part => {
+            let parts = [];
+            parts = part && ("/" === part[0] || /\d+\/\(?/.test(part)) ? [part] : part.split("/")
+              .filter((p => p.length)), descriptionText += parts[2 === parts.length ? 1 : 0]
           }))
       }
-    else o = e.description ? e.description : e.symbol;
-    if (e.ticker ? (s.title = e.ticker, s.description = I(o)) : s.title = I(o), e.interval && (s.interval = (0, x
-        .translatedIntervalString)(e.interval)), t && e.description) {
-      const t = /[\w_]+\/[\w_]+/.exec(e.description);
-      t && t[0] ? s.provider = I(t[0].split("/")[0]) : s.provider = I(e.description.split("/")[0])
+    else descriptionText = symbolInfo.description ? symbolInfo.description : symbolInfo.symbol;
+    if (symbolInfo.ticker ? (titleConfig.title = symbolInfo.ticker, titleConfig.description = removeQuotes(descriptionText)) : titleConfig.title = removeQuotes(descriptionText), symbolInfo.interval && (titleConfig.interval = (0, intervalTranslationModule
+        .translatedIntervalString)(symbolInfo.interval)), isQuandl && symbolInfo.description) {
+      const match = /[\w_]+\/[\w_]+/.exec(symbolInfo.description);
+      match && match[0] ? titleConfig.provider = removeQuotes(match[0].split("/")[0]) : titleConfig.provider = removeQuotes(symbolInfo.description.split("/")[0])
     }
-    return e.listedExchange && (s.listedExchange = I(e.listedExchange)), s.chartStyle = I(function(e) {
-      return e.inputs, 8 === e.style ? w.t(null, void 0, i(63876)) : ""
-    }(e)), e.sessionDescription && (s.sessionDescription = I(e.sessionDescription)), void 0 !== e.priceSource && (s
-      .priceSource = I(e.priceSource)), e.adjustment && "dividends" === e.adjustment && (s.adjustment = w.t(null, {
+    return symbolInfo.listedExchange && (titleConfig.listedExchange = removeQuotes(symbolInfo.listedExchange)), titleConfig.chartStyle = removeQuotes(function(info) {
+      return info.inputs, 8 === info.style ? translationModule.t(null, void 0, moduleRequire(63876)) : ""
+    }(symbolInfo)), symbolInfo.sessionDescription && (titleConfig.sessionDescription = removeQuotes(symbolInfo.sessionDescription)), void 0 !== symbolInfo.priceSource && (titleConfig
+      .priceSource = removeQuotes(symbolInfo.priceSource)), symbolInfo.adjustment && "dividends" === symbolInfo.adjustment && (titleConfig.adjustment = translationModule.t(null, {
       context: "adjustments"
-    }, i(94920))), void 0 !== e.backadjustment && (s.backadjustment = w.t(null, {
+    }, moduleRequire(94920))), void 0 !== symbolInfo.backadjustment && (titleConfig.backadjustment = translationModule.t(null, {
       context: "adjustments"
-    }, i(16755))), e["settlement-as-close"] && (s.settlement = w.t(null, {
+    }, moduleRequire(16755))), symbolInfo["settlement-as-close"] && (titleConfig.settlement = translationModule.t(null, {
       context: "adjustments"
-    }, i(82631))), s
+    }, moduleRequire(82631))), titleConfig
   }
 
-  function I(e) {
-    return e.replace(/'/g, "")
+  function removeQuotes(text) {
+    return text.replace(/'/g, "")
   }
-  var A = i(89837);
-  const L = w.t(null, void 0, i(70963)),
-    k = w.t(null, void 0, i(75546)),
-    E = C.enabled("hide_unresolved_symbols_in_legend"),
-    D = C.enabled("symbol_info_price_source");
-  class B extends P.StatusProviderBase {
-    constructor(e, t, i) {
-      super(), this._series = e, this._statusViewProperties = t, this._options = i || {}
+  var errorResolutionModule = moduleRequire(89837);
+  const errorLoadingText = translationModule.t(null, void 0, moduleRequire(70963)),
+    errorUnsupportedResolutionText = translationModule.t(null, void 0, moduleRequire(75546)),
+    hideUnresolvedSymbolsEnabled = featureFlagsModule.enabled("hide_unresolved_symbols_in_legend"),
+    symbolInfoPriceSourceEnabled = featureFlagsModule.enabled("symbol_info_price_source");
+  class SeriesStatusProvider extends statusProviderModule.StatusProviderBase {
+    constructor(series, statusViewProperties, options) {
+      super(), this._series = series, this._statusViewProperties = statusViewProperties, this._options = options || {}
     }
     text() {
-      return function(e) {
-        const t = M(e);
-        return (e.ticker ? t.description : t.title) + (t.interval ? ", " + t.interval : "") + function(e, t =
+      return function(symbolInfo) {
+        const titleData = generateSeriesTitle(symbolInfo);
+        return (symbolInfo.ticker ? titleData.description : titleData.title) + (titleData.interval ? ", " + titleData.interval : "") + function(titleInfo, separator =
           ", ") {
-          return (e.provider ? `${t}${e.provider}` : "") + (e.listedExchange ? `${t}${e.listedExchange}` : "") +
-            (e.chartStyle ? `${t}${e.chartStyle}` : "") + (e.adjustment ? `${t}${e.adjustment}` : "") + (e
-              .backadjustment ? `${t}${e.backadjustment}` : "") + (e.settlement ? `${t}${e.settlement}` : "") +
-            (e.sessionDescription ? `${t}${e.sessionDescription}` : "") + (e.priceSource ?
-              `${t}${e.priceSource}` : "")
-        }(t)
+          return (titleInfo.provider ? `${separator}${titleInfo.provider}` : "") + (titleInfo.listedExchange ? `${separator}${titleInfo.listedExchange}` : "") +
+            (titleInfo.chartStyle ? `${separator}${titleInfo.chartStyle}` : "") + (titleInfo.adjustment ? `${separator}${titleInfo.adjustment}` : "") + (titleInfo
+              .backadjustment ? `${separator}${titleInfo.backadjustment}` : "") + (titleInfo.settlement ? `${separator}${titleInfo.settlement}` : "") +
+            (titleInfo.sessionDescription ? `${separator}${titleInfo.sessionDescription}` : "") + (titleInfo.priceSource ?
+              `${separator}${titleInfo.priceSource}` : "")
+        }(titleData)
       }(this._getTitleGenerationOptions())
     }
     getSplitTitle() {
-      return M(this._getTitleGenerationOptions())
+      return generateSeriesTitle(this._getTitleGenerationOptions())
     }
     getInputsTitles() {
       return null

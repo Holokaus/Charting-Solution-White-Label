@@ -4,36 +4,15 @@
 // Size: 3.1 KB (beautified)
 // Dependencies: 27714, 50151, 59239, 57658, 24640, 49483
 
-(e, t, i) => {
-  "use strict";
-  
-  // Exported functions
-  i.d(t, {
-    addExclusionArea: () => addExclusionArea,
-    addExclusionAreaByScope: () => addExclusionAreaByScope,
-    calcTextHorizontalShift: () => calcTextHorizontalShift,
-    clearRect: () => clearRect,
-    createBoundCanvas: () => createBoundCanvas,
-    createDisconnectedCanvas: () => createDisconnectedCanvas,
-    createDisconnectedCanvasByRenderingInfo: () => createDisconnectedCanvasByRenderingInfo,
-    disableSelection: () => disableSelection,
-    drawScaled: () => drawScaled,
-    drawWithExclusionAreaByScope: () => drawWithExclusionAreaByScope,
-    fillRect: () => fillRect,
-    getBindingRenderingInfo: () => getBindingRenderingInfo,
-    getContext2D: () => getContext2D,
-    getPrescaledContext2D: () => getPrescaledContext2D,
-    measureText: () => measureText,
-    tryApplySuggestedCanvasBitmapSize: () => tryApplySuggestedCanvasBitmapSize
-  });
-  
-  // Import dependencies
-  var canvasBinding = i(27714),       // bindCanvasElementBitmapSizeTo
-      nullUtils = i(50151),            // ensureNotNull, assert
-      devicePixel = i(59239),          // getCanvasDevicePixelRatio
-      textMetrics = i(57658),          // getMinTextMetrics
-      rtlUtils = i(24640),             // isRtl
-      platformUtils = i(49483);        // isMac
+"use strict";
+
+// Import dependencies
+const canvasBinding = require(27714);       // bindCanvasElementBitmapSizeTo
+const nullUtils = require(50151);            // ensureNotNull, assert
+const devicePixel = require(59239);          // getCanvasDevicePixelRatio
+const textMetrics = require(57658);          // getMinTextMetrics
+const rtlUtils = require(24640);             // isRtl
+const platformUtils = require(49483);        // isMac
   
   // ============================================================================
   // RENDERING INFO UTILITIES
@@ -383,10 +362,29 @@
    * @param {Point[]} exclusionPoints - Points defining exclusion polygons
    * @param {Function} drawFn - Drawing function to execute within clipped area
    */
-  function drawWithExclusionAreaByScope(renderContext, exclusionPoints, drawFn) {
+function drawWithExclusionAreaByScope(renderContext, exclusionPoints, drawFn) {
     renderContext.context.save();
     addExclusionAreaByScope(renderContext, exclusionPoints);
     drawFn();
     renderContext.context.restore();
-  }
 }
+
+// Exported functions
+module.exports = {
+    addExclusionArea: addExclusionArea,
+    addExclusionAreaByScope: addExclusionAreaByScope,
+    calcTextHorizontalShift: calcTextHorizontalShift,
+    clearRect: clearRect,
+    createBoundCanvas: createBoundCanvas,
+    createDisconnectedCanvas: createDisconnectedCanvas,
+    createDisconnectedCanvasByRenderingInfo: createDisconnectedCanvasByRenderingInfo,
+    disableSelection: disableSelection,
+    drawScaled: drawScaled,
+    drawWithExclusionAreaByScope: drawWithExclusionAreaByScope,
+    fillRect: fillRect,
+    getBindingRenderingInfo: getBindingRenderingInfo,
+    getContext2D: getContext2D,
+    getPrescaledContext2D: getPrescaledContext2D,
+    measureText: measureText,
+    tryApplySuggestedCanvasBitmapSize: tryApplySuggestedCanvasBitmapSize
+};

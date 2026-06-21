@@ -124,10 +124,10 @@
  */
 
 
-(e, t, i) => {
+(moduleExports, moduleConfig, moduleRequire) => {
   "use strict";
-  i.d(t, {
-    Series: () => wi
+  moduleRequire.d(moduleConfig, {
+    Series: () => SeriesClass
   });
   const defaultCompare = require(50279),
     assertionUtils = require(50151),
@@ -152,13 +152,13 @@
     featureFlags = require(37103),
     symbolDescription = require(19000),
     statusProviderBase = require(52479),
-    x = (i(3618), i(75641));
-  i(40080);
+    intervalTranslationModule = (moduleRequire(3618), moduleRequire(75641));
+  moduleRequire(40080);
 
-  function M(e) {
-    const t = "QUANDL" === (e = e || {})
+  function generateSeriesTitle(symbolInfo) {
+    const isQuandl = "QUANDL" === (symbolInfo = symbolInfo || {})
       .listedExchange,
-      s = {
+      titleConfig = {
         title: "",
         description: "",
         interval: "",
@@ -171,64 +171,64 @@
         backadjustment: "",
         settlement: ""
       };
-    let o = "";
-    if (e.description && t)
-      if (2 === e.description.split("/")
-        .length) o = e.description.split("/")[1];
+    let descriptionText = "";
+    if (symbolInfo.description && isQuandl)
+      if (2 === symbolInfo.description.split("/")
+        .length) descriptionText = symbolInfo.description.split("/")[1];
       else {
-        e.description.split("'")
-          .filter((e => e.length))
-          .forEach((e => {
-            let t = [];
-            t = e && ("/" === e[0] || /\d+\/\(?/.test(e)) ? [e] : e.split("/")
-              .filter((e => e.length)), o += t[2 === t.length ? 1 : 0]
+        symbolInfo.description.split("'")
+          .filter((part => part.length))
+          .forEach((part => {
+            let parts = [];
+            parts = part && ("/" === part[0] || /\d+\/\(?/.test(part)) ? [part] : part.split("/")
+              .filter((p => p.length)), descriptionText += parts[2 === parts.length ? 1 : 0]
           }))
       }
-    else o = e.description ? e.description : e.symbol;
-    if (e.ticker ? (s.title = e.ticker, s.description = I(o)) : s.title = I(o), e.interval && (s.interval = (0, x
-        .translatedIntervalString)(e.interval)), t && e.description) {
-      const t = /[\w_]+\/[\w_]+/.exec(e.description);
-      t && t[0] ? s.provider = I(t[0].split("/")[0]) : s.provider = I(e.description.split("/")[0])
+    else descriptionText = symbolInfo.description ? symbolInfo.description : symbolInfo.symbol;
+    if (symbolInfo.ticker ? (titleConfig.title = symbolInfo.ticker, titleConfig.description = removeQuotes(descriptionText)) : titleConfig.title = removeQuotes(descriptionText), symbolInfo.interval && (titleConfig.interval = (0, intervalTranslationModule
+        .translatedIntervalString)(symbolInfo.interval)), isQuandl && symbolInfo.description) {
+      const match = /[\w_]+\/[\w_]+/.exec(symbolInfo.description);
+      match && match[0] ? titleConfig.provider = removeQuotes(match[0].split("/")[0]) : titleConfig.provider = removeQuotes(symbolInfo.description.split("/")[0])
     }
-    return e.listedExchange && (s.listedExchange = I(e.listedExchange)), s.chartStyle = I(function(e) {
-      return e.inputs, 8 === e.style ? w.t(null, void 0, i(63876)) : ""
-    }(e)), e.sessionDescription && (s.sessionDescription = I(e.sessionDescription)), void 0 !== e.priceSource && (s
-      .priceSource = I(e.priceSource)), e.adjustment && "dividends" === e.adjustment && (s.adjustment = w.t(null, {
+    return symbolInfo.listedExchange && (titleConfig.listedExchange = removeQuotes(symbolInfo.listedExchange)), titleConfig.chartStyle = removeQuotes(function(info) {
+      return info.inputs, 8 === info.style ? i18n.t(null, void 0, moduleRequire(63876)) : ""
+    }(symbolInfo)), symbolInfo.sessionDescription && (titleConfig.sessionDescription = removeQuotes(symbolInfo.sessionDescription)), void 0 !== symbolInfo.priceSource && (titleConfig
+      .priceSource = removeQuotes(symbolInfo.priceSource)), symbolInfo.adjustment && "dividends" === symbolInfo.adjustment && (titleConfig.adjustment = i18n.t(null, {
       context: "adjustments"
-    }, i(94920))), void 0 !== e.backadjustment && (s.backadjustment = w.t(null, {
+    }, moduleRequire(94920))), void 0 !== symbolInfo.backadjustment && (titleConfig.backadjustment = i18n.t(null, {
       context: "adjustments"
-    }, i(16755))), e["settlement-as-close"] && (s.settlement = w.t(null, {
+    }, moduleRequire(16755))), symbolInfo["settlement-as-close"] && (titleConfig.settlement = i18n.t(null, {
       context: "adjustments"
-    }, i(82631))), s
+    }, moduleRequire(82631))), titleConfig
   }
 
-  function I(e) {
-    return e.replace(/'/g, "")
+  function removeQuotes(text) {
+    return text.replace(/'/g, "")
   }
-  var A = i(89837);
-  const L = w.t(null, void 0, i(70963)),
-    k = w.t(null, void 0, i(75546)),
-    E = C.enabled("hide_unresolved_symbols_in_legend"),
-    D = C.enabled("symbol_info_price_source");
-  class B extends P.StatusProviderBase {
-    constructor(e, t, i) {
-      super(), this._series = e, this._statusViewProperties = t, this._options = i || {}
+  var errorResolutionModule = moduleRequire(89837);
+  const errorLoadingText = i18n.t(null, void 0, moduleRequire(70963)),
+    errorUnsupportedResolutionText = i18n.t(null, void 0, moduleRequire(75546)),
+    hideUnresolvedSymbolsEnabled = featureFlags.enabled("hide_unresolved_symbols_in_legend"),
+    symbolInfoPriceSourceEnabled = featureFlags.enabled("symbol_info_price_source");
+  class SeriesStatusProvider extends statusProviderBase.StatusProviderBase {
+    constructor(series, statusViewProperties, options) {
+      super(), this._series = series, this._statusViewProperties = statusViewProperties, this._options = options || {}
     }
     text() {
-      return function(e) {
-        const t = M(e);
-        return (e.ticker ? t.description : t.title) + (t.interval ? ", " + t.interval : "") + function(e, t =
+      return function(symbolInfo) {
+        const titleData = generateSeriesTitle(symbolInfo);
+        return (symbolInfo.ticker ? titleData.description : titleData.title) + (titleData.interval ? ", " + titleData.interval : "") + function(titleInfo, separator =
           ", ") {
-          return (e.provider ? `${t}${e.provider}` : "") + (e.listedExchange ? `${t}${e.listedExchange}` : "") +
-            (e.chartStyle ? `${t}${e.chartStyle}` : "") + (e.adjustment ? `${t}${e.adjustment}` : "") + (e
-              .backadjustment ? `${t}${e.backadjustment}` : "") + (e.settlement ? `${t}${e.settlement}` : "") +
-            (e.sessionDescription ? `${t}${e.sessionDescription}` : "") + (e.priceSource ?
-              `${t}${e.priceSource}` : "")
-        }(t)
+          return (titleInfo.provider ? `${separator}${titleInfo.provider}` : "") + (titleInfo.listedExchange ? `${separator}${titleInfo.listedExchange}` : "") +
+            (titleInfo.chartStyle ? `${separator}${titleInfo.chartStyle}` : "") + (titleInfo.adjustment ? `${separator}${titleInfo.adjustment}` : "") + (titleInfo
+              .backadjustment ? `${separator}${titleInfo.backadjustment}` : "") + (titleInfo.settlement ? `${separator}${titleInfo.settlement}` : "") +
+            (titleInfo.sessionDescription ? `${separator}${titleInfo.sessionDescription}` : "") + (titleInfo.priceSource ?
+              `${separator}${titleInfo.priceSource}` : "")
+        }(titleData)
       }(this._getTitleGenerationOptions())
     }
     getSplitTitle() {
-      return M(this._getTitleGenerationOptions())
+      return generateSeriesTitle(this._getTitleGenerationOptions())
     }
     getInputsTitles() {
       return null
@@ -241,85 +241,85 @@
         .fontSize.value() + "px"
     }
     errorStatus() {
-      const e = this._series.unsupportedResolutionState()
+      const unsupportedState = this._series.unsupportedResolutionState()
         .value(),
-        t = e ? (0, A.getErrorFromUnsupportedResolutionState)(e) : this._series.seriesErrorMessage();
-      return null !== t ? {
-        error: t,
-        title: e ? k : L
+        errorMessage = unsupportedState ? (0, errorResolutionModule.getErrorFromUnsupportedResolutionState)(unsupportedState) : this._series.seriesErrorMessage();
+      return null !== errorMessage ? {
+        error: errorMessage,
+        title: unsupportedState ? errorUnsupportedResolutionText : errorLoadingText
       } : null
     }
     _getTitleGenerationOptions() {
-      const e = this._series.getSymbolMetadata(),
-        t = this._statusViewProperties.childs(),
-        i = this._series.symbolTextSourceProxyProperty()
+      const symbolMetadata = this._series.getSymbolMetadata(),
+        statusProps = this._statusViewProperties.childs(),
+        textSource = this._series.symbolTextSourceProxyProperty()
         .value();
-      let s;
-      t.showExchange.value() && e && (s = (0, g.getSymbolListedExchange)(e));
-      const o = (D && e?.price_source_id ? this._series.getChartModel()
+      let listedExchange;
+      statusProps.showExchange.value() && symbolMetadata && (listedExchange = (0, symbolUtils.getSymbolListedExchange)(symbolMetadata));
+      const priceSource = (symbolInfoPriceSourceEnabled && symbolMetadata?.price_source_id ? this._series.getChartModel()
           .availablePriceSources(this._series.getSymbolString())
-          .name(e.price_source_id) : null) ?? void 0,
-        n = this._series.getInputsProperties()
+          .name(symbolMetadata.price_source_id) : null) ?? void 0,
+        inputs = this._series.getInputsProperties()
         .state();
-      17 === this._series.getChartStyle() && (n.type = this._series.getSeriesProperties()
+      17 === this._series.getChartStyle() && (inputs.type = this._series.getSeriesProperties()
         .childs()
         .volFootprintStyle.childs()
         .type.value());
-      const r = this._series.aliasSymbolInfo();
+      const aliasInfo = this._series.aliasSymbolInfo();
       return {
-        description: R(i, r),
-        listedExchange: s,
-        symbol: E && null === r ? "" : this._series.symbolOrAlias(),
-        interval: t.showInterval.value() && !this._options.hideResolution ? this._series.getCurrentInterval() : void 0,
+        description: getSymbolDescription(textSource, aliasInfo),
+        listedExchange: listedExchange,
+        symbol: hideUnresolvedSymbolsEnabled && null === aliasInfo ? "" : this._series.symbolOrAlias(),
+        interval: statusProps.showInterval.value() && !this._options.hideResolution ? this._series.getCurrentInterval() : void 0,
         style: this._series.getSeriesProperties()
           .childs()
           .style.value(),
-        inputs: n,
+        inputs: inputs,
         boxSize: this._series.getSeriesData()
           .boxSize,
         reversalAmount: this._series.getSeriesData()
           .reversalAmount,
-        ticker: V(i, r),
-        priceSource: o
+        ticker: getTickerValue(textSource, aliasInfo),
+        priceSource: priceSource
       }
     }
   }
 
-  function V(e, t) {
-    return "ticker-and-description" !== e ? "" : null !== t ? t.name : void 0
+  function getTickerValue(textSource, aliasInfo) {
+    return "ticker-and-description" !== textSource ? "" : null !== aliasInfo ? aliasInfo.name : void 0
   }
 
-  function R(e, t) {
-    if (null !== t) return "ticker" === e ? t.name : "long-description" === e && void 0 !== t.long_description ? t
-      .long_description : (0, T.getTranslatedSymbolDescription)({
-        pro_name: t.pro_name || void 0,
-        short_name: t.name || void 0,
-        description: t.description || void 0,
-        short_description: t.short_description || void 0,
-        local_description: t.local_description || void 0,
-        language: t.language || void 0
+  function getSymbolDescription(textSource, aliasInfo) {
+    if (null !== aliasInfo) return "ticker" === textSource ? aliasInfo.name : "long-description" === textSource && void 0 !== aliasInfo.long_description ? aliasInfo
+      .long_description : (0, symbolDescription.getTranslatedSymbolDescription)({
+        pro_name: aliasInfo.pro_name || void 0,
+        short_name: aliasInfo.name || void 0,
+        description: aliasInfo.description || void 0,
+        short_description: aliasInfo.short_description || void 0,
+        local_description: aliasInfo.local_description || void 0,
+        language: aliasInfo.language || void 0
       })
   }
-  class N extends b.StatusView {
-    constructor(e, t, i) {
-      super(new B(e, t, i)), this._invalidated = !0, this._series = e, this._series.onRestarted()
+  class SeriesStatusView extends statusViewBase.StatusView {
+    constructor(series, statusViewProperties, options) {
+      super(new SeriesStatusProvider(series, statusViewProperties, options)), this._invalidated = !0, this._series = series, this._series.onRestarted()
         .subscribe(this, this.update), this._series.dataEvents()
         .symbolResolved()
         .subscribe(this, this.update), this._series.dataEvents()
         .completed()
         .subscribe(this, this.update), this._series.boxSizeValue()
-        .subscribe(this.update.bind(this)), t.childs()
+        .subscribe(this.update.bind(this)), statusViewProperties.childs()
         .symbolTextSource.subscribe(this, this.update)
     }
     getSeriesPrecision() {
-      let e = 4;
-      const t = this._series.getSymbolMetadata();
-      return t && t.pricescale && (e = Math.round(Math.log(t.pricescale) / Math.log(10))), e
+      let precision = 4;
+      const symbolMetadata = this._series.getSymbolMetadata();
+      return symbolMetadata && symbolMetadata.pricescale && (precision = Math.round(Math.log(symbolMetadata.pricescale) / Math.log(10))), precision
     }
-    round(e) {
-      const t = this.getSeriesPrecision(),
-        i = Math.round(e * Math.pow(10, t)) / Math.pow(10, t);
-      return i ? i.toString() : ""
+    round(value) {
+      const precision = this.getSeriesPrecision(),
+        roundedValue = Math.round(value * Math.pow(10, precision)) / Math.pow(10, precision);
+      return roundedValue ? roundedValue.toString() : ""
     }
     update() {
       this._invalidated = !0
@@ -342,17 +342,17 @@
         ._text = this._statusProvider.text(), this._invalidated = !1)
     }
   }
-  var O = i(50335),
-    F = i(40137),
-    W = i(49483),
-    H = i(78861),
-    z = i(11946),
-    U = i(24640);
-  const j = W.CheckMobile.any(),
-    G = C.enabled("hide_resolution_in_legend");
-  class q extends F.DataWindowView {
-    constructor(e, t) {
-      super(), this._invalidated = !0, this._series = e, this._model = t, this.update()
+  var isNumberModule = moduleRequire(50335),
+    dataWindowViewModule = moduleRequire(40137),
+    checkMobileModule = moduleRequire(49483),
+    H = moduleRequire(78861),
+    z = moduleRequire(11946),
+    forceRTLModule = moduleRequire(24640);
+  const isMobile = checkMobileModule.CheckMobile.any(),
+    hideResolutionInLegend = featureFlags.enabled("hide_resolution_in_legend");
+  class SeriesDataWindowView extends dataWindowViewModule.DataWindowView {
+    constructor(series, model) {
+      super(), this._invalidated = !0, this._series = series, this._model = model, this.update()
     }
     update() {
       this._invalidated = !0

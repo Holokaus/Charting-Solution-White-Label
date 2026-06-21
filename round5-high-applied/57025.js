@@ -66,3 +66,4 @@
           ._quoteSessionClientId, this._quoteSessionSymbol), this._quoteSessionSymbol = null, this._quotes = null)
       }
     }
+}

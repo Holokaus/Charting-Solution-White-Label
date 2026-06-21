@@ -188,3 +188,4 @@
         } else this._selectionIndexer.clear()
       }
     }
+}
